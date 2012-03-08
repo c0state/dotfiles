@@ -8,7 +8,6 @@
   set showcmd
   set nobackup
   set number
-  syntax on
   set wrap
   let mapleader=","
   set hidden
@@ -17,9 +16,9 @@
   set showmatch
   set pastetoggle=<F2>
 "-----
-"
+
 "----- Vundle
-  filetype off                   " required!
+  filetype off
   
   set rtp+=~/.vim/bundle/vundle/
   call vundle#rc()
@@ -28,7 +27,7 @@
 "----- Vundle Bundles
   Bundle 'altercation/vim-colors-solarized'
   Bundle 'bufexplorer.zip'
-  Bundle 'ColorSamplerPack.zip'
+  Bundle 'Color-Sampler-Pack'
   Bundle 'gmarik/vundle'
   Bundle 'greyblake/vim-preview'
   Bundle 'garbas/vim-snipmate'
@@ -41,7 +40,6 @@
   Bundle 'MarcWeber/vim-addon-mw-utils'
   Bundle 'matrix.vim--Yang'
   Bundle 'mileszs/ack.vim'
-"  Bundle 'nvie/vim-togglemouse'
 
   "----- Python
   Bundle 'klen/python-mode'
@@ -55,7 +53,7 @@
   Bundle 'scrooloose/nerdcommenter'
 
   Bundle 'Shougo/neocomplcache'
-  Bundle "snipmate-snippets"
+  Bundle 'snipmate-snippets'
   Bundle 'tomtom/tlib_vim'
   Bundle 'tpope/vim-fugitive'
   Bundle 'tpope/vim-surround'
@@ -67,20 +65,10 @@
   let g:CommandTMaxCachedDirectories=10
 "-----
 
-"----- Pathogen
-"  call pathogen#infect()
-"  syntax on
-"  filetype plugin indent on
-"-----
-
 "----- Color Theme
   colorscheme vividchalk
-  "colorscheme asu1dark
-
-  " solarized colorscheme
-  "syntax enable
-  "set background=dark
-  "colorscheme solarized
+  syntax enable
+  syntax on
 "-----
 
 "----- NERDTree
