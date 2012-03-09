@@ -74,7 +74,7 @@ function qpython-3.2 { env QHOME=/home/stephen/Dropbox/Apps/Linux/q-python-3.2 r
 function qpythonc { env QHOME=/home/stephen/Dropbox/Apps/Linux/q rlwrap /home/stephen/Dropbox/Apps/Linux/q/l32/q python_noexit.q ; }
 function qpythonc-3.2 { env QHOME=/home/stephen/Dropbox/Apps/Linux/q-python-3.2 rlwrap /home/stephen/Dropbox/Apps/Linux/q-python-3.2/l32/q python_noexit.q ; }
 function runnew { nohup "$*" 1>/dev/null 2>&1 </dev/null ; }
-function sshaws-saasbook { ssh ubuntu@ec2-184-72-206-152.compute-1.amazonaws.com ; }
+function sshaws-saasbook { ssh ubuntu@ec2-107-21-177-50.compute-1.amazonaws.com ; }
 function sshuls { ssh -X booyeah.gotdns.com -p 9503 $* ; }
 function sshuls-bayside { ssh -X baysidenyc.gotdns.com -p 9503 $* ; }
 function sshulslts { ssh -X booyeah.gotdns.com -p 9504 $* ; }
