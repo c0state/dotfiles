@@ -31,7 +31,7 @@
   Bundle 'gmarik/vundle'
   Bundle 'greyblake/vim-preview'
   Bundle 'garbas/vim-snipmate'
-  Bundle 'garbas/vim-showmarks'
+  Bundle 'vim-scripts/ShowMarks'
   Bundle 'ghewgill/vim-scmdiff'
   Bundle 'kien/ctrlp.vim'
   Bundle 'Lokaltog/vim-powerline'
