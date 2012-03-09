@@ -67,6 +67,6 @@ DISABLE_AUTO_TITLE=true
 # use vi bindings
 #bindkey -v
 
-source ~/Dropbox/Linux/Config/.bash_functions
-source ~/Dropbox/Linux/Config/.bash_aliases
+source ~/.bash_functions
+source ~/.bash_aliases
 

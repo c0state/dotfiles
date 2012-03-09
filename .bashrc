@@ -32,7 +32,7 @@ elif [[ $OSTYPE == 'cygwin' ]]; then
   export PATH=$PATH:~/Dropbox/Apps/Windows/android-sdk-windows/platform-tools:~/Dropbox/Apps/Windows/android-sdk-windows/tools
 fi 
 
-. ~/Dropbox/Linux/Config/.bash_functions
+source ~/.bash_functions
 
 #----- for Amazon AWS EC2 tools
 export EC2_HOME=~/Dropbox/Apps/Universal/ec2-api-tools-1.4.2.4
@@ -42,4 +42,4 @@ export EC2_CERT=~/Dropbox/AmazonAWS/X509Cert
 # use vi bindings
 #set -o vi
 
-. ~/Dropbox/Linux/Config/.bash_aliases
+source ~/.bash_aliases
