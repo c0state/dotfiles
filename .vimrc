@@ -94,7 +94,7 @@
 
   nnoremap <leader>nhl :nohlsearch<CR>
   nnoremap <leader>tn  :tabnew<CR>
-  nnoremap <leader>k   :q<CR>
+  nnoremap <leader>k   :bdelete<CR>
 
   nnoremap <leader>nt  :NERDTreeFocus<CR>
   nnoremap <leader>ntt :NERDTreeToggle<CR>
