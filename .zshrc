@@ -70,3 +70,5 @@ DISABLE_AUTO_TITLE=true
 source ~/.bash_functions
 source ~/.bash_aliases
 
+# virtualenvwrapper
+. /etc/bash_completion.d/virtualenvwrapper

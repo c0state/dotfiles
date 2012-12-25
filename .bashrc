@@ -43,3 +43,6 @@ export EC2_CERT=~/Dropbox/AmazonAWS/X509Cert
 #set -o vi
 
 source ~/.bash_aliases
+
+# virtualenvwrapper
+. /etc/bash_completion.d/virtualenvwrapper
