@@ -20,14 +20,10 @@ export PATH=$PATH:~/Dropbox/Apps/Universal/bin:~/Dropbox/Apps/Universal/ec2-api-
 
 #----- set based on platform (Linux or OS X)
 if [[ $PLATFORM == 'Linux' ]]; then
-  export PATH=/mnt/data/opt/jdk1.6.0_30/bin:$PATH:~/Dropbox/Apps/Linux/bin:~/Dropbox/Apps/Linux/android-sdk-linux_x86/tools:~/Dropbox/Apps/Linux/android-sdk-linux_x86/platform-tools:~/Dropbox/Apps/Linux/nodejs/x86_64-pc-linux-gnu/bin
-
-  export JAVA_HOME=/mnt/data/opt/jdk1.6.0_30/bin
+  export PATH=$PATH:~/Dropbox/Apps/Linux/bin:~/Dropbox/Apps/Linux/android-sdk-linux_x86/tools:~/Dropbox/Apps/Linux/android-sdk-linux_x86/platform-tools:/usr/local/heroku/bin
 elif [[ $PLATFORM == 'Darwin' ]]; then
-  export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+  export PATH=$PATH:/opt/local/bin:/opt/local/sbin
   export PATH=$PATH:~/Dropbox/Apps/OSX/bin:~/Dropbox/Apps/OSX/android-sdk-mac_x86/platform-tools:~/Dropbox/Apps/OSX/android-sdk-mac_x86/tools:~/Dropbox/Apps/OSX/q/m32:~/Dropbox/Apps/OSX/android-fastboot
-
-  export JAVA_HOME=`/usr/libexec/java_home` 
 elif [[ $OSTYPE == 'cygwin' ]]; then
   export PATH=$PATH:~/Dropbox/Apps/Windows/android-sdk-windows/platform-tools:~/Dropbox/Apps/Windows/android-sdk-windows/tools
 fi 
