@@ -3,3 +3,5 @@
 	email = stephen.liu@alumni.stanford.edu
 [color]
 	ui = auto
+[difftool]
+	prompt = false
