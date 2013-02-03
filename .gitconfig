@@ -3,3 +3,9 @@
 	email = stephen.liu@alumni.stanford.edu
 [color]
 	ui = auto
+[difftool]
+	prompt = false
+[diff]
+	tool = vimdiff
+[core]
+	editor = vim
