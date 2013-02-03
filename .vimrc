@@ -27,7 +27,7 @@
 "----- Vundle Bundles
   Bundle 'altercation/vim-colors-solarized'
   Bundle 'bufexplorer.zip'
-  Bundle 'Color-Sampler-Pack'
+  Bundle 'Colour-Sampler-Pack'
   Bundle 'gmarik/vundle'
   Bundle 'greyblake/vim-preview'
   Bundle 'garbas/vim-snipmate'
