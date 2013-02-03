@@ -47,3 +47,16 @@ fpath=(~/.zsh-completions/src $fpath)
 
 DISABLE_AUTO_TITLE=true
 ZBEEP='\e[?5h\e[?5l'
+
+# The following lines were added by compinstall
+
+zstyle ':completion:*' completer _complete _ignored
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' menu select=long
+zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+zstyle ':completion:*' use-compctl false
+zstyle :compinstall filename '/home/stephen/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
