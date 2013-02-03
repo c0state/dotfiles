@@ -2,15 +2,14 @@
 PLATFORM=`uname`
 
 #----- increase history file sizes
-HISTSIZE=10000
-HISTFILESIZE=20000
+export HISTSIZE=10000
+export HISTFILESIZE=20000
 
-EDITOR=vim
+export EDITOR=vim
 
 #----- set terminal title
 if [[ $TERM == xterm* ]] || [[ $TERM == rxvt* ]]
 then
-  #export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}[${HOSTTYPE}]:${PWD}\007"'
   export PROMPT_COMMAND='echo -ne "\033]0;${PWD}\007"'
 fi
 
@@ -59,10 +58,10 @@ source ~/.bash_aliases
 if [[ -d ~/Dropbox ]]; then
   mkdir -p ~/Dropbox/Config/Linux/etc
 
-  if [[ `where gem` != *"not found" ]]; then
+  if [[ `which gem` != *"not found" ]]; then
     gem list > ~/Dropbox/Config/Linux/etc/gem_list.`hostname`-`uname`.log
   fi
-  if [[ `where pip` != *"not found" ]]; then
+  if [[ `which pip` != *"not found" ]]; then
     pip freeze > ~/Dropbox/Config/Linux/etc/pip_list.`hostname`-`uname`.log
   fi
 fi
