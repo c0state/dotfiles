@@ -58,6 +58,11 @@ source ~/.bash_aliases
 # save a list of ruby gems and python packages installed on this machine
 if [[ -d ~/Dropbox ]]; then
   mkdir -p ~/Dropbox/Config/Linux/etc
-  gem list > ~/Dropbox/Config/Linux/etc/gem_list.`hostname`-`uname`.log
-  pip freeze > ~/Dropbox/Config/Linux/etc/pip_list.`hostname`-`uname`.log
+
+  if [[ `where gem` != *"not found" ]]; then
+    gem list > ~/Dropbox/Config/Linux/etc/gem_list.`hostname`-`uname`.log
+  fi
+  if [[ `where pip` != *"not found" ]]; then
+    pip freeze > ~/Dropbox/Config/Linux/etc/pip_list.`hostname`-`uname`.log
+  fi
 fi
