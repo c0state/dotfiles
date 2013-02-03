@@ -5,6 +5,8 @@ PLATFORM=`uname`
 HISTSIZE=10000
 HISTFILESIZE=20000
 
+EDITOR=vim
+
 #----- set terminal title
 if [[ $TERM == xterm* ]] || [[ $TERM == rxvt* ]]
 then
@@ -52,3 +54,10 @@ export EC2_CERT=~/Dropbox/AmazonAWS/X509Cert
 #set -o vi
 
 source ~/.bash_aliases
+
+# save a list of ruby gems and python packages installed on this machine
+if [[ -d ~/Dropbox ]]; then
+  mkdir -p ~/Dropbox/Config/Linux/etc
+  gem list > ~/Dropbox/Config/Linux/etc/gem_list.`hostname`-`uname`.log
+  pip freeze > ~/Dropbox/Config/Linux/etc/pip_list.`hostname`-`uname`.log
+fi
