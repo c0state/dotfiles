@@ -27,7 +27,7 @@
 "----- Vundle Bundles
   Bundle 'altercation/vim-colors-solarized'
   Bundle 'bufexplorer.zip'
-  Bundle 'Color-Sampler-Pack'
+  Bundle 'Colour-Sampler-Pack'
   Bundle 'gmarik/vundle'
   Bundle 'greyblake/vim-preview'
   Bundle 'garbas/vim-snipmate'
@@ -40,6 +40,7 @@
   Bundle 'MarcWeber/vim-addon-mw-utils'
   Bundle 'matrix.vim--Yang'
   Bundle 'mileszs/ack.vim'
+  Bundle 'tomasr/molokai'
 
   "----- Python
   Bundle 'klen/python-mode'
@@ -66,7 +67,8 @@
 "-----
 
 "----- Color Theme
-  colorscheme vividchalk
+  "colorscheme vividchalk
+  colorscheme molokai
   syntax enable
   syntax on
 "-----
@@ -111,9 +113,17 @@
   map <leader>= <C-w>=<CR>
   map <leader>w <C-w><C-w><CR>
 
-  " for switching windows left and right
-  map <leader>< gT
-  map <leader>> gt
+  " for switching tab left and right
+  nnoremap <leader>tl :tabnext<CR>
+  nnoremap <leader>th :tabprev<CR>
+  nnoremap <leader>tm :tabmove 
+  " TODO : figure out how to go to any tab
+  "nnoremap <leader>tg {i}gt<CR>
+  nnoremap <leader>tq :tabclose<CR>
+  nnoremap <leader>t1 1gt<CR>
+  nnoremap <leader>t2 2gt<CR>
+  nnoremap <leader>t3 3gt<CR>
+  nnoremap <leader>t4 4gt<CR>
 
   " ctrl-movement keys for window switching
   map <C-k> <C-w><Up>
@@ -135,3 +145,9 @@
   let g:neocomplcache_enable_at_startup = 1
 "-----
 
+if has("unix")
+  let s:uname = system("uname")
+  if s:uname == "Darwin\n"
+    let $PYTHONHOME='/System/Library/Frameworks/Python.framework/Versions/Current'
+  endif
+endif
