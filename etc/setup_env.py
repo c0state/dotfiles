@@ -29,3 +29,8 @@ if __name__ == '__main__':
         os.system('git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle')
     else:
         print('vundle already installed')
+
+    if not os.path.exists(os.path.expanduser('~/.zsh-completions')):
+        os.system('git clone https://github.com/zsh-users/zsh-completions.git ~/.zsh-completions')
+    else:
+        print('zsh-completions already installed')
