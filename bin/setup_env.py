@@ -17,5 +17,15 @@ if __name__ == '__main__':
 
     if not os.path.exists(os.path.expanduser('~/.oh-my-zsh')):
         os.system('git clone https://%(user)s@github.com/%(user)s/oh-my-zsh.git ~/.oh-my-zsh' % { 'user' : options.github_username } )
+    else:
+        print('oh-my-zsh already installed')
+
     if not os.path.exists(os.path.expanduser('~/.tmuxinator')):
         os.system('git clone https://%(user)s@github.com/%(user)s/tmuxinator.git ~/.tmuxinator' % { 'user' : options.github_username } )
+    else:
+        print('tmuxinator already installed')
+
+    if not os.path.exists(os.path.expanduser('~/.vim/bundle/vundle')):
+        os.system('git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle')
+    else:
+        print('vundle already installed')
