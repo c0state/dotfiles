@@ -1,4 +1,2 @@
 *~
-.vim
-.oh-my-zsh
-.tmuxinator
+*.swp
