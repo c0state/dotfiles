@@ -16,12 +16,12 @@ if __name__ == '__main__':
     parse_options()
 
     if not os.path.exists(os.path.expanduser('~/.oh-my-zsh')):
-        os.system('git clone https://%(user)s@github.com/%(user)s/oh-my-zsh.git ~/.oh-my-zsh' % { 'user' : options.github_username } )
+        os.system('git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh')
     else:
         print('oh-my-zsh already installed')
 
     if not os.path.exists(os.path.expanduser('~/.tmuxinator')):
-        os.system('git clone https://%(user)s@github.com/%(user)s/tmuxinator.git ~/.tmuxinator' % { 'user' : options.github_username } )
+        os.system('git clone git@github.com:%(user)s/tmuxinator.git ~/.tmuxinator' % { 'user' : options.github_username } )
     else:
         print('tmuxinator already installed')
 
