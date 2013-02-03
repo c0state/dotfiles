@@ -43,5 +43,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
+fpath=(~/.zsh-completions/src $fpath)
+
 DISABLE_AUTO_TITLE=true
 ZBEEP='\e[?5h\e[?5l'

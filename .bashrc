@@ -33,6 +33,7 @@ elif [[ $PLATFORM == 'Darwin' ]]; then
   # if homebrew is installed put it's bin dir first
   if [[ -e /usr/local/bin/brew ]]; then
     export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/share/python:$PATH
+    brew list > ~/Dropbox/Config/Linux/etc/brew_list.`hostname`-`uname`.log
   fi
 
   export PATH=$PATH:~/Dropbox/Apps/OSX/bin:~/Dropbox/Apps/OSX/android-sdk-mac_x86/platform-tools:~/Dropbox/Apps/OSX/android-sdk-mac_x86/tools:~/Dropbox/Apps/OSX/q/m32:~/Dropbox/Apps/OSX/android-fastboot

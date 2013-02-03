@@ -30,6 +30,12 @@ function build_qpy_script_3.2 {
 
 function dlrepo { curl http://android.git.kernel.org/repo > ./repo ; }
 function firefox { /home/stephen/Dropbox/Apps/Linux/firefox/firefox ; }
+function findnewest {
+    if [[ $1 != "" ]]; then
+      num_items_to_show="-n $1"
+    fi
+    find . -type f -printf '%T+ %p\n' | sort -r | head $num_items_to_show ;
+}
 function logcat { adb logcat -d -v time ; }
 function nookicsflash {
 	~/Dropbox/Apps/Linux/android-sdk-linux_x86/platform-tools/adb shell mount -o rw -t vfat /dev/block/mmcblk0p1 /boot && \
