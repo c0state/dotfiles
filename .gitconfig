@@ -9,3 +9,4 @@
 	tool = vimdiff
 [core]
 	editor = vim
+	filemode = false
