@@ -16,9 +16,6 @@ fi
 #----- set shell prompt
 export PS1='\[\e[0;31m\][\t]\[\e[m\]\[\e[0;37m\]\u@\h\[\e[m\]\[\e[0;32m\][$HOSTTYPE][\w]\[\e[m\]\n> '
 
-#----- set path to system agnostic apps
-export PATH=$PATH:~/Dropbox/Apps/Universal/bin:~/Dropbox/Apps/Universal/ec2-api-tools-1.4.2.4/bin
-
 #----- set based on platform (Linux or OS X)
 if [[ $PLATFORM == 'Linux' ]]; then
   export PATH=$PATH:~/Dropbox/Apps/Linux/bin:~/Dropbox/Apps/Linux/android-sdk-linux_x86/tools:~/Dropbox/Apps/Linux/android-sdk-linux_x86/platform-tools:/usr/local/heroku/bin
@@ -40,8 +37,11 @@ elif [[ $PLATFORM == 'Darwin' ]]; then
 
   source /usr/local/share/python/virtualenvwrapper.sh
 elif [[ $OSTYPE == 'cygwin' ]]; then
-  export PATH=$PATH:~/Dropbox/Apps/Windows/android-sdk-windows/platform-tools:~/Dropbox/Apps/Windows/android-sdk-windows/tools
+  export PATH=/usr/local/bin:/usr/bin:~/bin/vim73/bin
 fi 
+
+#----- add system agnostic apps to path
+export PATH=$PATH:~/Dropbox/Apps/Universal/bin:~/Dropbox/Apps/Universal/ec2-api-tools-1.4.2.4/bin
 
 source ~/.bash_functions
 
