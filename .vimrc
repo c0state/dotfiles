@@ -27,10 +27,11 @@
 "----- Vundle Bundles
   Bundle 'altercation/vim-colors-solarized'
   Bundle 'bufexplorer.zip'
+  Bundle 'chriskempson/vim-tomorrow-theme'
   Bundle 'Colour-Sampler-Pack'
   Bundle 'gmarik/vundle'
   Bundle 'greyblake/vim-preview'
-  Bundle 'garbas/vim-snipmate'
+  "Bundle 'garbas/vim-snipmate'
   Bundle 'vim-scripts/ShowMarks'
   Bundle 'ghewgill/vim-scmdiff'
   Bundle 'kien/ctrlp.vim'
@@ -40,6 +41,8 @@
   Bundle 'MarcWeber/vim-addon-mw-utils'
   Bundle 'matrix.vim--Yang'
   Bundle 'mileszs/ack.vim'
+  Bundle 'SirVer/ultisnips'
+  Bundle 'sjl/gundo.vim'
   Bundle 'tomasr/molokai'
 
   "----- Python
@@ -55,7 +58,7 @@
   Bundle 'scrooloose/nerdcommenter'
 
   Bundle 'Shougo/neocomplcache'
-  Bundle 'snipmate-snippets'
+  "Bundle 'snipmate-snippets'
   Bundle 'tomtom/tlib_vim'
   Bundle 'tpope/vim-fugitive'
   Bundle 'tpope/vim-surround'
@@ -69,7 +72,8 @@
 
 "----- Color Theme
   "colorscheme vividchalk
-  colorscheme molokai
+  colorscheme Tomorrow-Night-Bright
+  "colorscheme molokai
   syntax enable
   syntax on
 "-----
