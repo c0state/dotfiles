@@ -43,6 +43,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
+# reload aliases as zsh may have mangled some customizations
+source ~/.bash_aliases
+
 fpath=(~/.zsh-completions/src $fpath)
 
 DISABLE_AUTO_TITLE=true
