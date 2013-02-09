@@ -10,10 +10,6 @@ function build_python_3.2 {
 	./configure --prefix=/home/stephen/Dropbox/Apps/Linux/Python-3.2/$MACHTYPE --with-pydebug --enable-shared && make && make install && echo "Return code was $?"
 }
 
-function build_vim_cygwin {
-    ./configure --prefix ~/bin/vim73 --enable-perlinterp=yes --enable-pythoninterp=yes --enable-rubyinterp --with-features=huge --enable-multibyte --with-x --with-vim-name=vim && make && make install && echo "Return code was $?"
-}
-
 function build_qpy_script_2.7 {
 	echo "Python 2.6 is hardcoded in the PyQ source files; change this if you're using another version!!!" && sleep 10
 	env PYTHONHOME=~/Dropbox/Apps/Linux/Python-2.7.1/$MACHTYPE LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/Dropbox/Apps/Linux/Python-2.7.1/$MACHTYPE/lib QHOME=~/Dropbox/Apps/Linux/q ~/Dropbox/Apps/Linux/Python-2.7.1/$MACHTYPE/bin/python setup.py install
@@ -95,3 +91,11 @@ function synapticenable {
 function synapticdisable {
 	xinput set-prop $(xinput list | grep -i synaptic | sed -r -e "s/.*?id=//g" | cut -f 1) "Device Enabled" 0
 }
+
+if [[ $OSTYPE == 'cygwin' ]]; then
+    function vim { vim.exe; }
+
+    function build_vim_cygwin {
+        ./configure --prefix ~/bin/vim73 --enable-perlinterp=yes --enable-pythoninterp=yes --enable-rubyinterp --with-features=huge --enable-multibyte --with-x --with-vim-name=vim && make && make install && echo "Return code was $?"
+    }
+fi
