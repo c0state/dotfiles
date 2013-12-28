@@ -19,7 +19,6 @@
 [diff]
 	tool = bc3
 [difftool "bc3"]
-	prompt = false
 	path = c:/program files (x86)/beyond compare 3/bcomp.exe
 [merge]
 	tool = bc3
