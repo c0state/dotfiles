@@ -18,9 +18,11 @@
 	graft = !legit graft \"$@\"
 [diff]
 	tool = bc3
+[difftool]
+    prompt = false
 [difftool "bc3"]
-	path = c:/program files (x86)/beyond compare 3/bcomp.exe
+	path = "c:/program files (x86)/beyond compare 3/bcomp.exe"
 [merge]
 	tool = bc3
 [mergetool "bc3"]
-	path = c:/program files (x86)/beyond compare 3/bcomp.exe
+	path = "c:/program files (x86)/beyond compare 3/bcomp.exe"

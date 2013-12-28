@@ -3,13 +3,10 @@
 	email = stephen.liu@alumni.stanford.edu
 [color]
 	ui = auto
-[difftool]
-	prompt = false
-[diff]
-	tool = vimdiff
 [core]
 	editor = vim
 	filemode = false
+	autocrlf = true
 [alias]
 	switch = !legit switch \"$@\"
 	branches = !legit branches
@@ -19,3 +16,9 @@
 	sync = !legit sync \"$@\"
 	publish = !legit publish \"$@\"
 	graft = !legit graft \"$@\"
+[diff]
+	tool = vimdiff
+[difftool]
+    prompt = false
+[merge]
+	tool = vimdiff
