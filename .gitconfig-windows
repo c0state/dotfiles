@@ -1,0 +1,27 @@
+[user]
+	name = c0state
+	email = stephen.liu@alumni.stanford.edu
+[color]
+	ui = auto
+[core]
+	editor = vim
+	filemode = false
+	autocrlf = true
+[alias]
+	switch = !legit switch \"$@\"
+	branches = !legit branches
+	sprout = !legit sprout \"$@\"
+	unpublish = !legit unpublish \"$@\"
+	harvest = !legit harvest \"$@\"
+	sync = !legit sync \"$@\"
+	publish = !legit publish \"$@\"
+	graft = !legit graft \"$@\"
+[diff]
+	tool = bc3
+[difftool "bc3"]
+	prompt = false
+	path = c:/program files (x86)/beyond compare 3/bcomp.exe
+[merge]
+	tool = bc3
+[mergetool "bc3"]
+	path = c:/program files (x86)/beyond compare 3/bcomp.exe
