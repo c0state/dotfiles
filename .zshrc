@@ -63,3 +63,8 @@ zstyle :compinstall filename '/home/stephen/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# remove permissions for group/other on oh-my-zsh directory to get rid of compaudit warning
+chmod -R go-rwx ~/.oh-my-zsh
