@@ -1,5 +1,5 @@
 [include]
-    file = .gitconfig
+	file = .gitconfig-base
 [diff]
 	tool = bc4
 [difftool]

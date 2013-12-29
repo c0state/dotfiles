@@ -1,24 +1,2 @@
-[user]
-	name = c0state
-	email = stephen.liu@alumni.stanford.edu
-[color]
-	ui = auto
-[core]
-	editor = vim
-	filemode = false
-	autocrlf = true
-[alias]
-	switch = !legit switch \"$@\"
-	branches = !legit branches
-	sprout = !legit sprout \"$@\"
-	unpublish = !legit unpublish \"$@\"
-	harvest = !legit harvest \"$@\"
-	sync = !legit sync \"$@\"
-	publish = !legit publish \"$@\"
-	graft = !legit graft \"$@\"
-[diff]
-	tool = vimdiff
-[difftool]
-    prompt = false
-[merge]
-	tool = vimdiff
+[include]
+	path = .gitconfig-base
