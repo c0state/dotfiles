@@ -24,7 +24,7 @@ if [[ $PLATFORM == 'Linux' ]]; then
 elif [[ $PLATFORM == 'Darwin' ]]; then
   # if macports is installed put it's bin dir first
   if [[ -e /opt/local/bin/port ]]; then
-    export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+    export PATH=/opt/local/bin:/opt/local/sbin:/opt/local/libexec/gnubin:$PATH
   fi
 
   # if homebrew is installed put it's bin dir first
