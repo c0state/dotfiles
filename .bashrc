@@ -37,7 +37,7 @@ elif [[ $PLATFORM == 'Darwin' ]]; then
 
   source /usr/local/share/python/virtualenvwrapper.sh
 elif [[ $OSTYPE == 'cygwin' ]]; then
-  export PATH=~/bin/vim73/bin:/usr/local/bin:/usr/bin
+  export PATH=/usr/local/bin:/usr/bin
 
   source /bin/virtualenvwrapper.sh
 fi 

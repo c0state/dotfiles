@@ -93,7 +93,7 @@ function synapticdisable {
 }
 
 if [[ $OSTYPE == 'cygwin' ]]; then
-    function vim { vim.exe "$*"; }
+    #function vim { vim.exe "$*"; }
 
     function build_vim_cygwin {
         ./configure --prefix ~/bin/vim73 --enable-perlinterp=yes --enable-pythoninterp=yes --enable-rubyinterp --with-features=huge --enable-multibyte --with-x --with-vim-name=vim && make && make install && echo "Return code was $?"
