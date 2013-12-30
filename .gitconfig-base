@@ -6,7 +6,6 @@
 [core]
 	editor = vim
 	filemode = false
-	autocrlf = true
 [alias]
 	switch = !legit switch \"$@\"
 	branches = !legit branches
