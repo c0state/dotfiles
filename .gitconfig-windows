@@ -2,8 +2,6 @@
 	path = .gitconfig-base
 [diff]
 	tool = bc3
-[difftool]
-    prompt = false
 [difftool "bc3"]
 	path = "c:/program files (x86)/beyond compare 3/bcomp.exe"
 [merge]
