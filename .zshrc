@@ -1,5 +1,30 @@
 source ~/.bashrc
 
+#---------- antigen 
+
+source ~/antigen/antigen.zsh
+
+# Load the oh-my-zsh's library.
+antigen use oh-my-zsh
+
+# Bundles from the default repo (robbyrussell's oh-my-zsh).
+#antigen bundle git
+#antigen bundle heroku
+#antigen bundle pip
+#antigen bundle lein
+#antigen bundle command-not-found
+
+# Syntax highlighting bundle.
+#antigen bundle zsh-users/zsh-syntax-highlighting
+
+# Load the theme.
+#antigen theme robbyrussell
+
+# Tell antigen that you're done.
+antigen apply
+
+#----------
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -65,6 +90,3 @@ compinit
 # End of lines added by compinstall
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
-# remove permissions for group/other on oh-my-zsh directory to get rid of compaudit warning
-chmod -R go-rwx ~/.oh-my-zsh
