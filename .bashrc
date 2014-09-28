@@ -25,6 +25,7 @@ elif [[ $PLATFORM == 'Darwin' ]]; then
   # if macports is installed put it's bin dir first
   if [[ -e /opt/local/bin/port ]]; then
     export PATH=/opt/local/bin:/opt/local/sbin:/opt/local/libexec/gnubin:$PATH
+    source /usr/local/share/python/virtualenvwrapper.sh
   fi
 
   # if homebrew is installed put it's bin dir first
@@ -35,7 +36,9 @@ elif [[ $PLATFORM == 'Darwin' ]]; then
 
   export PATH=$PATH:~/Dropbox/Apps/OSX/bin:~/Dropbox/Apps/OSX/android-sdk-mac_x86/platform-tools:~/Dropbox/Apps/OSX/android-sdk-mac_x86/tools:~/Dropbox/Apps/OSX/q/m32:~/Dropbox/Apps/OSX/android-fastboot
 
-  source /usr/local/share/python/virtualenvwrapper.sh
+  # load up pyenv hooks
+  eval "$(pyenv init -)"
+  pyenv virtualenvwrapper
 elif [[ $OSTYPE == 'cygwin' ]]; then
   export PATH=/usr/local/bin:/usr/bin
 
