@@ -47,7 +47,6 @@
 
   "----- Python
   Bundle 'klen/python-mode'
-  Bundle 'Lokaltog/vim-powerline'
   Bundle 'python.vim'
   Bundle 'python_match.vim'
   Bundle 'pythoncomplete'
