@@ -36,6 +36,12 @@ function findnewest {
     fi
     find . -type f -printf '%T+ %p\n' | sort -r | head $num_items_to_show ;
 }
+function fixinsecurecompaudit {
+	compaudit | xargs chgrp Users
+	compaudit | xargs chmod g-w
+	rm -f ~/.zcompdump*
+	compinit
+}
 function logcat { adb logcat -d -v time ; }
 function nookicsflash {
 	~/Dropbox/Apps/Linux/android-sdk-linux_x86/platform-tools/adb shell mount -o rw -t vfat /dev/block/mmcblk0p1 /boot && \
