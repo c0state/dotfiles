@@ -24,6 +24,7 @@
     sync = !legit sync \"$@\"
     publish = !legit publish \"$@\"
     graft = !legit graft \"$@\"
+    up = !git pull --rebase --prune $@ && git submodule update --init --recursive
 [difftool]
     prompt = false
 [mergetool]
