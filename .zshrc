@@ -8,34 +8,35 @@ source ~/bin/antigen.zsh
 antigen use oh-my-zsh
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
-#antigen bundle git
-#antigen bundle heroku
-#antigen bundle pip
+antigen bundle git
+antigen bundle heroku
+antigen bundle pip
 #antigen bundle lein
 #antigen bundle command-not-found
+antigen bundle ~/dotfiles/.oh-my-zsh-custom
 
 # Syntax highlighting bundle.
 #antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Load the theme.
-#antigen theme robbyrussell
+antigen theme c0state/dotfiles .oh-my-zsh-custom/c0state
 
 # Tell antigen that you're done.
 antigen apply
 
-#----------
+# ---------- Original oh-my-zsh configuration
 
 # Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+#ZSH=$HOME/.oh-my-zsh
 
 # set oh-my-zsh customization path
-ZSH_CUSTOM=~/dotfiles/.oh-my-zsh-custom
+#ZSH_CUSTOM=~/dotfiles/.oh-my-zsh-custom
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="c0state"
+#ZSH_THEME="c0state"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -62,11 +63,12 @@ ZSH_THEME="c0state"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+#plugins=(git)
 
-source $ZSH/oh-my-zsh.sh
+# antigen handles this now
+#source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
+# ---------- Customize to your needs...
 
 # reload aliases as zsh may have mangled some customizations
 source ~/.bash_aliases
