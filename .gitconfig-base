@@ -2,7 +2,9 @@
 	name = c0state
 	email = stephen.liu@alumni.stanford.edu
 [color]
-	ui = auto
+	ui = true
+[format]
+	pretty = oneline
 [core]
 	editor = vim
 	filemode = false
@@ -19,5 +21,3 @@
     prompt = false
 [mergetool]
     prompt = false
-[branch]
-	autosetuprebase = always
