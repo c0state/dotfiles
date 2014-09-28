@@ -1,22 +1,29 @@
 [user]
-	name = c0state
-	email = stephen.liu@alumni.stanford.edu
+    name = c0state
+    email = stephen.liu@alumni.stanford.edu
 [color]
-	ui = true
+    ui = true
 [format]
-	pretty = oneline
+    pretty = oneline
 [core]
-	editor = vim
-	filemode = false
+    editor = vim
+    filemode = false
 [alias]
-	switch = !legit switch \"$@\"
-	branches = !legit branches
-	sprout = !legit sprout \"$@\"
-	unpublish = !legit unpublish \"$@\"
-	harvest = !legit harvest \"$@\"
-	sync = !legit sync \"$@\"
-	publish = !legit publish \"$@\"
-	graft = !legit graft \"$@\"
+    co = checkout
+    ci = commit
+    st = status
+    br = branch
+    hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+    type = cat-file -t
+    dump = cat-file -p
+    switch = !legit switch \"$@\"
+    branches = !legit branches
+    sprout = !legit sprout \"$@\"
+    unpublish = !legit unpublish \"$@\"
+    harvest = !legit harvest \"$@\"
+    sync = !legit sync \"$@\"
+    publish = !legit publish \"$@\"
+    graft = !legit graft \"$@\"
 [difftool]
     prompt = false
 [mergetool]
