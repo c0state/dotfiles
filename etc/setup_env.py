@@ -4,16 +4,23 @@ import os
 import getpass
 from optparse import OptionParser
 
+
 def parse_options():
-    global options, args
-
     parser = OptionParser()
-    parser.add_option("-u", "--github_username", default = getpass.getuser())
+    parser.add_option("-u", "--github_username", default=getpass.getuser())
 
-    (options, args) = parser.parse_args()
+    return parser.parse_args()
+
+
+def run_command(command, error_message):
+    if not os.path.exists(os.path.expanduser('~/.oh-my-zsh')):
+        os.system(command)
+    else:
+        print(error_message)
+
 
 if __name__ == '__main__':
-    parse_options()
+    (options, args) = parse_options()
 
     if not os.path.exists(os.path.expanduser('~/.oh-my-zsh')):
         os.system('git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh')
@@ -21,7 +28,7 @@ if __name__ == '__main__':
         print('oh-my-zsh already installed')
 
     if not os.path.exists(os.path.expanduser('~/.tmuxinator')):
-        os.system('git clone git@github.com:%(user)s/tmuxinator.git ~/.tmuxinator' % { 'user' : options.github_username } )
+        os.system('git clone git@github.com:%(user)s/tmuxinator.git ~/.tmuxinator' % {'user': options.github_username})
     else:
         print('tmuxinator already installed')
 
@@ -39,4 +46,3 @@ if __name__ == '__main__':
         os.system('curl -L https://raw.githubusercontent.com/zsh-users/antigen/master/antigen.zsh > ~/bin/antigen.zsh')
     else:
         print('antigen already installed')
-
