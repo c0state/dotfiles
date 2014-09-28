@@ -1,12 +1,12 @@
 [include]
-	path = .gitconfig-base
+    path = .gitconfig-base
 [diff]
-	tool = bc3
-[difftool "bc3"]
-	path = "c:/program files (x86)/beyond compare 3/bcomp.exe"
-    cmd = \"c:/program files (x86)/beyond compare 3/bcomp.exe\" "$(cygpath -w $LOCAL)" "$REMOTE"
+    tool = bc4
+[difftool "bc4"]
+    path = "c:/program files (x86)/beyond compare 4/bcomp.exe"
+    cmd = \"c:/program files (x86)/beyond compare 4/bcomp.exe\" "$(cygpath -w $LOCAL)" "$REMOTE"
 [merge]
-	tool = bc3
-[mergetool "bc3"]
-	path = "c:/program files (x86)/beyond compare 3/bcomp.exe"
-    cmd = \"c:/program files (x86)/beyond compare 3/bcomp.exe\" "$LOCAL" "$REMOTE" "$BASE" "$MERGED"
+    tool = bc4
+[mergetool "bc4"]
+    path = "c:/program files (x86)/beyond compare 4/bcomp.exe"
+    cmd = \"c:/program files (x86)/beyond compare 4/bcomp.exe\" "$LOCAL" "$REMOTE" "$BASE" "$MERGED"
