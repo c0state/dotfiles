@@ -44,6 +44,12 @@
   Bundle 'SirVer/ultisnips'
   Bundle 'sjl/gundo.vim'
   Bundle 'tomasr/molokai'
+  if has("unix")
+    let s:uname = system("uname")
+    if s:uname !~ "CYGWIN.*"
+      Bundle 'Valloric/YouCompleteMe'
+    endif
+  endif
 
   "----- Python
   Bundle 'klen/python-mode'
