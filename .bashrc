@@ -20,7 +20,7 @@ export PS1='\[\e[0;31m\][\D{%Y-%m-%d} \t]\[\e[m\]\[\e[0;37m\]\u@\h\[\e[m\]\[\e[0
 if [[ $PLATFORM == 'Linux' ]]; then
   export PATH=$PATH:~/Dropbox/Apps/Linux/bin:~/Dropbox/Apps/Linux/android-sdk-linux_x86/tools:~/Dropbox/Apps/Linux/android-sdk-linux_x86/platform-tools:/usr/local/heroku/bin
 
-  . /etc/bash_completion.d/virtualenvwrapper
+  . /usr/local/bin/virtualenvwrapper.sh
 elif [[ $PLATFORM == 'Darwin' ]]; then
   # if macports is installed put it's bin dir first
   if [[ -e /opt/local/bin/port ]]; then
