@@ -20,7 +20,7 @@ export PS1='\[\e[0;31m\][\D{%Y-%m-%d} \t]\[\e[m\]\[\e[0;37m\]\u@\h\[\e[m\]\[\e[0
 if [[ $PLATFORM == 'Linux' ]]; then
   export PATH=$PATH:~/Dropbox/Apps/Linux/bin:~/Dropbox/Apps/Linux/android-sdk-linux_x86/tools:~/Dropbox/Apps/Linux/android-sdk-linux_x86/platform-tools:/usr/local/heroku/bin
 
-  . /usr/local/bin/virtualenvwrapper.sh
+  . /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 elif [[ $PLATFORM == 'Darwin' ]]; then
   # if macports is installed put it's bin dir first
   if [[ -e /opt/local/bin/port ]]; then
@@ -44,6 +44,12 @@ elif [[ $OSTYPE == 'cygwin' ]]; then
 
   source /bin/virtualenvwrapper.sh
 fi 
+
+#----- pyenv
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
 
 #----- add system agnostic apps to path
 export PATH=$PATH:~/Dropbox/Apps/Universal/bin:~/Dropbox/Apps/Universal/ec2-api-tools-1.4.2.4/bin
@@ -71,3 +77,5 @@ if [[ -d ~/Dropbox ]]; then
     pip freeze > ~/Dropbox/Config/Linux/etc/pip_list.`hostname`-`uname`.log
   fi
 fi
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
