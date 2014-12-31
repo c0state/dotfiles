@@ -28,6 +28,10 @@ function build_qpy_script_3.2 {
 	(cd ~/Dropbox/Apps/Linux/Python-3.2/i686-pc-linux-gnu/lib/python3.2/site-packages && ln -f -s _k.cpython-32dm.so _k.so)
 }
 
+function build_nsenter {
+	./configure --prefix=/home/stephen/bin && make nsenter && make install
+}
+
 function dlrepo { curl http://android.git.kernel.org/repo > ./repo ; }
 function firefox { /home/stephen/Dropbox/Apps/Linux/firefox/firefox ; }
 function findnewest {
