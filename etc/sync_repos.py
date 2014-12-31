@@ -6,7 +6,7 @@ import os
 import getpass
 from optparse import OptionParser
 
-repos = ('~/.oh-my-zsh', '~/.vim/bundle/vundle')
+repos = ('~/.oh-my-zsh', '~/.vim/bundle/vundle', '~/.z')
 
 if __name__ == '__main__':
     for repo in repos:
