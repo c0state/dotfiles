@@ -73,6 +73,9 @@ antigen apply
 # reload aliases as zsh may have mangled some customizations
 source ~/.bash_aliases
 
+# http://github.com/rupa/z
+source ~/.z/z.sh
+
 fpath=(~/.zsh-completions/src $fpath)
 
 DISABLE_AUTO_TITLE=true
