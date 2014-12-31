@@ -35,10 +35,6 @@ elif [[ $PLATFORM == 'Darwin' ]]; then
   fi
 
   export PATH=$PATH:~/Dropbox/Apps/OSX/bin:~/Dropbox/Apps/OSX/android-sdk-mac_x86/platform-tools:~/Dropbox/Apps/OSX/android-sdk-mac_x86/tools:~/Dropbox/Apps/OSX/q/m32:~/Dropbox/Apps/OSX/android-fastboot
-
-  # load up pyenv hooks
-  eval "$(pyenv init -)"
-  pyenv virtualenvwrapper
 elif [[ $OSTYPE == 'cygwin' ]]; then
   export PATH=/usr/local/bin:/usr/bin
 
@@ -50,6 +46,10 @@ export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
+pyenv virtualenvwrapper
+
+#----- load aspnet k version manager (kvm)
+[ -s "/home/stephen/.kre/kvm/kvm.sh" ] && . "/home/stephen/.kre/kvm/kvm.sh" # Load kvm
 
 #----- add system agnostic apps to path
 export PATH=$PATH:~/Dropbox/Apps/Universal/bin:~/Dropbox/Apps/Universal/ec2-api-tools-1.4.2.4/bin
