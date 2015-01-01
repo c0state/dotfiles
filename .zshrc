@@ -74,7 +74,7 @@ antigen apply
 source ~/.bash_aliases
 
 # http://github.com/rupa/z
-source ~/.z/z.sh
+source ~/.z.git/z.sh
 
 fpath=(~/.zsh-completions/src $fpath)
 
