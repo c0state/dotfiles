@@ -15,7 +15,7 @@
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [merge]
-	tool = p4merge
+	tool = bc4
 [mergetool]
 	prompt = false
 [mergetool "bc4"]
