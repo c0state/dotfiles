@@ -41,15 +41,19 @@ elif [[ $OSTYPE == 'cygwin' ]]; then
   source /bin/virtualenvwrapper.sh
 fi 
 
+#----- php version manager
+export PHP_VERSIONS="${HOME}/.php-version/versions"
+source ~/.php-version/php-version.sh && php-version 5
+
 #----- pyenv
 export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
-pyenv virtualenvwrapper
+#pyenv virtualenvwrapper
 
 #----- load aspnet k version manager (kvm)
-[ -s "/home/stephen/.kre/kvm/kvm.sh" ] && . "/home/stephen/.kre/kvm/kvm.sh" # Load kvm
+[ -s "${HOME}/.kre/kvm/kvm.sh" ] && . "${HOME}/.kre/kvm/kvm.sh" # Load kvm
 
 #----- add system agnostic apps to path
 export PATH=$PATH:~/Dropbox/Apps/Universal/bin:~/Dropbox/Apps/Universal/ec2-api-tools-1.4.2.4/bin
