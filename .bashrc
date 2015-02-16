@@ -34,6 +34,11 @@ elif [[ $PLATFORM == 'Darwin' ]]; then
     brew list > ~/Dropbox/Config/Linux/etc/brew_list.`hostname`-`uname`.log
   fi
 
+  # if heroku toolbelt is installed
+  if [[ -e /usr/local/heroku/bin ]]; then
+    export PATH=/usr/local/heroku/bin:$PATH
+  fi
+
   export PATH=$PATH:~/Dropbox/Apps/OSX/bin:~/Dropbox/Apps/OSX/android-sdk-mac_x86/platform-tools:~/Dropbox/Apps/OSX/android-sdk-mac_x86/tools:~/Dropbox/Apps/OSX/q/m32:~/Dropbox/Apps/OSX/android-fastboot
 elif [[ $OSTYPE == 'cygwin' ]]; then
   export PATH=/usr/local/bin:/usr/bin
@@ -42,15 +47,19 @@ elif [[ $OSTYPE == 'cygwin' ]]; then
 fi 
 
 #----- php version manager
-export PHP_VERSIONS="${HOME}/.php-version/versions"
-source ~/.php-version/php-version.sh && php-version 5
+if [[ -e "${HOME}/.php-version" ]] ; then
+  export PHP_VERSIONS="${HOME}/.php-version/versions"
+  source ~/.php-version/php-version.sh && php-version 5
+fi
 
 #----- pyenv
-export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
-#pyenv virtualenvwrapper
+if [[ -e "$HOME/.pyenv" ]] ; then
+  export PATH="$HOME/.pyenv/bin:$PATH"
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
+  export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
+  #pyenv virtualenvwrapper
+fi
 
 #----- load aspnet k version manager (kvm)
 [ -s "${HOME}/.kre/kvm/kvm.sh" ] && . "${HOME}/.kre/kvm/kvm.sh" # Load kvm
