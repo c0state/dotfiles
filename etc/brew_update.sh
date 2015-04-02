@@ -8,6 +8,11 @@ brew update && brew upgrade
 # install cask - https://github.com/caskroom/homebrew-cask
 brew install caskroom/cask/brew-cask
 
+# install apps via brew cask
+brew cask install atom
+brew cask install vagrant
+brew cask install virtualbox
+
 # install cask managed binaries
 brew install homebrew/binary/packer
 
