@@ -10,6 +10,7 @@ brew install caskroom/cask/brew-cask
 
 # install apps via brew cask
 brew cask install atom
+brew cask install sourcetree
 brew cask install vagrant
 brew cask install virtualbox
 
