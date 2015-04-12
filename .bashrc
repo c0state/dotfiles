@@ -41,7 +41,7 @@ elif [[ $PLATFORM == 'Darwin' ]]; then
 
   export PATH=$PATH:~/Dropbox/Apps/OSX/bin:~/Dropbox/Apps/OSX/android-sdk-mac_x86/platform-tools:~/Dropbox/Apps/OSX/android-sdk-mac_x86/tools:~/Dropbox/Apps/OSX/q/m32:~/Dropbox/Apps/OSX/android-fastboot
 elif [[ $OSTYPE == 'cygwin' ]]; then
-  export PATH=/usr/local/bin:/usr/bin
+  export PATH=/usr/local/bin:/usr/bin:$PATH
 
   source /bin/virtualenvwrapper.sh
 fi 
