@@ -31,7 +31,6 @@ elif [[ $PLATFORM == 'Darwin' ]]; then
   # if homebrew is installed put it's bin dir first
   if [[ -e /usr/local/bin/brew ]]; then
     export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/share/python:$PATH
-    brew list > ~/Dropbox/Config/Linux/etc/brew_list.`hostname`-`uname`.log
   fi
 
   # if heroku toolbelt is installed
@@ -84,10 +83,8 @@ if [[ -d ~/Dropbox ]]; then
   mkdir -p ~/Dropbox/Config/Linux/etc
 
   if [[ `which gem` != *"not found" ]]; then
-    gem list > ~/Dropbox/Config/Linux/etc/gem_list.`hostname`-`uname`.log
   fi
   if [[ `which pip` != *"not found" ]]; then
-    pip freeze > ~/Dropbox/Config/Linux/etc/pip_list.`hostname`-`uname`.log
   fi
 fi
 
