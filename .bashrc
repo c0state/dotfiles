@@ -78,14 +78,5 @@ export EC2_CERT=~/Dropbox/AmazonAWS/X509Cert
 
 source ~/.bash_aliases
 
-# save a list of ruby gems and python packages installed on this machine
-if [[ -d ~/Dropbox ]]; then
-  mkdir -p ~/Dropbox/Config/Linux/etc
-
-  if [[ `which gem` != *"not found" ]]; then
-  fi
-  if [[ `which pip` != *"not found" ]]; then
-  fi
-fi
-
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
