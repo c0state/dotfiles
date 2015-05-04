@@ -13,7 +13,7 @@ antigen bundle heroku
 antigen bundle pip
 #antigen bundle lein
 #antigen bundle command-not-found
-antigen bundle ~/dotfiles/.oh-my-zsh-custom
+antigen bundle ~/.dotfiles/.oh-my-zsh-custom
 
 # Syntax highlighting bundle.
 #antigen bundle zsh-users/zsh-syntax-highlighting
@@ -30,7 +30,7 @@ antigen apply
 #ZSH=$HOME/.oh-my-zsh
 
 # set oh-my-zsh customization path
-#ZSH_CUSTOM=~/dotfiles/.oh-my-zsh-custom
+#ZSH_CUSTOM=~/.dotfiles/.oh-my-zsh-custom
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
