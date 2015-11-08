@@ -12,7 +12,7 @@
 [difftool "p4merge"]
 	cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge \"$LOCAL\" \"$REMOTE\"
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	cmd = /usr/local/bin/bcomp -ro $LOCAL $REMOTE
 	path = 
 [merge]
 	tool = bc4
@@ -27,5 +27,5 @@
 [mergetool "p4merge"]
 	cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge \"$BASE\" \"$REMOTE\" \"$LOCAL\" \"$MERGED\"
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = /usr/local/bin/bcomp $LOCAL $REMOTE $BASE $MERGED
 	trustExitCode = true

@@ -9,6 +9,7 @@
     pretty = oneline
 [core]
     editor = vim
+	excludesfile = ~/.gitignore_global
     filemode = false
 [alias]
     co = checkout
