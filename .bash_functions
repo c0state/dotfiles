@@ -2,14 +2,6 @@ function bash_colors {
 	for i in {0..255} ; do printf "\x1b[38;5;${i}mcolour${i}\n" ; done
 }
 
-function build_python_2.7.1 {
-	./configure --prefix=/home/stephen/Dropbox/Apps/Linux/Python-2.7.1/$MACHTYPE --with-pydebug --enable-shared && make && make install && echo "Return code was $?"
-}
-
-function build_python_3.2 {
-	./configure --prefix=/home/stephen/Dropbox/Apps/Linux/Python-3.2/$MACHTYPE --with-pydebug --enable-shared && make && make install && echo "Return code was $?"
-}
-
 function build_qpy_script_2.7 {
 	echo "Python 2.6 is hardcoded in the PyQ source files; change this if you're using another version!!!" && sleep 10
 	env PYTHONHOME=~/Dropbox/Apps/Linux/Python-2.7.1/$MACHTYPE LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/Dropbox/Apps/Linux/Python-2.7.1/$MACHTYPE/lib QHOME=~/Dropbox/Apps/Linux/q ~/Dropbox/Apps/Linux/Python-2.7.1/$MACHTYPE/bin/python setup.py install
@@ -29,11 +21,10 @@ function build_qpy_script_3.2 {
 }
 
 function build_nsenter {
-	./configure --prefix=/home/stephen/bin && make nsenter && make install
+	./configure --prefix=~/bin && make nsenter && make install
 }
 
 function dlrepo { curl http://android.git.kernel.org/repo > ./repo ; }
-function firefox { /home/stephen/Dropbox/Apps/Linux/firefox/firefox ; }
 function findnewest {
     if [[ $1 != "" ]]; then
       num_items_to_show="-n $1"
