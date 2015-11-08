@@ -1,5 +1,5 @@
-curl https://bitbucket.org/pypa/setuptools/raw/bootstrap/ez_setup.py | python
-easy_install pip
-pip install --upgrade virtualenvwrapper
+# this is a list of pypi packages to install into system python for general use
 pip install --upgrade cdiff
+pip install --upgrade jupyter
 pip install --upgrade pythonpy
+pip install --upgrade virtualenvwrapper
