@@ -11,7 +11,7 @@ brew install caskroom/cask/brew-cask
 # install apps via brew cask
 brew cask install 1password
 brew cask install atom
-brew cask install beyondcompare
+brew cask install beyond-compare
 brew cask install google-drive
 brew cask install intellij-idea
 brew cask install lastpass
