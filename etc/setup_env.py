@@ -36,3 +36,5 @@ if __name__ == '__main__':
         os.system('git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle')
     else:
         print('vundle already installed')
+
+    os.system('''(cd ~/.vim/bundle/YouCompleteMe && ./install.py --clang-completer --omnisharp-completer --gocode-completer)''')
