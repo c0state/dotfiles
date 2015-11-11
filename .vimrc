@@ -1,4 +1,5 @@
 "----- General
+  set autoread
   set nocompatible
   set visualbell
   set hlsearch
@@ -31,8 +32,13 @@
   Bundle 'Colour-Sampler-Pack'
   Bundle 'gmarik/vundle'
   Bundle 'greyblake/vim-preview'
-  "Bundle 'garbas/vim-snipmate'
-  Bundle 'vim-scripts/ShowMarks'
+
+  Bundle 'garbas/vim-snipmate'
+  Bundle 'honza/vim-snippets'
+
+  Bundle 'vim-scripts/vim-auto-save'
+  let g:auto_save=1
+
   Bundle 'ghewgill/vim-scmdiff'
   Bundle 'kien/ctrlp.vim'
   Bundle 'Lokaltog/vim-powerline'
@@ -63,7 +69,6 @@
   Bundle 'scrooloose/nerdcommenter'
 
   Bundle 'Shougo/neocomplcache'
-  "Bundle 'snipmate-snippets'
   Bundle 'tomtom/tlib_vim'
   Bundle 'tpope/vim-fugitive'
   Bundle 'tpope/vim-surround'
