@@ -26,8 +26,10 @@ brew cask install webstorm
 brew install ack
 brew install ag
 brew install bash
+brew install cmake
 brew install --default-names findutils
 brew install git
+brew install go
 brew install htop
 brew install mono
 brew install node
@@ -37,6 +39,7 @@ brew install pyenv pyenv-virtualenv pyenv-virtualenvwrapper
 brew install python python3
 brew install tmux
 brew install tree
+brew install vim --override-system-vi
 brew install wget
 
 echo "Finished installing brew packages successfully."
