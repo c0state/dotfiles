@@ -25,6 +25,7 @@ brew cask install webstorm
 
 brew install ack
 brew install ag
+brew install antigen
 brew install bash
 brew install cmake
 brew install --default-names findutils
@@ -41,5 +42,6 @@ brew install tmux
 brew install tree
 brew install vim --override-system-vi
 brew install wget
+brew install zsh-completions
 
 echo "Finished installing brew packages successfully."

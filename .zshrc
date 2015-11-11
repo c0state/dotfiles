@@ -2,7 +2,7 @@ source ~/.bashrc
 
 #---------- antigen 
 
-source ~/bin/antigen.zsh
+source /usr/local/Cellar/antigen/1/share/antigen.zsh
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
@@ -95,3 +95,6 @@ compinit
 # End of lines added by compinstall
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# for zsh-completions (installed via homebrew)
+fpath=(/usr/local/share/zsh-completions $fpath)
