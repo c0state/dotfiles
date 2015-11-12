@@ -38,3 +38,5 @@ if __name__ == '__main__':
         print('vundle already installed')
 
     os.system('''(cd ~/.vim/bundle/YouCompleteMe && ./install.py --clang-completer --omnisharp-completer --gocode-completer)''')
+
+    os.system('vim +PluginInstall +PluginUpdate + PluginClean +qall')

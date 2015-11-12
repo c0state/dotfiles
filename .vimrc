@@ -21,79 +21,83 @@
 "----- Vundle
   filetype off
   
-  set rtp+=~/.vim/bundle/vundle/
-  call vundle#rc()
+  set rtp+=~/.vim/bundle/Vundle.vim
+  call vundle#begin()
+  Plugin 'VundleVim/Vundle.vim'
 "-----
 
 "----- Vundle Bundles
-  Bundle 'altercation/vim-colors-solarized'
-  Bundle 'bufexplorer.zip'
-  Bundle 'chriskempson/vim-tomorrow-theme'
-  Bundle 'Colour-Sampler-Pack'
-  Bundle 'gmarik/vundle'
-  Bundle 'greyblake/vim-preview'
+  Plugin 'editorconfig/editorconfig-vim'
 
-  Bundle 'garbas/vim-snipmate'
-  Bundle 'honza/vim-snippets'
-
-  Bundle 'vim-scripts/vim-auto-save'
+  Plugin 'vim-scripts/vim-auto-save'
   let g:auto_save=1
 
-  Bundle 'ghewgill/vim-scmdiff'
-  Bundle 'kien/ctrlp.vim'
-  Bundle 'Lokaltog/vim-powerline'
-  Bundle 'Lokaltog/vim-easymotion'
-  Bundle 'majutsushi/tagbar'
-  Bundle 'MarcWeber/vim-addon-mw-utils'
-  Bundle 'matrix.vim--Yang'
-  Bundle 'mileszs/ack.vim'
-  Bundle 'SirVer/ultisnips'
-  Bundle 'sjl/gundo.vim'
-  Bundle 'tomasr/molokai'
+  Plugin 'ghewgill/vim-scmdiff'
+  Plugin 'kien/ctrlp.vim'
+  Plugin 'Lokaltog/vim-powerline'
+  Plugin 'Lokaltog/vim-easymotion'
+  Plugin 'majutsushi/tagbar'
+  Plugin 'mileszs/ack.vim'
+  Plugin 'SirVer/ultisnips'
+  Plugin 'sjl/gundo.vim'
+  Plugin 'tomasr/molokai'
   if has("unix")
     let s:uname = system("uname")
     if s:uname !~ "CYGWIN.*"
-      Bundle 'Valloric/YouCompleteMe'
+      Plugin 'Valloric/YouCompleteMe'
     endif
   endif
 
-  "----- Python
-  Bundle 'klen/python-mode'
-  Bundle 'python.vim'
-  Bundle 'python_match.vim'
-  Bundle 'pythoncomplete'
-  "-----
+  Plugin 'tpope/vim-fugitive'
+  Plugin 'tpope/vim-surround'
+  Plugin 'vim-scripts/sessionman.vim'
+  Plugin 'vim-scripts/ZoomWin'
 
-  Bundle 'scrooloose/nerdtree'
-  Bundle 'scrooloose/syntastic'
-  Bundle 'scrooloose/nerdcommenter'
-
-  Bundle 'Shougo/neocomplcache'
-  Bundle 'tomtom/tlib_vim'
-  Bundle 'tpope/vim-fugitive'
-  Bundle 'tpope/vim-surround'
-  Bundle 'vim-scripts/sessionman.vim'
-  Bundle 'vim-scripts/ZoomWin'
-
-  Bundle 'wincent/Command-T'
+  Plugin 'wincent/Command-T'
   let g:CommandTMaxFiles=30000
   let g:CommandTMaxCachedDirectories=10
 "-----
 
-"----- Color Theme
-  "colorscheme vividchalk
-  colorscheme Tomorrow-Night-Bright
-  "colorscheme molokai
-  syntax enable
-  syntax on
+"----- Load neocomplete
+  Plugin 'Shougo/neocomplete'
+  let g:neocomplete#enable_at_startup = 1
+"-----
+
+"----- Syntax checkers
+  Plugin 'klen/python-mode'
+"-----
+
+"----- Snippets
+  Plugin 'MarcWeber/vim-addon-mw-utils'
+  Plugin 'tomtom/tlib_vim'
+  Plugin 'garbas/vim-snipmate'
+  Plugin 'honza/vim-snippets'
+"-----
+
+"----- Color schemes
+  Plugin 'flazz/vim-colorschemes'
 "-----
 
 "----- NERDTree
+  Plugin 'scrooloose/nerdtree'
+  Plugin 'scrooloose/nerdcommenter'
+
   " open NERDTree if no files were opened
-  autocmd vimenter * if !argc() | NERDTree | endif
+  autocmd vimenter * NERDTree
 
   " close vim if NERDTree is the only window open
   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+"-----
+
+"----- Vundle config end
+  call vundle#end()
+  filetype plugin indent on
+"-----
+
+"----- Activate color scheme and highlighting options
+  syntax enable
+  syntax on
+  colorscheme Tomorrow-Night-Bright
 "-----
 
 "----- Custom Key Mappings
@@ -154,10 +158,6 @@
 
   " shorcut for shift-:
   nnoremap ; :
-"-----
-
-"----- Load neocomplcache
-  let g:neocomplcache_enable_at_startup = 1
 "-----
 
 if has("unix")

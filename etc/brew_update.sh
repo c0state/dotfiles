@@ -40,7 +40,7 @@ brew install pyenv pyenv-virtualenv pyenv-virtualenvwrapper
 brew install python python3
 brew install tmux
 brew install tree
-brew install vim --override-system-vi
+brew install vim --override-system-vi --with-lua
 brew install wget
 brew install zsh-completions
 
