@@ -29,6 +29,8 @@
 
 "----- Vundle Bundles
   Plugin 'editorconfig/editorconfig-vim'
+  Plugin 'greyblake/vim-preview'
+  Plugin 'jlanzarotta/bufexplorer'
 
   Plugin 'vim-scripts/vim-auto-save'
   let g:auto_save = 1  " enable AutoSave on Vim startup
@@ -68,6 +70,18 @@
 
 "----- Syntax checkers
   Plugin 'klen/python-mode'
+  let g:pymode_lint = 0
+
+  "----- Scrooloose
+  Plugin 'scrooloose/syntastic'
+  set statusline+=%#warningmsg#
+  set statusline+=%{SyntasticStatuslineFlag()}
+  set statusline+=%*
+  let g:syntastic_always_populate_loc_list = 1
+  let g:syntastic_auto_loc_list = 1
+  let g:syntastic_check_on_open = 1
+  let g:syntastic_check_on_wq = 0
+  "-----
 "-----
 
 "----- Snippets
@@ -85,9 +99,10 @@
   Plugin 'scrooloose/nerdtree'
   Plugin 'scrooloose/nerdcommenter'
 
-  " open NERDTree if no files were opened
+  " open NERDTree at startup
   autocmd vimenter * NERDTree
-
+  " switch focus back to open file or buffer, not NERDTree
+  autocmd vimenter * wincmd p
   " close vim if NERDTree is the only window open
   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 "-----
