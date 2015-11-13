@@ -8,6 +8,7 @@
   set expandtab
   set showcmd
   set nobackup
+  set noswapfile
   set number
   set wrap
   let mapleader=","
@@ -30,7 +31,9 @@
   Plugin 'editorconfig/editorconfig-vim'
 
   Plugin 'vim-scripts/vim-auto-save'
-  let g:auto_save=1
+  let g:auto_save = 1  " enable AutoSave on Vim startup
+  let g:auto_save_no_updatetime = 1  " do not change the 'updatetime' option
+  let g:auto_save_in_insert_mode = 0  " do not save while in insert mode
 
   Plugin 'ghewgill/vim-scmdiff'
   Plugin 'kien/ctrlp.vim'
