@@ -15,7 +15,6 @@ brew cask install beyond-compare
 brew cask install google-drive
 brew cask install intellij-idea
 brew cask install lastpass
-brew cask install macvim
 brew cask install pycharm
 brew cask install sourcetree
 brew cask install vagrant
@@ -32,6 +31,7 @@ brew install --default-names findutils
 brew install git
 brew install go
 brew install htop
+brew install macvim --with-lua
 brew install mono
 brew install node
 brew install npm
