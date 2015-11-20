@@ -13,6 +13,7 @@ brew cask install 1password
 brew cask install adobe-reader
 brew cask install atom
 brew cask install beyond-compare
+brew cask install flux
 brew cask install google-drive
 brew cask install intellij-idea
 brew cask install lastpass
