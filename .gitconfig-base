@@ -11,13 +11,14 @@
 [alias]
     br = !git branch -vv
     branches = !legit branches
-    co = checkout
     ci = commit
+    co = checkout
     dump = cat-file -p
     graft = !legit graft \"$@\"
     harvest = !legit harvest \"$@\"
     hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
     publish = !legit publish \"$@\"
+    pullr = "!git fetch ; git rebase --autostash FETCH_HEAD"
     sprout = !legit sprout \"$@\"
     st = status
     switch = !legit switch \"$@\"
