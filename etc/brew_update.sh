@@ -10,6 +10,7 @@ brew install caskroom/cask/brew-cask
 
 # install apps via brew cask
 brew cask install 1password
+brew cask install adobe-reader
 brew cask install atom
 brew cask install beyond-compare
 brew cask install google-drive
@@ -26,9 +27,10 @@ brew install ack
 brew install ag
 brew install antigen
 brew install bash
+brew install chromedriver
 brew install cmake
 brew install --default-names findutils
-brew install git
+brew install git legit
 brew install go
 brew install htop
 brew install macvim --with-lua

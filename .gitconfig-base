@@ -9,21 +9,21 @@
 	excludesfile = ~/.gitignore_global
     filemode = false
 [alias]
+    br = !git branch -vv
+    branches = !legit branches
     co = checkout
     ci = commit
-    st = status
-    br = branch
-    hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
-    type = cat-file -t
     dump = cat-file -p
-    switch = !legit switch \"$@\"
-    branches = !legit branches
-    sprout = !legit sprout \"$@\"
-    unpublish = !legit unpublish \"$@\"
-    harvest = !legit harvest \"$@\"
-    sync = !legit sync \"$@\"
-    publish = !legit publish \"$@\"
     graft = !legit graft \"$@\"
+    harvest = !legit harvest \"$@\"
+    hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+    publish = !legit publish \"$@\"
+    sprout = !legit sprout \"$@\"
+    st = status
+    switch = !legit switch \"$@\"
+    sync = !legit sync \"$@\"
+    type = cat-file -t
+    unpublish = !legit unpublish \"$@\"
     up = !git pull --rebase --prune $@ && git submodule update --init --recursive
 [difftool]
     prompt = false
