@@ -170,10 +170,10 @@
   map <C-h> <C-w><Left>
 
   " ctrl-arrow keys for window resizing
-  nnoremap <C-Right> :vertical resize +1<CR>
-  nnoremap <C-Left>  :vertical resize -1<CR>
-  nnoremap <C-Up>    :resize -1<CR>
-  nnoremap <C-Down>  :resize +1<CR>
+  nnoremap <C-Right> :vertical resize -1<CR>
+  nnoremap <C-Left>  :vertical resize +1<CR>
+  nnoremap <C-Up>    :resize +1<CR>
+  nnoremap <C-Down>  :resize -1<CR>
 
   " shorcut for shift-:
   nnoremap ; :
