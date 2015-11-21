@@ -105,7 +105,7 @@
   " switch focus back to open file or buffer, not NERDTree
   autocmd vimenter * wincmd p
   " close vim if NERDTree is the only window open
-  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 "-----
 
 "----- Vundle config end
