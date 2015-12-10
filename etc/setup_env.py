@@ -32,8 +32,8 @@ if __name__ == '__main__':
     else:
         print('tmuxinator already installed')
 
-    if not os.path.exists(os.path.expanduser('~/.vim/bundle/vundle')):
-        os.system('git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle')
+    if not os.path.exists(os.path.expanduser('~/.vim/bundle/vundle.vim')):
+        os.system('git clone https://github.com/vundlevim/vundle.vim ~/.vim/bundle/vundle.vim')
     else:
         print('vundle already installed')
 
