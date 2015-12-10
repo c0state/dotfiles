@@ -1,3 +1,4 @@
 *~
 *.swp
 .gitconfig-custom
+*.ropeproject
