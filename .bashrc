@@ -38,7 +38,12 @@ elif [[ $PLATFORM == 'Darwin' ]]; then
     export PATH=/usr/local/heroku/bin:$PATH
   fi
 
-  export PATH=$PATH:~/Dropbox/Apps/OSX/bin:~/Dropbox/Apps/OSX/android-sdk-mac_x86/platform-tools:~/Dropbox/Apps/OSX/android-sdk-mac_x86/tools:~/Dropbox/Apps/OSX/q/m32:~/Dropbox/Apps/OSX/android-fastboot
+  if [ -n "$BASH_VERSION" ]; then
+    if [ -f $(brew --prefix)/share/bash-completion/bash_completion ]; then
+      source $(brew --prefix)/share/bash-completion/bash_completion
+    fi
+  fi
+
 elif [[ $OSTYPE == 'cygwin' ]]; then
   export PATH=/usr/local/bin:/usr/bin:$PATH
 
