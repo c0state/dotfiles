@@ -7,11 +7,13 @@ brew update && brew upgrade && brew cleanup && brew cask cleanup
 
 brew install ack
 brew install ag
+brew install ansible
 brew install antigen
-brew install bash
+brew install bash bash-completion2
 brew install caskroom/cask/brew-cask # https://github.com/caskroom/homebrew-cask
 brew install chromedriver
 brew install cmake
+brew install colordiff
 brew install --default-names findutils
 brew install git legit
 brew install go
@@ -23,6 +25,7 @@ brew install npm
 brew install packer
 brew install pyenv pyenv-virtualenv pyenv-virtualenvwrapper
 brew install python python3
+brew install rlwrap
 brew install tmux
 brew install tree
 brew install vim --override-system-vi --with-lua
