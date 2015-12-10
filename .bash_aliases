@@ -1,6 +1,7 @@
 #----- detect platform
 PLATFORM=`uname`
 
+alias diff="colordiff -y"
 alias dbox="dropbox.py"
 alias findforks="find . -type f -exec test -s {}/..namedfork/rsrc \; -print"
 alias gitdt="git difftool "
