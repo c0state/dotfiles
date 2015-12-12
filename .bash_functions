@@ -37,6 +37,13 @@ function fixinsecurecompaudit {
 	rm -f ~/.zcompdump*
 	compinit
 }
+function git_untracked_local_branches_show {
+    git branch -r |
+    awk '{print $1}' |
+    egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) |
+    awk '{print $1}' |
+    xargs echo
+}
 function logcat { adb logcat -d -v time ; }
 function nookicsflash {
 	~/Dropbox/Apps/Linux/android-sdk-linux_x86/platform-tools/adb shell mount -o rw -t vfat /dev/block/mmcblk0p1 /boot && \
