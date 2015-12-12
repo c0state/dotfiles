@@ -40,9 +40,12 @@ brew cask install beyond-compare
 brew cask install flux
 brew cask install google-drive
 brew cask install intellij-idea
+brew cask install java
+brew cask install jenkins
 brew cask install lastpass
 brew cask install pycharm
 brew cask install sourcetree
+brew cask install tower
 brew cask install vagrant
 brew cask install virtualbox
 brew cask install visual-studio-code
