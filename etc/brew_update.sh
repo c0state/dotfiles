@@ -9,7 +9,7 @@ brew install ack
 brew install ag
 brew install ansible
 brew install antigen
-brew install bash bash-completion2
+brew install bash homebrew/versions/bash-completion2
 brew install caskroom/cask/brew-cask # https://github.com/caskroom/homebrew-cask
 brew install chromedriver
 brew install cmake
