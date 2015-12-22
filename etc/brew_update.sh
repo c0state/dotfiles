@@ -35,6 +35,7 @@ brew install zsh-completions
 # install apps via brew cask
 brew cask install 1password
 brew cask install adobe-reader
+brew cask install android-studio
 brew cask install atom
 brew cask install beyond-compare
 brew cask install flux
