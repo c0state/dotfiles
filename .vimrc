@@ -138,6 +138,7 @@
   nnoremap <leader>tn  :tabnew<CR>
   nnoremap <leader>k   :bdelete<CR>
 
+  nnoremap <leader>ntf :NERDTreeFind<CR>
   nnoremap <leader>nt  :NERDTreeFocus<CR>
   nnoremap <leader>ntt :NERDTreeToggle<CR>
 
@@ -172,8 +173,8 @@
   map <C-h> <C-w><Left>
 
   " ctrl-arrow keys for window resizing
-  nnoremap <C-Right> :vertical resize -1<CR>
-  nnoremap <C-Left>  :vertical resize +1<CR>
+  nnoremap <C-Right> :vertical resize +1<CR>
+  nnoremap <C-Left>  :vertical resize -1<CR>
   nnoremap <C-Up>    :resize +1<CR>
   nnoremap <C-Down>  :resize -1<CR>
 
