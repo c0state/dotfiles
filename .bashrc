@@ -38,6 +38,11 @@ elif [[ $PLATFORM == 'Darwin' ]]; then
     export PATH=/usr/local/heroku/bin:$PATH
   fi
 
+  # if android studio platform tools are installed
+  if [[ -e ~/Library/Android/sdk/platform-tools ]]; then
+    export PATH=~/Library/Android/sdk/platform-tools:$PATH
+  fi
+
   if [ -n "$BASH_VERSION" ]; then
     if [ -f $(brew --prefix)/share/bash-completion/bash_completion ]; then
       source $(brew --prefix)/share/bash-completion/bash_completion
