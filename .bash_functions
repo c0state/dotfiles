@@ -38,6 +38,8 @@ function fixinsecurecompaudit {
 	compinit
 }
 function git_untracked_local_branches_show {
+    git fetch --all --prune --quiet
+
     git branch -r |
     awk '{print $1}' |
     egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) |
@@ -75,6 +77,12 @@ function portupdate {
 		sudo port selfupdate
 		sudo port upgrade outdated
 	fi
+}
+function pprint_csv {
+    column -s, -t < "$1" | less -#2 -N -S
+}
+function pprint_json {
+    cat "$1" | python -m json.tool | less
 }
 function q {
 	if [[ $PLATFORM == 'Linux' ]]; then
