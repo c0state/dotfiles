@@ -48,6 +48,7 @@ brew cask install exiftool
 brew cask install filezilla
 brew cask install flux
 brew cask install google-drive
+brew cask install gopro-studio
 brew cask install intellij-idea
 brew cask install java
 brew cask install jenkins
