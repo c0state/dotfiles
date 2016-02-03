@@ -30,7 +30,7 @@ elif [[ $PLATFORM == 'Darwin' ]]; then
 
   # if homebrew is installed put it's bin dir first
   if [[ -e /usr/local/bin/brew ]]; then
-    export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/share/python:$PATH
+    export PATH=/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:/usr/local/sbin:/usr/local/share/python:$PATH
   fi
 
   # if heroku toolbelt is installed

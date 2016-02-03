@@ -5,6 +5,9 @@ set -e
 
 brew update && brew upgrade
 
+# package dependencies first
+brew install gmp 
+
 brew install ack
 brew install ag
 brew install ansible
@@ -14,6 +17,7 @@ brew install caskroom/cask/brew-cask # https://github.com/caskroom/homebrew-cask
 brew install chromedriver
 brew install cmake
 brew install colordiff
+brew install coreutils --with-gmp
 brew install dos2unix
 brew install --default-names findutils
 brew install git legit
