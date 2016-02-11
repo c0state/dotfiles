@@ -8,6 +8,7 @@
     editor = vim
 	excludesfile = ~/.gitignore_global
     filemode = false
+    pager = "diff-so-fancy | less --tabs=1,5 -R"
 [alias]
     br = !git branch -vv
     branches = !legit branches
