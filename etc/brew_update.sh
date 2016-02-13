@@ -44,6 +44,7 @@ brew cask install android-studio
 brew cask install atom
 brew cask install beyond-compare
 brew cask install datagrip
+brew cask install dockertoolbox
 brew cask install exiftool
 brew cask install filezilla
 brew cask install flux
