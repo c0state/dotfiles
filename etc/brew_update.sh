@@ -19,6 +19,7 @@ brew install cmake
 brew install colordiff
 brew install coreutils --with-gmp
 brew install dos2unix
+brew install ffmpeg
 brew install --default-names findutils
 brew install git legit
 brew install go
@@ -43,6 +44,7 @@ brew cask install adobe-reader
 brew cask install android-studio
 brew cask install atom
 brew cask install beyond-compare
+brew cask install divvy
 brew cask install datagrip
 brew cask install dockertoolbox
 brew cask install exiftool
