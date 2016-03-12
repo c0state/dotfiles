@@ -12,12 +12,14 @@ brew install ack
 brew install ag
 brew install ansible
 brew install antigen
+brew install apache-drill
 brew install bash homebrew/versions/bash-completion2
 brew install caskroom/cask/brew-cask # https://github.com/caskroom/homebrew-cask
 brew install chromedriver
 brew install cmake
 brew install colordiff
 brew install coreutils --with-gmp
+brew install docker docker-cloud docker-compose docker-machine docker-swarm
 brew install dos2unix
 brew install ffmpeg
 brew install --default-names findutils
@@ -25,10 +27,14 @@ brew install git legit
 brew install go
 brew install htop
 brew install macvim --with-lua
+brew install mongo
 brew install mono
+brew install mysql
+brew install neovim/neovim/neovim
 brew install node
 brew install npm
 brew install packer
+brew install postgresql
 brew install pyenv pyenv-virtualenv pyenv-virtualenvwrapper
 brew install python python3
 brew install rlwrap
@@ -36,7 +42,7 @@ brew install tmux
 brew install tree
 brew install vim --override-system-vi --with-lua
 brew install wget
-brew install zsh-completions
+brew install zsh zsh-completions zsh-syntax-highlighting
 
 # install apps via brew cask
 brew cask install 1password
@@ -52,6 +58,7 @@ brew cask install filezilla
 brew cask install flux
 brew cask install google-drive
 brew cask install gopro-studio
+brew cask install hexchat
 brew cask install intellij-idea
 brew cask install java
 brew cask install jenkins
@@ -59,6 +66,7 @@ brew cask install lastpass
 brew cask install libreoffice
 brew cask install otto
 brew cask install pycharm
+brew cask install robomongo
 brew cask install sourcetree
 brew cask install sqlitebrowser
 brew cask install terraform
@@ -66,8 +74,9 @@ brew cask install tower
 brew cask install vagrant
 brew cask install virtualbox
 brew cask install visual-studio-code
+brew cask install vmware-fusion
 brew cask install webstorm
 
 brew cleanup && brew cask cleanup
 
-echo "Finished installing brew packages successfully."
+echo "Finished installing brew and brew cask packages successfully."

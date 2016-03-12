@@ -44,12 +44,16 @@ function logcat { adb logcat -d -v time ; }
 
 function pprint_csv {
     # pretty print csv files
-    column -s, -t < "$1" | less -#2 -N -S
+    csvlook "$1" | less -#2 -N -S
 }
 
 function pprint_json {
     # pretty print json files
-    cat "$1" | python -m json.tool | less
+    cat "$1" | python -m json.tool | less -i
+}
+
+function pprint_xml {
+    cat "$1" | xmllint --format - 2>&1 | less -i
 }
 
 function runnew { nohup "$*" 1>/dev/null 2>&1 </dev/null ; }

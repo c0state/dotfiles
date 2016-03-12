@@ -7,15 +7,6 @@ export HISTFILESIZE=20000
 
 export EDITOR=vim
 
-#----- set terminal title
-if [[ $TERM == xterm* ]] || [[ $TERM == rxvt* ]]
-then
-  export PROMPT_COMMAND='echo -ne "\033]0;${PWD}\007"'
-fi
-
-#----- set shell prompt
-export PS1='\[\e[0;31m\][\D{%Y-%m-%d} \t]\[\e[m\]\[\e[0;37m\]\u@\h\[\e[m\]\[\e[0;32m\][$HOSTTYPE][\w]\[\e[m\]\n> '
-
 #----- set based on platform (Linux or OS X)
 if [[ $PLATFORM == 'Linux' ]]; then
   export PATH=$PATH:~/Dropbox/Apps/Linux/bin:~/Dropbox/Apps/Linux/android-sdk-linux_x86/tools:~/Dropbox/Apps/Linux/android-sdk-linux_x86/platform-tools:/usr/local/heroku/bin
@@ -31,6 +22,7 @@ elif [[ $PLATFORM == 'Darwin' ]]; then
   # if homebrew is installed put it's bin dir first
   if [[ -e /usr/local/bin/brew ]]; then
     export PATH=/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:/usr/local/sbin:/usr/local/share/python:$PATH
+    export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
   fi
 
   # if heroku toolbelt is installed
@@ -67,8 +59,17 @@ if [[ -e "$HOME/.pyenv" ]] ; then
   eval "$(pyenv init -)"
   eval "$(pyenv virtualenv-init -)"
   export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
-  #pyenv virtualenvwrapper
+  #export PYENV_VIRTUALENV_DISABLE_PROMPT=1 # simulate new behavior, remove when it's complete
 fi
+
+#----- set terminal title
+if [[ $TERM == xterm* ]] || [[ $TERM == rxvt* ]]
+then
+  export PROMPT_COMMAND='echo -ne "\033]0;${PWD}\007"'
+fi
+
+#----- set shell prompt
+export PS1='\[\e[0;31m\][\D{%Y-%m-%d} \t]\[\e[m\]\[\e[0;37m\]\u@\h\[\e[m\]\[\e[0;32m\][$HOSTTYPE][\w]\[\e[m\]\n> '
 
 #----- load aspnet k version manager (kvm)
 [ -s "${HOME}/.kre/kvm/kvm.sh" ] && . "${HOME}/.kre/kvm/kvm.sh" # Load kvm

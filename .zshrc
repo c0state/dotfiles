@@ -63,7 +63,7 @@ antigen apply
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-#plugins=(git)
+plugins=(git)
 
 # antigen handles this now
 #source $ZSH/oh-my-zsh.sh
@@ -76,7 +76,6 @@ source ~/.bash_aliases
 # http://github.com/rupa/z
 source ~/.z.git/z.sh
 
-fpath=(~/.zsh-completions/src $fpath)
 
 DISABLE_AUTO_TITLE=true
 ZBEEP='\e[?5h\e[?5l'
@@ -98,3 +97,12 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # for zsh-completions (installed via homebrew)
 fpath=(/usr/local/share/zsh-completions $fpath)
+fpath=(~/.zsh-completions/src $fpath)
+
+# for zsh online help
+unalias run-help
+autoload run-help
+HELPDIR=/usr/local/share/zsh/help
+
+# TODO : look into loading this via oh-my-zsh
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
