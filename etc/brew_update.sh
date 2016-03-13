@@ -27,7 +27,7 @@ brew install git legit
 brew install go
 brew install htop
 brew install macvim --with-lua
-brew install mongo
+brew install mongodb
 brew install mono
 brew install mysql
 brew install neovim/neovim/neovim
