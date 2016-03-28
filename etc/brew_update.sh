@@ -31,6 +31,7 @@ brew install mongodb
 brew install mono
 brew install mysql
 brew install neovim/neovim/neovim
+brew install nginx
 brew install node
 brew install npm
 brew install packer
@@ -50,6 +51,7 @@ brew cask install adobe-reader
 brew cask install android-studio
 brew cask install atom
 brew cask install beyond-compare
+brew cask install brave
 brew cask install divvy
 brew cask install datagrip
 brew cask install dockertoolbox
@@ -57,6 +59,7 @@ brew cask install exiftool
 brew cask install filezilla
 brew cask install flux
 brew cask install google-drive
+brew cask install google-nik-collection
 brew cask install gopro-studio
 brew cask install hexchat
 brew cask install intellij-idea
