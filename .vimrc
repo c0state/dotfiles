@@ -32,6 +32,7 @@
 "----- Vundle Bundles
   Plugin 'editorconfig/editorconfig-vim'
   Plugin 'greyblake/vim-preview'
+  Plugin 'suan/vim-instant-markdown'
   Plugin 'jlanzarotta/bufexplorer'
 
   Plugin 'vim-scripts/vim-auto-save'
