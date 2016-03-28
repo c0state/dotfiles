@@ -57,3 +57,11 @@ function pprint_xml {
 }
 
 function runnew { nohup "$*" 1>/dev/null 2>&1 </dev/null ; }
+
+function strip_comments_blank_lines {
+    if [ $# -eq 0 ]; then
+      \grep -v -E "\s*#|^\s*$" </dev/stdin
+    else
+      \grep -v -E "\s*#|^\s*$" "$*"
+    fi
+}
