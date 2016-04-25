@@ -14,7 +14,6 @@ brew install ansible
 brew install antigen
 brew install apache-drill
 brew install bash homebrew/versions/bash-completion2
-brew install caskroom/cask/brew-cask # https://github.com/caskroom/homebrew-cask
 brew install chromedriver
 brew install cmake
 brew install colordiff
