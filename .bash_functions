@@ -29,6 +29,8 @@ function fixinsecurecompaudit {
 	compinit
 }
 
+function gi() { curl -L -s https://www.gitignore.io/api/$@ ; }
+
 function git_untracked_local_branches_show {
     # output all untracked local branches in current repo
     git fetch --all --prune --quiet
