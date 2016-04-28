@@ -54,6 +54,7 @@ brew cask install brave
 brew cask install divvy
 brew cask install datagrip
 brew cask install dockertoolbox
+brew cask install evernote
 brew cask install exiftool
 brew cask install filezilla
 brew cask install flux
