@@ -3,6 +3,9 @@
 # exit on any failed command
 set -e
 
+# tap some extra homebrew repos
+brew tap homebrew/gui
+
 brew update && brew upgrade
 
 # package dependencies first
@@ -38,6 +41,7 @@ brew install postgresql
 brew install pyenv pyenv-virtualenv pyenv-virtualenvwrapper
 brew install python python3
 brew install rlwrap
+brew install terminator
 brew install tmux
 brew install tree
 brew install vim --override-system-vi --with-lua
