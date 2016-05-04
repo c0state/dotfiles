@@ -23,7 +23,7 @@ antigen bundle zsh-users/zsh-completions src
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Load the theme.
-antigen theme ~/dotfiles.oh-my-zsh-custom/c0state.zsh-theme
+antigen theme ~/.oh-my-zsh-custom/c0state.zsh-theme
 
 # Tell antigen that you're done.
 antigen apply
