@@ -8,15 +8,25 @@ source /usr/local/Cellar/antigen/1/share/antigen.zsh
 antigen use oh-my-zsh
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
+antigen bundle brew
+antigen bundle bundler
 antigen bundle command-not-found
+antigen bundle gem
 antigen bundle git
+antigen bundle git-extras
 antigen bundle heroku
 antigen bundle lein
+antigen bundle node
+antigen bundle npm
 antigen bundle pip
+antigen bundle pyenv
 antigen bundle python
 antigen bundle ruby
 antigen bundle rupa/z
 antigen bundle rvm
+antigen bundle tmux
+antigen bundle tmuxinator
+antigen bundle vagrant
 antigen bundle zsh-users/zsh-completions src
 
 # Syntax highlighting bundle.
