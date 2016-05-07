@@ -1,7 +1,7 @@
 # Personalized!
 
 # Grab the current date (%D) and time (%T) wrapped in {}: {%D %T}
-DALLAS_CURRENT_TIME_="%{$fg[red]%}[%D{%Y-%m-%d %H:%M:%S}]%{$reset_color%}"
+DALLAS_CURRENT_TIME_="%{$FG[198]%}[%D{%Y-%m-%d %H:%M:%S}]%{$reset_color%}"
 # Grab the current version of ruby in use (via RVM)
 DALLAS_CURRENT_RUBY_="%{$fg[white]%}[%{$fg[magenta]%}\$(~/.rvm/bin/rvm-prompt)%{$fg[white]%}]%{$reset_color%}"
 # Grab the current version of python in use (via pyenv)
@@ -17,12 +17,12 @@ DALLAS_CURRENT_USER_="%{$fg[white]%}%n%{$reset_color%}"
 DALLAS_PROMPT_CHAR_="
 %{$fg[white]%}>%{$reset_color%}"
 # For the git prompt, use a white @ and blue text for the branch name
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[white]%}@%{$fg[blue]%}"
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[white]%}@%{$FG[190]%}"
 # Close it all off by resetting the color and styles.
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 # Do nothing if the branch is clean (no changes).
 ZSH_THEME_GIT_PROMPT_CLEAN=""
-# Add 3 cyan ✗s if this branch is diiirrrty! Dirty branch!
+# Add 3 cyan ✗s if this branch is dirty
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[cyan]%}✗✗✗"
 
 # Put it all together!
