@@ -8,7 +8,7 @@ DALLAS_CURRENT_RUBY_="%{$fg[white]%}[%{$fg[magenta]%}\$(~/.rvm/bin/rvm-prompt)%{
 DALLAS_CURRENT_MACH_="%{$fg[white]%}%m%{$fg[green]%}[$MACHTYPE]%{$reset_color%}"
 # Grab the current filepath, use shortcuts: ~/Desktop
 # Append the current git branch, if in a git repository: ~aw@master
-DALLAS_CURRENT_LOCA_="%{$fg[green]%}[%~]\$(git_prompt_info)%{$reset_color%}"
+DALLAS_CURRENT_LOCA_="%{$fg[green]%}[%/]\$(git_prompt_info)%{$reset_color%}"
 # Grab the current username: dallas
 DALLAS_CURRENT_USER_="%{$fg[white]%}%n%{$reset_color%}"
 # Use a % for normal users and a # for privelaged (root) users.
