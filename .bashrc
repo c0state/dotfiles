@@ -90,9 +90,10 @@ export EC2_CERT=~/Dropbox/AmazonAWS/X509Cert
 source ~/.bash_aliases
 
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 # source any custom bashrc configuration
 if [[ -e ~/.bashrc_custom ]] ; then
   source ~/.bashrc_custom
 fi
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
