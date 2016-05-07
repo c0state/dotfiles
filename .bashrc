@@ -54,13 +54,7 @@ if [[ -e "${HOME}/.php-version" ]] ; then
 fi
 
 #----- pyenv
-if [[ -e "$HOME/.pyenv" ]] ; then
-  export PATH="$HOME/.pyenv/bin:$PATH"
-  eval "$(pyenv init -)"
-  eval "$(pyenv virtualenv-init -)"
-  export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
-  #export PYENV_VIRTUALENV_DISABLE_PROMPT=1 # simulate new behavior, remove when it's complete
-fi
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1 # simulate new behavior, remove when it's complete
 
 #----- set terminal title
 if [[ $TERM == xterm* ]] || [[ $TERM == rxvt* ]]
