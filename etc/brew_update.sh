@@ -25,7 +25,7 @@ brew install docker docker-cloud docker-compose docker-machine docker-swarm
 brew install dos2unix
 brew install ffmpeg
 brew install --default-names findutils
-brew install git legit
+brew install git git-extras legit
 brew install go
 brew install htop
 brew install macvim --with-lua
@@ -64,6 +64,7 @@ brew cask install filezilla
 brew cask install flux
 brew cask install google-drive
 brew cask install google-nik-collection
+brew cask install google-play-music-desktop-player
 brew cask install gopro-studio
 brew cask install hexchat
 brew cask install intellij-idea
