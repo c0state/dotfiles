@@ -54,13 +54,13 @@ if [[ -e "${HOME}/.php-version" ]] ; then
 fi
 
 #----- pyenv
-if which pyenv > /dev/null; then
+if [[ -e "$HOME/.pyenv" ]] ; then
   export PYENV_ROOT=$HOME/.pyenv
   export PATH="$HOME/.pyenv/bin:$PATH"
   eval "$(pyenv init -)"
-  eval "$(pyenv virtualenv-init -)"
   export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
   export PYENV_VIRTUALENV_DISABLE_PROMPT=1 # simulate new behavior, remove when it's complete
+  eval "$(pyenv virtualenv-init -)"
 fi
 
 #----- set terminal title

@@ -38,7 +38,6 @@ brew install node
 brew install npm
 brew install packer
 brew install postgresql
-brew install pyenv pyenv-virtualenv pyenv-virtualenvwrapper
 brew install python python3
 brew install rlwrap
 brew install terminator
