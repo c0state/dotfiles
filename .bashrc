@@ -97,4 +97,3 @@ if [[ -e ~/.bashrc_custom ]] ; then
   source ~/.bashrc_custom
 fi
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
