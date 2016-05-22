@@ -16,6 +16,7 @@ brew install ag
 brew install ansible
 brew install antigen
 brew install apache-drill
+brew install awscli
 brew install bash homebrew/versions/bash-completion2
 brew install chromedriver
 brew install cmake
@@ -33,13 +34,14 @@ brew install mongodb
 brew install mono
 brew install mysql
 brew install neovim/neovim/neovim
-brew install nginx
 brew install node
 brew install npm
 brew install packer
 brew install postgresql
 brew install python python3
+brew install redis
 brew install rlwrap
+brew install sshuttle
 brew install terminator
 brew install tmux
 brew install tree
@@ -72,10 +74,13 @@ brew cask install jenkins
 brew cask install lastpass
 brew cask install libreoffice
 brew cask install otto
+brew cask install phantomjs
 brew cask install pycharm
 brew cask install robomongo
+brew cask install rubymine
 brew cask install sourcetree
 brew cask install sqlitebrowser
+brew cask install staruml
 brew cask install terraform
 brew cask install tower
 brew cask install vagrant
@@ -83,6 +88,7 @@ brew cask install virtualbox
 brew cask install visual-studio-code
 brew cask install vmware-fusion
 brew cask install webstorm
+brew cask install wireshark
 
 brew cleanup && brew cask cleanup
 
