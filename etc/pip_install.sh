@@ -20,6 +20,5 @@ pip install --upgrade pytest
 pip install --upgrade pythonpy
 pip install --upgrade pyyaml
 pip install --upgrade saws
-pip install --upgrade sshuttle
 pip install --upgrade virtualenv
 pip install --upgrade virtualenvwrapper

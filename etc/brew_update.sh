@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+#---------- brew setup ----------
+
 # exit on any failed command
 set -e
 
@@ -7,6 +9,8 @@ set -e
 brew tap homebrew/gui
 
 brew update && brew upgrade
+
+#---------- brew packages ----------
 
 # package dependencies first
 brew install gmp 
@@ -48,6 +52,8 @@ brew install tree
 brew install vim --override-system-vi --with-lua
 brew install wget
 brew install zsh zsh-completions zsh-syntax-highlighting
+
+#---------- brew cask packages ----------
 
 # install apps via brew cask
 brew cask install 1password
