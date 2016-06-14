@@ -33,6 +33,7 @@ brew install --default-names findutils
 brew install git git-extras legit
 brew install go
 brew install htop
+brew install TomAnthony/brews/itermocil
 brew install macvim --with-lua
 brew install mongodb
 brew install mono
@@ -61,6 +62,7 @@ brew cask install adobe-reader
 brew cask install android-studio
 brew cask install atom
 brew cask install beyond-compare
+brew cask install bitbar
 brew cask install brave
 brew cask install divvy
 brew cask install datagrip
