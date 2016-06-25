@@ -45,6 +45,7 @@ brew install npm
 brew install packer
 brew install postgresql
 brew install python python3
+brew install rbenv ruby-build
 brew install redis
 brew install rlwrap
 brew install sshuttle

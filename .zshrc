@@ -23,7 +23,6 @@ antigen bundle pyenv
 antigen bundle python
 #antigen bundle ruby
 #antigen bundle rupa/z
-#antigen bundle rvm
 #antigen bundle tmux
 #antigen bundle tmuxinator
 #antigen bundle vagrant
@@ -51,5 +50,3 @@ unalias run-help
 autoload run-help
 HELPDIR=/usr/local/share/zsh/help
 
-# rvm
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
