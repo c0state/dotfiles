@@ -6,7 +6,7 @@ DALLAS_CURRENT_TIME_="%{$FG[198]%}[%D{%Y-%m-%d %H:%M:%S}]%{$reset_color%}"
 DALLAS_CURRENT_RUBY_="%{$fg[white]%}[%{$fg[magenta]%}\$(~/.rvm/bin/rvm-prompt)%{$fg[white]%}]%{$reset_color%}"
 # Grab the current version of python in use (via pyenv)
 DALLAS_CURRENT_PYTHON_="%{$fg[white]%}[%{$fg[magenta]%}\$(pyenv version | cut -f 1 -d ' ')%{$fg[white]%}]%{$reset_color%}"
-# Grab the current machine name: muscato
+# Grab the current machine name
 DALLAS_CURRENT_MACH_="%{$fg[blue]%}%B%m%b%{$fg[green]%}%{$reset_color%}"
 # Grab the current filepath, use shortcuts: ~/Desktop
 # Append the current git branch, if in a git repository: ~aw@master
