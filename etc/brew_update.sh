@@ -7,6 +7,7 @@ set -e
 
 # tap some extra homebrew repos
 brew tap homebrew/gui
+brew tap caskroom/versions
 
 brew update && brew upgrade
 
@@ -75,12 +76,14 @@ brew cask install google-drive
 brew cask install google-nik-collection
 brew cask install google-play-music-desktop-player
 brew cask install gopro-studio
+brew cask install handbrake
 brew cask install hexchat
 brew cask install intellij-idea
 brew cask install java
 brew cask install jenkins
 brew cask install lastpass
 brew cask install libreoffice
+brew cask install logitech-harmony
 brew cask install otto
 brew cask install phantomjs
 brew cask install pycharm
@@ -89,6 +92,7 @@ brew cask install rubymine
 brew cask install sourcetree
 brew cask install sqlitebrowser
 brew cask install staruml
+brew cask install sublime-text3
 brew cask install terraform
 brew cask install tower
 brew cask install vagrant
