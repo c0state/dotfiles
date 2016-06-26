@@ -1,4 +1,4 @@
-source ~/.bashrc
+source $HOME/.bashrc
 
 #---------- antigen 
 
@@ -32,7 +32,9 @@ antigen bundle zsh-users/zsh-completions src
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Load the theme.
-antigen theme ~/.oh-my-zsh-custom/c0state.zsh-theme
+antigen theme $HOME/.dotfiles/.oh-my-zsh-custom/c0state.zsh-theme
+
+antigen bundle $HOME/.dotfiles/.oh-my-zsh-custom
 
 # Tell antigen that you're done.
 antigen apply
@@ -40,7 +42,7 @@ antigen apply
 # ---------- Customize to your needs...
 
 # reload aliases as zsh may have mangled some customizations
-source ~/.bash_aliases
+source $HOME/.bash_aliases
 
 DISABLE_AUTO_TITLE=true
 ZBEEP='\e[?5h\e[?5l'
