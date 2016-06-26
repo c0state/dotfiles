@@ -88,6 +88,8 @@ export EC2_CERT=~/Dropbox/AmazonAWS/X509Cert
 # use vi bindings
 #set -o vi
 
+eval "$(rbenv init -)"
+
 source ~/.bash_aliases
 
 # source any custom bashrc configuration
