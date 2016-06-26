@@ -15,7 +15,6 @@ alias mysql.start="/opt/local/share/mysql5/mysql/mysql.server"
 alias psg="ps aux | grep"
 alias runtest="nohup '$*' 1>/dev/null 2>&1 </dev/null &"
 alias sort_latest='find . -type f -exec stat --format "%Y - %y --> %n" "{}" \; | sort -n'
-alias tmuxinator='~/.tmuxinator/bin/tmuxinator'
 
 if [[ -e ~/.bash_aliases_custom ]]; then
     source ~/.bash_aliases_custom
