@@ -72,6 +72,7 @@ brew cask install dockertoolbox
 brew cask install evernote
 brew cask install exiftool
 brew cask install filezilla
+brew cask install firefox
 brew cask install flux
 brew cask install google-drive
 brew cask install google-nik-collection
@@ -90,6 +91,7 @@ brew cask install phantomjs
 brew cask install pycharm
 brew cask install robomongo
 brew cask install rubymine
+brew cask install slack
 brew cask install sourcetree
 brew cask install sqlitebrowser
 brew cask install staruml
