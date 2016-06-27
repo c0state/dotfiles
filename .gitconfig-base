@@ -33,3 +33,5 @@
     prompt = false
 [mergetool]
     prompt = false
+[submodule]
+	fetchJobs = 0
