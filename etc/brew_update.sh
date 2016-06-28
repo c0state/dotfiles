@@ -7,7 +7,6 @@ set -e
 
 # tap some extra homebrew repos
 brew tap homebrew/gui
-brew tap caskroom/versions
 
 brew update && brew upgrade
 
@@ -95,7 +94,7 @@ brew cask install slack
 brew cask install sourcetree
 brew cask install sqlitebrowser
 brew cask install staruml
-brew cask install sublime-text3
+brew cask install sublime-text
 brew cask install terraform
 brew cask install tower
 brew cask install vagrant
