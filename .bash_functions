@@ -42,6 +42,22 @@ function git_untracked_local_branches_show {
     xargs echo
 }
 
+function git_pr_merge_review {
+    pr_branch_name="pr_$1"
+    git checkout -b pr_review/$pr_branch_name
+    git fetch upstream pull/"$1"/head:$pr_branch_name
+    git merge $pr_branch_name --no-commit --no-ff 
+    git difftool --cached
+    git merge --abort
+    git branch -D $pr_branch_name
+}
+
+function git_clean_local {
+    git reset HEAD -- ...
+    git clean -d -f ...
+    git checkout -- ...
+}
+
 function logcat { adb logcat -d -v time ; }
 
 function pprint_csv {
