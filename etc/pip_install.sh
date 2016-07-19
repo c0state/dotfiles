@@ -1,3 +1,7 @@
+#!/usr/bin/env bash
+
+set -ex
+
 # this is a list of pypi packages to install into system python for general use
 pip install --upgrade ansible-toolkit
 pip install --upgrade autoenv
