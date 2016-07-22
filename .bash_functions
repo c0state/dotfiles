@@ -13,6 +13,8 @@ function cat_video {
     ffmpeg -f concat -i <(for f in ${args_array_minus_last[@]}; do echo "file '$PWD/$f'"; done) -c copy "$last_arg"
 }
 
+function debug() { [ "$DEBUG" ] && echo "$*" }
+
 function findnewest {
     if [[ $1 != "" ]]; then
       num_items_to_show="-n $1"
