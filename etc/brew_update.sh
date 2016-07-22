@@ -73,6 +73,7 @@ brew cask install exiftool
 brew cask install filezilla
 brew cask install firefox
 brew cask install flux
+brew cask install google-cloud-sdk
 brew cask install google-drive
 brew cask install google-nik-collection
 brew cask install google-play-music-desktop-player
