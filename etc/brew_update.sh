@@ -102,6 +102,7 @@ brew cask install virtualbox
 brew cask install visual-studio-code
 brew cask install vmware-fusion
 brew cask install webstorm
+brew cask install whatsapp
 brew cask install wireshark
 
 brew cleanup && brew cask cleanup
