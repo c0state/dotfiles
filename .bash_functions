@@ -15,6 +15,14 @@ function cat_video {
 
 function debug() { [ "$DEBUG" ] && echo "$*" }
 
+function divvy_export() {
+    if [[ $1 == "" ]]; then
+        echo "Please provide filename to write divvy config to"
+    else
+        open -a Safari divvy://export && (pbpaste > "$1")
+    fi
+}
+
 function findnewest {
     if [[ $1 != "" ]]; then
       num_items_to_show="-n $1"
