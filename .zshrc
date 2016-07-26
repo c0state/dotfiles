@@ -2,7 +2,11 @@ source $HOME/.bashrc
 
 #---------- antigen 
 
-source /usr/local/Cellar/antigen/1/share/antigen.zsh
+if [[ -e /usr/local/Cellar/antigen/1/share/antigen.zsh ]]; then
+    source /usr/local/Cellar/antigen/1/share/antigen.zsh
+elif [[ -e /usr/share/zsh-antigen/antigen.zsh ]]; then
+    source /usr/share/zsh-antigen/antigen.zsh
+fi
 
 # Load the oh-my-zsh library
 antigen use oh-my-zsh
@@ -39,5 +43,8 @@ autoload run-help
 HELPDIR=/usr/local/share/zsh/help
 
 # aws auto-completion needs to be explicitly sourced
-source /usr/local/share/zsh/site-functions/_aws
-
+if [[ -e /usr/local/share/zsh/site-functions/_aws ]]; then
+    source /usr/local/share/zsh/site-functions/_aws
+elif [[ -e /usr/local/bin/aws_zsh_completer.sh ]]; then
+    source /usr/local/bin/aws_zsh_completer.sh
+fi
