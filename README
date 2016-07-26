@@ -1,0 +1,18 @@
+To configure a new system, run in the following order (mainly tested on OS X):
+
+Prerequisites
+=============
+
+* Set up your SSH key
+* Link contents of "<repo_root>/.*" to "$HOME" (TODO: script out this step and the next)
+* Link contents of "<repo_root>/etc" to "$HOME"
+
+Installation
+============
+
+* <repo_root>/etc/brew_updates.sh   --- install homebrew packages (OS X only)
+* <repo_root>/etc/pip_install.sh    --- install python packages
+* <repo_root>/etc/ruby.sh           --- install ruby dependencies and gems
+* <repo_root>/etc/npm.sh            --- install npm packages
+* <repo_root>/etc/setup_env.sh      --- do final setup (vim configuration, etc.)
+
