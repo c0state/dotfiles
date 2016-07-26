@@ -1,11 +1,26 @@
 To configure a new system, run in the following order (mainly tested on OS X):
 
+
 Prerequisites
 =============
 
+TODO: ideally script out these steps if possible
+
 * Set up your SSH key
-* Link contents of "<repo_root>/.*" to "$HOME" (TODO: script out this step and the next)
+* Link contents of "<repo_root>/.*" to "$HOME" 
 * Link contents of "<repo_root>/etc" to "$HOME"
+* Put your name and email in ~/.gitconfig-custom
+```
+[user]
+    name = Joe Blogs
+    email = user@domain.top
+```
+* Link the 
+```
+# for OS X, run 
+ln -s ~/.dotfiles/.gitconfig-osx ~/.gitconfig
+```
+
 
 Installation
 ============
