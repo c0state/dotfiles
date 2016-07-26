@@ -1,5 +1,7 @@
 [include]
 	path = .gitconfig-base
+[credential]
+	helper = osxkeychain
 [diff]
 	tool = bc4
 [difftool]
