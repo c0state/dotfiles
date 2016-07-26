@@ -1,0 +1,16 @@
+To configure a new system, run in the following order (mainly tested on OS X):
+
+Prerequisites
+=============
+
+* Set up your SSH keys
+
+Installation
+============
+
+* brew_updates.sh   --- install homebrew packages (OS X only)
+* pip_install.sh    --- install python packages
+* ruby.sh           --- install ruby dependencies and gems
+* npm.sh            --- install npm packages
+* setup_env.sh      --- do final setup (vim configuration, etc.)
+
