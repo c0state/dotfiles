@@ -55,8 +55,15 @@ def setup_vim():
               "--clang-completer --omnisharp-completer --gocode-completer)")
 
 
+def setup_divvy():
+    if _system_name == _system_name_osx:
+        os.system("open -a Safari "
+                  "`cat ~/.dotfiles/osx_configs/divvy_export.txt`")
+
+
 if __name__ == '__main__':
     (options, args) = parse_options()
 
     setup_shell()
     setup_vim()
+    setup_divvy()
