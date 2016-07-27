@@ -36,16 +36,16 @@ def setup_shell():
             os.system('''sudo bash -c \'(echo "{}" >> /etc/shells)\''''
                       .format(target_shell))
     else:
-        target_shell = "zsh"
+        target_shell = "/bin/zsh"
 
     if target_shell != _shell_path:
         os.system("chsh -s ".format(target_shell))
 
 
 def setup_vim():
-    if not os.path.exists(os.path.expanduser("~/.vim/bundle/vundle.vim")):
-        os.system("git clone https://github.com/vundlevim/vundle.vim "
-                  "~/.vim/bundle/vundle.vim")
+    if not os.path.exists(os.path.expanduser("~/.vim/bundle/Vundle.vim")):
+        os.system("git clone https://github.com/VundleVim/Vundle.vim "
+                  "~/.vim/bundle/Vundle.vim")
     else:
         print("vundle already installed")
 
