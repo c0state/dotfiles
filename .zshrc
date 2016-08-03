@@ -15,10 +15,10 @@ fi
 antigen use oh-my-zsh
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
-antigen bundle git
-antigen bundle git-extras
-antigen bundle pip
-antigen bundle python
+antigen bundle robbyrussell/oh-my-zsh plugins/git
+antigen bundle robbyrussell/oh-my-zsh plugins/git-extras
+antigen bundle robbyrussell/oh-my-zsh plugins/pip
+antigen bundle robbyrussell/oh-my-zsh plugins/python
 
 # zsh-users bundles
 antigen bundle zsh-users/zsh-completions src
