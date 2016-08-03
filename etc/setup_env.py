@@ -61,9 +61,17 @@ def setup_divvy():
                   "`cat ~/.dotfiles/osx_configs/divvy_export.txt`")
 
 
+def setup_gvm():
+    if not os.path.exists(os.path.expanduser("~/.gvm")):
+        os.system("""zsh < <(curl -s -S -L """
+                  """https://raw.githubusercontent.com/moovweb/gvm/master/"""
+                  """binscripts/gvm-installer)""")
+
+
 if __name__ == '__main__':
     (options, args) = parse_options()
 
     setup_shell()
     setup_vim()
     setup_divvy()
+    setup_gvm()

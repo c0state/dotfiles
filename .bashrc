@@ -10,15 +10,7 @@ export EDITOR=vim
 #----- set based on platform (Linux or OS X)
 if [[ $PLATFORM == 'Linux' ]]; then
   export PATH=$PATH:~/Dropbox/Apps/Linux/bin:~/Dropbox/Apps/Linux/android-sdk-linux_x86/tools:~/Dropbox/Apps/Linux/android-sdk-linux_x86/platform-tools:/usr/local/heroku/bin
-
-  . /usr/local/bin/virtualenvwrapper.sh
 elif [[ $PLATFORM == 'Darwin' ]]; then
-  # if macports is installed put it's bin dir first
-  if [[ -e /opt/local/bin/port ]]; then
-    export PATH=/opt/local/bin:/opt/local/sbin:/opt/local/libexec/gnubin:$PATH
-    source /usr/local/share/python/virtualenvwrapper.sh
-  fi
-
   # if homebrew is installed put it's bin dir first
   if [[ -e /usr/local/bin/brew ]]; then
     export PATH=/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:/usr/local/sbin:/usr/local/share/python:$PATH
@@ -40,11 +32,6 @@ elif [[ $PLATFORM == 'Darwin' ]]; then
       source $(brew --prefix)/share/bash-completion/bash_completion
     fi
   fi
-
-elif [[ $OSTYPE == 'cygwin' ]]; then
-  export PATH=/usr/local/bin:/usr/bin:$PATH
-
-  source /bin/virtualenvwrapper.sh
 fi 
 
 #----- php version manager
@@ -62,6 +49,12 @@ if [[ -e "$HOME/.pyenv" ]] ; then
   export PYENV_VIRTUALENV_DISABLE_PROMPT=1 # simulate new behavior, remove when it's complete
   eval "$(pyenv virtualenv-init -)"
 fi
+
+#----- golang and gvm (go version manager)
+if [[ $PLATFORM == 'Darwin' ]]; then
+    export GOROOT_BOOTSTRAP=$(brew --prefix)/Cellar/go/1.6.3/libexec
+fi
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 
 #----- set terminal title
 if [[ $TERM == xterm* ]] || [[ $TERM == rxvt* ]]
