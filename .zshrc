@@ -2,10 +2,13 @@ source $HOME/.bashrc
 
 #---------- antigen 
 
-if [[ -e /usr/local/Cellar/antigen/1/share/antigen.zsh ]]; then
-    source /usr/local/Cellar/antigen/1/share/antigen.zsh
+if [[ $PLATFORM == 'Darwin' ]]; then
+    source $(brew --prefix)/share/antigen.zsh
 elif [[ -e /usr/share/zsh-antigen/antigen.zsh ]]; then
     source /usr/share/zsh-antigen/antigen.zsh
+else
+    echo "Could not find antigen!" 1>&2
+    exit 1
 fi
 
 # Load the oh-my-zsh library
@@ -25,7 +28,7 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle $HOME/.dotfiles/.oh-my-zsh-custom
 
 # Load custom theme
-antigen theme $HOME/.dotfiles/.oh-my-zsh-custom/c0state.zsh-theme
+antigen theme "$HOME/.dotfiles/.oh-my-zsh-custom" c0state
 
 antigen apply
 
