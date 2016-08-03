@@ -6,6 +6,8 @@ DALLAS_CURRENT_TIME_="%{$FG[198]%}[%D{%Y-%m-%d %H:%M:%S}]%{$reset_color%}"
 DALLAS_CURRENT_RUBY_="%{$fg[white]%}[%{$fg[magenta]%}rbenv:\$(rbenv version | cut -f 1 -d ' ')%{$fg[white]%}]%{$reset_color%}"
 # Grab the current version of python in use (via pyenv)
 DALLAS_CURRENT_PYTHON_="%{$fg[white]%}[%{$fg[magenta]%}pyenv:\$(pyenv version | cut -f 1 -d ' ')%{$fg[white]%}]%{$reset_color%}"
+# Grab the current version of golang in use (via gvm)
+DALLAS_CURRENT_GOLANG_="%{$fg[white]%}[%{$fg[magenta]%}gvm:\$(gvm-prompt)%{$fg[white]%}]%{$reset_color%}"
 # Grab the current machine name
 DALLAS_CURRENT_MACH_="%{$fg[blue]%}%B%m%b%{$fg[green]%}%{$reset_color%}"
 # Grab the current filepath, use shortcuts: ~/Desktop
@@ -26,5 +28,5 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[cyan]%}✗✗✗"
 
 # Put it all together!
-PROMPT="$DALLAS_CURRENT_TIME_$DALLAS_CURRENT_USER_@$DALLAS_CURRENT_MACH_$DALLAS_CURRENT_LOCA_$DALLAS_CURRENT_PYTHON_$DALLAS_CURRENT_RUBY_$DALLAS_PROMPT_CHAR_ "
+PROMPT="$DALLAS_CURRENT_TIME_$DALLAS_CURRENT_USER_@$DALLAS_CURRENT_MACH_$DALLAS_CURRENT_LOCA_$DALLAS_CURRENT_PYTHON_$DALLAS_CURRENT_RUBY_$DALLAS_CURRENT_GOLANG_$DALLAS_PROMPT_CHAR_ "
 
