@@ -35,6 +35,7 @@ brew install go
 brew install htop
 brew install TomAnthony/brews/itermocil
 brew install macvim --with-lua
+brew install mas
 brew install mongodb
 brew install mono
 brew install mysql
@@ -73,6 +74,7 @@ brew cask install exiftool
 brew cask install filezilla
 brew cask install firefox
 brew cask install flux
+brew cask install gimp
 brew cask install google-cloud-sdk
 brew cask install google-drive
 brew cask install google-nik-collection
