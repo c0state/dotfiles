@@ -36,6 +36,7 @@ brew install htop
 brew install TomAnthony/brews/itermocil
 brew install macvim --with-lua
 brew install mas
+brew install mobile-shell
 brew install mongodb
 brew install mono
 brew install mysql
