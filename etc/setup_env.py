@@ -63,9 +63,10 @@ def setup_divvy():
 
 def setup_gvm():
     if not os.path.exists(os.path.expanduser("~/.gvm")):
-        os.system("""zsh < <(curl -s -S -L """
+        os.system("""curl -s -S -L """
                   """https://raw.githubusercontent.com/moovweb/gvm/master/"""
-                  """binscripts/gvm-installer)""")
+                  """binscripts/gvm-installer """
+                  """| zsh""")
 
 
 if __name__ == '__main__':
