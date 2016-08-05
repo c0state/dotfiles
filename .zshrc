@@ -51,3 +51,7 @@ if [[ -e /usr/local/share/zsh/site-functions/_aws ]]; then
 elif [[ -e /usr/local/bin/aws_zsh_completer.sh ]]; then
     source /usr/local/bin/aws_zsh_completer.sh
 fi
+
+# for google-cloud-sdk
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
