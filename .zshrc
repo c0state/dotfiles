@@ -1,4 +1,6 @@
-source $HOME/.bashrc
+source $HOME/.shellrc
+
+source $HOME/.zsh_functions
 
 #---------- antigen 
 

@@ -1,0 +1,12 @@
+source .shell_functions
+
+function cat_video {
+    # concatenate 2 or more video files using ffmpeg (requires zsh)
+
+    args=("$@")
+    args_len=$(($# - 1))
+    args_array_minus_last=("${@:1:$args_len}")
+    last_arg="last=${@[$#]}"
+    ffmpeg -f concat -i <(for f in ${args_array_minus_last[@]}; do echo "file '$PWD/$f'"; done) -c copy "$last_arg"
+}
+
