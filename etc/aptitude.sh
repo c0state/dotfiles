@@ -19,8 +19,9 @@ apt-get install aptitude
 aptitude install curl git gparted vim-gnome wget \
     cmake \
     golang \
+    build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev libxml2-dev \
     mono-complete \
     nodejs nodejs-legacy npm \
-    rbenv \
-    build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
+    python-dev python-pip python3-pip \
+    ruby-dev rbenv \
     zsh zsh-antigen zsh-doc zsh-syntax-highlighting -y
