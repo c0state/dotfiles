@@ -50,6 +50,7 @@ brew install ruby rbenv rbenv-gemset ruby-build
 brew install redis
 brew install rlwrap
 brew install sshuttle
+brew install stunnel
 brew install terminator
 brew install tmux
 brew install tree
