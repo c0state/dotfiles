@@ -22,10 +22,27 @@ def append_to_file(file_name, str):
         file.write(str)
 
 
+def symlink_dotfile(source, target, overwrite=False, backup=False):
+    force = "-f" if overwrite else ""
+    do_backup = "-b" if backup else ""
+    if not os.path.exists(target) or overwrite:
+        os.system("""ln -s {} {} {}""".format(source, target, force, do_backup))
+
 def parse_options():
     parser = OptionParser()
     parser.add_option("-u", "--user", default="default")
     return parser.parse_args()
+
+
+def setup_dotfiles():
+    if not os.path.exists(os.path.expanduser("""~/.dotfiles""")):
+        os.system("""git clone https://github.com/c0state/dotfiles"""
+                  """~/.dotfiles""")
+    else:
+        os.system("""(cd ~/.dotfiles && git pull)""")
+
+    # now set up links
+    symlink_dotfile("~/.dotfiles/anyenv", "~/.anyenv")
 
 
 def setup_shell():
@@ -79,6 +96,7 @@ def setup_git_subrepo():
 if __name__ == '__main__':
     (options, args) = parse_options()
 
+    setup_dotfiles()
     setup_shell()
     setup_vim()
     setup_divvy()
