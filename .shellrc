@@ -56,6 +56,10 @@ if [[ $PLATFORM == 'Darwin' ]]; then
 fi
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 
+# source anyenv
+export PATH="$HOME/.anyenv/bin:$PATH"
+eval "$(anyenv init -)"
+
 # source git-subrepo
 if [[ -e ~/.git-subrepo/.rc ]]; then
     source ~/.git-subrepo/.rc
