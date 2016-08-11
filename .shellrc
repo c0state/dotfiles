@@ -57,7 +57,7 @@ fi
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 
 # source git-subrepo
-if [[ -e "~/.git-subrepo/.rc" ]]; then
+if [[ -e ~/.git-subrepo/.rc ]]; then
     source ~/.git-subrepo/.rc
 fi
 
