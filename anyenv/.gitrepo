@@ -1,0 +1,11 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/riywo/anyenv
+	branch = master
+	commit = 125d1340f1acaafed7532debec659e3dc4890f06
+	parent = a441771fb67d332c0510981a3b8ec0a7f63fd58f
+	cmdver = 0.3.0
