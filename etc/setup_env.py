@@ -69,6 +69,13 @@ def setup_gvm():
                   """| zsh""")
 
 
+def setup_git_subrepo():
+    if not os.path.exists(os.path.expanduser("~/.git-subrepo")):
+        os.system("""git clone https://github.com/ingydotnet/git-subrepo.git """
+                  """~/.git-subrepo""")
+    else:
+        os.system("""(cd ~/.git-subrepo && git pull)""")
+
 if __name__ == '__main__':
     (options, args) = parse_options()
 
@@ -76,3 +83,4 @@ if __name__ == '__main__':
     setup_vim()
     setup_divvy()
     setup_gvm()
+    setup_git_subrepo()
