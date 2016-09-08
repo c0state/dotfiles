@@ -56,7 +56,7 @@ def setup_shell():
         target_shell = "/bin/zsh"
 
     if target_shell != _shell_path:
-        os.system("chsh -s ".format(target_shell))
+        os.system("chsh -s {}".format(target_shell))
 
 
 def setup_vim():
