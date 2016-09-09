@@ -104,6 +104,7 @@ brew cask install terraform
 brew cask install tower
 brew cask install vagrant
 brew cask install virtualbox
+brew cask install viscosity
 brew cask install visual-studio-code
 brew cask install vmware-fusion
 brew cask install webstorm
