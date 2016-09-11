@@ -100,6 +100,7 @@ brew cask install sourcetree
 brew cask install sqlitebrowser
 brew cask install staruml
 brew cask install sublime-text
+brew cask install teamviewer
 brew cask install terraform
 brew cask install tower
 brew cask install vagrant
