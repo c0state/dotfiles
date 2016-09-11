@@ -5,7 +5,7 @@ source $HOME/.zsh_functions
 #---------- antigen 
 
 if [[ $PLATFORM == 'Darwin' ]]; then
-    source $(brew --prefix)/share/antigen.zsh
+    source $(brew --prefix)/share/antigen/antigen.zsh
 elif [[ -e /usr/share/zsh-antigen/antigen.zsh ]]; then
     source /usr/share/zsh-antigen/antigen.zsh
 else
