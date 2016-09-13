@@ -28,6 +28,7 @@ brew install colordiff
 brew install coreutils --with-gmp
 brew install docker docker-cloud docker-compose docker-machine docker-swarm
 brew install dos2unix
+brew install exiftool
 brew install ffmpeg
 brew install --default-names findutils
 brew install git git-extras legit
@@ -44,6 +45,7 @@ brew install neovim/neovim/neovim
 brew install node
 brew install npm
 brew install packer
+brew install phantomjs
 brew install postgresql
 brew install python python3
 brew install ruby rbenv rbenv-gemset ruby-build
@@ -70,9 +72,8 @@ brew cask install bitbar
 brew cask install brave
 brew cask install divvy
 brew cask install datagrip
-brew cask install dockertoolbox
+brew cask install docker-toolbox
 brew cask install evernote
-brew cask install exiftool
 brew cask install filezilla
 brew cask install firefox
 brew cask install flux
@@ -91,7 +92,6 @@ brew cask install lastpass
 brew cask install libreoffice
 brew cask install logitech-harmony
 brew cask install otto
-brew cask install phantomjs
 brew cask install pycharm
 brew cask install robomongo
 brew cask install rubymine
