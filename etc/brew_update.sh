@@ -35,6 +35,7 @@ brew install git git-extras legit
 brew install go
 brew install htop
 brew install TomAnthony/brews/itermocil
+brew install jenkins
 brew install macvim --with-lua
 brew install mas
 brew install mobile-shell
@@ -54,6 +55,7 @@ brew install rlwrap
 brew install sshuttle
 brew install stunnel
 brew install terminator
+brew install terraform
 brew install tmux
 brew install tree
 brew install vim --override-system-vi --with-lua
@@ -87,11 +89,9 @@ brew cask install handbrake
 brew cask install hexchat
 brew cask install intellij-idea
 brew cask install java
-brew cask install jenkins
 brew cask install lastpass
 brew cask install libreoffice
 brew cask install logitech-harmony
-brew cask install otto
 brew cask install pycharm
 brew cask install robomongo
 brew cask install rubymine
@@ -101,7 +101,6 @@ brew cask install sqlitebrowser
 brew cask install staruml
 brew cask install sublime-text
 brew cask install teamviewer
-brew cask install terraform
 brew cask install tower
 brew cask install vagrant
 brew cask install virtualbox
