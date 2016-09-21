@@ -52,7 +52,7 @@ fi
 
 #----- golang and gvm (go version manager)
 if [[ $PLATFORM == 'Darwin' ]]; then
-    export GOROOT_BOOTSTRAP=$(brew --prefix)/Cellar/go/1.6.3/libexec
+    export GOROOT_BOOTSTRAP=$(brew --prefix)/Cellar/go/1.7.1/libexec
 fi
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 
