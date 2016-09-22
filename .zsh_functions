@@ -1,4 +1,4 @@
-source .shell_functions
+source $HOME/.shell_functions
 
 function cat_video {
     # concatenate 2 or more video files using ffmpeg (requires zsh)
