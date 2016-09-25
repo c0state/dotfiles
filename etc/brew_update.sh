@@ -32,7 +32,7 @@ brew install exiftool
 brew install ffmpeg
 brew install --default-names findutils
 brew install git git-extras legit
-brew install go
+brew install go go-delve/delve/delve
 brew install htop
 brew install TomAnthony/brews/itermocil
 brew install jenkins
