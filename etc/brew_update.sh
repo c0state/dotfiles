@@ -26,6 +26,7 @@ brew install chromedriver
 brew install cmake
 brew install colordiff
 brew install coreutils --with-gmp
+brew install ddrescue
 brew install docker docker-cloud docker-compose docker-machine docker-swarm
 brew install dos2unix
 brew install exiftool
