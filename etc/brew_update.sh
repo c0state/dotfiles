@@ -97,6 +97,7 @@ brew cask install origami-studio
 brew cask install pycharm
 brew cask install robomongo
 brew cask install rubymine
+brew cask install sketch
 brew cask install sketch-toolbox
 brew cask install slack
 brew cask install sourcetree
