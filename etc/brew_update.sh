@@ -46,6 +46,7 @@ brew install mysql
 brew install neovim/neovim/neovim
 brew install node
 brew install npm
+brew install optipng
 brew install packer
 brew install phantomjs
 brew install postgresql
@@ -55,6 +56,7 @@ brew install redis
 brew install rlwrap
 brew install sshuttle
 brew install stunnel
+brew install svg2png
 brew install terminator
 brew install terraform
 brew install tmux
@@ -93,27 +95,35 @@ brew cask install java
 brew cask install lastpass
 brew cask install libreoffice
 brew cask install logitech-harmony
+brew cask install mono-mdk
 brew cask install origami-studio
 brew cask install pycharm
 brew cask install robomongo
 brew cask install rubymine
 brew cask install sketch
 brew cask install sketch-toolbox
+brew cask install skype
 brew cask install slack
 brew cask install sourcetree
 brew cask install sqlitebrowser
+brew cask install sqlitestudio
+brew cask install sqlpro-for-sqlite
 brew cask install staruml
 brew cask install sublime-text
 brew cask install teamviewer
+brew cask install torbrowser
 brew cask install tower
 brew cask install vagrant
 brew cask install virtualbox
 brew cask install viscosity
+brew cask install visual-studio
 brew cask install visual-studio-code
 brew cask install vmware-fusion
 brew cask install webstorm
 brew cask install whatsapp
 brew cask install wireshark
+brew cask install xamarin
+brew cask install xquartz inkscape
 
 brew cleanup && brew cask cleanup
 
