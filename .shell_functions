@@ -83,3 +83,14 @@ function strip_comments_blank_lines {
       \grep -v -E "\s*#|^\s*$" "$*"
     fi
 }
+
+function show_hidden_files_macos {
+    defaults write com.apple.finder AppleShowAllFiles YES
+    killall Finder /System/Library/CoreServices/Finder.app
+}
+
+function hide_hidden_files_macos {
+    defaults write com.apple.finder AppleShowAllFiles NO
+    killall Finder /System/Library/CoreServices/Finder.app
+}
+
