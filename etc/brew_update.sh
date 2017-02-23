@@ -49,6 +49,7 @@ brew install npm
 brew install optipng
 brew install packer
 brew install phantomjs
+brew install pidcat
 brew install postgresql
 brew install python python3
 brew install ruby rbenv rbenv-gemset ruby-build
