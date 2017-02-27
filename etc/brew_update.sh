@@ -106,6 +106,7 @@ brew cask install sketch-toolbox
 brew cask install skype
 brew cask install slack
 brew cask install sourcetree
+brew cask install spectacle
 brew cask install sqlitebrowser
 brew cask install sqlitestudio
 brew cask install sqlpro-for-sqlite
