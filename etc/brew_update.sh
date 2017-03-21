@@ -77,6 +77,7 @@ brew cask install atom
 brew cask install beyond-compare
 brew cask install bitbar
 brew cask install brave
+brew cask install coconutbattery
 brew cask install divvy
 brew cask install datagrip
 brew cask install docker-toolbox
@@ -116,6 +117,7 @@ brew cask install sublime-text
 brew cask install teamviewer
 brew cask install torbrowser
 brew cask install tower
+brew cask install turbo-boost-switcher
 brew cask install vagrant
 brew cask install virtualbox
 brew cask install viscosity
