@@ -60,6 +60,10 @@ function git_clean_local {
 
 function logcat { adb logcat -d -v time ; }
 
+function mp3_to_ogg_vorbis {
+    ffmpeg -i "$1" -c:a libvorbis "$2";
+}
+
 function pprint_csv {
     # pretty print csv files
     csvlook "$1" | less -#2 -N -S
