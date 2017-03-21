@@ -30,7 +30,7 @@ brew install ddrescue
 brew install docker docker-cloud docker-compose docker-machine docker-swarm
 brew install dos2unix
 brew install exiftool
-brew install ffmpeg
+brew install ffmpeg --with-libvorbis
 brew install --default-names findutils
 brew install git git-extras legit
 brew install go go-delve/delve/delve
