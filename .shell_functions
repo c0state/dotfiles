@@ -3,7 +3,9 @@ function bash_colors {
 	for i in {0..255} ; do printf "\x1b[38;5;${i}mcolour${i}\n" ; done
 }
 
-function debug { [ "$DEBUG" ] && echo "$*" }
+function debug {
+    [ "$DEBUG" ] && echo "$*"
+}
 
 function divvy_export {
     if [[ $1 == "" ]]; then
@@ -17,7 +19,8 @@ function findnewest {
     if [[ $1 != "" ]]; then
       num_items_to_show="-n $1"
     fi
-    find . -type f -printf '%T+ %p\n' | sort -r | head $num_items_to_show ;
+
+    find . -type f -printf '%T+ %p\n' | sort -r | head $num_items_to_show
 }
 
 function fixinsecurecompaudit {
