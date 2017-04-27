@@ -35,6 +35,7 @@ brew install --default-names findutils
 brew install git git-extras legit
 brew install go go-delve/delve/delve
 brew install htop
+brew install imagemagick
 brew install TomAnthony/brews/itermocil
 brew install jenkins
 brew install macvim --with-lua
@@ -55,6 +56,7 @@ brew install python python3
 brew install ruby rbenv rbenv-gemset ruby-build
 brew install redis
 brew install rlwrap
+brew install smartmontools
 brew install sshuttle
 brew install stunnel
 brew install svg2png
@@ -122,6 +124,7 @@ brew cask install virtualbox
 brew cask install viscosity
 brew cask install visual-studio
 brew cask install visual-studio-code
+brew cask install vlc
 brew cask install vmware-fusion
 brew cask install webstorm
 brew cask install whatsapp
