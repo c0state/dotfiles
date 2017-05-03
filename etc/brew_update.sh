@@ -132,6 +132,6 @@ brew cask install wireshark
 brew cask install xamarin
 brew cask install xquartz inkscape
 
-brew cleanup && brew cask cleanup
+brew cleanup && brew cask cleanup && brew prune
 
 echo "Finished installing brew and brew cask packages successfully."
