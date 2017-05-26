@@ -5,9 +5,6 @@
 # exit on any failed command
 set -e
 
-# tap some extra homebrew repos
-brew tap homebrew/gui
-
 brew update && brew upgrade
 
 #---------- brew packages ----------
