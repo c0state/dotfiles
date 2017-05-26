@@ -71,6 +71,7 @@ brew install zsh zsh-completions zsh-syntax-highlighting
 brew cask install 1password
 brew cask install adobe-reader
 brew cask install android-studio
+brew cask install android-studio-canary
 brew cask install atom
 brew cask install beyond-compare
 brew cask install bitbar
@@ -93,6 +94,7 @@ brew cask install handbrake
 brew cask install hexchat
 brew cask install intellij-idea
 brew cask install java
+brew cask install jetbrains-toolbox
 brew cask install lastpass
 brew cask install libreoffice
 brew cask install logitech-harmony
