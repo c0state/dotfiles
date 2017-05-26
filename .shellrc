@@ -24,7 +24,7 @@ elif [[ $PLATFORM == 'Darwin' ]]; then
 
   # if android studio platform tools are installed
   if [[ -e ~/Library/Android/sdk/platform-tools ]]; then
-    export PATH=~/Library/Android/sdk/platform-tools:$PATH
+    export PATH=~/Library/Android/sdk/platform-tools:~/Library/Android/sdk/tools/bin:$PATH
   fi
 
   if [ -n "$BASH_VERSION" ]; then
