@@ -1,14 +1,15 @@
 [include]
-	path = .gitconfig-custom
+    path = .gitconfig-custom
 [color]
     ui = true
 [format]
     pretty = oneline
 [core]
     editor = vim
-	excludesfile = ~/.gitignore_global
+    excludesfile = ~/.gitignore_global
     filemode = false
     pager = "diff-so-fancy | less --tabs=1,5 -R"
+    autocrlf = input
 [alias]
     br = !git branch -vv
     branches = !legit branches
@@ -34,4 +35,4 @@
 [mergetool]
     prompt = false
 [submodule]
-	fetchJobs = 0
+    fetchJobs = 0
