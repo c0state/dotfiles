@@ -50,6 +50,7 @@ brew install phantomjs
 brew install pidcat
 brew install postgresql
 brew install python python3
+brew install q
 brew install ruby rbenv rbenv-gemset ruby-build
 brew install redis
 brew install rlwrap
@@ -80,6 +81,7 @@ brew cask install coconutbattery
 brew cask install divvy
 brew cask install datagrip
 brew cask install docker-toolbox
+brew cask install etrecheck
 brew cask install evernote
 brew cask install filezilla
 brew cask install firefox
@@ -117,7 +119,6 @@ brew cask install sublime-text
 brew cask install teamviewer
 brew cask install torbrowser
 brew cask install tower
-brew cask install turbo-boost-switcher
 brew cask install vagrant
 brew cask install virtualbox
 brew cask install viscosity
