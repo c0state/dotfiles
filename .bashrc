@@ -1,3 +1,3 @@
-source .shellrc
+source $HOME/.shellrc
 
-source .bash_functions
+source $HOME/.bash_functions
