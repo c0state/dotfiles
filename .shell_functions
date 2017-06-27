@@ -7,6 +7,10 @@ function debug {
     [ "$DEBUG" ] && echo "$*"
 }
 
+function convert_greyscale {
+    convert "$1" -set colorspace Gray -separate -average "$2"
+}
+
 function divvy_export {
     if [[ $1 == "" ]]; then
         echo "Please provide filename to write divvy config to"
