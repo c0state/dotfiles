@@ -48,6 +48,7 @@ brew install optipng
 brew install packer
 brew install phantomjs
 brew install pidcat
+brew install pngquant
 brew install postgresql
 brew install python python3
 brew install q
@@ -94,6 +95,7 @@ brew cask install google-play-music-desktop-player
 brew cask install gopro-studio
 brew cask install handbrake
 brew cask install hexchat
+brew cask install imageoptim
 brew cask install intellij-idea
 brew cask install java
 brew cask install jetbrains-toolbox
@@ -102,6 +104,7 @@ brew cask install libreoffice
 brew cask install logitech-harmony
 brew cask install mono-mdk
 brew cask install origami-studio
+brew cask install prime95
 brew cask install pycharm
 brew cask install robomongo
 brew cask install rubymine
