@@ -93,6 +93,11 @@ def setup_git_subrepo():
     else:
         os.system("""(cd ~/.git-subrepo && git pull)""")
 
+
+def setup_apex():
+    os.system("""curl https://raw.githubusercontent.com/apex/apex/master/"""
+              """install.sh | sh""")
+
 if __name__ == '__main__':
     (options, args) = parse_options()
 
