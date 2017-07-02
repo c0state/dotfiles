@@ -24,6 +24,7 @@ brew install cmake
 brew install colordiff
 brew install coreutils --with-gmp
 brew install ddrescue
+brew install direnv
 brew install docker docker-cloud docker-compose docker-machine docker-swarm
 brew install dos2unix
 brew install exiftool
@@ -84,6 +85,7 @@ brew cask install datagrip
 brew cask install docker-toolbox
 brew cask install etrecheck
 brew cask install evernote
+brew cask install fastlane
 brew cask install filezilla
 brew cask install firefox
 brew cask install flux

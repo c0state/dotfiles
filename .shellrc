@@ -32,6 +32,11 @@ elif [[ $PLATFORM == 'Darwin' ]]; then
       source $(brew --prefix)/share/bash-completion/bash_completion
     fi
   fi
+
+  # add fastlane to path
+  if [[ -e $HOME/.fastlane/bin ]]; then
+    export PATH=$HOME/.fastlane/bin:$PATH
+  fi
 fi 
 
 #----- php version manager
