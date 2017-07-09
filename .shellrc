@@ -9,7 +9,10 @@ export EDITOR=vim
 
 #----- set based on platform (Linux or OS X)
 if [[ $PLATFORM == 'Linux' ]]; then
-  export PATH=$PATH:~/Dropbox/Apps/Linux/bin:~/Dropbox/Apps/Linux/android-sdk-linux_x86/tools:~/Dropbox/Apps/Linux/android-sdk-linux_x86/platform-tools:/usr/local/heroku/bin
+  export PATH=$PATH:$PATH/Dropbox/Apps/Linux/bin:$HOME/Dropbox/Apps/Linux/android-sdk-linux_x86/tools:$HOME/Dropbox/Apps/Linux/android-sdk-linux_x86/platform-tools:/usr/local/heroku/bin
+  if [[ -e $HOME/Android/sdk ]]; then
+    export PATH=$PATH:$HOME/Android/sdk/tools/bin
+  fi
 elif [[ $PLATFORM == 'Darwin' ]]; then
   # if homebrew is installed put it's bin dir first
   if [[ -e /usr/local/bin/brew ]]; then
@@ -23,8 +26,8 @@ elif [[ $PLATFORM == 'Darwin' ]]; then
   fi
 
   # if android studio platform tools are installed
-  if [[ -e ~/Library/Android/sdk/platform-tools ]]; then
-    export PATH=~/Library/Android/sdk/platform-tools:~/Library/Android/sdk/tools/bin:$PATH
+  if [[ -e $HOME/Library/Android/sdk ]]; then
+    export PATH=$HOME/Library/Android/sdk/platform-tools:$HOME/Library/Android/sdk/tools/bin:$PATH
   fi
 
   if [ -n "$BASH_VERSION" ]; then
@@ -42,7 +45,7 @@ fi
 #----- php version manager
 if [[ -e "${HOME}/.php-version" ]] ; then
   export PHP_VERSIONS="${HOME}/.php-version/versions"
-  source ~/.php-version/php-version.sh && php-version 5
+  source $HOME/.php-version/php-version.sh && php-version 5
 fi
 
 #----- pyenv
@@ -66,8 +69,8 @@ export PATH="$HOME/.anyenv/bin:$PATH"
 eval "$(anyenv init -)"
 
 # source git-subrepo
-if [[ -e ~/.git-subrepo/.rc ]]; then
-    source ~/.git-subrepo/.rc
+if [[ -e $HOME/.git-subrepo/.rc ]]; then
+    source $HOME/.git-subrepo/.rc
 fi
 
 #----- set terminal title
@@ -83,22 +86,22 @@ export PS1='\[\e[0;31m\][\D{%Y-%m-%d} \t]\[\e[m\]\[\e[0;37m\]\u@\h\[\e[m\]\[\e[0
 [ -s "${HOME}/.kre/kvm/kvm.sh" ] && . "${HOME}/.kre/kvm/kvm.sh" # Load kvm
 
 #----- add system agnostic apps to path
-export PATH=$PATH:~/Dropbox/Apps/Universal/bin:~/Dropbox/Apps/Universal/ec2-api-tools-1.4.2.4/bin
+export PATH=$PATH:$HOME/Dropbox/Apps/Universal/bin:$HOME/Dropbox/Apps/Universal/ec2-api-tools-1.4.2.4/bin
 
 #----- for Amazon AWS EC2 tools
-export EC2_HOME=~/Dropbox/Apps/Universal/ec2-api-tools-1.4.2.4
-export EC2_PRIVATE_KEY=~/Dropbox/AmazonAWS/X509Key
-export EC2_CERT=~/Dropbox/AmazonAWS/X509Cert
+export EC2_HOME=$HOME/Dropbox/Apps/Universal/ec2-api-tools-1.4.2.4
+export EC2_PRIVATE_KEY=$HOME/Dropbox/AmazonAWS/X509Key
+export EC2_CERT=$HOME/Dropbox/AmazonAWS/X509Cert
 
 # use vi bindings
 #set -o vi
 
 eval "$(rbenv init -)"
 
-source ~/.bash_aliases
+source $HOME/.bash_aliases
 
 # source any custom bashrc configuration
-if [[ -e ~/.bashrc_custom ]] ; then
-  source ~/.bashrc_custom
+if [[ -e $HOME/.bashrc_custom ]] ; then
+  source $HOME/.bashrc_custom
 fi
 
