@@ -16,8 +16,10 @@ apt-get update
 #----- install packages
 
 apt-get install aptitude
-aptitude install curl git gparted vim-gnome wget \
+aptitude install \
+    curl git gparted vim-gnome wget \
     cmake \
+    direnv \
     golang \
     build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev libxml2-dev \
     mono-complete \
