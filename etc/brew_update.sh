@@ -19,6 +19,7 @@ brew install antigen
 brew install apache-drill
 brew install awscli
 brew install bash homebrew/versions/bash-completion2
+brew install bfg
 brew install chromedriver
 brew install cmake
 brew install colordiff
@@ -53,6 +54,7 @@ brew install pngquant
 brew install postgresql
 brew install python python3
 brew install q
+brew install ripgrep
 brew install ruby rbenv rbenv-gemset ruby-build
 brew install redis
 brew install rlwrap
@@ -90,13 +92,14 @@ brew cask install filezilla
 brew cask install firefox
 brew cask install flux
 brew cask install gimp
+brew cask install google-backup-and-sync
 brew cask install google-cloud-sdk
-brew cask install google-drive
 brew cask install google-nik-collection
 brew cask install google-play-music-desktop-player
 brew cask install gopro-studio
 brew cask install handbrake
 brew cask install hexchat
+brew cask install hwsensors
 brew cask install imageoptim
 brew cask install intellij-idea
 brew cask install java
