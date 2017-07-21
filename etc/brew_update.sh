@@ -37,6 +37,7 @@ brew install htop
 brew install imagemagick
 brew install TomAnthony/brews/itermocil
 brew install jenkins
+brew install jq
 brew install macvim --with-lua
 brew install mas
 brew install mobile-shell
@@ -48,6 +49,7 @@ brew install node
 brew install npm
 brew install optipng
 brew install packer
+brew install parallel
 brew install phantomjs
 brew install pidcat
 brew install pngquant
