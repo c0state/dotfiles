@@ -3,13 +3,14 @@
 set -ex
 
 # this is a list of pypi packages to install into system python for general use
-pip install --upgrade ansible-toolkit
+pip install --upgrade ansible ansible-toolkit markupsafe
 pip install --upgrade autoenv
 pip install --upgrade autopep8
 pip install --upgrade awscli
 pip install --upgrade cdiff
 pip install --upgrade cookiecutter
 pip install --upgrade csvkit
+pip install --upgrade dopy
 pip install --upgrade gunicorn
 pip install --upgrade howdoi
 pip install --upgrade http-prompt
