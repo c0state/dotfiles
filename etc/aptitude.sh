@@ -16,14 +16,29 @@ apt-get update
 #----- install packages
 
 apt-get install aptitude
-aptitude install \
+aptitude install -y \
     curl git gparted vim-gnome wget \
-    cmake \
     direnv \
     golang \
-    build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev libxml2-dev \
-    mono-complete \
-    nodejs nodejs-legacy npm \
-    python-dev python-pip python3-pip \
-    ruby-dev rbenv \
-    zsh zsh-antigen zsh-doc zsh-syntax-highlighting -y
+    build-essential cmake libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev libxml2-dev \
+    mono-complete
+
+# install java packages
+aptitude install -y \
+    openjdk-8-jre-headless openjdk-9-jre-headless
+
+# install node packages
+aptitude install -y \
+    nodejs nodejs-legacy npm
+
+# install python packages
+aptitude install -y \
+    python-dev python-pip python3-pip
+
+# install ruby packages
+aptitude install -y \
+    ruby-dev rbenv
+
+# install zsh packages
+aptitude install -y \
+    zsh zsh-antigen zsh-doc zsh-syntax-highlighting
