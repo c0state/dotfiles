@@ -1,7 +1,7 @@
 [include]
 	path = .gitconfig-base
 [core]
-	autocrlf = auto
+	autocrlf = true
 [diff]
 	tool = bc3
 [difftool "bc3"]
