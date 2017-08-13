@@ -23,9 +23,14 @@ aptitude install -y \
     build-essential cmake libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev libxml2-dev \
     mono-complete
 
+# install image packages
+aptitude install -y \
+    imagemagick pngquant
+
 # install java packages
 aptitude install -y \
-    openjdk-8-jre-headless openjdk-9-jre-headless
+    openjdk-8-jdk openjdk-9-jdk
+update-alternatives --set java /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
 
 # install node packages
 aptitude install -y \
