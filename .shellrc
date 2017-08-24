@@ -11,7 +11,7 @@ export EDITOR=vim
 if [[ $PLATFORM == 'Linux' ]]; then
   export PATH=$PATH:$PATH/Dropbox/Apps/Linux/bin:$HOME/Dropbox/Apps/Linux/android-sdk-linux_x86/tools:$HOME/Dropbox/Apps/Linux/android-sdk-linux_x86/platform-tools:/usr/local/heroku/bin
   if [[ -e $HOME/Android/sdk ]]; then
-    export PATH=$PATH:$HOME/Android/sdk/tools/bin
+    export PATH=$PATH:$HOME/Android/sdk/tools/bin:$HOME/Android/sdk/platform-tools
   fi
 elif [[ $PLATFORM == 'Darwin' ]]; then
   # if homebrew is installed put it's bin dir first
