@@ -23,7 +23,7 @@ aptitude install -y \
     golang \
     build-essential cmake libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev libxml2-dev \
     mono-complete \
-    tree \
+    parallel tree \
     vagrant
 
 # install image packages
