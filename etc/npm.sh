@@ -2,6 +2,7 @@
 
 set -ex
 
+npm install -g aws-sam-local
 npm install -g beame-insta-ssl
 npm install -g bower
 npm install -g diff-so-fancy
