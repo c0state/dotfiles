@@ -103,6 +103,7 @@ brew cask install handbrake
 brew cask install hexchat
 brew cask install hwsensors
 brew cask install imageoptim
+brew cask install insync
 brew cask install intellij-idea
 brew cask install java
 brew cask install jetbrains-toolbox
@@ -115,6 +116,7 @@ brew cask install prime95
 brew cask install pycharm
 brew cask install robomongo
 brew cask install rubymine
+brew cask install shadowsocksx-ng
 brew cask install sketch
 brew cask install sketch-toolbox
 brew cask install skype
