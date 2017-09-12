@@ -94,6 +94,7 @@ brew cask install filezilla
 brew cask install firefox
 brew cask install flux
 brew cask install gimp
+brew cask install gitkraken
 brew cask install google-backup-and-sync
 brew cask install google-cloud-sdk
 brew cask install google-nik-collection
@@ -110,6 +111,7 @@ brew cask install jetbrains-toolbox
 brew cask install lastpass
 brew cask install libreoffice
 brew cask install logitech-harmony
+brew cask install microsoft-office
 brew cask install mono-mdk
 brew cask install origami-studio
 brew cask install prime95
