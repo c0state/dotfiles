@@ -84,6 +84,7 @@ brew cask install beyond-compare
 brew cask install bitbar
 brew cask install brave
 brew cask install coconutbattery
+brew cask install disk-inventory-x
 brew cask install divvy
 brew cask install datagrip
 brew cask install docker-toolbox
