@@ -10,6 +10,8 @@
 	<integer>0</integer>
 	<key>AppleSmoothFixedFontsSizeThreshold</key>
 	<integer>1</integer>
+	<key>AppleWindowTabbingMode</key>
+	<string>manual</string>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>Dracula</key>
@@ -290,11 +292,13 @@
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>960 0 955 1177 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>960 3 955 1170 0 0 1920 1177 </string>
+	<string>960 0 955 1177 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>960 11 955 1166 0 0 1920 1177 </string>
+	<string>960 0 955 1177 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>0 11 955 1166 0 0 1920 1178 </string>
+	<string>0 0 955 1178 0 0 1920 1178 </string>
+	<key>NSWindow Frame iTerm Window 4</key>
+	<string>960 0 955 1177 0 0 1920 1177 </string>
 	<key>NeverWarnAboutShortLivedSessions_05FAECF0-62A3-4092-8194-7EF607FC7AE5</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_05FAECF0-62A3-4092-8194-7EF607FC7AE5_selection</key>
@@ -1581,7 +1585,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>554FB1A9-1028-450F-A50F-CA16C9E9A32D</string>
 	<key>NoSyncLastTipTime</key>
-	<real>528047027.32364702</real>
+	<real>528308504.422755</real>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -1662,6 +1666,9 @@
 		<string>0066</string>
 		<string>0067</string>
 		<string>0068</string>
+		<string>0069</string>
+		<string>0070</string>
+		<string>0071</string>
 	</array>
 	<key>PMPrintingExpandedStateForPrint2</key>
 	<false/>
@@ -1713,7 +1720,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-09-24T04:51:04Z</date>
+	<date>2017-10-04T21:21:12Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>TabStyle</key>
@@ -1723,7 +1730,7 @@
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
 	<key>iTerm Version</key>
-	<string>3.1.1</string>
+	<string>3.1.2</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
