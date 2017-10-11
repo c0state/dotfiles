@@ -26,7 +26,7 @@ brew install colordiff
 brew install coreutils --with-gmp
 brew install ddrescue
 brew install direnv
-brew install docker docker-cloud docker-compose docker-machine docker-swarm
+brew install docker-cloud
 brew install dos2unix
 brew install exiftool
 brew install ffmpeg --with-libvorbis
@@ -77,6 +77,7 @@ brew install zsh zsh-completions zsh-syntax-highlighting
 # install apps via brew cask
 brew cask install 1password
 brew cask install adobe-reader
+brew cask install aerial
 brew cask install android-studio
 brew cask install android-studio-canary
 brew cask install atom
@@ -87,7 +88,7 @@ brew cask install coconutbattery
 brew cask install disk-inventory-x
 brew cask install divvy
 brew cask install datagrip
-brew cask install docker-toolbox
+brew cask install docker
 brew cask install etrecheck
 brew cask install evernote
 brew cask install fastlane
