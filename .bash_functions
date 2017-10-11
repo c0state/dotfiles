@@ -1,1 +1,1 @@
-source .shell_functions
+source $HOME/.shell_functions
