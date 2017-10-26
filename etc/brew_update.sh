@@ -101,9 +101,7 @@ brew cask install google-backup-and-sync
 brew cask install google-cloud-sdk
 brew cask install google-nik-collection
 brew cask install google-play-music-desktop-player
-brew cask install gopro-studio
 brew cask install handbrake
-brew cask install hexchat
 brew cask install hwsensors
 brew cask install imageoptim
 brew cask install insync
@@ -112,13 +110,11 @@ brew cask install java
 brew cask install jetbrains-toolbox
 brew cask install lastpass
 brew cask install libreoffice
-brew cask install logitech-harmony
 brew cask install microsoft-office
 brew cask install mono-mdk
 brew cask install origami-studio
 brew cask install prime95
 brew cask install pycharm
-brew cask install robomongo
 brew cask install rubymine
 brew cask install shadowsocksx-ng
 brew cask install sketch
