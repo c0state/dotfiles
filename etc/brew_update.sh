@@ -76,7 +76,7 @@ brew install zsh zsh-completions zsh-syntax-highlighting
 
 # install apps via brew cask
 brew cask install 1password
-brew cask install adobe-reader
+brew cask install adobe-acrobat-reader
 brew cask install aerial
 brew cask install android-studio
 brew cask install android-studio-canary
@@ -143,6 +143,7 @@ brew cask install whatsapp
 brew cask install wireshark
 brew cask install xamarin
 brew cask install xquartz inkscape
+brew cask install zeplin
 
 brew cleanup && brew cask cleanup && brew prune
 
