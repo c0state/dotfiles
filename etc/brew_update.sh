@@ -79,7 +79,6 @@ brew cask install 1password
 brew cask install adobe-acrobat-reader
 brew cask install aerial
 brew cask install android-studio
-brew cask install android-studio-canary
 brew cask install atom
 brew cask install beyond-compare
 brew cask install bitbar
