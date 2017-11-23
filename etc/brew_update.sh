@@ -18,7 +18,7 @@ brew install ansible
 brew install antigen
 brew install apache-drill
 brew install awscli
-brew install bash homebrew/versions/bash-completion2
+brew install bash-completion@2
 brew install bfg
 brew install chromedriver
 brew install cmake
@@ -26,6 +26,7 @@ brew install colordiff
 brew install coreutils --with-gmp
 brew install ddrescue
 brew install direnv
+brew install dnsmasq
 brew install docker-cloud
 brew install dos2unix
 brew install exiftool
@@ -44,7 +45,7 @@ brew install mobile-shell
 brew install mongodb
 brew install mono
 brew install mysql
-brew install neovim/neovim/neovim
+brew install neovim
 brew install node
 brew install npm
 brew install optipng
@@ -78,6 +79,7 @@ brew install zsh zsh-completions zsh-syntax-highlighting
 brew cask install 1password
 brew cask install adobe-acrobat-reader
 brew cask install aerial
+brew cask install alfred
 brew cask install android-studio
 brew cask install atom
 brew cask install beyond-compare
@@ -86,7 +88,6 @@ brew cask install brave
 brew cask install coconutbattery
 brew cask install disk-inventory-x
 brew cask install divvy
-brew cask install datagrip
 brew cask install docker
 brew cask install etrecheck
 brew cask install evernote
@@ -104,8 +105,7 @@ brew cask install handbrake
 brew cask install hwsensors
 brew cask install imageoptim
 brew cask install insync
-brew cask install intellij-idea
-brew cask install java
+brew cask install java8
 brew cask install jetbrains-toolbox
 brew cask install lastpass
 brew cask install libreoffice
