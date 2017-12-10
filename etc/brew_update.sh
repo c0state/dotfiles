@@ -113,8 +113,6 @@ brew cask install microsoft-office
 brew cask install mono-mdk
 brew cask install origami-studio
 brew cask install prime95
-brew cask install pycharm
-brew cask install rubymine
 brew cask install shadowsocksx-ng
 brew cask install sketch
 brew cask install sketch-toolbox
@@ -137,7 +135,6 @@ brew cask install visual-studio
 brew cask install visual-studio-code
 brew cask install vlc
 brew cask install vmware-fusion
-brew cask install webstorm
 brew cask install whatsapp
 brew cask install wireshark
 brew cask install xamarin
