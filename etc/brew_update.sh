@@ -71,6 +71,7 @@ brew install tmux
 brew install tree
 brew install vim --override-system-vi --with-lua
 brew install wget
+brew install yarn
 brew install zsh zsh-completions zsh-syntax-highlighting
 
 #---------- brew cask packages ----------
