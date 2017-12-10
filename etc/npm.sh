@@ -4,7 +4,6 @@ set -ex
 
 npm install -g aws-sam-local
 npm install -g beame-insta-ssl
-npm install -g bower
 npm install -g create-react-app
 npm install -g diff-so-fancy
 npm install -g dynamodb-admin
