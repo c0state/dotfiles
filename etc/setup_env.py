@@ -78,6 +78,13 @@ def setup_divvy():
                   "`cat ~/.dotfiles/osx_configs/divvy_export.txt`")
 
 
+def setup_pyenv():
+    if not os.path.exists(os.path.expanduser("~/.pyenv")):
+        os.system("""git clone https://github.com/pyenv/pyenv ~/.pyenv""")
+        os.system("""git clone https://github.com/pyenv/pyenv-virtualenv.git """
+                  """$(pyenv root)/plugins/pyenv-virtualenv""")
+
+
 def setup_gvm():
     if not os.path.exists(os.path.expanduser("~/.gvm")):
         os.system("""curl -s -S -L """
@@ -105,5 +112,6 @@ if __name__ == '__main__':
     setup_shell()
     setup_vim()
     setup_divvy()
+    setup_pyenv()
     setup_gvm()
     setup_git_subrepo()
