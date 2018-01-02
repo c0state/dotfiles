@@ -111,6 +111,7 @@ brew cask install jetbrains-toolbox
 brew cask install lastpass
 brew cask install libreoffice
 brew cask install microsoft-office
+brew cask install minikube
 brew cask install mono-mdk
 brew cask install origami-studio
 brew cask install prime95
@@ -125,6 +126,7 @@ brew cask install sqlitebrowser
 brew cask install sqlitestudio
 brew cask install sqlpro-for-sqlite
 brew cask install staruml
+brew cask install steam
 brew cask install sublime-text
 brew cask install teamviewer
 brew cask install torbrowser
