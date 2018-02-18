@@ -76,6 +76,8 @@ brew install zsh zsh-completions zsh-syntax-highlighting
 
 #---------- brew cask packages ----------
 
+brew tap caskroom/versions
+
 # install apps via brew cask
 brew cask install 1password
 brew cask install adobe-acrobat-reader
@@ -87,6 +89,7 @@ brew cask install beyond-compare
 brew cask install bitbar
 brew cask install brave
 brew cask install coconutbattery
+brew cask install db-browser-for-sqlite
 brew cask install disk-inventory-x
 brew cask install divvy
 brew cask install docker
@@ -96,16 +99,17 @@ brew cask install fastlane
 brew cask install filezilla
 brew cask install firefox
 brew cask install flux
+brew cask install genymotion
 brew cask install gimp
 brew cask install gitkraken
-brew cask install google-backup-and-sync
+brew cask install google-backup-and-sync google-drive-file-stream
 brew cask install google-cloud-sdk
 brew cask install google-nik-collection
-brew cask install google-play-music-desktop-player
 brew cask install handbrake
 brew cask install hwsensors
 brew cask install imageoptim
 brew cask install insync
+brew cask install iterm2
 brew cask install java8
 brew cask install jetbrains-toolbox
 brew cask install lastpass
@@ -122,7 +126,6 @@ brew cask install skype
 brew cask install slack
 brew cask install sourcetree
 brew cask install spectacle
-brew cask install sqlitebrowser
 brew cask install sqlitestudio
 brew cask install sqlpro-for-sqlite
 brew cask install staruml
