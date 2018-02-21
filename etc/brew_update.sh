@@ -5,6 +5,9 @@
 # exit on any failed command
 set -e
 
+# add taps
+brew tap busterc/tap
+
 brew update && brew upgrade
 
 #---------- brew packages ----------
@@ -33,8 +36,11 @@ brew install exiftool
 brew install ffmpeg --with-libvorbis
 brew install --default-names findutils
 brew install git git-extras legit
+brew install git git-extras legit
+brew install glances
 brew install go go-delve/delve/delve
-brew install htop
+# htop currently broken, see: https://github.com/hishamhm/htop/issues/682
+# brew install htop
 brew install imagemagick
 brew install TomAnthony/brews/itermocil
 brew install jenkins
@@ -49,6 +55,7 @@ brew install neovim
 brew install node
 brew install npm
 brew install optipng
+brew install osx-iso
 brew install packer
 brew install parallel
 brew install phantomjs
@@ -93,6 +100,7 @@ brew cask install db-browser-for-sqlite
 brew cask install disk-inventory-x
 brew cask install divvy
 brew cask install docker
+brew cask install double-commander
 brew cask install etrecheck
 brew cask install evernote
 brew cask install fastlane
