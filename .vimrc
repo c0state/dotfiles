@@ -296,7 +296,7 @@ if has("unix")
   endif
 endif
 
-# see: https://github.com/macvim-dev/macvim/issues/562#issuecomment-358887928
+" see: https://github.com/macvim-dev/macvim/issues/562#issuecomment-358887928
 command! -nargs=1 Py py3 <args>
 set pythonthreedll=/usr/local/Frameworks/Python.framework/Versions/3.6/Python
 set pythonthreehome=/usr/local/Frameworks/Python.framework/Versions/3.6
