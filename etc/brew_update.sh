@@ -38,7 +38,7 @@ brew install --default-names findutils
 brew install git git-extras legit
 brew install git git-extras legit
 brew install glances
-brew install go go-delve/delve/delve
+brew install go
 # htop currently broken, see: https://github.com/hishamhm/htop/issues/682
 # brew install htop
 brew install imagemagick
