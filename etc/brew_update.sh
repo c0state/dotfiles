@@ -6,9 +6,17 @@
 set -e
 
 # add taps
+brew tap caskroom/versions
 brew tap busterc/tap
 
 brew update && brew upgrade
+
+#---------- high level dependencies ----------
+
+# need to install items from the app store
+brew install mas
+# java is needed for some apps
+brew cask install java8
 
 #---------- brew packages ----------
 
@@ -23,8 +31,8 @@ brew install apache-drill
 brew install awscli
 brew install bash-completion@2
 brew install bfg
-brew install chromedriver
 brew install cmake
+brew install cocoapods
 brew install colordiff
 brew install coreutils --with-gmp
 brew install ddrescue
@@ -46,7 +54,6 @@ brew install TomAnthony/brews/itermocil
 brew install jenkins
 brew install jq
 brew install macvim --with-lua
-brew install mas
 brew install mobile-shell
 brew install mongodb
 brew install mono
@@ -83,8 +90,6 @@ brew install zsh zsh-completions zsh-syntax-highlighting
 
 #---------- brew cask packages ----------
 
-brew tap caskroom/versions
-
 # install apps via brew cask
 brew cask install 1password
 brew cask install adobe-acrobat-reader
@@ -95,6 +100,7 @@ brew cask install atom
 brew cask install beyond-compare
 brew cask install bitbar
 brew cask install brave
+brew cask install chromedriver
 brew cask install coconutbattery
 brew cask install db-browser-for-sqlite
 brew cask install disk-inventory-x
@@ -114,6 +120,7 @@ brew cask install google-backup-and-sync google-drive-file-stream
 brew cask install google-cloud-sdk
 brew cask install google-nik-collection
 brew cask install handbrake
+brew cask install intel-haxm
 brew cask install hwsensors
 brew cask install imageoptim
 brew cask install insync
