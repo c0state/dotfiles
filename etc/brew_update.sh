@@ -146,6 +146,7 @@ brew cask install sqlpro-for-sqlite
 brew cask install staruml
 brew cask install steam
 brew cask install sublime-text
+brew cask install superduper
 brew cask install teamviewer
 brew cask install torbrowser
 brew cask install tower
