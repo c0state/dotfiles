@@ -59,6 +59,8 @@ if [[ -e "$HOME/.pyenv" ]] ; then
   eval "$(pyenv virtualenv-init -)"
 fi
 
+export PATH=$PATH:$(python -m site --user-base)/bin
+
 #----- golang and gvm (go version manager)
 if [[ $PLATFORM == 'Darwin' ]]; then
     export GOROOT_BOOTSTRAP=$(brew --prefix)/Cellar/go/1.7.1/libexec
