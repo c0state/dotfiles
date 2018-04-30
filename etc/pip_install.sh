@@ -3,27 +3,28 @@
 set -ex
 
 # this is a list of pypi packages to install into system python for general use
-pip install --upgrade ansible ansible-toolkit markupsafe
-pip install --upgrade autoenv
-pip install --upgrade autopep8
-pip install --upgrade awscli
-pip install --upgrade cdiff
-pip install --upgrade cookiecutter
-pip install --upgrade csvkit
-pip install --upgrade dopy
-pip install --upgrade gunicorn
-pip install --upgrade howdoi
-pip install --upgrade http-prompt
-pip install --upgrade httpie
-pip install --upgrade jupyter
-pip install --upgrade markdown
-pip install --upgrade neovim
-pip install --upgrade pip
-pip install --upgrade pip-tools
-pip install --upgrade ptpython
-pip install --upgrade pytest
-pip install --upgrade pythonpy
-pip install --upgrade pyyaml
-pip install --upgrade saws
-pip install --upgrade virtualenv
-pip install --upgrade virtualenvwrapper
+pip install --upgrade --user ansible ansible-toolkit markupsafe
+pip install --upgrade --user autoenv
+pip install --upgrade --user autopep8
+pip install --upgrade --user awscli
+pip install --upgrade --user cdiff
+pip install --upgrade --user cookiecutter
+pip install --upgrade --user csvkit
+pip install --upgrade --user dopy
+pip install --upgrade --user gunicorn
+pip install --upgrade --user howdoi
+pip install --upgrade --user http-prompt
+pip install --upgrade --user httpie
+pip install --upgrade --user jupyter
+pip install --upgrade --user markdown
+pip install --upgrade --user neovim
+pip install --upgrade --user pip
+pip install --upgrade --user pipenv
+pip install --upgrade --user pip-tools
+pip install --upgrade --user ptpython
+pip install --upgrade --user pytest
+pip install --upgrade --user pythonpy
+pip install --upgrade --user pyyaml
+pip install --upgrade --user saws
+pip install --upgrade --user virtualenv
+pip install --upgrade --user virtualenvwrapper
