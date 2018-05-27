@@ -31,6 +31,7 @@ brew install apache-drill
 brew install awscli
 brew install bash-completion@2
 brew install bfg
+brew install carthage
 brew install cmake
 brew install cocoapods
 brew install colordiff
@@ -53,6 +54,7 @@ brew install imagemagick
 brew install TomAnthony/brews/itermocil
 brew install jenkins
 brew install jq
+brew install lyft/formulae/set-simulator-location
 brew install macvim --with-lua
 brew install mobile-shell
 brew install mongodb
