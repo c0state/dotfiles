@@ -10,6 +10,7 @@
     filemode = false
     pager = "diff-so-fancy | less --tabs=1,5 -R"
     autocrlf = input
+    eol = lf
 [alias]
     br = !git branch -vv
     branches = !legit branches
