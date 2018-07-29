@@ -44,15 +44,13 @@ brew install dos2unix
 brew install exiftool
 brew install ffmpeg --with-libvorbis
 brew install --default-names findutils
-brew install git git-extras legit
-brew install git git-extras legit
+brew install git git-extras git-lfs legit
 brew install glances
 brew install go
 # htop currently broken, see: https://github.com/hishamhm/htop/issues/682
 # brew install htop
 brew install imagemagick
 brew install TomAnthony/brews/itermocil
-brew install jenkins
 brew install jq
 brew install lyft/formulae/set-simulator-location
 brew install macvim --with-lua
