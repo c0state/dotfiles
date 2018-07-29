@@ -16,7 +16,7 @@ brew update && brew upgrade
 # need to install items from the app store
 brew install mas
 # java is needed for some apps
-brew cask install java8
+brew cask install java
 
 #---------- brew packages ----------
 
