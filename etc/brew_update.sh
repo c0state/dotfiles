@@ -125,9 +125,7 @@ brew cask install hwsensors
 brew cask install imageoptim
 brew cask install insync
 brew cask install iterm2
-brew cask install java8
 brew cask install jetbrains-toolbox
-brew cask install lastpass
 brew cask install libreoffice
 brew cask install microsoft-office
 brew cask install minikube
