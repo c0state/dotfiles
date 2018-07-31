@@ -98,14 +98,3 @@ function strip_comments_blank_lines {
 function sync_emulator_time {
     adb -e shell su root date `date +"%m%d%H%M%y"`
 }
-
-function show_hidden_files_macos {
-    defaults write com.apple.finder AppleShowAllFiles YES
-    killall Finder /System/Library/CoreServices/Finder.app
-}
-
-function hide_hidden_files_macos {
-    defaults write com.apple.finder AppleShowAllFiles NO
-    killall Finder /System/Library/CoreServices/Finder.app
-}
-
