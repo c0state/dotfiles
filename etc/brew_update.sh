@@ -54,6 +54,7 @@ brew install TomAnthony/brews/itermocil
 brew install jq
 brew install lyft/formulae/set-simulator-location
 brew install macvim --with-lua
+brew install media-info
 brew install mobile-shell
 brew install mongodb
 brew install mono
