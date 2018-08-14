@@ -83,7 +83,6 @@ brew install terminator
 brew install terraform
 brew install tmux
 brew install tree
-brew install vim --with-override-system-vi --with-lua
 brew install wget
 brew install yarn
 brew install zsh zsh-completions zsh-syntax-highlighting

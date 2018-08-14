@@ -53,13 +53,7 @@
   Plugin 'SirVer/ultisnips'
   Plugin 'sjl/gundo.vim'
   Plugin 'tomasr/molokai'
-  if has("unix")
-    let s:uname = system("uname")
-    if s:uname !~ "CYGWIN.*"
-      Plugin 'Valloric/YouCompleteMe'
-    endif
-  endif
-
+  Plugin 'Valloric/YouCompleteMe'
   Plugin 'tpope/vim-fugitive'
   Plugin 'tpope/vim-surround'
   Plugin 'vim-scripts/sessionman.vim'
@@ -295,8 +289,3 @@ if has("unix")
     let $PYTHONHOME='/System/Library/Frameworks/Python.framework/Versions/Current'
   endif
 endif
-
-" see: https://github.com/macvim-dev/macvim/issues/562#issuecomment-358887928
-command! -nargs=1 Py py3 <args>
-set pythonthreedll=/usr/local/Frameworks/Python.framework/Versions/3.6/Python
-set pythonthreehome=/usr/local/Frameworks/Python.framework/Versions/3.6
