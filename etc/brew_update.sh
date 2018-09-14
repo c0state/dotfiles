@@ -162,6 +162,6 @@ brew cask install xamarin
 brew cask install xquartz inkscape
 brew cask install zeplin
 
-brew cleanup && brew cask cleanup && brew prune
+brew cleanup && brew prune
 
 echo "Finished installing brew and brew cask packages successfully."
