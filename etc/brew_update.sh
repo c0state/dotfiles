@@ -70,12 +70,12 @@ brew install phantomjs
 brew install pidcat
 brew install pngquant
 brew install postgresql
-brew install python python3
 brew install q
 brew install ripgrep
-brew install ruby rbenv rbenv-gemset ruby-build
+brew install rbenv rbenv-gemset ruby-build
 brew install redis
 brew install rlwrap
+brew install getsentry/tools/sentry-cli
 brew install smartmontools
 brew install sshuttle
 brew install stunnel
@@ -109,7 +109,6 @@ brew cask install docker
 brew cask install double-commander
 brew cask install etrecheck
 brew cask install evernote
-brew cask install fastlane
 brew cask install filezilla
 brew cask install firefox
 brew cask install flux
@@ -120,10 +119,11 @@ brew cask install google-backup-and-sync google-drive-file-stream
 brew cask install google-cloud-sdk
 brew cask install google-nik-collection
 brew cask install handbrake
-brew cask install intel-haxm
 brew cask install hwsensors
 brew cask install imageoptim
 brew cask install insync
+brew cask install intel-haxm
+brew cask install istat-menus
 brew cask install iterm2
 brew cask install jetbrains-toolbox
 brew cask install libreoffice
