@@ -66,7 +66,6 @@ brew install optipng
 brew install osx-iso
 brew install packer
 brew install parallel
-brew install phantomjs
 brew install pidcat
 brew install pngquant
 brew install postgresql
