@@ -81,6 +81,7 @@ brew install stunnel
 brew install svg2png
 brew install terminator
 brew install terraform
+brew install terraform_landscape
 brew install tmux
 brew install tree
 brew install wget
@@ -93,12 +94,14 @@ brew install zsh zsh-completions zsh-syntax-highlighting
 brew cask install 1password
 brew cask install adobe-acrobat-reader
 brew cask install aerial
+brew cask install alacritty
 brew cask install alfred
 brew cask install android-studio
 brew cask install atom
 brew cask install beyond-compare
 brew cask install bitbar
 brew cask install brave
+brew cask install calibre
 brew cask install chromedriver
 brew cask install coconutbattery
 brew cask install db-browser-for-sqlite
