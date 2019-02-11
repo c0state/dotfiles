@@ -282,10 +282,3 @@ execute WatchForChanges("*",autoreadargs)
   " shorcut for shift-:
   nnoremap ; :
 "-----
-
-if has("unix")
-  let s:uname = system("uname")
-  if s:uname == "Darwin\n"
-    let $PYTHONHOME='/System/Library/Frameworks/Python.framework/Versions/Current'
-  endif
-endif
