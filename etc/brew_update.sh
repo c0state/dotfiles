@@ -35,15 +35,15 @@ brew install carthage
 brew install cmake
 brew install cocoapods
 brew install colordiff
-brew install coreutils --with-gmp
+brew install coreutils
 brew install ddrescue
 brew install direnv
 brew install dnsmasq
 brew install docker-cloud
 brew install dos2unix
 brew install exiftool
-brew install ffmpeg --with-libvorbis
-brew install --default-names findutils
+brew install ffmpeg
+brew install findutils
 brew install git git-extras git-lfs legit
 brew install glances
 brew install go
@@ -53,7 +53,7 @@ brew install imagemagick
 brew install TomAnthony/brews/itermocil
 brew install jq
 brew install lyft/formulae/set-simulator-location
-brew install macvim --with-lua
+brew install macvim
 brew install media-info
 brew install mobile-shell
 brew install mongodb
