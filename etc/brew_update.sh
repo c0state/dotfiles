@@ -133,6 +133,7 @@ brew cask install microsoft-office
 brew cask install minikube
 brew cask install mono-mdk
 brew cask install origami-studio
+brew cask install outline-manager
 brew cask install prime95
 brew cask install shadowsocksx-ng
 brew cask install sketch
