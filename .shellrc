@@ -61,6 +61,9 @@ fi
 
 export PATH=$PATH:$(python -m site --user-base)/bin
 
+#----- poetry python tool
+export PATH="$PATH:$HOME/.poetry/bin"
+
 #----- golang and gvm (go version manager)
 if [[ $PLATFORM == 'Darwin' ]]; then
     export GOROOT_BOOTSTRAP=$(brew --prefix)/Cellar/go/1.7.1/libexec
