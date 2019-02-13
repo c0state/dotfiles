@@ -47,8 +47,7 @@ brew install findutils
 brew install git git-extras git-lfs legit
 brew install glances
 brew install go
-# htop currently broken, see: https://github.com/hishamhm/htop/issues/682
-# brew install htop
+brew install htop
 brew install imagemagick
 brew install TomAnthony/brews/itermocil
 brew install jq
