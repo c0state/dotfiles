@@ -9,7 +9,7 @@ set -e
 brew tap caskroom/versions
 brew tap busterc/tap
 
-brew update && brew upgrade
+brew update && brew upgrade && brew cask upgrade
 
 #---------- high level dependencies ----------
 
