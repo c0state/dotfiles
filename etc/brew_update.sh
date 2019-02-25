@@ -131,6 +131,7 @@ brew cask install libreoffice
 brew cask install microsoft-office
 brew cask install minikube
 brew cask install mono-mdk
+brew cask install ngrok
 brew cask install origami-studio
 brew cask install outline-manager
 brew cask install prime95
@@ -148,7 +149,7 @@ brew cask install steam
 brew cask install sublime-text
 brew cask install superduper
 brew cask install teamviewer
-brew cask install torbrowser
+brew cask install tor-browser
 brew cask install tower
 brew cask install vagrant
 brew cask install virtualbox
