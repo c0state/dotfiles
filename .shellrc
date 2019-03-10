@@ -1,6 +1,9 @@
 #----- detect platform
 PLATFORM=`uname`
 
+#----- always use full color terminal
+export TERM=xterm-256color
+
 #----- increase history file sizes
 export HISTSIZE=10000
 export HISTFILESIZE=20000
