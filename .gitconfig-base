@@ -14,7 +14,7 @@
 [alias]
     br = !git branch -vv
     branches = !legit branches
-    cdiff = difftool -y -x 'colordiff -y'
+    cdiff = difftool -y -x 'icdiff --highlight --line-number'
     ci = commit
     co = checkout
     dump = cat-file -p
