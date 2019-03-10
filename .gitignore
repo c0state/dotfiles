@@ -1,4 +1,8 @@
+# ignore temp files
 *~
 *.swp
-.gitconfig-custom
+
 *.ropeproject
+
+# antigen compat auto generated files
+*.antigen-compat
