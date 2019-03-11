@@ -21,62 +21,64 @@
   set pastetoggle=<F2>
 "-----
 
-"----- Vundle
-  filetype off
-  
-  set rtp+=~/.vim/bundle/Vundle.vim
-  call vundle#begin()
-  Plugin 'VundleVim/Vundle.vim'
-"-----
+"----- vim-plug https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-"----- Vundle Bundles
-  Plugin 'editorconfig/editorconfig-vim'
-  Plugin 'greyblake/vim-preview'
-  Plugin 'suan/vim-instant-markdown'
-  Plugin 'jlanzarotta/bufexplorer'
+call plug#begin('~/.vim/bundle')
+"----- vim-plug end
 
-  Plugin 'vim-scripts/vim-auto-save'
+"----- Vim Bundles
+  Plug 'editorconfig/editorconfig-vim'
+  Plug 'greyblake/vim-preview'
+  Plug 'suan/vim-instant-markdown'
+  Plug 'jlanzarotta/bufexplorer'
+
+  Plug 'vim-scripts/vim-auto-save'
   let g:auto_save = 1  " enable AutoSave on Vim startup
   let g:auto_save_no_updatetime = 1  " do not change the 'updatetime' option
   let g:auto_save_in_insert_mode = 0  " do not save while in insert mode
 
   "----- golang
-  Plugin 'nsf/gocode', {'rtp': 'vim/'}
+  Plug 'nsf/gocode', {'rtp': 'vim/'}
   "-----
 
-  Plugin 'ghewgill/vim-scmdiff'
-  Plugin 'kien/ctrlp.vim'
-  Plugin 'Lokaltog/vim-powerline'
-  Plugin 'Lokaltog/vim-easymotion'
-  Plugin 'majutsushi/tagbar'
-  Plugin 'mileszs/ack.vim'
-  Plugin 'SirVer/ultisnips'
-  Plugin 'sjl/gundo.vim'
-  Plugin 'tomasr/molokai'
-  Plugin 'Valloric/YouCompleteMe'
-  Plugin 'tpope/vim-fugitive'
-  Plugin 'tpope/vim-surround'
-  Plugin 'vim-scripts/sessionman.vim'
-  Plugin 'vim-scripts/ZoomWin'
+  Plug 'ghewgill/vim-scmdiff'
+  Plug 'kien/ctrlp.vim'
+  Plug 'Lokaltog/vim-powerline'
+  Plug 'Lokaltog/vim-easymotion'
+  Plug 'majutsushi/tagbar'
+  Plug 'mileszs/ack.vim'
+  Plug 'SirVer/ultisnips'
+  Plug 'sjl/gundo.vim'
+  Plug 'tomasr/molokai'
+  Plug 'Valloric/YouCompleteMe'
+  Plug 'tpope/vim-fugitive'
+  Plug 'tpope/vim-surround'
+  Plug 'vim-scripts/sessionman.vim'
+  Plug 'vim-scripts/ZoomWin'
 
-  Plugin 'wincent/Command-T'
+  Plug 'wincent/Command-T'
   let g:CommandTMaxFiles=30000
   let g:CommandTMaxCachedDirectories=10
 "-----
 
 "----- Load neocomplete
-  Plugin 'Shougo/neocomplete'
+  Plug 'Shougo/neocomplete'
   let g:neocomplete#enable_at_startup = 1
 "-----
 
 "----- Syntax checkers
-  Plugin 'python-mode/python-mode'
+  Plug 'python-mode/python-mode'
   let g:pymode_lint = 1
   let g:pymode_folding = 0
   let g:pymode_rope = 0
 
   "----- Scrooloose
-  Plugin 'scrooloose/syntastic'
+  Plug 'scrooloose/syntastic'
   set statusline+=%#warningmsg#
   set statusline+=%{SyntasticStatuslineFlag()}
   set statusline+=%*
@@ -88,19 +90,19 @@
 "-----
 
 "----- Snippets
-  Plugin 'MarcWeber/vim-addon-mw-utils'
-  Plugin 'tomtom/tlib_vim'
-  Plugin 'garbas/vim-snipmate'
-  Plugin 'honza/vim-snippets'
+  Plug 'MarcWeber/vim-addon-mw-utils'
+  Plug 'tomtom/tlib_vim'
+  Plug 'garbas/vim-snipmate'
+  Plug 'honza/vim-snippets'
 "-----
 
 "----- Color schemes
-  Plugin 'flazz/vim-colorschemes'
+  Plug 'flazz/vim-colorschemes'
 "-----
 
 "----- NERDTree
-  Plugin 'scrooloose/nerdtree'
-  Plugin 'scrooloose/nerdcommenter'
+  Plug 'scrooloose/nerdtree'
+  Plug 'scrooloose/nerdcommenter'
 
   " open NERDTree at startup
   autocmd vimenter * NERDTree
@@ -110,9 +112,8 @@
   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 "-----
 
-"----- Vundle config end
-  call vundle#end()
-  filetype plugin indent on
+"----- vim-plug
+call plug#end()
 "-----
 
 "----- autoread watcher from http://vim.wikia.com/wiki/Have_Vim_check_automatically_if_the_file_has_changed_externally
