@@ -8,7 +8,11 @@ export TERM=xterm-256color
 export HISTSIZE=10000
 export HISTFILESIZE=20000
 
+#----- set preferred editor and mode(s)
 export EDITOR=vim
+# use vi bindings in shell
+#set -o vi
+
 
 #----- set based on platform (Linux or OS X)
 if [[ $PLATFORM == 'Linux' ]]; then
@@ -98,14 +102,11 @@ export EC2_HOME=$HOME/Dropbox/Apps/Universal/ec2-api-tools-1.4.2.4
 export EC2_PRIVATE_KEY=$HOME/Dropbox/AmazonAWS/X509Key
 export EC2_CERT=$HOME/Dropbox/AmazonAWS/X509Cert
 
-# use vi bindings
-#set -o vi
-
 eval "$(rbenv init -)"
 
 source $HOME/.bash_aliases
 
-# source any custom bashrc configuration
+# source any custom shell configuration
 if [[ -e $HOME/.bashrc_custom ]] ; then
   source $HOME/.bashrc_custom
 fi
