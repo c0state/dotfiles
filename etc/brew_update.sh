@@ -74,6 +74,7 @@ brew install rbenv rbenv-gemset ruby-build
 brew install redis
 brew install rlwrap
 brew install getsentry/tools/sentry-cli
+brew install shellcheck
 brew install smartmontools
 brew install sshuttle
 brew install stunnel
@@ -128,6 +129,7 @@ brew cask install istat-menus
 brew cask install iterm2
 brew cask install jetbrains-toolbox
 brew cask install libreoffice
+brew cask install macdown
 brew cask install microsoft-office
 brew cask install minikube
 brew cask install mono-mdk
