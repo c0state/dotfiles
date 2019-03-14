@@ -34,7 +34,7 @@ brew install bfg
 brew install carthage
 brew install cmake
 brew install cocoapods
-brew install colordiff
+brew install colordiff icdiff
 brew install coreutils
 brew install ddrescue
 brew install diff-so-fancy
