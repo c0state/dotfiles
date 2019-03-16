@@ -66,7 +66,7 @@ def setup_vim():
     else:
         print("vundle already installed")
 
-    os.system("vim +PluginInstall +PluginUpdate + PluginClean +qall")
+    os.system("vim +PlugInstall +PlugUpdate + PlugClean +qall")
 
     os.system("(cd ~/.vim/bundle/YouCompleteMe && ./install.py "
               "--clang-completer --omnisharp-completer --gocode-completer)")
