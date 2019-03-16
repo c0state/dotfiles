@@ -84,6 +84,12 @@ def setup_pyenv():
         os.system("""git clone https://github.com/pyenv/pyenv-virtualenv.git """
                   """$(pyenv root)/plugins/pyenv-virtualenv""")
 
+def setup_rbenv():
+    if not os.path.exists(os.path.expanduser("~/.rbenv")):
+        os.system("""git clone https://github.com/rbenv/rbenv.git ~/.rbenv""")
+        os.system("""cd ~/.rbenv && src/configure && make -C src""")
+        os.system("""~/.rbenv/bin/rbenv init""")
+        os.system("""git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build""")
 
 def setup_gvm():
     if not os.path.exists(os.path.expanduser("~/.gvm")):
@@ -113,5 +119,6 @@ if __name__ == '__main__':
     setup_vim()
     setup_divvy()
     setup_pyenv()
+    setup_rbenv()
     setup_gvm()
     setup_git_subrepo()
