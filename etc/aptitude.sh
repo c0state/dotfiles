@@ -4,10 +4,14 @@ set -ex
 
 # apt packages to install
 
-#----- set up keys and repos
+#----- install mono
 
-curl https://download.mono-project.com/repo/xamarin.gpg | sudo apt-key add -
-echo "deb http://download.mono-project.com/repo/debian wheezy main" | tee /etc/apt/sources.list.d/mono-xamarin.list
+sudo apt install gnupg ca-certificates
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+echo "deb https://download.mono-project.com/repo/ubuntu stable-bionic main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
+
+aptitude install -y \
+    mono-complete
 
 #----- update
 
@@ -16,20 +20,27 @@ apt-get update
 #----- install packages
 
 apt-get install aptitude
+
+# install utility packages
 aptitude install -y \
     colordiff curl git gparted vim-nox wget \
     direnv \
     dos2unix \
-    golang \
     icdiff \
-    build-essential cmake libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev libxml2-dev \
-    mono-complete \
-    parallel tree \
+    parallel tree
+
+# install developer packages
+aptitude install -y \
+    build-essential cmake zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev llvm libncurses5-dev libncursesw5-dev libxml2-dev \
     vagrant
 
 # install image packages
 aptitude install -y \
     imagemagick pngquant
+
+# install go packages
+aptitude install -y \
+    golang
 
 # install java packages
 aptitude install -y \
