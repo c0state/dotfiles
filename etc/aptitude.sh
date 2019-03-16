@@ -2,32 +2,36 @@
 
 set -ex
 
-# apt packages to install
+# various apt packages to install
+
+#----- update and install aptitude
+
+apt-get update
+apt-get install aptitude
+
+#----- install utility packages
+
+aptitude install -y \
+    colordiff icdiff \
+    curl wget \
+    direnv \
+    dos2unix \
+    git \
+    gparted \
+    gnupg ca-certificates \
+    parallel \
+    tree \
+    vim-nox
 
 #----- install mono
 
-sudo apt-get install gnupg ca-certificates
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-echo "deb https://download.mono-project.com/repo/ubuntu stable-bionic main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
+apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+echo "deb https://download.mono-project.com/repo/ubuntu stable-bionic main" | tee /etc/apt/sources.list.d/mono-official-stable.list
 
 aptitude install -y \
     mono-complete
 
-#----- update
-
-apt-get update
-
 #----- install packages
-
-apt-get install aptitude
-
-# install utility packages
-aptitude install -y \
-    colordiff curl git gparted vim-nox wget \
-    direnv \
-    dos2unix \
-    icdiff \
-    parallel tree
 
 # install developer packages
 aptitude install -y \
@@ -48,8 +52,8 @@ aptitude install -y \
 update-alternatives --set java /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
 
 # install node packages
-aptitude install -y \
-    nodejs npm
+curl -sL https://deb.nodesource.com/setup_11.x | bash -
+aptitude install -y nodejs
 
 # install python packages
 aptitude install -y \
