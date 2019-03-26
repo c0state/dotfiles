@@ -110,7 +110,7 @@ brew cask install disk-inventory-x
 brew cask install divvy
 brew cask install docker
 brew cask install double-commander
-brew cask install etrecheck
+brew cask install etrecheckpro
 brew cask install evernote
 brew cask install filezilla
 brew cask install firefox
