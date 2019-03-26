@@ -47,7 +47,7 @@ call plug#begin('~/.vim/bundle')
   "-----
 
   Plug 'ghewgill/vim-scmdiff'
-  Plug 'kien/ctrlp.vim'
+  Plug 'ctrlpvim/ctrlp.vim'
   Plug 'Lokaltog/vim-powerline'
   Plug 'Lokaltog/vim-easymotion'
   Plug 'majutsushi/tagbar'
