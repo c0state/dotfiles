@@ -60,6 +60,7 @@ brew install mongodb
 brew install mono
 brew install mysql
 brew install neovim
+brew install nmap
 brew install node
 brew install npm
 brew install optipng
@@ -98,6 +99,7 @@ brew cask install aerial
 brew cask install alacritty
 brew cask install alfred
 brew cask install android-studio
+brew cask install angry-ip-scanner
 brew cask install atom
 brew cask install beyond-compare
 brew cask install bitbar
