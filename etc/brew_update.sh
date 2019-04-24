@@ -101,6 +101,7 @@ brew cask install alfred
 brew cask install android-studio
 brew cask install angry-ip-scanner
 brew cask install atom
+brew cask install balenaetcher
 brew cask install beyond-compare
 brew cask install bitbar
 brew cask install brave
