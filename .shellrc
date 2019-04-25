@@ -88,9 +88,6 @@ then
   export PROMPT_COMMAND='echo -ne "\033]0;${PWD}\007"'
 fi
 
-#----- set shell prompt
-export PS1='\[\e[0;31m\][\D{%Y-%m-%d} \t]\[\e[m\]\[\e[0;37m\]\u@\h\[\e[m\]\[\e[0;32m\][$HOSTTYPE][\w]\[\e[m\]\n> '
-
 #----- load aspnet k version manager (kvm)
 [ -s "${HOME}/.kre/kvm/kvm.sh" ] && . "${HOME}/.kre/kvm/kvm.sh" # Load kvm
 

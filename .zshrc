@@ -2,37 +2,36 @@ source $HOME/.shellrc
 
 source $HOME/.zsh_functions
 
-#---------- antigen 
+#---------- zplug
 
-if [[ $PLATFORM == 'Darwin' ]]; then
-    source $(brew --prefix)/share/antigen/antigen.zsh
-elif [[ -e /usr/share/zsh-antigen/antigen.zsh ]]; then
-    source /usr/share/zsh-antigen/antigen.zsh
-else
-    echo "Could not find antigen!" 1>&2
-    exit 1
-fi
+source ~/.zplug/init.zsh
 
-# Load the oh-my-zsh library
-antigen use oh-my-zsh
+# oh-my-zsh plugins
+zplug "plugins/git",   from:oh-my-zsh
+zplug "plugins/git-extras",   from:oh-my-zsh
+zplug "plugins/pip",   from:oh-my-zsh
+zplug "plugins/python",   from:oh-my-zsh
 
-# Bundles from the default repo (robbyrussell's oh-my-zsh).
-antigen bundle robbyrussell/oh-my-zsh plugins/git
-antigen bundle robbyrussell/oh-my-zsh plugins/git-extras
-antigen bundle robbyrussell/oh-my-zsh plugins/pip
-antigen bundle robbyrussell/oh-my-zsh plugins/python
-
-# zsh-users bundles
-antigen bundle zsh-users/zsh-completions src
-antigen bundle zsh-users/zsh-syntax-highlighting
+# zsh-users plugins
+zplug "zsh-users/zsh-syntax-highlighting"
+zplug "zsh-users/zsh-completions"
 
 # load custom bundles
-antigen bundle $HOME/.dotfiles/.oh-my-zsh-custom
+zplug "~/.oh-my-zsh-custom", from:local
 
 # Load custom theme
-antigen theme "$HOME/.dotfiles/.oh-my-zsh-custom" c0state
+zplug "~/.oh-my-zsh-custom", from:local, as:theme, use:c0state.zsh-theme
 
-antigen apply
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+# Then, source plugins and add commands to $PATH
+zplug load # --verbose
 
 # ---------- Customize to your needs...
 
