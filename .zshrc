@@ -7,19 +7,18 @@ source $HOME/.zsh_functions
 source ~/.zplug/init.zsh
 
 # oh-my-zsh plugins
-zplug "plugins/git",   from:oh-my-zsh
-zplug "plugins/git-extras",   from:oh-my-zsh
-zplug "plugins/pip",   from:oh-my-zsh
-zplug "plugins/python",   from:oh-my-zsh
+zplug "robbyrussell/oh-my-zsh", as:plugin, use:"lib/*.zsh"
+zplug "plugins/git",        from:oh-my-zsh
+zplug "plugins/git-extras", from:oh-my-zsh
+zplug "plugins/pip",        from:oh-my-zsh
+zplug "plugins/python",     from:oh-my-zsh
 
 # zsh-users plugins
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-completions"
 
-# load custom bundles
+# load custom bundles and theme
 zplug "~/.oh-my-zsh-custom", from:local
-
-# Load custom theme
 zplug "~/.oh-my-zsh-custom", from:local, as:theme, use:c0state.zsh-theme
 
 # Install plugins if there are plugins that have not been installed
