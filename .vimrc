@@ -37,6 +37,12 @@ call plug#begin('~/.vim/bundle')
   Plug 'suan/vim-instant-markdown'
   Plug 'jlanzarotta/bufexplorer'
 
+  "----- vim-airline
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+  let g:airline_theme='soda'
+  "-----
+
   Plug 'vim-scripts/vim-auto-save'
   let g:auto_save = 1  " enable AutoSave on Vim startup
   let g:auto_save_no_updatetime = 1  " do not change the 'updatetime' option
