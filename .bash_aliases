@@ -4,6 +4,7 @@ PLATFORM=`uname`
 alias diff="colordiff --side-by-side --suppress-common-lines"
 alias dbox="dropbox.py"
 alias findforks="find . -type f -exec test -s {}/..namedfork/rsrc \; -print"
+alias fzf="fzf --preview 'head -100 {}'"
 alias gitdt="git difftool "
 alias gitvdiff="git difftool -t tkdiff --no-prompt"
 alias grep="egrep"
