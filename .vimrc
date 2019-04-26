@@ -52,8 +52,12 @@ call plug#begin('~/.vim/bundle')
   Plug 'nsf/gocode', {'rtp': 'vim/'}
   "-----
 
+  "----- fuzzy finder
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+  Plug 'junegunn/fzf.vim'
+  "-----
+
   Plug 'ghewgill/vim-scmdiff'
-  Plug 'ctrlpvim/ctrlp.vim'
   Plug 'Lokaltog/vim-powerline'
   Plug 'Lokaltog/vim-easymotion'
   Plug 'majutsushi/tagbar'
@@ -66,10 +70,6 @@ call plug#begin('~/.vim/bundle')
   Plug 'tpope/vim-surround'
   Plug 'vim-scripts/sessionman.vim'
   Plug 'vim-scripts/ZoomWin'
-
-  Plug 'wincent/Command-T'
-  let g:CommandTMaxFiles=30000
-  let g:CommandTMaxCachedDirectories=10
 "-----
 
 "----- Load neocomplete
