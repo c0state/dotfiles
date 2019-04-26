@@ -57,8 +57,13 @@ call plug#begin('~/.vim/bundle')
   Plug 'junegunn/fzf.vim'
   "-----
 
+  "----- tpope stuff
+  Plug 'tpope/vim-eunuch'
+  Plug 'tpope/vim-fugitive'
+  Plug 'tpope/vim-surround'
+  "-----
+
   Plug 'ghewgill/vim-scmdiff'
-  Plug 'Lokaltog/vim-powerline'
   Plug 'Lokaltog/vim-easymotion'
   Plug 'majutsushi/tagbar'
   Plug 'mileszs/ack.vim'
@@ -66,8 +71,6 @@ call plug#begin('~/.vim/bundle')
   Plug 'sjl/gundo.vim'
   Plug 'tomasr/molokai'
   Plug 'Valloric/YouCompleteMe'
-  Plug 'tpope/vim-fugitive'
-  Plug 'tpope/vim-surround'
   Plug 'vim-scripts/sessionman.vim'
   Plug 'vim-scripts/ZoomWin'
 "-----
