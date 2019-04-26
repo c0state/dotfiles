@@ -45,6 +45,7 @@ brew install dos2unix
 brew install exiftool
 brew install ffmpeg
 brew install findutils
+brew install fzf
 brew install git git-extras git-lfs legit
 brew install glances
 brew install go
