@@ -63,46 +63,47 @@ call plug#begin('~/.vim/bundle')
   Plug 'tpope/vim-surround'
   "-----
 
+  "----- git plugins
+  Plug 'airblade/vim-gitgutter'
+  "-----
+
+  "----- completion plugins
+  " deoplete
+  if has('nvim')
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  else
+    Plug 'Shougo/deoplete.nvim'
+    Plug 'roxma/nvim-yarp'
+    Plug 'roxma/vim-hug-neovim-rpc'
+  endif
+  let g:deoplete#enable_at_startup = 1
+
+  " deoplete plugins
+  Plug 'deoplete-plugins/deoplete-jedi'
+  "-----
+
+  "----- language server plugins
+  let g:ale_completion_enabled = 1
+  let g:deoplete#sources = {'_': ['ale']}
+  Plug 'w0rp/ale'
+  "-----
+
   Plug 'ghewgill/vim-scmdiff'
   Plug 'Lokaltog/vim-easymotion'
   Plug 'majutsushi/tagbar'
   Plug 'mileszs/ack.vim'
-  Plug 'SirVer/ultisnips'
   Plug 'sjl/gundo.vim'
   Plug 'tomasr/molokai'
-  Plug 'Valloric/YouCompleteMe'
   Plug 'vim-scripts/sessionman.vim'
   Plug 'vim-scripts/ZoomWin'
 "-----
 
-"----- Load neocomplete
-  Plug 'Shougo/neocomplete'
-  let g:neocomplete#enable_at_startup = 1
-"-----
-
 "----- Syntax checkers
-  Plug 'python-mode/python-mode'
-  let g:pymode_lint = 1
+  " need develop branch to fix https://github.com/python-mode/python-mode/issues/972
+  Plug 'python-mode/python-mode', { 'branch': 'develop' }
+  let g:pymode_lint = 0 " use w0rp/ale instead
   let g:pymode_folding = 0
   let g:pymode_rope = 0
-
-  "----- Scrooloose
-  Plug 'scrooloose/syntastic'
-  set statusline+=%#warningmsg#
-  set statusline+=%{SyntasticStatuslineFlag()}
-  set statusline+=%*
-  let g:syntastic_always_populate_loc_list = 1
-  let g:syntastic_auto_loc_list = 1
-  let g:syntastic_check_on_open = 1
-  let g:syntastic_check_on_wq = 0
-  "-----
-"-----
-
-"----- Snippets
-  Plug 'MarcWeber/vim-addon-mw-utils'
-  Plug 'tomtom/tlib_vim'
-  Plug 'garbas/vim-snipmate'
-  Plug 'honza/vim-snippets'
 "-----
 
 "----- Color schemes
