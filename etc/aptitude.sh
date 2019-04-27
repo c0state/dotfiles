@@ -48,8 +48,7 @@ aptitude install -y \
 
 # install java packages
 aptitude install -y \
-    openjdk-8-jdk openjdk-11-jdk
-update-alternatives --set java /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
+    openjdk-12-jdk
 
 # install networking packages
 aptitude install -y avahi-daemon samba winbind
