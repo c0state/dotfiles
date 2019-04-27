@@ -11,17 +11,19 @@ pip install --upgrade --user cdiff
 pip install --upgrade --user cookiecutter
 pip install --upgrade --user csvkit
 pip install --upgrade --user dopy
+pip install --upgrade --user jedi
 pip install --upgrade --user gunicorn
 pip install --upgrade --user howdoi
 pip install --upgrade --user http-prompt
 pip install --upgrade --user httpie
 pip install --upgrade --user jupyter
 pip install --upgrade --user markdown
-pip install --upgrade --user neovim
+pip install --upgrade --user neovim pynvim
 pip install --upgrade --user pip
 pip install --upgrade --user pipenv
 pip install --upgrade --user pip-tools
 pip install --upgrade --user ptpython
+pip install --upgrade --user pylint
 pip install --upgrade --user pytest
 pip install --upgrade --user pythonpy
 pip install --upgrade --user pyyaml
