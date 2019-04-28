@@ -6,7 +6,7 @@ set -ex
 pip install --upgrade --user ansible ansible-toolkit markupsafe
 pip install --upgrade --user autoenv
 pip install --upgrade --user autopep8
-pip install --upgrade --user awscli
+pip install --upgrade --user aws-shell
 pip install --upgrade --user cdiff
 pip install --upgrade --user cookiecutter
 pip install --upgrade --user csvkit
@@ -28,6 +28,5 @@ pip install --upgrade --user pytest
 pip install --upgrade --user pythonpy
 pip install --upgrade --user pyyaml
 pip install --upgrade --user ranger-fm
-pip install --upgrade --user saws
 pip install --upgrade --user virtualenv
 pip install --upgrade --user virtualenvwrapper
