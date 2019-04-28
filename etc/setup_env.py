@@ -60,16 +60,13 @@ def setup_shell():
 
 
 def setup_vim():
-    if not os.path.exists(os.path.expanduser("~/.vim/bundle/Vundle.vim")):
-        os.system("git clone https://github.com/VundleVim/Vundle.vim "
-                  "~/.vim/bundle/Vundle.vim")
+    if not os.path.exists(os.path.expanduser("~/.vim/autoload/plug.vim")):
+        os.system("curl -fLo ~/.vim/autoload/plug.vim --create-dirs "
+                  "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim")
     else:
-        print("vundle already installed")
+        print("vim-plug already installed")
 
-    os.system("vim +PlugInstall +PlugUpdate + PlugClean +qall")
-
-    os.system("(cd ~/.vim/bundle/YouCompleteMe && ./install.py "
-              "--clang-completer --omnisharp-completer --gocode-completer)")
+    os.system("vim +PlugClean +PlugInstall +PlugUpdate +qall")
 
 
 def setup_divvy():
