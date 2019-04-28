@@ -27,6 +27,7 @@ pip install --upgrade --user pylint
 pip install --upgrade --user pytest
 pip install --upgrade --user pythonpy
 pip install --upgrade --user pyyaml
+pip install --upgrade --user ranger-fm
 pip install --upgrade --user saws
 pip install --upgrade --user virtualenv
 pip install --upgrade --user virtualenvwrapper
