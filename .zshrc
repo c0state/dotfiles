@@ -1,41 +1,39 @@
+#---------- oh-my-zsh
+
+# pulled from latest template at
+# https://github.com/robbyrussell/oh-my-zsh/blob/master/templates/zshrc.zsh-template
+
+export ZSH=$HOME/.oh-my-zsh
+
+ZSH_THEME="c0state"
+
+CASE_SENSITIVE="false"
+HYPHEN_INSENSITIVE="false"
+DISABLE_AUTO_UPDATE="false"
+export UPDATE_ZSH_DAYS=1
+DISABLE_LS_COLORS="false"
+DISABLE_AUTO_TITLE="false"
+ENABLE_CORRECTION="false"
+COMPLETION_WAITING_DOTS="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
+HIST_STAMPS="yyyy-mm-dd"
+ZSH_CUSTOM=~/.oh-my-zsh-custom
+plugins=(
+    git
+    git-extras
+    pip
+    python
+    zsh-completions
+    zsh-syntax-highlighting
+)
+
+source $ZSH/oh-my-zsh.sh
+
+# ---------- Customize to your needs...
+#
 source $HOME/.shellrc
 
 source $HOME/.zsh_functions
-
-#---------- zplug
-
-source ~/.zplug/init.zsh
-
-# oh-my-zsh plugins
-zplug "robbyrussell/oh-my-zsh", as:plugin, use:"lib/*.zsh"
-zplug "plugins/git",        from:oh-my-zsh
-zplug "plugins/git-extras", from:oh-my-zsh
-zplug "plugins/pip",        from:oh-my-zsh
-zplug "plugins/python",     from:oh-my-zsh
-
-# zsh-users plugins
-zplug "zsh-users/zsh-syntax-highlighting"
-zplug "zsh-users/zsh-completions"
-
-# load custom bundles and theme
-zplug "~/.oh-my-zsh-custom", from:local
-zplug "~/.oh-my-zsh-custom", from:local, as:theme, use:c0state.zsh-theme
-
-# Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
-
-# Then, source plugins and add commands to $PATH
-zplug load # --verbose
-
-# ---------- Customize to your needs...
-
-# don't auto rename windows in tmux, etc.
-DISABLE_AUTO_TITLE=true
 
 # flash instead of audible beep
 ZBEEP='\e[?5h\e[?5l'
