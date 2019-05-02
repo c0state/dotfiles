@@ -53,6 +53,7 @@ brew install htop
 brew install imagemagick
 brew install TomAnthony/brews/itermocil
 brew install jq
+brew install lsd
 brew install lyft/formulae/set-simulator-location
 brew install macvim
 brew install media-info
