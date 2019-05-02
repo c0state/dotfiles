@@ -19,8 +19,11 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 HIST_STAMPS="yyyy-mm-dd"
 ZSH_CUSTOM=~/.oh-my-zsh-custom
 plugins=(
+    brew
+    colorize
     git
     git-extras
+    iterm2
     pip
     python
     zsh-completions
