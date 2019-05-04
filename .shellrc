@@ -13,9 +13,6 @@ export EDITOR=vim
 # use vi bindings in shell
 #set -o vi
 
-# set up dircolors
-eval `dircolors $HOME/.dotfiles/.dircolors`
-
 #----- set based on platform (Linux or OS X)
 if [[ $PLATFORM == 'Linux' ]]; then
   export PATH=$PATH:/usr/local/heroku/bin
@@ -56,6 +53,9 @@ elif [[ $PLATFORM == 'Darwin' ]]; then
     export PATH=$HOME/.fastlane/bin:$PATH
   fi
 fi 
+
+# set up dircolors
+eval `dircolors $HOME/.dotfiles/.dircolors`
 
 #----- php version manager
 if [[ -e "${HOME}/.php-version" ]] ; then
