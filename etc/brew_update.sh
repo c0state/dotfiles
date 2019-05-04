@@ -6,8 +6,10 @@
 set -e
 
 # add taps
+brew tap caskroom/fonts
 brew tap caskroom/versions
 brew tap busterc/tap
+brew tap sambadevi/powerlevel9k
 
 brew update && brew upgrade && brew cask upgrade
 
@@ -72,6 +74,7 @@ brew install parallel
 brew install pidcat
 brew install pngquant
 brew install postgresql
+brew install powerlevel9k
 brew install q
 brew install ripgrep
 brew install rbenv rbenv-gemset ruby-build
@@ -120,6 +123,7 @@ brew cask install evernote
 brew cask install filezilla
 brew cask install firefox
 brew cask install flux
+brew cask install font-hack-nerd-font
 brew cask install genymotion
 brew cask install gimp
 brew cask install gitkraken

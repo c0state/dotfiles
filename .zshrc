@@ -5,8 +5,6 @@
 
 export ZSH=$HOME/.oh-my-zsh
 
-ZSH_THEME="c0state"
-
 CASE_SENSITIVE="false"
 HYPHEN_INSENSITIVE="false"
 DISABLE_AUTO_UPDATE="false"
@@ -33,7 +31,7 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # ---------- Customize to your needs...
-#
+
 source $HOME/.shellrc
 
 source $HOME/.zsh_functions
@@ -63,3 +61,6 @@ fi
 eval "$(direnv hook zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# powerline9k theme
+source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
