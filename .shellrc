@@ -13,6 +13,9 @@ export EDITOR=vim
 # use vi bindings in shell
 #set -o vi
 
+# set up dircolors
+eval `dircolors $HOME/.dotfiles/.dircolors`
+
 #----- set based on platform (Linux or OS X)
 if [[ $PLATFORM == 'Linux' ]]; then
   export PATH=$PATH:/usr/local/heroku/bin
