@@ -65,6 +65,7 @@ brew install mono
 brew install mysql
 brew install neovim
 brew install nmap
+brew install nnn
 brew install node
 brew install npm
 brew install optipng
