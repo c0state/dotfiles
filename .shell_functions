@@ -67,15 +67,6 @@ function git_clean_local {
 
 function logcat { adb logcat -d -v time ; }
 
-function ls {
-    # use https://github.com/Peltoche/lsd if available
-    if `which lsd 2>&1 >/dev/null` ; then
-        lsd $*
-    else
-        ls $*
-    fi
-}
-
 function mp3_to_ogg_vorbis {
     ffmpeg -i "$1" -c:a libvorbis "$2";
 }

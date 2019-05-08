@@ -12,8 +12,8 @@ alias h="history"
 alias hg="history | grep"
 alias less="less -i --chop-long-lines --shift 2"
 
-# oh-my-zsh adds -G option so we need to unset it to use lsd, exa, etc.
-alias ls="ls"
+# use custom ls tool like lsd, if it exists
+type lsd >/dev/null 2>&1 && alias ls=lsd
 
 alias mdv="$HOME/.terminal_markdown_viewer/mdv.py"
 alias mysql.start="/opt/local/share/mysql5/mysql/mysql.server"
