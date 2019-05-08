@@ -71,4 +71,4 @@ aptitude install -y \
 
 # install zsh packages
 aptitude install -y \
-    zsh zsh-antigen zsh-doc zsh-syntax-highlighting
+    zsh zsh-doc
