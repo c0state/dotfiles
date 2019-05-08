@@ -29,7 +29,7 @@ aptitude install -y \
 apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 echo "deb https://download.mono-project.com/repo/ubuntu stable-bionic main" | tee /etc/apt/sources.list.d/mono-official-stable.list
 
-aptitude install -y \
+aptitude update && aptitude install -y \
     mono-complete
 
 #----- install packages
@@ -56,7 +56,10 @@ aptitude install -y avahi-daemon samba winbind
 
 # install node packages
 curl -sL https://deb.nodesource.com/setup_11.x | bash -
-aptitude install -y nodejs
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+
+aptitude update && aptitude install -y nodejs yarn
 
 # install python packages
 aptitude install -y \
