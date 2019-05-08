@@ -5,6 +5,8 @@
 
 export ZSH=$HOME/.oh-my-zsh
 
+ZSH_THEME="powerlevel9k/powerlevel9k"
+
 CASE_SENSITIVE="false"
 HYPHEN_INSENSITIVE="false"
 DISABLE_AUTO_UPDATE="false"
@@ -63,7 +65,6 @@ eval "$(direnv hook zsh)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # powerline9k theme
-source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs pyenv rbenv)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
