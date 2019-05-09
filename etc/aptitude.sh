@@ -21,6 +21,7 @@ aptitude install -y \
     gparted \
     gnupg ca-certificates \
     parallel \
+    ranger \
     tree \
     vim-nox
 
@@ -41,7 +42,7 @@ aptitude install -y \
 
 # install image packages
 aptitude install -y \
-    imagemagick pngquant
+    ffmpeg imagemagick pngquant
 
 # install go packages
 aptitude install -y \
