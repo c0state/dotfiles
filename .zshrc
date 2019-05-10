@@ -1,3 +1,7 @@
+#---------- load up shell agnostic config first
+
+source $HOME/.shellrc
+
 #---------- oh-my-zsh
 
 # pulled from latest template at
@@ -33,8 +37,6 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # ---------- Customize to your needs...
-
-source $HOME/.shellrc
 
 source $HOME/.zsh_functions
 
