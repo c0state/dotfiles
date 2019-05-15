@@ -79,9 +79,11 @@ export PATH=$PATH:$(python -m site --user-base)/bin
 export PATH="$PATH:$HOME/.poetry/bin"
 
 #----- golang and gvm (go version manager)
-if [[ $PLATFORM == 'Darwin' ]]; then
-    export GOROOT_BOOTSTRAP=$(brew --prefix)/Cellar/go/1.7.1/libexec
-fi
+export GOPATH="$HOME/work/go"
+export PATH=$PATH:"$HOME/work/go/bin"
+
+# TODO: is this still needed?
+# go version manager
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 
 # source git-subrepo
