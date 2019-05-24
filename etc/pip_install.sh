@@ -10,6 +10,7 @@ pip install --upgrade --user aws-shell
 pip install --upgrade --user cdiff
 pip install --upgrade --user cookiecutter
 pip install --upgrade --user csvkit
+pip install --upgrade --user docker-compose
 pip install --upgrade --user dopy
 pip install --upgrade --user jedi
 pip install --upgrade --user gunicorn
