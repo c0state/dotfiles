@@ -25,6 +25,8 @@ ZSH_CUSTOM=~/.oh-my-zsh-custom
 plugins=(
     brew
     colorize
+    docker
+    docker-compose
     git
     git-extras
     golang
