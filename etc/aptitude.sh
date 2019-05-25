@@ -16,7 +16,6 @@ aptitude install -y \
     curl wget \
     direnv \
     dos2unix \
-    fzf \
     git \
     gparted \
     gnupg ca-certificates \
