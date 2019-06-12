@@ -27,7 +27,6 @@ brew install gmp
 brew install ack
 brew install ag
 brew install ansible
-brew install antigen
 brew install apache-drill
 brew install awscli
 brew install bash-completion@2
