@@ -31,6 +31,7 @@ plugins=(
     git-extras
     golang
     iterm2
+    nvm
     pip
     python
     zsh-completions
