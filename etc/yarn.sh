@@ -10,6 +10,7 @@ yarn global add dynamodb-admin
 yarn global add imageoptim-cli
 yarn global add instant-markdown-d
 yarn global add poi
+yarn global add prettier
 yarn global add tldr
 yarn global add typescript
 yarn global add vue-cli create-vue-app
