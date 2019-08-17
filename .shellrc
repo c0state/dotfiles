@@ -110,11 +110,11 @@ export EC2_CERT=$HOME/Dropbox/AmazonAWS/X509Cert
 
 eval "$(rbenv init -)"
 
-source $HOME/.bash_aliases
+source $HOME/.shell_aliases
 
 # source any custom shell configuration
-if [[ -e $HOME/.bashrc_custom ]] ; then
-  source $HOME/.bashrc_custom
+if [[ -e $HOME/.shell_custom ]] ; then
+  source $HOME/.shell_custom
 fi
 
 export NVM_DIR="$HOME/.nvm"
