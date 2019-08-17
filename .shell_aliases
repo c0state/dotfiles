@@ -18,6 +18,12 @@ type lsd >/dev/null 2>&1 && alias ls=lsd
 
 alias mdv="$HOME/.terminal_markdown_viewer/mdv.py"
 alias mysql.start="/opt/local/share/mysql5/mysql/mysql.server"
+
+# needed for "poetry shell" command since it has issues with certain shell configs
+# (see https://github.com/sdispater/poetry/issues/497)
+# from https://github.com/sdispater/poetry/issues/571#issuecomment-443595960
+alias poetry_shell='. "$(dirname $(poetry run which python))/activate"'
+
 alias psg="ps aux | grep"
 alias rg="rg --hidden --pretty"
 alias runtest="nohup '$*' 1>/dev/null 2>&1 </dev/null &"
