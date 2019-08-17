@@ -27,7 +27,7 @@ brew install gmp
 brew install ack
 brew install ag
 brew install ansible
-brew install awscli
+brew install aws-iam-authenticator awscli
 brew install bash-completion@2
 brew install bfg
 brew install carthage
@@ -42,6 +42,7 @@ brew install dnsmasq
 brew install docker-cloud
 brew install dos2unix
 brew install exiftool
+brew install fd
 brew install ffmpeg
 brew install findutils
 brew install fzf
@@ -52,6 +53,7 @@ brew install htop
 brew install imagemagick
 brew install TomAnthony/brews/itermocil
 brew install jq
+brew install kubernetes-cli
 brew install lsd
 brew install lyft/formulae/set-simulator-location
 brew install macvim
@@ -65,6 +67,7 @@ brew install nmap
 brew install nnn
 brew install node
 brew install npm
+brew install openssl openssl@1.1
 brew install optipng
 brew install osx-iso
 brew install packer
@@ -72,6 +75,7 @@ brew install parallel
 brew install pidcat
 brew install pngquant
 brew install postgresql
+brew install pre-commit
 brew install q
 brew install ripgrep
 brew install rbenv rbenv-gemset ruby-build
@@ -100,13 +104,12 @@ brew cask install adobe-acrobat-reader
 brew cask install aerial
 brew cask install alacritty
 brew cask install alfred
-brew cask install android-studio
 brew cask install angry-ip-scanner
 brew cask install atom
 brew cask install balenaetcher
 brew cask install beyond-compare
 brew cask install bitbar
-brew cask install brave
+brew cask install brave-browser
 brew cask install calibre
 brew cask install chromedriver
 brew cask install coconutbattery
@@ -128,6 +131,7 @@ brew cask install gitkraken
 brew cask install google-backup-and-sync google-drive-file-stream
 brew cask install google-cloud-sdk
 brew cask install google-nik-collection
+brew cask install graphql-playground
 brew cask install handbrake
 brew cask install hwsensors
 brew cask install imageoptim
