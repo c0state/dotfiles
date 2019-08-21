@@ -9,6 +9,7 @@ yarn global add diff-so-fancy
 yarn global add dynamodb-admin
 yarn global add imageoptim-cli
 yarn global add instant-markdown-d
+yarn global add lerna
 yarn global add poi
 yarn global add prettier
 yarn global add tldr
