@@ -1,2 +1,13 @@
+# ignore vim temp files
 *~
+
+# ignore macos file attributes file
 .DS_Store
+
+# ignore IDE configs
+.idea
+.vscode
+
+# ignore virtualenv dirs
+.venv
+venv
