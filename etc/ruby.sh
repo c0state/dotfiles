@@ -2,8 +2,8 @@
 
 set -ex
 
-gem install cocoapods
-gem install fastlane
-gem install s3_website
-gem install terraforming
-gem install tmuxinator
+gem install --user-install cocoapods
+gem install --user-install fastlane
+gem install --user-install s3_website
+gem install --user-install terraforming
+gem install --user-install tmuxinator
