@@ -75,6 +75,13 @@ fi
 
 export PATH=$PATH:$(python -m site --user-base)/bin
 
+#----- ruby
+eval "$(rbenv init -)"
+
+if which ruby >/dev/null && which gem >/dev/null; then
+    PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+fi
+
 #----- poetry python tool
 export PATH="$PATH:$HOME/.poetry/bin"
 
@@ -107,8 +114,6 @@ export PATH=$PATH:$HOME/bin
 export EC2_HOME=$HOME/Dropbox/Apps/Universal/ec2-api-tools-1.4.2.4
 export EC2_PRIVATE_KEY=$HOME/Dropbox/AmazonAWS/X509Key
 export EC2_CERT=$HOME/Dropbox/AmazonAWS/X509Cert
-
-eval "$(rbenv init -)"
 
 source $HOME/.shell_aliases
 
