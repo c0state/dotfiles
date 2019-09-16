@@ -148,6 +148,7 @@ brew cask install mono-mdk
 brew cask install ngrok
 brew cask install origami-studio
 brew cask install outline-manager
+brew cask install postman
 brew cask install prime95
 brew cask install send-to-kindle
 brew cask install shadowsocksx-ng
