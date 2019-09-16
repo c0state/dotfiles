@@ -73,7 +73,7 @@ eval "$(direnv hook zsh)"
 
 # powerlevel9k theme
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs pyenv rbenv go_version)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator kubecontext time)
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_MODE='nerdfont-complete'
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
