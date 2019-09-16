@@ -31,6 +31,7 @@ plugins=(
     git-extras
     golang
     iterm2
+    kubectl
     nvm
     pip
     python
