@@ -2,6 +2,7 @@
 
 set -ex
 
+yarn global add aws-cdk
 yarn global add aws-sam-local
 yarn global add beame-insta-ssl
 yarn global add create-react-app
