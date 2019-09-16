@@ -34,6 +34,7 @@ plugins=(
     nvm
     pip
     python
+    zsh-autosuggestions
     zsh-completions
     zsh-syntax-highlighting
 )
