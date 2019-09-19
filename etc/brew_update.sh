@@ -31,6 +31,7 @@ brew install aws-iam-authenticator awscli
 brew install bash-completion@2
 brew install bfg
 brew install carthage
+brew install circleci
 brew install cmake
 brew install cocoapods
 brew install colordiff icdiff
