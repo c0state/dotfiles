@@ -60,7 +60,6 @@ brew install lyft/formulae/set-simulator-location
 brew install macvim
 brew install media-info
 brew install mobile-shell
-brew install mongodb
 brew install mono
 brew install mysql
 brew install neovim
