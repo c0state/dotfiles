@@ -69,6 +69,12 @@ def setup_vim():
     os.system("vim +PlugClean +PlugInstall +PlugUpdate +qall")
 
 
+def setup_macos():
+    if _system_name == _system_name_osx:
+        # increase mouse tracking scaling factor (default is 3 I believe)
+        os.system("defaults write -g com.apple.mouse.scaling 5")
+
+
 def setup_divvy():
     if _system_name == _system_name_osx:
         os.system("open -a Safari "
