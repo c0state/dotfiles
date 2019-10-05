@@ -121,7 +121,6 @@ brew cask install dotnet-sdk
 brew cask install double-commander
 brew cask install etrecheckpro
 brew cask install evernote
-brew cask install filezilla
 brew cask install firefox
 brew cask install flux
 brew cask install font-hack-nerd-font
