@@ -6,8 +6,8 @@
 set -e
 
 # add taps
-brew tap caskroom/fonts
-brew tap caskroom/versions
+brew tap homebrew/cask-fonts
+brew tap homebrew/cask-versions
 brew tap busterc/tap
 
 brew update && brew upgrade && brew cask upgrade
