@@ -149,7 +149,8 @@ brew cask install ngrok
 brew cask install origami-studio
 brew cask install outline-manager
 brew cask install postman
-brew cask install prime95
+# prime95 cask seems to have disappeared?
+# brew cask install prime95
 brew cask install send-to-kindle
 brew cask install shadowsocksx-ng
 brew cask install sketch
