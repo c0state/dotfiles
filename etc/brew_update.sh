@@ -143,7 +143,6 @@ brew cask install iterm2
 brew cask install jetbrains-toolbox
 brew cask install libreoffice
 brew cask install macdown
-brew cask install microsoft-office
 brew cask install minikube
 brew cask install mono-mdk
 brew cask install ngrok
