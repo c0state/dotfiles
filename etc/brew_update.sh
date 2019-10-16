@@ -30,6 +30,7 @@ brew install ansible
 brew install aws-iam-authenticator awscli
 brew install bash-completion@2
 brew install bfg
+brew install boost
 brew install carthage
 brew install circleci
 brew install cmake
@@ -77,6 +78,7 @@ brew install pngquant
 brew install postgresql
 brew install pre-commit
 brew install q
+brew install qt
 brew install ripgrep
 brew install rbenv rbenv-gemset ruby-build
 brew install redis
