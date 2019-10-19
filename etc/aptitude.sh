@@ -49,7 +49,7 @@ aptitude install -y \
 
 # install java packages
 aptitude install -y \
-    openjdk-12-jdk
+    openjdk-14-jdk
 
 # install networking packages
 aptitude install -y avahi-daemon samba winbind
