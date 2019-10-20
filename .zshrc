@@ -54,23 +54,30 @@ unalias run-help 2>/dev/null
 autoload run-help
 HELPDIR=/usr/local/share/zsh/help
 
-# aws auto-completion needs to be explicitly sourced
+# ---------- aws auto-completion needs to be explicitly sourced
+# use https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#aws instead?
+
 if [[ -e /usr/local/share/zsh/site-functions/_aws ]]; then
     source /usr/local/share/zsh/site-functions/_aws
 elif [[ -e /usr/local/bin/aws_zsh_completer.sh ]]; then
     source /usr/local/bin/aws_zsh_completer.sh
 fi
 
-# for google-cloud-sdk
+# ---------- google-cloud-sdk
+
 if [[ $PLATFORM == 'Darwin' ]]; then
     source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
     source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
 fi
 
-# direnv - https://github.com/direnv/direnv
+# ---------- direnv - https://github.com/direnv/direnv
 eval "$(direnv hook zsh)"
 
+# ---------- fzf
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# ---------- powerlevel9k powerline
 
 # powerlevel9k theme
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs pyenv rbenv go_version)
@@ -86,3 +93,28 @@ POWERLEVEL9K_DIR_DEFAULT_FOREGROUND=lightgrey
 POWERLEVEL9K_DIR_ETC_FOREGROUND=yellow1
 POWERLEVEL9K_PYENV_FOREGROUND=lightcyan
 POWERLEVEL9K_RBENV_FOREGROUND=lightcyan
+
+# ---------- nvm auto use
+
+# place this after nvm initialization!
+autoload -U add-zsh-hook
+load-nvmrc() {
+  local node_version="$(nvm version)"
+  local nvmrc_path="$(nvm_find_nvmrc)"
+
+  if [ -n "$nvmrc_path" ]; then
+    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+
+    if [ "$nvmrc_node_version" = "N/A" ]; then
+      nvm install
+    elif [ "$nvmrc_node_version" != "$node_version" ]; then
+      nvm use
+    fi
+  elif [ "$node_version" != "$(nvm version default)" ]; then
+    echo "Reverting to nvm default version"
+    nvm use default
+  fi
+}
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
+
