@@ -35,5 +35,7 @@
     prompt = false
 [mergetool]
     prompt = false
+[icdiff]
+    options = "--highlight --line-numbers"
 [submodule]
     fetchJobs = 0
