@@ -84,6 +84,7 @@ brew install rbenv rbenv-gemset ruby-build
 brew install redis
 brew install rlwrap
 brew install getsentry/tools/sentry-cli
+brew install sd
 brew install shellcheck
 brew install smartmontools
 brew install sshuttle
