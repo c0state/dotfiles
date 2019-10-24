@@ -38,7 +38,6 @@ brew install cocoapods
 brew install colordiff icdiff
 brew install coreutils
 brew install ddrescue
-brew install diff-so-fancy
 brew install direnv
 brew install dnsmasq
 brew install docker-cloud
