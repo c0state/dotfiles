@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+PLATFORM=`uname`
+
 set -ex
 
 # install pip and setuptools into normal location
@@ -11,7 +13,10 @@ pip install --upgrade --user autoenv
 pip install --upgrade --user cdiff
 pip install --upgrade --user cookiecutter
 pip install --upgrade --user csvkit
-pip install --upgrade --user docker-compose
+# macOS Docker app includes docker-compose
+if [[ $PLATFORM != 'Darwin' ]]; then
+    pip install --upgrade --user docker-compose
+fi
 pip install --upgrade --user dopy
 pip install --upgrade --user jedi
 pip install --upgrade --user howdoi
