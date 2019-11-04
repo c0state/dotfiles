@@ -44,7 +44,7 @@ apt install -y \
 
 # install java packages
 apt install -y \
-    openjdk-14-jdk
+    default-jdk
 
 # install networking packages
 apt install -y avahi-daemon samba winbind
