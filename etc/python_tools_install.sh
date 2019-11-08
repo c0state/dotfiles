@@ -23,6 +23,7 @@ pipx install csvkit
 pipx install fourmat
 pipx install howdoi
 pipx install httpie
+pipx install ipython
 pipx install --include-deps jupyter
 pipx install markdown
 # pipx install pynvim
