@@ -116,7 +116,6 @@ brew cask install calibre
 brew cask install chromedriver
 brew cask install coconutbattery
 brew cask install db-browser-for-sqlite
-brew cask install disk-inventory-x
 brew cask install divvy
 brew cask install docker
 brew cask install dotnet-sdk
