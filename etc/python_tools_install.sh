@@ -29,6 +29,7 @@ pipx install markdown
 # pipx install pynvim
 pipx install pipenv
 pipx install pip-tools
+pipx install poetry
 pipx install ptpython
 pipx install pythonpy
 pipx install pyupgrade
