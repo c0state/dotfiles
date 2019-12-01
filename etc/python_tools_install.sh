@@ -26,6 +26,7 @@ pipx install httpie
 pipx install ipython
 pipx install --include-deps jupyter
 pipx install markdown
+pipx install mypy
 # pipx install pynvim
 pipx install pipenv
 pipx install pip-tools
