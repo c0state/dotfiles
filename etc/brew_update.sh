@@ -51,6 +51,7 @@ brew install git git-extras git-lfs legit
 brew install glances
 brew install go
 brew install htop
+brew install hub
 brew install imagemagick
 brew install TomAnthony/brews/itermocil
 brew install jq
