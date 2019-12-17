@@ -113,10 +113,10 @@ export NVM_DIR="$HOME/.nvm"
 if [[ -e "$HOME/.pyenv" ]] ; then
   export PYENV_ROOT=$HOME/.pyenv
   export PATH="$PATH:$HOME/.pyenv/bin"
-  eval "$(pyenv init -)"
-  #export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
-  #export PYENV_VIRTUALENV_DISABLE_PROMPT=1 # simulate new behavior, remove when it's complete
-  eval "$(pyenv virtualenv-init -)"
+  if command -v pyenv 1>/dev/null 2>&1; then
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+  fi
 fi
 
 export PATH=$PATH:$(python -m site --user-base)/bin
