@@ -7,6 +7,8 @@ set -ex
 python3 -m pip install --upgrade --user pip setuptools
 python3 -m pip install --upgrade --user pipx
 
+# pipx dependencies
+
 # macOS Docker app includes docker-compose
 if [[ $PLATFORM != 'Darwin' ]]; then
     pipx install docker-compose
@@ -27,7 +29,6 @@ pipx install ipython
 pipx install --include-deps jupyter
 pipx install markdown
 pipx install mypy
-# pipx install pynvim
 pipx install pipenv
 pipx install pip-tools
 pipx install poetry
@@ -35,5 +36,10 @@ pipx install ptpython
 pipx install pythonpy
 pipx install pyupgrade
 pipx install ranger-fm
+pipx install tox
 
 pipx upgrade-all
+
+# pip dependencies
+
+pip install --user --upgrade pynvim
