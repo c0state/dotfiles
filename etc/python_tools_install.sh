@@ -42,4 +42,4 @@ pipx upgrade-all
 
 # pip dependencies
 
-pip install --user --upgrade pynvim
+python -m pip install --user --upgrade pynvim
