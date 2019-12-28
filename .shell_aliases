@@ -25,7 +25,7 @@ alias mysql.start="/opt/local/share/mysql5/mysql/mysql.server"
 alias poetry_shell='. "$(dirname $(poetry run which python))/activate"'
 
 alias psg="ps aux | grep"
-alias rg="rg --hidden --pretty"
+alias rg="rg --hidden --pretty --sort path"
 alias runtest="nohup '$*' 1>/dev/null 2>&1 </dev/null &"
 alias sort_latest='find . -type f -exec stat --format "%Y - %y --> %n" "{}" \; | sort -n'
 alias tree="tree --dirsfirst"
