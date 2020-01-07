@@ -20,6 +20,7 @@ pipx install ansible-toolkit
 pipx install autoenv
 pipx install black
 pipx install cdiff
+pipx install codemod
 pipx install cookiecutter
 pipx install csvkit
 pipx install fourmat
