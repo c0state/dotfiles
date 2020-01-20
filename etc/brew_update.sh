@@ -26,7 +26,6 @@ brew install gmp
 
 brew install ack
 brew install ag
-brew install ansible
 brew install aws-iam-authenticator awscli
 brew install bash-completion@2
 brew install bfg
