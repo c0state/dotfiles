@@ -14,170 +14,192 @@ brew update && brew upgrade && brew cask upgrade
 
 #---------- high level dependencies ----------
 
+echo "---------- Installing core dependencies"
+
 # need to install items from the app store
-brew install mas
+brew list mas >/dev/null 2>&1 || brew install mas
 # java is needed for some apps
-brew cask install java
+brew cask list java >/dev/null 2>&1 || brew cask install java
 
 #---------- brew packages ----------
 
-# package dependencies first
-brew install gmp 
+brew_packages=(
+    # package dependencies first
+    gmp 
+    
+    ack
+    ag
+    aws-iam-authenticator awscli
+    bash-completion@2
+    bfg
+    boost
+    carthage
+    circleci
+    cmake
+    cocoapods
+    colordiff icdiff
+    coreutils
+    ddrescue
+    direnv
+    dnsmasq
+    docker-cloud
+    dos2unix
+    exiftool
+    fd
+    ffmpeg
+    findutils
+    fzf
+    git git-extras git-lfs legit
+    glances
+    go
+    htop
+    hub
+    imagemagick
+    TomAnthony/brews/itermocil
+    jq
+    kubernetes-cli
+    lsd
+    lyft/formulae/set-simulator-location
+    macvim
+    media-info
+    mobile-shell
+    mono
+    mysql
+    neovim
+    nmap
+    nnn
+    node
+    npm
+    openssl openssl@1.1
+    optipng
+    osx-iso
+    packer
+    parallel
+    pidcat
+    pngquant
+    postgresql
+    pre-commit
+    q
+    qt
+    ripgrep
+    rbenv rbenv-gemset ruby-build
+    redis
+    rlwrap
+    getsentry/tools/sentry-cli
+    sd
+    shellcheck
+    smartmontools
+    sshuttle
+    stunnel
+    svg2png
+    terminator
+    terraform
+    terraform_landscape
+    tmux
+    tree
+    wget
+    yarn
+    zsh zsh-completions zsh-syntax-highlighting
+)
 
-brew install ack
-brew install ag
-brew install aws-iam-authenticator awscli
-brew install bash-completion@2
-brew install bfg
-brew install boost
-brew install carthage
-brew install circleci
-brew install cmake
-brew install cocoapods
-brew install colordiff icdiff
-brew install coreutils
-brew install ddrescue
-brew install direnv
-brew install dnsmasq
-brew install docker-cloud
-brew install dos2unix
-brew install exiftool
-brew install fd
-brew install ffmpeg
-brew install findutils
-brew install fzf
-brew install git git-extras git-lfs legit
-brew install glances
-brew install go
-brew install htop
-brew install hub
-brew install imagemagick
-brew install TomAnthony/brews/itermocil
-brew install jq
-brew install kubernetes-cli
-brew install lsd
-brew install lyft/formulae/set-simulator-location
-brew install macvim
-brew install media-info
-brew install mobile-shell
-brew install mono
-brew install mysql
-brew install neovim
-brew install nmap
-brew install nnn
-brew install node
-brew install npm
-brew install openssl openssl@1.1
-brew install optipng
-brew install osx-iso
-brew install packer
-brew install parallel
-brew install pidcat
-brew install pngquant
-brew install postgresql
-brew install pre-commit
-brew install q
-brew install qt
-brew install ripgrep
-brew install rbenv rbenv-gemset ruby-build
-brew install redis
-brew install rlwrap
-brew install getsentry/tools/sentry-cli
-brew install sd
-brew install shellcheck
-brew install smartmontools
-brew install sshuttle
-brew install stunnel
-brew install svg2png
-brew install terminator
-brew install terraform
-brew install terraform_landscape
-brew install tmux
-brew install tree
-brew install wget
-brew install yarn
-brew install zsh zsh-completions zsh-syntax-highlighting
+echo "---------- Installing brew packages"
+
+for brew_package in "${brew_packages[@]}"; do
+    brew list "$brew_package" >/dev/null 2>&1 || brew install "$brew_package"
+done
 
 #---------- brew cask packages ----------
 
-# install apps via brew cask
-brew cask install 1password
-brew cask install adobe-acrobat-reader
-brew cask install aerial
-brew cask install alacritty
-brew cask install alfred
-brew cask install angry-ip-scanner
-brew cask install atom
-brew cask install balenaetcher
-brew cask install beyond-compare
-brew cask install bitbar
-brew cask install brave-browser
-brew cask install calibre
-brew cask install chromedriver
-brew cask install coconutbattery
-brew cask install db-browser-for-sqlite
-brew cask install divvy
-brew cask install docker
-brew cask install dotnet-sdk
-brew cask install double-commander
-brew cask install etrecheckpro
-brew cask install evernote
-brew cask install firefox
-brew cask install flux
-brew cask install font-hack-nerd-font
-brew cask install genymotion
-brew cask install gimp
-brew cask install gitkraken
-brew cask install google-backup-and-sync google-drive-file-stream
-brew cask install google-cloud-sdk
-brew cask install google-nik-collection
-brew cask install graphql-playground
-brew cask install handbrake
-brew cask install hwsensors
-brew cask install imageoptim
-brew cask install insync
-brew cask install intel-haxm
-brew cask install istat-menus
-brew cask install iterm2
-brew cask install jetbrains-toolbox
-brew cask install libreoffice
-brew cask install macdown
-brew cask install minikube
-brew cask install mono-mdk
-brew cask install ngrok
-brew cask install origami-studio
-brew cask install outline-manager
-brew cask install postman
-# prime95 cask seems to have disappeared?
-# brew cask install prime95
-brew cask install send-to-kindle
-brew cask install sketch
-brew cask install sketch-toolbox
-brew cask install skype
-brew cask install slack
-brew cask install sourcetree
-brew cask install spectacle
-brew cask install sqlitestudio
-brew cask install sqlpro-for-sqlite
-brew cask install staruml
-brew cask install steam
-brew cask install sublime-text
-brew cask install superduper
-brew cask install teamviewer
-brew cask install tor-browser
-brew cask install tower
-brew cask install vagrant
-brew cask install virtualbox
-brew cask install viscosity
-brew cask install visual-studio
-brew cask install visual-studio-code
-brew cask install vlc
-brew cask install whatsapp
-brew cask install wireshark
-brew cask install xamarin
-brew cask install xquartz inkscape
-brew cask install zeplin
+brew_cask_packages=(
+    # install apps via brew cask
+    1password
+    adobe-acrobat-reader
+    aerial
+    alacritty
+    alfred
+    angry-ip-scanner
+    atom
+    balenaetcher
+    beyond-compare
+    bitbar
+    brave-browser
+    calibre
+    chromedriver
+    coconutbattery
+    db-browser-for-sqlite
+    divvy
+    docker
+    dotnet-sdk
+    double-commander
+    etrecheckpro
+    evernote
+    firefox
+    flux
+    font-hack-nerd-font
+    genymotion
+    gimp
+    gitkraken
+    google-backup-and-sync google-drive-file-stream
+    google-cloud-sdk
+    google-nik-collection
+    graphql-playground
+    handbrake
+    hwsensors
+    imageoptim
+    insync
+    intel-haxm
+    istat-menus
+    iterm2
+    jetbrains-toolbox
+    libreoffice
+    macdown
+    minikube
+    mono-mdk
+    ngrok
+    origami-studio
+    outline-manager
+    postman
+    # prime95 cask seems to have disappeared?
+    # prime95
+    send-to-kindle
+    sketch
+    sketch-toolbox
+    skype
+    slack
+    sourcetree
+    spectacle
+    sqlitestudio
+    sqlpro-for-sqlite
+    staruml
+    steam
+    sublime-text
+    superduper
+    teamviewer
+    tor-browser
+    tower
+    vagrant
+    virtualbox
+    viscosity
+    visual-studio
+    visual-studio-code
+    vlc
+    whatsapp
+    wireshark
+    xamarin
+    xquartz inkscape
+    zeplin
+)
+
+echo "---------- Installing brew cask packages"
+
+for brew_cask_package in "${brew_cask_packages[@]}"; do
+    brew cask list "$brew_cask_package" >/dev/null 2>&1 || brew cask install "$brew_cask_package"
+done
+
+#---------- Cleanup ----------
+
+echo "---------- Running cleanup"
 
 brew cleanup && brew cleanup --prune-prefix
 
-echo "Finished installing brew and brew cask packages successfully."
+echo "---------- Finished installing brew and brew cask packages successfully."
