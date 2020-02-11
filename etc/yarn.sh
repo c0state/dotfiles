@@ -17,4 +17,5 @@ yarn global add tldr
 yarn global add typescript
 yarn global add vue-cli create-vue-app
 yarn global add webpack
+yarn global add yalc
 yarn global add yarn
