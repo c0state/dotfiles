@@ -61,6 +61,7 @@ brew_packages=(
     lyft/formulae/set-simulator-location
     macvim
     media-info
+    minikube
     mobile-shell
     mono
     mysql
@@ -151,7 +152,6 @@ brew_cask_packages=(
     jetbrains-toolbox
     libreoffice
     macdown
-    minikube
     mono-mdk
     ngrok
     origami-studio
