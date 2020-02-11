@@ -42,7 +42,6 @@ brew_packages=(
     ddrescue
     direnv
     dnsmasq
-    docker-cloud
     dos2unix
     exiftool
     fd
