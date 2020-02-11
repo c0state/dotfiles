@@ -91,7 +91,6 @@ brew_packages=(
     sshuttle
     stunnel
     svg2png
-    terminator
     terraform
     terraform_landscape
     tmux
