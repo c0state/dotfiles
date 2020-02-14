@@ -49,6 +49,7 @@ brew_packages=(
     findutils
     fzf
     git git-extras git-lfs legit
+    github/gh/gh
     glances
     go
     htop
