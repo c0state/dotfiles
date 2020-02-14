@@ -11,3 +11,7 @@
 # ignore virtualenv dirs
 .venv
 venv
+
+# yalc
+.yalc
+yalc.lock
