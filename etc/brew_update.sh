@@ -6,6 +6,7 @@
 set -e
 
 # add taps
+brew tap aws/tap
 brew tap homebrew/cask-fonts
 brew tap homebrew/cask-versions
 brew tap busterc/tap
@@ -29,7 +30,7 @@ brew_packages=(
     
     ack
     ag
-    aws-iam-authenticator awscli
+    aws-iam-authenticator awscli aws-sam-cli
     bash-completion@2
     bfg
     boost
