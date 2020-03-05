@@ -154,6 +154,7 @@ brew_cask_packages=(
     jetbrains-toolbox
     libreoffice
     macdown
+    microsoft-edge
     mono-mdk
     ngrok
     origami-studio
