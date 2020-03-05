@@ -30,7 +30,7 @@ brew_packages=(
     
     ack
     ag
-    aws-iam-authenticator awscli aws-sam-cli
+    aws-iam-authenticator aws-sam-cli
     bash-completion@2
     bfg
     boost
