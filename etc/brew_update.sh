@@ -160,6 +160,7 @@ brew_cask_packages=(
     origami-studio
     outline-manager
     postman
+    powershell
     # prime95 cask seems to have disappeared?
     # prime95
     send-to-kindle
@@ -181,8 +182,7 @@ brew_cask_packages=(
     vagrant
     virtualbox
     viscosity
-    visual-studio
-    visual-studio-code
+    visual-studio visual-studio-code visual-studio-code-insiders
     vlc
     whatsapp
     wireshark
