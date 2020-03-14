@@ -7,6 +7,7 @@ export TERM=xterm-256color
 #----- increase history file sizes
 export HISTSIZE=10000
 export HISTFILESIZE=20000
+setopt HIST_SAVE_NO_DUPS INC_APPEND_HISTORY
 
 #----- set preferred editor and mode(s)
 export EDITOR=vim
