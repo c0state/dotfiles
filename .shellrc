@@ -123,6 +123,5 @@ fi
 export PATH=$PATH:$(python -m site --user-base)/bin
 
 #----- source any custom shell configuration
-if [[ -e $HOME/.shell_custom ]] ; then
-  source $HOME/.shell_custom
-fi
+[[ -f $HOME/.shellrc_custom ]] && source $HOME/.shellrc_custom
+
