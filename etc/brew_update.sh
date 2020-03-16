@@ -89,6 +89,7 @@ brew_packages=(
     rlwrap
     getsentry/tools/sentry-cli
     sd
+    selenium-server-standalone
     shellcheck
     smartmontools
     sshuttle
@@ -163,7 +164,6 @@ brew_cask_packages=(
     powershell
     # prime95 cask seems to have disappeared?
     # prime95
-    selenium-server-standalone
     send-to-kindle
     sketch
     sketch-toolbox
