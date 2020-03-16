@@ -1,3 +1,5 @@
+[[ -f $HOME/.zshrc_pre_custom ]] && source $HOME/.zshrc_pre_custom
+
 #---------- load up shell agnostic config first
 
 source $HOME/.shellrc
