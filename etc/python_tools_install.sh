@@ -38,6 +38,7 @@ pipx install ptpython
 pipx install pythonpy
 pipx install pyupgrade
 pipx install ranger-fm
+pipx install snakeviz
 pipx install tox
 
 pipx upgrade-all
