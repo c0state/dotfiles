@@ -140,6 +140,7 @@ brew_cask_packages=(
     font-hack-nerd-font
     genymotion
     gimp
+    github
     gitkraken
     google-backup-and-sync google-drive-file-stream
     google-cloud-sdk
