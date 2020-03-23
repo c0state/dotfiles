@@ -31,6 +31,7 @@ brew_packages=(
     ack
     ag
     aws-iam-authenticator aws-sam-cli
+    awscli
     bash-completion@2
     bfg
     boost
@@ -120,7 +121,6 @@ brew_cask_packages=(
     alacritty
     alfred
     angry-ip-scanner
-    awscli
     atom
     balenaetcher
     beyond-compare
