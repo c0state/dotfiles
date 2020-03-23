@@ -120,6 +120,7 @@ brew_cask_packages=(
     alacritty
     alfred
     angry-ip-scanner
+    awscli
     atom
     balenaetcher
     beyond-compare

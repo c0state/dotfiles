@@ -17,7 +17,6 @@ fi
 
 pipx install ansible
 pipx install ansible-toolkit
-pipx install awscli
 pipx install autoenv
 pipx install black
 pipx install cdiff
