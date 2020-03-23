@@ -163,8 +163,6 @@ brew_cask_packages=(
     outline-manager
     postman
     powershell
-    # prime95 cask seems to have disappeared?
-    # prime95
     send-to-kindle
     sketch
     sketch-toolbox
