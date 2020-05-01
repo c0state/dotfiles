@@ -100,6 +100,7 @@ brew_packages=(
     terraform_landscape
     tmux
     tree
+    watchman
     wget
     yarn
     zsh zsh-completions zsh-syntax-highlighting
