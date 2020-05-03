@@ -53,6 +53,10 @@ elif [[ $PLATFORM == 'Darwin' ]]; then
   if [[ -e $HOME/.fastlane/bin ]]; then
     export PATH=$HOME/.fastlane/bin:$PATH
   fi
+
+  if [[ -e $HOME/Library/Android/sdk ]]; then
+    export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
+  fi
 fi 
 
 #----- add system agnostic apps to path
