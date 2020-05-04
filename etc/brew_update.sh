@@ -10,6 +10,7 @@ brew tap aws/tap
 brew tap homebrew/cask-fonts
 brew tap homebrew/cask-versions
 brew tap busterc/tap
+brew tap wix/brew
 
 brew update && brew upgrade && brew cask upgrade
 
@@ -30,6 +31,7 @@ brew_packages=(
     
     ack
     ag
+    applesimutils
     aws-iam-authenticator aws-sam-cli
     awscli
     bash-completion@2

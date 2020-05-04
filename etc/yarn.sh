@@ -4,6 +4,7 @@ set -ex
 
 yarn global add aws-cdk
 yarn global add create-react-app
+yarn global add detox-cli
 yarn global add diff-so-fancy
 yarn global add dynamodb-admin
 yarn global add gatsby-cli
