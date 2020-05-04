@@ -123,6 +123,7 @@ brew_cask_packages=(
     aerial
     alacritty
     alfred
+    android-studio
     angry-ip-scanner
     atom
     balenaetcher
