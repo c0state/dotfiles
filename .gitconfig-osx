@@ -14,8 +14,8 @@
 [difftool "p4merge"]
 	cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge \"$LOCAL\" \"$REMOTE\"
 [difftool "sourcetree"]
-	cmd = /usr/local/bin/bcomp -ro $LOCAL $REMOTE
-	path = 
+	cmd = /usr/local/bin/bcomp \"$LOCAL\" \"$REMOTE\"
+	path = -ro
 [merge]
 	tool = bc4
 [mergetool]
@@ -29,5 +29,5 @@
 [mergetool "p4merge"]
 	cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge \"$BASE\" \"$REMOTE\" \"$LOCAL\" \"$MERGED\"
 [mergetool "sourcetree"]
-	cmd = /usr/local/bin/bcomp $LOCAL $REMOTE $BASE $MERGED
+	cmd = /usr/local/bin/bcomp \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
 	trustExitCode = true
