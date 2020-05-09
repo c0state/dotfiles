@@ -54,6 +54,7 @@ elif [[ $PLATFORM == 'Darwin' ]]; then
     export PATH=$HOME/.fastlane/bin:$PATH
   fi
 
+  # add android SDK root to path
   if [[ -e $HOME/Library/Android/sdk ]]; then
     export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
   fi

@@ -7,6 +7,7 @@ yarn global add create-react-app
 yarn global add detox-cli
 yarn global add diff-so-fancy
 yarn global add dynamodb-admin
+yarn global add expo-cli
 yarn global add gatsby-cli
 yarn global add imageoptim-cli
 yarn global add instant-markdown-d
