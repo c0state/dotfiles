@@ -21,3 +21,5 @@ yalc.lock
 # to facilitate IDE (webstorm) code completion
 schema.graphql
 
+# ignore env files
+.envrc
