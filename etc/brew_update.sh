@@ -35,6 +35,7 @@ brew_packages=(
     aws-iam-authenticator aws-sam-cli
     awscli
     bash-completion@2
+    bat
     bfg
     boost
     carthage
@@ -44,6 +45,7 @@ brew_packages=(
     colordiff icdiff
     coreutils
     ddrescue
+    deno
     direnv
     dnsmasq
     dos2unix
