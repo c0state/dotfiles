@@ -61,6 +61,7 @@ brew_packages=(
     htop
     hub
     imagemagick
+    ios-deploy
     TomAnthony/brews/itermocil
     jq
     kubernetes-cli
