@@ -23,3 +23,6 @@ schema.graphql
 
 # ignore env files
 .envrc
+
+# private dir for custom scripts, etc.
+**/private
