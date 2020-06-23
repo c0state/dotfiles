@@ -101,6 +101,7 @@ brew_packages=(
     sshuttle
     stunnel
     svg2png
+    telnet
     terraform
     terraform_landscape
     tmux
@@ -168,6 +169,7 @@ brew_cask_packages=(
     microsoft-edge
     mono-mdk
     ngrok
+    obs obs-virtualcam
     origami-studio
     outline-manager
     postman
