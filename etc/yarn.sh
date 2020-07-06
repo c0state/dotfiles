@@ -17,6 +17,7 @@ yarn global add np
 yarn global add poi
 yarn global add prettier
 yarn global add react-native
+yarn global add renovate
 yarn global add tldr
 yarn global add tslab
 yarn global add typescript
