@@ -23,6 +23,7 @@ pipx install cdiff
 pipx install codemod
 pipx install cookiecutter
 pipx install csvkit
+pipx install cwlref-runner
 pipx install fourmat
 pipx install howdoi
 pipx install httpie
