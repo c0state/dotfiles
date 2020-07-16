@@ -163,6 +163,7 @@ brew_cask_packages=(
     intel-haxm
     istat-menus
     iterm2
+    itsycal
     jetbrains-toolbox
     libreoffice
     macdown
