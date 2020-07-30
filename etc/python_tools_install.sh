@@ -34,6 +34,7 @@ pipx install mypy
 pipx install pipenv
 pipx install pip-tools
 pipx install poetry
+pipx install pre-commit
 pipx install ptpython
 pipx install pythonpy
 pipx install pyupgrade
