@@ -43,6 +43,10 @@ elif [[ $PLATFORM == 'Darwin' ]]; then
   if [[ -e $HOME/.fastlane/bin ]]; then
     export PATH=$HOME/.fastlane/bin:$PATH
   fi
+
+  if [[ -e /usr/local/anaconda3/bin ]]; then
+    export PATH=/usr/local/anaconda3/bin:$PATH
+  fi
 fi 
 
 #----- add android sdk paths
