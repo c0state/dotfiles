@@ -46,6 +46,10 @@ apt install -y \
 apt install -y \
     default-jdk
 
+# install rust packages
+apt install -y \
+    cargo
+
 # install networking packages
 apt install -y avahi-daemon samba winbind
 
