@@ -93,6 +93,7 @@ brew_packages=(
     rbenv rbenv-gemset ruby-build
     redis
     rlwrap
+    rust
     getsentry/tools/sentry-cli
     sd
     selenium-server-standalone
