@@ -62,8 +62,7 @@ apt update && apt install -y nodejs yarn
 
 # install python packages
 apt install -y \
-    python-dev python-pip \
-    python3-pip python3-venv
+    python3-dev python3-pip
 
 # install ruby packages
 apt install -y \
