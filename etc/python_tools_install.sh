@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-PLATFORM=`uname`
+PLATFORM=$(uname)
 
 set -ex
 
@@ -40,10 +40,11 @@ pipx install pythonpy
 pipx install pyupgrade
 pipx install ranger-fm
 pipx install snakeviz
-pipx install spleeter
+# not found in pypi for some reason
+# pipx install spleeter
 pipx install tox
 
-pipx upgrade-all
+pipx reinstall-all
 
 # pip dependencies
 
