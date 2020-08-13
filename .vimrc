@@ -83,8 +83,8 @@ call plug#begin('~/.vim/bundle')
   "-----
 
   "----- language server plugins
-  let g:ale_completion_enabled = 1
-  let g:deoplete#sources = {'_': ['ale']}
+  " enable this and remove deoplete config to use ale completion directly
+  "let g:ale_completion_enabled = 1
   Plug 'w0rp/ale'
   "-----
 
@@ -125,6 +125,9 @@ call plug#begin('~/.vim/bundle')
 "----- vim-plug
 call plug#end()
 "-----
+
+" initialize deoplete completion engine using ale completion source
+call deoplete#custom#option('sources', { '_': ['ale'] })
 
 "----- autoread watcher from http://vim.wikia.com/wiki/Have_Vim_check_automatically_if_the_file_has_changed_externally
 function! WatchForChanges(bufname, ...)
