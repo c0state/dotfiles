@@ -44,5 +44,5 @@
     process = git-lfs filter-process
     required = true
 [pull]
-	rebase = true
+    rebase = true
 
