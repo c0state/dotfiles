@@ -43,6 +43,7 @@ pipx install snakeviz
 # not found in pypi for some reason
 # pipx install spleeter
 pipx install tox
+pipx install youtube-dl
 
 pipx reinstall-all
 
