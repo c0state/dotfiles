@@ -74,13 +74,6 @@ elif [[ -e /usr/local/bin/aws_zsh_completer.sh ]]; then
     source /usr/local/bin/aws_zsh_completer.sh
 fi
 
-# ---------- google-cloud-sdk
-
-if [[ $PLATFORM == 'Darwin' ]]; then
-    source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
-    source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
-fi
-
 # ---------- direnv - https://github.com/direnv/direnv
 eval "$(direnv hook zsh)"
 
