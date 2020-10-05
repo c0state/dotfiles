@@ -15,7 +15,7 @@ if [[ $PLATFORM != 'Darwin' ]]; then
     pipx install neovim
 fi
 
-pipx install ansible
+pipx install --include-deps ansible
 pipx install ansible-toolkit
 pipx install autoenv
 pipx install black
