@@ -78,7 +78,7 @@ brew_packages=(
     nnn
     node
     npm
-    openssl openssl@1.1
+    openssl
     optipng
     osx-iso
     packer
