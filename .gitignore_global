@@ -26,3 +26,6 @@ schema.graphql
 
 # private dir for custom scripts, etc.
 **/private
+
+# vagrant
+.vagrant
