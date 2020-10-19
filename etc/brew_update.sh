@@ -161,6 +161,7 @@ brew_cask_packages=(
     handbrake
     hwsensors
     imageoptim
+    insomnia
     intel-haxm
     istat-menus
     iterm2
