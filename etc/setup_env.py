@@ -114,6 +114,13 @@ def setup_apex():
     os.system("""curl https://raw.githubusercontent.com/apex/apex/master/"""
               """install.sh | sh""")
 
+
+def setup_bit():
+    os.system("""curl -sf https://gobinaries.com/chriswalz/bit | sh; """
+              """curl -sf https://gobinaries.com/chriswalz/bit/bitcomplete | sh && echo y | """
+              """COMP_INSTALL=1 bitcomplete"""
+
+
 if __name__ == '__main__':
     (options, args) = parse_options()
 
@@ -124,4 +131,5 @@ if __name__ == '__main__':
     setup_pyenv()
     setup_rbenv()
     setup_gvm()
+    setup_bit()
     setup_git_subrepo()
