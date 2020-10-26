@@ -167,6 +167,7 @@ brew_cask_packages=(
     iterm2
     itsycal
     jetbrains-toolbox
+    lens
     libreoffice
     macdown
     microsoft-edge
