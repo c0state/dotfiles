@@ -132,7 +132,6 @@ brew_cask_packages=(
     # needed as most tools look for SDK in known path
     android-studio
     angry-ip-scanner
-    atom
     balenaetcher
     beyond-compare
     bitbar
