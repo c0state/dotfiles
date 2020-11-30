@@ -110,6 +110,7 @@ brew_packages=(
     watchman
     wget
     yarn
+    yq
     zsh zsh-completions zsh-syntax-highlighting
 )
 
