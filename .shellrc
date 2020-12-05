@@ -132,6 +132,9 @@ fi
 
 export PATH=$PATH:$(python -m site --user-base)/bin
 
+#----- docker
+export DOCKER_BUILDKIT=1
+
 #----- source any custom shell configuration
 [[ -f $HOME/.shellrc_custom ]] && source $HOME/.shellrc_custom
 
