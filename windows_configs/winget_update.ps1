@@ -13,6 +13,7 @@ winget install "github cli"
 winget install "github desktop"
 winget install "google chrome"
 # not yet available
+winget install mirantis.lens
 #winget install neovim
 winget install sourcetree
 winget install toolbox 
