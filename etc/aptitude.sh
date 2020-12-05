@@ -32,6 +32,7 @@ apt update && apt install -y \
 # install developer packages
 apt install -y \
     build-essential cmake zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev llvm libncurses5-dev libncursesw5-dev libxml2-dev \
+    neovim \
     vagrant
 
 # install image packages

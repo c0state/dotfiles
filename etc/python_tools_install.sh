@@ -12,7 +12,6 @@ python3 -m pip install --upgrade --user pipx
 # macOS Docker app includes docker-compose
 if [[ $PLATFORM != 'Darwin' ]]; then
     pipx install docker-compose
-    pipx install neovim
 fi
 
 pipx install --include-deps ansible
