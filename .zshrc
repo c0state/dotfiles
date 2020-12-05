@@ -43,6 +43,7 @@ plugins=(
     kubectl
     nvm
     pip
+    poetry
     python
     zsh-autosuggestions
     zsh-completions
