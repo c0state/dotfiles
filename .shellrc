@@ -1,5 +1,6 @@
 #----- detect platform
-PLATFORM=`uname`
+PLATFORM=$(uname)
+IS_WSL=$(uname -a | grep microsoft-standard >/dev/null; echo $?)
 
 #----- always use full color terminal
 export TERM=xterm-256color
@@ -16,6 +17,9 @@ export EDITOR=vim
 #----- set based on platform (Linux or OS X)
 if [[ $PLATFORM == 'Linux' ]]; then
   export PATH=$PATH:/usr/local/heroku/bin
+  if [[ "$IS_WSL" == "0" ]]; then
+    export DISPLAY=$(grep -m 1 nameserver /etc/resolv.conf | awk '{print $2}'):0.0
+  fi
 elif [[ $PLATFORM == 'Darwin' ]]; then
   # if homebrew is installed put it's bin dir first
   if [[ -e /usr/local/bin/brew ]]; then
@@ -66,7 +70,7 @@ fi
 export PATH=$PATH:$HOME/bin:$HOME/.local/bin
 
 # set up dircolors
-eval `dircolors $HOME/.dotfiles/.dircolors`
+eval $(dircolors $HOME/.dotfiles/.dircolors)
 
 #----- php version manager
 if [[ -e "${HOME}/.php-version" ]] ; then
