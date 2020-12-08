@@ -23,6 +23,7 @@ pipx install codemod
 pipx install cookiecutter
 pipx install csvkit
 pipx install cwlref-runner
+pipx install cwltool
 pipx install howdoi
 pipx install httpie
 pipx install ipython
