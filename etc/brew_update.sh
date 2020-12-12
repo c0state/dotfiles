@@ -180,7 +180,6 @@ brew_cask_packages=(
     powershell
     send-to-kindle
     sketch
-    sketch-toolbox
     skype
     slack
     sourcetree
