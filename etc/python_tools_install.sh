@@ -45,8 +45,6 @@ pipx install tox
 pipx install twine
 pipx install youtube-dl
 
-pipx reinstall-all
-
 # pip dependencies
 
 python -m pip install --user --upgrade pynvim
