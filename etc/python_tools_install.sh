@@ -4,8 +4,8 @@ PLATFORM=$(uname)
 
 set -ex
 
-python3 -m pip install --upgrade --user pip setuptools
-python3 -m pip install --upgrade --user pipx
+python -m pip install --upgrade --user pip setuptools
+python -m pip install --upgrade --user pipx
 
 # pipx dependencies
 
