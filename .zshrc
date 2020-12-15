@@ -45,6 +45,7 @@ plugins=(
     pip
     poetry
     python
+    yarn
     zsh-autosuggestions
     zsh-completions
     zsh-syntax-highlighting
