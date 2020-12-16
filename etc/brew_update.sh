@@ -12,7 +12,7 @@ brew tap homebrew/cask-versions
 brew tap busterc/tap
 brew tap wix/brew
 
-brew update && brew upgrade && brew cask upgrade
+brew update && brew upgrade && brew upgrade --cask
 
 #---------- high level dependencies ----------
 
