@@ -21,7 +21,7 @@ echo "---------- Installing core dependencies"
 # need to install items from the app store
 brew list mas >/dev/null 2>&1 || brew install mas
 # java is needed for some apps
-brew cask list java >/dev/null 2>&1 || brew cask install java
+brew list --cask java >/dev/null 2>&1 || brew install --cask java
 
 #---------- brew packages ----------
 
@@ -208,7 +208,7 @@ brew_cask_packages=(
 echo "---------- Installing brew cask packages"
 
 for brew_cask_package in "${brew_cask_packages[@]}"; do
-    brew cask list "$brew_cask_package" >/dev/null 2>&1 || brew cask install "$brew_cask_package"
+    brew list --cask "$brew_cask_package" >/dev/null 2>&1 || brew install --cask "$brew_cask_package"
 done
 
 #---------- Cleanup ----------
