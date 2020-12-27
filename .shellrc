@@ -120,10 +120,6 @@ export EC2_CERT=$HOME/Dropbox/AmazonAWS/X509Cert
 
 source $HOME/.shell_aliases
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 #----- python/pyenv
 if [[ -e "$HOME/.pyenv" ]] ; then
   export PYENV_ROOT=$HOME/.pyenv
