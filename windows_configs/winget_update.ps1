@@ -20,3 +20,4 @@ winget install toolbox
 winget install vim
 winget install "vlc media player"
 winget install "visual studio code"
+winget install "windirstat.windirstat"
