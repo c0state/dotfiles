@@ -1,24 +1,18 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+#---------- load custom zsh init
 
 [[ -f $HOME/.zshrc_pre_custom ]] && source $HOME/.zshrc_pre_custom
 
-#---------- load up shell agnostic config first
+#---------- load up shell agnostic config
 
 source $HOME/.shellrc
 
+#---------- starship prompt
+
+eval "$(starship init zsh)"
+
 #---------- oh-my-zsh
 
-# pulled from latest template at
-# https://github.com/robbyrussell/oh-my-zsh/blob/master/templates/zshrc.zsh-template
-
 export ZSH=$HOME/.oh-my-zsh
-
-ZSH_THEME="powerlevel10k/powerlevel10k"
 
 CASE_SENSITIVE="false"
 HYPHEN_INSENSITIVE="false"
@@ -84,6 +78,7 @@ elif [[ -e /usr/local/bin/aws_zsh_completer.sh ]]; then
 fi
 
 # ---------- direnv - https://github.com/direnv/direnv
+
 eval "$(direnv hook zsh)"
 
 # ---------- fzf
@@ -95,26 +90,3 @@ eval "$(direnv hook zsh)"
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/bitcomplete bit
 
-# ---------- powerlevel9k powerline
-
-# powerlevel9k theme
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs pyenv rbenv go_version)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator kubecontext time)
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_MODE='nerdfont-complete'
-POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
-
-# powerlevel9k colors
-POWERLEVEL9K_DIR_HOME_FOREGROUND=yellow1
-POWERLEVEL9K_DIR_HOME_BACKGROUND=blue
-POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND=yellow1
-POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND=blue
-POWERLEVEL9K_DIR_DEFAULT_FOREGROUND=lightgrey
-POWERLEVEL9K_DIR_DEFAULT_BACKGROUND=blue
-POWERLEVEL9K_DIR_ETC_FOREGROUND=yellow1
-POWERLEVEL9K_DIR_ETC_BACKGROUND=blue
-POWERLEVEL9K_PYENV_FOREGROUND=lightcyan
-POWERLEVEL9K_RBENV_FOREGROUND=lightcyan
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-#[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

@@ -100,6 +100,7 @@ brew_packages=(
     shellcheck
     smartmontools
     sshuttle
+    starship
     stunnel
     svg2png
     telnet
