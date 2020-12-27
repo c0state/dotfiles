@@ -1,0 +1,18 @@
+[include]
+	path = .gitconfig-linux
+[diff]
+	tool = bc4
+[difftool]
+	prompt = false
+[difftool "bc4"]
+	cmd = bcompare \"$LOCAL\" \"$REMOTE\"
+	trustExitCode = true
+[merge]
+	tool = bc4
+[mergetool]
+	prompt = false
+[mergetool "bc4"]
+	cmd = bcompare \"$REMOTE\" \"$LOCAL\" \"$BASE\" \"$MERGED\"
+	trustExitCode = true
+[credential]
+	helper = /mnt/c/Program\\ Files/Git/mingw64/libexec/git-core/git-credential-manager.exe
