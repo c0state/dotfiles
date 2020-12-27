@@ -1,0 +1,3 @@
+[kubernetes]
+format = '[☸️:$context](dimmed green) '
+disabled = false
