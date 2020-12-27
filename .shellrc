@@ -132,6 +132,9 @@ fi
 
 export PATH=$PATH:$(python -m site --user-base)/bin
 
+#----- deno
+export PATH=$PATH:$HOME/.deno/bin
+
 #----- docker
 export DOCKER_BUILDKIT=1
 
