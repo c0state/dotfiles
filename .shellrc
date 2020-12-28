@@ -14,6 +14,8 @@ export EDITOR=vim
 # use vi bindings in shell
 #set -o vi
 
+source $HOME/.shell_aliases
+
 #----- set based on platform (Linux or OS X)
 if [[ $PLATFORM == 'Linux' ]]; then
   export PATH=$PATH:/usr/local/heroku/bin
@@ -28,7 +30,7 @@ elif [[ $PLATFORM == 'Darwin' ]]; then
   fi
 
   # if heroku toolbelt is installed
-  if [[ -e /usr/local/heroku/bin ]]; then
+  if [[ -e "/usr/local/heroku/bin" ]]; then
     export PATH=/usr/local/heroku/bin:$PATH
   fi
 
@@ -39,22 +41,22 @@ elif [[ $PLATFORM == 'Darwin' ]]; then
   fi
 
   # use python 3
-  if [[ -e /usr/local/opt/python/libexec/bin ]]; then
+  if [[ -e "/usr/local/opt/python/libexec/bin" ]]; then
     export PATH=/usr/local/opt/python/libexec/bin:$PATH
   fi
 
   # add fastlane to path
-  if [[ -e $HOME/.fastlane/bin ]]; then
+  if [[ -e "$HOME/.fastlane/bin" ]]; then
     export PATH=$HOME/.fastlane/bin:$PATH
   fi
 
-  if [[ -e /usr/local/anaconda3/bin ]]; then
+  if [[ -e "/usr/local/anaconda3/bin" ]]; then
     export PATH=/usr/local/anaconda3/bin:$PATH
   fi
 fi 
 
 #----- add android sdk paths
-if [[ -e $HOME/Android/sdk ]]; then
+if [[ -e "$HOME/Android/sdk" ]]; then
   export ANDROID_SDK_ROOT=$HOME/Android/sdk
 elif [[ -e $HOME/Library/Android/sdk ]]; then
   export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
@@ -88,10 +90,7 @@ if which ruby >/dev/null && which gem >/dev/null; then
     PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
 fi
 
-#----- poetry python tool
-export PATH="$PATH:$HOME/.poetry/bin"
-
-#----- golang and gvm (go version manager)
+#----- golang and gvm
 export GOPATH="$HOME/work/go"
 export PATH=$PATH:"$HOME/work/go/bin"
 
@@ -104,23 +103,7 @@ if [[ -e $HOME/.git-subrepo/.rc ]]; then
     source $HOME/.git-subrepo/.rc
 fi
 
-#----- set terminal title
-if [[ $TERM == xterm* ]] || [[ $TERM == rxvt* ]]
-then
-  export PROMPT_COMMAND='echo -ne "\033]0;${PWD}\007"'
-fi
-
-#----- load aspnet k version manager (kvm)
-[ -s "${HOME}/.kre/kvm/kvm.sh" ] && . "${HOME}/.kre/kvm/kvm.sh" # Load kvm
-
-#----- for Amazon AWS EC2 tools
-export EC2_HOME=$HOME/Dropbox/Apps/Universal/ec2-api-tools-1.4.2.4
-export EC2_PRIVATE_KEY=$HOME/Dropbox/AmazonAWS/X509Key
-export EC2_CERT=$HOME/Dropbox/AmazonAWS/X509Cert
-
-source $HOME/.shell_aliases
-
-#----- python/pyenv
+#----- python
 if [[ -e "$HOME/.pyenv" ]] ; then
   export PYENV_ROOT=$HOME/.pyenv
   export PATH="$PYENV_ROOT/bin:$PATH"
@@ -131,6 +114,7 @@ if [[ -e "$HOME/.pyenv" ]] ; then
 fi
 
 export PATH=$PATH:$(python -m site --user-base)/bin
+export PATH="$PATH:$HOME/.poetry/bin"
 
 #----- deno
 export PATH=$PATH:$HOME/.deno/bin
