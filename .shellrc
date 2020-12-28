@@ -1,6 +1,6 @@
 #----- detect platform
 PLATFORM=$(uname)
-IS_WSL=$(uname -a | grep microsoft-standard >/dev/null; echo $?)
+IS_WSL=$(uname -a | grep -i microsoft >/dev/null; echo $?)
 
 #----- always use full color terminal
 export TERM=xterm-256color
@@ -11,7 +11,6 @@ export HISTFILESIZE=20000
 
 #----- set preferred editor and mode(s)
 export EDITOR=vim
-# use vi bindings in shell
 #set -o vi
 
 source $HOME/.shell_aliases
