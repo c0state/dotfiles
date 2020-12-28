@@ -197,7 +197,7 @@ brew_cask_packages=(
     vagrant
     virtualbox
     viscosity
-    visual-studio visual-studio-code visual-studio-code-insiders
+    visual-studio visual-studio-code
     vlc
     whatsapp
     wireshark
