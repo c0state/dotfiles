@@ -61,6 +61,7 @@ source $HOME/.zsh_functions
 setopt HIST_SAVE_NO_DUPS INC_APPEND_HISTORY
 
 # flash instead of audible beep
+unsetopt BEEP
 ZBEEP='\e[?5h\e[?5l'
 
 # for zsh online help
