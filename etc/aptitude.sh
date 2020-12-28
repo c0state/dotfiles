@@ -61,6 +61,9 @@ echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.lis
 
 apt update && apt install -y nodejs yarn
 
+# install db packages
+apt install -y libpq-dev
+
 # install python packages
 apt install -y \
     python3-dev python3-pip
