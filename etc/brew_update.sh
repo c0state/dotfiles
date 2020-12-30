@@ -145,8 +145,6 @@ brew_cask_packages=(
     divvy
     docker
     dotnet-sdk
-    double-commander
-    etrecheckpro
     evernote
     firefox
     flux
@@ -170,16 +168,13 @@ brew_cask_packages=(
     jetbrains-toolbox
     lens
     libreoffice
-    macdown
     microsoft-edge
     mono-mdk
     ngrok
-    obs obs-virtualcam
-    origami-studio
+    obs
     outline-manager
     postman
     powershell
-    send-to-kindle
     sketch
     skype
     slack
@@ -196,12 +191,10 @@ brew_cask_packages=(
     tower
     vagrant
     virtualbox
-    viscosity
-    visual-studio visual-studio-code
+    visual-studio-code
     vlc
     whatsapp
     wireshark
-    xamarin
     xquartz inkscape
     zeplin
 )
