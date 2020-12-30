@@ -209,6 +209,6 @@ done
 
 echo "---------- Running cleanup"
 
-brew cleanup && brew cleanup --prune-prefix
+rm -rf "$(brew --cache)"
 
 echo "---------- Finished installing brew and brew cask packages successfully."
