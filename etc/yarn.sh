@@ -27,3 +27,4 @@ yarn global add \
     yalc \
     yarn-deduplicate
 
+yarn cache clean
