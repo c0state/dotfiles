@@ -1,3 +1,78 @@
-[kubernetes]
-format = '[☸️:$context](dimmed green) '
+format = """
+$username@$hostname\
+$shlvl\
+$kubernetes\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$hg_branch\
+$docker_context\
+$package\
+$cmake\
+$dart\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$golang\
+$helm\
+$java\
+$julia\
+$kotlin\
+$nim\
+$nodejs\
+$ocaml\
+$perl\
+$php\
+$purescript\
+$python\
+$ruby\
+$rust\
+$swift\
+$terraform\
+$zig\
+$nix_shell\
+$conda\
+$memory_usage\
+$aws\
+$gcloud\
+$openstack\
+$env_var\
+$crystal\
+$custom\
+$cmd_duration\
+$directory\
+$line_break\
+$lua\
+$jobs\
+$battery\
+$time\
+$status\
+$character"""
+
+# ---------- customizations
+
+[character]
+success_symbol = "[╰➜](bold green)"
+error_symbol = "[╰✗](bold red)"
+
+[gcloud]
+format = '[\[g$symbol:$account(\($project\))]($style)\]'
+
+[hostname]
+ssh_only = false
+format =  "[$hostname](bold green) "
 disabled = false
+
+[kubernetes]
+format = '[\[⛵:$context\]](bold red) '
+disabled = false
+
+[username]
+style_user = "yellow bold"
+style_root = "red bold"
+format = "[╭─ $user]($style)"
+disabled = false
+show_always = true
+
