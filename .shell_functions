@@ -1,3 +1,5 @@
+# ---------- system agnostic
+
 function bash_colors {
     # output bash supported colors and their code
 	for i in {0..255} ; do printf "\x1b[38;5;${i}mcolour${i}\n" ; done
@@ -9,14 +11,6 @@ function debug {
 
 function convert_greyscale {
     convert "$1" -set colorspace Gray -separate -average "$2"
-}
-
-function divvy_export {
-    if [[ $1 == "" ]]; then
-        echo "Please provide filename to write divvy config to"
-    else
-        open -a Safari divvy://export && (pbpaste > "$1")
-    fi
 }
 
 function findnewest {
@@ -98,3 +92,20 @@ function strip_comments_blank_lines {
 function sync_emulator_time {
     adb -e shell su root date `date +"%m%d%H%M%y"`
 }
+
+# ---------- macos
+
+function divvy_export {
+    if [[ $1 == "" ]]; then
+        echo "Please provide filename to write divvy config to"
+    else
+        open -a Safari divvy://export && (pbpaste > "$1")
+    fi
+}
+
+function clear_macos_timemachine_snapshots {
+    for curr_dir in $(tmutil listlocalsnapshotdates | grep "-"); do
+        sudo tmutil deletelocalsnapshots $curr_dir
+    done
+}
+
