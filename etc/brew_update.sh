@@ -175,6 +175,7 @@ brew_cask_packages=(
     outline-manager
     postman
     powershell
+    signal
     sketch
     skype
     slack
