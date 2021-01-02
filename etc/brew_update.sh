@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+cd ~
+
 #---------- brew setup ----------
 
 # exit on any failed command

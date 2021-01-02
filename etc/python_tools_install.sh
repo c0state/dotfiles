@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+cd ~
+
 PLATFORM=$(uname)
 
 set -ex
