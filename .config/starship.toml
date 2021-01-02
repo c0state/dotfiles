@@ -1,11 +1,7 @@
 format = """
-$username@$hostname\
+$username@$hostname \
 $shlvl\
 $kubernetes\
-$git_branch\
-$git_commit\
-$git_state\
-$git_status\
 $hg_branch\
 $docker_context\
 $package\
@@ -20,6 +16,7 @@ $helm\
 $java\
 $julia\
 $kotlin\
+$lua\
 $nim\
 $nodejs\
 $ocaml\
@@ -41,33 +38,57 @@ $openstack\
 $env_var\
 $crystal\
 $custom\
+$time $directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
 $cmd_duration\
-$directory\
 $line_break\
-$lua\
 $jobs\
 $battery\
-$time\
-$status\
-$character"""
+$character\
+$status"""
 
 # ---------- customizations
+
+[aws]
+symbol = "A☁️ "
+format = '[\[$symbol:$profile:$region\]]($style)'
+style = "bold grey"
 
 [character]
 success_symbol = "[╰➜](bold green)"
 error_symbol = "[╰✗](bold red)"
 
+[directory]
+truncate_to_repo = false
+style = "fg:yellow bg:blue"
+format = "[  $path]($style)[$read_only]($read_only_style)"
+
 [gcloud]
-format = '[\[g$symbol:$account(\($project\))]($style)\]'
+symbol = "G☁️ "
+format = '[\[$symbol:$account(\($project\))]($style)\]'
+
+[git_branch]
+style = "bg:yellow fg:black"
+format = "[ $symbol$branch]($style)"
 
 [hostname]
 ssh_only = false
-format =  "[$hostname](bold green) "
+format = "[$hostname](bold green)"
 disabled = false
 
 [kubernetes]
-format = '[\[⛵:$context\]](bold red) '
+format = '[\[⛵:$context\]](bold red)'
 disabled = false
+
+[package]
+format = '[\[🎁:$version\]](white bold)'
+
+[python]
+symbol = "🐍"
+format = '[\[${symbol}:${pyenv_prefix}${version}( \($virtualenv\))]($style)\]'
 
 [username]
 style_user = "yellow bold"
@@ -75,4 +96,14 @@ style_root = "red bold"
 format = "[╭─ $user]($style)"
 disabled = false
 show_always = true
+
+[status]
+style = "bg:red fg:bold fg:white"
+format = '[\[$status\]]($style) '
+disabled = false
+
+[time]
+disabled = false
+format = '[\[$time\]]($style)'
+time_format = "%T"
 
