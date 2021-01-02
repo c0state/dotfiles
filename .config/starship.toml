@@ -1,5 +1,5 @@
 format = """
-$username@$hostname \
+$username$hostname \
 $shlvl\
 $kubernetes\
 $hg_branch\
@@ -76,7 +76,8 @@ format = "[ $symbol$branch]($style)"
 
 [hostname]
 ssh_only = false
-format = "[$hostname](bold green)"
+style = "bg:blue fg:yellow"
+format = "[@$hostname]($style)"
 disabled = false
 
 [kubernetes]
@@ -91,9 +92,9 @@ symbol = "🐍"
 format = '[\[${symbol}:${pyenv_prefix}${version}( \($virtualenv\))]($style)\]'
 
 [username]
-style_user = "yellow bold"
-style_root = "red bold"
-format = "[╭─ $user]($style)"
+style_user = "bg:blue fg:yellow"
+style_root = "bg:red fg:white"
+format = "╭─ [$user]($style)"
 disabled = false
 show_always = true
 
