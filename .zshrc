@@ -6,9 +6,14 @@
 
 source $HOME/.shellrc
 
-#---------- starship prompt
+#---------- command prompt
 
-eval "$(starship init zsh)"
+# intellij and vscode themes don't seem to play nice with custom prompt colors
+if [[ $__INTELLIJ_COMMAND_HISTFILE__ || "$TERM_PROGRAM" = "vscode" ]]; then
+  ZSH_THEME="agnoster"
+else
+  eval "$(starship init zsh)"
+fi
 
 #---------- oh-my-zsh
 
