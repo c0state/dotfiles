@@ -9,6 +9,7 @@ set -e
 
 # add taps
 brew tap aws/tap
+brew tap fishtown-analytics/dbt
 brew tap homebrew/cask-fonts
 brew tap homebrew/cask-versions
 brew tap busterc/tap
@@ -46,6 +47,7 @@ brew_packages=(
     cocoapods
     colordiff icdiff
     coreutils
+    dbt
     ddrescue
     deno
     direnv
