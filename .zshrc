@@ -59,6 +59,21 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+# override prompt_end function to add a line break to ohmyzsh agnoster theme prompt
+prompt_end() {
+  if [[ -n $CURRENT_BG ]]; then
+      print -n "%{%k%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR"
+  else
+      print -n "%{%k%}"
+  fi
+
+  print -n "%{%f%}"
+  CURRENT_BG='' 
+
+  #Adds the new line and ➜ as the start character.
+  printf "\n ➜";
+}
+
 # ---------- Customize to your needs...
 
 source $HOME/.zsh_functions
