@@ -26,7 +26,7 @@ pipx install cookiecutter
 pipx install csvkit
 pipx install cwlref-runner
 pipx install cwltool
-pipx install dbt
+pipx install --include-deps dbt
 pipx install howdoi
 pipx install httpie
 pipx install ipython
