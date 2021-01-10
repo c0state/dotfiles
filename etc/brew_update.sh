@@ -185,7 +185,6 @@ brew_cask_packages=(
     spectacle
     sqlitestudio
     sqlpro-for-sqlite
-    staruml
     steam
     sublime-text
     superduper
