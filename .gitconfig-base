@@ -22,7 +22,7 @@
     hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
     ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
     publish = !legit publish \"$@\"
-    pullr = "!git fetch ; git rebase --autostash FETCH_HEAD"
+    pullr = "!git pull --rebase --autostash"
     sprout = !legit sprout \"$@\"
     st = status
     switch = !legit switch \"$@\"
