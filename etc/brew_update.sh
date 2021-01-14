@@ -211,6 +211,7 @@ done
 
 echo "---------- Running cleanup"
 
+brew cleanup
 rm -rf "$(brew --cache)"
 
 echo "---------- Finished installing brew and brew cask packages successfully."
