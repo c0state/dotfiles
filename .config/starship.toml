@@ -62,7 +62,7 @@ error_symbol = "[╰✗](bold red)"
 
 [directory]
 truncate_to_repo = false
-style = "fg:yellow bg:blue"
+style = "fg:yellow bg:#0000ff"
 format = "[  $path]($style)[$read_only]($read_only_style)"
 
 [gcloud]
@@ -70,12 +70,12 @@ symbol = "G☁️ "
 format = '[\[$symbol:$account(\($project\))]($style)\]'
 
 [git_branch]
-style = "bg:yellow fg:black"
+style = "bg:#ffff00 fg:black"
 format = "[ $symbol$branch]($style)"
 
 [hostname]
 ssh_only = false
-style = "bg:blue fg:yellow"
+style = "bg:#0000ff fg:yellow"
 format = "[@$hostname]($style)"
 disabled = false
 
@@ -91,14 +91,14 @@ symbol = "🐍"
 format = '[\[${symbol}:${pyenv_prefix}${version}( \($virtualenv\))]($style)\]'
 
 [username]
-style_user = "bg:blue fg:yellow"
-style_root = "bg:red fg:white"
+style_user = "bg:#0000ff fg:yellow"
+style_root = "bg:#ff0000 fg:white"
 format = "╭─ [$user]($style)"
 disabled = false
 show_always = true
 
 [status]
-style = "bg:red fg:bold fg:white"
+style = "bg:#ff0000 fg:bold fg:white"
 format = '[\[$status\]]($style) '
 disabled = false
 
