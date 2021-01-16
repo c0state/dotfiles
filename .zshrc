@@ -9,7 +9,7 @@ source $HOME/.shellrc
 #---------- command prompt
 
 # intellij and vscode themes don't seem to play nice with custom prompt colors
-if [[ $__INTELLIJ_COMMAND_HISTFILE__ || "$TERM_PROGRAM" = "vscode" ]]; then
+if [[ $__INTELLIJ_COMMAND_HISTFILE__ ]]; then
   ZSH_THEME="agnoster"
 else
   eval "$(starship init zsh)"
