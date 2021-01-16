@@ -86,6 +86,9 @@ disabled = false
 [package]
 format = '[\[🎁:$version\]](white bold)'
 
+[nodejs]
+format = '[\[⬢:$version\]](bold green)'
+
 [python]
 symbol = "🐍"
 format = '[\[${symbol}:${pyenv_prefix}${version}( \($virtualenv\))]($style)\]'
