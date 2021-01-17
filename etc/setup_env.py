@@ -41,9 +41,6 @@ def setup_dotfiles():
     else:
         os.system("""(cd ~/.dotfiles && git pullr)""")
 
-    # now set up links
-    symlink_dotfile("~/.dotfiles/anyenv", "~/.anyenv")
-
 
 def setup_shell():
     # use homebrew's zsh when on OS X
