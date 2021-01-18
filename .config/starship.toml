@@ -57,7 +57,7 @@ format = '[\[$symbol:$profile:$region\]]($style)'
 style = "bold grey"
 
 [character]
-success_symbol = "[╰➜](bold green)"
+success_symbol = "[╰➜]($style)"
 error_symbol = "[╰✗](bold red)"
 
 [directory]
