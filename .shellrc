@@ -89,15 +89,11 @@ if which ruby >/dev/null && which gem >/dev/null; then
     PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
 fi
 
-#----- golang and gvm
+#----- golang
 export GOPATH="$HOME/work/go"
-export PATH=$PATH:"$HOME/work/go/bin"
+export PATH="$HOME/.local/go/bin":$PATH
 
-# TODO: is this still needed?
-# go version manager
-[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
-
-# source git-subrepo
+#----- git-subrepo
 if [[ -e $HOME/.git-subrepo/.rc ]]; then
     source $HOME/.git-subrepo/.rc
 fi
