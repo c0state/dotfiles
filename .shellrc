@@ -54,6 +54,11 @@ elif [[ $PLATFORM == 'Darwin' ]]; then
   fi
 fi 
 
+#----- add yarn global bin path
+if [[ -e "$HOME/.yarn/bin" ]]; then
+  export PATH=$HOME/.yarn/bin:$PATH
+fi
+
 #----- add android sdk paths
 if [[ -e "$HOME/Android/sdk" ]]; then
   export ANDROID_SDK_ROOT=$HOME/Android/sdk
