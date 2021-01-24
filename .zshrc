@@ -84,15 +84,6 @@ unalias run-help 2>/dev/null
 autoload run-help
 HELPDIR=/usr/local/share/zsh/help
 
-# ---------- aws auto-completion needs to be explicitly sourced
-# use https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#aws instead?
-
-if [[ -e /usr/local/share/zsh/site-functions/_aws ]]; then
-    source /usr/local/share/zsh/site-functions/_aws
-elif [[ -e /usr/local/bin/aws_zsh_completer.sh ]]; then
-    source /usr/local/bin/aws_zsh_completer.sh
-fi
-
 # ---------- direnv - https://github.com/direnv/direnv
 
 eval "$(direnv hook zsh)"
