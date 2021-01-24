@@ -38,7 +38,9 @@ $openstack\
 $env_var\
 $crystal\
 $custom\
-$time $directory\
+$time\
+$line_break\
+$directory\
 $git_branch\
 $git_commit\
 $git_state\
@@ -63,7 +65,7 @@ error_symbol = "[╰✗](bold red)"
 [directory]
 truncate_to_repo = false
 style = "fg:yellow bg:#0000ff"
-format = "[  $path]($style)[$read_only]($read_only_style)"
+format = "├─ [ $path]($style)[$read_only]($read_only_style)"
 
 [gcloud]
 symbol = "G☁️ "
