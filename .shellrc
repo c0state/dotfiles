@@ -54,7 +54,10 @@ elif [[ $PLATFORM == 'Darwin' ]]; then
   fi
 fi 
 
-#----- add yarn global bin path
+
+#----- node config
+
+# add yarn global bin path
 if [[ -e "$HOME/.yarn/bin" ]]; then
   export PATH=$HOME/.yarn/bin:$PATH
 fi

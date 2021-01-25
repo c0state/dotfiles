@@ -1,12 +1,12 @@
-#!/usr/bin/env bash
+#!/usr/bin/env -S bash -i
 
-set -ex
+set -e
 
-apt-get update
+sudo apt-get update
 
 #----- install utility packages
 
-apt install -y \
+sudo apt install -y \
     colordiff icdiff \
     curl wget \
     direnv \
@@ -21,57 +21,67 @@ apt install -y \
 
 #----- install mono
 
-apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-echo "deb https://download.mono-project.com/repo/ubuntu stable main" | tee /etc/apt/sources.list.d/mono-official-stable.list
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+sudo bash -c 'echo "deb https://download.mono-project.com/repo/ubuntu stable main" | tee /etc/apt/sources.list.d/mono-official-stable.list'
 
-apt update && apt install -y \
+sudo apt update && sudo apt install -y \
     mono-complete
 
 #----- install packages
 
 # install developer packages
-apt install -y \
+sudo apt install -y \
     build-essential cmake zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev llvm libncurses5-dev libncursesw5-dev libxml2-dev \
     neovim \
     vagrant
 
 # install image packages
-apt install -y \
+sudo apt install -y \
     ffmpeg imagemagick pngquant
 
 # install go packages
-apt install -y \
+sudo apt install -y \
     golang
 
 # install java packages
-apt install -y \
+sudo apt install -y \
     default-jdk
 
 # install rust packages
-apt install -y \
+sudo apt install -y \
     cargo
 
 # install networking packages
-apt install -y avahi-daemon samba winbind
+sudo apt install -y avahi-daemon samba winbind
 
-# install node packages
-curl -sL https://deb.nodesource.com/setup_15.x | bash -
-curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+#----- install node packages
 
-apt update && apt install -y nodejs yarn
+# set up node repo and install
+sudo bash -c 'curl -sL https://deb.nodesource.com/setup_15.x | bash -'
+sudo apt update && sudo apt install -y nodejs
+
+# set default node and install yarn via npm
+nvm install 15
+nvm alias default 15
+nvm use default
+npm install --global yarn
 
 # install db packages
-apt install -y libpq-dev
+sudo apt install -y libpq-dev
 
 # install python packages
-apt install -y \
+sudo apt install -y \
     python3-dev python3-pip
 
 # install ruby packages
-apt install -y \
+sudo apt install -y \
     ruby-dev rbenv
 
 # install zsh packages
-apt install -y \
+sudo apt install -y \
     zsh zsh-doc
+
+if ! $(which lsd > /dev/null); then
+    install_package "https://github.com/Peltoche/lsd/releases/download/0.19.0/lsd_0.19.0_amd64.deb"
+fi
+

@@ -59,6 +59,17 @@ function git_clean_local {
     git checkout -- ...
 }
 
+function install_package {
+    (
+        export TEMP_PKG_INSTALL_FILE="$(mktemp)"
+        (
+            wget -O "$TEMP_PKG_INSTALL_FILE" "$1" &&
+            sudo dpkg -i "$TEMP_PKG_INSTALL_FILE"
+        )
+        rm -f "$TEMP_PKG_INSTALL_FILE"
+    )
+}
+
 function logcat { adb logcat -d -v time ; }
 
 function mp3_to_ogg_vorbis {
