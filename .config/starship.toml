@@ -65,7 +65,7 @@ error_symbol = "[╰✗](bold red)"
 [directory]
 truncate_to_repo = false
 style = "fg:yellow bg:#0000ff"
-format = "├─ [  $path]($style)[$read_only]($read_only_style)"
+format = "├─ [ $path]($style)[$read_only]($read_only_style)"
 
 [gcloud]
 symbol = "G☁️ "
