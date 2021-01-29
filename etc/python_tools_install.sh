@@ -6,7 +6,8 @@ PLATFORM=$(uname)
 
 set -ex
 
-python -m pip install --upgrade --user pip setuptools
+# TODO: https://github.com/pypa/pip/issues/9284
+python -m pip install --upgrade --user pip==21.0.0 setuptools==52.0.0
 python -m pip install --upgrade --user pipx
 
 # pipx dependencies
