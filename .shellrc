@@ -102,7 +102,9 @@ export GOPATH="$HOME/work/go"
 export PATH="$HOME/.local/go/bin":$PATH
 
 #----- rust
-source "$HOME/.cargo/env"
+if [[ -e "$HOME/.cargo" ]]
+    source "$HOME/.cargo/env"
+fi
 
 #----- git-subrepo
 if [[ -e $HOME/.git-subrepo/.rc ]]; then
