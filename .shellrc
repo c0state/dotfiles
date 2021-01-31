@@ -88,8 +88,8 @@ if [[ -e "${HOME}/.php-version" ]] ; then
 fi
 
 #----- ruby
-if [[ -e "$HOME/.rbenv" ]]; then
-  export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$PATH"
+if which rbenv; then
   eval "$(rbenv init -)"
 fi
 

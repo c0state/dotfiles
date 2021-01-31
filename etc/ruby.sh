@@ -20,7 +20,7 @@ fi
 eval "$(rbenv init -)"
 
 if ! (rbenv version | grep $LATEST_RUBY_VERSION); then
-    rbenv install 3.0.0
+    rbenv install "$LATEST_RUBY_VERSION"
 fi
 
 gem install --user-install cocoapods

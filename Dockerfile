@@ -16,9 +16,13 @@ RUN /app/aptitude.sh
 
 ENV HOME=/root
 WORKDIR $HOME
-ADD . $HOME/.dotfiles
 
 #---------- general env setup
+
+# add only dotfiles and setup_env script to optimize docker caching
+RUN mkdir -p $HOME/.dotfiles/etc
+ADD .* $HOME/.dotfiles/
+ADD etc/setup_env.sh $HOME/.dotfiles/etc
 
 # can't use the $HOME/etc symlink yet as this script creates it
 RUN bash -i -c "$HOME/.dotfiles/etc/setup_env.sh"
@@ -26,6 +30,9 @@ RUN bash -i -c "$HOME/.dotfiles/etc/setup_env.sh"
 #---------- tools image layer
 
 FROM dotfiles-base as dotfiles-tools
+
+ADD etc/* $HOME/.dotfiles/etc
+
 # TODO: consolidate all the calls below into one setup_all.sh script
 RUN bash -i -c "$HOME/etc/python_tools_install.sh"
 RUN bash -i -c "$HOME/etc/js_tools.sh"
