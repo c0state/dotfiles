@@ -30,5 +30,6 @@ FROM dotfiles-base as dotfiles-tools
 RUN bash -i -c "$HOME/etc/python_tools_install.sh"
 RUN bash -i -c "$HOME/etc/js_tools.sh"
 RUN bash -i -c "$HOME/etc/rust.sh"
+RUN bash -i -c "$HOME/etc/ruby.sh"
 
 ENTRYPOINT /bin/zsh
