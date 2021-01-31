@@ -33,16 +33,6 @@ def setup_rbenv():
         )
 
 
-def setup_gvm():
-    if not os.path.exists(os.path.expanduser("~/.gvm")):
-        os.system(
-            """curl -s -S -L """
-            """https://raw.githubusercontent.com/moovweb/gvm/master/"""
-            """binscripts/gvm-installer """
-            """| zsh"""
-        )
-
-
 def setup_bit():
     os.system(
         """curl -sf https://gobinaries.com/chriswalz/bit | sh; """
@@ -55,7 +45,6 @@ if __name__ == "__main__":
     (options, args) = parse_options()
 
     setup_rbenv()
-    setup_gvm()
     setup_bit()
 
     if _system_name == _system_name_osx:
