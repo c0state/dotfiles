@@ -43,6 +43,14 @@ if ! $(which lsd > /dev/null); then
     bash -i -c "install_package https://github.com/Peltoche/lsd/releases/download/0.19.0/lsd_0.19.0_amd64.deb"
 fi
 
+# ---------- set up dive https://github.com/wagoodman/dive
+
+if ! $(which dive > /dev/null); then
+    bash -i -c "install_package https://github.com/wagoodman/dive/releases/download/v0.9.2/dive_0.9.2_linux_amd64.deb"
+fi
+
+# ---------- set up fzf https://github.com/junegunn/fzf
+
 if [[ ! -d $HOME/.fzf ]]; then
     git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf
     $HOME/.fzf/install --key-bindings --completion --no-update-rc
