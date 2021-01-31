@@ -2,6 +2,8 @@
 
 set -ex
 
+# ---------- install js tools
+
 if [[ ! -e $HOME/.nvm ]]; then
     export NVM_DIR="$HOME/.nvm" && (
         git clone https://github.com/nvm-sh/nvm.git "$NVM_DIR"
@@ -19,6 +21,8 @@ fi
 if ! which yarn>/dev/null; then
     npm install --global yarn
 fi
+
+# ---------- install yarn global packages
 
 yarn global add \
     aws-cdk \
@@ -39,4 +43,6 @@ yarn global add \
     yalc \
     yarn-deduplicate
 
-# TODO: install deno
+# ---------- install deno
+
+curl -fsSL https://raw.githubusercontent.com/denoland/deno_install/master/install.sh | sh
