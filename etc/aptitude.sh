@@ -65,7 +65,7 @@ sudo apt -y install \
 
 # install ruby packages
 sudo apt -y install \
-    ruby-dev rbenv
+    ruby-dev
 
 # install zsh packages
 sudo apt -y install \

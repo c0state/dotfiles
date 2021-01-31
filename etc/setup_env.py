@@ -23,20 +23,8 @@ def setup_divvy():
         os.system("open -a Safari `cat ~/.dotfiles/osx_configs/divvy_export.txt`")
 
 
-def setup_rbenv():
-    if not os.path.exists(os.path.expanduser("~/.rbenv")):
-        os.system("""git clone https://github.com/rbenv/rbenv.git ~/.rbenv""")
-        os.system("""cd ~/.rbenv && src/configure && make -C src""")
-        os.system("""~/.rbenv/bin/rbenv init""")
-        os.system(
-            """git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build"""
-        )
-
-
 if __name__ == "__main__":
     (options, args) = parse_options()
-
-    setup_rbenv()
 
     if _system_name == _system_name_osx:
         setup_divvy()

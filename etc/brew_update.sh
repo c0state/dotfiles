@@ -92,7 +92,6 @@ brew_packages=(
     q
     qt
     ripgrep
-    rbenv rbenv-gemset ruby-build
     redis
     rlwrap
     rust
