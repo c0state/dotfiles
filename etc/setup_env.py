@@ -2,7 +2,6 @@
 
 # TODO: NO LONGER USED, REMOVE!!!
 
-import mmap
 import os
 import platform
 from optparse import OptionParser
@@ -13,13 +12,6 @@ _system_name = platform.system()
 _shell_path = os.environ["SHELL"]
 
 
-def file_contains_str(file_name, search_str):
-    with open(file_name, "rb", 0) as file, mmap.mmap(
-        file.fileno(), 0, access=mmap.ACCESS_READ
-    ) as file_str:
-        return file_str.find(str.encode(search_str)) != -1
-
-
 def parse_options():
     parser = OptionParser()
     parser.add_option("-u", "--user", default="default")
@@ -28,7 +20,7 @@ def parse_options():
 
 def setup_divvy():
     if _system_name == _system_name_osx:
-        os.system("open -a Safari " "`cat ~/.dotfiles/osx_configs/divvy_export.txt`")
+        os.system("open -a Safari `cat ~/.dotfiles/osx_configs/divvy_export.txt`")
 
 
 def setup_rbenv():
@@ -51,16 +43,6 @@ def setup_gvm():
         )
 
 
-def setup_git_subrepo():
-    if not os.path.exists(os.path.expanduser("~/.git-subrepo")):
-        os.system(
-            """git clone https://github.com/ingydotnet/git-subrepo.git """
-            """~/.git-subrepo"""
-        )
-    else:
-        os.system("""(cd ~/.git-subrepo && git pull)""")
-
-
 def setup_bit():
     os.system(
         """curl -sf https://gobinaries.com/chriswalz/bit | sh; """
@@ -75,7 +57,6 @@ if __name__ == "__main__":
     setup_rbenv()
     setup_gvm()
     setup_bit()
-    setup_git_subrepo()
 
     if _system_name == _system_name_osx:
         setup_divvy()
