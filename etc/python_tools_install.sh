@@ -1,10 +1,14 @@
 #!/usr/bin/env bash
 
-cd ~
+set -ex
 
 PLATFORM=$(uname)
 
-set -ex
+if [[ ! -e "$HOME/.pyenv" ]]; then
+    curl --tls-max default --location https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
+    export PATH=$PATH:$HOME/.pyenv/bin
+    eval "$(pyenv init -)"
+fi
 
 # TODO: https://github.com/pypa/pip/issues/9284
 python -m pip install --upgrade --user pip==21.0.0 setuptools==52.0.0
