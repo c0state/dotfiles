@@ -1,33 +1,18 @@
-To configure a new system, run in the following order (mainly tested on OS X):
+My personal dotfiles
 
+Installation
+============
 
-Prerequisites
-=============
+To use:
+* Clone to ~/.dotfiles
+* Run ~/.dotfiles/etc/setup_env.sh
 
-TODO: ideally script out these steps if possible
+Additional Steps
+================
 
-* Set up your SSH key
-* Link contents of "<repo_root>/.*" to "$HOME" 
-* Link contents of "<repo_root>/etc" to "$HOME"
 * Put your name and email in ~/.gitconfig-custom
 ```
 [user]
     name = Joe Blogs
     email = user@domain.top
 ```
-* Link the 
-```
-# for OS X, run 
-ln -s ~/.dotfiles/.gitconfig-osx ~/.gitconfig
-```
-
-
-Installation
-============
-
-* <repo_root>/etc/brew_updates.sh   --- install homebrew packages (OS X only)
-* <repo_root>/etc/pip_install.sh    --- install python packages
-* <repo_root>/etc/ruby.sh           --- install ruby dependencies and gems
-* <repo_root>/etc/npm.sh            --- install npm packages
-* <repo_root>/etc/setup_env.sh      --- do final setup (vim configuration, etc.)
-
