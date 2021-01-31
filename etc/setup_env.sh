@@ -39,7 +39,11 @@ fi
 
 # ---------- set up lsd ls replacement
 
-# TODO: add
-#if ! $(which lsd > /dev/null); then
-#    install_package "https://github.com/Peltoche/lsd/releases/download/-4.19.0/lsd_0.19.0_amd64.deb"
-#fi
+if ! $(which lsd > /dev/null); then
+    bash -i -c "install_package https://github.com/Peltoche/lsd/releases/download/0.19.0/lsd_0.19.0_amd64.deb"
+fi
+
+if [[ ! -d $HOME/.fzf ]]; then
+    git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf
+    $HOME/.fzf/install --key-bindings --completion --no-update-rc
+fi
