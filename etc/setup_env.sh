@@ -53,3 +53,9 @@ fi
 if [[ ! -d $HOME/.git-subrepo ]]; then
     git clone https://github.com/ingydotnet/git-subrepo.git $HOME/.git-subrepo
 fi
+
+# ---------- bit https://github.com/chriswalz/bit
+
+if ! which bit; then
+    curl -sf https://gobinaries.com/chriswalz/bit | sh
+fi

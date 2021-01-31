@@ -21,5 +21,5 @@ export NVM_DIR="$HOME/.nvm"
 
 #---------- bit https://github.com/chriswalz/bit
 
-complete -C /usr/local/bin/bitcomplete bit
+complete -C /usr/local/bin/bit bit
 

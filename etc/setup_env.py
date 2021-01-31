@@ -33,19 +33,10 @@ def setup_rbenv():
         )
 
 
-def setup_bit():
-    os.system(
-        """curl -sf https://gobinaries.com/chriswalz/bit | sh; """
-        """curl -sf https://gobinaries.com/chriswalz/bit/bitcomplete | sh && echo y | """
-        """COMP_INSTALL=1 bitcomplete"""
-    )
-
-
 if __name__ == "__main__":
     (options, args) = parse_options()
 
     setup_rbenv()
-    setup_bit()
 
     if _system_name == _system_name_osx:
         setup_divvy()
