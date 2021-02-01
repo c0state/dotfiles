@@ -31,7 +31,7 @@ sudo apt -y update && sudo apt -y install \
 
 # install developer packages
 sudo apt -y install \
-    build-essential cmake zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev llvm libncurses5-dev libncursesw5-dev libxml2-dev \
+    build-essential cmake zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev libssl-dev llvm libncurses5-dev libncursesw5-dev libxml2-dev \
     neovim \
     vagrant
 
