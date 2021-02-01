@@ -47,7 +47,6 @@ brew_packages=(
     colordiff icdiff
     coreutils
     ddrescue
-    deno
     direnv
     dnsmasq
     dos2unix
@@ -93,7 +92,6 @@ brew_packages=(
     ripgrep
     redis
     rlwrap
-    rust
     getsentry/tools/sentry-cli
     sd
     selenium-server-standalone
