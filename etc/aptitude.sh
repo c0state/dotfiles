@@ -19,14 +19,6 @@ sudo apt -y install \
     tree \
     vim-nox
 
-#----- install mono
-
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-sudo bash -c 'echo "deb https://download.mono-project.com/repo/ubuntu stable main" | tee /etc/apt/sources.list.d/mono-official-stable.list'
-
-sudo apt -y update && sudo apt -y install \
-    mono-complete
-
 #----- install packages
 
 # install developer packages
