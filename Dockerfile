@@ -46,4 +46,7 @@ RUN bash -i -c "$HOME/etc/ruby.sh"
 FROM dotfiles-base as dotfiles-dotnet
 RUN bash -i -c "$HOME/etc/dotnet.sh"
 
+FROM dotfiles-base as dotfiles-go
+RUN bash -i -c "$HOME/etc/golang.sh"
+
 ENTRYPOINT /bin/zsh

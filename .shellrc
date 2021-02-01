@@ -99,7 +99,7 @@ fi
 
 #----- golang
 export GOPATH="$HOME/work/go"
-export PATH="$HOME/.local/go/bin":$PATH
+export PATH="$HOME/.local/go/bin":"$GOPATH/bin":$PATH
 
 #----- rust
 if [[ -e "$HOME/.cargo" ]]; then

@@ -39,10 +39,6 @@ sudo apt -y install \
 sudo apt -y install \
     ffmpeg imagemagick pngquant
 
-# install go packages
-sudo apt -y install \
-    golang
-
 # install java packages
 sudo apt -y install \
     default-jdk

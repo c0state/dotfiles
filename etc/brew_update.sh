@@ -59,7 +59,6 @@ brew_packages=(
     git git-extras git-lfs legit
     github/gh/gh
     glances
-    go
     htop
     hub
     imagemagick
