@@ -6,3 +6,5 @@
 
 # antigen compat auto generated files
 *.antigen-compat
+
+.vscode
