@@ -29,14 +29,21 @@ RUN bash -i -c "$HOME/.dotfiles/etc/setup_env.sh"
 
 #---------- tools image layer
 
-FROM dotfiles-base as dotfiles-tools
+ADD . $HOME/.dotfiles
 
-ADD etc/* $HOME/.dotfiles/etc
-
-# TODO: consolidate all the calls below into one setup_all.sh script
+FROM dotfiles-base as dotfiles-python
 RUN bash -i -c "$HOME/etc/python_tools_install.sh"
+
+FROM dotfiles-base as dotfiles-js
 RUN bash -i -c "$HOME/etc/js_tools.sh"
+
+FROM dotfiles-base as dotfiles-rust
 RUN bash -i -c "$HOME/etc/rust.sh"
+
+FROM dotfiles-base as dotfiles-ruby
 RUN bash -i -c "$HOME/etc/ruby.sh"
+
+FROM dotfiles-base as dotfiles-dotnet
+RUN bash -i -c "$HOME/etc/dotnet.sh"
 
 ENTRYPOINT /bin/zsh
