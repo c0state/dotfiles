@@ -89,11 +89,11 @@ fi
 
 #----- ruby
 export PATH="$HOME/.rbenv/bin:$PATH"
-if which rbenv; then
+if command -v rbenv >/dev/null; then
   eval "$(rbenv init -)"
 fi
 
-if which ruby >/dev/null && which gem >/dev/null; then
+if command -v ruby >/dev/null && command -v gem >/dev/null; then
     PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
 fi
 
