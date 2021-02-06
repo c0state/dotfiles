@@ -56,6 +56,13 @@ if [[ ! -d $HOME/.fzf ]]; then
     $HOME/.fzf/install --key-bindings --completion --no-update-rc
 fi
 
+# ---------- set up tpm https://github.com/tmux-plugins/tpm
+
+if [[ ! -d $HOME/.tmux/plugins/tpm ]]; then
+    git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
+    $HOME/.tmux/plugins/tpm/bin/install_plugins
+fi
+
 # ---------- git sub-repo
 
 if [[ ! -d $HOME/.git-subrepo ]]; then
