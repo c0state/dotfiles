@@ -19,7 +19,7 @@ fi
 
 eval "$(rbenv init -)"
 
-if ! (rbenv version | grep $LATEST_RUBY_VERSION); then
+if ! (rbenv versions | grep $LATEST_RUBY_VERSION); then
     rbenv install "$LATEST_RUBY_VERSION"
 fi
 
