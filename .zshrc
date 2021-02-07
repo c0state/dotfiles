@@ -10,7 +10,7 @@ CASE_SENSITIVE="false"
 HYPHEN_INSENSITIVE="false"
 DISABLE_AUTO_UPDATE="false"
 export UPDATE_ZSH_DAYS=1
-DISABLE_LS_COLORS="false"
+DISABLE_LS_COLORS="true"
 DISABLE_AUTO_TITLE="false"
 ENABLE_CORRECTION="false"
 COMPLETION_WAITING_DOTS="true"
@@ -44,9 +44,11 @@ source $ZSH/oh-my-zsh.sh
 
 # ---------- Customize to your needs...
 
-#---------- load up shell agnostic config
+#---------- load up shell agnostic interactive config
 
-source $HOME/.shellrc
+if [[ -e $HOME/.shell_interactive ]]; then
+    source $HOME/.shell_interactive
+fi
 
 #---------- command prompt
 
