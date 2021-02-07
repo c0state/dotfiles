@@ -1,6 +1,5 @@
 #----- detect platform
 PLATFORM=$(uname)
-IS_WSL=$(uname -a | grep -i microsoft >/dev/null; echo $?)
 
 #----- always use full color terminal
 export TERM=xterm-256color
@@ -11,42 +10,18 @@ export HISTFILESIZE=20000
 
 #----- set preferred editor and mode(s)
 export EDITOR=vim
-#set -o vi
 
 source $HOME/.shell_aliases
 
 #----- set based on platform (Linux or OS X)
-if [[ $PLATFORM == 'Linux' ]]; then
-  export PATH=$PATH:/usr/local/heroku/bin
-  if [[ "$IS_WSL" == "0" ]]; then
-    export DISPLAY=$(grep -m 1 nameserver /etc/resolv.conf | awk '{print $2}'):0.0
-  fi
-elif [[ $PLATFORM == 'Darwin' ]]; then
+if [[ $PLATFORM == 'Darwin' ]]; then
   # if homebrew is installed put it's bin dir first
   if [[ -e /usr/local/bin/brew ]]; then
     export PATH=/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:/usr/local/sbin:$PATH
+  fi
+
+  if [[ -e /usr/local/opt/coreutils/libexec/gnuman ]]; then
     export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-  fi
-
-  # if heroku toolbelt is installed
-  if [[ -e "/usr/local/heroku/bin" ]]; then
-    export PATH=/usr/local/heroku/bin:$PATH
-  fi
-
-  if [ -n "$BASH_VERSION" ]; then
-    if [ -f $(brew --prefix)/share/bash-completion/bash_completion ]; then
-      source $(brew --prefix)/share/bash-completion/bash_completion
-    fi
-  fi
-
-  # use python 3
-  if [[ -e "/usr/local/opt/python/libexec/bin" ]]; then
-    export PATH=/usr/local/opt/python/libexec/bin:$PATH
-  fi
-
-  # add fastlane to path
-  if [[ -e "$HOME/.fastlane/bin" ]]; then
-    export PATH=$HOME/.fastlane/bin:$PATH
   fi
 
   if [[ -e "/usr/local/anaconda3/bin" ]]; then
@@ -80,6 +55,11 @@ export PATH=$PATH:$HOME/bin:$HOME/.local/bin
 
 # set up dircolors
 eval $(dircolors $HOME/.dotfiles/.dircolors)
+
+#----- add fastlane to path
+if [[ -e "$HOME/.fastlane/bin" ]]; then
+  export PATH=$HOME/.fastlane/bin:$PATH
+fi
 
 #----- php version manager
 if [[ -e "${HOME}/.php-version" ]] ; then
