@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+PLATFORM=$(uname)
+
+if [[ $PLATFORM != 'Linux' ]]; then
+    echo "Dotnet install script is only for Debian Linux"
+    exit 0
+fi
+
 if command -v dotnet >/dev/null; then
     exit 0
 fi
