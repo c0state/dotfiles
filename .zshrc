@@ -40,6 +40,17 @@ plugins=(
     zsh-syntax-highlighting
 )
 
+# ---------- homebrew completions
+
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
+
+# ---------- init ohmyzsh
+
 source $ZSH/oh-my-zsh.sh
 
 # ---------- Customize to your needs...
