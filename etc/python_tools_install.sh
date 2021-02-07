@@ -10,51 +10,47 @@ if [[ ! -e "$HOME/.pyenv" ]]; then
     eval "$(pyenv init -)"
 fi
 
-# TODO: https://github.com/pypa/pip/issues/9284
-python -m pip install --upgrade --user pip==21.0.0 setuptools==52.0.0
+#---------- pip packages
+
+python -m pip install --upgrade --user pip setuptools
 python -m pip install --upgrade --user pipx
+python -m pip install --upgrade --user pynvim
 
-# pipx dependencies
+#---------- pipx dependencies
 
-# macOS Docker app includes docker-compose
-if [[ $PLATFORM != 'Darwin' ]]; then
-    pipx install docker-compose
+if [[ $PLATFORM != 'Linux' ]]; then
+    which docker-compose || pipx install docker-compose
 fi
 
-pipx install --include-deps ansible
-pipx install ansible-toolkit
-pipx install autoenv
-pipx install black
-pipx install cdiff
-pipx install codemod
-pipx install cookiecutter
-pipx install csvkit
-pipx install cwlref-runner
-pipx install cwltool
-pipx install --include-deps dbt
-pipx install howdoi
-pipx install httpie
-pipx install ipython
-pipx install --include-deps jupyter
-pipx install markdown
-pipx install mypy
-pipx install pipenv
-pipx install pip-tools
-pipx install poetry
-pipx install pre-commit
-pipx install ptpython
-pipx install pythonpy
-pipx install pyupgrade
-pipx install ranger-fm
-pipx install snakeviz
-# not found in pypi for some reason
-# pipx install spleeter
-pipx install tox
-pipx install twine
-pipx install youtube-dl
+which ansible || pipx install --include-deps ansible
+which activate.sh || pipx install autoenv
+which black || pipx install black
+which cdiff || pipx install cdiff
+which codemod || pipx install codemod
+which cookiecutter || pipx install cookiecutter
+which csvformat || pipx install csvkit
+which cwl-runner || pipx install cwlref-runner
+which cwltool || pipx install cwltool
+which dbt || pipx install --include-deps dbt
+which howdoi || pipx install howdoi
+which http || pipx install httpie
+which ipython || pipx install ipython
+which jupyter || pipx install --include-deps jupyter
+which markdown_py || pipx install markdown
+which mypy || pipx install mypy
+which pipenv || pipx install pipenv
+which pip-compile || pipx install pip-tools
+which poetry || pipx install poetry
+which pre-commit || pipx install pre-commit
+which ptpython || pipx install ptpython
+which pyupgrade || pipx install pyupgrade
+which ranger || pipx install ranger-fm
+which snakeviz || pipx install snakeviz
+which tox || pipx install tox
+which twine || pipx install twine
+which youtube-dl || pipx install youtube-dl
+
+#---------- upgrade all pipx packages
 
 pipx upgrade-all
 
-# pip dependencies
-
-python -m pip install --user --upgrade pynvim
