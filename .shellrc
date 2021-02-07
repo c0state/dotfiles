@@ -53,9 +53,6 @@ fi
 #----- add system agnostic apps to path
 export PATH=$PATH:$HOME/bin:$HOME/.local/bin
 
-# set up dircolors
-eval $(dircolors $HOME/.dotfiles/.dircolors)
-
 #----- add fastlane to path
 if [[ -e "$HOME/.fastlane/bin" ]]; then
   export PATH=$HOME/.fastlane/bin:$PATH
