@@ -203,6 +203,8 @@ for brew_cask_package in "${brew_cask_packages[@]}"; do
     brew list --cask "$brew_cask_package" >/dev/null 2>&1 || brew install --cask "$brew_cask_package"
 done
 
+brew completions link
+
 #---------- Cleanup ----------
 
 echo "---------- Running cleanup"
