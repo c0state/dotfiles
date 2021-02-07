@@ -38,12 +38,6 @@ sudo apt -y install \
 # install networking packages
 sudo apt -y install avahi-daemon samba winbind
 
-#----- install node packages
-
-# set up node repo and install
-sudo bash -c 'curl -sL https://deb.nodesource.com/setup_15.x | bash -'
-sudo apt -y update && sudo apt -y install nodejs
-
 # install db packages
 sudo apt -y install libpq-dev
 
