@@ -110,7 +110,7 @@ brew_packages=(
     wget
     yarn
     yq
-    zsh zsh-completions zsh-syntax-highlighting
+    zsh
 )
 
 echo "---------- Installing brew packages"

@@ -40,37 +40,9 @@ plugins=(
     zsh-syntax-highlighting
 )
 
-# ---------- homebrew completions
-
-if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
-
-  autoload -Uz compinit
-  compinit
-fi
-
-# ---------- init ohmyzsh
-
 source $ZSH/oh-my-zsh.sh
 
 # ---------- Customize to your needs...
-
-# ---------- add a line break to agnoster theme prompt
-
-# https://stackoverflow.com/a/43420898/522415
-prompt_end() {
-  if [[ -n $CURRENT_BG ]]; then
-      print -n "%{%k%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR"
-  else
-      print -n "%{%k%}"
-  fi
-
-  print -n "%{%f%}"
-  CURRENT_BG='' 
-
-  # add the new line and ➜ as the start character
-  printf "\n ➜";
-}
 
 #---------- load up shell agnostic config
 
