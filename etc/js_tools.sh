@@ -43,6 +43,14 @@ yarn global add \
     yalc \
     yarn-deduplicate
 
-# ---------- install deno
+# ---------- install deno https://github.com/denoland/deno
 
-curl -fsSL https://raw.githubusercontent.com/denoland/deno_install/master/install.sh | sh
+if ! which deno; then
+    curl -fsSL https://raw.githubusercontent.com/denoland/deno_install/master/install.sh | sh
+fi
+
+# ---------- volta https://github.com/volta-cli/volta
+
+if ! which volta; then
+    curl https://get.volta.sh | bash -s -- --skip-setup
+fi

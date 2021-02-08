@@ -105,6 +105,10 @@ export PATH=$PATH:$HOME/.deno/bin
 #----- docker
 export DOCKER_BUILDKIT=1
 
+#----- volta
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+
 #----- source any custom shell configuration
 [[ -f $HOME/.shellrc_custom ]] && source $HOME/.shellrc_custom
 
