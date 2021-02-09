@@ -19,7 +19,7 @@ yalc.lock
 # graphql config - ignore until more reliable/standardized
 # since these files are symlinked into the root directory of graphql projects
 # to facilitate IDE (webstorm) code completion
-schema.graphql
+*schema.graphql
 
 # ignore env files
 .envrc
