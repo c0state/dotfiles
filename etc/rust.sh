@@ -5,3 +5,6 @@ if ! $(command -v rustc >/dev/null 2>&1); then
 fi
 
 source "$HOME/.cargo/env"
+
+# utilities to install from source
+cargo install sd

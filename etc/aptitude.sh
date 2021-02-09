@@ -11,6 +11,7 @@ sudo apt -y install \
     curl wget \
     direnv \
     dos2unix \
+    fd-find \
     git \
     gparted \
     gnupg ca-certificates \

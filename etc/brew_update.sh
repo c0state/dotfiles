@@ -93,7 +93,6 @@ brew_packages=(
     redis
     rlwrap
     getsentry/tools/sentry-cli
-    sd
     selenium-server-standalone
     shellcheck
     smartmontools
