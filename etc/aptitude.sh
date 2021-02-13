@@ -15,6 +15,7 @@ sudo apt -y install \
     git \
     gparted \
     gnupg ca-certificates \
+    keychain \
     parallel \
     ranger \
     tree \
