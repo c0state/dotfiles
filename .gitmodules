@@ -7,3 +7,7 @@
 [submodule ".oh-my-zsh-custom/plugins/zsh-autosuggestions"]
 	path = .oh-my-zsh-custom/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
+[submodule ".oh-my-zsh-custom/plugins/zsh-autocomplete"]
+	path = .oh-my-zsh-custom/plugins/zsh-autocomplete
+	url = https://github.com/marlonrichert/zsh-autocomplete
+	branch = main
