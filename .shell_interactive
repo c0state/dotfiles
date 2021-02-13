@@ -106,6 +106,14 @@ export DOCKER_BUILDKIT=1
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
+#----- keychain agent
+if command -v keychain 1>/dev/null 2>&1; then
+    if [[ -v $SSH_AGENT_PID ]]; then
+        eval $(keychain --eval)
+    fi
+fi
+
+
 #----- source any custom shell configuration
 [[ -f $HOME/.shellrc_custom ]] && source $HOME/.shellrc_custom
 
