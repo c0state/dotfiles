@@ -91,3 +91,7 @@ eval "$(direnv hook zsh)"
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/bit bit
 
+# ---------- zsh-autocomple - https://github.com/marlonrichert/zsh-autocomplete
+
+zstyle ':autocomplete:tab:*' widget-style menu-select
+
