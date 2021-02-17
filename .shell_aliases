@@ -3,6 +3,14 @@ PLATFORM=`uname`
 
 alias diff="colordiff --side-by-side --suppress-common-lines"
 alias dbox="dropbox.py"
+
+# docker aliases
+alias docker_stop_containers='docker stop $(docker ps -a -q)'
+alias docker_kill_containers='docker kill $(docker ps -q)'
+alias docker_rm_containers='docker rm $(docker ps -a -q)'
+alias docker_rm_images='docker rmi $(docker images -q)'
+alias docker_purge_system='docker system prune --all --force --volumes'
+
 alias fd="fd --hidden"
 which fdfind &>/dev/null && alias fd="fdfind --hidden"
 alias findforks="find . -type f -exec test -s {}/..namedfork/rsrc \; -print"
