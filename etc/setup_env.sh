@@ -4,7 +4,7 @@ set -ex
 
 # ---------- set up dotfiles links
 
-DOTFILES=".bash_functions .bash_profile .bashrc .editorconfig .gitconfig-base .gitignore .gitignore_global .ideavimrc .inputrc .itermocil .mrxvtrc .oh-my-zsh-custom .screenrc .shell_aliases .shell_functions .shell_interactive .studioforkdb .tmux.conf .toprc .vimrc .vscode .xemacs .zsh_functions .zshrc"
+DOTFILES=".bash_functions .bash_profile .bashrc .editorconfig .gitconfig-base .gitignore .gitignore_global .ideavimrc .inputrc .itermocil .mrxvtrc .oh-my-zsh-custom .screenrc .shell_aliases .shell_functions .shell_interactive .studioforkdb .tmux.conf .toprc .vimrc .xemacs .zsh_functions .zshrc"
 
 for FILE in $DOTFILES; do
     echo processing $FILE
