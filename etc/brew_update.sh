@@ -54,6 +54,7 @@ brew_packages=(
     fd
     ffmpeg
     findutils
+    fish
     fzf
     git git-extras git-lfs legit
     github/gh/gh
