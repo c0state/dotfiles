@@ -26,6 +26,7 @@ fi
 
 yarn global add \
     aws-cdk \
+    cypress \
     detox-cli \
     diff-so-fancy \
     dynamodb-admin \
