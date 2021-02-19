@@ -15,8 +15,11 @@ alias fd="fd --hidden"
 which fdfind &>/dev/null && alias fd="fdfind --hidden"
 alias findforks="find . -type f -exec test -s {}/..namedfork/rsrc \; -print"
 alias fzf="fzf --preview 'head -100 {}'"
+
 alias gitdt="git difftool "
 alias gitvdiff="git difftool -t tkdiff --no-prompt"
+alias git_prune_empty_dirs="(find . -name .git -prune -o -type d -empty -print | xargs rmdir -p) || true"
+
 alias grep="egrep"
 alias h="history"
 alias hg="history | grep"
