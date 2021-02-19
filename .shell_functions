@@ -30,6 +30,14 @@ function fixinsecurecompaudit {
 	compinit
 }
 
+function get_process_for_port {
+    if [[ -z $1 ]]; then
+        echo "Please specify port to check"
+        return
+    fi
+    lsof -nP -iTCP:$1
+}
+
 function gi { curl -L -s https://www.gitignore.io/api/$@ ; }
 
 function git_untracked_local_branches_show {
