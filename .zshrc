@@ -34,6 +34,7 @@ plugins=(
     pip
     poetry
     python
+    web-search
     yarn
     zsh-autocomplete
     zsh-autosuggestions
