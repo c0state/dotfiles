@@ -20,10 +20,6 @@ if [[ $PLATFORM == 'Darwin' ]]; then
   if [[ -e /usr/local/opt/coreutils/libexec/gnuman ]]; then
     export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
   fi
-
-  if [[ -e "/usr/local/anaconda3/bin" ]]; then
-    export PATH=/usr/local/anaconda3/bin:$PATH
-  fi
 fi 
 
 

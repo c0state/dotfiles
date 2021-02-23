@@ -128,7 +128,6 @@ brew_cask_packages=(
     aerial
     alacritty
     alfred
-    anaconda
     # needed as most tools look for SDK in known path
     android-studio
     angry-ip-scanner
