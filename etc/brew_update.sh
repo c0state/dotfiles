@@ -145,6 +145,7 @@ brew_cask_packages=(
     dotnet-sdk
     evernote
     firefox
+    flutter
     flux
     font-hack-nerd-font
     genymotion
