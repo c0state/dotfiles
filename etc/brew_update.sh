@@ -151,7 +151,7 @@ brew_cask_packages=(
     gimp
     github
     gitkraken
-    google-backup-and-sync google-drive-file-stream
+    google-backup-and-sync google-drive
     google-cloud-sdk
     google-nik-collection
     graphql-playground
