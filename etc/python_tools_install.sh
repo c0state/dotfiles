@@ -28,7 +28,6 @@ fi
 
 which ansible || pipx install --include-deps ansible
 which activate.sh || pipx install autoenv
-which black || pipx install black
 which cdiff || pipx install cdiff
 which codemod || pipx install codemod
 which cookiecutter || pipx install cookiecutter
@@ -39,7 +38,6 @@ which dbt || pipx install --include-deps dbt
 which howdoi || pipx install howdoi
 which http || pipx install httpie
 which ipython || pipx install ipython
-which jupyter || pipx install --include-deps jupyter
 which markdown_py || pipx install markdown
 which mypy || pipx install mypy
 which pipenv || pipx install pipenv
