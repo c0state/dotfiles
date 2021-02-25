@@ -46,6 +46,11 @@ source $ZSH/oh-my-zsh.sh
 
 # ---------- Customize to your needs...
 
+# ---------- zsh-autocomple - https://github.com/marlonrichert/zsh-autocomplete
+
+zstyle ':autocomplete:tab:*' insert-unambiguous yes
+zstyle ':autocomplete:tab:*' widget-style menu-complete
+
 #---------- load up shell agnostic interactive config
 
 if [[ -e $HOME/.shell_interactive ]]; then
@@ -91,8 +96,4 @@ eval "$(direnv hook zsh)"
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/bit bit
-
-# ---------- zsh-autocomple - https://github.com/marlonrichert/zsh-autocomplete
-
-zstyle ':autocomplete:tab:*' widget-style menu-select
 
