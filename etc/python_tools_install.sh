@@ -10,15 +10,15 @@ if [[ ! -e "$HOME/.pyenv" ]]; then
     eval "$(pyenv init -)"
 fi
 
-if [[ ! command -v poetry ]]; then
+if ! command -v poetry; then
     curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python - --no-modify-path
 fi
 
 #---------- pip packages
 
-python -m pip install --upgrade --user pip setuptools
-python -m pip install --upgrade --user pipx
-python -m pip install --upgrade --user pynvim
+python3 -m pip install --upgrade --user pip setuptools
+python3 -m pip install --upgrade --user pipx
+python3 -m pip install --upgrade --user pynvim
 
 #---------- pipx dependencies
 
