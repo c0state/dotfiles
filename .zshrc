@@ -36,7 +36,8 @@ plugins=(
     python
     web-search
     yarn
-    zsh-autocomplete
+    # TODO: disable due to "command not found: _autocomplete.extras" error
+#    zsh-autocomplete
     zsh-autosuggestions
     zsh-completions
     zsh-syntax-highlighting
@@ -48,6 +49,7 @@ source $ZSH/oh-my-zsh.sh
 
 # ---------- zsh-autocomple - https://github.com/marlonrichert/zsh-autocomplete
 
+zstyle ':autocomplete:*' min-input 1
 zstyle ':autocomplete:tab:*' insert-unambiguous yes
 zstyle ':autocomplete:tab:*' widget-style menu-complete
 
