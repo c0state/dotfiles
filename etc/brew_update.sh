@@ -66,6 +66,7 @@ brew_packages=(
     ios-deploy
     TomAnthony/brews/itermocil
     jq
+    k9s
     kubernetes-cli
     lsd
     lyft/formulae/set-simulator-location
@@ -135,6 +136,7 @@ brew_cask_packages=(
     balenaetcher
     beyond-compare
     bitbar
+    blast
     brave-browser
     calibre
     chromedriver
