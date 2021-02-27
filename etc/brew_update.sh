@@ -46,6 +46,7 @@ brew_packages=(
     cocoapods
     colordiff icdiff
     coreutils
+    dive
     ddrescue
     direnv
     dnsmasq
