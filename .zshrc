@@ -36,8 +36,7 @@ plugins=(
     python
     web-search
     yarn
-    # TODO: disable due to "command not found: _autocomplete.extras" error
-#    zsh-autocomplete
+    zsh-autocomplete
     zsh-autosuggestions
     zsh-completions
     zsh-syntax-highlighting

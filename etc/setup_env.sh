@@ -78,3 +78,8 @@ fi
 if ! which bit; then
     curl -sf https://gobinaries.com/chriswalz/bit | sh
 fi
+
+# ---------- update zsh plugins
+
+"$HOME"/etc/setup_dotfile_submodules.sh
+
