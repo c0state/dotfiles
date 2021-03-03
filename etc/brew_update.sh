@@ -39,6 +39,7 @@ brew_packages=(
     bash-completion@2
     bat
     bfg
+    blast
     boost
     carthage
     circleci
@@ -51,6 +52,7 @@ brew_packages=(
     direnv
     dnsmasq
     dos2unix
+    exa
     exiftool
     fd
     ffmpeg
@@ -136,7 +138,6 @@ brew_cask_packages=(
     balenaetcher
     beyond-compare
     bitbar
-    blast
     brave-browser
     calibre
     chromedriver
