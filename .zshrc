@@ -25,6 +25,8 @@ plugins=(
     colorize
     docker
     docker-compose
+    fast-syntax-highlighting
+    fzf-tab
     git
     git-extras
     golang
@@ -36,7 +38,6 @@ plugins=(
     python
     web-search
     yarn
-    zsh-autocomplete
     zsh-autosuggestions
     zsh-completions
     zsh-syntax-highlighting
@@ -45,6 +46,30 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # ---------- Customize to your needs...
+
+# ---------- zsh-autosuggestions
+
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+ZSH_AUTOSUGGEST_USE_ASYNC=true
+
+# ---------- always show completions https://unix.stackexchange.com/a/30092/230764
+
+zstyle ':completion:*' list-prompt   ''
+zstyle ':completion:*' select-prompt ''
+
+# ---------- fzf-tab
+
+# disable sort when completing `git checkout`
+zstyle ':completion:*:git-checkout:*' sort false
+# set descriptions format to enable group support
+zstyle ':completion:*:descriptions' format '[%d]'
+# set list-colors to enable filename colorizing
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+# preview directory's content with exa when completing cd
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
+# switch group using `,` and `.`
+zstyle ':fzf-tab:*' switch-group ',' '.'
+zstyle ':fzf-tab:*' show-group full
 
 # ---------- zsh-autocomple - https://github.com/marlonrichert/zsh-autocomplete
 
