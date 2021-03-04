@@ -12,7 +12,7 @@ sudo apt -y install \
     direnv \
     dos2unix \
     fd-find \
-    git \
+    git git-lfs \
     gparted \
     gnupg ca-certificates \
     keychain \
