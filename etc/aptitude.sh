@@ -18,6 +18,7 @@ sudo apt -y install \
     keychain \
     parallel \
     ranger \
+    ripgrep \
     tree \
     vim-nox
 
