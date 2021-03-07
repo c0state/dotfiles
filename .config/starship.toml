@@ -23,7 +23,6 @@ $ocaml\
 $perl\
 $php\
 $purescript\
-$python\
 $ruby\
 $rust\
 $swift\
@@ -92,6 +91,7 @@ format = '[\[🎁:$version\]](white bold)'
 format = '[\[⬢:$version\]](bold green)'
 
 [python]
+python_binary = "python3"
 symbol = "🐍"
 format = '[\[${symbol}:${pyenv_prefix}${version}( \($virtualenv\))]($style)\]'
 
