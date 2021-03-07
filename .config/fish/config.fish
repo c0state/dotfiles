@@ -2,6 +2,11 @@
 
 starship init fish | source
 
+#---------- fzf.fish
+
+bind --erase \cf
+bind \co __fzf_search_current_dir
+
 #---------- pyenv
 
 set -Ux PYENV_ROOT $HOME/.pyenv
