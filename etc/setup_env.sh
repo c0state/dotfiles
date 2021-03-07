@@ -79,7 +79,7 @@ if ! which bit; then
     curl -sf https://gobinaries.com/chriswalz/bit | sh
 fi
 
-# ---------- update zsh plugins
+# ---------- update dotfiles
 
-"$HOME"/etc/setup_dotfile_submodules.sh
+"$HOME"/etc/update_dotfiles.sh
 
