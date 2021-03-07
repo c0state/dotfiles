@@ -38,4 +38,5 @@ SETUVAR fish_pager_color_prefix:white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR --export fish_user_paths:/home/stephen/\x2epyenv/bin
 SETUVAR nvm_data:/home/stephen/\x2elocal/share/nvm
+SETUVAR nvm_default_version:14
 SETUVAR nvm_mirror:https\x3a//nodejs\x2eorg/dist
