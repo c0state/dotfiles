@@ -23,6 +23,7 @@ ZSH_CUSTOM=~/.oh-my-zsh-custom
 plugins=(
     brew
     colorize
+    deno
     docker
     docker-compose
     fast-syntax-highlighting
