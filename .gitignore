@@ -8,3 +8,6 @@
 *.antigen-compat
 
 .vscode
+
+# fish
+.config/fish/fish_variables
