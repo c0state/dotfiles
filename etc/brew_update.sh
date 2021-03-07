@@ -12,6 +12,7 @@ brew tap aws/tap
 brew tap homebrew/cask-fonts
 brew tap homebrew/cask-versions
 brew tap busterc/tap
+brew tap melonamin/formulae
 brew tap wix/brew
 
 brew update && brew upgrade && brew upgrade --cask
@@ -104,6 +105,7 @@ brew_packages=(
     starship
     stunnel
     svg2png
+    swiftbar
     telnet
     terraform
     terraform_landscape
