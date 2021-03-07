@@ -76,7 +76,6 @@ brew_packages=(
     media-info
     minikube
     mobile-shell
-    mono
     mysql
     neovim
     nmap
@@ -171,7 +170,6 @@ brew_cask_packages=(
     lens
     libreoffice
     microsoft-edge
-    mono-mdk
     ngrok
     obs
     outline-manager
