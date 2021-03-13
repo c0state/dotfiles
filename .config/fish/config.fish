@@ -1,3 +1,7 @@
+#---------- aliases
+
+source ~/.shell_aliases.fish
+
 #---------- prompt
 
 starship init fish | source

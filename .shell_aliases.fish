@@ -1,14 +1,14 @@
 #----- detect platform
-PLATFORM=`uname`
+set PLATFORM `uname`
 
 alias diff="colordiff --side-by-side --suppress-common-lines"
 alias dbox="dropbox.py"
 
 # docker aliases
-alias docker_stop_containers='docker stop $(docker ps -a -q)'
-alias docker_kill_containers='docker kill $(docker ps -q)'
-alias docker_rm_containers='docker rm $(docker ps -a -q)'
-alias docker_rm_images='docker rmi $(docker images -q)'
+alias docker_stop_containers='docker stop (docker ps -a -q)'
+alias docker_kill_containers='docker kill (docker ps -q)'
+alias docker_rm_containers='docker rm (docker ps -a -q)'
+alias docker_rm_images='docker rmi (docker images -q)'
 alias docker_purge_system='docker system prune --all --force --volumes'
 
 alias fd="fd --hidden"
@@ -18,7 +18,7 @@ alias fzf="fzf --preview 'head -100 {}'"
 
 alias gitdt="git difftool "
 alias gitvdiff="git difftool -t tkdiff --no-prompt"
-alias git_prune_empty_dirs="(find . -name .git -prune -o -type d -empty -print | xargs rmdir -p) || true"
+alias git_prune_empty_dirs="find . -name .git -prune -o -type d -empty -print | xargs rmdir -p || true"
 
 alias grep="egrep"
 alias h="history"
@@ -35,7 +35,6 @@ alias tree="tree --dirsfirst"
 alias vi="nvim"
 alias vim="nvim"
 
-if [[ -e ~/.bash_aliases_custom ]]; then
-    source ~/.bash_aliases_custom
-fi
-
+if test -e ~/.shell_aliases_custom
+    source ~/.shell_aliases_custom
+end
