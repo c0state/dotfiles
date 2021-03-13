@@ -1,16 +1,11 @@
 #!/usr/bin/env bash
 
-#---------- cleanup handler ----------
+#---------- check python version
 
-function cleanup {
-    cd - >/dev/null
-}
-
-trap cleanup EXIT
-
-#---------- init ----------
-
-cd ~
+if ! pyenv version | grep system; then
+    echo "Change to system python when running this script"
+    exit 1
+fi
 
 #---------- brew setup ----------
 
