@@ -1,5 +1,15 @@
 #!/usr/bin/env bash
 
+#---------- cleanup handler ----------
+
+function cleanup {
+    cd - >/dev/null
+}
+
+trap cleanup EXIT
+
+#---------- init ----------
+
 cd ~
 
 #---------- brew setup ----------
