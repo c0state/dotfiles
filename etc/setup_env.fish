@@ -8,6 +8,8 @@ end
 
 fisher install evanlucas/fish-kubectl-completions
 
+fisher update
+
 #---------- oh-my-fish
 
 if not type -q omf
