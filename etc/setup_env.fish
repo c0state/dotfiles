@@ -2,13 +2,11 @@
 
 #---------- fisher
 
-# TODO: do we still need fisher?
+if ! type -q fisher
+    curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+end
 
-#if ! type -q fisher
-#    curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
-#end
-#
-#fisher install evanlucas/fish-kubectl-completions
+fisher install evanlucas/fish-kubectl-completions
 
 #---------- oh-my-fish
 
