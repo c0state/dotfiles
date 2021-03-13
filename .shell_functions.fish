@@ -44,6 +44,7 @@ function install_package
     set TEMP_PKG_INSTALL_FILE (mktemp)
     wget -O "$TEMP_PKG_INSTALL_FILE" "$1" && sudo dpkg -i "$TEMP_PKG_INSTALL_FILE" || true
     rm -f "$TEMP_PKG_INSTALL_FILE"
+    set --erase TEMP_PKG_INSTALL_FILE
 end
 
 # ---------- macos

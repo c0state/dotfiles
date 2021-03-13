@@ -13,7 +13,12 @@ fisher update
 #---------- oh-my-fish
 
 if not type -q omf
-    curl -L https://get.oh-my.fish | fish
+    set TEMP_FILE (mktemp)
+    curl -L https://get.oh-my.fish > $TEMP_FILE
+    chmod +x $TEMP_FILE
+    $TEMP_FILE --noninteractive --yes
+    rm -f "$TEMP_FILE"
+    set --erase TEMP_FILE
 end
 
 omf install fzf
