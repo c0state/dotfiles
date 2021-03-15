@@ -10,7 +10,7 @@ fi
 #---------- brew setup ----------
 
 # exit on any failed command
-set -e
+set -eu
 
 # add taps
 brew tap aws/tap
