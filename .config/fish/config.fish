@@ -17,3 +17,6 @@ set -gx PATH "$VOLTA_HOME/bin" $PATH
 
 # poetry
 set -gx PATH "$HOME/.poetry/bin" $PATH
+
+# rust
+set -gx PATH "$HOME/.cargo/bin" $PATH
