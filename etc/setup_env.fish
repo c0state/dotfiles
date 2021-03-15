@@ -24,3 +24,8 @@ end
 omf install fzf
 omf install nvm
 omf install pyenv
+
+#---------- poetry
+
+poetry completions fish > $HOME/.config/fish/completions/poetry.fish
+
