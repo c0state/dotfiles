@@ -21,6 +21,10 @@ set -gx PATH "$HOME/.poetry/bin" $PATH
 # rust
 set -gx PATH "$HOME/.cargo/bin" $PATH
 
+# golang
+set -gx GOPATH "$HOME/work/go"
+set -gx PATH "$HOME/.local/go/bin" "$GOPATH/bin" $PATH
+
 #----- keychain agent
 
 if type -q keychain
