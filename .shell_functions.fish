@@ -1,11 +1,16 @@
+function google_chrome_no_security
+    open -na Google\ Chrome --args --user-data-dir=/tmp/temporary-chrome-profile-dir \
+        --disable-web-security --disable-site-isolation-trials
+end
+
 function get_process_for_port
     # TODO: only works on linux currently
 
-    if test -z "$1"
+    if test -z "$argv"
         echo "Please specify port to check"
         return
     end
-    lsof -nP -iTCP:$1
+    lsof -nP -iTCP:$argv
 end
 
 function gi
