@@ -5,6 +5,7 @@ set -ex
 # ---------- shared variables
 
 PLATFORM=$(uname)
+IS_WSL=$(uname -a | grep -i microsoft)
 
 # ---------- set up dotfiles links
 
@@ -23,7 +24,10 @@ if [[ ! -d $HOME/etc ]]; then
 fi
 
 # ---------- set up gitconfig
-if [[ "$PLATFORM" == "Linux" ]]; then
+if [[ -n "$IS_WSL" ]]; then
+    ln -s -f "$HOME"/.dotfiles/.gitconfig-linux "$HOME"/.gitconfig-linux
+    ln -s -f "$HOME"/.dotfiles/.gitconfig-wsl "$HOME"/.gitconfig
+elif [[ "$PLATFORM" == "Linux" ]]; then
     ln -s -f "$HOME"/.dotfiles/.gitconfig-linux "$HOME"/.gitconfig
 elif [[ "$PLATFORM" == "Darwin" ]]; then
     ln -s -f "$HOME"/.dotfiles/.gitconfig-macos "$HOME"/.gitconfig
