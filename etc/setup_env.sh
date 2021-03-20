@@ -8,7 +8,7 @@ PLATFORM=$(uname)
 
 # ---------- set up dotfiles links
 
-DOTFILES=".bash_functions .bash_profile .bashrc .editorconfig .gitconfig-base .gitignore .gitignore_global .ideavimrc .inputrc .itermocil .mrxvtrc .oh-my-zsh-custom .screenrc .shell_aliases .shell_aliases.fish .shell_functions .shell_interactive .studioforkdb .tmux.conf .toprc .vimrc .xemacs .zsh_functions .zshrc"
+DOTFILES=".bash_functions .bash_profile .bashrc .editorconfig .gitconfig-base .gitignore .gitignore_global .ideavimrc .inputrc .itermocil .mrxvtrc .oh-my-zsh-custom .screenrc .shell_aliases .shell_aliases.fish .shell_functions .shell_functions.fish .shell_interactive .studioforkdb .tmux.conf .toprc .vimrc .xemacs .zsh_functions .zshrc"
 
 for FILE in $DOTFILES; do
     echo processing "$FILE"
@@ -20,6 +20,13 @@ mkdir -p "$HOME"/.config
 
 if [[ ! -d $HOME/etc ]]; then
     ln -s "$HOME"/.dotfiles/etc "$HOME"/
+fi
+
+# ---------- set up gitconfig
+if [[ "$PLATFORM" == "Linux" ]]; then
+    ln -s -f "$HOME"/.dotfiles/.gitconfig-linux "$HOME"/.gitconfig
+elif [[ "$PLATFORM" == "Darwin" ]]; then
+    ln -s -f "$HOME"/.dotfiles/.gitconfig-macos "$HOME"/.gitconfig
 fi
 
 # ---------- set up prompt
