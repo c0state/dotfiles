@@ -3,6 +3,7 @@ winget install audacity
 winget install coretemp
 winget install cpu-z
 winget install ".net core sdk"
+winget install docker.dockerdesktop
 # not yet available
 #winget install firacode
 winget install hackfonts
@@ -12,7 +13,7 @@ winget install git
 winget install "github cli"
 winget install "github desktop"
 winget install "google chrome"
-# not yet available
+winget install kubernetes.minikube
 winget install mirantis.lens
 #winget install neovim
 winget install sourcetree
