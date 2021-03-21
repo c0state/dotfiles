@@ -32,3 +32,9 @@ if type -q keychain
         eval (keychain --eval)
     end
 end
+
+#----- load custom settings
+
+if test -e $HOME/.shellrc_custom.fish
+    source $HOME/.shellrc_custom.fish
+end
