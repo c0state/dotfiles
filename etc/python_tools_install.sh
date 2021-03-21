@@ -12,6 +12,7 @@ fi
 
 if ! command -v poetry; then
     curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python - --no-modify-path
+    poetry config virtualenvs.in-project true
 fi
 
 #---------- pip packages
