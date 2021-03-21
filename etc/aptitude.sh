@@ -43,7 +43,7 @@ sudo apt -y install \
 sudo apt -y install avahi-daemon samba winbind
 
 # install db packages
-sudo apt -y install libpq-dev
+sudo apt -y install libpq-dev postgresql-client
 
 # install python packages
 sudo apt -y install \
