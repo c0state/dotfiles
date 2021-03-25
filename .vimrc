@@ -10,7 +10,6 @@
   set nobackup
   set noswapfile
   set number
-  set relativenumber
   set cursorline
   set wrap
   let mapleader=","
