@@ -15,13 +15,18 @@ set PATH $PATH ~/.local/bin;
 set -gx VOLTA_HOME "$HOME/.volta"
 set -gx PATH "$VOLTA_HOME/bin" $PATH
 
+#----- python
+
 # poetry
 set -gx PATH "$HOME/.poetry/bin" $PATH
 
-# rust
+# system binary path
+set -gx PATH (python3 -m site --user-base)"/bin" $PATH
+
+#----- rust
 set -gx PATH "$HOME/.cargo/bin" $PATH
 
-# golang
+#----- golang
 set -gx GOPATH "$HOME/work/go"
 set -gx PATH "$HOME/.local/go/bin" "$GOPATH/bin" $PATH
 
