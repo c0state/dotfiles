@@ -96,7 +96,6 @@ brew_packages=(
     pidcat
     pngquant
     postgresql
-    pre-commit
     q
     qt
     ripgrep
