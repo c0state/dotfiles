@@ -38,8 +38,15 @@ if type -q keychain
     end
 end
 
+#----- gcloud
+
+if test -e $HOME/google-cloud-sdk/path.fish.inc
+    source $HOME/google-cloud-sdk/path.fish.inc
+end
+
 #----- load custom settings
 
 if test -e $HOME/.shellrc_custom.fish
     source $HOME/.shellrc_custom.fish
 end
+
