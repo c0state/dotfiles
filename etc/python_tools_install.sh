@@ -4,8 +4,6 @@ set -eux
 
 PLATFORM=$(uname)
 
-pyenv versions | grep "^\* system" || (echo "Switch to system python before running" ; false)
-
 if [[ ! -e "$HOME/.pyenv" ]]; then
     curl --tls-max default --location https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
     export PATH=$PATH:$HOME/.pyenv/bin
