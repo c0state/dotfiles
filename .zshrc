@@ -28,6 +28,7 @@ plugins=(
     docker-compose
     fast-syntax-highlighting
     fzf-tab
+    gcloud
     git
     git-extras
     golang
