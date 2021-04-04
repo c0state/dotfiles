@@ -74,8 +74,7 @@ brew_packages=(
     ios-deploy
     TomAnthony/brews/itermocil
     jq
-    k9s
-    kubernetes-cli
+    k9s kind kubernetes-cli
     lsd
     lyft/formulae/set-simulator-location
     macvim
