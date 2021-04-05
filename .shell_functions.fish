@@ -23,16 +23,16 @@ end
 
 function pprint_csv 
     # pretty print csv files
-    csvlook "$1" | less -#2 -N -S
+    csvlook "$argv" | less -#2 -N -S
 end
 
 function pprint_json 
     # pretty print json files
-    cat "$1" | python -m json.tool | less -i
+    cat $argv | python -m json.tool | less -i
 end
 
 function pprint_xml 
-    cat "$1" | xmllint --format - 2>&1 | less -i
+    cat $argv | xmllint --format - 2>&1 | less -i
 end
 
 function strip_comments_blank_lines
@@ -47,7 +47,7 @@ end
 
 function install_package 
     set TEMP_PKG_INSTALL_FILE (mktemp)
-    wget -O "$TEMP_PKG_INSTALL_FILE" "$1" && sudo dpkg -i "$TEMP_PKG_INSTALL_FILE" || true
+    wget -O "$TEMP_PKG_INSTALL_FILE" "$argv" && sudo dpkg -i "$TEMP_PKG_INSTALL_FILE" || true
     rm -f "$TEMP_PKG_INSTALL_FILE"
     set --erase TEMP_PKG_INSTALL_FILE
 end
