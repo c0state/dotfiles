@@ -1,4 +1,5 @@
 winget install 7zip
+winget install adobe.adobeacrobatreaderdc
 winget install audacity
 winget install coretemp
 winget install cpu-z
