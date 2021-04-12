@@ -16,6 +16,7 @@
     cdiff = difftool -y -x 'icdiff --highlight --line-number'
     ci = commit
     co = checkout
+    dt = difftool
     dump = cat-file -p
     graft = !legit graft \"$@\"
     harvest = !legit harvest \"$@\"
