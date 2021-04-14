@@ -27,3 +27,4 @@ winget install toolbox
 winget install videolan.vlc
 winget install vim
 winget install windirstat.windirstat
+winget install zoom.zoom
