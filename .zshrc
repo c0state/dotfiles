@@ -34,7 +34,6 @@ plugins=(
     golang
     iterm2
     kubectl
-    nvm
     pip
     poetry
     python
@@ -88,10 +87,6 @@ fi
 #---------- command prompt
 
 eval "$(starship init zsh)"
-
-# ---------- nvm
-
-export NVM_LAZY=1
 
 # ---------- zsh functions
 

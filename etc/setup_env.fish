@@ -22,7 +22,6 @@ if not type -q omf
 end
 
 omf install fzf
-omf install nvm
 omf install pyenv
 
 #---------- poetry
