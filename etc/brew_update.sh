@@ -65,8 +65,7 @@ brew_packages=(
     findutils
     fish
     fzf
-    git git-extras git-lfs legit
-    github/gh/gh
+    gh git git-extras git-lfs legit
     glances
     htop
     hub
