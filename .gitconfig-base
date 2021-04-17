@@ -8,8 +8,11 @@
     editor = vim
     excludesfile = ~/.gitignore_global
     filemode = false
+    fscache = true
     autocrlf = input
     eol = lf
+[gc]
+    auto = 256
 [alias]
     br = !git branch -vv
     branches = !legit branches
@@ -23,7 +26,8 @@
     hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
     ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
     publish = !legit publish \"$@\"
-    pullr = "!git pull --rebase --autostash"
+    pullr = "!git pull --rebase --autostash --all"
+    sl = stash list
     sprout = !legit sprout \"$@\"
     st = status
     switch = !legit switch \"$@\"
@@ -44,6 +48,8 @@
     smudge = git-lfs smudge -- %f
     process = git-lfs filter-process
     required = true
+[fetch]
+    prune = true
 [pull]
     rebase = true
 
