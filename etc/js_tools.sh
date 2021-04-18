@@ -38,6 +38,5 @@ fi
 
 # ---------- volta https://github.com/volta-cli/volta
 
-if ! which volta; then
-    curl https://get.volta.sh | bash -s -- --skip-setup
-fi
+curl https://get.volta.sh | bash -s -- --skip-setup
+
