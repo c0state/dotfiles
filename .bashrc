@@ -29,5 +29,5 @@ export PS1='\[\e[0;31m\][\D{%Y-%m-%d} \t]\[\e[m\]\[\e[0;37m\]\u@\h\[\e[m\]\[\e[0
 
 #---------- bit https://github.com/chriswalz/bit
 
-complete -C /usr/local/bin/bit bit
+complete -C $HOME/.local/bin/bit bit
 

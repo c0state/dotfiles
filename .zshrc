@@ -118,5 +118,5 @@ eval "$(direnv hook zsh)"
 # ---------- bit - https://github.com/chriswalz/bit
 
 autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/local/bin/bit bit
+complete -o nospace -C $HOME/.local/bin/bit bit
 
