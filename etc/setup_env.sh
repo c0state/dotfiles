@@ -87,7 +87,7 @@ fi
 # ---------- bit https://github.com/chriswalz/bit
 
 if ! which bit; then
-    curl -sf https://gobinaries.com/chriswalz/bit | sh
+    curl -sf https://gobinaries.com/chriswalz/bit | PREFIX=$HOME/.local/bin sh
 fi
 
 # ---------- update dotfiles
