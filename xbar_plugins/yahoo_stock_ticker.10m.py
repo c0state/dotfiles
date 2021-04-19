@@ -35,12 +35,12 @@ sort_by = 'market_change_winners'
 # CODE STARTING BELOW HERE, DO NOT EDIT IF YOU ARE A REGULAR USER
 # Variables
 indices_dict = {
-    '^GSPC': '🇺🇸 S&P 500',
-    '^DJI': '🇺🇸 DOW 30',
-    '^IXIC': '🇺🇸 NASDAQ',
-    '^GDAXI': '🇩🇪 DAX',
-    '^FTSE': '🇬🇧 FTSE 100',
-    '^FCHI': '🇫🇷 CAC 40',
+    '^GSPC':     '🇺🇸 S&P 500      ',
+    '^DJI':      '🇺🇸 DOW 30       ',
+    '^IXIC':     '🇺🇸 NASDAQ       ',
+    '^GDAXI':    '🇩🇪 DAX          ',
+    '^FTSE':     '🇬🇧 FTSE 100     ',
+    '^FCHI':     '🇫🇷 CAC 40       ',
     '^STOXX50E': '🇪🇺 EURO STOXX 50',
 }
 GREEN = '\033[32m'
