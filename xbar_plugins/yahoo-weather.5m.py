@@ -10,11 +10,20 @@
 #
 # by mgjo5899
 
-import json, uuid, time, hmac, hashlib
-
+import hashlib
+import hmac
+import json
+import time
+import uuid
 from base64 import b64encode
-from urllib.request import urlopen, Request
 from urllib.parse import urlencode, quote
+from urllib.request import urlopen, Request
+
+# --------------------------------------------------
+
+MAX_CONDITION_LEN = 12
+FONT = "| font=Menlo color=yellow"
+COLOR = "| color=yellow"
 
 # Change unit to 'c' for celsius and 'f' for fahrenheit
 unit = 'c'
@@ -39,6 +48,7 @@ oauth = {
     'oauth_version': '1.0'
 }
 
+# --------------------------------------------------
 
 # Error handling decorator
 def exception_handler(msg="Something is wrong"):
@@ -92,12 +102,17 @@ def get_weather(auth_header):
 
     return (condition, temperature)
 
-location = get_location_using_ip()
-query['location'] = location
-auth_header = get_auth_header()
-condition, temperature = get_weather(auth_header)
 
-if unit == 'c':
-  print(str(condition) + ' : ' + str(int(temperature)) + '°C')
-elif unit == 'f':
-  print(str(condition) + ' : ' + str(int(temperature)) + '°F')
+if __name__ == "__main__":
+    location = get_location_using_ip()
+    query['location'] = location
+    auth_header = get_auth_header()
+    condition, temperature = get_weather(auth_header)
+
+    condition = (condition[:MAX_CONDITION_LEN] + '..') \
+        if len(condition) > MAX_CONDITION_LEN \
+        else condition
+    print(
+        condition, ':', str(temperature).ljust(2),
+        '°C' if unit == 'c' else '°F', FONT, COLOR, sep=""
+    )

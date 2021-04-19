@@ -20,7 +20,7 @@ import subprocess
 
 # ---------------------------------------------------------------------------------------------------------------------
 # Enter your stock symbols here in the format: ["symbol1", "symbol2", ...]
-symbols = ["FB", "AAPL", "AMZN", "NFLX", "GOOG", "BIDU", "BABA", "TCEHY"]
+symbols = ["CAPA", "BFLY", "FB", "AAPL", "AMZN", "NFLX", "GOOG", "BIDU", "BABA", "TCEHY"]
 
 # Enter the order how you want to sort the stock list:
 # 'name'                     : Sort alphabetically by name from A to Z
@@ -35,24 +35,22 @@ sort_by = 'market_change_winners'
 # CODE STARTING BELOW HERE, DO NOT EDIT IF YOU ARE A REGULAR USER
 # Variables
 indices_dict = {
-    '^GSPC':     '🇺🇸 S&P 500      ',
-    '^DJI':      '🇺🇸 DOW 30       ',
-    '^IXIC':     '🇺🇸 NASDAQ       ',
-    '^GDAXI':    '🇩🇪 DAX          ',
-    '^FTSE':     '🇬🇧 FTSE 100     ',
-    '^FCHI':     '🇫🇷 CAC 40       ',
-    '^STOXX50E': '🇪🇺 EURO STOXX 50',
+    '^IXIC':     '🇺🇸 NASDAQ ',
+    '^GSPC':     '🇺🇸 S&P 500',
+    '^DJI':      '🇺🇸 DOW    ',
+    '^GDAXI':    '🇩🇪 DAX    ',
+    '^FTSE':     '🇬🇧 FTSE   ',
 }
 GREEN = '\033[32m'
 RED = '\033[31m'
 RESET = '\033[0m'
-FONT = "| font='Menlo'"
+FONT = "| font=Menlo"
 # ---------------------------------------------------------------------------------------------------------------------
 
 
 # macOS Alerts, Prompts and Notifications -----------------------------------------------------------------------------
 # Display a macOS specific alert dialog to get confirmation from user to continue
-def alert(alert_title='', alert_text='', alert_buttons=['Cancel', 'OK']):
+def alert(alert_title='', alert_text='', alert_buttons=('Cancel', 'OK')):
     try:
         d = locals()
         user_input = subprocess.check_output(['osascript', '-l', 'JavaScript', '-e', '''
@@ -94,7 +92,7 @@ def prompt(prompt_text=''):
 
 
 # Display a macOS specific prompt dialog prompting user for a choice from a list
-def prompt_selection(prompt_text='', choices=''):
+def prompt_selection(prompt_text='', choices=()):
     try:
         d = locals()
         user_selection = subprocess.check_output(['osascript', '-l', 'JavaScript', '-e', '''
@@ -130,7 +128,7 @@ def read_data_file(data_file):
     return content
 
 
-def write_data_file(data_file, imit_type, symbol, price):
+def write_data_file(data_file, limit_type, symbol, price):
     with open(data_file, 'a') as f:
         f.write(limit_type + ' ' + symbol + ' ' + price + '\n')
     f.close()
@@ -204,7 +202,7 @@ def print_index(index, name):
     # Setting color and emojis depending on the market state and the market change
     if market_state != 'REGULAR':
         # Set change with a moon emoji for closed markets
-        colored_change = '🌛' + '(' + '{:.2f}'.format(change) + '%) '
+        colored_change = '🌛' + '(' + '{:5.2f}'.format(change) + '%) '
     if market_state == 'REGULAR':
         # Set color for positive and negative values
         color = ''
@@ -216,7 +214,7 @@ def print_index(index, name):
         colored_change = color + '(' + '{:.2f}'.format(change) + '%) ' + RESET
 
     # Print the index info only to the menu bar
-    print(name, colored_change, '| dropdown=false', sep=' ')
+    print(name, colored_change, '| dropdown=false', FONT, sep='')
 
 
 # Print the stock info in the dropdown menu with additional info in the submenu
@@ -272,7 +270,7 @@ def print_stock(s):
 
 # Print the price limits in the dropdown menu
 def print_price_limits(price_limit_list):
-    PARAMETERS = FONT + " refresh=true terminal='false' bash='" + __file__ + "'"
+    parameters = FONT + " refresh=true terminal='false' bash='" + __file__ + "'"
 
     print('---')
     print('Price Limits' + FONT)
@@ -285,20 +283,23 @@ def print_price_limits(price_limit_list):
         price_limit_submenu = '{:<6} {:<4} {:<10}'
         # Print the price limit data into the submenu
         # onClick will rerun this script with parameters 'remove' and the {limit_entry} to remove clicked the limit
-        print(price_limit_submenu.format('--' + limit_type, symbol, limit_price + PARAMETERS + " param1='remove' param2='" + limit_entry + "'"))
+        print(
+            price_limit_submenu.format('--' + limit_type, symbol, limit_price + parameters +
+                                       " param1='remove' param2='" + limit_entry + "'")
+        )
     print('-----')
     print('--To remove a limit, click on it.' + FONT)
     # Print the clickable fields to set new limits or clear all price limits
     # onClick will rerun this script with parameters 'set' to set a new limit
-    print('Set new Price Limit...' + PARAMETERS + " param1='set'")
+    print('Set new Price Limit...' + parameters + " param1='set'")
     # onClick will rerun this script with parameters 'clear' to clear the hidden .db file
-    print('Clear all Price Limits...' + PARAMETERS + " param1='clear'")
+    print('Clear all Price Limits...' + parameters + " param1='clear'")
 
 
 if __name__ == '__main__':
     data_file = os.path.join(os.path.dirname(os.path.realpath(__file__)), '.' + os.path.basename(__file__) + '.db')
 
-    # Normal execution by BitBar without any parameters
+    # Normal execution by XBar without any parameters
     if len(sys.argv) == 1:
         stocks = []
 
@@ -339,11 +340,12 @@ if __name__ == '__main__':
         print_price_limits(price_limit_list)
 
     # Script execution with parameter 'set' to set new price limits
-    if len(sys.argv) == 2 and sys.argv[1] == 'set':
+    elif len(sys.argv) == 2 and sys.argv[1] == 'set':
         # Run this until user does not want to continue
         while True:
             # Get the user selection of whether he wants to set 'BUY' or 'SELL'
-            limit_type_prompt = 'Select the type of your limit: BUY (SELL) limits are triggered, when the price is lower (higher) than the limit.'
+            limit_type_prompt = 'Select the type of your limit: BUY (SELL) limits are triggered, '\
+                                'when the price is lower (higher) than the limit.'
             limit_type_choices = '["BUY", "SELL"]'
             limit_type = prompt_selection(limit_type_prompt, limit_type_choices)
 
@@ -351,11 +353,14 @@ if __name__ == '__main__':
             symbol = prompt_selection('Select stock symbol:', symbols)
 
             # Get the user input for a price limit, info message includes the current market price
-            price = prompt('Current price of ' + symbol + ' is ' + str(get_stock_data(symbol)['regularMarketPrice']) + '. Enter a value for your price limit.')
+            price = prompt('Current price of ' + symbol + ' is ' +
+                           str(get_stock_data(symbol)['regularMarketPrice']) +
+                           '. Enter a value for your price limit.')
             # Check if the user input are decimals with a precision of two
             if not re.match(r'^\d+(\.\d{1,2})?$', price):
                 # Alert the user on invalid value and stop the script
-                alert('Error', 'You entered an invalid value: ' + price + ' - valid values are decimals with a precision of 2, e.g 25.70!')
+                alert('Error', 'You entered an invalid value: ' + price +
+                      ' - valid values are decimals with a precision of 2, e.g 25.70!')
                 sys.exit()
 
             # Write the limit to the hidden .db file
@@ -368,7 +373,7 @@ if __name__ == '__main__':
                 sys.exit()
 
     # Script execution with parameter 'clear' to clear the .db file
-    if len(sys.argv) == 2 and sys.argv[1] == 'clear':
+    elif len(sys.argv) == 2 and sys.argv[1] == 'clear':
         # Ask for user confirmation
         warning = alert('Warning', 'This will clear your price limits! Do you want to continue?')
         if warning is None:
@@ -378,6 +383,6 @@ if __name__ == '__main__':
         open(data_file, 'w').close()
 
     # Script execution with the parameters 'remove' and the line to be removed
-    if len(sys.argv) == 3 and sys.argv[1] == 'remove':
+    elif len(sys.argv) == 3 and sys.argv[1] == 'remove':
         limit_to_be_removed = sys.argv[2]
         remove_line_from_data_file(data_file, limit_to_be_removed)
