@@ -140,7 +140,6 @@ brew_cask_packages=(
     angry-ip-scanner
     balenaetcher
     beyond-compare
-    bitbar
     brave-browser
     calibre
     chromedriver
@@ -199,6 +198,7 @@ brew_cask_packages=(
     vlc
     whatsapp
     wireshark
+    xbar
     xquartz inkscape
     zeplin
 )
