@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 
-set -ex
+set -eux
 
 # ---------- shared variables
 
 PLATFORM=$(uname)
+# TODO: fix this--this exits script if not on wsl
 IS_WSL=$(uname -a | grep -i microsoft)
 
 # ---------- set up dotfiles links
