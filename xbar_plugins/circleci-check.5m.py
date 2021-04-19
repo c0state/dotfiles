@@ -23,7 +23,7 @@ config.read(config_path)
 config_section = config["circleci"] if "circleci" in config else None
 if not config_section:
     raise Exception(f"Could not find XBar config file {config_path}")
-API_TOKEN = config_section["CIRCLE_CI_API_KEY"]
+API_TOKEN = config_section["API_KEY"]
 if not API_TOKEN:
     raise Exception(f"API Token missing")
 
