@@ -61,8 +61,8 @@ COLORS = {
 NO_SYMBOL = ' ❂'
 
 
-def request(uri):
-    url = f"{CIRCLECI_API_ENDPOINT}{uri}?circle-token={API_TOKEN}"
+def request(resource):
+    url = f"{CIRCLECI_API_ENDPOINT}{resource}?circle-token={API_TOKEN}"
     headers = {'Accept': 'application/json'}
     req = urllib.request.Request(url, headers=headers)
     response = urllib.request.urlopen(req).read().decode("UTF-8")
