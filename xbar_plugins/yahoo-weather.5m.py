@@ -1,5 +1,5 @@
-#!/usr/bin/env LC_ALL=en_US.UTF-8 /usr/local/bin/python3
-#
+#!/usr/bin/env LC_ALL=en_US.UTF-8 python3
+
 # <xbar.title>Yahoo Weather</xbar.title>
 # <xbar.version>v3.0</xbar.version>
 # <xbar.author>mgjo5899</xbar.author>
@@ -22,8 +22,8 @@ from urllib.request import urlopen, Request
 # --------------------------------------------------
 
 MAX_CONDITION_LEN = 12
-FONT = "| font=Menlo color=yellow"
-COLOR = "| color=yellow"
+FONT = "font=Menlo"
+COLOR = "color=yellow"
 
 # Change unit to 'c' for celsius and 'f' for fahrenheit
 unit = 'c'
@@ -111,8 +111,9 @@ if __name__ == "__main__":
 
     condition = (condition[:MAX_CONDITION_LEN] + '..') \
         if len(condition) > MAX_CONDITION_LEN \
-        else condition
+        else condition.ljust(MAX_CONDITION_LEN, '.')
+    temp_units = '°C' if unit == 'c' else '°F'
     print(
-        condition, ':', str(temperature).ljust(2),
-        '°C' if unit == 'c' else '°F', FONT, COLOR, sep=""
+        f"{condition}:{str(temperature).ljust(2)}{temp_units}",
+        FONT, COLOR, sep="|"
     )
