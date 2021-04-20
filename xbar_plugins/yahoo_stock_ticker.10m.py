@@ -1,5 +1,5 @@
-#!/usr/bin/env LC_ALL=en_US.UTF-8 /usr/local/bin/python3
-#
+#!/usr/bin/env LC_ALL=en_US.UTF-8 python3
+
 # <xbar.title>Yahoo Stock Ticker</xbar.title>
 # <xbar.version>v1.1</xbar.version>
 # <xbar.author>Long Do</xbar.author>
@@ -14,6 +14,7 @@
 from datetime import datetime
 import json
 import os
+import pathlib
 import re
 import sys
 import subprocess
@@ -41,10 +42,9 @@ indices_dict = {
     '^GDAXI':    '🇩🇪 DAX    ',
     '^FTSE':     '🇬🇧 FTSE   ',
 }
-GREEN = '\033[32m'
-RED = '\033[31m'
-RESET = '\033[0m'
-FONT = "| font=Menlo"
+GREEN = 'color=lightgreen'
+RED = 'color=red'
+FONT = "| font='Menlo'"
 # ---------------------------------------------------------------------------------------------------------------------
 
 
@@ -199,22 +199,16 @@ def print_index(index, name):
     market_state = index['marketState']
     change = index['regularMarketChangePercent']
 
-    # Setting color and emojis depending on the market state and the market change
-    if market_state != 'REGULAR':
-        # Set change with a moon emoji for closed markets
-        colored_change = '🌛' + '(' + '{:5.2f}'.format(change) + '%) '
-    if market_state == 'REGULAR':
-        # Set color for positive and negative values
-        color = ''
-        if change > 0:
-            color = GREEN + '▲'
-        if change < 0:
-            color = RED + '▼'
-        # Format change to decimal with a precision of two and reset ansi color at the end
-        colored_change = color + '(' + '{:.2f}'.format(change) + '%) ' + RESET
+    # Format change to decimal with a precision of two and reset ansi color at the end
+    direction_symbol = '▲' if change >= 0 else '▼'
+    in_session_symbol = '🚀' if market_state == 'REGULAR' else '🌛'
+    colored_change = f'{in_session_symbol}{direction_symbol}{change:6.2f}%'
 
     # Print the index info only to the menu bar
-    print(name, colored_change, '| dropdown=false', FONT, sep='')
+    print(
+        name, colored_change, '| dropdown=false', FONT,
+        f"| {GREEN if change >= 0 else RED}", sep=''
+    )
 
 
 # Print the stock info in the dropdown menu with additional info in the submenu
@@ -222,32 +216,20 @@ def print_stock(s):
     market_state = s['marketState']
     change = s['regularMarketChangePercent']
 
-    # Setting color and emojis depending on the market state and the market change
-    if market_state != 'REGULAR':
-        market = 'CLOSED'
-        # Set change with a moon emoji for closed markets
-        colored_change = '🌛' + '(' + '{:.2f}'.format(change) + '%) '
-    if market_state == 'REGULAR':
-        # Set color for positive and negative values
-        color = ''
-        market = 'OPEN'
-        if change > 0:
-            color = GREEN + '▲'
-        if change < 0:
-            color = RED + '▼'
-        # Format change to decimal with a precision of two and reset ansi color at the end
-        change_in_percent = '(' + '{:.2f}'.format(change) + '%)'
-        colored_change = color + change_in_percent + RESET
+    in_session_symbol = '🚀' if market_state == 'REGULAR' else '🌛'
+    direction_arrow = '▲' if change > 0 else '▼'
+    change_in_percent = f"{change:6.2f}%"
+    colored_change = f"{in_session_symbol}{direction_arrow}{change_in_percent}|{GREEN if change > 0 else RED}"
 
     # Remove appending stock exchange symbol for foreign exchanges, e.g. Apple stock symbol in Frankfurt: APC.F -> APC
     symbol = s['symbol'].split('.')[0]
     # Convert epoch to human readable time HH:MM:SS
     time = datetime.fromtimestamp(s['regularMarketTime']).strftime('%X')
     # Convert float values to decimals with a precision of two
-    fifty_day = '{:.2f}'.format(s['fiftyDayAverage'])
-    two_hundred_day = '{:.2f}'.format(s['twoHundredDayAverage'])
-    fifty_day_change = '(' + '{:.2f}'.format(s['fiftyDayAverageChangePercent'] * 100) + '%)'
-    two_hundred_day_change = '(' + '{:.2f}'.format(s['twoHundredDayAverageChangePercent'] * 100) + '%)'
+    fifty_day = f"{s['fiftyDayAverage']:6.2f}"
+    two_hundred_day = f"{s['twoHundredDayAverage']:6.2f}"
+    fifty_day_change = f"{s['fiftyDayAverageChangePercent'] * 100:6.2f}%"
+    two_hundred_day_change = f"{s['twoHundredDayAverageChangePercent'] * 100:6.2f}%"
 
     # Print the stock info seen in the dropdown menu
     stock_info = '{:<5} {:>10} {:<10}' + FONT
@@ -256,7 +238,7 @@ def print_stock(s):
     stock_submenu = '{:<17} {:<17}' + FONT
     print('--' + s['shortName'] + FONT)
     print('--' + s['fullExchangeName'] + ' - Currency in ' + s['currency'] + FONT)
-    print('--' + time + ' - Market is ' + market + FONT)
+    print('--' + time + ' - Market is ' + ('CLOSED' if market_state != 'REGULAR' else 'OPEN') + FONT)
     print('-----')
     print(stock_submenu.format('--Previous Close:', s['regularMarketPreviousClose']))
     print(stock_submenu.format('--Open:', s['regularMarketOpen']))
@@ -297,7 +279,8 @@ def print_price_limits(price_limit_list):
 
 
 if __name__ == '__main__':
-    data_file = os.path.join(os.path.dirname(os.path.realpath(__file__)), '.' + os.path.basename(__file__) + '.db')
+    data_file = os.path.dirname(os.path.realpath(__file__)) /\
+                pathlib.Path(f".{os.path.basename(__file__)}.db")
 
     # Normal execution by XBar without any parameters
     if len(sys.argv) == 1:
