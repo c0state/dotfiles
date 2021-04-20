@@ -207,7 +207,7 @@ def print_index(index, name):
     # Print the index info only to the menu bar
     max_index_name_len = max(map(lambda item: len(item), indices_dict.keys()))
     print(
-        name.ljust(max_index_name_len + 4, '.'), colored_change, '| dropdown=false', FONT,
+        name.ljust(max_index_name_len + 4, ' '), colored_change, '| dropdown=false', FONT,
         f"| {GREEN if change >= 0 else RED}", sep=''
     )
 
