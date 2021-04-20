@@ -39,6 +39,9 @@ indices_dict = {
     '^IXIC':     '🇺🇸 NASDAQ',
     '^GSPC':     '🇺🇸 S&P 500',
     '^DJI':      '🇺🇸 DOW',
+    '^DJSH':     '🇨🇳 SHAI INDX',
+    '^HSI':      '🇨🇳 HANG SENG',
+    '^N225':     '🇯🇵 NIKKEI',
     '^GDAXI':    '🇩🇪 DAX',
     '^FTSE':     '🇬🇧 FTSE',
 }
@@ -207,7 +210,7 @@ def print_index(index, name):
     # Print the index info only to the menu bar
     max_index_name_len = max(map(lambda item: len(item), indices_dict.keys()))
     print(
-        name.ljust(max_index_name_len + 4, ' '), colored_change, '| dropdown=false', FONT,
+        name.ljust(max_index_name_len + 6, '.'), colored_change, '| dropdown=false', FONT,
         f"| {GREEN if change >= 0 else RED}", sep=''
     )
 
