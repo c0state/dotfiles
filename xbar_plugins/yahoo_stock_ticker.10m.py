@@ -36,11 +36,11 @@ sort_by = 'market_change_winners'
 # CODE STARTING BELOW HERE, DO NOT EDIT IF YOU ARE A REGULAR USER
 # Variables
 indices_dict = {
-    '^IXIC':     '🇺🇸 NASDAQ ',
+    '^IXIC':     '🇺🇸 NASDAQ',
     '^GSPC':     '🇺🇸 S&P 500',
-    '^DJI':      '🇺🇸 DOW    ',
-    '^GDAXI':    '🇩🇪 DAX    ',
-    '^FTSE':     '🇬🇧 FTSE   ',
+    '^DJI':      '🇺🇸 DOW',
+    '^GDAXI':    '🇩🇪 DAX',
+    '^FTSE':     '🇬🇧 FTSE',
 }
 GREEN = 'color=lightgreen'
 RED = 'color=red'
@@ -205,8 +205,9 @@ def print_index(index, name):
     colored_change = f'{in_session_symbol}{direction_symbol}{change:6.2f}%'
 
     # Print the index info only to the menu bar
+    max_index_name_len = max(map(lambda item: len(item), indices_dict.keys()))
     print(
-        name, colored_change, '| dropdown=false', FONT,
+        name.ljust(max_index_name_len + 4, '.'), colored_change, '| dropdown=false', FONT,
         f"| {GREEN if change >= 0 else RED}", sep=''
     )
 
