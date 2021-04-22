@@ -506,7 +506,7 @@ _deno_commands() {
 "lsp:Start the language server" \
 "lint:Lint source files" \
 "repl:Read Eval Print Loop" \
-"run:Run a program given a filename or url to the module. Use '-' as a filename to read from stdin." \
+"run:Run a JavaScript or TypeScript program" \
 "test:Run tests" \
 "types:Print runtime TypeScript declarations" \
 "upgrade:Upgrade deno executable to given version" \
