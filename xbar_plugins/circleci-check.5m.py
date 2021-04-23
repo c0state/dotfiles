@@ -13,6 +13,7 @@ import configparser
 import json
 import pathlib
 import re
+from urllib.parse import unquote
 import urllib.request
 
 # --------------------------------------------------------------------------------
@@ -33,29 +34,29 @@ if not API_TOKEN:
 CIRCLECI_API_ENDPOINT = 'https://circleci.com/api/v1/'
 PROJECT_USERNAMES = ["quantumsi"]
 MAIN_BRANCH_NAME = "master"
-REPO_BRANCH_PREFIXES = [MAIN_BRANCH_NAME, "sliu"]
+REPO_BRANCH_PREFIXES = [MAIN_BRANCH_NAME, "staging", "prod", "sliu"]
 LINE_SEPARATOR = "---"
 
 # --------------------------------------------------------------------------------
 
 SYMBOLS = {
-    'running':   ' ▶',
-    'success':   ' ✓',
-    'failed':    ' ✗',
+    'running': ' ▶',
+    'success': ' ✓',
+    'failed': ' ✗',
     'timedout': ' ⚠',
-    'canceled':  ' ⊝',
+    'canceled': ' ⊝',
     'scheduled': ' ⋯',
-    'no_tests':  ' ',
+    'no_tests': ' ',
 }
 
 COLORS = {
-    'running':   "#61D3E5",
-    'success':   "#39C988",
-    'failed':    "#EF5B58",
+    'running': "#61D3E5",
+    'success': "#39C988",
+    'failed': "#EF5B58",
     'timedout': "#F3BA61",
-    'canceled':  "#898989",
+    'canceled': "#898989",
     'scheduled': "#AC7DD3",
-    'no_tests':  "black",
+    'no_tests': "black",
 }
 
 NO_SYMBOL = ' ❂'
@@ -77,7 +78,7 @@ def output_branch_status(user_name, repo_name, status, branch_name, output):
     color = f"color={COLORS[status]}" if COLORS[status] else ""
     symbol = SYMBOLS.get(status, NO_SYMBOL)
     branch_href = f"href=https://circleci.com/gh/{user_name}/{repo_name}/tree/{branch_name}"
-    output_msg = f"- {symbol} {branch_name}"
+    output_msg = f"- {symbol} {unquote(branch_name)}"
     output.append(f"{output_msg} | {branch_href} {color}")
 
 
