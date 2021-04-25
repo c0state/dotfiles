@@ -1,6 +1,7 @@
 #!/usr/bin/python3
+
 # -*- coding: utf-8 -*-
-#
+
 # <xbar.title>Coinbase Prices</xbar.title>
 # <xbar.version>v1.0</xbar.version>
 # <xbar.author>c0state</xbar.author>
@@ -9,12 +10,15 @@
 # <xbar.dependencies>python</xbar.dependencies>
 # <xbar.abouturl>https://github.com/matryer/xbar-plugins</xbar.abouturl>
 
+import datetime
 import urllib.request
 from json import JSONDecoder
 
 # --------------------------------------------------
 
-FONT = "| font=Menlo"
+FONT = "font=Menlo"
+DROPPED_COLOR = "color=red"
+INCREASED_COLOR = "color=green"
 
 # --------------------------------------------------
 
@@ -26,13 +30,27 @@ hdr = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML,
        'Connection': 'keep-alive'}
 
 for ccy in ('BTC', 'ETH', 'LTC'):
+    today_price_date = datetime.datetime.utcnow().strftime('%Y-%m-%d')
+    prior_price_date = (datetime.datetime.utcnow() - datetime.timedelta(days=1)).strftime('%Y-%m-%d')
+
+    prior_price_request = urllib.request.Request(
+        url=f"https://api.coinbase.com/v2/prices/{ccy}-USD/spot?date={prior_price_date}",
+        headers=hdr,
+    )
+    prior_price_response = urllib.request.urlopen(prior_price_request).read().decode('utf-8')
+    prior_price_decoded_response = JSONDecoder().decode(str(prior_price_response))
+
     request = urllib.request.Request(
-        url=f"https://api.coinbase.com/v2/prices/{ccy}-USD/spot",
+        url=f"https://api.coinbase.com/v2/prices/{ccy}-USD/spot?date={today_price_date}",
         headers=hdr,
     )
     response = urllib.request.urlopen(request).read().decode('utf-8')
     decoded_response = JSONDecoder().decode(str(response))
 
+    prior_price = float(prior_price_decoded_response['data']['amount'])
+    today_price = float(decoded_response['data']['amount'])
+    price_dropped = (today_price - prior_price) < 0
+    movement_color = DROPPED_COLOR if price_dropped else INCREASED_COLOR
     print(
-        ccy, ":", f"${float(decoded_response['data']['amount']):.2f}".rjust(10), FONT, sep=""
+        f"{ccy}:${today_price:.2f}".rjust(10), FONT, movement_color, "dropdown=true", sep="|"
     )
