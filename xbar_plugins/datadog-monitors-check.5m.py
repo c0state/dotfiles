@@ -38,6 +38,7 @@ GROUP_STATES = "group_states=alert,warn"
 FAIL_STATES = ['Alert', 'Warn', 'Unknown']
 FAIL_COLOR = "color=red"
 OK_COLOR = "color=green"
+FONT = "font='Menlo'"
 
 # --------------------------------------------------------------------------------
 
@@ -51,10 +52,10 @@ decoded_response = JSONDecoder().decode(str(response))
 failed_monitors = [monitor for monitor in decoded_response if monitor['overall_state'] in FAIL_STATES]
 status_color = FAIL_COLOR if failed_monitors else OK_COLOR
 
-print("Datadog", status_color, sep="|")
+print("Datadog", FONT, status_color, sep="|")
 print("---")
 for monitor in failed_monitors:
-    print(monitor['name'], "font=Menlo", FAIL_COLOR, sep="|")
+    print(monitor['name'], FONT, FAIL_COLOR, sep="|")
 
 print("---")
 print("Refresh... | refresh=true")
