@@ -115,7 +115,6 @@ brew_packages=(
     tree
     watchman
     wget
-    yarn
     yq
     zsh
 )
@@ -136,7 +135,7 @@ brew_cask_packages=(
     alacritty
     alfred
     # needed as most tools look for SDK in known path
-    android-studio
+# use toolbox version?    android-studio
     angry-ip-scanner
     balenaetcher
     beyond-compare
