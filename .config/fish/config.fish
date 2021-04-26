@@ -15,16 +15,7 @@ starship init fish | source
 
 set PATH $PATH ~/.local/bin;
 
-# homebrew
-if test -n $IS_MACOS_ARM
-  eval (/opt/homebrew/bin/brew shellenv)
-else
-  eval (/usr/local/Homebrew/bin/brew shellenv)
-end
-# use gnu coreutils without "g"-prefix
-set -gx PATH (brew --prefix)/opt/coreutils/libexec/gnubin:$PATH
-
-set -gx MANPATH (brew --prefix)"/opt/coreutils/libexec/gnuman:$MANPATH"
+#----- js tools
 
 # volta
 set -gx VOLTA_HOME "$HOME/.volta"
@@ -47,6 +38,17 @@ set -gx PATH "$HOME/.cargo/bin" $PATH
 #----- golang
 set -gx GOPATH "$HOME/work/go"
 set -gx PATH "$HOME/.local/go/bin" "$GOPATH/bin" $PATH
+
+#----- homebrew
+if test -n $IS_MACOS_ARM
+  eval (/opt/homebrew/bin/brew shellenv)
+else
+  eval (/usr/local/Homebrew/bin/brew shellenv)
+end
+# use gnu coreutils without "g"-prefix
+set -gx PATH (brew --prefix)/opt/coreutils/libexec/gnubin:$PATH
+
+set -gx MANPATH (brew --prefix)"/opt/coreutils/libexec/gnuman:$MANPATH"
 
 #----- keychain agent
 
