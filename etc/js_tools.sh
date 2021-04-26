@@ -10,8 +10,8 @@ curl https://get.volta.sh | bash -s -- --skip-setup
 
 # ---------- install js tools
 
-volta install yarn
 volta install node@"$NODE_VERSION"
+volta install yarn
 
 # ---------- install yarn global packages
 
