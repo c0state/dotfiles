@@ -6,9 +6,15 @@ set -eux
 
 PLATFORM=$(uname)
 # TODO: fix this--this exits script if not on wsl
-IS_WSL=$(uname -a | grep -i microsoft)
+IS_WSL=$(uname -a | grep -i microsoft || echo "")
 
 # ---------- set up dotfiles links
+
+if [[ ! -d /usr/local/bin ]]; then
+    sudo mkdir /usr/local/bin
+    sudo chown $USER /usr/local/bin
+    sudo chgrp staff /usr/local/bin
+fi
 
 DOTFILES=".bash_functions .bash_profile .bashrc .editorconfig .gitconfig-base .gitignore .gitignore_global .ideavimrc .inputrc .itermocil .mrxvtrc .oh-my-zsh-custom .screenrc .shell_aliases .shell_aliases.fish .shell_functions .shell_functions.fish .shell_interactive .studioforkdb .tmux.conf .toprc .vimrc .xemacs .zsh_functions .zshrc"
 
