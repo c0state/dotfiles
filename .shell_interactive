@@ -1,5 +1,6 @@
 #----- detect platform
 PLATFORM=$(uname)
+IS_MACOS_ARM=$(uname -a | grep -i "darwin.*arm64" || echo "")
 
 #----- increase history file sizes
 export HISTSIZE=5000
@@ -12,14 +13,16 @@ source $HOME/.shell_aliases
 
 #----- set based on platform (Linux or OS X)
 if [[ $PLATFORM == 'Darwin' ]]; then
-  # if homebrew is installed put it's bin dir first
-  if [[ -e /usr/local/bin/brew ]]; then
-    export PATH=/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:/usr/local/sbin:$PATH
+  if [[ -n $IS_MACOS_ARM ]]; then
+    eval $(/opt/homebrew/bin/brew shellenv)
+  else
+    eval $(/usr/local/Homebrew/bin/brew shellenv)
   fi
 
-  if [[ -e /usr/local/opt/coreutils/libexec/gnuman ]]; then
-    export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-  fi
+  # use gnu coreutils without "g"-prefix
+  export PATH=$(brew --prefix)/opt/coreutils/libexec/gnubin:$PATH
+
+  export MANPATH="$(brew --prefix)/opt/coreutils/libexec/gnuman:$MANPATH"
 fi 
 
 
