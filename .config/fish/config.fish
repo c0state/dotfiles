@@ -1,3 +1,7 @@
+#---------- constants
+
+set --local IS_MACOS_ARM (uname -a | grep -i "darwin.*arm64" || echo "")
+
 #---------- aliases and functions
 
 source ~/.shell_aliases.fish
@@ -10,6 +14,13 @@ starship init fish | source
 #---------- paths
 
 set PATH $PATH ~/.local/bin;
+
+# homebrew
+if test -n $IS_MACOS_ARM
+  eval (/opt/homebrew/bin/brew shellenv)
+else
+  eval (/usr/local/Homebrew/bin/brew shellenv)
+end
 
 # volta
 set -gx VOLTA_HOME "$HOME/.volta"
