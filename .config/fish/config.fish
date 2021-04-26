@@ -21,6 +21,10 @@ if test -n $IS_MACOS_ARM
 else
   eval (/usr/local/Homebrew/bin/brew shellenv)
 end
+# use gnu coreutils without "g"-prefix
+set -gx PATH (brew --prefix)/opt/coreutils/libexec/gnubin:$PATH
+
+set -gx MANPATH (brew --prefix)"/opt/coreutils/libexec/gnuman:$MANPATH"
 
 # volta
 set -gx VOLTA_HOME "$HOME/.volta"
