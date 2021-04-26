@@ -28,3 +28,7 @@ omf install pyenv
 
 poetry completions fish > $HOME/.config/fish/completions/poetry.fish
 
+#---------- pipx
+
+register-python-argcomplete --shell fish pipx >~/.config/fish/completions/pipx.fish
+
