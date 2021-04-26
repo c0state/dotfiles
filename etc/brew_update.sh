@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+set -eu
+
+IS_MACOS_ARM=$(uname -a | grep -i "darwin.*arm64" || echo "")
+
 #---------- check python version
 
 if ! pyenv version | grep system; then
