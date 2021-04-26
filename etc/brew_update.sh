@@ -33,7 +33,7 @@ echo "---------- Installing core dependencies"
 # need to install items from the app store
 brew list mas >/dev/null 2>&1 || brew install mas
 # java is needed for some apps
-brew list --cask java >/dev/null 2>&1 || brew install --cask java
+# no arm version --- brew list --cask java >/dev/null 2>&1 || brew install --cask java
 
 #---------- brew packages ----------
 
@@ -49,10 +49,10 @@ brew_packages=(
     bash-completion@2
     bat
     bfg
-    blast
+# no arm version   blast
     boost
     carthage
-    circleci
+# no arm version  circleci
     cmake
     cocoapods
     colordiff icdiff
@@ -93,7 +93,7 @@ brew_packages=(
     openssl
     optipng
     osx-iso
-    packer
+# no arm version   packer
     parallel
     pidcat
     pngquant
@@ -105,12 +105,12 @@ brew_packages=(
     rlwrap
     getsentry/tools/sentry-cli
     selenium-server-standalone
-    shellcheck
+# no arm version   shellcheck
     smartmontools
     sshuttle
     starship
     stunnel
-    svg2png
+# no arm version   svg2png
     swiftbar
     telnet
     terraform
@@ -138,8 +138,6 @@ brew_cask_packages=(
     aerial
     alacritty
     alfred
-    # needed as most tools look for SDK in known path
-# use toolbox version?    android-studio
     angry-ip-scanner
     balenaetcher
     beyond-compare
