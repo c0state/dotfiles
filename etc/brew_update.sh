@@ -157,15 +157,14 @@ brew_cask_packages=(
     gimp
     github
     gitkraken
-    google-backup-and-sync google-drive
+    google-chrome
     google-cloud-sdk
-    google-nik-collection
+    google-drive
     graphql-playground
     handbrake
     hwsensors
     imageoptim
     insomnia
-    intel-haxm
     istat-menus
     iterm2
     itsycal
@@ -210,6 +209,12 @@ for brew_cask_package in "${brew_cask_packages[@]}"; do
 done
 
 brew completions link
+
+#---------- Intel only packages ----------
+
+if [[ -z IS_MACOS_ARM ]]; then
+    brew install --cask intel-haxm
+fi
 
 #---------- Cleanup ----------
 
