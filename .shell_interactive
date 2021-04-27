@@ -18,13 +18,7 @@ if [[ $PLATFORM == 'Darwin' ]]; then
   else
     eval $(/usr/local/Homebrew/bin/brew shellenv)
   fi
-
-  # use gnu coreutils without "g"-prefix
-  export PATH=$(brew --prefix)/opt/coreutils/libexec/gnubin:$PATH
-
-  export MANPATH="$(brew --prefix)/opt/coreutils/libexec/gnuman:$MANPATH"
 fi 
-
 
 #----- node config
 
@@ -94,6 +88,8 @@ fi
 
 export PATH=$PATH:$(python -m site --user-base)/bin
 export PATH="$PATH:$HOME/.poetry/bin"
+
+eval "$(register-python-argcomplete pipx)"
 
 #----- deno
 export PATH=$PATH:$HOME/.deno/bin
