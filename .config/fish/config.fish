@@ -1,5 +1,6 @@
 #---------- constants
 
+set --local PLATFORM (uname)
 set --local IS_MACOS_ARM (uname -a | grep -i "darwin.*arm64" || echo "")
 
 #---------- aliases and functions
@@ -40,10 +41,12 @@ set -gx GOPATH "$HOME/work/go"
 set -gx PATH "$HOME/.local/go/bin" "$GOPATH/bin" $PATH
 
 #----- homebrew
-if test -n $IS_MACOS_ARM
-  eval (/opt/homebrew/bin/brew shellenv)
-else
-  eval (/usr/local/Homebrew/bin/brew shellenv)
+if [ $PLATFORM = "Darwin" ]
+    if test -n $IS_MACOS_ARM
+        eval (/opt/homebrew/bin/brew shellenv)
+    else
+        eval (/usr/local/Homebrew/bin/brew shellenv)
+    end
 end
 
 #----- keychain agent
