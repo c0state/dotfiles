@@ -23,4 +23,9 @@ if ! command -v go >/dev/null; then
     wget -qO- https://golang.org/dl/go"$GO_VERSION"."$PLATFORM_STRING"-amd64.tar.gz | tar zxvf - -C "$HOME"/.local
 fi
 
+# go repl
 go get -u github.com/motemen/gore/cmd/gore
+
+# kail
+bash <( curl -sfL https://raw.githubusercontent.com/boz/kail/master/godownloader.sh) -b "$GOPATH/bin"
+
