@@ -51,7 +51,7 @@ def cycle_prices_status_bar():
         prior_price_decoded_response = JSONDecoder().decode(str(prior_price_response))
 
         request = urllib.request.Request(
-            url=f"https://api.coinbase.com/v2/prices/{crypto_ccy}-{FIAT_CCY}/spot?date={today_price_date}",
+            url=f"https://api.coinbase.com/v2/prices/{crypto_ccy}-{FIAT_CCY}/spot",
             headers=hdr,
         )
         response = urllib.request.urlopen(request).read().decode('utf-8')
