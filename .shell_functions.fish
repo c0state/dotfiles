@@ -21,6 +21,10 @@ function git_untracked_local_branches_show
     git branch --format "%(refname:short) %(upstream)"
 end
 
+function kll
+    eval kail (k get pods | grep "$argv[1]" | cut -d" " -f1 | sd -- '(?P<pod>.*)\n' '--pod $pod ') $argv[2..-1]
+end
+
 function pprint_csv 
     # pretty print csv files
     csvlook "$argv" | less -#2 -N -S
