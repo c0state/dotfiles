@@ -21,6 +21,7 @@ winget install microsoft.visualstudiocode-user-x64
 winget install mirantis.lens
 winget install mozilla.firefox
 # winget install neovim
+winget install raspberrypifoundation.raspberrypiimager
 winget install slacktechnologies.slack
 winget install sourcetree
 winget install toolbox 
