@@ -1,6 +1,3 @@
-#----- detect platform
-set PLATFORM `uname`
-
 alias diff="colordiff --side-by-side --suppress-common-lines"
 alias dbox="dropbox.py"
 
