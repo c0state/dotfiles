@@ -33,7 +33,7 @@ echo "---------- Installing core dependencies"
 # need to install items from the app store
 brew list mas >/dev/null 2>&1 || brew install mas
 # java is needed for some apps
-# no arm version --- brew list --cask java >/dev/null 2>&1 || brew install --cask java
+brew install openjdk
 
 #---------- brew packages ----------
 
