@@ -101,6 +101,9 @@ export DOCKER_BUILDKIT=1
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
+ #----- chia crypto
+export PATH=$PATH:"/Applications/Chia.app/Contents/Resources/app.asar.unpacked/daemon"
+
 #----- keychain agent
 if command -v keychain 1>/dev/null 2>&1; then
     if [[ -z $SSH_AGENT_PID ]]; then

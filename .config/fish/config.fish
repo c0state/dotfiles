@@ -40,7 +40,10 @@ set -gx PATH "$HOME/.cargo/bin" $PATH
 set -gx GOPATH "$HOME/work/go"
 set -gx PATH "$HOME/.local/go/bin" "$GOPATH/bin" $PATH
 
-#----- homebrew
+#----- chia crypto
+set -gx PATH $PATH "/Applications/Chia.app/Contents/Resources/app.asar.unpacked/daemon"
+
+#---------- homebrew
 if [ $PLATFORM = "Darwin" ]
     if test -n $IS_MACOS_ARM
         eval (/opt/homebrew/bin/brew shellenv)
@@ -49,7 +52,7 @@ if [ $PLATFORM = "Darwin" ]
     end
 end
 
-#----- keychain agent
+#---------- keychain agent
 
 if type -q keychain
     if test -z "$SSH_AGENT_PID"
@@ -57,13 +60,13 @@ if type -q keychain
     end
 end
 
-#----- gcloud
+#---------- gcloud
 
 if test -e $HOME/google-cloud-sdk/path.fish.inc
     source $HOME/google-cloud-sdk/path.fish.inc
 end
 
-#----- load custom settings
+#---------- load custom settings
 
 if test -e $HOME/.shellrc_custom.fish
     source $HOME/.shellrc_custom.fish
