@@ -30,7 +30,6 @@ if not API_TOKEN:
 
 # --------------------------------------------------------------------------------
 
-# TODO: use v2 API
 CIRCLECI_API_ENDPOINT = 'https://circleci.com/api/v1/'
 PROJECT_USERNAMES = ["quantumsi"]
 MAIN_BRANCH_NAME = "master"

@@ -11,6 +11,7 @@ alias docker_purge_system='docker system prune --all --force --volumes'
 alias fd="fd --hidden"
 which fdfind &>/dev/null && alias fd="fdfind --hidden"
 alias findforks="find . -type f -exec test -s {}/..namedfork/rsrc \; -print"
+alias find_zombies="ps axo stat,ppid,pid,comm | grep -w defunct"
 
 # git aliases
 alias gitvdiff="git difftool -t tkdiff --no-prompt"
