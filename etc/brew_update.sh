@@ -88,8 +88,6 @@ brew_packages=(
     neovim
     nmap
     nnn
-    node
-    npm
     openssl
     optipng
     osx-iso
