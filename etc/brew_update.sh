@@ -201,6 +201,7 @@ brew_cask_packages=(
     xbar
     xquartz inkscape
     zeplin
+    zoom
 )
 
 echo "---------- Installing brew cask packages"
