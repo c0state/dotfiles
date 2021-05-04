@@ -12,6 +12,15 @@ source ~/.shell_functions.fish
 
 starship init fish | source
 
+#---------- homebrew
+if [ $PLATFORM = "Darwin" ]
+    if test -n $IS_MACOS_ARM
+        eval (/opt/homebrew/bin/brew shellenv)
+    else
+        eval (/usr/local/Homebrew/bin/brew shellenv)
+    end
+end
+
 #---------- paths
 
 set -gx PATH $PATH ~/.local/bin;
@@ -47,15 +56,6 @@ set -gx PATH "$HOME/.local/go/bin" "$GOPATH/bin" $PATH
 
 #----- chia crypto
 set -gx PATH $PATH "/Applications/Chia.app/Contents/Resources/app.asar.unpacked/daemon"
-
-#---------- homebrew
-if [ $PLATFORM = "Darwin" ]
-    if test -n $IS_MACOS_ARM
-        eval (/opt/homebrew/bin/brew shellenv)
-    else
-        eval (/usr/local/Homebrew/bin/brew shellenv)
-    end
-end
 
 #---------- keychain agent
 
