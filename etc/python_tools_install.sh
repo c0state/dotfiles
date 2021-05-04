@@ -36,7 +36,7 @@ which csvformat || pipx install csvkit
 which cwl-runner || pipx install cwlref-runner
 which cwltool || pipx install cwltool
 which dbt || pipx install --include-deps dbt
-which git-delete-merged-branches || pipx install git-delete-merged-branches
+which git-dmb || pipx install git-delete-merged-branches
 which howdoi || pipx install howdoi
 which http || pipx install httpie
 which ipython || pipx install ipython
