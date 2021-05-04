@@ -1,15 +1,5 @@
 #!/usr/bin/env fish
 
-#---------- fisher
-
-if ! type -q fisher
-    curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
-end
-
-fisher install evanlucas/fish-kubectl-completions
-
-fisher update
-
 #---------- oh-my-fish
 
 if not type -q omf
@@ -30,5 +20,11 @@ poetry completions fish > $HOME/.config/fish/completions/poetry.fish
 
 #---------- pipx
 
-register-python-argcomplete --shell fish pipx >~/.config/fish/completions/pipx.fish
+register-python-argcomplete --shell fish pipx > "$HOME"/.config/fish/completions/pipx.fish
+
+#---------- kubectl completions
+
+mkdir -p "$HOME"/.config/fish/completions
+curl --location --output "$HOME"/.config/fish/completions/kubectl.fish \
+    https://raw.githubusercontent.com/evanlucas/fish-kubectl-completions/master/completions/kubectl.fish
 
