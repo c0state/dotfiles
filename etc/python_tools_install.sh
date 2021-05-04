@@ -11,8 +11,8 @@ if [[ ! -e "$HOME/.pyenv" ]]; then
 fi
 
 if ! command -v poetry; then
-    curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python - --no-modify-path
-    $HOME/.poetry/bin/poetry config virtualenvs.in-project true
+    curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3 - --no-modify-path
+    "$HOME"/.poetry/bin/poetry config virtualenvs.in-project true
 fi
 
 #---------- pip packages
