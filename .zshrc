@@ -80,8 +80,8 @@ zstyle ':autocomplete:tab:*' widget-style menu-complete
 
 #---------- load up shell agnostic interactive config
 
-if [[ -e $HOME/.shell_interactive ]]; then
-    source $HOME/.shell_interactive
+if [[ -e $HOME/.shell_interactive.sh ]]; then
+    source $HOME/.shell_interactive.sh
 fi
 
 #---------- command prompt

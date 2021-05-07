@@ -1,4 +1,4 @@
-[[ ! -e $HOME/.shell_interactive ]] || source "$HOME"/.shell_interactive
+[[ ! -e $HOME/.shell_interactive.sh ]] || source "$HOME"/.shell_interactive.sh
 
 source "$HOME"/.bash_functions
 
