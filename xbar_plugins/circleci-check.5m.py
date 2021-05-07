@@ -32,8 +32,8 @@ if not API_TOKEN:
 
 CIRCLECI_API_ENDPOINT = 'https://circleci.com/api/v1/'
 PROJECT_USERNAMES = ["quantumsi"]
-MAIN_BRANCH_NAME = "master"
-REPO_BRANCH_PREFIXES = [MAIN_BRANCH_NAME, "staging", "prod", "sliu"]
+MAIN_BRANCH_NAMES = ["main", "master"]
+REPO_BRANCH_PREFIXES = MAIN_BRANCH_NAMES + ["staging", "prod", "sliu"]
 LINE_SEPARATOR = "---"
 
 # --------------------------------------------------------------------------------
@@ -108,7 +108,7 @@ def update_statuses(projects):
                 if status not in ['no_tests']:
                     output_branch_status(user_name, repo_name, status, branch_name, xbar_output_string_list)
 
-                if status == "failed" and branch_name == MAIN_BRANCH_NAME:
+                if status == "failed" and branch_name in MAIN_BRANCH_NAMES:
                     status_bar_output = f"{repo_name} | color=red"
 
         xbar_output_string_list.append(LINE_SEPARATOR)
