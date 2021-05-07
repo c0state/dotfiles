@@ -20,6 +20,11 @@ STALE_POD_REGEX=$(grep STALE_POD_REGEX ~/.xbar_variables | cut -d= -f2 | awk '{ 
 STALE_POD_CONTEXT=$(grep STALE_POD_CONTEXT ~/.xbar_variables | cut -d= -f2 | awk '{ print $1; }')
 STALE_POD_NAMESPACE=$(grep STALE_POD_NAMESPACE ~/.xbar_variables | cut -d= -f2 | awk '{ print $1; }')
 
+if test -z $STALE_POD_REGEX || test -z $STALE_POD_CONTEXT || test -z STALE_POD_NAMESPACE; then
+    echo Missing configuration settings!
+    exit 1
+fi
+
 export PATH=$PATH:/usr/local/bin
 # also add new arm macos compatible homebrew path
 export PATH=$PATH:/opt/homebrew/bin
