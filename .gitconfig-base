@@ -19,10 +19,11 @@
     cdiff = difftool -y -x 'icdiff --highlight --line-number'
     ci = commit
     co = checkout
+    cos = "!cos() { git stash && git checkout \"$@\" && git stash pop; }; cos"
     db = branch --delete
     dt = difftool
     dump = cat-file -p
-    cos = "!cos() { git stash && git checkout \"$@\" && git stash pop; }; cos"
+    ffm = !git fetch origin master:master
     graft = !legit graft \"$@\"
     harvest = !legit harvest \"$@\"
     hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
