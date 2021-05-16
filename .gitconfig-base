@@ -22,6 +22,7 @@
     cos = "!cos() { git stash && git checkout \"$@\" && git stash pop; }; cos"
     db = branch --delete
     dt = difftool
+    dtbc = difftool --tool=bc4
     dump = cat-file -p
     ffm = !git fetch origin master:master
     graft = !legit graft \"$@\"
