@@ -23,6 +23,7 @@
     db = branch --delete
     dt = difftool
     dtbc = difftool --tool=bc4
+    dtsd = "!git diff | git-split-diffs --color | less -RFX"
     dump = cat-file -p
     ffm = !git fetch origin master:master
     graft = !legit graft \"$@\"
@@ -44,8 +45,6 @@
     prompt = false
 [mergetool]
     prompt = false
-[icdiff]
-    options = "--highlight --line-numbers"
 [submodule]
     fetchJobs = 0
 [filter "lfs"]

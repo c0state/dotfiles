@@ -2,7 +2,7 @@
 
 set -eux
 
-NODE_VERSION=14
+NODE_VERSION=16
 
 # ---------- volta https://github.com/volta-cli/volta
 
@@ -24,6 +24,7 @@ yarn global add \
     expo-cli \
     firebase-tools \
     gatsby-cli \
+    git-split-diffs \
     imageoptim-cli \
     instant-markdown-d \
     lerna \
