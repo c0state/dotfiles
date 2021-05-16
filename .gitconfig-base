@@ -56,4 +56,6 @@
     prune = true
 [pull]
     rebase = true
-
+[split-diffs]
+    syntax-highlighting-theme = github-dark
+    theme-name = dark
