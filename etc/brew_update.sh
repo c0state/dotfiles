@@ -96,6 +96,7 @@ brew_packages=(
     pidcat
     pngquant
     postgresql
+    progress
     q
     qt
     ripgrep
