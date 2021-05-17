@@ -20,6 +20,13 @@ STALE_POD_REGEX=$(grep STALE_POD_REGEX ~/.xbar_variables | cut -d= -f2 | awk '{ 
 STALE_POD_CONTEXT=$(grep STALE_POD_CONTEXT ~/.xbar_variables | cut -d= -f2 | awk '{ print $1; }')
 STALE_POD_NAMESPACE=$(grep STALE_POD_NAMESPACE ~/.xbar_variables | cut -d= -f2 | awk '{ print $1; }')
 
+if test -z "$STALE_POD_REGEX"; then
+  echo "Not Watching Pods|color=grey"
+  echo ---
+  echo "Missing configuration"
+  exit 0
+fi
+
 if test -z "$STALE_POD_REGEX" || test -z "$STALE_POD_CONTEXT" || test -z "$STALE_POD_NAMESPACE"; then
     echo Missing configuration settings!
     exit 1
