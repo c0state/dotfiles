@@ -10,6 +10,7 @@
 # <xbar.dependencies>python</xbar.dependencies>
 
 import configparser
+import datetime
 import json
 import pathlib
 import re
@@ -35,6 +36,7 @@ PROJECT_USERNAMES = ["quantumsi"]
 MAIN_BRANCH_NAMES = ["main", "master"]
 REPO_BRANCH_PREFIXES = MAIN_BRANCH_NAMES + ["staging", "prod", "sliu"]
 LINE_SEPARATOR = "---"
+MAX_BUILD_AGE_DAYS = 30
 
 # --------------------------------------------------------------------------------
 
@@ -96,6 +98,13 @@ def update_statuses(projects):
         xbar_output_string_list.append(f"{user_name}/{repo_name} | href={repo_href}")
 
         for branch_name, branch_info in branches.items():
+            if not branch_info['recent_builds']:
+                continue
+
+            if datetime.datetime.strptime(branch_info['recent_builds'][0]['added_at'], "%Y-%m-%dT%H:%M:%S.%fZ").replace(tzinfo=None) \
+                    < (datetime.datetime.utcnow().replace(tzinfo=None) - datetime.timedelta(days=MAX_BUILD_AGE_DAYS)):
+                continue
+
             match_results = [
                 True if re.match(f"{branch_prefix}.*", branch_name) else False
                 for branch_prefix in REPO_BRANCH_PREFIXES]
