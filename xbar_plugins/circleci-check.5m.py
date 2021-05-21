@@ -11,6 +11,7 @@
 
 import configparser
 import datetime
+import getpass
 import json
 import pathlib
 import re
@@ -34,7 +35,7 @@ if not API_TOKEN:
 CIRCLECI_API_ENDPOINT = 'https://circleci.com/api/v1/'
 PROJECT_USERNAMES = ["quantumsi"]
 MAIN_BRANCH_NAMES = ["main", "master"]
-REPO_BRANCH_PREFIXES = MAIN_BRANCH_NAMES + ["staging", "prod", "sliu"]
+REPO_BRANCH_SUBSTRINGS = MAIN_BRANCH_NAMES + ["dev", "staging", "prod", getpass.getuser()]
 LINE_SEPARATOR = "---"
 MAX_BUILD_AGE_DAYS = 30
 
@@ -107,7 +108,7 @@ def update_statuses(projects):
 
             match_results = [
                 True if re.match(f"{branch_prefix}.*", branch_name) else False
-                for branch_prefix in REPO_BRANCH_PREFIXES]
+                for branch_prefix in REPO_BRANCH_SUBSTRINGS]
             if not any(match_results):
                 continue
 
