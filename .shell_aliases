@@ -13,6 +13,9 @@ which fdfind &>/dev/null && alias fd="fdfind --hidden"
 alias findforks="find . -type f -exec test -s {}/..namedfork/rsrc \; -print"
 alias find_zombies="ps axo stat,ppid,pid,comm | grep -w defunct"
 
+# https://github.com/antonmedv/fx
+alias fx="npx fx"
+
 # git aliases
 alias gitvdiff="git difftool -t tkdiff --no-prompt"
 alias git_prune_empty_dirs="(find . -name .git -prune -o -type d -empty -print | xargs rmdir -p) || true"
@@ -33,6 +36,9 @@ alias sort_latest='find . -type f -exec stat --format "%Y - %y --> %n" "{}" \; |
 alias tree="tree --dirsfirst"
 alias vi="nvim"
 alias vim="nvim"
+
+# https://github.com/google/zx
+alias zx="npx zx"
 
 if [[ -e ~/.bash_aliases_custom ]]; then
     source ~/.bash_aliases_custom
