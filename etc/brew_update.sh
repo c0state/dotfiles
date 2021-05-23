@@ -109,7 +109,7 @@ brew_packages=(
     sshuttle
     starship
     stunnel
-# no arm version   svg2png
+    svg2png
     swiftbar
     telnet
     terraform
