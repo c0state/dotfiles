@@ -22,6 +22,10 @@ poetry completions fish > $HOME/.config/fish/completions/poetry.fish
 
 register-python-argcomplete --shell fish pipx > "$HOME"/.config/fish/completions/pipx.fish
 
+#---------- docker completions
+
+curl https://raw.githubusercontent.com/docker/cli/master/contrib/completion/fish/docker.fish --output "$HOME"/.config/fish/completions/docker.fish
+
 #---------- kubectl completions
 
 mkdir -p "$HOME"/.config/fish/completions
