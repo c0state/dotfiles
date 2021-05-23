@@ -42,11 +42,7 @@ fi
 
 # ---------- set up prompt
 
-if ! which starship; then
-    curl -fsSL https://raw.githubusercontent.com/starship/starship/master/install/install.sh | bash -s -- --force
-    mkdir -p "$HOME"/.config
-    ln -s "$(which starship)" "$HOME"/.config
-fi
+curl -fsSL https://raw.githubusercontent.com/starship/starship/master/install/install.sh | bash -s -- --yes --bin-dir "$HOME"/.local/bin
 
 # ---------- set up ohmyzsh
 
