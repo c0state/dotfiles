@@ -177,6 +177,7 @@ brew_cask_packages=(
     outline-manager
     postman
     powershell
+    raspberry-pi-imager
     signal
     sketch
     skype
