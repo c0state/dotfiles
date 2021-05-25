@@ -63,6 +63,7 @@ success_symbol = "[╰➜]($style)"
 error_symbol = "[╰✗](bold red)"
 
 [directory]
+truncation_length = 0
 truncate_to_repo = false
 style = "fg:yellow bg:#0000ff"
 format = "├─ [ $path]($style)[$read_only]($read_only_style)"
