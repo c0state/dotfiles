@@ -6,8 +6,9 @@ PLATFORM=$(uname)
 
 if [[ ! -e "$HOME/.pyenv" ]]; then
     curl --tls-max default --location https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
-    export PATH=$PATH:$HOME/.pyenv/bin
-    eval "$(pyenv init -)"
+    export PYENV_ROOT="$HOME/.pyenv"
+    export PATH="$PYENV_ROOT/bin:$PATH"
+    eval "$(pyenv init --path)"
 fi
 
 if ! command -v poetry; then

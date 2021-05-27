@@ -44,7 +44,7 @@ set -gx PATH (python3 -m site --user-base)"/bin" $PATH
 
 # pyenv init
 if command -v pyenv 1>/dev/null 2>&1
-  pyenv init - | source
+    status is-login; and pyenv init --path | source
 end
 
 #----- rust
