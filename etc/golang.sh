@@ -6,6 +6,7 @@ set -ex
 
 GO_VERSION=1.16
 PLATFORM=$(uname)
+CPUTYPE=$(uname -m)
 
 if [[ "$PLATFORM" == "Darwin" ]]; then
     PLATFORM_STRING="darwin"
@@ -20,7 +21,7 @@ fi
 
 if ! command -v go >/dev/null; then
     mkdir -p ~/.local
-    wget -qO- https://golang.org/dl/go"$GO_VERSION"."$PLATFORM_STRING"-amd64.tar.gz | tar zxvf - -C "$HOME"/.local
+    wget -qO- https://golang.org/dl/go"$GO_VERSION"."$PLATFORM_STRING"-"$CPUTYPE".tar.gz | tar zxvf - -C "$HOME"/.local
 fi
 
 # go repl
