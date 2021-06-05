@@ -5,6 +5,7 @@ set -eux
 # ---------- shared variables
 
 PLATFORM=$(uname)
+MACH_TYPE=$(uname -m)
 # TODO: fix this--this exits script if not on wsl
 IS_WSL=$(uname -a | grep -i microsoft || echo "")
 
@@ -58,13 +59,19 @@ fi
 # ---------- set up lsd ls replacement
 
 if ! which lsd > /dev/null && [[ "$PLATFORM" == "Linux" ]]; then
-    bash -i -c "install_package https://github.com/Peltoche/lsd/releases/download/0.19.0/lsd_0.19.0_amd64.deb"
+    bash -i -c "install_package https://github.com/Peltoche/lsd/releases/download/0.19.0/lsd_0.19.0_$MACH_TYPE.deb"
 fi
 
 # ---------- set up dive https://github.com/wagoodman/dive
 
 if ! which dive > /dev/null && [[ "$PLATFORM" == "Linux" ]]; then
-    bash -i -c "install_package https://github.com/wagoodman/dive/releases/download/v0.9.2/dive_0.9.2_linux_amd64.deb"
+    bash -i -c "install_package https://github.com/wagoodman/dive/releases/download/v0.9.2/dive_0.9.2_linux_$MACH_TYPE.deb"
+fi
+
+# ---------- set up delta https://github.com/dandavison/delta
+
+if ! which git-delta > /dev/null && [[ "$PLATFORM" == "Linux" ]]; then
+    bash -i -c "install_package https://github.com/dandavison/delta/releases/download/0.8.0/git-delta_0.8.0_$MACH_TYPE.deb"
 fi
 
 # ---------- set up fzf https://github.com/junegunn/fzf
