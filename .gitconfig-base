@@ -31,6 +31,7 @@
     harvest = !legit harvest \"$@\"
     hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
     ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
+    lh = "!lh() { git log --pretty=full -L $1,$1:\"$2\"; }; lh"
     mm = merge origin/master --autostash
     publish = !legit publish \"$@\"
     pullr = "!git pull --rebase --autostash --all"
