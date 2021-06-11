@@ -90,7 +90,7 @@ brew_packages=(
     openssl
     optipng
     osx-iso
-# no arm version   packer
+    packer
     parallel
     pidcat
     pngquant
@@ -103,7 +103,7 @@ brew_packages=(
     rlwrap
     getsentry/tools/sentry-cli
     selenium-server-standalone
-# no arm version   shellcheck
+    shellcheck
     smartmontools
     sshuttle
     starship
