@@ -24,7 +24,7 @@
     db = branch --delete
     dt = difftool
     dtbc = difftool --tool=bc4
-    dtsd = "!git diff | git-split-diffs --color | less -RFX"
+    dtsd = "!git diff --unified=8 | git-split-diffs --color | less -RFX"
     dump = cat-file -p
     ffm = !git fetch origin master:master
     graft = !legit graft \"$@\"
