@@ -50,10 +50,9 @@ brew_packages=(
     bat
     bfg
 # no arm version   blast
-    boost
+    boost cmake gdb
     carthage
 # no arm version  circleci
-    cmake
     cocoapods
     colordiff icdiff
     coreutils
