@@ -234,6 +234,7 @@ _arguments "${_arguments_options[@]}" \
 '-r+[Reload source code cache (recompile TypeScript)]' \
 '--reload=[Reload source code cache (recompile TypeScript)]' \
 '--cert=[Load certificate authority from PEM encoded file]' \
+'--location=[Show files used for origin bound APIs like the Web Storage API when running a script with '\''--location=<HREF>'\'']' \
 '--import-map=[Load import map file]' \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
@@ -507,7 +508,7 @@ _deno_commands() {
 "info:Show info about cache or info related to source file" \
 "install:Install script as an executable" \
 "lsp:Start the language server" \
-"lint:UNSTABLE: Lint source files" \
+"lint:Lint source files" \
 "repl:Read Eval Print Loop" \
 "run:Run a JavaScript or TypeScript program" \
 "test:Run tests" \
