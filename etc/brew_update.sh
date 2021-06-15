@@ -50,7 +50,7 @@ brew_packages=(
     bat
     bfg
 # no arm version   blast
-    boost cmake gdb
+    boost cmake # no arm version gdb
     carthage
 # no arm version  circleci
     cocoapods
