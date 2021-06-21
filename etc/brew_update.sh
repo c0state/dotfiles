@@ -172,7 +172,7 @@ brew_cask_packages=(
     libreoffice
     microsoft-edge
     ngrok
-    obs
+    obs obs-ndi
     outline-manager
     postman
     powershell
