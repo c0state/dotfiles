@@ -39,6 +39,10 @@ function pprint_xml
     cat $argv | xmllint --format - 2>&1 | less -i
 end
 
+function s3_path_size
+    aws s3 ls --summarize --human-readable --recursive $argv
+end
+
 function strip_comments_blank_lines
     \grep -v -E "\s*#|^\s*\$" "$argv"
 end

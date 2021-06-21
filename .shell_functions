@@ -26,6 +26,10 @@ function pprint_xml {
     cat "$1" | xmllint --format - 2>&1 | less -i
 }
 
+function s3_path_size {
+    aws s3 ls --summarize --human-readable --recursive $*
+}
+
 function strip_comments_blank_lines {
     if [ $# -eq 0 ]; then
       \grep -v -E "\s*#|^\s*$" </dev/stdin
