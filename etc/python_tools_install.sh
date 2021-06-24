@@ -24,10 +24,6 @@ python3 -m pip install --upgrade --user pynvim
 
 #---------- pipx dependencies
 
-if [[ $PLATFORM != 'Linux' ]]; then
-    which docker-compose || pipx install docker-compose
-fi
-
 which ansible || pipx install --include-deps ansible
 which activate.sh || pipx install autoenv
 which cdiff || pipx install cdiff
