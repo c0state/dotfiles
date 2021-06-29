@@ -27,6 +27,7 @@ python3 -m pip install --upgrade --user pynvim
 #---------- pipx dependencies
 
 which ansible || pipx install --include-deps ansible
+which black || pipx install --include-deps black
 which activate.sh || pipx install autoenv
 which cdiff || pipx install cdiff
 which codemod || pipx install codemod
