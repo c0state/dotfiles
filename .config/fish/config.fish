@@ -60,9 +60,7 @@ set -gx PATH $PATH "/Applications/Chia.app/Contents/Resources/app.asar.unpacked/
 #---------- keychain agent
 
 if type -q keychain
-    if test -z "$SSH_AGENT_PID"
-        eval (keychain --eval)
-    end
+    eval (keychain --eval 2>/dev/null)
 end
 
 #---------- gcloud
