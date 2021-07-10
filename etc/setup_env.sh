@@ -13,7 +13,7 @@ IS_WSL=$(uname -a | grep -i microsoft || echo "")
 
 if [[ ! -d /usr/local/bin ]]; then
     sudo mkdir /usr/local/bin
-    sudo chown $USER /usr/local/bin
+    sudo chown "$USER" /usr/local/bin
     sudo chgrp staff /usr/local/bin
 fi
 
@@ -49,12 +49,14 @@ curl -fsSL https://raw.githubusercontent.com/starship/starship/master/install/in
 
 if [[ ! -d $HOME/.oh-my-zsh ]]; then
     curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | bash -s -- --unattended --keep-zshrc
+else
+    (cd "$HOME"/.oh-my-zsh && git pull)
 fi
 
 # ---------- set up vim plugins
 
 # TODO: hangs when run in test script
-# vim +PlugUpdate +PlugUpgrade +qall
+# vim +PlugUpdate +PlugUpgrade +UpdateRemotePlugins +qall
 
 # ---------- set up lsd ls replacement
 
@@ -79,19 +81,25 @@ fi
 if [[ ! -d $HOME/.fzf ]]; then
     git clone --depth 1 https://github.com/junegunn/fzf.git "$HOME"/.fzf
     "$HOME"/.fzf/install --key-bindings --completion --no-update-rc
+else
+    (cd "$HOME"/.fzf && git pull)
 fi
 
 # ---------- set up tpm https://github.com/tmux-plugins/tpm
 
 if [[ ! -d $HOME/.tmux/plugins/tpm ]]; then
     git clone https://github.com/tmux-plugins/tpm "$HOME"/.tmux/plugins/tpm
-    "$HOME"/.tmux/plugins/tpm/bin/install_plugins
+else
+    (cd "$HOME"/.tmux/plugins/tpm && git pull)
 fi
+"$HOME"/.tmux/plugins/tpm/bin/install_plugins
 
 # ---------- git sub-repo
 
 if [[ ! -d $HOME/.git-subrepo ]]; then
     git clone https://github.com/ingydotnet/git-subrepo.git "$HOME"/.git-subrepo
+else
+    (cd "$HOME"/.git-subrepo && git pull)
 fi
 
 # ---------- bit https://github.com/chriswalz/bit
