@@ -1,5 +1,6 @@
 winget install 7zip
 winget install adobe.adobeacrobatreaderdc
+winget install atlassian.sourcetree
 winget install audacity
 winget install coretemp
 winget install cpu-z
@@ -21,6 +22,7 @@ winget install microsoft.visualstudiocode-user-x64
 winget install mirantis.lens
 winget install mozilla.firefox
 # winget install neovim
+winget install obsproject.obsstudio
 winget install raspberrypifoundation.raspberrypiimager
 winget install slacktechnologies.slack
 winget install sourcetree
