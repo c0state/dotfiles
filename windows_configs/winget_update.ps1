@@ -7,6 +7,7 @@ winget install cpu-z
 winget install docker.dockerdesktop
 winget install etcher
 winget install faststone.viewer
+winget install flux.flux
 # not yet available
 # winget install firacode
 winget install git
