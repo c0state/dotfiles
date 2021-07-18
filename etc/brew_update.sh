@@ -137,6 +137,7 @@ brew_cask_packages=(
     aerial
     alacritty
     alfred
+    amorphousdiskmark
     angry-ip-scanner
     balenaetcher
     beyond-compare
