@@ -16,6 +16,7 @@ sudo apt -y install \
     gparted \
     gnupg ca-certificates \
     keychain \
+    nethogs \
     parallel \
     ranger \
     ripgrep \
