@@ -31,4 +31,5 @@ winget install toolbox
 winget install videolan.vlc
 winget install vim
 winget install windirstat.windirstat
+winget install wireguard.wireguard
 winget install zoom.zoom
