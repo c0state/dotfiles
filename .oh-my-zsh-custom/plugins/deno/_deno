@@ -418,8 +418,8 @@ _arguments "${_arguments_options[@]}" \
 '--filter=[Run tests with this string or pattern in the test name]' \
 '--shuffle=[(UNSTABLE): Shuffle the order in which the tests are run]' \
 '(--inspect --inspect-brk)--coverage=[UNSTABLE: Collect coverage profile data]' \
-'-j+[]' \
-'--jobs=[]' \
+'-j+[Number of parallel workers, defaults to # of CPUs when no value is provided. Defaults to 1 when the option is not present.]' \
+'--jobs=[Number of parallel workers, defaults to # of CPUs when no value is provided. Defaults to 1 when the option is not present.]' \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
 '--no-remote[Do not resolve remote modules]' \
