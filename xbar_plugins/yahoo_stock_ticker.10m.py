@@ -210,8 +210,8 @@ def print_index(index, name):
     # Print the index info only to the menu bar
     max_index_name_len = max(map(lambda item: len(item), indices_dict.keys()))
     print(
-        name.ljust(max_index_name_len + 6, '.'), colored_change, '| dropdown=false', FONT,
-        f"| {GREEN if change >= 0 else RED}", sep=''
+        name.ljust(max_index_name_len + 6, '.'), colored_change, '| dropdown=false ', FONT,
+        f"| {GREEN if change >= 0 else RED} ", sep=''
     )
 
 
@@ -223,7 +223,7 @@ def print_stock(s):
     in_session_symbol = '🚀' if market_state == 'REGULAR' else '🌛'
     direction_arrow = '▲' if change > 0 else '▼'
     change_in_percent = f"{change:6.2f}%"
-    colored_change = f"{in_session_symbol}{direction_arrow}{change_in_percent}|{GREEN if change > 0 else RED}"
+    colored_change = f"{in_session_symbol}{direction_arrow}{change_in_percent}|{GREEN if change > 0 else RED} "
 
     # Remove appending stock exchange symbol for foreign exchanges, e.g. Apple stock symbol in Frankfurt: APC.F -> APC
     symbol = s['symbol'].split('.')[0]
