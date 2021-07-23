@@ -48,6 +48,7 @@ which pre-commit || pipx install pre-commit
 which ptpython || pipx install ptpython
 which pyupgrade || pipx install pyupgrade
 which ranger || pipx install ranger-fm
+which semgrep || pipx install semgrep
 which snakeviz || pipx install snakeviz
 which tox || pipx install tox
 which twine || pipx install twine
