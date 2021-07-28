@@ -114,6 +114,7 @@ _arguments "${_arguments_options[@]}" \
 '--allow-all[Allow all permissions]' \
 '--prompt[Fallback to prompt if required permission wasn'\''t passed]' \
 '--cached-only[Require that remote dependencies are already cached]' \
+'--enable-testing-features-do-not-use[INTERNAL: Enable internal features used during integration testing]' \
 '-h[Prints help information]' \
 '--help[Prints help information]' \
 '-V[Prints version information]' \
@@ -197,6 +198,7 @@ _arguments "${_arguments_options[@]}" \
 '--no-check[Skip type checking modules]' \
 '--lock-write[Write lock file (use with --lock)]' \
 '--cached-only[Require that remote dependencies are already cached]' \
+'--enable-testing-features-do-not-use[INTERNAL: Enable internal features used during integration testing]' \
 '-T[Treat eval input as TypeScript]' \
 '--ts[Treat eval input as TypeScript]' \
 '-p[print result to stdout]' \
@@ -283,6 +285,7 @@ _arguments "${_arguments_options[@]}" \
 '--allow-all[Allow all permissions]' \
 '--prompt[Fallback to prompt if required permission wasn'\''t passed]' \
 '--cached-only[Require that remote dependencies are already cached]' \
+'--enable-testing-features-do-not-use[INTERNAL: Enable internal features used during integration testing]' \
 '-f[Forcefully overwrite existing installation]' \
 '--force[Forcefully overwrite existing installation]' \
 '-h[Prints help information]' \
@@ -345,6 +348,7 @@ _arguments "${_arguments_options[@]}" \
 '--no-check[Skip type checking modules]' \
 '--lock-write[Write lock file (use with --lock)]' \
 '--cached-only[Require that remote dependencies are already cached]' \
+'--enable-testing-features-do-not-use[INTERNAL: Enable internal features used during integration testing]' \
 '-h[Prints help information]' \
 '--help[Prints help information]' \
 '-V[Prints version information]' \
@@ -384,6 +388,7 @@ _arguments "${_arguments_options[@]}" \
 '--allow-all[Allow all permissions]' \
 '--prompt[Fallback to prompt if required permission wasn'\''t passed]' \
 '--cached-only[Require that remote dependencies are already cached]' \
+'--enable-testing-features-do-not-use[INTERNAL: Enable internal features used during integration testing]' \
 '(--inspect --inspect-brk)--watch[UNSTABLE: Watch for file changes and restart process automatically]' \
 '-h[Prints help information]' \
 '--help[Prints help information]' \
@@ -431,6 +436,7 @@ _arguments "${_arguments_options[@]}" \
 '--allow-all[Allow all permissions]' \
 '--prompt[Fallback to prompt if required permission wasn'\''t passed]' \
 '--cached-only[Require that remote dependencies are already cached]' \
+'--enable-testing-features-do-not-use[INTERNAL: Enable internal features used during integration testing]' \
 '--no-run[Cache test modules, but don'\''t run tests]' \
 '--doc[UNSTABLE: type check code blocks]' \
 '--allow-none[Don'\''t return error code if no test files are found]' \
