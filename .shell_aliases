@@ -23,8 +23,12 @@ alias git_prune_empty_dirs="(find . -name .git -prune -o -type d -empty -print |
 alias grep="egrep"
 alias h="history"
 alias hg="history | grep"
+
+# k8s aliases
 alias k="kubectl"
 alias kes="kubectl exec --stdin --tty"
+alias k_print_configmap="kubectl get configmap $1 -o jsonpath=\"{.data}\""
+
 alias less="less -i --chop-long-lines --shift 2 --RAW-CONTROL-CHARS"
 alias ls="lsd"
 alias mdv="$HOME/.terminal_markdown_viewer/mdv.py"
