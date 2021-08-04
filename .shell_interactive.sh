@@ -9,6 +9,9 @@ export HISTFILESIZE=10000
 #----- set preferred editor and mode(s)
 export EDITOR=vim
 
+#----- misc settings
+export REPORTTIME=3
+
 source $HOME/.shell_aliases
 
 #----- set based on platform (Linux or OS X)
