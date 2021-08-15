@@ -11,6 +11,7 @@
 #
 # by longpdo (https://github.com/longpdo)
 
+import configparser
 from datetime import datetime
 import json
 import os
@@ -20,8 +21,17 @@ import sys
 import subprocess
 
 # ---------------------------------------------------------------------------------------------------------------------
-# Enter your stock symbols here in the format: ["symbol1", "symbol2", ...]
-symbols = ["QSI", "BFLY", "FB", "AAPL", "AMZN", "NFLX", "GOOG", "BIDU", "BABA", "TCEHY"]
+config = configparser.ConfigParser()
+config_path = pathlib.Path.home() / ".xbar_variables"
+config.read(config_path)
+config_section = config["yahoo_stock_ticker"] if "yahoo_stock_ticker" in config else None
+TICKERS = config_section["TICKERS"] if config_section else None
+if not TICKERS:
+    raise Exception(f"No tickers specified!")
+# ---------------------------------------------------------------------------------------------------------------------
+
+# ---------------------------------------------------------------------------------------------------------------------
+symbols = TICKERS.split(",")
 
 # Enter the order how you want to sort the stock list:
 # 'name'                     : Sort alphabetically by name from A to Z
