@@ -193,6 +193,7 @@ brew_cask_packages=(
     teamviewer
     tor-browser
     tower
+    utm
     vagrant
     virtualbox
     visual-studio-code
