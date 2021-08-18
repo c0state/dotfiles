@@ -428,7 +428,7 @@ _arguments "${_arguments_options[@]}" \
 '--fail-fast=[Stop after N errors. Defaults to stopping after first failure.]' \
 '--filter=[Run tests with this string or pattern in the test name]' \
 '--shuffle=[(UNSTABLE): Shuffle the order in which the tests are run]' \
-'(--inspect --inspect-brk)--coverage=[UNSTABLE: Collect coverage profile data]' \
+'(--inspect --inspect-brk)--coverage=[UNSTABLE: Collect coverage profile data into DIR]' \
 '-j+[Number of parallel workers, defaults to # of CPUs when no value is provided. Defaults to 1 when the option is not present.]' \
 '--jobs=[Number of parallel workers, defaults to # of CPUs when no value is provided. Defaults to 1 when the option is not present.]' \
 '-L+[Set log level]: :(debug info)' \
