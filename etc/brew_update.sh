@@ -179,6 +179,7 @@ brew_cask_packages=(
     postman
     powershell
     raspberry-pi-imager
+    rectangle
     signal
     sketch
     skype
