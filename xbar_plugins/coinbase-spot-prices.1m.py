@@ -10,7 +10,9 @@
 # <xbar.dependencies>python</xbar.dependencies>
 # <xbar.abouturl>https://github.com/matryer/xbar-plugins</xbar.abouturl>
 
+import configparser
 import datetime
+import pathlib
 import urllib.request
 from json import JSONDecoder
 
@@ -20,6 +22,14 @@ FIAT_CCY = "USD"
 FONT = "font=Menlo"
 DROPPED_COLOR = "color=red"
 INCREASED_COLOR = "color=green"
+
+# --------------------------------------------------
+
+config = configparser.ConfigParser()
+config_path = pathlib.Path.home() / ".xbar_variables"
+config.read(config_path)
+config_section = config["coinbase_spot_prices"] if "coinbase_spot_prices" in config else None
+COINS = config_section["COINS"].split(",") if config_section else ('BTC', 'ETH', 'LTC', 'ADA')
 
 # --------------------------------------------------
 
@@ -39,7 +49,7 @@ crypto_prices = {}
 
 
 def cycle_prices_status_bar():
-    for crypto_ccy in ('BTC', 'ETH', 'LTC', 'ADA'):
+    for crypto_ccy in COINS:
         today_price_date = datetime.datetime.utcnow().strftime('%Y-%m-%d')
         prior_price_date = (datetime.datetime.utcnow() - datetime.timedelta(days=1)).strftime('%Y-%m-%d')
 
