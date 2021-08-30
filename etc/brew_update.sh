@@ -20,8 +20,6 @@ set -eu
 brew tap aws/tap
 brew tap homebrew/cask-fonts
 brew tap homebrew/cask-versions
-brew tap busterc/tap
-brew tap melonamin/formulae
 brew tap wix/brew
 
 brew update && brew upgrade && brew upgrade --cask
@@ -75,7 +73,6 @@ brew_packages=(
     hub
     imagemagick
     ios-deploy
-    TomAnthony/brews/itermocil
     jq
     k9s kind kubernetes-cli
     lsd
@@ -90,7 +87,6 @@ brew_packages=(
     nnn
     openssl
     optipng
-    osx-iso
     packer
     parallel
     pidcat
