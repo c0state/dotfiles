@@ -106,7 +106,6 @@ brew_packages=(
     starship
     stunnel
     svg2png
-    swiftbar
     telnet
     terraform
     terraform_landscape
