@@ -26,6 +26,7 @@
     dtbc = difftool --tool=bc4
     dtsd = "!git diff HEAD --unified=8 | git-split-diffs --color | less -RFX"
     dump = cat-file -p
+    ff = !git fetch origin \"$@\":\"$@\"
     ffm = !git fetch origin master:master
     graft = !legit graft \"$@\"
     harvest = !legit harvest \"$@\"
