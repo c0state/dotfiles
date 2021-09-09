@@ -4,7 +4,7 @@ set -ex
 
 #---------- variables
 
-GO_VERSION=1.16
+GO_VERSION=1.17
 PLATFORM=$(uname)
 CPUTYPE=$(uname -m)
 
