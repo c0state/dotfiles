@@ -9,10 +9,12 @@ if [[ ! -e "$HOME/.pyenv" ]]; then
     export PYENV_ROOT="$HOME/.pyenv"
     export PATH="$PYENV_ROOT/bin:$PATH"
     eval "$(pyenv init --path)"
+else
+    pyenv update
 fi
 
 if ! command -v poetry; then
-    curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3 - --no-modify-path
+    curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py | python3 -
     "$HOME"/.poetry/bin/poetry config virtualenvs.in-project true
 else
     poetry self update
