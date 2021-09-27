@@ -14,7 +14,7 @@ else
 fi
 
 if ! command -v poetry; then
-    curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py | python3 -
+    curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3 -
     "$HOME"/.poetry/bin/poetry config virtualenvs.in-project true
 else
     poetry self update
