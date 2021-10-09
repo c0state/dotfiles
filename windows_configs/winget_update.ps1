@@ -1,35 +1,36 @@
-winget install 7zip
-winget install adobe.adobeacrobatreaderdc
+winget install --id 7zip
+winget install --id adobe.adobeacrobatreaderdc
 winget install atlassian.sourcetree
-winget install audacity
-winget install coretemp
-winget install cpu-z
-winget install docker.dockerdesktop
-winget install etcher
-winget install faststone.viewer
-winget install flux.flux
+winget install --id audacity
+winget install --id coretemp
+winget install --id cpu-z
+winget install --id discord
+winget install --id docker.dockerdesktop
+winget install --id etcher
+winget install --id faststone.viewer
+winget install --id flux.flux
 # not yet available
-# winget install firacode
-winget install git
-winget install github.cli
-winget install github.githubdesktop
-winget install google.backupandsync
-winget install google.chrome
-winget install google.drivefilestream
-winget install hackfonts
-winget install kubernetes.minikube
-winget install microsoft.dotnet
-winget install microsoft.visualstudiocode-user-x64
-winget install mirantis.lens
-winget install mozilla.firefox
-# winget install neovim
-winget install obsproject.obsstudio
-winget install raspberrypifoundation.raspberrypiimager
-winget install slacktechnologies.slack
-winget install sourcetree
-winget install toolbox 
-winget install videolan.vlc
-winget install vim
-winget install windirstat.windirstat
-winget install wireguard.wireguard
-winget install zoom.zoom
+# winget install --id firacode
+winget install --id git
+winget install --id github.cli
+winget install --id github.githubdesktop
+winget install --id google.chrome
+winget install --id google.drive
+winget install --id hackfonts
+winget install --id kubernetes.minikube
+winget install --id microsoft.dotnet
+winget install --id microsoft.visualstudiocode-user-x64
+winget install --id mirantis.lens
+winget install --id mozilla.firefox
+# winget install --id neovim
+winget install --id obsproject.obsstudio
+winget install --id raspberrypifoundation.raspberrypiimager
+winget install --id slacktechnologies.slack
+winget install --id sourcetree
+winget install --id teamviewer.teamviewer
+winget install --id toolbox 
+winget install --id videolan.vlc
+winget install --id vim
+winget install --id windirstat.windirstat
+winget install --id wireguard.wireguard
+winget install --id zoom.zoom
