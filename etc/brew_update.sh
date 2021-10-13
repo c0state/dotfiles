@@ -141,6 +141,7 @@ brew_cask_packages=(
     chromedriver
     coconutbattery
     db-browser-for-sqlite
+    discord
     divvy
     docker
     dotnet-sdk
