@@ -116,6 +116,7 @@ _arguments "${_arguments_options[@]}" \
 '--prompt[Fallback to prompt if required permission wasn'\''t passed]' \
 '--cached-only[Require that remote dependencies are already cached]' \
 '--enable-testing-features-do-not-use[INTERNAL: Enable internal features used during integration testing]' \
+'--compat[Node compatibility mode. Currently only enables built-in node modules like '\''fs'\'' and globals like '\''process'\''.]' \
 '-h[Prints help information]' \
 '--help[Prints help information]' \
 '-V[Prints version information]' \
@@ -200,6 +201,7 @@ _arguments "${_arguments_options[@]}" \
 '--lock-write[Write lock file (use with --lock)]' \
 '--cached-only[Require that remote dependencies are already cached]' \
 '--enable-testing-features-do-not-use[INTERNAL: Enable internal features used during integration testing]' \
+'--compat[Node compatibility mode. Currently only enables built-in node modules like '\''fs'\'' and globals like '\''process'\''.]' \
 '-T[Treat eval input as TypeScript]' \
 '--ts[Treat eval input as TypeScript]' \
 '-p[print result to stdout]' \
@@ -295,6 +297,7 @@ _arguments "${_arguments_options[@]}" \
 '--prompt[Fallback to prompt if required permission wasn'\''t passed]' \
 '--cached-only[Require that remote dependencies are already cached]' \
 '--enable-testing-features-do-not-use[INTERNAL: Enable internal features used during integration testing]' \
+'--compat[Node compatibility mode. Currently only enables built-in node modules like '\''fs'\'' and globals like '\''process'\''.]' \
 '-f[Forcefully overwrite existing installation]' \
 '--force[Forcefully overwrite existing installation]' \
 '-h[Prints help information]' \
@@ -305,6 +308,21 @@ _arguments "${_arguments_options[@]}" \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
 ':cmd:_files' \
+&& ret=0
+;;
+(uninstall)
+_arguments "${_arguments_options[@]}" \
+'--root=[Installation root]' \
+'-L+[Set log level]: :(debug info)' \
+'--log-level=[Set log level]: :(debug info)' \
+'-h[Prints help information]' \
+'--help[Prints help information]' \
+'-V[Prints version information]' \
+'--version[Prints version information]' \
+'--unstable[Enable unstable features and APIs]' \
+'-q[Suppress diagnostic output]' \
+'--quiet[Suppress diagnostic output]' \
+':name:_files' \
 && ret=0
 ;;
 (lsp)
@@ -332,6 +350,7 @@ _arguments "${_arguments_options[@]}" \
 '--log-level=[Set log level]: :(debug info)' \
 '--rules[List available rules]' \
 '--json[Output lint result in JSON format]' \
+'--watch[UNSTABLE: Watch for file changes and restart process automatically]' \
 '-h[Prints help information]' \
 '--help[Prints help information]' \
 '-V[Prints version information]' \
@@ -364,6 +383,7 @@ _arguments "${_arguments_options[@]}" \
 '--lock-write[Write lock file (use with --lock)]' \
 '--cached-only[Require that remote dependencies are already cached]' \
 '--enable-testing-features-do-not-use[INTERNAL: Enable internal features used during integration testing]' \
+'--compat[Node compatibility mode. Currently only enables built-in node modules like '\''fs'\'' and globals like '\''process'\''.]' \
 '-h[Prints help information]' \
 '--help[Prints help information]' \
 '-V[Prints version information]' \
@@ -405,6 +425,7 @@ _arguments "${_arguments_options[@]}" \
 '--prompt[Fallback to prompt if required permission wasn'\''t passed]' \
 '--cached-only[Require that remote dependencies are already cached]' \
 '--enable-testing-features-do-not-use[INTERNAL: Enable internal features used during integration testing]' \
+'--compat[Node compatibility mode. Currently only enables built-in node modules like '\''fs'\'' and globals like '\''process'\''.]' \
 '(--inspect --inspect-brk)--watch[UNSTABLE: Watch for file changes and restart process automatically]' \
 '-h[Prints help information]' \
 '--help[Prints help information]' \
@@ -455,6 +476,7 @@ _arguments "${_arguments_options[@]}" \
 '--prompt[Fallback to prompt if required permission wasn'\''t passed]' \
 '--cached-only[Require that remote dependencies are already cached]' \
 '--enable-testing-features-do-not-use[INTERNAL: Enable internal features used during integration testing]' \
+'--compat[Node compatibility mode. Currently only enables built-in node modules like '\''fs'\'' and globals like '\''process'\''.]' \
 '--no-run[Cache test modules, but don'\''t run tests]' \
 '--doc[UNSTABLE: type check code blocks]' \
 '--allow-none[Don'\''t return error code if no test files are found]' \
@@ -532,6 +554,7 @@ _deno_commands() {
 "fmt:Format source files" \
 "info:Show info about cache or info related to source file" \
 "install:Install script as an executable" \
+"uninstall:Uninstall a script previously installed with deno install" \
 "lsp:Start the language server" \
 "lint:Lint source files" \
 "repl:Read Eval Print Loop" \
@@ -661,6 +684,13 @@ _deno__types_commands() {
         
     )
     _describe -t commands 'deno types commands' commands "$@"
+}
+(( $+functions[_deno__uninstall_commands] )) ||
+_deno__uninstall_commands() {
+    local commands; commands=(
+        
+    )
+    _describe -t commands 'deno uninstall commands' commands "$@"
 }
 (( $+functions[_deno__upgrade_commands] )) ||
 _deno__upgrade_commands() {
