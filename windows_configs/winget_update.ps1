@@ -31,6 +31,7 @@ winget install --id teamviewer.teamviewer
 winget install --id toolbox 
 winget install --id videolan.vlc
 winget install --id vim
+winget install --id whatsapp.whatsapp
 winget install --id windirstat.windirstat
 winget install --id wireguard.wireguard
 winget install --id zoom.zoom
