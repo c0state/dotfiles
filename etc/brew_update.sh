@@ -13,9 +13,6 @@ fi
 
 #---------- brew setup ----------
 
-# exit on any failed command
-set -eu
-
 # add taps
 brew tap aws/tap
 brew tap homebrew/cask-fonts
