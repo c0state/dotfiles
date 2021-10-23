@@ -45,6 +45,7 @@ function sync_emulator_time {
 # ---------- linux apt
 
 function install_package {
+    set -eu
     (
         export TEMP_PKG_INSTALL_FILE="$(mktemp)"
         (
