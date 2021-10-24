@@ -9,6 +9,8 @@ if not type -q omf
     $TEMP_FILE --noninteractive --yes
     rm -f "$TEMP_FILE"
     set --erase TEMP_FILE
+else
+    omf update
 end
 
 omf install fzf
