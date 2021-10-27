@@ -9,7 +9,7 @@
 
 # Change this at your desire. Sometimes this works out of the box, sometimes not.
 # Default size: ~13.5 GB
-DISK_SIZE="13000m"
+DISK_SIZE="13700m"
 
 #===========================================================================
 
