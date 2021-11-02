@@ -13,8 +13,13 @@ else
     omf update
 end
 
-omf install fzf
-omf install pyenv
+set omf_packages \
+    fzf \
+    pyenv
+
+for omf_package in $omf_packages
+    omf install "$omf_package"
+end
 
 #---------- poetry
 
