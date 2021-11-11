@@ -99,6 +99,10 @@ fi
 
 curl -sf https://gobinaries.com/chriswalz/bit | PREFIX=$HOME/.local/bin sh
 
+# ---------- fast node manager https://github.com/Schniz/fnm
+
+curl -fsSL https://fnm.vercel.app/install | bash -s -- --install-dir "./.fnm" --skip-shell
+
 # ---------- update dotfiles
 
 "$HOME"/etc/update_dotfiles.sh
