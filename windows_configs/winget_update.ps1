@@ -25,6 +25,7 @@ winget install --id mozilla.firefox
 # winget install --id neovim
 winget install --id obsproject.obsstudio
 winget install --id raspberrypifoundation.raspberrypiimager
+winget install --id rufus.rufus
 winget install --id slacktechnologies.slack
 winget install --id sourcetree
 winget install --id teamviewer.teamviewer
