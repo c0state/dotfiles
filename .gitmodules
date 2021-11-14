@@ -12,4 +12,4 @@
 	url = https://github.com/Aloxaf/fzf-tab
 [submodule ".oh-my-zsh-custom/plugins/fast-syntax-highlighting"]
 	path = .oh-my-zsh-custom/plugins/fast-syntax-highlighting
-	url = https://github.com/zdharma/fast-syntax-highlighting.git
+	url = https://github.com/zdharma-continuum/fast-syntax-highlighting.git
