@@ -6,6 +6,7 @@ set -eux
 
 PLATFORM=$(uname)
 MACH_TYPE=$(uname -m)
+DPKG_ARCH=$(dpkg --print-architecture || "")
 IS_WSL=$(uname -a | grep -i microsoft || echo "")
 
 # ---------- set up dotfiles links
@@ -60,13 +61,13 @@ fi
 # ---------- set up lsd ls replacement
 
 if ! which lsd > /dev/null && [[ "$PLATFORM" == "Linux" ]]; then
-    bash -i -c "install_package https://github.com/Peltoche/lsd/releases/download/0.19.0/lsd_0.19.0_$MACH_TYPE.deb"
+    bash -i -c "install_package https://github.com/Peltoche/lsd/releases/download/0.20.1/lsd_0.20.1_$DPKG_ARCH.deb"
 fi
 
 # ---------- set up dive https://github.com/wagoodman/dive
 
 if ! which dive > /dev/null && [[ "$PLATFORM" == "Linux" ]]; then
-    bash -i -c "install_package https://github.com/wagoodman/dive/releases/download/v0.9.2/dive_0.9.2_linux_$MACH_TYPE.deb"
+    bash -i -c "install_package https://github.com/wagoodman/dive/releases/download/v0.9.2/dive_0.9.2_linux_$DPKG_ARCH.deb"
 fi
 
 # ---------- set up fzf https://github.com/junegunn/fzf
