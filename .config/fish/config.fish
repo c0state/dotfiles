@@ -12,10 +12,6 @@ set --local REPORTTIME 3
 source ~/.shell_aliases.fish
 source ~/.shell_functions.fish
 
-#---------- prompt
-
-starship init fish | source
-
 #---------- homebrew
 if [ $PLATFORM = "Darwin" ]
     if test -n $IS_MACOS_ARM
@@ -78,4 +74,8 @@ end
 if test -e $HOME/.shellrc_custom.fish
     source $HOME/.shellrc_custom.fish
 end
+
+#---------- prompt
+
+starship init fish | source
 
