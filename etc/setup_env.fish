@@ -3,12 +3,7 @@
 #---------- oh-my-fish
 
 if not type -q omf
-    set TEMP_FILE (mktemp)
-    curl -L https://get.oh-my.fish > $TEMP_FILE
-    chmod +x $TEMP_FILE
-    $TEMP_FILE --noninteractive --yes
-    rm -f "$TEMP_FILE"
-    set --erase TEMP_FILE
+    curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
 else
     omf update
 end
