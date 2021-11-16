@@ -13,8 +13,6 @@ winget install --id discord.discord
 winget install --id docker.dockerdesktop
 winget install --id faststone.viewer
 winget install --id flux.flux
-# TODO: not yet available
-# winget install --id firacode
 winget install --id git.git
 winget install --id github.cli
 winget install --id github.githubdesktop
@@ -33,7 +31,6 @@ winget install --id raspberrypifoundation.raspberrypiimager
 winget install --id randyrants.sharpkeys
 winget install --id rufus.rufus
 winget install --id slacktechnologies.slack
-winget install --id sourcefoundry.hackfonts
 winget install --id teamviewer.teamviewer
 winget install --id videolan.vlc
 winget install --id whatsapp.whatsapp
