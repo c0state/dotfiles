@@ -6,7 +6,7 @@ set -eux
 
 PLATFORM=$(uname)
 MACH_TYPE=$(uname -m)
-DPKG_ARCH=$(dpkg --print-architecture || "")
+DPKG_ARCH=$(dpkg --print-architecture 2>/dev/null || echo "")
 IS_WSL=$(uname -a | grep -i microsoft || echo "")
 
 # ---------- set up dotfiles links
