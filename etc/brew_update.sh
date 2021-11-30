@@ -19,7 +19,7 @@ brew tap homebrew/cask-fonts
 brew tap homebrew/cask-versions
 brew tap wix/brew
 
-brew update && brew upgrade && brew upgrade --cask
+brew update && brew upgrade --greedy
 
 #---------- high level dependencies ----------
 
