@@ -19,6 +19,7 @@ winget install --id github.githubdesktop
 winget install --id google.chrome
 winget install --id google.drive
 winget install --id jetbrains.toolbox 
+winget install --id jigsaw.outlinemanager
 winget install --id kubernetes.minikube
 winget install --id microsoft.dotnet
 winget install --id microsoft.visualstudiocode
