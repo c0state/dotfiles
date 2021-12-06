@@ -98,11 +98,16 @@ fi
 
 # ---------- bit https://github.com/chriswalz/bit
 
-curl -sf https://gobinaries.com/chriswalz/bit | PREFIX=$HOME/.local/bin sh
+(
+    # ignore failure since gobinaries doesn't support arm yet
+    (curl -sf https://gobinaries.com/chriswalz/bit | PREFIX=$HOME/.local/bin sh || true)
+)
 
 # ---------- fast node manager https://github.com/Schniz/fnm
 
-curl -fsSL https://fnm.vercel.app/install | bash -s -- --install-dir "./.fnm" --skip-shell
+if [[ "$PLATFORM" != "Darwin" ]]; then
+    curl -fsSL https://fnm.vercel.app/install | bash -s -- --install-dir "./.fnm" --skip-shell
+fi
 
 # ---------- update dotfiles
 

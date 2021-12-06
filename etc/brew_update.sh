@@ -63,6 +63,7 @@ brew_packages=(
     ffmpeg
     findutils
     fish
+    fnm
     fzf
     gh git git-delta git-extras git-lfs legit
     glances
