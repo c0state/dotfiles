@@ -173,7 +173,6 @@ brew_cask_packages=(
     powershell
     raspberry-pi-imager
     rectangle
-    signal
     sketch
     skype
     slack
