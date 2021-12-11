@@ -13,7 +13,7 @@ set omf_packages \
     pyenv
 
 for omf_package in $omf_packages
-    omf install "$omf_package"
+    omf list | grep "$omf_package" || omf install "$omf_package"
 end
 
 #---------- poetry
