@@ -55,7 +55,6 @@ brew_packages=(
     ddrescue
     direnv
     dnsmasq
-    docker-completion docker-compose-completion
     dos2unix
     exa
     exiftool
