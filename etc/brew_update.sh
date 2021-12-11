@@ -188,7 +188,6 @@ brew_cask_packages=(
     tower
     utm
     vagrant
-    virtualbox
     visual-studio-code
     vlc
     whatsapp
