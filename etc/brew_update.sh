@@ -44,10 +44,10 @@ brew_packages=(
     bash-completion@2
     bat
     bfg
-# no arm version   blast
+    blast
     boost cmake # no arm version gdb
     carthage
-# no arm version  circleci
+    circleci
     cocoapods
     colordiff icdiff
     coreutils
