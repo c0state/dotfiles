@@ -12,7 +12,6 @@ else
 fi
 
 if ! command -v poetry; then
-    pyenv shell system
     curl -sSL https://install.python-poetry.org | python3 -
     poetry config virtualenvs.in-project true
 else
