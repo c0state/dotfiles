@@ -2,8 +2,6 @@
 
 set -eux
 
-PLATFORM=$(uname)
-
 if [[ ! -e "$HOME/.pyenv" ]]; then
     curl --tls-max default --location https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
     export PYENV_ROOT="$HOME/.pyenv"
@@ -14,8 +12,9 @@ else
 fi
 
 if ! command -v poetry; then
-    curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3 -
-    "$HOME"/.poetry/bin/poetry config virtualenvs.in-project true
+    pyenv shell system
+    curl -sSL https://install.python-poetry.org | python3 -
+    poetry config virtualenvs.in-project true
 else
     poetry self update
 fi
