@@ -38,6 +38,7 @@ _arguments "${_arguments_options[@]}" \
 '--import-map=[Load import map file]' \
 '-c+[Load configuration file]' \
 '--config=[Load configuration file]' \
+'--no-check=[Skip type checking modules]' \
 '-r+[Reload source code cache (recompile TypeScript)]' \
 '--reload=[Reload source code cache (recompile TypeScript)]' \
 '--lock=[Check the specified lock file]' \
@@ -45,7 +46,6 @@ _arguments "${_arguments_options[@]}" \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
 '--no-remote[Do not resolve remote modules]' \
-'--no-check[Skip type checking modules]' \
 '--lock-write[Write lock file (use with --lock)]' \
 '--watch[UNSTABLE: Watch for file changes and restart process automatically]' \
 '-h[Prints help information]' \
@@ -64,6 +64,7 @@ _arguments "${_arguments_options[@]}" \
 '--import-map=[Load import map file]' \
 '-c+[Load configuration file]' \
 '--config=[Load configuration file]' \
+'--no-check=[Skip type checking modules]' \
 '-r+[Reload source code cache (recompile TypeScript)]' \
 '--reload=[Reload source code cache (recompile TypeScript)]' \
 '--lock=[Check the specified lock file]' \
@@ -71,7 +72,6 @@ _arguments "${_arguments_options[@]}" \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
 '--no-remote[Do not resolve remote modules]' \
-'--no-check[Skip type checking modules]' \
 '--lock-write[Write lock file (use with --lock)]' \
 '-h[Prints help information]' \
 '--help[Prints help information]' \
@@ -88,6 +88,7 @@ _arguments "${_arguments_options[@]}" \
 '--import-map=[Load import map file]' \
 '-c+[Load configuration file]' \
 '--config=[Load configuration file]' \
+'--no-check=[Skip type checking modules]' \
 '-r+[Reload source code cache (recompile TypeScript)]' \
 '--reload=[Reload source code cache (recompile TypeScript)]' \
 '--lock=[Check the specified lock file]' \
@@ -108,7 +109,6 @@ _arguments "${_arguments_options[@]}" \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
 '--no-remote[Do not resolve remote modules]' \
-'--no-check[Skip type checking modules]' \
 '--lock-write[Write lock file (use with --lock)]' \
 '--allow-hrtime[Allow high resolution time measurement]' \
 '-A[Allow all permissions]' \
@@ -184,6 +184,7 @@ _arguments "${_arguments_options[@]}" \
 '--import-map=[Load import map file]' \
 '-c+[Load configuration file]' \
 '--config=[Load configuration file]' \
+'--no-check=[Skip type checking modules]' \
 '-r+[Reload source code cache (recompile TypeScript)]' \
 '--reload=[Reload source code cache (recompile TypeScript)]' \
 '--lock=[Check the specified lock file]' \
@@ -197,7 +198,6 @@ _arguments "${_arguments_options[@]}" \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
 '--no-remote[Do not resolve remote modules]' \
-'--no-check[Skip type checking modules]' \
 '--lock-write[Write lock file (use with --lock)]' \
 '--cached-only[Require that remote dependencies are already cached]' \
 '--enable-testing-features-do-not-use[INTERNAL: Enable internal features used during integration testing]' \
@@ -247,10 +247,10 @@ _arguments "${_arguments_options[@]}" \
 '--reload=[Reload source code cache (recompile TypeScript)]' \
 '--cert=[Load certificate authority from PEM encoded file]' \
 '--location=[Show files used for origin bound APIs like the Web Storage API when running a script with '\''--location=<HREF>'\'']' \
+'--no-check=[Skip type checking modules]' \
 '--import-map=[Load import map file]' \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
-'--no-check[Skip type checking modules]' \
 '--json[UNSTABLE: Outputs the information in JSON format]' \
 '-h[Prints help information]' \
 '--help[Prints help information]' \
@@ -267,6 +267,7 @@ _arguments "${_arguments_options[@]}" \
 '--import-map=[Load import map file]' \
 '-c+[Load configuration file]' \
 '--config=[Load configuration file]' \
+'--no-check=[Skip type checking modules]' \
 '-r+[Reload source code cache (recompile TypeScript)]' \
 '--reload=[Reload source code cache (recompile TypeScript)]' \
 '--lock=[Check the specified lock file]' \
@@ -289,7 +290,6 @@ _arguments "${_arguments_options[@]}" \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
 '--no-remote[Do not resolve remote modules]' \
-'--no-check[Skip type checking modules]' \
 '--lock-write[Write lock file (use with --lock)]' \
 '--allow-hrtime[Allow high resolution time measurement]' \
 '-A[Allow all permissions]' \
@@ -366,6 +366,7 @@ _arguments "${_arguments_options[@]}" \
 '--import-map=[Load import map file]' \
 '-c+[Load configuration file]' \
 '--config=[Load configuration file]' \
+'--no-check=[Skip type checking modules]' \
 '-r+[Reload source code cache (recompile TypeScript)]' \
 '--reload=[Reload source code cache (recompile TypeScript)]' \
 '--lock=[Check the specified lock file]' \
@@ -376,10 +377,10 @@ _arguments "${_arguments_options[@]}" \
 '--v8-flags=[Set V8 command line options (for help: --v8-flags=--help)]' \
 '--seed=[Seed Math.random()]' \
 '--eval=[Evaluates the provided code when the REPL starts.]' \
+'--unsafely-ignore-certificate-errors=[DANGER: Disables verification of TLS certificates]' \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
 '--no-remote[Do not resolve remote modules]' \
-'--no-check[Skip type checking modules]' \
 '--lock-write[Write lock file (use with --lock)]' \
 '--cached-only[Require that remote dependencies are already cached]' \
 '--enable-testing-features-do-not-use[INTERNAL: Enable internal features used during integration testing]' \
@@ -398,6 +399,7 @@ _arguments "${_arguments_options[@]}" \
 '--import-map=[Load import map file]' \
 '-c+[Load configuration file]' \
 '--config=[Load configuration file]' \
+'--no-check=[Skip type checking modules]' \
 '-r+[Reload source code cache (recompile TypeScript)]' \
 '--reload=[Reload source code cache (recompile TypeScript)]' \
 '--lock=[Check the specified lock file]' \
@@ -414,10 +416,10 @@ _arguments "${_arguments_options[@]}" \
 '--location=[Value of '\''globalThis.location'\'' used by some web APIs]' \
 '--v8-flags=[Set V8 command line options (for help: --v8-flags=--help)]' \
 '--seed=[Seed Math.random()]' \
+'(--inspect --inspect-brk)--watch=[UNSTABLE: Watch for file changes and restart process automatically]' \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
 '--no-remote[Do not resolve remote modules]' \
-'--no-check[Skip type checking modules]' \
 '--lock-write[Write lock file (use with --lock)]' \
 '--allow-hrtime[Allow high resolution time measurement]' \
 '-A[Allow all permissions]' \
@@ -426,7 +428,6 @@ _arguments "${_arguments_options[@]}" \
 '--cached-only[Require that remote dependencies are already cached]' \
 '--enable-testing-features-do-not-use[INTERNAL: Enable internal features used during integration testing]' \
 '--compat[Node compatibility mode. Currently only enables built-in node modules like '\''fs'\'' and globals like '\''process'\''.]' \
-'(--inspect --inspect-brk)--watch[UNSTABLE: Watch for file changes and restart process automatically]' \
 '-h[Prints help information]' \
 '--help[Prints help information]' \
 '-V[Prints version information]' \
@@ -442,6 +443,7 @@ _arguments "${_arguments_options[@]}" \
 '--import-map=[Load import map file]' \
 '-c+[Load configuration file]' \
 '--config=[Load configuration file]' \
+'--no-check=[Skip type checking modules]' \
 '-r+[Reload source code cache (recompile TypeScript)]' \
 '--reload=[Reload source code cache (recompile TypeScript)]' \
 '--lock=[Check the specified lock file]' \
@@ -468,7 +470,6 @@ _arguments "${_arguments_options[@]}" \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
 '--no-remote[Do not resolve remote modules]' \
-'--no-check[Skip type checking modules]' \
 '--lock-write[Write lock file (use with --lock)]' \
 '--allow-hrtime[Allow high resolution time measurement]' \
 '-A[Allow all permissions]' \
