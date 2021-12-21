@@ -38,6 +38,7 @@ brew_packages=(
     
     ack
     ag
+    android-platform-tools
     applesimutils
     aws-iam-authenticator aws-sam-cli
     awscli
