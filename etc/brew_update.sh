@@ -168,6 +168,7 @@ brew_cask_packages=(
     microsoft-edge
     ngrok
     obs obs-ndi
+    onedrive
     outline-manager
     postman
     powershell
