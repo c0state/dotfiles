@@ -1,3 +1,12 @@
+function download_all_user_repos
+  set GITHUB_USER $argv[1]
+  set API_URL "https://api.github.com/users/$GITHUB_USER/repos"
+
+  for url in (curl -s $API_URL | jq -r '.[].html_url')
+    git clone $url $GITHUB_USER/(string match -r '.*\/(.*)' "$url" | tail -n 1)
+  end
+end
+
 function google_chrome_no_security
     open -na Google\ Chrome --args --user-data-dir=/tmp/temporary-chrome-profile-dir \
         --disable-web-security --disable-site-isolation-trials

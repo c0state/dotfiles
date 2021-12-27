@@ -1,3 +1,12 @@
+function download_all_user_repos {
+  API_URL="https://api.github.com/users/$1/repos"
+  for url in $(curl -s $API_URL | jq -r '.[].html_url')
+
+  do
+    git clone $url $1/${url##*/}
+  done
+}
+
 function get_process_for_port {
     if [[ -z $1 ]]; then
         echo "Please specify port to check"
