@@ -167,9 +167,9 @@ brew_cask_packages=(
     lens
     libreoffice
     microsoft-edge
+    microsoft-office
     ngrok
     obs obs-ndi
-    onedrive
     outline-manager
     postman
     powershell
