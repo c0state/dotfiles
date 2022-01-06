@@ -148,7 +148,6 @@ brew_cask_packages=(
     flutter
     flux
     font-hack-nerd-font
-    genymotion
     gimp
     github
     gitkraken
