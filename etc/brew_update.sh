@@ -6,7 +6,7 @@ IS_MACOS_ARM=$(uname -a | grep -i "darwin.*arm64" || echo "")
 
 #---------- check python version
 
-if ! pyenv version | grep system; then
+if which pyenv && ! (pyenv version | grep system); then
     echo "Change to system python when running this script"
     exit 1
 fi
