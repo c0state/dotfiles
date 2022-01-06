@@ -209,7 +209,7 @@ brew completions link
 
 #---------- Intel only packages ----------
 
-if [[ -z IS_MACOS_ARM ]]; then
+if [[ -z $IS_MACOS_ARM ]]; then
     brew install --cask intel-haxm
 fi
 
