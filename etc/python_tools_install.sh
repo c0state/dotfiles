@@ -3,7 +3,7 @@
 set -eux
 
 if [[ ! -e "$HOME/.pyenv" ]]; then
-    curl --tls-max default --location https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
+    curl -sSL https://install.python-poetry.org | python3 -
     export PYENV_ROOT="$HOME/.pyenv"
     export PATH="$PYENV_ROOT/bin:$PATH"
     eval "$(pyenv init --path)"
