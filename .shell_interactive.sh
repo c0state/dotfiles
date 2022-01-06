@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 #----- detect platform
 PLATFORM=$(uname)
 IS_MACOS_ARM=$(uname -a | grep -i "darwin.*arm64" || echo "")
@@ -12,11 +14,11 @@ export EDITOR=vim
 #----- misc settings
 export REPORTTIME=3
 
-source $HOME/.shell_aliases
+source "$HOME"/.shell_aliases
 
 #----- set based on platform (Linux or OS X)
 if [[ $PLATFORM == 'Darwin' ]]; then
-  if [[ -n $IS_MACOS_ARM ]]; then
+  if [[ ! -z $IS_MACOS_ARM ]]; then
     eval $(/opt/homebrew/bin/brew shellenv)
   else
     eval $(/usr/local/Homebrew/bin/brew shellenv)
@@ -91,6 +93,9 @@ fi
 
 export PATH=$PATH:$(python -m site --user-base)/bin
 export PATH="$PATH:$HOME/.poetry/bin"
+if [[ ! -z $IS_MACOS_ARM ]]; then
+    export PATH="$PATH:$HOME/Library/Python/3.9/bin"
+fi
 
 eval "$(register-python-argcomplete pipx)"
 
