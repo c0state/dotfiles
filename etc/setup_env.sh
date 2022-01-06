@@ -5,7 +5,6 @@ set -eux
 # ---------- shared variables
 
 PLATFORM=$(uname)
-MACH_TYPE=$(uname -m)
 DPKG_ARCH=$(dpkg --print-architecture 2>/dev/null || echo "")
 IS_WSL=$(uname -a | grep -i microsoft || echo "")
 
@@ -16,6 +15,8 @@ if [[ ! -d /usr/local/bin ]]; then
     sudo chown "$USER" /usr/local/bin
     sudo chgrp staff /usr/local/bin
 fi
+
+mkdir -p "$HOME"/.local/bin
 
 DOTFILES=".bash_functions .bash_profile .bashrc .editorconfig .gitconfig-base .gdbinit .ideavimrc .inputrc .itermocil .mrxvtrc .oh-my-zsh-custom .screenrc .shell_aliases .shell_aliases.fish .shell_functions .shell_functions.fish .shell_interactive.sh .studioforkdb .tmux.conf .toprc .vimrc .xemacs .zsh_functions .zshrc"
 
