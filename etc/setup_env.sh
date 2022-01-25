@@ -44,7 +44,7 @@ fi
 
 # ---------- set up prompt
 
-curl -fsSL https://raw.githubusercontent.com/starship/starship/master/install/install.sh | bash -s -- --yes --bin-dir "$HOME"/.local/bin
+curl -fsSL https://raw.githubusercontent.com/starship/starship/master/install/install.sh | sh -s -- --yes --bin-dir "$HOME"/.local/bin
 
 # ---------- set up ohmyzsh
 
