@@ -34,7 +34,7 @@ which cookiecutter || pipx install cookiecutter
 which csvformat || pipx install csvkit
 which cwl-runner || pipx install cwlref-runner
 which cwltool || pipx install cwltool
-which dbt || pipx install --include-deps dbt
+which dbt || pipx install --include-deps dbt-core
 which git-dmb || pipx install git-delete-merged-branches
 which howdoi || pipx install howdoi
 which http || pipx install httpie
