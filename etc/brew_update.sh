@@ -67,6 +67,7 @@ brew_packages=(
     fzf
     gh git git-delta git-extras git-lfs legit
     glances
+    helm
     htop
     hub
     imagemagick
