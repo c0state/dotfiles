@@ -9,6 +9,7 @@ winget install --id atlassian.sourcetree
 winget install --id audacity.audacity
 winget install --id balena.etcher
 winget install --id cpuid.cpu-z
+winget install --id cpuid.hwmonitor
 winget install --id discord.discord
 winget install --id docker.dockerdesktop
 winget install --id faststone.viewer
@@ -33,6 +34,8 @@ winget install --id randyrants.sharpkeys
 winget install --id rufus.rufus
 winget install --id slacktechnologies.slack
 winget install --id teamviewer.teamviewer
+winget install --id techpowerup.gpu-z
+winget install --id valve.steam
 winget install --id videolan.vlc
 winget install --id whatsapp.whatsapp
 winget install --id windirstat.windirstat
