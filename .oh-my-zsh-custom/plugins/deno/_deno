@@ -48,6 +48,7 @@ _arguments "${_arguments_options[@]}" \
 '--no-remote[Do not resolve remote modules]' \
 '--lock-write[Write lock file (use with --lock)]' \
 '--watch[UNSTABLE: Watch for file changes and restart process automatically]' \
+'--no-clear-screen[Do not clear terminal screen when under watch mode]' \
 '-h[Print help information]' \
 '--help[Print help information]' \
 '--unstable[Enable unstable features and APIs]' \
@@ -109,7 +110,8 @@ _arguments "${_arguments_options[@]}" \
 '--allow-hrtime[Allow high resolution time measurement]' \
 '-A[Allow all permissions]' \
 '--allow-all[Allow all permissions]' \
-'--prompt[Fallback to prompt if required permission wasn'\''t passed]' \
+'--prompt[deprecated: Fallback to prompt if required permission wasn'\''t passed]' \
+'--no-prompt[Always throw if required permission wasn'\''t passed]' \
 '--cached-only[Require that remote dependencies are already cached]' \
 '--enable-testing-features-do-not-use[INTERNAL: Enable internal features used during integration testing]' \
 '--compat[Node compatibility mode. Currently only enables built-in node modules like '\''fs'\'' and globals like '\''process'\''.]' \
@@ -138,6 +140,7 @@ _arguments "${_arguments_options[@]}" \
 '--ignore=[Ignore coverage files]: : ' \
 '*--include=[Include source files in the report]:regex: ' \
 '*--exclude=[Exclude source files from the report]:regex: ' \
+'--output=[Output file (defaults to stdout) for lcov]: : ' \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
 '--lcov[Output coverage report in lcov format]' \
@@ -215,6 +218,7 @@ _arguments "${_arguments_options[@]}" \
 '--log-level=[Set log level]: :(debug info)' \
 '--check[Check if the source files are formatted]' \
 '--watch[UNSTABLE: Watch for file changes and restart process automatically]' \
+'--no-clear-screen[Do not clear terminal screen when under watch mode]' \
 '--options-use-tabs[Use tabs instead of spaces for indentation. Defaults to false.]' \
 '--options-single-quote[Use single quotes. Defaults to false.]' \
 '-h[Print help information]' \
@@ -276,7 +280,8 @@ _arguments "${_arguments_options[@]}" \
 '--allow-hrtime[Allow high resolution time measurement]' \
 '-A[Allow all permissions]' \
 '--allow-all[Allow all permissions]' \
-'--prompt[Fallback to prompt if required permission wasn'\''t passed]' \
+'--prompt[deprecated: Fallback to prompt if required permission wasn'\''t passed]' \
+'--no-prompt[Always throw if required permission wasn'\''t passed]' \
 '--cached-only[Require that remote dependencies are already cached]' \
 '--enable-testing-features-do-not-use[INTERNAL: Enable internal features used during integration testing]' \
 '--compat[Node compatibility mode. Currently only enables built-in node modules like '\''fs'\'' and globals like '\''process'\''.]' \
@@ -327,6 +332,7 @@ _arguments "${_arguments_options[@]}" \
 '--rules[List available rules]' \
 '--json[Output lint result in JSON format]' \
 '--watch[UNSTABLE: Watch for file changes and restart process automatically]' \
+'--no-clear-screen[Do not clear terminal screen when under watch mode]' \
 '-h[Print help information]' \
 '--help[Print help information]' \
 '--unstable[Enable unstable features and APIs]' \
@@ -396,10 +402,12 @@ _arguments "${_arguments_options[@]}" \
 '--allow-hrtime[Allow high resolution time measurement]' \
 '-A[Allow all permissions]' \
 '--allow-all[Allow all permissions]' \
-'--prompt[Fallback to prompt if required permission wasn'\''t passed]' \
+'--prompt[deprecated: Fallback to prompt if required permission wasn'\''t passed]' \
+'--no-prompt[Always throw if required permission wasn'\''t passed]' \
 '--cached-only[Require that remote dependencies are already cached]' \
 '--enable-testing-features-do-not-use[INTERNAL: Enable internal features used during integration testing]' \
 '--compat[Node compatibility mode. Currently only enables built-in node modules like '\''fs'\'' and globals like '\''process'\''.]' \
+'--no-clear-screen[Do not clear terminal screen when under watch mode]' \
 '-h[Print help information]' \
 '--help[Print help information]' \
 '--unstable[Enable unstable features and APIs]' \
@@ -444,7 +452,8 @@ _arguments "${_arguments_options[@]}" \
 '--allow-hrtime[Allow high resolution time measurement]' \
 '-A[Allow all permissions]' \
 '--allow-all[Allow all permissions]' \
-'--prompt[Fallback to prompt if required permission wasn'\''t passed]' \
+'--prompt[deprecated: Fallback to prompt if required permission wasn'\''t passed]' \
+'--no-prompt[Always throw if required permission wasn'\''t passed]' \
 '--cached-only[Require that remote dependencies are already cached]' \
 '--enable-testing-features-do-not-use[INTERNAL: Enable internal features used during integration testing]' \
 '--compat[Node compatibility mode. Currently only enables built-in node modules like '\''fs'\'' and globals like '\''process'\''.]' \
@@ -452,6 +461,7 @@ _arguments "${_arguments_options[@]}" \
 '--doc[UNSTABLE: type check code blocks]' \
 '--allow-none[Don'\''t return error code if no test files are found]' \
 '(--no-run --coverage)--watch[UNSTABLE: Watch for file changes and restart process automatically]' \
+'--no-clear-screen[Do not clear terminal screen when under watch mode]' \
 '-h[Print help information]' \
 '--help[Print help information]' \
 '--unstable[Enable unstable features and APIs]' \
@@ -490,6 +500,28 @@ _arguments "${_arguments_options[@]}" \
 '--quiet[Suppress diagnostic output]' \
 && ret=0
 ;;
+(vendor)
+_arguments "${_arguments_options[@]}" \
+'--output=[The directory to output the vendored modules to]: : ' \
+'-c+[Load configuration file]:FILE: ' \
+'--config=[Load configuration file]:FILE: ' \
+'--import-map=[Load import map file]:FILE: ' \
+'--lock=[Check the specified lock file]:FILE: ' \
+'-r+[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST: ' \
+'--reload=[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST: ' \
+'--cert=[Load certificate authority from PEM encoded file]:FILE: ' \
+'-L+[Set log level]: :(debug info)' \
+'--log-level=[Set log level]: :(debug info)' \
+'-f[Forcefully overwrite conflicting files in existing output directory]' \
+'--force[Forcefully overwrite conflicting files in existing output directory]' \
+'-h[Print help information]' \
+'--help[Print help information]' \
+'--unstable[Enable unstable features and APIs]' \
+'-q[Suppress diagnostic output]' \
+'--quiet[Suppress diagnostic output]' \
+'*::specifiers:' \
+&& ret=0
+;;
 (help)
 _arguments "${_arguments_options[@]}" \
 '-L+[Set log level]: :(debug info)' \
@@ -525,6 +557,7 @@ _deno_commands() {
 'test:Run tests' \
 'types:Print runtime TypeScript declarations' \
 'upgrade:Upgrade deno executable to given version' \
+'vendor:Vendor remote modules into a local directory' \
 'help:Print this message or the help of the given subcommand(s)' \
     )
     _describe -t commands 'deno commands' commands "$@"
@@ -623,6 +656,11 @@ _deno__uninstall_commands() {
 _deno__upgrade_commands() {
     local commands; commands=()
     _describe -t commands 'deno upgrade commands' commands "$@"
+}
+(( $+functions[_deno__vendor_commands] )) ||
+_deno__vendor_commands() {
+    local commands; commands=()
+    _describe -t commands 'deno vendor commands' commands "$@"
 }
 
 _deno "$@"
