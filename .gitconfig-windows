@@ -1,3 +1,5 @@
+[core]
+	fileMode = false
 [include]
 	path = .gitconfig-base
 [diff]
