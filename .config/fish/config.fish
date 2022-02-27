@@ -57,6 +57,9 @@ set -gx PATH "$HOME/.local/go/bin" "$GOPATH/bin" $PATH
 #----- chia crypto
 set -gx PATH $PATH "/Applications/Chia.app/Contents/Resources/app.asar.unpacked/daemon"
 
+#----- kubectl krew
+set -gx PATH $PATH $HOME/.krew/bin
+
 #---------- keychain agent
 
 if type -q keychain
