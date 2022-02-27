@@ -3,14 +3,14 @@
 [credential]
 	helper = osxkeychain
 [difftool "bc4"]
-	cmd = /usr/local/bin/bcomp \"$LOCAL\" \"$REMOTE\"
+	cmd = /opt/homebrew/bin/bcomp \"$LOCAL\" \"$REMOTE\"
 	trustExitCode = true
 [difftool "sourcetree"]
-	cmd = /usr/local/bin/bcomp \"$LOCAL\" \"$REMOTE\"
+	cmd = /opt/homebrew/bin/bcomp \"$LOCAL\" \"$REMOTE\"
 	path = -ro
 [mergetool "bc4"]
-	cmd = /usr/local/bin/bcomp \"$REMOTE\" \"$LOCAL\" \"$BASE\" \"$MERGED\"
+	cmd = /opt/homebrew/bin/bcomp \"$REMOTE\" \"$LOCAL\" \"$BASE\" \"$MERGED\"
 	trustExitCode = true
 [mergetool "sourcetree"]
-	cmd = /usr/local/bin/bcomp \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
+	cmd = /opt/homebrew/bin/bcomp \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
 	trustExitCode = true
