@@ -109,6 +109,9 @@ export DOCKER_BUILDKIT=1
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
+#----- kubectl krew
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
 #----- keychain agent
 if command -v keychain 1>/dev/null 2>&1; then
     if [[ -z $SSH_AGENT_PID ]]; then
