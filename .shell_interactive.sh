@@ -121,5 +121,5 @@ if command -v keychain 1>/dev/null 2>&1; then
 fi
 
 #----- source any custom shell configuration
-[[ -f $HOME/.shellrc_custom ]] && source $HOME/.shellrc_custom
+[[ -f $HOME/.shellrc_custom.sh ]] && source $HOME/.shellrc_custom.sh
 
