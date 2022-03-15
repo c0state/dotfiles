@@ -42,6 +42,7 @@ which http || pipx install httpie
 which ipython || pipx install ipython
 which markdown_py || pipx install markdown
 which mypy || pipx install mypy
+which pgcli || pipx install pgcli
 which pipenv || pipx install pipenv
 which pip-compile || pipx install pip-tools
 which pre-commit || pipx install pre-commit
