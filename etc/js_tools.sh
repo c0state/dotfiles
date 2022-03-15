@@ -1,4 +1,4 @@
-#!/usr/bin/env -S bash -i
+#!/usr/bin/env bash
 
 set -eux
 
