@@ -31,7 +31,7 @@ winget install --id mozilla.firefox
 winget install --id obsproject.obsstudio
 winget install --id raspberrypifoundation.raspberrypiimager
 winget install --id randyrants.sharpkeys
-winget install --id rufus.rufus
+winget install --name rufus --source msstore
 winget install --id slacktechnologies.slack
 winget install --id teamviewer.teamviewer
 winget install --id techpowerup.gpu-z
