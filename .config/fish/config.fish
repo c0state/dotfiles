@@ -64,7 +64,7 @@ set -gx PATH $PATH $HOME/.krew/bin
 
 if type -q keychain
     # keychain doesn't work in fish
-    sh -c 'eval $(keychain --eval --quiet)'
+    eval (keychain --eval --quiet)
 end
 
 #---------- gcloud
