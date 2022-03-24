@@ -92,7 +92,7 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv virtualenv-init -)"
 fi
 
-export PATH=$PATH:$(python -m site --user-base)/bin
+export PATH=$PATH:$(python3 -m site --user-base)/bin
 export PATH="$PATH:$HOME/.poetry/bin"
 if [[ ! -z $IS_MACOS_ARM ]]; then
     export PATH="$PATH:$HOME/Library/Python/3.9/bin"
