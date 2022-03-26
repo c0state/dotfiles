@@ -15,11 +15,12 @@ fi
 
 # add taps
 brew tap aws/tap
+brew tap homebrew/autoupdate
 brew tap homebrew/cask-fonts
 brew tap homebrew/cask-versions
 brew tap wix/brew
 
-brew update && brew upgrade --greedy-auto-updates
+brew update && brew upgrade
 
 #---------- high level dependencies ----------
 
@@ -213,6 +214,10 @@ brew completions link
 if [[ -z $IS_MACOS_ARM ]]; then
     brew install --cask intel-haxm
 fi
+
+#---------- Configure auto updater ----------
+
+brew autoupdate start
 
 #---------- Cleanup ----------
 
