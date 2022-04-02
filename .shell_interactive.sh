@@ -114,7 +114,9 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 #----- keychain agent
-eval $(keychain --eval --quiet)
+if command -v keychain > /dev/null; then
+    eval "$(keychain --eval --quiet)"
+fi
 
 #----- source any custom shell configuration
 [[ -f $HOME/.shellrc_custom.sh ]] && source $HOME/.shellrc_custom.sh
