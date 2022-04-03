@@ -18,6 +18,7 @@
   set shiftwidth=4
   set showmatch
   set pastetoggle=<F2>
+  set termguicolors
 "-----
 
 "----- vim-plug https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
@@ -28,7 +29,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/bundle')
-"----- vim-plug end
+"----- vim-plug
 
 "----- Vim Bundles
   Plug 'editorconfig/editorconfig-vim'
