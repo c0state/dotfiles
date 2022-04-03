@@ -2,6 +2,8 @@
 
 set -e
 
+sudo add-apt-repository --yes ppa:neovim-ppa/stable
+
 sudo apt-get update
 
 #----- install utility packages
