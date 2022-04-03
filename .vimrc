@@ -92,7 +92,6 @@ call plug#begin('~/.vim/bundle')
   Plug 'majutsushi/tagbar'
   Plug 'mileszs/ack.vim'
   Plug 'sjl/gundo.vim'
-  Plug 'tomasr/molokai'
   Plug 'vim-scripts/sessionman.vim'
   Plug 'vim-scripts/ZoomWin'
 "-----
@@ -106,7 +105,7 @@ call plug#begin('~/.vim/bundle')
 "-----
 
 "----- Color schemes
-  Plug 'flazz/vim-colorschemes'
+  Plug 'dracula/vim', { 'as': 'dracula' }
 "-----
 
 "----- NERDTree
@@ -232,7 +231,7 @@ execute WatchForChanges("*",autoreadargs)
 "----- Activate color scheme and highlighting options
   syntax enable
   syntax on
-  colorscheme Tomorrow-Night-Bright
+  colorscheme dracula
 "-----
 
 "----- Custom Key Mappings
