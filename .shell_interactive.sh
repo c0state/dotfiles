@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+export SHELL=$(which bash)
+
 #----- detect platform
 PLATFORM=$(uname)
 IS_MACOS_ARM=$(uname -a | grep -i "darwin.*arm64" || echo "")
@@ -26,6 +28,14 @@ if [[ $PLATFORM == 'Darwin' ]]; then
 fi 
 
 #----- node config
+
+# linuxbrew
+export HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew";
+export HOMEBREW_CELLAR="/home/linuxbrew/.linuxbrew/Cellar";
+export HOMEBREW_REPOSITORY="/home/linuxbrew/.linuxbrew/Homebrew";
+export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin${PATH+:$PATH}";
+export MANPATH="/home/linuxbrew/.linuxbrew/share/man${MANPATH+:$MANPATH}:";
+export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:${INFOPATH:-}";
 
 # add yarn global bin path
 if [[ -e "$HOME/.yarn/bin" ]]; then
