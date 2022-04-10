@@ -217,7 +217,7 @@ fi
 
 #---------- Configure auto updater ----------
 
-brew autoupdate start --cleanup || true
+brew autoupdate delete && brew autoupdate start --cleanup
 
 #---------- Cleanup ----------
 
