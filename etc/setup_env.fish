@@ -28,9 +28,3 @@ register-python-argcomplete --shell fish pipx > "$HOME"/.config/fish/completions
 
 curl https://raw.githubusercontent.com/docker/cli/master/contrib/completion/fish/docker.fish --output "$HOME"/.config/fish/completions/docker.fish
 
-#---------- kubectl completions
-
-mkdir -p "$HOME"/.config/fish/completions
-curl --location --output "$HOME"/.config/fish/completions/kubectl.fish \
-    https://raw.githubusercontent.com/evanlucas/fish-kubectl-completions/master/completions/kubectl.fish
-

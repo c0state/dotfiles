@@ -68,6 +68,13 @@ set -gx PATH $PATH "/Applications/Chia.app/Contents/Resources/app.asar.unpacked/
 #----- kubectl krew
 set -gx PATH $PATH $HOME/.krew/bin
 
+#---------- kubectl
+
+#----- completions
+if type -q kubectl
+    kubectl completion fish | source
+end
+
 #---------- keychain agent
 
 if type -q keychain
