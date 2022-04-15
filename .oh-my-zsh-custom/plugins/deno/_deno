@@ -36,8 +36,8 @@ _deno() {
             (bench)
 _arguments "${_arguments_options[@]}" \
 '--import-map=[Load import map file]:FILE:_files' \
-'-c+[Load configuration file]:FILE:_files' \
-'--config=[Load configuration file]:FILE:_files' \
+'-c+[Specify the configuration file]:FILE:_files' \
+'--config=[Specify the configuration file]:FILE:_files' \
 '--no-check=[Skip type checking modules]:NO_CHECK_TYPE: ' \
 '-r+[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--reload=[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
@@ -51,8 +51,8 @@ _arguments "${_arguments_options[@]}" \
 '--allow-run=[Allow running subprocesses]: : ' \
 '--allow-ffi=[Allow loading dynamic libraries]: :_files' \
 '--location=[Value of '\''globalThis.location'\'' used by some web APIs]:HREF:_urls' \
-'--v8-flags=[Set V8 command line options (for help: --v8-flags=--help)]: : ' \
-'--seed=[Seed Math.random()]:NUMBER: ' \
+'--v8-flags=[Set V8 command line options]: : ' \
+'--seed=[Set the random number generator seed]:NUMBER: ' \
 '--ignore=[Ignore files]: : ' \
 '--filter=[Run benchmarks with this string or pattern in the bench name]: : ' \
 '-L+[Set log level]: :(debug info)' \
@@ -66,8 +66,8 @@ _arguments "${_arguments_options[@]}" \
 '--no-prompt[Always throw if required permission wasn'\''t passed]' \
 '--cached-only[Require that remote dependencies are already cached]' \
 '--enable-testing-features-do-not-use[INTERNAL: Enable internal features used during integration testing]' \
-'--compat[Node compatibility mode. Currently only enables built-in node modules like '\''fs'\'' and globals like '\''process'\''.]' \
-'--watch[UNSTABLE: Watch for file changes and restart process automatically]' \
+'--compat[UNSTABLE: Node compatibility mode.]' \
+'--watch[UNSTABLE: Watch for file changes and restart automatically]' \
 '--no-clear-screen[Do not clear terminal screen when under watch mode]' \
 '-h[Print help information]' \
 '--help[Print help information]' \
@@ -81,8 +81,8 @@ _arguments "${_arguments_options[@]}" \
 (bundle)
 _arguments "${_arguments_options[@]}" \
 '--import-map=[Load import map file]:FILE:_files' \
-'-c+[Load configuration file]:FILE:_files' \
-'--config=[Load configuration file]:FILE:_files' \
+'-c+[Specify the configuration file]:FILE:_files' \
+'--config=[Specify the configuration file]:FILE:_files' \
 '--no-check=[Skip type checking modules]:NO_CHECK_TYPE: ' \
 '-r+[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--reload=[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
@@ -92,7 +92,7 @@ _arguments "${_arguments_options[@]}" \
 '--log-level=[Set log level]: :(debug info)' \
 '--no-remote[Do not resolve remote modules]' \
 '--lock-write[Write lock file (use with --lock)]' \
-'--watch[UNSTABLE: Watch for file changes and restart process automatically]' \
+'--watch[UNSTABLE: Watch for file changes and restart automatically]' \
 '--no-clear-screen[Do not clear terminal screen when under watch mode]' \
 '-h[Print help information]' \
 '--help[Print help information]' \
@@ -106,8 +106,8 @@ _arguments "${_arguments_options[@]}" \
 (cache)
 _arguments "${_arguments_options[@]}" \
 '--import-map=[Load import map file]:FILE:_files' \
-'-c+[Load configuration file]:FILE:_files' \
-'--config=[Load configuration file]:FILE:_files' \
+'-c+[Specify the configuration file]:FILE:_files' \
+'--config=[Specify the configuration file]:FILE:_files' \
 '--no-check=[Skip type checking modules]:NO_CHECK_TYPE: ' \
 '-r+[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--reload=[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
@@ -128,8 +128,8 @@ _arguments "${_arguments_options[@]}" \
 (compile)
 _arguments "${_arguments_options[@]}" \
 '--import-map=[Load import map file]:FILE:_files' \
-'-c+[Load configuration file]:FILE:_files' \
-'--config=[Load configuration file]:FILE:_files' \
+'-c+[Specify the configuration file]:FILE:_files' \
+'--config=[Specify the configuration file]:FILE:_files' \
 '--no-check=[Skip type checking modules]:NO_CHECK_TYPE: ' \
 '-r+[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--reload=[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
@@ -143,8 +143,8 @@ _arguments "${_arguments_options[@]}" \
 '--allow-run=[Allow running subprocesses]: : ' \
 '--allow-ffi=[Allow loading dynamic libraries]: :_files' \
 '--location=[Value of '\''globalThis.location'\'' used by some web APIs]:HREF:_urls' \
-'--v8-flags=[Set V8 command line options (for help: --v8-flags=--help)]: : ' \
-'--seed=[Seed Math.random()]:NUMBER: ' \
+'--v8-flags=[Set V8 command line options]: : ' \
+'--seed=[Set the random number generator seed]:NUMBER: ' \
 '-o+[Output file (defaults to $PWD/<inferred-name>)]: :_files' \
 '--output=[Output file (defaults to $PWD/<inferred-name>)]: :_files' \
 '--target=[Target OS architecture]: :(x86_64-unknown-linux-gnu x86_64-pc-windows-msvc x86_64-apple-darwin aarch64-apple-darwin)' \
@@ -159,7 +159,7 @@ _arguments "${_arguments_options[@]}" \
 '--no-prompt[Always throw if required permission wasn'\''t passed]' \
 '--cached-only[Require that remote dependencies are already cached]' \
 '--enable-testing-features-do-not-use[INTERNAL: Enable internal features used during integration testing]' \
-'--compat[Node compatibility mode. Currently only enables built-in node modules like '\''fs'\'' and globals like '\''process'\''.]' \
+'--compat[UNSTABLE: Node compatibility mode.]' \
 '-h[Print help information]' \
 '--help[Print help information]' \
 '--unstable[Enable unstable features and APIs]' \
@@ -218,8 +218,8 @@ _arguments "${_arguments_options[@]}" \
 (eval)
 _arguments "${_arguments_options[@]}" \
 '--import-map=[Load import map file]:FILE:_files' \
-'-c+[Load configuration file]:FILE:_files' \
-'--config=[Load configuration file]:FILE:_files' \
+'-c+[Specify the configuration file]:FILE:_files' \
+'--config=[Specify the configuration file]:FILE:_files' \
 '--no-check=[Skip type checking modules]:NO_CHECK_TYPE: ' \
 '-r+[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--reload=[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
@@ -228,8 +228,8 @@ _arguments "${_arguments_options[@]}" \
 '--inspect=[Activate inspector on host:port (default: 127.0.0.1:9229)]:HOST:PORT: ' \
 '--inspect-brk=[Activate inspector on host:port and break at start of user script]:HOST:PORT: ' \
 '--location=[Value of '\''globalThis.location'\'' used by some web APIs]:HREF:_urls' \
-'--v8-flags=[Set V8 command line options (for help: --v8-flags=--help)]: : ' \
-'--seed=[Seed Math.random()]:NUMBER: ' \
+'--v8-flags=[Set V8 command line options]: : ' \
+'--seed=[Set the random number generator seed]:NUMBER: ' \
 '--ext=[Set standard input (stdin) content type]: :(ts tsx js jsx)' \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
@@ -237,7 +237,7 @@ _arguments "${_arguments_options[@]}" \
 '--lock-write[Write lock file (use with --lock)]' \
 '--cached-only[Require that remote dependencies are already cached]' \
 '--enable-testing-features-do-not-use[INTERNAL: Enable internal features used during integration testing]' \
-'--compat[Node compatibility mode. Currently only enables built-in node modules like '\''fs'\'' and globals like '\''process'\''.]' \
+'--compat[UNSTABLE: Node compatibility mode.]' \
 '-T[Treat eval input as TypeScript]' \
 '--ts[Treat eval input as TypeScript]' \
 '-p[print result to stdout]' \
@@ -252,8 +252,8 @@ _arguments "${_arguments_options[@]}" \
 ;;
 (fmt)
 _arguments "${_arguments_options[@]}" \
-'-c+[Load configuration file]:FILE:_files' \
-'--config=[Load configuration file]:FILE:_files' \
+'-c+[Specify the configuration file]:FILE:_files' \
+'--config=[Specify the configuration file]:FILE:_files' \
 '--ext=[Set standard input (stdin) content type]: :(ts tsx js jsx md json jsonc)' \
 '--ignore=[Ignore formatting particular source files]: :_files' \
 '--options-line-width=[Define maximum line width. Defaults to 80.]: : ' \
@@ -262,7 +262,7 @@ _arguments "${_arguments_options[@]}" \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
 '--check[Check if the source files are formatted]' \
-'--watch[UNSTABLE: Watch for file changes and restart process automatically]' \
+'--watch[UNSTABLE: Watch for file changes and restart automatically]' \
 '--no-clear-screen[Do not clear terminal screen when under watch mode]' \
 '--options-use-tabs[Use tabs instead of spaces for indentation. Defaults to false.]' \
 '--options-single-quote[Use single quotes. Defaults to false.]' \
@@ -296,8 +296,8 @@ _arguments "${_arguments_options[@]}" \
 (install)
 _arguments "${_arguments_options[@]}" \
 '--import-map=[Load import map file]:FILE:_files' \
-'-c+[Load configuration file]:FILE:_files' \
-'--config=[Load configuration file]:FILE:_files' \
+'-c+[Specify the configuration file]:FILE:_files' \
+'--config=[Specify the configuration file]:FILE:_files' \
 '--no-check=[Skip type checking modules]:NO_CHECK_TYPE: ' \
 '-r+[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--reload=[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
@@ -313,8 +313,8 @@ _arguments "${_arguments_options[@]}" \
 '--inspect=[Activate inspector on host:port (default: 127.0.0.1:9229)]:HOST:PORT: ' \
 '--inspect-brk=[Activate inspector on host:port and break at start of user script]:HOST:PORT: ' \
 '--location=[Value of '\''globalThis.location'\'' used by some web APIs]:HREF:_urls' \
-'--v8-flags=[Set V8 command line options (for help: --v8-flags=--help)]: : ' \
-'--seed=[Seed Math.random()]:NUMBER: ' \
+'--v8-flags=[Set V8 command line options]: : ' \
+'--seed=[Set the random number generator seed]:NUMBER: ' \
 '-n+[Executable file name]: : ' \
 '--name=[Executable file name]: : ' \
 '--root=[Installation root]: :_files -/' \
@@ -329,7 +329,7 @@ _arguments "${_arguments_options[@]}" \
 '--no-prompt[Always throw if required permission wasn'\''t passed]' \
 '--cached-only[Require that remote dependencies are already cached]' \
 '--enable-testing-features-do-not-use[INTERNAL: Enable internal features used during integration testing]' \
-'--compat[Node compatibility mode. Currently only enables built-in node modules like '\''fs'\'' and globals like '\''process'\''.]' \
+'--compat[UNSTABLE: Node compatibility mode.]' \
 '-f[Forcefully overwrite existing installation]' \
 '--force[Forcefully overwrite existing installation]' \
 '-h[Print help information]' \
@@ -369,14 +369,14 @@ _arguments "${_arguments_options[@]}" \
 '(--rules)--rules-tags=[Use set of rules with a tag]: : ' \
 '(--rules)--rules-include=[Include lint rules]: : ' \
 '(--rules)--rules-exclude=[Exclude lint rules]: : ' \
-'-c+[Load configuration file]:FILE:_files' \
-'--config=[Load configuration file]:FILE:_files' \
+'-c+[Specify the configuration file]:FILE:_files' \
+'--config=[Specify the configuration file]:FILE:_files' \
 '--ignore=[Ignore linting particular source files]: :_files' \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
 '--rules[List available rules]' \
 '--json[Output lint result in JSON format]' \
-'--watch[UNSTABLE: Watch for file changes and restart process automatically]' \
+'--watch[UNSTABLE: Watch for file changes and restart automatically]' \
 '--no-clear-screen[Do not clear terminal screen when under watch mode]' \
 '-h[Print help information]' \
 '--help[Print help information]' \
@@ -389,8 +389,8 @@ _arguments "${_arguments_options[@]}" \
 (repl)
 _arguments "${_arguments_options[@]}" \
 '--import-map=[Load import map file]:FILE:_files' \
-'-c+[Load configuration file]:FILE:_files' \
-'--config=[Load configuration file]:FILE:_files' \
+'-c+[Specify the configuration file]:FILE:_files' \
+'--config=[Specify the configuration file]:FILE:_files' \
 '--no-check=[Skip type checking modules]:NO_CHECK_TYPE: ' \
 '-r+[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--reload=[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
@@ -399,8 +399,8 @@ _arguments "${_arguments_options[@]}" \
 '--inspect=[Activate inspector on host:port (default: 127.0.0.1:9229)]:HOST:PORT: ' \
 '--inspect-brk=[Activate inspector on host:port and break at start of user script]:HOST:PORT: ' \
 '--location=[Value of '\''globalThis.location'\'' used by some web APIs]:HREF:_urls' \
-'--v8-flags=[Set V8 command line options (for help: --v8-flags=--help)]: : ' \
-'--seed=[Seed Math.random()]:NUMBER: ' \
+'--v8-flags=[Set V8 command line options]: : ' \
+'--seed=[Set the random number generator seed]:NUMBER: ' \
 '--eval=[Evaluates the provided code when the REPL starts.]:code: ' \
 '--unsafely-ignore-certificate-errors=[DANGER: Disables verification of TLS certificates]:HOSTNAMES: ' \
 '-L+[Set log level]: :(debug info)' \
@@ -409,7 +409,7 @@ _arguments "${_arguments_options[@]}" \
 '--lock-write[Write lock file (use with --lock)]' \
 '--cached-only[Require that remote dependencies are already cached]' \
 '--enable-testing-features-do-not-use[INTERNAL: Enable internal features used during integration testing]' \
-'--compat[Node compatibility mode. Currently only enables built-in node modules like '\''fs'\'' and globals like '\''process'\''.]' \
+'--compat[UNSTABLE: Node compatibility mode.]' \
 '-h[Print help information]' \
 '--help[Print help information]' \
 '--unstable[Enable unstable features and APIs]' \
@@ -420,8 +420,8 @@ _arguments "${_arguments_options[@]}" \
 (run)
 _arguments "${_arguments_options[@]}" \
 '--import-map=[Load import map file]:FILE:_files' \
-'-c+[Load configuration file]:FILE:_files' \
-'--config=[Load configuration file]:FILE:_files' \
+'-c+[Specify the configuration file]:FILE:_files' \
+'--config=[Specify the configuration file]:FILE:_files' \
 '--no-check=[Skip type checking modules]:NO_CHECK_TYPE: ' \
 '-r+[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--reload=[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
@@ -437,9 +437,9 @@ _arguments "${_arguments_options[@]}" \
 '--inspect=[Activate inspector on host:port (default: 127.0.0.1:9229)]:HOST:PORT: ' \
 '--inspect-brk=[Activate inspector on host:port and break at start of user script]:HOST:PORT: ' \
 '--location=[Value of '\''globalThis.location'\'' used by some web APIs]:HREF:_urls' \
-'--v8-flags=[Set V8 command line options (for help: --v8-flags=--help)]: : ' \
-'--seed=[Seed Math.random()]:NUMBER: ' \
-'(--inspect --inspect-brk)--watch=[UNSTABLE: Watch for file changes and restart process automatically]:FILES:_files' \
+'--v8-flags=[Set V8 command line options]: : ' \
+'--seed=[Set the random number generator seed]:NUMBER: ' \
+'(--inspect --inspect-brk)--watch=[UNSTABLE: Watch for file changes and restart automatically]:FILES:_files' \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
 '--no-remote[Do not resolve remote modules]' \
@@ -451,7 +451,7 @@ _arguments "${_arguments_options[@]}" \
 '--no-prompt[Always throw if required permission wasn'\''t passed]' \
 '--cached-only[Require that remote dependencies are already cached]' \
 '--enable-testing-features-do-not-use[INTERNAL: Enable internal features used during integration testing]' \
-'--compat[Node compatibility mode. Currently only enables built-in node modules like '\''fs'\'' and globals like '\''process'\''.]' \
+'--compat[UNSTABLE: Node compatibility mode.]' \
 '--no-clear-screen[Do not clear terminal screen when under watch mode]' \
 '-h[Print help information]' \
 '--help[Print help information]' \
@@ -463,8 +463,8 @@ _arguments "${_arguments_options[@]}" \
 ;;
 (task)
 _arguments "${_arguments_options[@]}" \
-'-c+[Load configuration file]:FILE:_files' \
-'--config=[Load configuration file]:FILE:_files' \
+'-c+[Specify the configuration file]:FILE:_files' \
+'--config=[Specify the configuration file]:FILE:_files' \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
 '-h[Print help information]' \
@@ -479,8 +479,8 @@ _arguments "${_arguments_options[@]}" \
 (test)
 _arguments "${_arguments_options[@]}" \
 '--import-map=[Load import map file]:FILE:_files' \
-'-c+[Load configuration file]:FILE:_files' \
-'--config=[Load configuration file]:FILE:_files' \
+'-c+[Specify the configuration file]:FILE:_files' \
+'--config=[Specify the configuration file]:FILE:_files' \
 '--no-check=[Skip type checking modules]:NO_CHECK_TYPE: ' \
 '-r+[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--reload=[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
@@ -496,8 +496,8 @@ _arguments "${_arguments_options[@]}" \
 '--inspect=[Activate inspector on host:port (default: 127.0.0.1:9229)]:HOST:PORT: ' \
 '--inspect-brk=[Activate inspector on host:port and break at start of user script]:HOST:PORT: ' \
 '--location=[Value of '\''globalThis.location'\'' used by some web APIs]:HREF:_urls' \
-'--v8-flags=[Set V8 command line options (for help: --v8-flags=--help)]: : ' \
-'--seed=[Seed Math.random()]:NUMBER: ' \
+'--v8-flags=[Set V8 command line options]: : ' \
+'--seed=[Set the random number generator seed]:NUMBER: ' \
 '--ignore=[Ignore files]: :_files' \
 '--fail-fast=[Stop after N errors. Defaults to stopping after first failure.]:N: ' \
 '--filter=[Run tests with this string or pattern in the test name]: : ' \
@@ -516,12 +516,12 @@ _arguments "${_arguments_options[@]}" \
 '--no-prompt[Always throw if required permission wasn'\''t passed]' \
 '--cached-only[Require that remote dependencies are already cached]' \
 '--enable-testing-features-do-not-use[INTERNAL: Enable internal features used during integration testing]' \
-'--compat[Node compatibility mode. Currently only enables built-in node modules like '\''fs'\'' and globals like '\''process'\''.]' \
+'--compat[UNSTABLE: Node compatibility mode.]' \
 '--no-run[Cache test modules, but don'\''t run tests]' \
 '--trace-ops[Enable tracing of async ops. Useful when debugging leaking ops in test, but impacts test execution time.]' \
 '--doc[UNSTABLE: type check code blocks]' \
 '--allow-none[Don'\''t return error code if no test files are found]' \
-'(--no-run --coverage)--watch[UNSTABLE: Watch for file changes and restart process automatically]' \
+'(--no-run --coverage)--watch[UNSTABLE: Watch for file changes and restart automatically]' \
 '--no-clear-screen[Do not clear terminal screen when under watch mode]' \
 '-h[Print help information]' \
 '--help[Print help information]' \
@@ -564,8 +564,8 @@ _arguments "${_arguments_options[@]}" \
 (vendor)
 _arguments "${_arguments_options[@]}" \
 '--output=[The directory to output the vendored modules to]: :_files -/' \
-'-c+[Load configuration file]:FILE:_files' \
-'--config=[Load configuration file]:FILE:_files' \
+'-c+[Specify the configuration file]:FILE:_files' \
+'--config=[Specify the configuration file]:FILE:_files' \
 '--import-map=[Load import map file]:FILE:_files' \
 '--lock=[Check the specified lock file]:FILE:_files' \
 '-r+[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
