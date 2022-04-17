@@ -4,6 +4,7 @@
 
 (cd "$HOME"/.dotfiles && git pullr --all)
 (cd "$HOME"/.dotfiles && git submodule update --init --recursive --remote)
+(cd "$HOME"/.dotfiles && git submodule foreach git pull origin master)
 
 #---------- update deno
 
