@@ -125,6 +125,28 @@ _arguments "${_arguments_options[@]}" \
 '*::file:_files' \
 && ret=0
 ;;
+(check)
+_arguments "${_arguments_options[@]}" \
+'--import-map=[Load import map file]:FILE:_files' \
+'-c+[Specify the configuration file]:FILE:_files' \
+'--config=[Specify the configuration file]:FILE:_files' \
+'-r+[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
+'--reload=[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
+'--lock=[Check the specified lock file]:FILE:_files' \
+'--cert=[Load certificate authority from PEM encoded file]:FILE:_files' \
+'-L+[Set log level]: :(debug info)' \
+'--log-level=[Set log level]: :(debug info)' \
+'--no-remote[Do not resolve remote modules]' \
+'--lock-write[Write lock file (use with --lock)]' \
+'--remote[Type-check all modules, including remote]' \
+'-h[Print help information]' \
+'--help[Print help information]' \
+'--unstable[Enable unstable features and APIs]' \
+'-q[Suppress diagnostic output]' \
+'--quiet[Suppress diagnostic output]' \
+'*::file:_files' \
+&& ret=0
+;;
 (compile)
 _arguments "${_arguments_options[@]}" \
 '--import-map=[Load import map file]:FILE:_files' \
@@ -401,6 +423,7 @@ _arguments "${_arguments_options[@]}" \
 '--location=[Value of '\''globalThis.location'\'' used by some web APIs]:HREF:_urls' \
 '--v8-flags=[Set V8 command line options]: : ' \
 '--seed=[Set the random number generator seed]:NUMBER: ' \
+'--eval-file=[Evaluates the provided file(s) as scripts when the REPL starts. Accepts file paths and URLs.]: :_files' \
 '--eval=[Evaluates the provided code when the REPL starts.]:code: ' \
 '--unsafely-ignore-certificate-errors=[DANGER: Disables verification of TLS certificates]:HOSTNAMES: ' \
 '-L+[Set log level]: :(debug info)' \
@@ -440,6 +463,7 @@ _arguments "${_arguments_options[@]}" \
 '--v8-flags=[Set V8 command line options]: : ' \
 '--seed=[Set the random number generator seed]:NUMBER: ' \
 '(--inspect --inspect-brk)--watch=[UNSTABLE: Watch for file changes and restart automatically]:FILES:_files' \
+'(--no-check)--check=[Type check modules]:CHECK_TYPE: ' \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
 '--no-remote[Do not resolve remote modules]' \
@@ -604,6 +628,7 @@ _deno_commands() {
 'bench:Run benchmarks' \
 'bundle:Bundle module and dependencies into single file' \
 'cache:Cache the dependencies' \
+'check:Type-check the dependencies' \
 'compile:UNSTABLE: Compile the script into a self contained executable' \
 'completions:Generate shell completions' \
 'coverage:Print coverage reports' \
@@ -640,6 +665,11 @@ _deno__bundle_commands() {
 _deno__cache_commands() {
     local commands; commands=()
     _describe -t commands 'deno cache commands' commands "$@"
+}
+(( $+functions[_deno__check_commands] )) ||
+_deno__check_commands() {
+    local commands; commands=()
+    _describe -t commands 'deno check commands' commands "$@"
 }
 (( $+functions[_deno__compile_commands] )) ||
 _deno__compile_commands() {
