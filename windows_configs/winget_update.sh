@@ -39,5 +39,6 @@ winget install --id valve.steam
 winget install --id videolan.vlc
 winget install --id whatsapp.whatsapp
 winget install --id windirstat.windirstat
+winget install --name "windows subsystem for linux preview" --source msstore
 winget install --id wireguard.wireguard
 winget install --id zoom.zoom
