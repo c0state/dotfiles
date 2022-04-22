@@ -35,6 +35,7 @@ winget install --name rufus --source msstore
 winget install --id slacktechnologies.slack
 winget install --id teamviewer.teamviewer
 winget install --id techpowerup.gpu-z
+winget install --name "ubuntu" --source msstore
 winget install --id valve.steam
 winget install --id videolan.vlc
 winget install --id whatsapp.whatsapp
