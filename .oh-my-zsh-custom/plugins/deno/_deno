@@ -496,8 +496,7 @@ _arguments "${_arguments_options[@]}" \
 '--unstable[Enable unstable features and APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
-'::task -- Task to be executed:' \
-'*::task_args -- Additional arguments passed to the task:' \
+'*::task_name_and_args -- Task to be executed with any additional arguments passed to the task:' \
 && ret=0
 ;;
 (test)
