@@ -28,6 +28,7 @@ winget install --id mirantis.lens
 winget install --id mozilla.firefox
 # TODO: not yet available
 # winget install --id neovim
+winget install --id nvidia.geforceexperience
 winget install --id obsproject.obsstudio
 winget install --id raspberrypifoundation.raspberrypiimager
 winget install --id randyrants.sharpkeys
