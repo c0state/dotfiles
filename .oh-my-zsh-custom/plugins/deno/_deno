@@ -36,9 +36,10 @@ _deno() {
             (bench)
 _arguments "${_arguments_options[@]}" \
 '--import-map=[Load import map file]:FILE:_files' \
-'-c+[Specify the configuration file]:FILE:_files' \
-'--config=[Specify the configuration file]:FILE:_files' \
+'(--no-config)-c+[Specify the configuration file]:FILE:_files' \
+'(--no-config)--config=[Specify the configuration file]:FILE:_files' \
 '--no-check=[Skip type checking modules]:NO_CHECK_TYPE: ' \
+'(--no-check)--check=[Type check modules]:CHECK_TYPE: ' \
 '-r+[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--reload=[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--lock=[Check the specified lock file]:FILE:_files' \
@@ -58,6 +59,7 @@ _arguments "${_arguments_options[@]}" \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
 '--no-remote[Do not resolve remote modules]' \
+'(-c --config)--no-config[Disable automatic loading of the configuration file.]' \
 '--lock-write[Write lock file (use with --lock)]' \
 '--allow-hrtime[Allow high resolution time measurement]' \
 '-A[Allow all permissions]' \
@@ -81,9 +83,10 @@ _arguments "${_arguments_options[@]}" \
 (bundle)
 _arguments "${_arguments_options[@]}" \
 '--import-map=[Load import map file]:FILE:_files' \
-'-c+[Specify the configuration file]:FILE:_files' \
-'--config=[Specify the configuration file]:FILE:_files' \
+'(--no-config)-c+[Specify the configuration file]:FILE:_files' \
+'(--no-config)--config=[Specify the configuration file]:FILE:_files' \
 '--no-check=[Skip type checking modules]:NO_CHECK_TYPE: ' \
+'(--no-check)--check=[Type check modules]:CHECK_TYPE: ' \
 '-r+[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--reload=[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--lock=[Check the specified lock file]:FILE:_files' \
@@ -91,6 +94,7 @@ _arguments "${_arguments_options[@]}" \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
 '--no-remote[Do not resolve remote modules]' \
+'(-c --config)--no-config[Disable automatic loading of the configuration file.]' \
 '--lock-write[Write lock file (use with --lock)]' \
 '--watch[UNSTABLE: Watch for file changes and restart automatically]' \
 '--no-clear-screen[Do not clear terminal screen when under watch mode]' \
@@ -106,9 +110,10 @@ _arguments "${_arguments_options[@]}" \
 (cache)
 _arguments "${_arguments_options[@]}" \
 '--import-map=[Load import map file]:FILE:_files' \
-'-c+[Specify the configuration file]:FILE:_files' \
-'--config=[Specify the configuration file]:FILE:_files' \
+'(--no-config)-c+[Specify the configuration file]:FILE:_files' \
+'(--no-config)--config=[Specify the configuration file]:FILE:_files' \
 '--no-check=[Skip type checking modules]:NO_CHECK_TYPE: ' \
+'(--no-check)--check=[Type check modules]:CHECK_TYPE: ' \
 '-r+[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--reload=[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--lock=[Check the specified lock file]:FILE:_files' \
@@ -116,6 +121,7 @@ _arguments "${_arguments_options[@]}" \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
 '--no-remote[Do not resolve remote modules]' \
+'(-c --config)--no-config[Disable automatic loading of the configuration file.]' \
 '--lock-write[Write lock file (use with --lock)]' \
 '-h[Print help information]' \
 '--help[Print help information]' \
@@ -128,8 +134,8 @@ _arguments "${_arguments_options[@]}" \
 (check)
 _arguments "${_arguments_options[@]}" \
 '--import-map=[Load import map file]:FILE:_files' \
-'-c+[Specify the configuration file]:FILE:_files' \
-'--config=[Specify the configuration file]:FILE:_files' \
+'(--no-config)-c+[Specify the configuration file]:FILE:_files' \
+'(--no-config)--config=[Specify the configuration file]:FILE:_files' \
 '-r+[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--reload=[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--lock=[Check the specified lock file]:FILE:_files' \
@@ -137,6 +143,7 @@ _arguments "${_arguments_options[@]}" \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
 '--no-remote[Do not resolve remote modules]' \
+'(-c --config)--no-config[Disable automatic loading of the configuration file.]' \
 '--lock-write[Write lock file (use with --lock)]' \
 '--remote[Type-check all modules, including remote]' \
 '-h[Print help information]' \
@@ -150,9 +157,10 @@ _arguments "${_arguments_options[@]}" \
 (compile)
 _arguments "${_arguments_options[@]}" \
 '--import-map=[Load import map file]:FILE:_files' \
-'-c+[Specify the configuration file]:FILE:_files' \
-'--config=[Specify the configuration file]:FILE:_files' \
+'(--no-config)-c+[Specify the configuration file]:FILE:_files' \
+'(--no-config)--config=[Specify the configuration file]:FILE:_files' \
 '--no-check=[Skip type checking modules]:NO_CHECK_TYPE: ' \
+'(--no-check)--check=[Type check modules]:CHECK_TYPE: ' \
 '-r+[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--reload=[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--lock=[Check the specified lock file]:FILE:_files' \
@@ -173,6 +181,7 @@ _arguments "${_arguments_options[@]}" \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
 '--no-remote[Do not resolve remote modules]' \
+'(-c --config)--no-config[Disable automatic loading of the configuration file.]' \
 '--lock-write[Write lock file (use with --lock)]' \
 '--allow-hrtime[Allow high resolution time measurement]' \
 '-A[Allow all permissions]' \
@@ -240,9 +249,10 @@ _arguments "${_arguments_options[@]}" \
 (eval)
 _arguments "${_arguments_options[@]}" \
 '--import-map=[Load import map file]:FILE:_files' \
-'-c+[Specify the configuration file]:FILE:_files' \
-'--config=[Specify the configuration file]:FILE:_files' \
+'(--no-config)-c+[Specify the configuration file]:FILE:_files' \
+'(--no-config)--config=[Specify the configuration file]:FILE:_files' \
 '--no-check=[Skip type checking modules]:NO_CHECK_TYPE: ' \
+'(--no-check)--check=[Type check modules]:CHECK_TYPE: ' \
 '-r+[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--reload=[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--lock=[Check the specified lock file]:FILE:_files' \
@@ -256,6 +266,7 @@ _arguments "${_arguments_options[@]}" \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
 '--no-remote[Do not resolve remote modules]' \
+'(-c --config)--no-config[Disable automatic loading of the configuration file.]' \
 '--lock-write[Write lock file (use with --lock)]' \
 '--cached-only[Require that remote dependencies are already cached]' \
 '--enable-testing-features-do-not-use[INTERNAL: Enable internal features used during integration testing]' \
@@ -274,8 +285,8 @@ _arguments "${_arguments_options[@]}" \
 ;;
 (fmt)
 _arguments "${_arguments_options[@]}" \
-'-c+[Specify the configuration file]:FILE:_files' \
-'--config=[Specify the configuration file]:FILE:_files' \
+'(--no-config)-c+[Specify the configuration file]:FILE:_files' \
+'(--no-config)--config=[Specify the configuration file]:FILE:_files' \
 '--ext=[Set standard input (stdin) content type]: :(ts tsx js jsx md json jsonc)' \
 '--ignore=[Ignore formatting particular source files]: :_files' \
 '--options-line-width=[Define maximum line width. Defaults to 80.]: : ' \
@@ -283,6 +294,7 @@ _arguments "${_arguments_options[@]}" \
 '--options-prose-wrap=[Define how prose should be wrapped. Defaults to always.]: :(always never preserve)' \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
+'(-c --config)--no-config[Disable automatic loading of the configuration file.]' \
 '--check[Check if the source files are formatted]' \
 '--watch[UNSTABLE: Watch for file changes and restart automatically]' \
 '--no-clear-screen[Do not clear terminal screen when under watch mode]' \
@@ -318,9 +330,10 @@ _arguments "${_arguments_options[@]}" \
 (install)
 _arguments "${_arguments_options[@]}" \
 '--import-map=[Load import map file]:FILE:_files' \
-'-c+[Specify the configuration file]:FILE:_files' \
-'--config=[Specify the configuration file]:FILE:_files' \
+'(--no-config)-c+[Specify the configuration file]:FILE:_files' \
+'(--no-config)--config=[Specify the configuration file]:FILE:_files' \
 '--no-check=[Skip type checking modules]:NO_CHECK_TYPE: ' \
+'(--no-check)--check=[Type check modules]:CHECK_TYPE: ' \
 '-r+[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--reload=[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--lock=[Check the specified lock file]:FILE:_files' \
@@ -343,6 +356,7 @@ _arguments "${_arguments_options[@]}" \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
 '--no-remote[Do not resolve remote modules]' \
+'(-c --config)--no-config[Disable automatic loading of the configuration file.]' \
 '--lock-write[Write lock file (use with --lock)]' \
 '--allow-hrtime[Allow high resolution time measurement]' \
 '-A[Allow all permissions]' \
@@ -391,12 +405,13 @@ _arguments "${_arguments_options[@]}" \
 '(--rules)--rules-tags=[Use set of rules with a tag]: : ' \
 '(--rules)--rules-include=[Include lint rules]: : ' \
 '(--rules)--rules-exclude=[Exclude lint rules]: : ' \
-'-c+[Specify the configuration file]:FILE:_files' \
-'--config=[Specify the configuration file]:FILE:_files' \
+'(--no-config)-c+[Specify the configuration file]:FILE:_files' \
+'(--no-config)--config=[Specify the configuration file]:FILE:_files' \
 '--ignore=[Ignore linting particular source files]: :_files' \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
 '--rules[List available rules]' \
+'(-c --config)--no-config[Disable automatic loading of the configuration file.]' \
 '--json[Output lint result in JSON format]' \
 '--watch[UNSTABLE: Watch for file changes and restart automatically]' \
 '--no-clear-screen[Do not clear terminal screen when under watch mode]' \
@@ -411,9 +426,10 @@ _arguments "${_arguments_options[@]}" \
 (repl)
 _arguments "${_arguments_options[@]}" \
 '--import-map=[Load import map file]:FILE:_files' \
-'-c+[Specify the configuration file]:FILE:_files' \
-'--config=[Specify the configuration file]:FILE:_files' \
+'(--no-config)-c+[Specify the configuration file]:FILE:_files' \
+'(--no-config)--config=[Specify the configuration file]:FILE:_files' \
 '--no-check=[Skip type checking modules]:NO_CHECK_TYPE: ' \
+'(--no-check)--check=[Type check modules]:CHECK_TYPE: ' \
 '-r+[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--reload=[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--lock=[Check the specified lock file]:FILE:_files' \
@@ -429,6 +445,7 @@ _arguments "${_arguments_options[@]}" \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
 '--no-remote[Do not resolve remote modules]' \
+'(-c --config)--no-config[Disable automatic loading of the configuration file.]' \
 '--lock-write[Write lock file (use with --lock)]' \
 '--cached-only[Require that remote dependencies are already cached]' \
 '--enable-testing-features-do-not-use[INTERNAL: Enable internal features used during integration testing]' \
@@ -443,9 +460,10 @@ _arguments "${_arguments_options[@]}" \
 (run)
 _arguments "${_arguments_options[@]}" \
 '--import-map=[Load import map file]:FILE:_files' \
-'-c+[Specify the configuration file]:FILE:_files' \
-'--config=[Specify the configuration file]:FILE:_files' \
+'(--no-config)-c+[Specify the configuration file]:FILE:_files' \
+'(--no-config)--config=[Specify the configuration file]:FILE:_files' \
 '--no-check=[Skip type checking modules]:NO_CHECK_TYPE: ' \
+'(--no-check)--check=[Type check modules]:CHECK_TYPE: ' \
 '-r+[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--reload=[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--lock=[Check the specified lock file]:FILE:_files' \
@@ -463,10 +481,10 @@ _arguments "${_arguments_options[@]}" \
 '--v8-flags=[Set V8 command line options]: : ' \
 '--seed=[Set the random number generator seed]:NUMBER: ' \
 '(--inspect --inspect-brk)--watch=[UNSTABLE: Watch for file changes and restart automatically]:FILES:_files' \
-'(--no-check)--check=[Type check modules]:CHECK_TYPE: ' \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
 '--no-remote[Do not resolve remote modules]' \
+'(-c --config)--no-config[Disable automatic loading of the configuration file.]' \
 '--lock-write[Write lock file (use with --lock)]' \
 '--allow-hrtime[Allow high resolution time measurement]' \
 '-A[Allow all permissions]' \
@@ -487,10 +505,11 @@ _arguments "${_arguments_options[@]}" \
 ;;
 (task)
 _arguments "${_arguments_options[@]}" \
-'-c+[Specify the configuration file]:FILE:_files' \
-'--config=[Specify the configuration file]:FILE:_files' \
+'(--no-config)-c+[Specify the configuration file]:FILE:_files' \
+'(--no-config)--config=[Specify the configuration file]:FILE:_files' \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
+'(-c --config)--no-config[Disable automatic loading of the configuration file.]' \
 '-h[Print help information]' \
 '--help[Print help information]' \
 '--unstable[Enable unstable features and APIs]' \
@@ -502,9 +521,10 @@ _arguments "${_arguments_options[@]}" \
 (test)
 _arguments "${_arguments_options[@]}" \
 '--import-map=[Load import map file]:FILE:_files' \
-'-c+[Specify the configuration file]:FILE:_files' \
-'--config=[Specify the configuration file]:FILE:_files' \
+'(--no-config)-c+[Specify the configuration file]:FILE:_files' \
+'(--no-config)--config=[Specify the configuration file]:FILE:_files' \
 '--no-check=[Skip type checking modules]:NO_CHECK_TYPE: ' \
+'(--no-check)--check=[Type check modules]:CHECK_TYPE: ' \
 '-r+[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--reload=[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--lock=[Check the specified lock file]:FILE:_files' \
@@ -531,6 +551,7 @@ _arguments "${_arguments_options[@]}" \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
 '--no-remote[Do not resolve remote modules]' \
+'(-c --config)--no-config[Disable automatic loading of the configuration file.]' \
 '--lock-write[Write lock file (use with --lock)]' \
 '--allow-hrtime[Allow high resolution time measurement]' \
 '-A[Allow all permissions]' \
@@ -587,8 +608,8 @@ _arguments "${_arguments_options[@]}" \
 (vendor)
 _arguments "${_arguments_options[@]}" \
 '--output=[The directory to output the vendored modules to]: :_files -/' \
-'-c+[Specify the configuration file]:FILE:_files' \
-'--config=[Specify the configuration file]:FILE:_files' \
+'(--no-config)-c+[Specify the configuration file]:FILE:_files' \
+'(--no-config)--config=[Specify the configuration file]:FILE:_files' \
 '--import-map=[Load import map file]:FILE:_files' \
 '--lock=[Check the specified lock file]:FILE:_files' \
 '-r+[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
@@ -598,6 +619,7 @@ _arguments "${_arguments_options[@]}" \
 '--log-level=[Set log level]: :(debug info)' \
 '-f[Forcefully overwrite conflicting files in existing output directory]' \
 '--force[Forcefully overwrite conflicting files in existing output directory]' \
+'(-c --config)--no-config[Disable automatic loading of the configuration file.]' \
 '-h[Print help information]' \
 '--help[Print help information]' \
 '--unstable[Enable unstable features and APIs]' \
