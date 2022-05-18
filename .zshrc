@@ -44,6 +44,7 @@ plugins=(
     zsh-autosuggestions
     zsh-completions
     zsh-syntax-highlighting
+    zsh_codex
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -122,4 +123,7 @@ eval "$(direnv hook zsh)"
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C $HOME/.local/bin/bit bit
 
+# ---------- zsh codex - https://github.com/tom-doerr/zsh_codex
+
+bindkey '^X' create_completion
 

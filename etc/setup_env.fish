@@ -9,6 +9,7 @@ else
 end
 
 set omf_packages \
+    https://github.com/tom-doerr/codex.fish \
     fzf \
     pyenv
 

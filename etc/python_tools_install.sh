@@ -23,6 +23,7 @@ fi
 python3 -m pip install --upgrade --user pip setuptools
 python3 -m pip install --upgrade --user pipx
 
+python3 -m pip install --upgrade --user openai
 python3 -m pip install --upgrade --user jedi
 python3 -m pip install --upgrade --user pynvim
 
