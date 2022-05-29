@@ -128,6 +128,7 @@ brew_cask_packages=(
     amorphousdiskmark
     angry-ip-scanner
     balenaetcher
+    beekeeper-studio
     beyond-compare
     brave-browser
     calibre
