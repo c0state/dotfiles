@@ -21,6 +21,9 @@ if [ $PLATFORM = "Darwin" ]
     end
 end
 
+# explicitly set TERM to fix issues with tmux
+set -gx TERM xterm-256color
+
 #---------- paths
 
 set -gx PATH $PATH ~/.local/bin;

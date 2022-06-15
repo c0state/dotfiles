@@ -16,6 +16,9 @@ export EDITOR=vim
 #----- misc settings
 export REPORTTIME=3
 
+# explicitly set TERM to fix issues with tmux
+export TERM=xterm-256color
+
 source "$HOME"/.shell_aliases
 
 #----- set based on platform (Linux or OS X)
