@@ -315,9 +315,12 @@ _arguments "${_arguments_options[@]}" \
 '--cert=[Load certificate authority from PEM encoded file]:FILE:_files' \
 '()--location=[Show files used for origin bound APIs like the Web Storage API when running a script with '\''--location=<HREF>'\'']:HREF:_urls' \
 '--no-check=[Skip type checking modules]:NO_CHECK_TYPE: ' \
+'(--no-config)-c+[Specify the configuration file]:FILE:_files' \
+'(--no-config)--config=[Specify the configuration file]:FILE:_files' \
 '--import-map=[Load import map file]:FILE:_files' \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
+'(-c --config)--no-config[Disable automatic loading of the configuration file.]' \
 '--json[UNSTABLE: Outputs the information in JSON format]' \
 '-h[Print help information]' \
 '--help[Print help information]' \
@@ -507,6 +510,7 @@ _arguments "${_arguments_options[@]}" \
 _arguments "${_arguments_options[@]}" \
 '(--no-config)-c+[Specify the configuration file]:FILE:_files' \
 '(--no-config)--config=[Specify the configuration file]:FILE:_files' \
+'--cwd=[Specify the directory to run the task in]:DIR:_files -/' \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
 '(-c --config)--no-config[Disable automatic loading of the configuration file.]' \
