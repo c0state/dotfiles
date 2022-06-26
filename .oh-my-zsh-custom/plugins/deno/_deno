@@ -38,8 +38,8 @@ _arguments "${_arguments_options[@]}" \
 '--import-map=[Load import map file]:FILE:_files' \
 '(--no-config)-c+[Specify the configuration file]:FILE:_files' \
 '(--no-config)--config=[Specify the configuration file]:FILE:_files' \
-'--no-check=[Skip type checking modules]:NO_CHECK_TYPE: ' \
-'(--no-check)--check=[Type check modules]:CHECK_TYPE: ' \
+'--no-check=[Skip type-checking modules]:NO_CHECK_TYPE: ' \
+'(--no-check)--check=[Type-check modules]:CHECK_TYPE: ' \
 '-r+[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--reload=[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--lock=[Check the specified lock file]:FILE:_files' \
@@ -85,8 +85,8 @@ _arguments "${_arguments_options[@]}" \
 '--import-map=[Load import map file]:FILE:_files' \
 '(--no-config)-c+[Specify the configuration file]:FILE:_files' \
 '(--no-config)--config=[Specify the configuration file]:FILE:_files' \
-'--no-check=[Skip type checking modules]:NO_CHECK_TYPE: ' \
-'(--no-check)--check=[Type check modules]:CHECK_TYPE: ' \
+'--no-check=[Skip type-checking modules]:NO_CHECK_TYPE: ' \
+'(--no-check)--check=[Type-check modules]:CHECK_TYPE: ' \
 '-r+[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--reload=[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--lock=[Check the specified lock file]:FILE:_files' \
@@ -112,8 +112,8 @@ _arguments "${_arguments_options[@]}" \
 '--import-map=[Load import map file]:FILE:_files' \
 '(--no-config)-c+[Specify the configuration file]:FILE:_files' \
 '(--no-config)--config=[Specify the configuration file]:FILE:_files' \
-'--no-check=[Skip type checking modules]:NO_CHECK_TYPE: ' \
-'(--no-check)--check=[Type check modules]:CHECK_TYPE: ' \
+'--no-check=[Skip type-checking modules]:NO_CHECK_TYPE: ' \
+'(--no-check)--check=[Type-check modules]:CHECK_TYPE: ' \
 '-r+[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--reload=[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--lock=[Check the specified lock file]:FILE:_files' \
@@ -159,8 +159,8 @@ _arguments "${_arguments_options[@]}" \
 '--import-map=[Load import map file]:FILE:_files' \
 '(--no-config)-c+[Specify the configuration file]:FILE:_files' \
 '(--no-config)--config=[Specify the configuration file]:FILE:_files' \
-'--no-check=[Skip type checking modules]:NO_CHECK_TYPE: ' \
-'(--no-check)--check=[Type check modules]:CHECK_TYPE: ' \
+'--no-check=[Skip type-checking modules]:NO_CHECK_TYPE: ' \
+'(--no-check)--check=[Type-check modules]:CHECK_TYPE: ' \
 '-r+[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--reload=[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--lock=[Check the specified lock file]:FILE:_files' \
@@ -251,8 +251,8 @@ _arguments "${_arguments_options[@]}" \
 '--import-map=[Load import map file]:FILE:_files' \
 '(--no-config)-c+[Specify the configuration file]:FILE:_files' \
 '(--no-config)--config=[Specify the configuration file]:FILE:_files' \
-'--no-check=[Skip type checking modules]:NO_CHECK_TYPE: ' \
-'(--no-check)--check=[Type check modules]:CHECK_TYPE: ' \
+'--no-check=[Skip type-checking modules]:NO_CHECK_TYPE: ' \
+'(--no-check)--check=[Type-check modules]:CHECK_TYPE: ' \
 '-r+[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--reload=[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--lock=[Check the specified lock file]:FILE:_files' \
@@ -314,7 +314,7 @@ _arguments "${_arguments_options[@]}" \
 '--reload=[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--cert=[Load certificate authority from PEM encoded file]:FILE:_files' \
 '()--location=[Show files used for origin bound APIs like the Web Storage API when running a script with '\''--location=<HREF>'\'']:HREF:_urls' \
-'--no-check=[Skip type checking modules]:NO_CHECK_TYPE: ' \
+'--no-check=[Skip type-checking modules]:NO_CHECK_TYPE: ' \
 '(--no-config)-c+[Specify the configuration file]:FILE:_files' \
 '(--no-config)--config=[Specify the configuration file]:FILE:_files' \
 '--import-map=[Load import map file]:FILE:_files' \
@@ -335,8 +335,8 @@ _arguments "${_arguments_options[@]}" \
 '--import-map=[Load import map file]:FILE:_files' \
 '(--no-config)-c+[Specify the configuration file]:FILE:_files' \
 '(--no-config)--config=[Specify the configuration file]:FILE:_files' \
-'--no-check=[Skip type checking modules]:NO_CHECK_TYPE: ' \
-'(--no-check)--check=[Type check modules]:CHECK_TYPE: ' \
+'--no-check=[Skip type-checking modules]:NO_CHECK_TYPE: ' \
+'(--no-check)--check=[Type-check modules]:CHECK_TYPE: ' \
 '-r+[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--reload=[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--lock=[Check the specified lock file]:FILE:_files' \
@@ -431,8 +431,8 @@ _arguments "${_arguments_options[@]}" \
 '--import-map=[Load import map file]:FILE:_files' \
 '(--no-config)-c+[Specify the configuration file]:FILE:_files' \
 '(--no-config)--config=[Specify the configuration file]:FILE:_files' \
-'--no-check=[Skip type checking modules]:NO_CHECK_TYPE: ' \
-'(--no-check)--check=[Type check modules]:CHECK_TYPE: ' \
+'--no-check=[Skip type-checking modules]:NO_CHECK_TYPE: ' \
+'(--no-check)--check=[Type-check modules]:CHECK_TYPE: ' \
 '-r+[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--reload=[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--lock=[Check the specified lock file]:FILE:_files' \
@@ -465,8 +465,8 @@ _arguments "${_arguments_options[@]}" \
 '--import-map=[Load import map file]:FILE:_files' \
 '(--no-config)-c+[Specify the configuration file]:FILE:_files' \
 '(--no-config)--config=[Specify the configuration file]:FILE:_files' \
-'--no-check=[Skip type checking modules]:NO_CHECK_TYPE: ' \
-'(--no-check)--check=[Type check modules]:CHECK_TYPE: ' \
+'--no-check=[Skip type-checking modules]:NO_CHECK_TYPE: ' \
+'(--no-check)--check=[Type-check modules]:CHECK_TYPE: ' \
 '-r+[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--reload=[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--lock=[Check the specified lock file]:FILE:_files' \
@@ -527,8 +527,8 @@ _arguments "${_arguments_options[@]}" \
 '--import-map=[Load import map file]:FILE:_files' \
 '(--no-config)-c+[Specify the configuration file]:FILE:_files' \
 '(--no-config)--config=[Specify the configuration file]:FILE:_files' \
-'--no-check=[Skip type checking modules]:NO_CHECK_TYPE: ' \
-'(--no-check)--check=[Type check modules]:CHECK_TYPE: ' \
+'--no-check=[Skip type-checking modules]:NO_CHECK_TYPE: ' \
+'(--no-check)--check=[Type-check modules]:CHECK_TYPE: ' \
 '-r+[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--reload=[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--lock=[Check the specified lock file]:FILE:_files' \
@@ -567,7 +567,7 @@ _arguments "${_arguments_options[@]}" \
 '--compat[UNSTABLE: Node compatibility mode.]' \
 '--no-run[Cache test modules, but don'\''t run tests]' \
 '--trace-ops[Enable tracing of async ops. Useful when debugging leaking ops in test, but impacts test execution time.]' \
-'--doc[UNSTABLE: type check code blocks]' \
+'--doc[UNSTABLE: type-check code blocks]' \
 '--allow-none[Don'\''t return error code if no test files are found]' \
 '(--no-run --coverage)--watch[UNSTABLE: Watch for file changes and restart automatically]' \
 '--no-clear-screen[Do not clear terminal screen when under watch mode]' \
