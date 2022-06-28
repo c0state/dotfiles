@@ -20,12 +20,12 @@ fi
 
 #---------- pip packages
 
-python3 -m pip install --upgrade --user pip setuptools
-python3 -m pip install --upgrade --user pipx
+pip3 install --upgrade --user pip setuptools
+pip3 install --upgrade --user pipx
 
-python3 -m pip install --upgrade --user openai
-python3 -m pip install --upgrade --user jedi
-python3 -m pip install --upgrade --user pynvim
+pip3 install --upgrade --user openai
+pip3 install --upgrade --user jedi
+pip3 install --upgrade --user pynvim
 
 #---------- pipx dependencies
 
