@@ -29,7 +29,7 @@ alias k="kubectl"
 alias kes="kubectl exec --stdin --tty"
 alias k_print_configmap="kubectl get configmap $1 -o jsonpath=\"{.data}\""
 
-alias less="less -i --shift 2 --RAW-CONTROL-CHARS"
+alias lessw="less -i --shift 2 --RAW-CONTROL-CHARS"
 alias lessc="less -i --chop-long-lines --shift 2 --RAW-CONTROL-CHARS"
 alias ls="lsd"
 alias mdv="$HOME/.terminal_markdown_viewer/mdv.py"
