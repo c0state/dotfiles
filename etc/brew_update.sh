@@ -64,6 +64,7 @@ brew_packages=(
     helm
     htop
     hub
+    hyperkit
     imagemagick
     ios-deploy
     jq
