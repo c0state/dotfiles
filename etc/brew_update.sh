@@ -34,7 +34,7 @@ brew_packages=(
     ag
     android-platform-tools
     applesimutils
-    aws-iam-authenticator aws-sam-cli
+    aws-iam-authenticator aws-sam-cli eksctl
     awscli
     bash-completion@2
     bat
