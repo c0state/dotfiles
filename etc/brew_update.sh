@@ -64,7 +64,6 @@ brew_packages=(
     helm
     htop
     hub
-    hyperkit
     imagemagick
     ios-deploy
     jq
@@ -110,6 +109,10 @@ brew_packages=(
     yq
     zsh
 )
+
+if [[ -z $IS_MACOS_ARM ]]; then
+    brew_packages+=(hyperkit)
+fi
 
 echo "---------- Installing brew packages"
 
