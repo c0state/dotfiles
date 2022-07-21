@@ -29,6 +29,7 @@ yarn global add \
     instant-markdown-d \
     lerna \
     np \
+    npm-check-updates \
     poi \
     renovate \
     tldr \
