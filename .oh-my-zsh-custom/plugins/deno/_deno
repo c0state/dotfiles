@@ -549,8 +549,8 @@ _arguments "${_arguments_options[@]}" \
 '--filter=[Run tests with this string or pattern in the test name]: : ' \
 '--shuffle=[(UNSTABLE): Shuffle the order in which the tests are run]:NUMBER: ' \
 '(--inspect --inspect-brk)--coverage=[UNSTABLE: Collect coverage profile data into DIR]:DIR: ' \
-'-j+[Number of parallel workers, defaults to # of CPUs when no value is provided. Defaults to 1 when the option is not present.]: : ' \
-'--jobs=[Number of parallel workers, defaults to # of CPUs when no value is provided. Defaults to 1 when the option is not present.]: : ' \
+'-j+[deprecated: Number of parallel workers, defaults to number of available CPUs when no value is provided. Defaults to 1 when the option is not present.]: : ' \
+'--jobs=[deprecated: Number of parallel workers, defaults to number of available CPUs when no value is provided. Defaults to 1 when the option is not present.]: : ' \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
 '--no-remote[Do not resolve remote modules]' \
@@ -568,6 +568,7 @@ _arguments "${_arguments_options[@]}" \
 '--trace-ops[Enable tracing of async ops. Useful when debugging leaking ops in test, but impacts test execution time.]' \
 '--doc[UNSTABLE: type-check code blocks]' \
 '--allow-none[Don'\''t return error code if no test files are found]' \
+'(-j --jobs)--parallel[Run test modules in parallel. Parallelism defaults to the number of available CPUs or the value in the DENO_JOBS environment variable.]' \
 '(--no-run --coverage)--watch[Watch for file changes and restart automatically]' \
 '--no-clear-screen[Do not clear terminal screen when under watch mode]' \
 '-h[Print help information]' \
