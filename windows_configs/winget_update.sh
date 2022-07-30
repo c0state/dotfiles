@@ -34,6 +34,7 @@ winget install --id raspberrypifoundation.raspberrypiimager
 winget install --id randyrants.sharpkeys
 winget install --name rufus --source msstore
 winget install --id slacktechnologies.slack
+winget install --id tailscale.tailscale
 winget install --id teamviewer.teamviewer
 winget install --id techpowerup.gpu-z
 winget install --name "ubuntu" --source msstore
