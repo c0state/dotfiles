@@ -33,6 +33,7 @@ yarn global add \
     poi \
     renovate \
     tldr \
+    ts-node \
     tslab \
     yalc \
     yarn-deduplicate
