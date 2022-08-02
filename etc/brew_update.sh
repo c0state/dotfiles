@@ -39,6 +39,7 @@ brew_packages=(
     bash-completion@2
     bat
     bfg
+    bit-git
     blast
     boost cmake
     carthage

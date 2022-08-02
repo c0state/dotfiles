@@ -100,8 +100,10 @@ fi
 # ---------- bit https://github.com/chriswalz/bit
 
 (
-    # ignore failure since gobinaries doesn't support arm yet
-    (curl -sf https://gobinaries.com/chriswalz/bit | PREFIX=$HOME/.local/bin sh || true)
+    # bit installed via brew on macOS
+    if [[ "$PLATFORM" != "Darwin" ]]; then
+        curl -sf https://gobinaries.com/chriswalz/bit | PREFIX=$HOME/.local/bin sh
+    fi
 )
 
 # ---------- fast node manager https://github.com/Schniz/fnm
