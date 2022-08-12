@@ -4,7 +4,7 @@ set -ex
 
 #---------- variables
 
-GO_VERSION=1.17.5
+GO_VERSION=1.19
 PLATFORM=$(uname)
 MACH_TYPE=$(uname -m)
 ARCH_TYPE=$MACH_TYPE
