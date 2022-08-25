@@ -308,6 +308,18 @@ _arguments "${_arguments_options[@]}" \
 '*::files:_files' \
 && ret=0
 ;;
+(init)
+_arguments "${_arguments_options[@]}" \
+'-L+[Set log level]: :(debug info)' \
+'--log-level=[Set log level]: :(debug info)' \
+'-h[Print help information]' \
+'--help[Print help information]' \
+'--unstable[Enable unstable features and APIs]' \
+'-q[Suppress diagnostic output]' \
+'--quiet[Suppress diagnostic output]' \
+'::dir:_files -/' \
+&& ret=0
+;;
 (info)
 _arguments "${_arguments_options[@]}" \
 '-r+[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
@@ -660,6 +672,7 @@ _deno_commands() {
 'doc:Show documentation for a module' \
 'eval:Eval script' \
 'fmt:Format source files' \
+'init:Initialize a new project' \
 'info:Show info about cache or info related to source file' \
 'install:Install script as an executable' \
 'uninstall:Uninstall a script previously installed with deno install' \
@@ -735,6 +748,11 @@ _deno__help_commands() {
 _deno__info_commands() {
     local commands; commands=()
     _describe -t commands 'deno info commands' commands "$@"
+}
+(( $+functions[_deno__init_commands] )) ||
+_deno__init_commands() {
+    local commands; commands=()
+    _describe -t commands 'deno init commands' commands "$@"
 }
 (( $+functions[_deno__install_commands] )) ||
 _deno__install_commands() {
