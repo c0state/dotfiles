@@ -29,9 +29,13 @@ sudo apt -y install \
 
 # install developer packages
 sudo apt -y install \
-    build-essential cmake zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev libssl-dev llvm libncurses5-dev libncursesw5-dev libxml2-dev \
+    build-essential cmake zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev libssl-dev llvm libncurses5-dev libncursesw5-dev libxml2-dev
+
+# install ide packages
+sudo apt -y install \
+    fonts-firacode \
     neovim \
-    fish \
+    tmux \
     vagrant
 
 # install image packages
@@ -56,6 +60,7 @@ sudo apt -y install \
 sudo apt -y install \
     ruby-dev
 
-# install zsh packages
+# install shell packages
 sudo apt -y install \
+    fish \
     zsh zsh-doc
