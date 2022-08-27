@@ -14,3 +14,7 @@
 [mergetool "bc4"]
 	cmd = bcompare \"$REMOTE\" \"$LOCAL\" \"$BASE\" \"$MERGED\"
 	trustExitCode = true
+[credential "https://github.com"]
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = !/usr/bin/gh auth git-credential
