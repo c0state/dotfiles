@@ -1,0 +1,6 @@
+font:
+  normal:
+    family: FiraCode NF
+
+shell:
+  program: /usr/bin/zsh
