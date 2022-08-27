@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-export SHELL=$(which bash)
+export SHELL=$(which zsh)
 
 #----- detect platform
 PLATFORM=$(uname)
