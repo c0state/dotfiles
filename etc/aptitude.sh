@@ -17,7 +17,7 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githu
 
 sudo apt-get update
 
-#----- install utility packages
+#------------------------------ install utility packages
 
 sudo apt -y install \
     colordiff icdiff \
@@ -25,6 +25,7 @@ sudo apt -y install \
     direnv \
     dos2unix \
     fd-find \
+    flatpak \
     git git-lfs \
     gparted \
     gnupg gpg ca-certificates \
@@ -37,7 +38,7 @@ sudo apt -y install \
     wmctrl \
     vim-nox
 
-#----- install packages
+#------------------------------ install packages
 
 # install compiler packages
 sudo apt -y install \
@@ -89,3 +90,7 @@ sudo apt -y install \
 sudo apt -y install \
     fish \
     zsh zsh-doc
+
+#------------------------------ flatpak packages
+
+flatpak install flathub com.github.joseexposito.touche
