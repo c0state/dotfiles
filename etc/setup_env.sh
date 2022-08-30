@@ -75,10 +75,9 @@ fi
 
 if [[ ! -d $HOME/.fzf ]]; then
     git clone --depth 1 https://github.com/junegunn/fzf.git "$HOME"/.fzf
-    "$HOME"/.fzf/install --key-bindings --completion --no-update-rc
-else
-    (cd "$HOME"/.fzf && git pull)
 fi
+"$HOME"/.fzf/install --key-bindings --completion --no-update-rc
+(cd "$HOME"/.fzf && git pull)
 
 # ---------- set up tpm https://github.com/tmux-plugins/tpm
 
