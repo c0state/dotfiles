@@ -2,6 +2,8 @@
 
 set -eu
 
+IS_WSL=$(uname -a | grep -i microsoft || echo "")
+
 sudo add-apt-repository --yes ppa:neovim-ppa/stable
 
 # init vscode
@@ -92,4 +94,9 @@ sudo apt -y install \
 
 #------------------------------ flatpak packages
 
-flatpak install flathub com.github.joseexposito.touche
+if [[ -z "$IS_WSL" ]]; then
+    flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+    flatpak install flathub com.github.joseexposito.touche
+fi
+
