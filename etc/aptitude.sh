@@ -50,9 +50,13 @@ sudo apt -y install \
     libncurses5-dev libncursesw5-dev \
     libxml2-dev
 
-# install ide packages
+# TODO: figure out how to add repo
+# only available on pop os out of the box
+#sudo apt -y install alacritty
+
+# install developer packages
 sudo apt -y install \
-    alacritty \
+    awscli \
     fonts-firacode \
     gh \
     neovim \
