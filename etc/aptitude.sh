@@ -17,6 +17,10 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo 
 sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
 
+# init tailscale
+curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/jammy.noarmor.gpg | sudo tee /usr/share/keyrings/tailscale-archive-keyring.gpg >/dev/null
+curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/jammy.tailscale-keyring.list | sudo tee /etc/apt/sources.list.d/tailscale.list
+
 sudo apt-get update
 
 #------------------------------ install utility packages
@@ -78,7 +82,9 @@ sudo apt -y install \
     default-jdk
 
 # install networking packages
-sudo apt -y install avahi-daemon samba winbind
+sudo apt -y install avahi-daemon samba \
+    tailscale \
+    winbind
 
 # install db packages
 sudo apt -y install libpq-dev postgresql-client
@@ -101,6 +107,6 @@ sudo apt -y install \
 if [[ -z "$IS_WSL" ]]; then
     flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-    flatpak install flathub com.github.joseexposito.touche
+    flatpak install --user --or-update flathub com.github.joseexposito.touche
 fi
 
