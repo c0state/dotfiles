@@ -145,7 +145,7 @@ _arguments "${_arguments_options[@]}" \
 '--no-remote[Do not resolve remote modules]' \
 '(-c --config)--no-config[Disable automatic loading of the configuration file.]' \
 '--lock-write[Write lock file (use with --lock)]' \
-'--remote[Type-check all modules, including remote]' \
+'(--no-remote)--remote[Type-check all modules, including remote]' \
 '-h[Print help information]' \
 '--help[Print help information]' \
 '--unstable[Enable unstable features and APIs]' \
