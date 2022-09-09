@@ -68,7 +68,6 @@ _arguments "${_arguments_options[@]}" \
 '--no-prompt[Always throw if required permission wasn'\''t passed]' \
 '--cached-only[Require that remote dependencies are already cached]' \
 '--enable-testing-features-do-not-use[INTERNAL: Enable internal features used during integration testing]' \
-'--compat[UNSTABLE: Node compatibility mode.]' \
 '--watch[Watch for file changes and restart automatically]' \
 '--no-clear-screen[Do not clear terminal screen when under watch mode]' \
 '-h[Print help information]' \
@@ -190,7 +189,6 @@ _arguments "${_arguments_options[@]}" \
 '--no-prompt[Always throw if required permission wasn'\''t passed]' \
 '--cached-only[Require that remote dependencies are already cached]' \
 '--enable-testing-features-do-not-use[INTERNAL: Enable internal features used during integration testing]' \
-'--compat[UNSTABLE: Node compatibility mode.]' \
 '-h[Print help information]' \
 '--help[Print help information]' \
 '--unstable[Enable unstable features and APIs]' \
@@ -270,7 +268,6 @@ _arguments "${_arguments_options[@]}" \
 '--lock-write[Write lock file (use with --lock)]' \
 '--cached-only[Require that remote dependencies are already cached]' \
 '--enable-testing-features-do-not-use[INTERNAL: Enable internal features used during integration testing]' \
-'--compat[UNSTABLE: Node compatibility mode.]' \
 '-T[Treat eval input as TypeScript]' \
 '--ts[Treat eval input as TypeScript]' \
 '-p[print result to stdout]' \
@@ -380,7 +377,6 @@ _arguments "${_arguments_options[@]}" \
 '--no-prompt[Always throw if required permission wasn'\''t passed]' \
 '--cached-only[Require that remote dependencies are already cached]' \
 '--enable-testing-features-do-not-use[INTERNAL: Enable internal features used during integration testing]' \
-'--compat[UNSTABLE: Node compatibility mode.]' \
 '-f[Forcefully overwrite existing installation]' \
 '--force[Forcefully overwrite existing installation]' \
 '-h[Print help information]' \
@@ -464,7 +460,6 @@ _arguments "${_arguments_options[@]}" \
 '--lock-write[Write lock file (use with --lock)]' \
 '--cached-only[Require that remote dependencies are already cached]' \
 '--enable-testing-features-do-not-use[INTERNAL: Enable internal features used during integration testing]' \
-'--compat[UNSTABLE: Node compatibility mode.]' \
 '-h[Print help information]' \
 '--help[Print help information]' \
 '--unstable[Enable unstable features and APIs]' \
@@ -508,7 +503,6 @@ _arguments "${_arguments_options[@]}" \
 '--no-prompt[Always throw if required permission wasn'\''t passed]' \
 '--cached-only[Require that remote dependencies are already cached]' \
 '--enable-testing-features-do-not-use[INTERNAL: Enable internal features used during integration testing]' \
-'--compat[UNSTABLE: Node compatibility mode.]' \
 '--no-clear-screen[Do not clear terminal screen when under watch mode]' \
 '-h[Print help information]' \
 '--help[Print help information]' \
@@ -575,7 +569,6 @@ _arguments "${_arguments_options[@]}" \
 '--no-prompt[Always throw if required permission wasn'\''t passed]' \
 '--cached-only[Require that remote dependencies are already cached]' \
 '--enable-testing-features-do-not-use[INTERNAL: Enable internal features used during integration testing]' \
-'--compat[UNSTABLE: Node compatibility mode.]' \
 '--no-run[Cache test modules, but don'\''t run tests]' \
 '--trace-ops[Enable tracing of async ops. Useful when debugging leaking ops in test, but impacts test execution time.]' \
 '--doc[UNSTABLE: type-check code blocks]' \
