@@ -68,6 +68,7 @@ brew_packages=(
     imagemagick
     ios-deploy
     jq
+    jmeter
     k9s kind kubernetes-cli
     lsd
     lyft/formulae/set-simulator-location
