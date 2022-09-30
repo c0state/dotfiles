@@ -49,6 +49,7 @@ _arguments "${_arguments_options[@]}" \
 '--allow-net=[Allow network access]: : ' \
 '--unsafely-ignore-certificate-errors=[DANGER: Disables verification of TLS certificates]:HOSTNAMES: ' \
 '--allow-env=[Allow environment access]: : ' \
+'--allow-sys=[Allow access to system info]: : ' \
 '--allow-run=[Allow running subprocesses]: : ' \
 '--allow-ffi=[Allow loading dynamic libraries]: :_files' \
 '--location=[Value of '\''globalThis.location'\'' used by some web APIs]:HREF:_urls' \
@@ -59,6 +60,7 @@ _arguments "${_arguments_options[@]}" \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
 '--no-remote[Do not resolve remote modules]' \
+'--no-npm[Do not resolve npm modules]' \
 '--node-modules-dir[Creates a local node_modules folder]' \
 '(-c --config)--no-config[Disable automatic loading of the configuration file.]' \
 '--lock-write[Write lock file (use with --lock)]' \
@@ -94,6 +96,7 @@ _arguments "${_arguments_options[@]}" \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
 '--no-remote[Do not resolve remote modules]' \
+'--no-npm[Do not resolve npm modules]' \
 '--node-modules-dir[Creates a local node_modules folder]' \
 '(-c --config)--no-config[Disable automatic loading of the configuration file.]' \
 '--lock-write[Write lock file (use with --lock)]' \
@@ -122,6 +125,7 @@ _arguments "${_arguments_options[@]}" \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
 '--no-remote[Do not resolve remote modules]' \
+'--no-npm[Do not resolve npm modules]' \
 '--node-modules-dir[Creates a local node_modules folder]' \
 '(-c --config)--no-config[Disable automatic loading of the configuration file.]' \
 '--lock-write[Write lock file (use with --lock)]' \
@@ -145,6 +149,7 @@ _arguments "${_arguments_options[@]}" \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
 '--no-remote[Do not resolve remote modules]' \
+'--no-npm[Do not resolve npm modules]' \
 '--node-modules-dir[Creates a local node_modules folder]' \
 '(-c --config)--no-config[Disable automatic loading of the configuration file.]' \
 '--lock-write[Write lock file (use with --lock)]' \
@@ -173,6 +178,7 @@ _arguments "${_arguments_options[@]}" \
 '--allow-net=[Allow network access]: : ' \
 '--unsafely-ignore-certificate-errors=[DANGER: Disables verification of TLS certificates]:HOSTNAMES: ' \
 '--allow-env=[Allow environment access]: : ' \
+'--allow-sys=[Allow access to system info]: : ' \
 '--allow-run=[Allow running subprocesses]: : ' \
 '--allow-ffi=[Allow loading dynamic libraries]: :_files' \
 '--location=[Value of '\''globalThis.location'\'' used by some web APIs]:HREF:_urls' \
@@ -184,6 +190,7 @@ _arguments "${_arguments_options[@]}" \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
 '--no-remote[Do not resolve remote modules]' \
+'--no-npm[Do not resolve npm modules]' \
 '--node-modules-dir[Creates a local node_modules folder]' \
 '(-c --config)--no-config[Disable automatic loading of the configuration file.]' \
 '--lock-write[Write lock file (use with --lock)]' \
@@ -269,6 +276,7 @@ _arguments "${_arguments_options[@]}" \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
 '--no-remote[Do not resolve remote modules]' \
+'--no-npm[Do not resolve npm modules]' \
 '--node-modules-dir[Creates a local node_modules folder]' \
 '(-c --config)--no-config[Disable automatic loading of the configuration file.]' \
 '--lock-write[Write lock file (use with --lock)]' \
@@ -361,6 +369,7 @@ _arguments "${_arguments_options[@]}" \
 '--allow-net=[Allow network access]: : ' \
 '--unsafely-ignore-certificate-errors=[DANGER: Disables verification of TLS certificates]:HOSTNAMES: ' \
 '--allow-env=[Allow environment access]: : ' \
+'--allow-sys=[Allow access to system info]: : ' \
 '--allow-run=[Allow running subprocesses]: : ' \
 '--allow-ffi=[Allow loading dynamic libraries]: :_files' \
 '--inspect=[Activate inspector on host:port (default: 127.0.0.1:9229)]:HOST:PORT: ' \
@@ -374,6 +383,7 @@ _arguments "${_arguments_options[@]}" \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
 '--no-remote[Do not resolve remote modules]' \
+'--no-npm[Do not resolve npm modules]' \
 '--node-modules-dir[Creates a local node_modules folder]' \
 '(-c --config)--no-config[Disable automatic loading of the configuration file.]' \
 '--lock-write[Write lock file (use with --lock)]' \
@@ -431,6 +441,7 @@ _arguments "${_arguments_options[@]}" \
 '--rules[List available rules]' \
 '(-c --config)--no-config[Disable automatic loading of the configuration file.]' \
 '--json[Output lint result in JSON format]' \
+'(--json)--compact[Output lint result in compact format]' \
 '--watch[Watch for file changes and restart automatically]' \
 '--no-clear-screen[Do not clear terminal screen when under watch mode]' \
 '-h[Print help information]' \
@@ -463,6 +474,7 @@ _arguments "${_arguments_options[@]}" \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
 '--no-remote[Do not resolve remote modules]' \
+'--no-npm[Do not resolve npm modules]' \
 '--node-modules-dir[Creates a local node_modules folder]' \
 '(-c --config)--no-config[Disable automatic loading of the configuration file.]' \
 '--lock-write[Write lock file (use with --lock)]' \
@@ -491,6 +503,7 @@ _arguments "${_arguments_options[@]}" \
 '--allow-net=[Allow network access]: : ' \
 '--unsafely-ignore-certificate-errors=[DANGER: Disables verification of TLS certificates]:HOSTNAMES: ' \
 '--allow-env=[Allow environment access]: : ' \
+'--allow-sys=[Allow access to system info]: : ' \
 '--allow-run=[Allow running subprocesses]: : ' \
 '--allow-ffi=[Allow loading dynamic libraries]: :_files' \
 '--inspect=[Activate inspector on host:port (default: 127.0.0.1:9229)]:HOST:PORT: ' \
@@ -502,6 +515,7 @@ _arguments "${_arguments_options[@]}" \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
 '--no-remote[Do not resolve remote modules]' \
+'--no-npm[Do not resolve npm modules]' \
 '--node-modules-dir[Creates a local node_modules folder]' \
 '(-c --config)--no-config[Disable automatic loading of the configuration file.]' \
 '--lock-write[Write lock file (use with --lock)]' \
@@ -552,6 +566,7 @@ _arguments "${_arguments_options[@]}" \
 '--allow-net=[Allow network access]: : ' \
 '--unsafely-ignore-certificate-errors=[DANGER: Disables verification of TLS certificates]:HOSTNAMES: ' \
 '--allow-env=[Allow environment access]: : ' \
+'--allow-sys=[Allow access to system info]: : ' \
 '--allow-run=[Allow running subprocesses]: : ' \
 '--allow-ffi=[Allow loading dynamic libraries]: :_files' \
 '--inspect=[Activate inspector on host:port (default: 127.0.0.1:9229)]:HOST:PORT: ' \
@@ -569,6 +584,7 @@ _arguments "${_arguments_options[@]}" \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
 '--no-remote[Do not resolve remote modules]' \
+'--no-npm[Do not resolve npm modules]' \
 '--node-modules-dir[Creates a local node_modules folder]' \
 '(-c --config)--no-config[Disable automatic loading of the configuration file.]' \
 '--lock-write[Write lock file (use with --lock)]' \
