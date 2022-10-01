@@ -60,7 +60,7 @@ brew_packages=(
     fish
     fnm
     fzf
-    gh git git-delta git-extras git-lfs legit
+    gh git git-delta git-extras git-lfs lazygit legit
     glances
     helm
     htop
