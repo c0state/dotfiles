@@ -13,9 +13,9 @@ curl https://get.volta.sh | bash -s -- --skip-setup
 volta install node@"$NODE_VERSION"
 volta install yarn
 
-# ---------- install yarn global packages
+# ---------- install global packages
 
-yarn global add \
+npm install --global add \
     aws-cdk \
     cypress \
     detox-cli \
