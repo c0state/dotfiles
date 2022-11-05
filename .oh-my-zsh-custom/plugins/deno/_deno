@@ -42,7 +42,7 @@ _arguments "${_arguments_options[@]}" \
 '(--no-check)--check=[Type-check modules]:CHECK_TYPE: ' \
 '-r+[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--reload=[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
-'--lock=[Check the specified lock file]:FILE:_files' \
+'--lock=[Check the specified lock file. If value is not provided, defaults to "deno.lock" in the current working directory.]:FILE:_files' \
 '--cert=[Load certificate authority from PEM encoded file]:FILE:_files' \
 '--allow-read=[Allow file system read access]: :_files' \
 '--allow-write=[Allow file system write access]: :_files' \
@@ -63,7 +63,8 @@ _arguments "${_arguments_options[@]}" \
 '--no-npm[Do not resolve npm modules]' \
 '--node-modules-dir[Creates a local node_modules folder]' \
 '(-c --config)--no-config[Disable automatic loading of the configuration file.]' \
-'--lock-write[Write lock file (use with --lock)]' \
+'--lock-write[Force overwriting the lock file.]' \
+'(--lock --lock-write)--no-lock[Disable auto discovery of the lock file.]' \
 '--allow-hrtime[Allow high resolution time measurement]' \
 '-A[Allow all permissions]' \
 '--allow-all[Allow all permissions]' \
@@ -91,7 +92,7 @@ _arguments "${_arguments_options[@]}" \
 '(--no-check)--check=[Type-check modules]:CHECK_TYPE: ' \
 '-r+[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--reload=[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
-'--lock=[Check the specified lock file]:FILE:_files' \
+'--lock=[Check the specified lock file. If value is not provided, defaults to "deno.lock" in the current working directory.]:FILE:_files' \
 '--cert=[Load certificate authority from PEM encoded file]:FILE:_files' \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
@@ -99,7 +100,8 @@ _arguments "${_arguments_options[@]}" \
 '--no-npm[Do not resolve npm modules]' \
 '--node-modules-dir[Creates a local node_modules folder]' \
 '(-c --config)--no-config[Disable automatic loading of the configuration file.]' \
-'--lock-write[Write lock file (use with --lock)]' \
+'--lock-write[Force overwriting the lock file.]' \
+'(--lock --lock-write)--no-lock[Disable auto discovery of the lock file.]' \
 '--watch[Watch for file changes and restart automatically]' \
 '--no-clear-screen[Do not clear terminal screen when under watch mode]' \
 '-h[Print help information]' \
@@ -120,7 +122,7 @@ _arguments "${_arguments_options[@]}" \
 '(--no-check)--check=[Type-check modules]:CHECK_TYPE: ' \
 '-r+[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--reload=[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
-'--lock=[Check the specified lock file]:FILE:_files' \
+'--lock=[Check the specified lock file. If value is not provided, defaults to "deno.lock" in the current working directory.]:FILE:_files' \
 '--cert=[Load certificate authority from PEM encoded file]:FILE:_files' \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
@@ -128,7 +130,8 @@ _arguments "${_arguments_options[@]}" \
 '--no-npm[Do not resolve npm modules]' \
 '--node-modules-dir[Creates a local node_modules folder]' \
 '(-c --config)--no-config[Disable automatic loading of the configuration file.]' \
-'--lock-write[Write lock file (use with --lock)]' \
+'--lock-write[Force overwriting the lock file.]' \
+'(--lock --lock-write)--no-lock[Disable auto discovery of the lock file.]' \
 '-h[Print help information]' \
 '--help[Print help information]' \
 '--unstable[Enable unstable features and APIs]' \
@@ -144,7 +147,7 @@ _arguments "${_arguments_options[@]}" \
 '--config=[Specify the configuration file]:FILE:_files' \
 '-r+[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--reload=[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
-'--lock=[Check the specified lock file]:FILE:_files' \
+'--lock=[Check the specified lock file. If value is not provided, defaults to "deno.lock" in the current working directory.]:FILE:_files' \
 '--cert=[Load certificate authority from PEM encoded file]:FILE:_files' \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
@@ -152,7 +155,8 @@ _arguments "${_arguments_options[@]}" \
 '--no-npm[Do not resolve npm modules]' \
 '--node-modules-dir[Creates a local node_modules folder]' \
 '(-c --config)--no-config[Disable automatic loading of the configuration file.]' \
-'--lock-write[Write lock file (use with --lock)]' \
+'--lock-write[Force overwriting the lock file.]' \
+'(--lock --lock-write)--no-lock[Disable auto discovery of the lock file.]' \
 '(--no-remote)--remote[Type-check all modules, including remote]' \
 '-h[Print help information]' \
 '--help[Print help information]' \
@@ -171,7 +175,7 @@ _arguments "${_arguments_options[@]}" \
 '(--no-check)--check=[Type-check modules]:CHECK_TYPE: ' \
 '-r+[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--reload=[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
-'--lock=[Check the specified lock file]:FILE:_files' \
+'--lock=[Check the specified lock file. If value is not provided, defaults to "deno.lock" in the current working directory.]:FILE:_files' \
 '--cert=[Load certificate authority from PEM encoded file]:FILE:_files' \
 '--allow-read=[Allow file system read access]: :_files' \
 '--allow-write=[Allow file system write access]: :_files' \
@@ -193,7 +197,8 @@ _arguments "${_arguments_options[@]}" \
 '--no-npm[Do not resolve npm modules]' \
 '--node-modules-dir[Creates a local node_modules folder]' \
 '(-c --config)--no-config[Disable automatic loading of the configuration file.]' \
-'--lock-write[Write lock file (use with --lock)]' \
+'--lock-write[Force overwriting the lock file.]' \
+'(--lock --lock-write)--no-lock[Disable auto discovery of the lock file.]' \
 '--allow-hrtime[Allow high resolution time measurement]' \
 '-A[Allow all permissions]' \
 '--allow-all[Allow all permissions]' \
@@ -265,7 +270,7 @@ _arguments "${_arguments_options[@]}" \
 '(--no-check)--check=[Type-check modules]:CHECK_TYPE: ' \
 '-r+[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--reload=[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
-'--lock=[Check the specified lock file]:FILE:_files' \
+'--lock=[Check the specified lock file. If value is not provided, defaults to "deno.lock" in the current working directory.]:FILE:_files' \
 '--cert=[Load certificate authority from PEM encoded file]:FILE:_files' \
 '--inspect=[Activate inspector on host:port (default: 127.0.0.1:9229)]:HOST:PORT: ' \
 '--inspect-brk=[Activate inspector on host:port and break at start of user script]:HOST:PORT: ' \
@@ -279,7 +284,8 @@ _arguments "${_arguments_options[@]}" \
 '--no-npm[Do not resolve npm modules]' \
 '--node-modules-dir[Creates a local node_modules folder]' \
 '(-c --config)--no-config[Disable automatic loading of the configuration file.]' \
-'--lock-write[Write lock file (use with --lock)]' \
+'--lock-write[Force overwriting the lock file.]' \
+'(--lock --lock-write)--no-lock[Disable auto discovery of the lock file.]' \
 '--cached-only[Require that remote dependencies are already cached]' \
 '--enable-testing-features-do-not-use[INTERNAL: Enable internal features used during integration testing]' \
 '-T[Treat eval input as TypeScript]' \
@@ -344,6 +350,7 @@ _arguments "${_arguments_options[@]}" \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
 '(-c --config)--no-config[Disable automatic loading of the configuration file.]' \
+'--node-modules-dir[Creates a local node_modules folder]' \
 '--json[UNSTABLE: Outputs the information in JSON format]' \
 '-h[Print help information]' \
 '--help[Print help information]' \
@@ -362,7 +369,7 @@ _arguments "${_arguments_options[@]}" \
 '(--no-check)--check=[Type-check modules]:CHECK_TYPE: ' \
 '-r+[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--reload=[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
-'--lock=[Check the specified lock file]:FILE:_files' \
+'--lock=[Check the specified lock file. If value is not provided, defaults to "deno.lock" in the current working directory.]:FILE:_files' \
 '--cert=[Load certificate authority from PEM encoded file]:FILE:_files' \
 '--allow-read=[Allow file system read access]: :_files' \
 '--allow-write=[Allow file system write access]: :_files' \
@@ -386,7 +393,8 @@ _arguments "${_arguments_options[@]}" \
 '--no-npm[Do not resolve npm modules]' \
 '--node-modules-dir[Creates a local node_modules folder]' \
 '(-c --config)--no-config[Disable automatic loading of the configuration file.]' \
-'--lock-write[Write lock file (use with --lock)]' \
+'--lock-write[Force overwriting the lock file.]' \
+'(--lock --lock-write)--no-lock[Disable auto discovery of the lock file.]' \
 '--allow-hrtime[Allow high resolution time measurement]' \
 '-A[Allow all permissions]' \
 '--allow-all[Allow all permissions]' \
@@ -461,7 +469,7 @@ _arguments "${_arguments_options[@]}" \
 '(--no-check)--check=[Type-check modules]:CHECK_TYPE: ' \
 '-r+[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--reload=[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
-'--lock=[Check the specified lock file]:FILE:_files' \
+'--lock=[Check the specified lock file. If value is not provided, defaults to "deno.lock" in the current working directory.]:FILE:_files' \
 '--cert=[Load certificate authority from PEM encoded file]:FILE:_files' \
 '--inspect=[Activate inspector on host:port (default: 127.0.0.1:9229)]:HOST:PORT: ' \
 '--inspect-brk=[Activate inspector on host:port and break at start of user script]:HOST:PORT: ' \
@@ -477,7 +485,8 @@ _arguments "${_arguments_options[@]}" \
 '--no-npm[Do not resolve npm modules]' \
 '--node-modules-dir[Creates a local node_modules folder]' \
 '(-c --config)--no-config[Disable automatic loading of the configuration file.]' \
-'--lock-write[Write lock file (use with --lock)]' \
+'--lock-write[Force overwriting the lock file.]' \
+'(--lock --lock-write)--no-lock[Disable auto discovery of the lock file.]' \
 '--cached-only[Require that remote dependencies are already cached]' \
 '--enable-testing-features-do-not-use[INTERNAL: Enable internal features used during integration testing]' \
 '-h[Print help information]' \
@@ -496,7 +505,7 @@ _arguments "${_arguments_options[@]}" \
 '(--no-check)--check=[Type-check modules]:CHECK_TYPE: ' \
 '-r+[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--reload=[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
-'--lock=[Check the specified lock file]:FILE:_files' \
+'--lock=[Check the specified lock file. If value is not provided, defaults to "deno.lock" in the current working directory.]:FILE:_files' \
 '--cert=[Load certificate authority from PEM encoded file]:FILE:_files' \
 '--allow-read=[Allow file system read access]: :_files' \
 '--allow-write=[Allow file system write access]: :_files' \
@@ -518,7 +527,8 @@ _arguments "${_arguments_options[@]}" \
 '--no-npm[Do not resolve npm modules]' \
 '--node-modules-dir[Creates a local node_modules folder]' \
 '(-c --config)--no-config[Disable automatic loading of the configuration file.]' \
-'--lock-write[Write lock file (use with --lock)]' \
+'--lock-write[Force overwriting the lock file.]' \
+'(--lock --lock-write)--no-lock[Disable auto discovery of the lock file.]' \
 '--allow-hrtime[Allow high resolution time measurement]' \
 '-A[Allow all permissions]' \
 '--allow-all[Allow all permissions]' \
@@ -559,7 +569,7 @@ _arguments "${_arguments_options[@]}" \
 '(--no-check)--check=[Type-check modules]:CHECK_TYPE: ' \
 '-r+[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--reload=[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
-'--lock=[Check the specified lock file]:FILE:_files' \
+'--lock=[Check the specified lock file. If value is not provided, defaults to "deno.lock" in the current working directory.]:FILE:_files' \
 '--cert=[Load certificate authority from PEM encoded file]:FILE:_files' \
 '--allow-read=[Allow file system read access]: :_files' \
 '--allow-write=[Allow file system write access]: :_files' \
@@ -587,7 +597,8 @@ _arguments "${_arguments_options[@]}" \
 '--no-npm[Do not resolve npm modules]' \
 '--node-modules-dir[Creates a local node_modules folder]' \
 '(-c --config)--no-config[Disable automatic loading of the configuration file.]' \
-'--lock-write[Write lock file (use with --lock)]' \
+'--lock-write[Force overwriting the lock file.]' \
+'(--lock --lock-write)--no-lock[Disable auto discovery of the lock file.]' \
 '--allow-hrtime[Allow high resolution time measurement]' \
 '-A[Allow all permissions]' \
 '--allow-all[Allow all permissions]' \
@@ -646,7 +657,7 @@ _arguments "${_arguments_options[@]}" \
 '-c+[Specify the configuration file]:FILE:_files' \
 '--config=[Specify the configuration file]:FILE:_files' \
 '--import-map=[Load import map file]:FILE:_files' \
-'--lock=[Check the specified lock file]:FILE:_files' \
+'--lock=[Check the specified lock file. If value is not provided, defaults to "deno.lock" in the current working directory.]:FILE:_files' \
 '-r+[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--reload=[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--cert=[Load certificate authority from PEM encoded file]:FILE:_files' \
