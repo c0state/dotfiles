@@ -46,8 +46,9 @@ which ipython || pipx install ipython
 which markdown_py || pipx install markdown
 which mypy || pipx install mypy
 which pgcli || pipx install pgcli
-which pipenv || pipx install pipenv
 which pip-compile || pipx install pip-tools
+which pipdeptree || pipx install pipdeptree
+which pipenv || pipx install pipenv
 which pre-commit || pipx install pre-commit
 which ptpython || pipx install ptpython
 which pyupgrade || pipx install pyupgrade
