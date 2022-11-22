@@ -27,6 +27,8 @@ pip3 install --upgrade --user openai
 pip3 install --upgrade --user jedi
 pip3 install --upgrade --user pynvim
 
+pip3 install --upgrade --user build twine
+
 #---------- pipx dependencies
 
 which ansible || pipx install --include-deps ansible
