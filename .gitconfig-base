@@ -49,8 +49,9 @@
     prompt = false
 [mergetool]
     prompt = false
-[submodule]
-    fetchJobs = 0
+[split-diffs]
+    syntax-highlighting-theme = github-dark
+    theme-name = dark
 [filter "lfs"]
     clean = git-lfs clean -- %f
     smudge = git-lfs smudge -- %f
@@ -58,8 +59,9 @@
     required = true
 [fetch]
     prune = true
+[init]
+	defaultBranch = main
 [pull]
     rebase = true
-[split-diffs]
-    syntax-highlighting-theme = github-dark
-    theme-name = dark
+[submodule]
+    fetchJobs = 0
