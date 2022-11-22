@@ -22,6 +22,8 @@ kubectl krew index add kvaps https://github.com/kvaps/krew-index || true
 kubectl krew install kvaps/node-shell
 
 if which helm; then
+    helm repo add autoscaler https://kubernetes.github.io/autoscaler
     helm repo add datadog https://helm.datadoghq.com
 fi
+
 
