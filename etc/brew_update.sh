@@ -77,6 +77,7 @@ brew_packages=(
     minikube
     mobile-shell
     mysql
+    ncdu
     neovim
     nmap
     nnn
