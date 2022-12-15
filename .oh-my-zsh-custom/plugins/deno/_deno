@@ -157,6 +157,7 @@ _arguments "${_arguments_options[@]}" \
 '(-c --config)--no-config[Disable automatic loading of the configuration file.]' \
 '--lock-write[Force overwriting the lock file.]' \
 '(--lock --lock-write)--no-lock[Disable auto discovery of the lock file.]' \
+'(--no-remote)--all[Type-check all code, including remote modules and npm packages]' \
 '(--no-remote)--remote[Type-check all modules, including remote]' \
 '-h[Print help information]' \
 '--help[Print help information]' \
@@ -273,7 +274,8 @@ _arguments "${_arguments_options[@]}" \
 '--lock=[Check the specified lock file. If value is not provided, defaults to "deno.lock" in the current working directory.]:FILE:_files' \
 '--cert=[Load certificate authority from PEM encoded file]:FILE:_files' \
 '--inspect=[Activate inspector on host:port (default: 127.0.0.1:9229)]:HOST:PORT: ' \
-'--inspect-brk=[Activate inspector on host:port and break at start of user script]:HOST:PORT: ' \
+'--inspect-brk=[Activate inspector on host:port, wait for debugger to connect and break at the start of user script]:HOST:PORT: ' \
+'--inspect-wait=[Activate inspector on host:port and wait for debugger to connect before running user code]:HOST:PORT: ' \
 '--location=[Value of '\''globalThis.location'\'' used by some web APIs]:HREF:_urls' \
 '--v8-flags=[Set V8 command line options]: : ' \
 '--seed=[Set the random number generator seed]:NUMBER: ' \
@@ -380,7 +382,8 @@ _arguments "${_arguments_options[@]}" \
 '--allow-run=[Allow running subprocesses]: : ' \
 '--allow-ffi=[Allow loading dynamic libraries]: :_files' \
 '--inspect=[Activate inspector on host:port (default: 127.0.0.1:9229)]:HOST:PORT: ' \
-'--inspect-brk=[Activate inspector on host:port and break at start of user script]:HOST:PORT: ' \
+'--inspect-brk=[Activate inspector on host:port, wait for debugger to connect and break at the start of user script]:HOST:PORT: ' \
+'--inspect-wait=[Activate inspector on host:port and wait for debugger to connect before running user code]:HOST:PORT: ' \
 '--location=[Value of '\''globalThis.location'\'' used by some web APIs]:HREF:_urls' \
 '--v8-flags=[Set V8 command line options]: : ' \
 '--seed=[Set the random number generator seed]:NUMBER: ' \
@@ -471,14 +474,22 @@ _arguments "${_arguments_options[@]}" \
 '--reload=[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--lock=[Check the specified lock file. If value is not provided, defaults to "deno.lock" in the current working directory.]:FILE:_files' \
 '--cert=[Load certificate authority from PEM encoded file]:FILE:_files' \
+'--allow-read=[Allow file system read access]: :_files' \
+'--allow-write=[Allow file system write access]: :_files' \
+'--allow-net=[Allow network access]: : ' \
+'--unsafely-ignore-certificate-errors=[DANGER: Disables verification of TLS certificates]:HOSTNAMES: ' \
+'--allow-env=[Allow environment access]: : ' \
+'--allow-sys=[Allow access to system info]: : ' \
+'--allow-run=[Allow running subprocesses]: : ' \
+'--allow-ffi=[Allow loading dynamic libraries]: :_files' \
 '--inspect=[Activate inspector on host:port (default: 127.0.0.1:9229)]:HOST:PORT: ' \
-'--inspect-brk=[Activate inspector on host:port and break at start of user script]:HOST:PORT: ' \
+'--inspect-brk=[Activate inspector on host:port, wait for debugger to connect and break at the start of user script]:HOST:PORT: ' \
+'--inspect-wait=[Activate inspector on host:port and wait for debugger to connect before running user code]:HOST:PORT: ' \
 '--location=[Value of '\''globalThis.location'\'' used by some web APIs]:HREF:_urls' \
 '--v8-flags=[Set V8 command line options]: : ' \
 '--seed=[Set the random number generator seed]:NUMBER: ' \
 '--eval-file=[Evaluates the provided file(s) as scripts when the REPL starts. Accepts file paths and URLs.]: :_files' \
 '--eval=[Evaluates the provided code when the REPL starts.]:code: ' \
-'--unsafely-ignore-certificate-errors=[DANGER: Disables verification of TLS certificates]:HOSTNAMES: ' \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
 '--no-remote[Do not resolve remote modules]' \
@@ -487,6 +498,11 @@ _arguments "${_arguments_options[@]}" \
 '(-c --config)--no-config[Disable automatic loading of the configuration file.]' \
 '--lock-write[Force overwriting the lock file.]' \
 '(--lock --lock-write)--no-lock[Disable auto discovery of the lock file.]' \
+'--allow-hrtime[Allow high resolution time measurement]' \
+'-A[Allow all permissions]' \
+'--allow-all[Allow all permissions]' \
+'--prompt[deprecated: Fallback to prompt if required permission wasn'\''t passed]' \
+'--no-prompt[Always throw if required permission wasn'\''t passed]' \
 '--cached-only[Require that remote dependencies are already cached]' \
 '--enable-testing-features-do-not-use[INTERNAL: Enable internal features used during integration testing]' \
 '-h[Print help information]' \
@@ -516,11 +532,12 @@ _arguments "${_arguments_options[@]}" \
 '--allow-run=[Allow running subprocesses]: : ' \
 '--allow-ffi=[Allow loading dynamic libraries]: :_files' \
 '--inspect=[Activate inspector on host:port (default: 127.0.0.1:9229)]:HOST:PORT: ' \
-'--inspect-brk=[Activate inspector on host:port and break at start of user script]:HOST:PORT: ' \
+'--inspect-brk=[Activate inspector on host:port, wait for debugger to connect and break at the start of user script]:HOST:PORT: ' \
+'--inspect-wait=[Activate inspector on host:port and wait for debugger to connect before running user code]:HOST:PORT: ' \
 '--location=[Value of '\''globalThis.location'\'' used by some web APIs]:HREF:_urls' \
 '--v8-flags=[Set V8 command line options]: : ' \
 '--seed=[Set the random number generator seed]:NUMBER: ' \
-'(--inspect --inspect-brk)--watch=[Watch for file changes and restart automatically]:FILES:_files' \
+'(--inspect --inspect-wait --inspect-brk)--watch=[Watch for file changes and restart automatically]:FILES:_files' \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
 '--no-remote[Do not resolve remote modules]' \
@@ -580,7 +597,8 @@ _arguments "${_arguments_options[@]}" \
 '--allow-run=[Allow running subprocesses]: : ' \
 '--allow-ffi=[Allow loading dynamic libraries]: :_files' \
 '--inspect=[Activate inspector on host:port (default: 127.0.0.1:9229)]:HOST:PORT: ' \
-'--inspect-brk=[Activate inspector on host:port and break at start of user script]:HOST:PORT: ' \
+'--inspect-brk=[Activate inspector on host:port, wait for debugger to connect and break at the start of user script]:HOST:PORT: ' \
+'--inspect-wait=[Activate inspector on host:port and wait for debugger to connect before running user code]:HOST:PORT: ' \
 '--location=[Value of '\''globalThis.location'\'' used by some web APIs]:HREF:_urls' \
 '--v8-flags=[Set V8 command line options]: : ' \
 '--seed=[Set the random number generator seed]:NUMBER: ' \
@@ -588,7 +606,7 @@ _arguments "${_arguments_options[@]}" \
 '--fail-fast=[Stop after N errors. Defaults to stopping after first failure.]:N: ' \
 '--filter=[Run tests with this string or pattern in the test name]: : ' \
 '--shuffle=[(UNSTABLE): Shuffle the order in which the tests are run]:NUMBER: ' \
-'(--inspect --inspect-brk)--coverage=[UNSTABLE: Collect coverage profile data into DIR]:DIR: ' \
+'(--inspect --inspect-wait --inspect-brk)--coverage=[UNSTABLE: Collect coverage profile data into DIR]:DIR: ' \
 '-j+[deprecated: Number of parallel workers, defaults to number of available CPUs when no value is provided. Defaults to 1 when the option is not present.]: : ' \
 '--jobs=[deprecated: Number of parallel workers, defaults to number of available CPUs when no value is provided. Defaults to 1 when the option is not present.]: : ' \
 '-L+[Set log level]: :(debug info)' \
