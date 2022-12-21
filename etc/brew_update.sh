@@ -94,7 +94,6 @@ brew_packages=(
     ripgrep
     redis
     rlwrap
-    rust
     getsentry/tools/sentry-cli
     selenium-server-standalone
     shellcheck
