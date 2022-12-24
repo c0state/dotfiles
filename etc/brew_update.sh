@@ -166,7 +166,7 @@ brew_cask_packages=(
     iterm2
     itsycal
     jetbrains-toolbox
-    lens
+    lens openlens headlamp octant
     libreoffice
     microsoft-edge
     microsoft-office
