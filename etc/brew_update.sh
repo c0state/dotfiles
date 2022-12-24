@@ -81,6 +81,7 @@ brew_packages=(
     neovim
     nmap
     nnn
+    octant
     openssl
     optipng
     packer
@@ -166,7 +167,7 @@ brew_cask_packages=(
     iterm2
     itsycal
     jetbrains-toolbox
-    lens openlens headlamp octant
+    lens openlens headlamp
     libreoffice
     microsoft-edge
     microsoft-office
