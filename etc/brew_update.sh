@@ -88,6 +88,7 @@ brew_packages=(
     parallel
     pidcat
     pngquant
+    podman podman-desktop podman-compose
     postgresql
     progress
     q
