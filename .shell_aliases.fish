@@ -1,3 +1,4 @@
+alias cat=bat
 alias diff="colordiff --side-by-side --suppress-common-lines"
 alias dbox="dropbox.py"
 
