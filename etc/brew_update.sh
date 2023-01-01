@@ -24,6 +24,10 @@ brew list mas >/dev/null 2>&1 || brew install mas
 # java is needed for some apps
 brew install openjdk
 
+#---------- fonts ----------
+
+brew install --cask font-fira-code
+
 #---------- brew packages ----------
 
 brew_packages=(
