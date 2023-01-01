@@ -168,6 +168,7 @@ brew_cask_packages=(
     iterm2
     itsycal
     jetbrains-toolbox
+    kitty
     lens openlens headlamp
     libreoffice
     microsoft-edge
@@ -196,6 +197,7 @@ brew_cask_packages=(
     vagrant
     visual-studio-code
     vlc
+    warp
     whatsapp
     wireshark
     xbar
