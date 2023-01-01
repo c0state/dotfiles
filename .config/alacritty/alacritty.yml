@@ -1,6 +1,7 @@
 font:
   normal:
-    family: FiraCode NF
+    family: Fira Code
+  size: 12.0
 
 shell:
-  program: /usr/bin/zsh
+  program: zsh
