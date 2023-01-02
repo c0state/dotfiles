@@ -53,6 +53,7 @@ which pipdeptree || pipx install pipdeptree
 which pipenv || pipx install pipenv
 which pre-commit || pipx install pre-commit
 which ptpython || pipx install ptpython
+which pyright || pipx install pyright
 which pyupgrade || pipx install pyupgrade
 which ranger || pipx install ranger-fm
 which semgrep || pipx install semgrep
