@@ -34,6 +34,7 @@ sudo apt -y install \
     gparted \
     gnupg gpg ca-certificates \
     keychain \
+    ncdu \
     nethogs \
     parallel \
     ranger \
