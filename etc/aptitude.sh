@@ -70,6 +70,7 @@ sudo apt -y install \
 sudo apt install code
 
 # install browsers
+sudo apt install fonts-liberation
 which google-chrome-stable || bash -i -c "install_package https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
 
 # install image packages
