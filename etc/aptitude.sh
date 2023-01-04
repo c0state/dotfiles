@@ -4,8 +4,6 @@ set -eu
 
 IS_WSL=$(uname -a | grep -i microsoft || echo "")
 
-sudo add-apt-repository --yes ppa:neovim-ppa/stable
-
 # init vscode
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > /tmp/packages.microsoft.gpg
 sudo install -D -o root -g root -m 644 /tmp/packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
