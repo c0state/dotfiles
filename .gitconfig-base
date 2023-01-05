@@ -39,7 +39,7 @@
     excludesfile = ~/.gitignore_global
     filemode = false
     fscache = true
-    pager = git-split-diffs --color | less --RAW-CONTROL-CHARS --quit-if-one-screen
+    pager = delta
     autocrlf = input
     eol = lf
 [diff]
