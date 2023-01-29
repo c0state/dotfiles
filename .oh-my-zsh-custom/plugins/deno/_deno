@@ -273,9 +273,9 @@ _arguments "${_arguments_options[@]}" \
 '--reload=[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--lock=[Check the specified lock file. If value is not provided, defaults to "deno.lock" in the current working directory.]:FILE:_files' \
 '--cert=[Load certificate authority from PEM encoded file]:FILE:_files' \
-'--inspect=[Activate inspector on host:port (default: 127.0.0.1:9229)]:HOST:PORT: ' \
-'--inspect-brk=[Activate inspector on host:port, wait for debugger to connect and break at the start of user script]:HOST:PORT: ' \
-'--inspect-wait=[Activate inspector on host:port and wait for debugger to connect before running user code]:HOST:PORT: ' \
+'--inspect=[Activate inspector on host:port (default: 127.0.0.1:9229)]:HOST_AND_PORT: ' \
+'--inspect-brk=[Activate inspector on host:port, wait for debugger to connect and break at the start of user script]:HOST_AND_PORT: ' \
+'--inspect-wait=[Activate inspector on host:port and wait for debugger to connect before running user code]:HOST_AND_PORT: ' \
 '--location=[Value of '\''globalThis.location'\'' used by some web APIs]:HREF:_urls' \
 '--v8-flags=[Set V8 command line options]: : ' \
 '--seed=[Set the random number generator seed]:NUMBER: ' \
@@ -308,17 +308,18 @@ _arguments "${_arguments_options[@]}" \
 '--config=[Specify the configuration file]:FILE:_files' \
 '--ext=[Set standard input (stdin) content type]: :(ts tsx js jsx md json jsonc)' \
 '--ignore=[Ignore formatting particular source files]: :_files' \
+'--options-use-tabs=[Use tabs instead of spaces for indentation. Defaults to false.]: :(true false)' \
 '--options-line-width=[Define maximum line width. Defaults to 80.]: : ' \
 '--options-indent-width=[Define indentation width. Defaults to 2.]: : ' \
+'--options-single-quote=[Use single quotes. Defaults to false.]: :(true false)' \
 '--options-prose-wrap=[Define how prose should be wrapped. Defaults to always.]: :(always never preserve)' \
+'--options-no-semicolons=[Don'\''t use semicolons except where necessary.]: :(true false)' \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
 '(-c --config)--no-config[Disable automatic loading of the configuration file.]' \
 '--check[Check if the source files are formatted]' \
 '--watch[Watch for file changes and restart automatically]' \
 '--no-clear-screen[Do not clear terminal screen when under watch mode]' \
-'--options-use-tabs[Use tabs instead of spaces for indentation. Defaults to false.]' \
-'--options-single-quote[Use single quotes. Defaults to false.]' \
 '-h[Print help information]' \
 '--help[Print help information]' \
 '--unstable[Enable unstable features and APIs]' \
@@ -381,9 +382,9 @@ _arguments "${_arguments_options[@]}" \
 '--allow-sys=[Allow access to system info]: : ' \
 '--allow-run=[Allow running subprocesses]: : ' \
 '--allow-ffi=[Allow loading dynamic libraries]: :_files' \
-'--inspect=[Activate inspector on host:port (default: 127.0.0.1:9229)]:HOST:PORT: ' \
-'--inspect-brk=[Activate inspector on host:port, wait for debugger to connect and break at the start of user script]:HOST:PORT: ' \
-'--inspect-wait=[Activate inspector on host:port and wait for debugger to connect before running user code]:HOST:PORT: ' \
+'--inspect=[Activate inspector on host:port (default: 127.0.0.1:9229)]:HOST_AND_PORT: ' \
+'--inspect-brk=[Activate inspector on host:port, wait for debugger to connect and break at the start of user script]:HOST_AND_PORT: ' \
+'--inspect-wait=[Activate inspector on host:port and wait for debugger to connect before running user code]:HOST_AND_PORT: ' \
 '--location=[Value of '\''globalThis.location'\'' used by some web APIs]:HREF:_urls' \
 '--v8-flags=[Set V8 command line options]: : ' \
 '--seed=[Set the random number generator seed]:NUMBER: ' \
@@ -482,9 +483,9 @@ _arguments "${_arguments_options[@]}" \
 '--allow-sys=[Allow access to system info]: : ' \
 '--allow-run=[Allow running subprocesses]: : ' \
 '--allow-ffi=[Allow loading dynamic libraries]: :_files' \
-'--inspect=[Activate inspector on host:port (default: 127.0.0.1:9229)]:HOST:PORT: ' \
-'--inspect-brk=[Activate inspector on host:port, wait for debugger to connect and break at the start of user script]:HOST:PORT: ' \
-'--inspect-wait=[Activate inspector on host:port and wait for debugger to connect before running user code]:HOST:PORT: ' \
+'--inspect=[Activate inspector on host:port (default: 127.0.0.1:9229)]:HOST_AND_PORT: ' \
+'--inspect-brk=[Activate inspector on host:port, wait for debugger to connect and break at the start of user script]:HOST_AND_PORT: ' \
+'--inspect-wait=[Activate inspector on host:port and wait for debugger to connect before running user code]:HOST_AND_PORT: ' \
 '--location=[Value of '\''globalThis.location'\'' used by some web APIs]:HREF:_urls' \
 '--v8-flags=[Set V8 command line options]: : ' \
 '--seed=[Set the random number generator seed]:NUMBER: ' \
@@ -531,9 +532,9 @@ _arguments "${_arguments_options[@]}" \
 '--allow-sys=[Allow access to system info]: : ' \
 '--allow-run=[Allow running subprocesses]: : ' \
 '--allow-ffi=[Allow loading dynamic libraries]: :_files' \
-'--inspect=[Activate inspector on host:port (default: 127.0.0.1:9229)]:HOST:PORT: ' \
-'--inspect-brk=[Activate inspector on host:port, wait for debugger to connect and break at the start of user script]:HOST:PORT: ' \
-'--inspect-wait=[Activate inspector on host:port and wait for debugger to connect before running user code]:HOST:PORT: ' \
+'--inspect=[Activate inspector on host:port (default: 127.0.0.1:9229)]:HOST_AND_PORT: ' \
+'--inspect-brk=[Activate inspector on host:port, wait for debugger to connect and break at the start of user script]:HOST_AND_PORT: ' \
+'--inspect-wait=[Activate inspector on host:port and wait for debugger to connect before running user code]:HOST_AND_PORT: ' \
 '--location=[Value of '\''globalThis.location'\'' used by some web APIs]:HREF:_urls' \
 '--v8-flags=[Set V8 command line options]: : ' \
 '--seed=[Set the random number generator seed]:NUMBER: ' \
@@ -596,9 +597,9 @@ _arguments "${_arguments_options[@]}" \
 '--allow-sys=[Allow access to system info]: : ' \
 '--allow-run=[Allow running subprocesses]: : ' \
 '--allow-ffi=[Allow loading dynamic libraries]: :_files' \
-'--inspect=[Activate inspector on host:port (default: 127.0.0.1:9229)]:HOST:PORT: ' \
-'--inspect-brk=[Activate inspector on host:port, wait for debugger to connect and break at the start of user script]:HOST:PORT: ' \
-'--inspect-wait=[Activate inspector on host:port and wait for debugger to connect before running user code]:HOST:PORT: ' \
+'--inspect=[Activate inspector on host:port (default: 127.0.0.1:9229)]:HOST_AND_PORT: ' \
+'--inspect-brk=[Activate inspector on host:port, wait for debugger to connect and break at the start of user script]:HOST_AND_PORT: ' \
+'--inspect-wait=[Activate inspector on host:port and wait for debugger to connect before running user code]:HOST_AND_PORT: ' \
 '--location=[Value of '\''globalThis.location'\'' used by some web APIs]:HREF:_urls' \
 '--v8-flags=[Set V8 command line options]: : ' \
 '--seed=[Set the random number generator seed]:NUMBER: ' \
