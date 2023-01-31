@@ -12,6 +12,7 @@
     dt = difftool
     dtbc = difftool --tool=bc4
     dtd = "!git diff HEAD --unified=8 | delta"
+    dtm = difftool --tool=meld
     dtsd = "!git diff HEAD --unified=8 | git-split-diffs --color | less --RAW-CONTROL-CHARS --quit-if-one-screen"
     dump = cat-file -p
     ff = !git fetch origin \"$@\":\"$@\"
@@ -46,6 +47,8 @@
     colorMoved = default
 [difftool]
     prompt = false
+[difftool "meld"]
+    cmd = meld "$LOCAL" "$REMOTE"
 [fetch]
     prune = true
 [filter "lfs"]
@@ -65,6 +68,8 @@
     conflictStyle = diff3
 [mergetool]
     prompt = false
+[mergetool "meld"]
+    cmd = meld "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED"
 [pull]
     rebase = true
 [push]
