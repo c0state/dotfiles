@@ -11,3 +11,4 @@ source "$HOME/.cargo/env"
 
 # utilities to install from source
 cargo install sd
+cargo install git-delta
