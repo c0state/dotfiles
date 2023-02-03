@@ -5,6 +5,7 @@ set -eu
 winget install --id 7zip.7zip
 winget install --id adobe.acrobat.reader.64-bit
 winget install --id alcpu.coretemp
+winget install --id alacritty.alacritty
 winget install --id atlassian.sourcetree
 winget install --id audacity.audacity
 winget install --id balena.etcher
@@ -27,8 +28,7 @@ winget install --id microsoft.dotnet
 winget install --id microsoft.visualstudiocode
 winget install --id mirantis.lens
 winget install --id mozilla.firefox
-# TODO: not yet available
-# winget install --id neovim
+winget install --id neovim.neovim
 winget install --id nvidia.geforceexperience
 winget install --id obsproject.obsstudio
 winget install --id raspberrypifoundation.raspberrypiimager
