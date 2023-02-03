@@ -24,6 +24,7 @@ sudo apt-get update
 #------------------------------ install utility packages
 
 sudo apt -y install \
+    bat \
     colordiff icdiff \
     curl wget \
     direnv \
@@ -66,6 +67,7 @@ sudo apt -y install \
     tmux \
     vagrant
 
+# TODO: skip on wsl
 # install vscode
 sudo apt install code
 
