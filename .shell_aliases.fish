@@ -1,4 +1,9 @@
-alias cat=bat
+if which uname >/dev/null
+    alias bat=batcat
+    alias cat=batcat
+else
+    alias cat=bat
+end
 alias diff="colordiff --side-by-side --suppress-common-lines"
 alias dbox="dropbox.py"
 
