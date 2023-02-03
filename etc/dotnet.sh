@@ -8,6 +8,7 @@ if [[ $PLATFORM != 'Linux' ]]; then
 fi
 
 if command -v dotnet >/dev/null; then
+    echo "dotnet already installed, it should auto update"
     exit 0
 fi
 
