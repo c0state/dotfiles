@@ -69,7 +69,6 @@ sudo apt -y install \
     awscli \
     fonts-firacode \
     gh \
-    neovim python3-neovim \
     tmux \
     vagrant
 
