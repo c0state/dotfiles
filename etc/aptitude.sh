@@ -16,8 +16,14 @@ sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
 
 # init tailscale
-curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/jammy.noarmor.gpg | sudo tee /usr/share/keyrings/tailscale-archive-keyring.gpg >/dev/null
-curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/jammy.tailscale-keyring.list | sudo tee /etc/apt/sources.list.d/tailscale.list
+curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/kinetic.noarmor.gpg | sudo tee /usr/share/keyrings/tailscale-archive-keyring.gpg >/dev/null
+curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/kinetic.tailscale-keyring.list | sudo tee /etc/apt/sources.list.d/tailscale.list
+
+#------------------------------ ppas
+
+sudo add-apt-repository -y ppa:touchegg/stable
+
+#------------------------------ begin update and installs
 
 sudo apt-get update
 
@@ -63,7 +69,7 @@ sudo apt -y install \
     awscli \
     fonts-firacode \
     gh \
-    neovim \
+    neovim python3-neovim \
     tmux \
     vagrant
 
@@ -104,11 +110,5 @@ sudo apt -y install \
     fish \
     zsh zsh-doc
 
-#------------------------------ flatpak packages
-
-if [[ -z "$IS_WSL" ]]; then
-    flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-
-    flatpak install --user --or-update flathub com.github.joseexposito.touche
-fi
+sudo apt install -y touchegg
 
