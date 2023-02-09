@@ -21,10 +21,12 @@ TOTAL_BAD_PODS=""
 
 for context in dev staging prod prod-executor; do
   BAD_PODS=$(kubectl get pods --context "$context" --namespace "$context" 2>&1 | grep -E -v 'Running|Completed')
+  BAD_PODS=$(echo "$BAD_PODS" | awk '{ print $0 " | font=Menlo"; }')
 
   if [ $(echo "$BAD_PODS" | wc -l) != "1" ]; then
     TOTAL_BAD_PODS="$TOTAL_BAD_PODS
-$context | font='Menlo' | color=red"
+$context | color=red | font=Menlo
+---"
     TOTAL_BAD_PODS="$TOTAL_BAD_PODS
 $BAD_PODS
 ---"
@@ -32,7 +34,7 @@ $BAD_PODS
 done
 
 if test -n "$TOTAL_BAD_PODS" ; then
-  echo "Abnormal Pods | color=red | font='Menlo'"
+  echo "Abnormal Pods | color=red | font=Menlo"
   echo ---"$TOTAL_BAD_PODS"
 else
   echo "No Abnormal Pods"
