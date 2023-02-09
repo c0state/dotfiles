@@ -34,7 +34,7 @@ $BAD_PODS
 done
 
 if test -n "$TOTAL_BAD_PODS" ; then
-  echo "Abnormal Pods | color=red | font=Menlo"
+  echo "Abnormal Pods | color=red"
   echo ---"$TOTAL_BAD_PODS"
 else
   echo "No Abnormal Pods"
