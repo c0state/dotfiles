@@ -49,5 +49,5 @@ if test -n "$STALE_PODS" ; then
 else
   echo "No Stale Pods"
   echo ---
-  kubectl get pods --context "$STALE_POD_CONTEXT" --namespace "$STALE_POD_NAMESPACE"
+  kubectl get pods --context "$STALE_POD_CONTEXT" --namespace "$STALE_POD_NAMESPACE" | tail -n +2 | awk '{ print $0 " | font=Menlo" }'
 fi
