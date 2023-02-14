@@ -4,7 +4,7 @@ set -ex
 
 #---------- variables
 
-GO_VERSION=1.19
+GO_VERSION=1.20
 PLATFORM=$(uname)
 MACH_TYPE=$(uname -m)
 ARCH_TYPE=$MACH_TYPE
@@ -24,8 +24,9 @@ fi
 
 #---------- install section
 
-if ! command -v go >/dev/null; then
+if (! command -v go >/dev/null) || ! (go version | grep "$GO_VERSION"); then
     mkdir -p ~/.local
+    rm -rf ~/.local/go
     wget -qO- https://golang.org/dl/go"$GO_VERSION"."$PLATFORM_STRING"-"$ARCH_TYPE".tar.gz | tar zxvf - -C "$HOME"/.local
 fi
 
