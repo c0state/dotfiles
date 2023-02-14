@@ -25,6 +25,7 @@
     mm = merge origin/master --autostash
     publish = !legit publish \"$@\"
     pullr = "!git pull --rebase --autostash --all"
+    rs = "!git restore . --recurse-submodules"
     sl = stash list
     sprout = !legit sprout \"$@\"
     st = status
