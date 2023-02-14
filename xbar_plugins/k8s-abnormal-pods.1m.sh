@@ -18,7 +18,7 @@ export PATH=$PATH:/opt/homebrew/bin
 TOTAL_BAD_PODS=""
 
 for context in dev dev-executor staging staging-executor prod prod-executor; do
-  BAD_PODS=$(kubectl get pods --context "$context" --namespace "${context//-executor/}" 2>&1 | grep -E -v 'Running|Completed|ContainerCreating')
+  BAD_PODS=$(kubectl get pods --context "$context" --namespace "${context//-executor/}" 2>&1 | grep -E -v 'Running|Completed|ContainerCreating|Pending')
   BAD_PODS=$(echo "$BAD_PODS" | awk '{ print $0 " | font=Menlo"; }')
 
   if [ $(echo "$BAD_PODS" | wc -l) != "1" ]; then
