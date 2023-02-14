@@ -14,11 +14,7 @@ set -eu
 # use a regex like the following in $HOME/.xbar_variables to indicate what are stale pods
 # [kubernetes]
 # STALE_POD_REGEX = ^(cex-)
-# STALE_POD_CONTEXT = prod-context
-# STALE_POD_NAMESPACE = prod-ns
 STALE_POD_REGEX=$(grep STALE_POD_REGEX ~/.xbar_variables | cut -d= -f2 | awk '{ print $1; }')
-STALE_POD_CONTEXT=$(grep STALE_POD_CONTEXT ~/.xbar_variables | cut -d= -f2 | awk '{ print $1; }')
-STALE_POD_NAMESPACE=$(grep STALE_POD_NAMESPACE ~/.xbar_variables | cut -d= -f2 | awk '{ print $1; }')
 
 if test -z "$STALE_POD_REGEX"; then
   echo "Not Watching Pods|color=gray"
@@ -27,7 +23,7 @@ if test -z "$STALE_POD_REGEX"; then
   exit 0
 fi
 
-if test -z "$STALE_POD_REGEX" || test -z "$STALE_POD_CONTEXT" || test -z "$STALE_POD_NAMESPACE"; then
+if test -z "$STALE_POD_REGEX"; then
     echo Missing configuration settings!
     exit 1
 fi
@@ -36,18 +32,32 @@ export PATH=$PATH:/usr/local/bin
 # also add new arm macos compatible homebrew path
 export PATH=$PATH:/opt/homebrew/bin
 
-# anything older than a day is considered stale
-STALE_PODS=$(\
-  kubectl get pods --context "$STALE_POD_CONTEXT" --namespace "$STALE_POD_NAMESPACE" | \
-  grep -E "$STALE_POD_REGEX" | grep '[0-9]d[0-9a-z]*$' || echo "" \
-)
+FOUND_ZOMBIE_PODS=0
 
-if test -n "$STALE_PODS" ; then
-  echo "Stale Pods|color=red"
-  echo ---
-  echo "$STALE_PODS"
-else
+for namespace in dev staging prod; do
+  # anything older than a day is considered stale
+  STALE_PODS=$(\
+    kubectl get pods --namespace "$namespace" --context "$namespace-executor" | \
+    grep -E "$STALE_POD_REGEX" | grep '[0-9]d[0-9a-z]*$' || echo "" \
+  )
+
+  if test -n "$STALE_PODS" ; then
+    FOUND_ZOMBIE_PODS=1
+
+    echo "Stale Pods|color=red"
+    echo ---
+    echo $namespace
+    echo ---
+    echo "$STALE_PODS"
+  fi
+done
+
+if [[ $FOUND_ZOMBIE_PODS == 0 ]]; then
   echo "No Stale Pods"
-  echo ---
-  kubectl get pods --context "$STALE_POD_CONTEXT" --namespace "$STALE_POD_NAMESPACE" | tail -n +2 | awk '{ print $0 " | font=Menlo" }'
+  for namespace in dev staging prod; do
+    echo ---
+    echo $namespace
+    kubectl get pods --namespace "$namespace" --context "$namespace-executor" | \
+      tail -n +2 | awk '{ print $0 " | font=Menlo" }'
+  done
 fi
