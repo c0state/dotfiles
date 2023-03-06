@@ -4,7 +4,7 @@ set -ex
 
 #---------- variables
 
-GO_VERSION=1.20
+GO_VERSION=$(curl -L https://golang.org/VERSION?m=text)
 PLATFORM=$(uname)
 MACH_TYPE=$(uname -m)
 ARCH_TYPE=$MACH_TYPE
@@ -27,7 +27,7 @@ fi
 if (! command -v go >/dev/null) || ! (go version | grep "$GO_VERSION"); then
     mkdir -p ~/.local
     rm -rf ~/.local/go
-    wget -qO- https://golang.org/dl/go"$GO_VERSION"."$PLATFORM_STRING"-"$ARCH_TYPE".tar.gz | tar zxvf - -C "$HOME"/.local
+    wget -qO- https://golang.org/dl/"$GO_VERSION"."$PLATFORM_STRING"-"$ARCH_TYPE".tar.gz | tar zxvf - -C "$HOME"/.local
 fi
 
 # go repl
