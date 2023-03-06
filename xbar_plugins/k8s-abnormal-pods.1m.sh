@@ -18,17 +18,20 @@ export PATH=$PATH:/opt/homebrew/bin
 TOTAL_BAD_PODS=""
 
 for context in dev dev-executor staging staging-executor prod prod-executor; do
-  BAD_PODS=$(kubectl get pods --context "$context" --namespace "${context//-executor/}" 2>&1 | grep -E -v 'Running|Completed|ContainerCreating|Pending')
-  BAD_PODS=$(echo "$BAD_PODS" | awk '{ print $0 " | font=Menlo"; }')
+  for namespace in "$context-executor" global; do
+    BAD_PODS=$(kubectl get pods --context "$context" --namespace $namespace 2>&1 | \
+      grep -E -v 'Running|Completed|ContainerCreating|Pending')
+    BAD_PODS=$(echo "$BAD_PODS" | awk '{ print $0 " | font=Menlo"; }')
 
-  if [ $(echo "$BAD_PODS" | wc -l) != "1" ]; then
-    TOTAL_BAD_PODS="$TOTAL_BAD_PODS
+    if [ $(echo "$BAD_PODS" | wc -l) != "1" ]; then
+      TOTAL_BAD_PODS="$TOTAL_BAD_PODS
 $context | color=red | font=Menlo
 ---"
-    TOTAL_BAD_PODS="$TOTAL_BAD_PODS
+      TOTAL_BAD_PODS="$TOTAL_BAD_PODS
 $BAD_PODS
 ---"
-  fi
+    fi
+  done
 done
 
 if test -n "$TOTAL_BAD_PODS" ; then
