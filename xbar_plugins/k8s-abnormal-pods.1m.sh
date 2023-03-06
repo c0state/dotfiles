@@ -18,7 +18,7 @@ export PATH=$PATH:/opt/homebrew/bin
 TOTAL_BAD_PODS=""
 
 for context in dev dev-executor staging staging-executor prod prod-executor; do
-  for namespace in "$context-executor" global; do
+  for namespace in "$context-executor" global kube-system; do
     BAD_PODS=$(kubectl get pods --context "$context" --namespace $namespace 2>&1 | \
       grep -E -v 'Running|Completed|ContainerCreating|Pending')
     BAD_PODS=$(echo "$BAD_PODS" | awk '{ print $0 " | font=Menlo"; }')
