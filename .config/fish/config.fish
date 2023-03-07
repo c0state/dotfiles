@@ -58,6 +58,13 @@ if command -v pyenv 1>/dev/null 2>&1
     status is-login; and pyenv init --path | source
 end
 
+#----- ruby
+
+set -gx PATH "$HOME/.rbenv/bin" $PATH
+if command -v rbenv >/dev/null
+  eval "$(rbenv init -)"
+end
+
 #----- rust
 set -gx PATH "$HOME/.cargo/bin" $PATH
 
