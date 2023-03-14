@@ -27,7 +27,7 @@ fi
 if (! command -v go >/dev/null) || ! (go version | grep "$GO_VERSION"); then
     mkdir -p ~/.local
     rm -rf ~/.local/go
-    wget -qO- https://golang.org/dl/"$GO_VERSION"."$PLATFORM_STRING"-"$ARCH_TYPE".tar.gz | tar zxvf - -C "$HOME"/.local
+    curl -L https://golang.org/dl/"$GO_VERSION"."$PLATFORM_STRING"-"$ARCH_TYPE".tar.gz | tar zxvf - -C "$HOME"/.local
 fi
 
 # go repl
