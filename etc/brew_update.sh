@@ -194,6 +194,7 @@ brew_cask_packages=(
     steam
     sublime-text
     superduper
+    tabby
     teamviewer
     tor-browser
     tower
