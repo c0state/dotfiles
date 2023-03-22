@@ -13,6 +13,7 @@ winget install --id cpuid.cpu-z
 winget install --id cpuid.hwmonitor
 winget install --id discord.discord
 winget install --id docker.dockerdesktop
+winget install --id eugeny.tabby
 winget install --id faststone.viewer
 winget install --id flux.flux
 winget install --id git.git
