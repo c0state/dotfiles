@@ -96,6 +96,7 @@ _arguments "${_arguments_options[@]}" \
 '--reload=[Reload source code cache (recompile TypeScript)]:CACHE_BLOCKLIST:_files' \
 '--lock=[Check the specified lock file. If value is not provided, defaults to "deno.lock" in the current working directory.]:FILE:_files' \
 '--cert=[Load certificate authority from PEM encoded file]:FILE:_files' \
+'--ext=[Set content type of the supplied file]: :(ts tsx js jsx)' \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
 '--no-remote[Do not resolve remote modules]' \
@@ -191,9 +192,11 @@ _arguments "${_arguments_options[@]}" \
 '--location=[Value of '\''globalThis.location'\'' used by some web APIs]:HREF:_urls' \
 '--v8-flags=[Set V8 command line options]: : ' \
 '--seed=[Set the random number generator seed]:NUMBER: ' \
+'*--include=[UNSTABLE: Additional module to include in the module graph]: :_files' \
 '-o+[Output file (defaults to $PWD/<inferred-name>)]: :_files' \
 '--output=[Output file (defaults to $PWD/<inferred-name>)]: :_files' \
 '--target=[Target OS architecture]: :(x86_64-unknown-linux-gnu x86_64-pc-windows-msvc x86_64-apple-darwin aarch64-apple-darwin)' \
+'--ext=[Set content type of the supplied file]: :(ts tsx js jsx)' \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
 '--no-remote[Do not resolve remote modules]' \
@@ -285,7 +288,7 @@ _arguments "${_arguments_options[@]}" \
 '--location=[Value of '\''globalThis.location'\'' used by some web APIs]:HREF:_urls' \
 '--v8-flags=[Set V8 command line options]: : ' \
 '--seed=[Set the random number generator seed]:NUMBER: ' \
-'--ext=[Set standard input (stdin) content type]: :(ts tsx js jsx)' \
+'--ext=[Set content type of the supplied file]: :(ts tsx js jsx)' \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
 '--no-remote[Do not resolve remote modules]' \
@@ -295,8 +298,8 @@ _arguments "${_arguments_options[@]}" \
 '(--lock)--no-lock[Disable auto discovery of the lock file.]' \
 '--cached-only[Require that remote dependencies are already cached]' \
 '--enable-testing-features-do-not-use[INTERNAL: Enable internal features used during integration testing]' \
-'-T[Treat eval input as TypeScript]' \
-'--ts[Treat eval input as TypeScript]' \
+'(--ext)-T[deprecated: Treat eval input as TypeScript]' \
+'(--ext)--ts[deprecated: Treat eval input as TypeScript]' \
 '-p[print result to stdout]' \
 '--print[print result to stdout]' \
 '-h[Print help information]' \
@@ -311,7 +314,7 @@ _arguments "${_arguments_options[@]}" \
 _arguments "${_arguments_options[@]}" \
 '-c+[Specify the configuration file]:FILE:_files' \
 '--config=[Specify the configuration file]:FILE:_files' \
-'--ext=[Set standard input (stdin) content type]: :(ts tsx js jsx md json jsonc)' \
+'--ext=[Set content type of the supplied file]: :(ts tsx js jsx md json jsonc)' \
 '--ignore=[Ignore formatting particular source files]: :_files' \
 '--use-tabs=[Use tabs instead of spaces for indentation. Defaults to false.]: :(true false)' \
 '--line-width=[Define maximum line width. Defaults to 80.]: : ' \
@@ -549,6 +552,7 @@ _arguments "${_arguments_options[@]}" \
 '--v8-flags=[Set V8 command line options]: : ' \
 '--seed=[Set the random number generator seed]:NUMBER: ' \
 '(--inspect --inspect-wait --inspect-brk)--watch=[Watch for file changes and restart automatically]:FILES:_files' \
+'--ext=[Set content type of the supplied file]: :(ts tsx js jsx)' \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
 '--no-remote[Do not resolve remote modules]' \
