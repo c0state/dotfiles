@@ -132,7 +132,16 @@ if [[ ! -d $HOME/.krew ]]; then
     )
 fi
 
-# ---------- update dotfiles
+# ---------- nix
+
+if ! which nix >/dev/null ; then
+    curl -L https://nixos.org/nix/install | sh -s -- --daemon
+fi
+
+# ---------- updates
 
 "$HOME"/etc/update_dotfiles.sh
+"$HOME"/etc/setup_kubernetes.sh
+"$HOME"/etc/golang.sh
+"$HOME"/etc/rust.sh
 
