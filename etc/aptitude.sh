@@ -38,6 +38,7 @@ sudo apt -y install \
     fd-find \
     flatpak \
     git git-lfs \
+    glances \
     gparted \
     gnupg gpg ca-certificates \
     keychain \
