@@ -10,10 +10,10 @@ if [[ $PLATFORM == 'Linux' ]]; then
     sudo curl -LS https://packages.cloud.google.com/apt/doc/apt-key.gpg -o /usr/share/keyrings/kubernetes-archive-keyring.gpg
     
     # install dependencies
-    sudo apt-get install apt-transport-https ca-certificates gnupg
+    sudo apt-get install -y apt-transport-https ca-certificates gnupg
     
     # install kubectl
-    sudo apt-get update && sudo apt-get install kubectl
+    sudo apt-get update && sudo apt-get install -y kubectl
 fi
 
 # install kubectl krew packages

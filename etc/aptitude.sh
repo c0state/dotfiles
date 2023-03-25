@@ -60,8 +60,6 @@ sudo apt -y install \
     wmctrl \
     vim-nox
 
-sudo snap install nvim --classic
-
 #------------------------------ install packages
 
 # install compiler packages
