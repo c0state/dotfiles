@@ -27,6 +27,16 @@ sudo add-apt-repository -y ppa:touchegg/stable
 
 sudo apt-get update
 
+#------------------------------ install core packages
+
+sudo apt -y install \
+    flatpak \
+    snapd
+
+#------------------------------ flatpak repos
+
+flatpak install -y flathub
+
 #------------------------------ install utility packages
 
 sudo apt -y install \
@@ -36,7 +46,6 @@ sudo apt -y install \
     direnv \
     dos2unix \
     fd-find \
-    flatpak \
     git git-lfs \
     glances \
     gparted \
@@ -50,6 +59,8 @@ sudo apt -y install \
     tree \
     wmctrl \
     vim-nox
+
+sudo snap install nvim --classic
 
 #------------------------------ install packages
 
@@ -79,7 +90,7 @@ sudo apt install code
 
 # install browsers
 sudo apt install fonts-liberation
-which google-chrome-stable || bash -i -c "install_package https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
+sudo apt install google-chrome-stable
 
 # install image packages
 sudo apt -y install \
