@@ -145,7 +145,11 @@ fi
 # ---------- updates
 
 "$HOME"/etc/update_dotfiles.sh
-"$HOME"/etc/setup_kubernetes.sh
+
+"$HOME"/etc/dotnet.sh
 "$HOME"/etc/golang.sh
+"$HOME"/etc/ruby.sh
 "$HOME"/etc/rust.sh
+
+"$HOME"/etc/setup_kubernetes.sh
 
