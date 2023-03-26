@@ -19,6 +19,11 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githu
 curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/kinetic.noarmor.gpg | sudo tee /usr/share/keyrings/tailscale-archive-keyring.gpg >/dev/null
 curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/kinetic.tailscale-keyring.list | sudo tee /etc/apt/sources.list.d/tailscale.list
 
+# tabby
+curl -fsSL https://packagecloud.io/eugeny/tabby/gpgkey | gpg --dearmor | sudo dd of=/etc/apt/keyrings/eugeny_tabby-archive-keyring.gpg
+echo "deb [signed-by=/etc/apt/keyrings/eugeny_tabby-archive-keyring.gpg] https://packagecloud.io/eugeny/tabby/ubuntu kinetic main" | sudo tee /etc/apt/sources.list.d/eugeny_tabby.list
+echo "deb-src [signed-by=/etc/apt/keyrings/eugeny_tabby-archive-keyring.gpg] https://packagecloud.io/eugeny/tabby/ubuntu kinetic main" | sudo tee -a /etc/apt/sources.list.d/eugeny_tabby.list
+
 #------------------------------ ppas
 
 sudo add-apt-repository -y ppa:touchegg/stable
@@ -36,6 +41,8 @@ sudo apt -y install \
 #------------------------------ flatpak repos
 
 flatpak install -y flathub
+
+flatpak install -y touche
 
 #------------------------------ install utility packages
 
@@ -57,6 +64,7 @@ sudo apt -y install \
     parallel \
     ranger \
     ripgrep \
+    tabby-terminal \
     tree \
     wmctrl \
     vim-nox
