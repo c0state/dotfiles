@@ -49,6 +49,7 @@ sudo apt -y install \
     git git-lfs \
     glances \
     gparted \
+    gnome-tweaks \
     gnupg gpg ca-certificates \
     keychain \
     ncdu \
