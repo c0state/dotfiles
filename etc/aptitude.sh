@@ -65,6 +65,7 @@ sudo apt -y install \
     parallel \
     ranger \
     ripgrep \
+    slack-desktop \
     tabby-terminal \
     tree \
     wmctrl \
@@ -80,9 +81,8 @@ sudo apt -y install \
     libncurses5-dev libncursesw5-dev \
     libxml2-dev
 
-# TODO: figure out how to add repo
 # only available on pop os out of the box
-#sudo apt -y install alacritty
+apt info alacritty && sudo apt -y install alacritty
 
 # install developer packages
 sudo apt -y install \
@@ -92,9 +92,8 @@ sudo apt -y install \
     tmux \
     vagrant
 
-# TODO: skip on wsl
 # install vscode
-sudo apt install code
+[ -z $IS_WSL ] && sudo apt install code
 
 # install browsers
 sudo apt install fonts-liberation
