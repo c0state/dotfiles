@@ -148,6 +148,7 @@ fi
 
 "$HOME"/etc/dotnet.sh
 "$HOME"/etc/golang.sh
+"$HOME"/etc/python.sh
 "$HOME"/etc/ruby.sh
 "$HOME"/etc/rust.sh
 
