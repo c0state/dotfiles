@@ -62,7 +62,7 @@ end
 
 set -gx PATH "$HOME/.rbenv/bin" $PATH
 if command -v rbenv >/dev/null
-  eval (rbenv init -)
+  eval "$(rbenv init -)"
 end
 
 #----- rust
