@@ -6,13 +6,13 @@ RUN apt-get -y update
 RUN apt-get -y install sudo
 
 # XXX: need to expliiclty install tzdata non-interactively or else
-# it hangs on user input in aptitude.sh script
+# it hangs on user input in debian_install.sh script
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get -y install tzdata
 
 # install apt packages first to cache this layer as it takes a long time
-COPY etc/aptitude.sh /app/aptitude.sh
-RUN /app/aptitude.sh
+COPY etc/debian_install.sh /app/debian_install.sh
+RUN /app/debian_install.sh
 
 ENV HOME=/root
 WORKDIR $HOME
@@ -32,7 +32,7 @@ RUN bash -i -c "$HOME/.dotfiles/etc/setup_env.sh"
 ADD . $HOME/.dotfiles
 
 FROM dotfiles-base as dotfiles-python
-RUN bash -i -c "$HOME/etc/python_tools_install.sh"
+RUN bash -i -c "$HOME/etc/python.sh"
 
 FROM dotfiles-base as dotfiles-js
 RUN bash -i -c "$HOME/etc/js_tools.sh"
