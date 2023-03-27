@@ -27,6 +27,7 @@ echo "deb-src [signed-by=/etc/apt/keyrings/eugeny_tabby-archive-keyring.gpg] htt
 #------------------------------ ppas
 
 sudo add-apt-repository -y ppa:touchegg/stable
+sudo apt-add-repository -y ppa:fish-shell/release-3
 
 #------------------------------ begin update and installs
 
