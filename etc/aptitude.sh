@@ -40,6 +40,7 @@ sudo apt -y install \
 
 #------------------------------ flatpak repos
 
+flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak install -y flathub
 
 flatpak install -y touche
@@ -97,7 +98,10 @@ sudo apt install code
 
 # install browsers
 sudo apt install fonts-liberation
-sudo apt install google-chrome-stable
+
+# chrome isn't in core repos for ubuntu
+apt info google-chrome-stable && sudo apt install google-chrome-stable
+which google-chrome-stable || bash -i -c "install_package https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
 
 # install image packages
 sudo apt -y install \
