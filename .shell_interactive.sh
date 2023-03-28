@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-export SHELL=$(which zsh)
-
 #----- detect platform
 PLATFORM=$(uname)
 IS_MACOS_ARM=$(uname -a | grep -i "darwin.*arm64" || echo "")
