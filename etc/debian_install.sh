@@ -93,6 +93,10 @@ sudo apt -y install \
     tmux \
     vagrant
 
+which jetbrains-toolbox || \
+    wget -O - https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.27.3.14493.tar.gz | tar -xzO jetbrains-toolbox-1.27.3.14493/jetbrains-toolbox > "$HOME"/.local/bin/jetbrains-toolbox && \
+    chmod u+x "$HOME"/.local/bin/jetbrains-toolbox
+
 # install vscode
 [ -z $IS_WSL ] && sudo apt install code
 
