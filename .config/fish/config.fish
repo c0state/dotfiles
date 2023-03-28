@@ -7,6 +7,10 @@ set --local IS_MACOS_ARM (uname -a | grep -i "darwin.*arm64" || echo "")
 # misc
 set --local REPORTTIME 3
 
+#---------- vars
+
+set -gx SHELL fish
+
 #---------- aliases and functions
 
 source ~/.shell_aliases.fish
