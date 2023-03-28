@@ -59,7 +59,7 @@ function install_package {
         export TEMP_PKG_INSTALL_FILE="$(mktemp)"
         (
             wget -O "$TEMP_PKG_INSTALL_FILE" "$1" &&
-            sudo dpkg -i "$TEMP_PKG_INSTALL_FILE"
+            sudo dpkg --skip-same-version -i "$TEMP_PKG_INSTALL_FILE"
         )
         rm -f "$TEMP_PKG_INSTALL_FILE"
     )

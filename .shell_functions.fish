@@ -64,7 +64,7 @@ end
 
 function install_package 
     set TEMP_PKG_INSTALL_FILE (mktemp)
-    wget -O "$TEMP_PKG_INSTALL_FILE" "$argv" && sudo dpkg -i "$TEMP_PKG_INSTALL_FILE" || true
+    wget -O "$TEMP_PKG_INSTALL_FILE" "$argv" && sudo dpkg --skip-same-version -i "$TEMP_PKG_INSTALL_FILE" || true
     rm -f "$TEMP_PKG_INSTALL_FILE"
     set --erase TEMP_PKG_INSTALL_FILE
 end
