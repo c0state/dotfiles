@@ -13,6 +13,7 @@ source ~/.shell_aliases.fish
 source ~/.shell_functions.fish
 
 #---------- homebrew
+
 if test "$PLATFORM" = "Darwin"
     if test -n $IS_MACOS_ARM
         eval (/opt/homebrew/bin/brew shellenv)
@@ -90,8 +91,7 @@ end
 #---------- keychain agent
 
 if type -q keychain
-    # keychain doesn't work in fish
-    # eval (keychain --eval --quiet)
+    keychain --eval --quiet --quick | source
 end
 
 #---------- gcloud
