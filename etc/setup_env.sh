@@ -33,6 +33,7 @@ if [[ ! -d $HOME/etc ]]; then
 fi
 
 # ---------- set up gitconfig
+
 if [[ -n "$IS_WSL" ]]; then
     ln -s -f "$HOME"/.dotfiles/.gitconfig-linux "$HOME"/.gitconfig-linux
     ln -s -f "$HOME"/.dotfiles/.gitconfig-wsl "$HOME"/.gitconfig
