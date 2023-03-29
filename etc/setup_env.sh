@@ -71,18 +71,6 @@ else
     lvim +LvimUpdate +qall
 fi
 
-# ---------- set up lsd ls replacement
-
-if ! which lsd > /dev/null && [[ "$PLATFORM" == "Linux" ]]; then
-    bash -i -c "install_package https://github.com/Peltoche/lsd/releases/download/0.20.1/lsd_0.20.1_$DPKG_ARCH.deb"
-fi
-
-# ---------- set up dive https://github.com/wagoodman/dive
-
-if ! which dive > /dev/null && [[ "$PLATFORM" == "Linux" ]]; then
-    bash -i -c "install_package https://github.com/wagoodman/dive/releases/download/v0.9.2/dive_0.9.2_linux_$DPKG_ARCH.deb"
-fi
-
 # ---------- set up fzf https://github.com/junegunn/fzf
 
 if [[ ! -d $HOME/.fzf ]]; then
@@ -149,6 +137,7 @@ fi
 
 "$HOME"/etc/dotnet.sh
 "$HOME"/etc/golang.sh
+"$HOME"/etc/js_tools.sh
 "$HOME"/etc/python.sh
 "$HOME"/etc/ruby.sh
 "$HOME"/etc/rust.sh
