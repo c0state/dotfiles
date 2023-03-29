@@ -61,10 +61,6 @@ vim +PlugUpdate +PlugUpgrade +UpdateRemotePlugins +qall
 
 # ---------- set up lunarvim
 
-if ! which nvim > /dev/null && [[ "$PLATFORM" == "Linux" ]]; then
-    bash -i -c "install_package https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.deb"
-fi
-
 if ! which lvim > /dev/null; then
     LV_BRANCH='release-1.2/neovim-0.8' bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/fc6873809934917b470bff1b072171879899a36b/utils/installer/install.sh) -- --no-install-dependencies
 else
