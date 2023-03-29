@@ -28,8 +28,8 @@ echo "deb-src [signed-by=/etc/apt/keyrings/eugeny_tabby-archive-keyring.gpg] htt
 #------------------------------ ppas
 
 sudo add-apt-repository -y ppa:alessandro-strada/ppa
-sudo apt-add-repository -y ppa:fish-shell/release-3
-sudo add-apt-repository -y ppa:touchegg/stable
+ls /etc/apt/sources.list.d/fish-shell*.list || sudo apt-add-repository -y ppa:fish-shell/release-3
+ls /etc/apt/sources.list.d/touchegg*.list || sudo add-apt-repository -y ppa:touchegg/stable
 
 #------------------------------ begin update and installs
 
@@ -96,7 +96,12 @@ sudo apt -y install \
     tmux \
     vagrant
 
-LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
+# ---------- set up lsd ls replacement
+
+LSD_VERSION=$(curl -s "https://api.github.com/repos/lsd-rs/lsd/releases/latest" | command grep -Po '"tag_name": "\K[^"]*')
+bash -i -c "install_package https://github.com/lsd-rs/lsd/releases/download/${LSD_VERSION}/lsd_${LSD_VERSION}_${DPKG_ARCH}.deb"
+
+LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | command grep -Po '"tag_name": "v\K[^"]*')
 curl -L "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz" | \
     tar -xzO lazygit \
     > "$HOME"/.local/bin/lazygit && chmod ug+x "$HOME"/.local/bin/lazygit
@@ -158,4 +163,6 @@ sudo apt -y install \
     zsh zsh-doc
 
 sudo apt install -y touchegg
+
+echo "Successfully installed all Linux packages!"
 
