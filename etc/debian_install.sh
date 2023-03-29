@@ -96,6 +96,11 @@ sudo apt -y install \
     tmux \
     vagrant
 
+LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
+curl -L "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz" | \
+    tar -xzO lazygit \
+    > "$HOME"/.local/bin/lazygit && chmod ug+x "$HOME"/.local/bin/lazygit
+
 which docker || (curl -fsSL https://get.docker.com | sh)
 
 which jetbrains-toolbox || \
@@ -103,6 +108,14 @@ which jetbrains-toolbox || \
         tar -xzO jetbrains-toolbox-1.27.3.14493/jetbrains-toolbox \
     > "$HOME"/.local/bin/jetbrains-toolbox && \
     chmod u+x "$HOME"/.local/bin/jetbrains-toolbox
+
+if ! which nvim > /dev/null; then
+    bash -i -c "install_package https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.deb"
+fi
+
+if ! which lvim > /dev/null; then
+    LV_BRANCH='release-1.2/neovim-0.8' bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/fc6873809934917b470bff1b072171879899a36b/utils/installer/install.sh) -- --no-install-dependencies
+fi
 
 # install vscode
 [ -z $IS_WSL ] && sudo apt install code
