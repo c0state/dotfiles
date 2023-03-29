@@ -3,6 +3,7 @@
 set -eu
 
 IS_WSL=$(uname -a | grep -i microsoft || echo "")
+DPKG_ARCH=$(dpkg --print-architecture 2>/dev/null || echo "")
 
 # init vscode
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > /tmp/packages.microsoft.gpg
@@ -26,8 +27,9 @@ echo "deb-src [signed-by=/etc/apt/keyrings/eugeny_tabby-archive-keyring.gpg] htt
 
 #------------------------------ ppas
 
-sudo add-apt-repository -y ppa:touchegg/stable
+sudo add-apt-repository -y ppa:alessandro-strada/ppa
 sudo apt-add-repository -y ppa:fish-shell/release-3
+sudo add-apt-repository -y ppa:touchegg/stable
 
 #------------------------------ begin update and installs
 
@@ -60,6 +62,7 @@ sudo apt -y install \
     gparted \
     gnome-tweaks \
     gnupg gpg ca-certificates \
+    google-drive-ocamlfuse \
     keychain \
     ncdu \
     nethogs \
@@ -93,8 +96,12 @@ sudo apt -y install \
     tmux \
     vagrant
 
+which docker || (curl -fsSL https://get.docker.com | sh)
+
 which jetbrains-toolbox || \
-    wget -O - https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.27.3.14493.tar.gz | tar -xzO jetbrains-toolbox-1.27.3.14493/jetbrains-toolbox > "$HOME"/.local/bin/jetbrains-toolbox && \
+    wget -O - https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.27.3.14493.tar.gz | \
+        tar -xzO jetbrains-toolbox-1.27.3.14493/jetbrains-toolbox \
+    > "$HOME"/.local/bin/jetbrains-toolbox && \
     chmod u+x "$HOME"/.local/bin/jetbrains-toolbox
 
 # install vscode
@@ -105,7 +112,8 @@ sudo apt install fonts-liberation
 
 # chrome isn't in core repos for ubuntu
 apt info google-chrome-stable && sudo apt install google-chrome-stable
-which google-chrome-stable || bash -i -c "install_package https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
+which google-chrome-stable || \
+    bash -i -c "install_package https://dl.google.com/linux/direct/google-chrome-stable_current_$DPKG_ARCH.deb"
 
 # install image packages
 sudo apt -y install \
