@@ -1,5 +1,2 @@
-
-
 source $HOME/.bashrc
-
 
