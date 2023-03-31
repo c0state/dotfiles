@@ -20,8 +20,16 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githu
 curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/kinetic.noarmor.gpg | sudo tee /usr/share/keyrings/tailscale-archive-keyring.gpg >/dev/null
 curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/kinetic.tailscale-keyring.list | sudo tee /etc/apt/sources.list.d/tailscale.list
 
+# docker
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor --yes -o /etc/apt/keyrings/docker.gpg
+echo \
+  "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
 # tabby
-curl -fsSL https://packagecloud.io/eugeny/tabby/gpgkey | gpg --dearmor | sudo dd of=/etc/apt/keyrings/eugeny_tabby-archive-keyring.gpg
+curl -fsSL https://packagecloud.io/eugeny/tabby/gpgkey | gpg --dearmor | sudo tee /etc/apt/keyrings/eugeny_tabby-archive-keyring.gpg
 echo "deb [signed-by=/etc/apt/keyrings/eugeny_tabby-archive-keyring.gpg] https://packagecloud.io/eugeny/tabby/ubuntu kinetic main" | sudo tee /etc/apt/sources.list.d/eugeny_tabby.list
 echo "deb-src [signed-by=/etc/apt/keyrings/eugeny_tabby-archive-keyring.gpg] https://packagecloud.io/eugeny/tabby/ubuntu kinetic main" | sudo tee -a /etc/apt/sources.list.d/eugeny_tabby.list
 
@@ -90,6 +98,9 @@ sudo apt -y install \
     libncurses5-dev libncursesw5-dev \
     libxml2-dev
 
+sudo apt-get -y install \
+    docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
 # only available on pop os out of the box
 apt info alacritty && sudo apt -y install alacritty
 
@@ -111,8 +122,6 @@ LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/re
 curl -L "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz" | \
     tar -xzO lazygit \
     > "$HOME"/.local/bin/lazygit && chmod ug+x "$HOME"/.local/bin/lazygit
-
-which docker || (curl -fsSL https://get.docker.com | sh)
 
 which jetbrains-toolbox || \
     wget -O - https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.27.3.14493.tar.gz | \
@@ -170,5 +179,7 @@ sudo apt -y install \
 
 sudo apt install -y touchegg
 
+echo "--------------------------------------------------"
 echo "Successfully installed all Linux packages!"
+echo "--------------------------------------------------"
 
