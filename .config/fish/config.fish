@@ -9,7 +9,7 @@ set --local REPORTTIME 3
 
 #---------- vars
 
-set -gx SHELL fish
+set -gx SHELL /bin/fish
 
 #---------- aliases and functions
 

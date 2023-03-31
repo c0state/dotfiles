@@ -1,4 +1,4 @@
-export SHELL=bash
+export SHELL=/bin/bash
 
 [[ ! -e $HOME/.shell_interactive.sh ]] || source "$HOME"/.shell_interactive.sh
 
