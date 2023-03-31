@@ -34,6 +34,9 @@ fi
 go install github.com/x-motemen/gore/cmd/gore@latest
 go install github.com/mdempsky/gocode@latest   # for code completion
 
+# go language server
+go install golang.org/x/tools/gopls@latest
+
 # kail
 bash <( curl -sfL https://raw.githubusercontent.com/boz/kail/master/godownloader.sh) -b "$GOPATH/bin"
 
