@@ -102,7 +102,8 @@ end
 
 if type -q google-drive-ocamlfuse
     set --local GDRIVE_FOLDER "Google.Drive"
-    mount | grep "$HOME/$GDRIVE_FOLDER" >/dev/null || google-drive-ocamlfuse "$HOME/$GDRIVE_FOLDER" &
+    mount | grep "$HOME/$GDRIVE_FOLDER" >/dev/null || \
+        begin; test -e "$HOME/$GDRIVE_FOLDER" && google-drive-ocamlfuse "$HOME/$GDRIVE_FOLDER"; end
 end
 
 #---------- gcloud
