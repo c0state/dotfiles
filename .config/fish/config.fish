@@ -98,6 +98,13 @@ if type -q keychain
     keychain --eval --quiet --quick | source
 end
 
+#---------- google drive
+
+if type -q google-drive-ocamlfuse
+    set --local GDRIVE_FOLDER "Google.Drive"
+    mount | grep "$HOME/$GDRIVE_FOLDER" >/dev/null || google-drive-ocamlfuse "$HOME/$GDRIVE_FOLDER" &
+end
+
 #---------- gcloud
 
 if test -e $HOME/google-cloud-sdk/path.fish.inc

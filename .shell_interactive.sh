@@ -129,6 +129,11 @@ if command -v keychain > /dev/null; then
     eval "$(keychain --eval --quiet)"
 fi
 
+if command -v google-drive-ocamlfuse > /dev/null; then
+    GDRIVE_FOLDER="Google.Drive"
+    mount | grep "${HOME}/${GDRIVE_FOLDER}" >/dev/null || google-drive-ocamlfuse "${HOME}/${GDRIVE_FOLDER}" &
+fi
+
 #----- source any custom shell configuration
 [[ -f $HOME/.shellrc_custom.sh ]] && source $HOME/.shellrc_custom.sh
 
