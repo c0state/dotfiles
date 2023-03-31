@@ -25,6 +25,11 @@ curl -fsSL https://packagecloud.io/eugeny/tabby/gpgkey | gpg --dearmor | sudo dd
 echo "deb [signed-by=/etc/apt/keyrings/eugeny_tabby-archive-keyring.gpg] https://packagecloud.io/eugeny/tabby/ubuntu kinetic main" | sudo tee /etc/apt/sources.list.d/eugeny_tabby.list
 echo "deb-src [signed-by=/etc/apt/keyrings/eugeny_tabby-archive-keyring.gpg] https://packagecloud.io/eugeny/tabby/ubuntu kinetic main" | sudo tee -a /etc/apt/sources.list.d/eugeny_tabby.list
 
+# lens
+curl -fsSL https://downloads.k8slens.dev/keys/gpg | gpg --dearmor | sudo tee /usr/share/keyrings/lens-archive-keyring.gpg > /dev/null
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/lens-archive-keyring.gpg] https://downloads.k8slens.dev/apt/debian stable main" | \
+  sudo tee /etc/apt/sources.list.d/lens.list > /dev/null
+
 #------------------------------ ppas
 
 sudo add-apt-repository -y ppa:alessandro-strada/ppa
@@ -93,6 +98,7 @@ sudo apt -y install \
     awscli \
     fonts-firacode \
     gh \
+    lens \
     tmux \
     vagrant
 
