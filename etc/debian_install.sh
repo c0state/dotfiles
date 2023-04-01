@@ -89,7 +89,7 @@ sudo apt -y install \
     wmctrl \
     vim-nox
 
-bash -i -c "install_package https://downloads.slack-edge.com/releases/linux/4.29.149/prod/x64/slack-desktop-4.29.149-${DPKG_ARCH}.deb"
+which slack || bash -i -c "install_package https://downloads.slack-edge.com/releases/linux/4.29.149/prod/x64/slack-desktop-4.29.149-${DPKG_ARCH}.deb"
 
 #------------------------------ install packages
 
