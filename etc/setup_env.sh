@@ -124,11 +124,7 @@ fi
 # ---------- nix
 
 if ! which nix >/dev/null ; then
-    if [[ "$PLATFORM" == "Darwin" ]]; then
-        curl -L https://nixos.org/nix/install | sh
-    else
-        curl -L https://nixos.org/nix/install | sh -s -- --daemon
-    fi
+    curl -L https://nixos.org/nix/install | sh -s -- --daemon
 fi
 
 # ---------- updates
