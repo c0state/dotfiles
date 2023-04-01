@@ -84,11 +84,12 @@ sudo apt -y install \
     parallel \
     ranger \
     ripgrep \
-    slack-desktop \
     tabby-terminal \
     tree \
     wmctrl \
     vim-nox
+
+bash -i -c "install_package https://downloads.slack-edge.com/releases/linux/4.29.149/prod/x64/slack-desktop-4.29.149-${DPKG_ARCH}.deb"
 
 #------------------------------ install packages
 
