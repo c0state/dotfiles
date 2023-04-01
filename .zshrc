@@ -1,5 +1,5 @@
+export SHELL=/bin/zsh
 
-#
 #---------- load custom zsh init
 
 [[ -f $HOME/.zshrc_pre_custom ]] && source $HOME/.zshrc_pre_custom
