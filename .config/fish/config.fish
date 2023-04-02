@@ -10,7 +10,11 @@ set --local REPORTTIME 3
 
 #---------- vars
 
-set -gx SHELL /bin/fish
+if test "$PLATFORM" = "Darwin"
+    set -gx SHELL /opt/homebrew/bin/fish
+else
+    set -gx SHELL /bin/fish
+end
 
 #---------- aliases and functions
 
