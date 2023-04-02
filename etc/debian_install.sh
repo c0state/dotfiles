@@ -152,9 +152,11 @@ fi
 sudo apt install fonts-liberation
 
 # chrome isn't in core repos for ubuntu
-apt info google-chrome-stable && sudo apt install google-chrome-stable
-which google-chrome-stable || \
+if ! which google-chrome-stable; then
     bash -i -c "install_package https://dl.google.com/linux/direct/google-chrome-stable_current_$DPKG_ARCH.deb"
+else
+    sudo apt install -y google-chrome-stable
+fi
 
 # install image packages
 sudo apt -y install \
