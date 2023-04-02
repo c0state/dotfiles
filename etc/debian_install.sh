@@ -58,10 +58,9 @@ sudo apt -y install \
 
 #------------------------------ flatpak repos
 
-flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install -y flathub
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-flatpak install -y touche
+sudo flatpak install --system -y touche
 
 #------------------------------ install utility packages
 
