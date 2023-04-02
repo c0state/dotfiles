@@ -9,6 +9,7 @@ winget install --id alacritty.alacritty
 winget install --id atlassian.sourcetree
 winget install --id audacity.audacity
 winget install --id balena.etcher
+winget install --id chrisant996.Clink
 winget install --id cpuid.cpu-z
 winget install --id cpuid.hwmonitor
 winget install --id discord.discord
