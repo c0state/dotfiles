@@ -110,7 +110,7 @@ if test -z "$IS_WSL"; then
 fi
 
 # only available on pop os out of the box
-apt info alacritty && sudo apt -y install alacritty
+sudo apt -y install alacritty || true
 
 # install developer packages
 sudo apt -y install \
