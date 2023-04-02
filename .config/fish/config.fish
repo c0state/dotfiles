@@ -3,6 +3,7 @@
 # platform
 set --local PLATFORM (uname)
 set --local IS_MACOS_ARM (uname -a | grep -i "darwin.*arm64" || echo "")
+set --local IS_WSL (uname -a | grep -i microsoft || echo "")
 
 # misc
 set --local REPORTTIME 3
@@ -100,7 +101,7 @@ end
 
 #---------- google drive
 
-if type -q google-drive-ocamlfuse
+if type -q google-drive-ocamlfuse && test -z $IS_WSL
     set --local GDRIVE_FOLDER "Google.Drive"
     mount | grep "$HOME/$GDRIVE_FOLDER" >/dev/null || \
         begin; test -e "$HOME/$GDRIVE_FOLDER" && google-drive-ocamlfuse "$HOME/$GDRIVE_FOLDER"; end

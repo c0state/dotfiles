@@ -3,6 +3,7 @@
 #----- detect platform
 PLATFORM=$(uname)
 IS_MACOS_ARM=$(uname -a | grep -i "darwin.*arm64" || echo "")
+IS_WSL=$(uname -a | grep -i microsoft || echo "")
 
 #----- increase history file sizes
 export HISTSIZE=5000
@@ -129,7 +130,7 @@ if command -v keychain > /dev/null; then
     eval "$(keychain --eval --quiet)"
 fi
 
-if command -v google-drive-ocamlfuse > /dev/null; then
+if command -v google-drive-ocamlfuse > /dev/null && test -z "$IS_WSL"; then
     GDRIVE_FOLDER="Google.Drive"
     mount | grep "${HOME}/${GDRIVE_FOLDER}" >/dev/null || google-drive-ocamlfuse "${HOME}/${GDRIVE_FOLDER}" &
 fi
