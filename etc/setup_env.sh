@@ -127,6 +127,14 @@ if ! which nix >/dev/null ; then
     curl -L https://nixos.org/nix/install | sh -s -- --daemon
 fi
 
+# ---------- google cloud sdk
+
+if ! which gcloud; then
+    curl https://sdk.cloud.google.com | bash -s -- --disable-prompts --install-dir "$HOME"/.local
+else
+    gcloud components update
+fi
+
 # ---------- updates
 
 "$HOME"/etc/update_dotfiles.sh

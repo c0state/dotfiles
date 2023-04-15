@@ -161,7 +161,6 @@ brew_cask_packages=(
     github
     gitkraken
     google-chrome
-    google-cloud-sdk
     google-drive
     graphql-playground
     handbrake
