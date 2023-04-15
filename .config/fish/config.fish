@@ -113,8 +113,8 @@ end
 
 #---------- gcloud
 
-if test -e "$(brew --prefix)/share/google-cloud-sdk/path.fish.inc"
-    source "$(brew --prefix)/share/google-cloud-sdk/path.fish.inc"
+if test -e "$HOME/.local/google-cloud-sdk/path.fish.inc"
+    source "$HOME/.local/google-cloud-sdk/path.fish.inc"
 end
 
 #---------- load custom settings
