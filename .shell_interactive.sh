@@ -130,6 +130,7 @@ if command -v keychain > /dev/null; then
     eval "$(keychain --eval --quiet)"
 fi
 
+#----- google drive
 if command -v google-drive-ocamlfuse > /dev/null && test -z "$IS_WSL"; then
     GDRIVE_FOLDER="Google.Drive"
     mount | grep "${HOME}/${GDRIVE_FOLDER}" >/dev/null || google-drive-ocamlfuse "${HOME}/${GDRIVE_FOLDER}" &

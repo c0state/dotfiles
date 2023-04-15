@@ -27,7 +27,11 @@ export PS1='\[\e[0;31m\][\D{%Y-%m-%d} \t]\[\e[m\]\[\e[0;37m\]\u@\h\[\e[m\]\[\e[0
 
 #---------- fzf
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f "$HOME"/.fzf.bash ] && source "$HOME"/.fzf.bash
+
+#---------- google cloud sdk
+
+[ -f "$HOME"/.local/google-cloud-sdk/path.bash.inc ] && source "$HOME"/.local/google-cloud-sdk/path.bash.inc
 
 #---------- bit https://github.com/chriswalz/bit
 

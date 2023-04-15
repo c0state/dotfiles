@@ -116,7 +116,11 @@ eval "$(direnv hook zsh)"
 
 # ---------- fzf
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f "$HOME"/.fzf.zsh ] && source "$HOME"/.fzf.zsh
+
+# ---------- google cloud sdk
+
+[ -f "$HOME"/.local/google-cloud-sdk/path.zsh.inc ] && source "$HOME"/.local/google-cloud-sdk/path.zsh.inc
 
 # ---------- bit - https://github.com/chriswalz/bit
 
