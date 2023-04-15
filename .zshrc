@@ -120,7 +120,10 @@ eval "$(direnv hook zsh)"
 
 # ---------- google cloud sdk
 
-[ -f "$HOME"/.local/google-cloud-sdk/path.zsh.inc ] && source "$HOME"/.local/google-cloud-sdk/path.zsh.inc
+if [ -f "$HOME"/.local/google-cloud-sdk/path.zsh.inc ]; then
+    source "$HOME"/.local/google-cloud-sdk/path.zsh.inc
+    source "$HOME"/.local/google-cloud-sdk/completion.zsh.inc
+fi
 
 # ---------- bit - https://github.com/chriswalz/bit
 
