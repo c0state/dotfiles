@@ -36,7 +36,6 @@ _deno() {
             (bench)
 _arguments "${_arguments_options[@]}" \
 '--no-check=[Skip type-checking modules]' \
-'(--no-check)--check=[Type-check modules]' \
 '--import-map=[Load import map file]:FILE:_files' \
 '--node-modules-dir=[Creates a local node_modules folder]' \
 '-c+[Specify the configuration file]:FILE:_files' \
@@ -58,6 +57,7 @@ If value is not provided, defaults to "deno.lock" in the current working directo
 '--location=[Value of '\''globalThis.location'\'' used by some web APIs]:HREF:_urls' \
 '--v8-flags=[Set V8 command line options]' \
 '--seed=[Set the random number generator seed]:NUMBER: ' \
+'(--no-check)--check=[Type-check modules]' \
 '--ignore=[Ignore files]: :_files' \
 '--filter=[Run benchmarks with this string or pattern in the bench name]: : ' \
 '-L+[Set log level]: :(debug info)' \
@@ -88,7 +88,6 @@ If value is not provided, defaults to "deno.lock" in the current working directo
 (bundle)
 _arguments "${_arguments_options[@]}" \
 '--no-check=[Skip type-checking modules]' \
-'(--no-check)--check=[Type-check modules]' \
 '--import-map=[Load import map file]:FILE:_files' \
 '--node-modules-dir=[Creates a local node_modules folder]' \
 '-c+[Specify the configuration file]:FILE:_files' \
@@ -99,6 +98,7 @@ _arguments "${_arguments_options[@]}" \
 
 If value is not provided, defaults to "deno.lock" in the current working directory.]' \
 '--cert=[Load certificate authority from PEM encoded file]:FILE:_files' \
+'(--no-check)--check=[Type-check modules]' \
 '--ext=[Set content type of the supplied file]: :(ts tsx js jsx)' \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
@@ -121,7 +121,6 @@ If value is not provided, defaults to "deno.lock" in the current working directo
 (cache)
 _arguments "${_arguments_options[@]}" \
 '--no-check=[Skip type-checking modules]' \
-'(--no-check)--check=[Type-check modules]' \
 '--import-map=[Load import map file]:FILE:_files' \
 '--node-modules-dir=[Creates a local node_modules folder]' \
 '-c+[Specify the configuration file]:FILE:_files' \
@@ -132,6 +131,7 @@ _arguments "${_arguments_options[@]}" \
 
 If value is not provided, defaults to "deno.lock" in the current working directory.]' \
 '--cert=[Load certificate authority from PEM encoded file]:FILE:_files' \
+'(--no-check)--check=[Type-check modules]' \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
 '--no-remote[Do not resolve remote modules]' \
@@ -179,7 +179,6 @@ If value is not provided, defaults to "deno.lock" in the current working directo
 (compile)
 _arguments "${_arguments_options[@]}" \
 '--no-check=[Skip type-checking modules]' \
-'(--no-check)--check=[Type-check modules]' \
 '--import-map=[Load import map file]:FILE:_files' \
 '--node-modules-dir=[Creates a local node_modules folder]' \
 '-c+[Specify the configuration file]:FILE:_files' \
@@ -201,6 +200,7 @@ If value is not provided, defaults to "deno.lock" in the current working directo
 '--location=[Value of '\''globalThis.location'\'' used by some web APIs]:HREF:_urls' \
 '--v8-flags=[Set V8 command line options]' \
 '--seed=[Set the random number generator seed]:NUMBER: ' \
+'(--no-check)--check=[Type-check modules]' \
 '*--include=[UNSTABLE: Additional module to include in the module graph]: :_files' \
 '-o+[Output file (defaults to $PWD/<inferred-name>)]: :_files' \
 '--output=[Output file (defaults to $PWD/<inferred-name>)]: :_files' \
@@ -284,7 +284,6 @@ If value is not provided, defaults to "deno.lock" in the current working directo
 (eval)
 _arguments "${_arguments_options[@]}" \
 '--no-check=[Skip type-checking modules]' \
-'(--no-check)--check=[Type-check modules]' \
 '--import-map=[Load import map file]:FILE:_files' \
 '--node-modules-dir=[Creates a local node_modules folder]' \
 '-c+[Specify the configuration file]:FILE:_files' \
@@ -301,6 +300,7 @@ If value is not provided, defaults to "deno.lock" in the current working directo
 '--location=[Value of '\''globalThis.location'\'' used by some web APIs]:HREF:_urls' \
 '--v8-flags=[Set V8 command line options]' \
 '--seed=[Set the random number generator seed]:NUMBER: ' \
+'(--no-check)--check=[Type-check modules]' \
 '--ext=[Set content type of the supplied file]: :(ts tsx js jsx)' \
 '-L+[Set log level]: :(debug info)' \
 '--log-level=[Set log level]: :(debug info)' \
@@ -393,7 +393,6 @@ If value is not provided, defaults to "deno.lock" in the current working directo
 (install)
 _arguments "${_arguments_options[@]}" \
 '--no-check=[Skip type-checking modules]' \
-'(--no-check)--check=[Type-check modules]' \
 '--import-map=[Load import map file]:FILE:_files' \
 '--node-modules-dir=[Creates a local node_modules folder]' \
 '-c+[Specify the configuration file]:FILE:_files' \
@@ -418,6 +417,7 @@ If value is not provided, defaults to "deno.lock" in the current working directo
 '--location=[Value of '\''globalThis.location'\'' used by some web APIs]:HREF:_urls' \
 '--v8-flags=[Set V8 command line options]' \
 '--seed=[Set the random number generator seed]:NUMBER: ' \
+'(--no-check)--check=[Type-check modules]' \
 '-n+[Executable file name]: : ' \
 '--name=[Executable file name]: : ' \
 '--root=[Installation root]: :_files -/' \
@@ -496,7 +496,6 @@ _arguments "${_arguments_options[@]}" \
 (repl)
 _arguments "${_arguments_options[@]}" \
 '--no-check=[Skip type-checking modules]' \
-'(--no-check)--check=[Type-check modules]' \
 '--import-map=[Load import map file]:FILE:_files' \
 '--node-modules-dir=[Creates a local node_modules folder]' \
 '-c+[Specify the configuration file]:FILE:_files' \
@@ -521,6 +520,7 @@ If value is not provided, defaults to "deno.lock" in the current working directo
 '--location=[Value of '\''globalThis.location'\'' used by some web APIs]:HREF:_urls' \
 '--v8-flags=[Set V8 command line options]' \
 '--seed=[Set the random number generator seed]:NUMBER: ' \
+'(--no-check)--check=[Type-check modules]' \
 '--eval-file=[Evaluates the provided file(s) as scripts when the REPL starts. Accepts file paths and URLs.]: :_files' \
 '--eval=[Evaluates the provided code when the REPL starts.]:code: ' \
 '-L+[Set log level]: :(debug info)' \
@@ -547,7 +547,6 @@ If value is not provided, defaults to "deno.lock" in the current working directo
 (run)
 _arguments "${_arguments_options[@]}" \
 '--no-check=[Skip type-checking modules]' \
-'(--no-check)--check=[Type-check modules]' \
 '--import-map=[Load import map file]:FILE:_files' \
 '--node-modules-dir=[Creates a local node_modules folder]' \
 '-c+[Specify the configuration file]:FILE:_files' \
@@ -572,6 +571,7 @@ If value is not provided, defaults to "deno.lock" in the current working directo
 '--location=[Value of '\''globalThis.location'\'' used by some web APIs]:HREF:_urls' \
 '--v8-flags=[Set V8 command line options]' \
 '--seed=[Set the random number generator seed]:NUMBER: ' \
+'(--no-check)--check=[Type-check modules]' \
 '(--inspect --inspect-wait --inspect-brk)--watch=[Watch for file changes and restart automatically]' \
 '--ext=[Set content type of the supplied file]: :(ts tsx js jsx)' \
 '-L+[Set log level]: :(debug info)' \
@@ -614,7 +614,6 @@ _arguments "${_arguments_options[@]}" \
 (test)
 _arguments "${_arguments_options[@]}" \
 '--no-check=[Skip type-checking modules]' \
-'(--no-check)--check=[Type-check modules]' \
 '--import-map=[Load import map file]:FILE:_files' \
 '--node-modules-dir=[Creates a local node_modules folder]' \
 '-c+[Specify the configuration file]:FILE:_files' \
@@ -639,6 +638,7 @@ If value is not provided, defaults to "deno.lock" in the current working directo
 '--location=[Value of '\''globalThis.location'\'' used by some web APIs]:HREF:_urls' \
 '--v8-flags=[Set V8 command line options]' \
 '--seed=[Set the random number generator seed]:NUMBER: ' \
+'(--no-check)--check=[Type-check modules]' \
 '--ignore=[Ignore files]: :_files' \
 '--fail-fast=[Stop after N errors. Defaults to stopping after first failure.]' \
 '--filter=[Run tests with this string or pattern in the test name]: : ' \
