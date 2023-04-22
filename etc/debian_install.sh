@@ -55,12 +55,6 @@ sudo apt -y install \
     flatpak \
     snapd
 
-#------------------------------ flatpak repos
-
-sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-
-sudo flatpak install --system -y touche
-
 #------------------------------ install utility packages
 
 sudo apt -y install \
@@ -87,7 +81,15 @@ sudo apt -y install \
     wmctrl \
     vim-nox
 
-which slack || bash -i -c "install_package https://downloads.slack-edge.com/releases/linux/4.29.149/prod/x64/slack-desktop-4.29.149-${DPKG_ARCH}.deb"
+#------------------------------ install packages
+
+sudo snap install slack
+
+#------------------------------ flatpak repos
+
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+sudo flatpak install --system -y touche
 
 #------------------------------ install packages
 
