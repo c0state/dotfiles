@@ -84,6 +84,7 @@ sudo apt -y install \
 #------------------------------ install packages
 
 sudo snap install slack
+sudo snap refresh
 
 #------------------------------ flatpak repos
 
