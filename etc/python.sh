@@ -11,6 +11,9 @@ if [[ -n "$REINSTALL_TOOLS" ]]; then
     rm -rf "$HOME"/.local/share/pypoetry
     rm -rf "$HOME"/.cache/pypoetry
     rm -rf "$HOME"/.config/pypoetry
+    rm -rf "$HOME"/Library/"Application Support"/pypoetry
+    rm -rf "$HOME"/Library/Caches/pypoetry
+
 fi
 
 #---------- pyenv
