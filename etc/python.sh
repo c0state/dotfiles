@@ -2,7 +2,16 @@
 
 set -eu
 
-DEFAULT_PYTHON_VENV_DIR="$HOME/.local/default_python_env"
+DEFAULT_PYTHON_VENV_NAME="default_python_venv"
+REINSTALL_TOOLS=${REINSTALL_TOOLS:-""}
+
+if [[ -n "$REINSTALL_TOOLS" ]]; then
+    rm -rf "$HOME"/.local/pipx
+    rm -rf "$HOME"/.local/bin/poetry
+    rm -rf "$HOME"/.local/share/pypoetry
+    rm -rf "$HOME"/.cache/pypoetry
+    rm -rf "$HOME"/.config/pypoetry
+fi
 
 #---------- pyenv
 
@@ -26,10 +35,10 @@ fi
 
 #---------- set up default python venv
 
-if [[ ! -e "$DEFAULT_PYTHON_VENV_DIR" ]]; then
-    python -m venv "$DEFAULT_PYTHON_VENV_DIR"
+if ! pyenv versions | grep "$DEFAULT_PYTHON_VENV_NAME"; then
+    pyenv virtualenv system "$DEFAULT_PYTHON_VENV_NAME"
 fi
-source "$DEFAULT_PYTHON_VENV_DIR"/bin/activate
+pyenv global "$DEFAULT_PYTHON_VENV_NAME"
 
 #---------- pip packages
 
