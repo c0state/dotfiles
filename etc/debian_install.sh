@@ -41,9 +41,9 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/lens-
 
 #------------------------------ ppas
 
-sudo add-apt-repository -y ppa:alessandro-strada/ppa
-sudo apt-add-repository -y ppa:fish-shell/release-3
-sudo add-apt-repository -y ppa:touchegg/stable
+(ls /etc/apt/sources.list.d/alessandro-strada*) || sudo add-apt-repository -y ppa:alessandro-strada/ppa
+(ls /etc/apt/sources.list.d/fish-shell-ubuntu-release*) || sudo apt-add-repository -y ppa:fish-shell/release-3
+(ls /etc/apt/sources.list.d/touchegg*) || sudo add-apt-repository -y ppa:touchegg/stable
 
 #------------------------------ begin update and installs
 
