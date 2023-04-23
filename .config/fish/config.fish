@@ -57,6 +57,9 @@ set -gx PATH "$HOME/.deno/bin" $PATH
 
 #----- python
 
+set --local DEFAULT_PYTHON_VENV_DIR "$HOME/.local/default_python_env"
+source "$DEFAULT_PYTHON_VENV_DIR"/bin/activate.fish
+
 # poetry
 set -gx PATH "$HOME/.poetry/bin" $PATH
 

@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
-set -eux
+set -eu
+
+DEFAULT_PYTHON_VENV_DIR="$HOME/.local/default_python_env"
+
+#---------- pyenv
 
 if [[ ! -e "$HOME/.pyenv" ]]; then
     curl https://pyenv.run | bash
@@ -11,6 +15,8 @@ else
     pyenv update
 fi
 
+#---------- poetry
+
 if ! command -v poetry; then
     curl -sSL https://install.python-poetry.org | python3 -
     poetry config virtualenvs.in-project true
@@ -18,16 +24,23 @@ else
     poetry self update
 fi
 
+#---------- set up default python venv
+
+if [[ ! -e "$DEFAULT_PYTHON_VENV_DIR" ]]; then
+    python -m venv "$DEFAULT_PYTHON_VENV_DIR"
+fi
+source "$DEFAULT_PYTHON_VENV_DIR"/bin/activate
+
 #---------- pip packages
 
-pip3 install --upgrade --user pip setuptools
-pip3 install --upgrade --user pipx
+pip3 install --upgrade pip setuptools
+pip3 install --upgrade pipx
 
-pip3 install --upgrade --user openai
-pip3 install --upgrade --user jedi
-pip3 install --upgrade --user pynvim
+pip3 install --upgrade openai
+pip3 install --upgrade jedi
+pip3 install --upgrade pynvim
 
-pip3 install --upgrade --user build twine
+pip3 install --upgrade build twine
 
 #---------- pipx dependencies
 
