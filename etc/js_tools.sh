@@ -16,27 +16,13 @@ volta install yarn
 # ---------- install global packages
 
 npm install --global add \
-    aws-cdk \
-    cypress \
-    detox-cli \
     diff-so-fancy \
-    dynamodb-admin \
-    expo-cli \
-    firebase-tools \
-    gatsby-cli \
     git-split-diffs \
     imageoptim-cli \
-    instant-markdown-d \
-    lerna \
     np \
     npm-check-updates \
-    poi \
-    renovate \
     tldr \
-    ts-node \
-    tslab \
-    yalc \
-    yarn-deduplicate
+    tslab
 
 # ---------- install deno https://github.com/denoland/deno
 
