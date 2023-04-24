@@ -34,7 +34,6 @@ call plug#begin('~/.vim/bundle')
 "----- Vim Bundles
   Plug 'editorconfig/editorconfig-vim'
   Plug 'greyblake/vim-preview'
-  Plug 'suan/vim-instant-markdown'
   Plug 'jlanzarotta/bufexplorer'
 
   "----- vim-airline
