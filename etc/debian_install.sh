@@ -115,7 +115,6 @@ sudo apt -y install alacritty || true
 
 # install developer packages
 sudo apt -y install \
-    awscli \
     fonts-firacode \
     gh \
     lens \
