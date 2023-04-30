@@ -72,14 +72,14 @@ if [[ -e "${HOME}/.php-version" ]] ; then
 fi
 
 #----- ruby
-export PATH="$HOME/.rbenv/bin:$PATH"
-if command -v rbenv >/dev/null; then
-  eval "$(rbenv init -)"
-fi
-
-if command -v ruby >/dev/null && command -v gem >/dev/null; then
-    PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
-fi
+#export PATH="$HOME/.rbenv/bin:$PATH"
+#if command -v rbenv >/dev/null; then
+#  eval "$(rbenv init -)"
+#fi
+#
+#if command -v ruby >/dev/null && command -v gem >/dev/null; then
+#    PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+#fi
 
 #----- golang
 export GOPATH="$HOME/work/go"

@@ -70,10 +70,10 @@ end
 
 #----- ruby
 
-set -gx PATH "$HOME/.rbenv/bin" $PATH
-if command -v rbenv >/dev/null
-  eval "$(rbenv init -)"
-end
+#set -gx PATH "$HOME/.rbenv/bin" $PATH
+#if command -v rbenv >/dev/null
+#  eval "$(rbenv init -)"
+#end
 
 #----- rust
 set -gx PATH "$HOME/.cargo/bin" $PATH
