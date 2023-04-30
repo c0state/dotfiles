@@ -1,4 +1,4 @@
-if which uname >/dev/null; then
+if uname | grep Linux >/dev/null; then
     alias bat=batcat
     alias cat=batcat
 else
