@@ -4,9 +4,9 @@ set -eux
 
 # ---------- shared variables
 
-PLATFORM=$(uname)
-DPKG_ARCH=$(dpkg --print-architecture 2>/dev/null || echo "")
-IS_WSL=$(uname -a | grep -i microsoft || echo "")
+PLATFORM_FULL=$(uname -a)
+PLATFORM=$(echo "$PLATFORM_FULL" | cut -d ' ' -f 1)
+IS_WSL=$(echo "$PLATFORM_FULL" | grep -i microsoft || echo "")
 
 # ---------- set up dotfiles links
 
