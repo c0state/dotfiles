@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
 #----- detect platform
-PLATFORM=$(uname)
-IS_MACOS_ARM=$(uname -a | grep -i "darwin.*arm64" || echo "")
-IS_WSL=$(uname -a | grep -i microsoft || echo "")
+PLATFORM_FULL=$(uname -a)
+PLATFORM=$(echo "$PLATFORM_FULL" | cut -d ' ' -f 1)
+IS_MACOS_ARM=$(echo "$PLATFORM_FULL" | grep -i "darwin.*arm64" || echo "")
+IS_WSL=$(echo "$PLATFORM_FULL" | grep -i microsoft || echo "")
 
 #----- increase history file sizes
 export HISTSIZE=5000

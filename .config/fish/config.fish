@@ -1,9 +1,10 @@
 #---------- constants
 
 # platform
-set --local PLATFORM (uname)
-set --local IS_MACOS_ARM (uname -a | grep -i "darwin.*arm64" || echo "")
-set --local IS_WSL (uname -a | grep -i microsoft || echo "")
+set --local PLATFORM_FULL (uname -a)
+set --local PLATFORM (echo $PLATFORM_FULL | cut -d ' ' -f 1)
+set --local IS_MACOS_ARM (echo $PLATFORM_FULL | grep -i "darwin.*arm64" || echo "")
+set --local IS_WSL (echo $PLATFORM_FULL | grep -i microsoft || echo "")
 
 # misc
 set --local REPORTTIME 3
