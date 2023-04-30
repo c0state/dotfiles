@@ -48,6 +48,10 @@ function pprint_xml
     cat $argv | xmllint --format - 2>&1 | less -i
 end
 
+function profile_shell
+    fish --profile-startup /tmp/profile -c fish_prompt; sort -nk2 /tmp/profile
+end
+
 function s3_path_size
     aws s3 ls --summarize --human-readable --recursive $argv
 end
