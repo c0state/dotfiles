@@ -2,8 +2,6 @@
 
 #----- detect platform
 PLATFORM_FULL=$(uname -a)
-PLATFORM=$(echo "$PLATFORM_FULL" | cut -d ' ' -f 1)
-IS_MACOS_ARM=$(echo "$PLATFORM_FULL" | grep -i "darwin.*arm64" || echo "")
 IS_WSL=$(echo "$PLATFORM_FULL" | grep -i microsoft || echo "")
 
 #----- increase history file sizes
@@ -20,15 +18,6 @@ export REPORTTIME=3
 export TERM=xterm-256color
 
 source "$HOME"/.shell_aliases
-
-#----- set based on platform (Linux or OS X)
-if [[ $PLATFORM == 'Darwin' ]]; then
-  if [[ -n $IS_MACOS_ARM ]]; then
-    eval $(/opt/homebrew/bin/brew shellenv)
-  else
-    eval $(/usr/local/Homebrew/bin/brew shellenv)
-  fi
-fi 
 
 #----- node config
 
