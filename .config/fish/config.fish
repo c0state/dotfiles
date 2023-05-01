@@ -56,6 +56,9 @@ set -gx PATH "$VOLTA_HOME/bin" $PATH
 # deno
 set -gx PATH "$HOME/.deno/bin" $PATH
 
+# docker
+set -gx DOCKER_BUILDKIT 1
+
 #----- python
 
 # poetry
@@ -133,4 +136,3 @@ starship init fish | source
 
 # https://github.com/direnv/direnv/blob/master/docs/hook.md
 direnv hook fish | source
-
