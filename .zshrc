@@ -1,3 +1,6 @@
+# uncomment to profile startup
+# zmodload zsh/zprof
+
 export SHELL=/bin/zsh
 
 #---------- load custom zsh init
@@ -6,19 +9,16 @@ export SHELL=/bin/zsh
 
 #---------- oh-my-zsh
 
-export ZSH=$HOME/.oh-my-zsh
+export ZSH="$HOME/.oh-my-zsh"
 
-CASE_SENSITIVE="false"
-HYPHEN_INSENSITIVE="false"
-DISABLE_LS_COLORS="true"
-DISABLE_AUTO_TITLE="false"
+ZSH_THEME=""
+
+zstyle ':omz:update' mode disabled  # disable automatic updates
+
 ENABLE_CORRECTION="false"
-COMPLETION_WAITING_DOTS="true"
-DISABLE_UNTRACKED_FILES_DIRTY="true"
 HIST_STAMPS="yyyy-mm-dd"
-ZSH_CUSTOM=~/.oh-my-zsh-custom
 
-# ---------- plugins list
+ZSH_CUSTOM=~/.oh-my-zsh-custom
 
 plugins=(
     brew
@@ -32,22 +32,22 @@ plugins=(
     git
     git-extras
     golang
-    iterm2
+    # iterm2
     kubectl
-    pip
+    # pip
     poetry
     python
-    web-search
-    yarn
+    # web-search
+    # yarn
     zsh-autosuggestions
     zsh-completions
     zsh-syntax-highlighting
-    zsh_codex
+    # zsh_codex
 )
 
 source $ZSH/oh-my-zsh.sh
 
-# ---------- Customize to your needs...
+# User configuration
 
 # ---------- zsh-autosuggestions
 
@@ -85,10 +85,6 @@ if [[ -e $HOME/.shell_interactive.sh ]]; then
     source $HOME/.shell_interactive.sh
 fi
 
-#---------- command prompt
-
-eval "$(starship init zsh)"
-
 # ---------- zsh functions
 
 source $HOME/.zsh_functions
@@ -96,17 +92,6 @@ source $HOME/.zsh_functions
 # ---------- history
 
 setopt HIST_SAVE_NO_DUPS INC_APPEND_HISTORY
-
-# ---------- flash instead of audible beep
-
-unsetopt BEEP
-ZBEEP='\e[?5h\e[?5l'
-
-# ---------- online help
-
-unalias run-help 2>/dev/null
-autoload run-help
-HELPDIR=/usr/local/share/zsh/help
 
 # ---------- direnv - https://github.com/direnv/direnv
 
@@ -132,3 +117,9 @@ complete -o nospace -C $HOME/.local/bin/bit bit
 
 bindkey '^X' create_completion
 
+#---------- command prompt
+
+eval "$(starship init zsh)"
+
+# uncomment to profile startup
+# zprof
