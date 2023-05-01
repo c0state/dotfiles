@@ -11,6 +11,8 @@ set --local REPORTTIME 3
 
 #---------- vars
 
+set -gx EDITOR vim
+
 if test "$PLATFORM" = "Darwin"
     set -gx SHELL /opt/homebrew/bin/fish
 else
