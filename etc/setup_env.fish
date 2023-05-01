@@ -22,7 +22,9 @@ poetry completions fish > $HOME/.config/fish/completions/poetry.fish
 
 #---------- pipx
 
-register-python-argcomplete --shell fish pipx > "$HOME"/.config/fish/completions/pipx.fish
+if type -q register-python-argcomplete
+    register-python-argcomplete --shell fish pipx > "$HOME"/.config/fish/completions/pipx.fish
+end
 
 #---------- docker completions
 
