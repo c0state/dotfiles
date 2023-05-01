@@ -15,6 +15,8 @@ if [[ ! -e $HOME/.rbenv/plugins/ruby-build ]]; then
     git clone https://github.com/rbenv/ruby-build.git "$HOME"/.rbenv/plugins/ruby-build
 fi
 
+PATH=$PATH:$HOME/.rbenv/bin
+
 eval "$(rbenv init -)"
 
 LATEST_RUBY_VERSION=$(rbenv install --list | grep -E "^\d" | sort | tail -n 1)

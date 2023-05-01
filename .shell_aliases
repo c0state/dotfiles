@@ -1,3 +1,5 @@
+# TODO: consolidate this with the fish version, minus conditional blocks
+
 if uname | grep Linux >/dev/null; then
     alias bat=batcat
     alias cat=batcat
