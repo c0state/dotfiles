@@ -63,6 +63,7 @@ sudo apt -y install \
     curl wget \
     direnv \
     dos2unix \
+    exa \
     fd-find \
     git git-lfs \
     glances \
