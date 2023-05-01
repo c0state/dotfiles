@@ -10,8 +10,7 @@ end
 
 set omf_packages \
     https://github.com/tom-doerr/codex.fish \
-    fzf \
-    pyenv
+    fzf
 
 for omf_package in $omf_packages
     omf list | grep "$omf_package" || omf install "$omf_package"
