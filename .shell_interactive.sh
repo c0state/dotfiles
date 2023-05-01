@@ -79,7 +79,7 @@ fi
 #fi
 #
 #if command -v ruby >/dev/null && command -v gem >/dev/null; then
-#    PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+#  PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
 #fi
 
 #----- golang
@@ -105,7 +105,7 @@ fi
 
 export PATH=$PATH:$(python3 -m site --user-base)/bin
 export PATH="$PATH:$HOME/.poetry/bin"
-if [[ ! -z $IS_MACOS_ARM ]]; then
+if [[ -n $IS_MACOS_ARM ]]; then
     export PATH="$PATH:$HOME/Library/Python/3.9/bin"
 fi
 
