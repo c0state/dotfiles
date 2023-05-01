@@ -86,15 +86,6 @@ if [[ -e $HOME/.git-subrepo/.rc ]]; then
 fi
 
 #----- python
-export PYENV_ROOT=$HOME/.pyenv
-export PATH="$PYENV_ROOT/bin:$PATH"
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init --path)"
-fi
-
-export PATH=$PATH:$(python3 -m site --user-base)/bin
-export PATH="$PATH:$HOME/.poetry/bin"
-
 if command -v register-python-argcomplete > /dev/null; then
   eval "$(register-python-argcomplete pipx)"
 fi
