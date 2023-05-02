@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# TODO: consolidate into setup_env.sh
+
 #---------- update dotfiles folder
 
 (cd "$HOME"/.dotfiles && git pullr --all)
