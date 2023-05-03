@@ -132,7 +132,7 @@ fi
 if ! which gcloud; then
     curl https://sdk.cloud.google.com | bash -s -- --disable-prompts --install-dir "$HOME"/.local
 else
-    gcloud components update
+    gcloud components update --quiet
 fi
 
 # ---------- updates
