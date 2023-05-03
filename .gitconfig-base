@@ -17,7 +17,7 @@
     dtsd = "!git diff HEAD --unified=8 | git-split-diffs --color | less --RAW-CONTROL-CHARS --quit-if-one-screen"
     dump = cat-file -p
     ff = !git fetch origin \"$@\":\"$@\"
-    ffm = !git fetch origin master:master
+    ffm = "!sh -c 'git fetch origin master:master || (echo Trying main && git fetch origin main:main)'"
     graft = !legit graft \"$@\"
     harvest = !legit harvest \"$@\"
     hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
