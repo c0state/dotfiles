@@ -139,7 +139,7 @@ which jetbrains-toolbox || \
     chmod u+x "$HOME"/.local/bin/jetbrains-toolbox
 
 if ! which nvim > /dev/null; then
-    bash -i -c "install_package https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.deb"
+    wget https://github.com/neovim/neovim/releases/download/v0.9.0/nvim.appimage -O "$HOME"/.local/bin/nvim
 fi
 
 if ! which lvim > /dev/null; then
