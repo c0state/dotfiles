@@ -1,7 +1,0 @@
-windows:
-  - name: dotfiles
-    root: ~/.dotfiles
-    layout: main-horizontal
-    panes:
-      - vim
-      - echo "Run etc/brew_update.sh" to update homebrew packages

@@ -1,6 +1,0 @@
-windows:
-  - name: adhoc
-    root: ~/
-    layout: tile
-    panes:
-      - echo "Use this tab as a 'scratch' shell"
