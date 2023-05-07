@@ -72,6 +72,7 @@ sudo apt -y install \
     gnupg gpg ca-certificates \
     google-drive-ocamlfuse \
     keychain \
+    lsd \
     ncdu \
     nethogs \
     parallel \
@@ -123,9 +124,6 @@ sudo apt -y install \
     vagrant
 
 # ---------- set up lsd ls replacement
-
-LSD_VERSION=$(curl -s "https://api.github.com/repos/lsd-rs/lsd/releases/latest" | command grep -Po '"tag_name": "\K[^"]*')
-bash -i -c "install_package https://github.com/lsd-rs/lsd/releases/download/${LSD_VERSION}/lsd_${LSD_VERSION}_${DPKG_ARCH}.deb"
 
 LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | command grep -Po '"tag_name": "v\K[^"]*')
 curl -L "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz" | \
