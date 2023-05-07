@@ -122,6 +122,8 @@ call plug#begin('~/.vim/bundle')
   autocmd vimenter * wincmd p
   " close vim if NERDTree is the only window open
   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+  let NERDTreeShowHidden=1
 "-----
 
 "----- vim-plug
