@@ -243,6 +243,7 @@ execute WatchForChanges("*",autoreadargs)
 "----- Custom Key Mappings
   " to start fzf
   nnoremap <C-p> :FZF<CR>
+  nnoremap <leader>fzf :Rg 
 
   " for split windows and 'frames'
   nnoremap <leader>sfj :botright new<CR>
