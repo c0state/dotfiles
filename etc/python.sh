@@ -15,6 +15,7 @@ if [[ -n "$REINSTALL_TOOLS" ]]; then
     rm -rf "$HOME"/Library/Caches/pypoetry
 
     pyenv uninstall -f "$DEFAULT_PYTHON_VENV_NAME" || true
+    pyenv global system
 fi
 
 #---------- pyenv
