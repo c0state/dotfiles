@@ -20,14 +20,12 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githu
 curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/lunar.noarmor.gpg | sudo tee /usr/share/keyrings/tailscale-archive-keyring.gpg >/dev/null
 curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/lunar.tailscale-keyring.list | sudo tee /etc/apt/sources.list.d/tailscale.list
 
-if test -z "$IS_WSL"; then
-    # docker
-    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor --yes -o /etc/apt/keyrings/docker.gpg
-    echo \
-      "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-      "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
-      sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-fi
+# docker
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor --yes -o /etc/apt/keyrings/docker.gpg
+echo \
+  "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 # tabby
 curl -fsSL https://packagecloud.io/eugeny/tabby/gpgkey | gpg --dearmor | sudo tee /etc/apt/keyrings/eugeny_tabby-archive-keyring.gpg >/dev/null
@@ -104,13 +102,11 @@ sudo apt -y install \
     libncurses5-dev libncursesw5-dev \
     libxml2-dev
 
-if test -z "$IS_WSL"; then
-    # install docker and set up group
-    sudo apt-get -y install \
-        docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-    sudo groupadd --force docker
-    sudo usermod -aG docker $USER
-fi
+# install docker and set up group
+sudo apt-get -y install \
+    docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo groupadd --force docker
+sudo usermod -aG docker $USER
 
 # only available on pop os out of the box
 sudo apt -y install alacritty || true
