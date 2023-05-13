@@ -78,6 +78,7 @@ sudo apt -y install \
     ripgrep \
     tabby-terminal \
     tree \
+    wireshark \
     wmctrl \
     vim-nox
 
