@@ -74,9 +74,7 @@ if command -v pyenv 1>/dev/null 2>&1
     set -Ux PYENV_ROOT $HOME/.pyenv
     fish_add_path $PYENV_ROOT/bin
 
-    # only init paths for performance
-    # https://github.com/pyenv/pyenv/blob/master/COMMANDS.md#pyenv-init
-    status is-login; and pyenv init --path | source
+    pyenv init - | source
 end
 
 #----- ruby
