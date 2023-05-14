@@ -13,6 +13,8 @@ if ! which brew > /dev/null; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
+brew install nerdctl
+
 # ---------- aws
 
 TEMP_AWS_INSTALL_DIR=$(mktemp --directory)

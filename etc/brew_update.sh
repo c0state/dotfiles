@@ -55,6 +55,7 @@ brew_packages=(
     ddrescue
     direnv
     dnsmasq
+    docker
     dos2unix
     exa
     exiftool
@@ -150,7 +151,6 @@ brew_cask_packages=(
     db-browser-for-sqlite
     discord
     divvy
-    docker
     dotnet-sdk
     evernote
     firefox
@@ -217,6 +217,12 @@ for brew_cask_package in "${brew_cask_packages[@]}"; do
 done
 
 brew completions link
+
+#---------- containers ----------
+
+brew install colima
+colima start --runtime containerd
+colima nerdctl install --path "$HOME"/.local/bin/nerdctl
 
 #---------- Intel only packages ----------
 
