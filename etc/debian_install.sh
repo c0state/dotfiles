@@ -73,6 +73,7 @@ sudo apt -y install \
     lsd \
     ncdu \
     nethogs \
+    obs-studio \
     parallel \
     ranger \
     ripgrep \
