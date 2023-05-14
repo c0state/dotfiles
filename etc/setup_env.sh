@@ -137,7 +137,7 @@ fi
 #---------- containers ----------
 
 if [[ "$PLATFORM" == "Darwin" ]]; then
-    colima start --runtime containerd
+    colima start --runtime docker
     colima nerdctl install --path "$HOME"/.local/bin/nerdctl
 fi
 
