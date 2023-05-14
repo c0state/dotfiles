@@ -33,3 +33,8 @@ curl https://raw.githubusercontent.com/docker/cli/master/contrib/completion/fish
 #---------- kubectl completions
 
 kubectl completion fish > "$HOME"/.config/fish/completions/kubectl.fish
+
+#---------- nerdctl completions
+
+nerdctl completion fish > "$HOME"/.config/fish/completions/nerdctl.fish
+
