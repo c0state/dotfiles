@@ -148,4 +148,3 @@ fi
 "$HOME"/etc/setup_kubernetes.sh
 
 echo "Successfully run setup!"
-
