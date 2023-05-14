@@ -134,6 +134,13 @@ else
     gcloud components update --quiet
 fi
 
+#---------- containers ----------
+
+if [[ "$PLATFORM" == "Darwin" ]]; then
+    colima start --runtime containerd
+    colima nerdctl install --path "$HOME"/.local/bin/nerdctl
+fi
+
 # ---------- updates
 
 "$HOME"/etc/update_dotfiles.sh

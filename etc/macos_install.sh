@@ -49,6 +49,7 @@ brew_packages=(
     carthage
     circleci
     cocoapods
+    colima
     colordiff icdiff
     coreutils
     dive
@@ -217,12 +218,6 @@ for brew_cask_package in "${brew_cask_packages[@]}"; do
 done
 
 brew completions link
-
-#---------- containers ----------
-
-brew install colima
-colima start --runtime containerd
-colima nerdctl install --path "$HOME"/.local/bin/nerdctl
 
 #---------- Intel only packages ----------
 
