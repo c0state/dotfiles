@@ -6,14 +6,12 @@ IS_WSL=$(uname -a | grep -i microsoft || echo "")
 DPKG_ARCH=$(dpkg --print-architecture 2>/dev/null || echo "")
 
 # init vscode
-wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > /tmp/packages.microsoft.gpg
-sudo install -D -o root -g root -m 644 /tmp/packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
+curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor --yes -o /etc/apt/keyrings/packages.microsoft.gpg
 sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
 rm -f /tmp/packages.microsoft.gpg
 
 # init github cli
-curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
-sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo gpg --dearmor --yes -o /usr/share/keyrings/githubcli-archive-keyring.gpg
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
 
 # init tailscale
@@ -28,12 +26,12 @@ echo \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 # tabby
-curl -fsSL https://packagecloud.io/eugeny/tabby/gpgkey | gpg --dearmor | sudo tee /etc/apt/keyrings/eugeny_tabby-archive-keyring.gpg >/dev/null
+curl -fsSL https://packagecloud.io/eugeny/tabby/gpgkey | sudo gpg --dearmor --yes -o /etc/apt/keyrings/eugeny_tabby-archive-keyring.gpg
 echo "deb [signed-by=/etc/apt/keyrings/eugeny_tabby-archive-keyring.gpg] https://packagecloud.io/eugeny/tabby/ubuntu kinetic main" | sudo tee /etc/apt/sources.list.d/eugeny_tabby.list
 echo "deb-src [signed-by=/etc/apt/keyrings/eugeny_tabby-archive-keyring.gpg] https://packagecloud.io/eugeny/tabby/ubuntu kinetic main" | sudo tee -a /etc/apt/sources.list.d/eugeny_tabby.list
 
 # lens
-curl -fsSL https://downloads.k8slens.dev/keys/gpg | gpg --dearmor | sudo tee /usr/share/keyrings/lens-archive-keyring.gpg > /dev/null
+curl -fsSL https://downloads.k8slens.dev/keys/gpg | sudo gpg --dearmor --yes -o /usr/share/keyrings/lens-archive-keyring.gpg
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/lens-archive-keyring.gpg] https://downloads.k8slens.dev/apt/debian stable main" | \
   sudo tee /etc/apt/sources.list.d/lens.list > /dev/null
 
