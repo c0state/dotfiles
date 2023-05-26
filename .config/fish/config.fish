@@ -4,6 +4,13 @@
 set --local PLATFORM_FULL (uname -a)
 set --local PLATFORM (echo $PLATFORM_FULL | cut -d ' ' -f 1)
 set --local IS_MACOS_ARM (echo $PLATFORM_FULL | grep -i "darwin.*arm64" || echo "")
+if test "$PLATFORM" = "Darwin"
+    if test -n $IS_MACOS_ARM
+        set --function MACOS_BREW_PREFIX "/opt/homebrew"
+    else
+        set --function MACOS_BREW_PREFIX "/usr/local/Homebrew"
+    end
+end
 set --local IS_WSL (echo $PLATFORM_FULL | grep -i microsoft || echo "")
 
 # misc
@@ -85,14 +92,25 @@ end
 #end
 
 #----- rust
+
 set -gx PATH "$HOME/.cargo/bin" $PATH
 
 #----- golang
+
 set -gx GOPATH "$HOME/work/go"
 set -gx PATH "$HOME/.local/go/bin" "$GOPATH/bin" $PATH
 
-#----- kubectl krew
+#----- kubernetes
+
+# kubectl krew
 set -gx PATH $PATH $HOME/.krew/bin
+
+#----- brew
+
+# gnu utils paths
+if test "$PLATFORM" = "Darwin"
+    set -gx PATH "$MACOS_BREW_PREFIX"/opt/coreutils/libexec/gnubin $PATH
+end
 
 #---------- kubectl
 
