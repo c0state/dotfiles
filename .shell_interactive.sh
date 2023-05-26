@@ -1,7 +1,19 @@
 #!/usr/bin/env bash
 
 #----- detect platform
+PLATFORM=$(uname)
 PLATFORM_FULL=$(uname -a)
+MACH_TYPE=$(uname -m)
+if [[ "$PLATFORM" == "Darwin" && "$MACH_TYPE" == "arm64" ]]; then
+    IS_MACOS_ARM=1
+fi
+if [[ "$PLATFORM" == "Darwin" ]]; then
+    if [[ -n "$IS_MACOS_ARM" ]]; then
+        MACOS_BREW_PREFIX="/opt/homebrew"
+    else
+        MACOS_BREW_PREFIX="/usr/local/Homebrew"
+    fi
+fi
 IS_WSL=$(echo "$PLATFORM_FULL" | grep -i microsoft || echo "")
 
 #----- increase history file sizes
@@ -102,6 +114,9 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 
 #----- kubectl krew
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+#----- homebrew gnu utils
+export PATH="$MACOS_BREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH"
 
 #----- keychain agent
 if command -v keychain > /dev/null; then

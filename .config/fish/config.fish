@@ -3,7 +3,8 @@
 # platform
 set --local PLATFORM_FULL (uname -a)
 set --local PLATFORM (echo $PLATFORM_FULL | cut -d ' ' -f 1)
-set --local IS_MACOS_ARM (echo $PLATFORM_FULL | grep -i "darwin.*arm64" || echo "")
+set --local MACH_TYPE (uname -m)
+set --local IS_MACOS_ARM (test $PLATFORM = "Darwin" && test $MACH_TYPE = "arm64" && echo "1" || echo "")
 if test "$PLATFORM" = "Darwin"
     if test -n $IS_MACOS_ARM
         set --function MACOS_BREW_PREFIX "/opt/homebrew"
