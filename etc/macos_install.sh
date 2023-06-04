@@ -228,7 +228,7 @@ brew autoupdate delete && brew autoupdate start --cleanup
 
 #---------- App store ----------
 
-TODO: install app store packages via mas CLI tool
+# TODO: install app store packages via mas CLI tool
 
 #---------- Cleanup ----------
 
