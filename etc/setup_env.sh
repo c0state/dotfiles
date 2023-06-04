@@ -5,7 +5,7 @@ set -eux
 # ---------- shared variables
 
 PLATFORM_FULL=$(uname -a)
-PLATFORM=$(echo "$PLATFORM_FULL" | cut -d ' ' -f 1)
+PLATFORM=$(uname)
 IS_WSL=$(echo "$PLATFORM_FULL" | grep -i microsoft || echo "")
 
 # ---------- set up dotfiles links
