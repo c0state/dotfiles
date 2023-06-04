@@ -147,6 +147,7 @@ fi
 
 "$HOME"/etc/dotnet.sh
 "$HOME"/etc/golang.sh
+"$HOME"/etc/haskell.sh
 "$HOME"/etc/js_tools.sh
 "$HOME"/etc/python.sh
 "$HOME"/etc/ruby.sh
