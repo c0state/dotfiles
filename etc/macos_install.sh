@@ -19,11 +19,6 @@ brew update && brew upgrade
 
 echo "---------- Installing core dependencies"
 
-# need to install items from the app store
-brew list mas >/dev/null 2>&1 || brew install mas
-# java is needed for some apps
-brew install openjdk
-
 #---------- fonts ----------
 
 brew install --cask font-fira-code
@@ -79,6 +74,7 @@ brew_packages=(
     lsd
     lyft/formulae/set-simulator-location
     macvim
+    mas
     media-info
     minikube
     mobile-shell
@@ -88,6 +84,7 @@ brew_packages=(
     nmap
     nnn
     octant
+    openjdk
     openssl
     optipng
     packer
@@ -228,6 +225,10 @@ fi
 #---------- Configure auto updater ----------
 
 brew autoupdate delete && brew autoupdate start --cleanup
+
+#---------- App store ----------
+
+TODO: install app store packages via mas CLI tool
 
 #---------- Cleanup ----------
 
