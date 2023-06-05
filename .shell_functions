@@ -80,4 +80,3 @@ function clear_macos_timemachine_snapshots {
         sudo tmutil deletelocalsnapshots $curr_dir
     done
 }
-

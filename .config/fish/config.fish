@@ -29,8 +29,15 @@ end
 
 #---------- aliases and functions
 
-source ~/.shell_aliases.fish
+source ~/.shell_aliases
 source ~/.shell_functions.fish
+
+if test "$PLATFORM" = "Linux"
+    alias bat=batcat
+    alias cat=batcat
+else
+    alias cat=bat
+end
 
 #---------- homebrew
 

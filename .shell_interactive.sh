@@ -31,6 +31,13 @@ export TERM=xterm-256color
 
 source "$HOME"/.shell_aliases
 
+if [[ "$PLATFORM" == "Linux" ]]; then
+    alias bat=batcat
+    alias cat=batcat
+else
+    alias cat=bat
+fi
+
 #----- node config
 
 # linuxbrew

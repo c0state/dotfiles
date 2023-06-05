@@ -18,7 +18,7 @@ fi
 
 mkdir -p "$HOME"/.local/bin
 
-DOTFILES=".bash_functions .bash_profile .bashrc .editorconfig .gitconfig-base .gdbinit .ideavimrc .mrxvtrc .oh-my-zsh-custom .screenrc .shell_aliases .shell_aliases.fish .shell_functions .shell_functions.fish .shell_interactive.sh .studioforkdb .tmux.conf .toprc .vimrc .zsh_functions .zshrc"
+DOTFILES=".bash_functions .bash_profile .bashrc .editorconfig .gitconfig-base .gdbinit .ideavimrc .mrxvtrc .oh-my-zsh-custom .screenrc .shell_aliases .shell_functions .shell_functions.fish .shell_interactive.sh .studioforkdb .tmux.conf .toprc .vimrc .zsh_functions .zshrc"
 
 for FILE in $DOTFILES; do
     echo processing "$FILE"

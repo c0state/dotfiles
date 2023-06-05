@@ -1,9 +1,3 @@
-if uname | grep Linux >/dev/null
-    alias bat=batcat
-    alias cat=batcat
-else
-    alias cat=bat
-end
 alias diff="colordiff --side-by-side --suppress-common-lines"
 alias dbox="dropbox.py"
 
@@ -36,7 +30,8 @@ alias k_print_configmap="kubectl get configmap $1 -o jsonpath=\"{.data}\""
 
 alias lessw="less -i --shift 2 --RAW-CONTROL-CHARS"
 alias lessc="less -i --chop-long-lines --shift 2 --RAW-CONTROL-CHARS"
-alias ls="lsd"
+alias la="exa --long --header --git --classify --group --group-directories-first --icons --all"
+alias ls="exa --long --header --git --classify --group --group-directories-first --icons"
 alias mdv="$HOME/.terminal_markdown_viewer/mdv.py"
 alias mysql.start="/opt/local/share/mysql5/mysql/mysql.server"
 
