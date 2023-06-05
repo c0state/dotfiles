@@ -17,7 +17,6 @@ alias fx="npx fx"
 
 # git aliases
 alias gitvdiff="git difftool -t tkdiff --no-prompt"
-alias git_prune_empty_dirs="find . -name .git -prune -o -type d -empty -print | xargs rmdir -p || true"
 
 alias grep="egrep"
 alias h="history"
@@ -44,7 +43,3 @@ alias vim="nvim"
 
 # https://github.com/google/zx
 alias zx="npx zx"
-
-if test -e ~/.shell_aliases_custom
-    source ~/.shell_aliases_custom
-end
