@@ -35,9 +35,9 @@ fi
 
 if ! command -v poetry; then
     curl -sSL https://install.python-poetry.org | python3 -
-    poetry config virtualenvs.in-project true
 else
     poetry self update
+    poetry config virtualenvs.in-project true
 fi
 
 #---------- set up default python venv
