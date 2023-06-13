@@ -1,0 +1,3 @@
+lvim.plugins = {
+  { "preservim/nerdtree" },
+}
