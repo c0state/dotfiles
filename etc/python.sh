@@ -71,6 +71,7 @@ which cwl-runner || pipx install cwlref-runner
 which cwltool || pipx install cwltool
 which dbt || pipx install --include-deps dbt-core
 which git-dmb || pipx install git-delete-merged-branches
+which graphtage || pipx install graphtage
 which howdoi || pipx install howdoi
 which http || pipx install httpie
 which ipython || pipx install ipython
