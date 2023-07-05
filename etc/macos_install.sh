@@ -63,6 +63,7 @@ brew_packages=(
     fzf
     gh git git-delta git-extras git-lfs lazygit legit
     glances
+    helix
     helm
     htop
     hub
