@@ -101,7 +101,7 @@ brew_packages=(
     redis
     rlwrap
     getsentry/tools/sentry-cli
-    selenium-server-standalone
+    selenium-server
     shellcheck
     smartmontools
     sshuttle
