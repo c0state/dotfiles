@@ -11,8 +11,7 @@ fi
 
 source "$HOME"/.cargo/env
 
-# TODO: currently broken as of 2023-06-11, not sure if ready yet...
-# cargo install coreutils ; "$HOME"/.cargo/bin/coreutils
+cargo install coreutils
 cargo install exa
 cargo install git-delta
 cargo install sd
