@@ -28,6 +28,9 @@ done
 mkdir -p "$HOME"/.config
 (ln -s "$HOME"/.dotfiles/.config/* "$HOME"/.config || true)
 
+mkdir -p "$HOME"/.config/lvim
+ln -s "$HOME"/.dotfiles/.config/lvim/config.lua "$HOME"/.config/lvim || true
+
 if [[ ! -d $HOME/etc ]]; then
     ln -s "$HOME"/.dotfiles/etc "$HOME"/
 fi
