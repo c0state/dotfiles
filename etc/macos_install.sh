@@ -7,7 +7,6 @@ IS_MACOS_ARM=$(uname -a | grep -i "darwin.*arm64" || echo "")
 #---------- brew setup ----------
 
 # add taps
-brew tap aws/tap
 brew tap homebrew/autoupdate
 brew tap homebrew/cask-fonts
 brew tap homebrew/cask-versions
