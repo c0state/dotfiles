@@ -77,6 +77,7 @@ brew_packages=(
     mas
     media-info
     minikube
+    mkcert
     mobile-shell
     mysql
     ncdu
