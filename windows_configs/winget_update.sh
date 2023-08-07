@@ -33,6 +33,7 @@ winget install --id mozilla.firefox
 winget install --id neovim.neovim
 winget install --id nvidia.geforceexperience
 winget install --id obsproject.obsstudio
+winget install --id openwhispersystems.signal
 winget install --id raspberrypifoundation.raspberrypiimager
 winget install --id randyrants.sharpkeys
 winget install --name rufus --source msstore
