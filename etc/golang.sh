@@ -4,7 +4,7 @@ set -eu
 
 #---------- variables
 
-GO_VERSION=$(curl -L https://golang.org/VERSION?m=text)
+GO_VERSION=$(curl -L https://golang.org/VERSION?m=text | head -n 1)
 PLATFORM=$(uname)
 MACH_TYPE=$(uname -m)
 ARCH_TYPE=$MACH_TYPE
