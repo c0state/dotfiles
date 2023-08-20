@@ -133,6 +133,7 @@ which jetbrains-toolbox || \
 
 if ! which nvim > /dev/null; then
     wget https://github.com/neovim/neovim/releases/download/v0.9.0/nvim.appimage -O "$HOME"/.local/bin/nvim
+    chmod +x "$HOME"/.local/bin/nvim
 fi
 
 if ! which lvim > /dev/null; then
