@@ -14,6 +14,7 @@ fi
 
 # install kubectl krew packages
 
+kubectl krew upgrade
 kubectl krew index add kvaps https://github.com/kvaps/krew-index || true
 kubectl krew install kvaps/node-shell
 
