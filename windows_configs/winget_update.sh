@@ -26,7 +26,7 @@ winget install --id jetbrains.toolbox
 winget install --id jigsaw.outlinemanager
 winget install --id kubernetes.minikube
 winget install --id meld.meld
-winget install --id microsoft.dotnet
+winget install --id microsoft.dotnet.runtime.7
 winget install --id microsoft.visualstudiocode
 winget install --id mirantis.lens
 winget install --id mozilla.firefox
