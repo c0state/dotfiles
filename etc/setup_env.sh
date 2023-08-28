@@ -62,6 +62,15 @@ fi
 
 vim +PlugUpdate +PlugUpgrade +UpdateRemotePlugins +qall
 
+# ---------- set up nvchad
+
+if [[ ! -d $HOME/.config/nvim ]]; then
+    git clone https://github.com/nvchad/nvchad "$HOME"/.config/nvim --depth 1 && nvim
+else
+    # TODO: this seems to exit before the update is finished
+    nvim +NvChadUpdate +qall
+fi
+
 # ---------- set up lunarvim
 
 if ! which lvim > /dev/null; then
