@@ -3,6 +3,7 @@
 set -eu
 
 DEFAULT_PYTHON_VENV_NAME="default_python_venv"
+PYTHON_VERSION=3.11.5
 REINSTALL_TOOLS=${REINSTALL_TOOLS:-""}
 
 if [[ -n "$REINSTALL_TOOLS" ]]; then
@@ -31,21 +32,25 @@ else
     pyenv update
 fi
 
+#---------- set up default python venv
+
+if ! (pyenv versions | grep "$PYTHON_VERSION"); then
+  pyenv install "$PYTHON_VERSION"
+fi
+
+if ! pyenv versions | grep "$DEFAULT_PYTHON_VENV_NAME"; then
+  pyenv virtualenv "$PYTHON_VERSION" "$DEFAULT_PYTHON_VENV_NAME"
+fi
+pyenv global "$DEFAULT_PYTHON_VENV_NAME"
+
 #---------- poetry
 
 if ! command -v poetry; then
-    curl -sSL https://install.python-poetry.org | python3 - --force
+    curl -sSL https://install.python-poetry.org | "$HOME"/.pyenv/versions/"$PYTHON_VERSION"/bin/python3 - --force
 fi
 
 poetry self update
 poetry config virtualenvs.in-project true
-
-#---------- set up default python venv
-
-if ! pyenv versions | grep "$DEFAULT_PYTHON_VENV_NAME"; then
-    pyenv virtualenv system "$DEFAULT_PYTHON_VENV_NAME"
-fi
-pyenv global "$DEFAULT_PYTHON_VENV_NAME"
 
 #---------- pip packages
 
