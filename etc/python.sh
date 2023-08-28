@@ -60,37 +60,37 @@ pip3 install --upgrade build twine
 
 #---------- pipx dependencies
 
-which ansible || pipx install --include-deps ansible
-which black || pipx install --include-deps black
-which activate.sh || pipx install autoenv
-which cdiff || pipx install cdiff
-which codemod || pipx install codemod
-which cookiecutter || pipx install cookiecutter
-which csvformat || pipx install csvkit
-which cwl-runner || pipx install cwlref-runner
-which cwltool || pipx install cwltool
-which dbt || pipx install --include-deps dbt-core
-which git-dmb || pipx install git-delete-merged-branches
-which graphtage || pipx install graphtage
-which howdoi || pipx install howdoi
-which http || pipx install httpie
-which ipython || pipx install ipython
-which markdown_py || pipx install markdown
-which mypy || pipx install mypy
-which pgcli || pipx install pgcli
-which pip-compile || pipx install pip-tools
-which pipdeptree || pipx install pipdeptree
-which pipenv || pipx install pipenv
-which pre-commit || pipx install pre-commit
-which ptpython || pipx install ptpython
-which pyright || pipx install pyright
-which pyupgrade || pipx install pyupgrade
-which ranger || pipx install ranger-fm
-which semgrep || pipx install semgrep
-which snakeviz || pipx install snakeviz
-which tox || pipx install tox
-which twine || pipx install twine
-which youtube-dl || pipx install youtube-dl
+pipx install --include-deps ansible
+pipx install --include-deps black
+pipx install autoenv
+pipx install cdiff
+pipx install codemod
+pipx install cookiecutter
+pipx install csvkit
+pipx install cwlref-runner
+pipx install cwltool
+pipx install --include-deps dbt-core
+pipx install git-delete-merged-branches
+pipx install graphtage
+pipx install howdoi
+pipx install httpie
+pipx install ipython
+pipx install markdown
+pipx install mypy
+pipx install pgcli
+pipx install pip-tools
+pipx install pipdeptree
+pipx install pipenv
+pipx install pre-commit
+pipx install ptpython
+pipx install pyright
+pipx install pyupgrade
+pipx install ranger-fm
+pipx install semgrep
+pipx install snakeviz
+pipx install tox
+pipx install twine
+pipx install youtube-dl
 
 #---------- upgrade all pipx packages
 
