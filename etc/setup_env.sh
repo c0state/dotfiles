@@ -167,4 +167,9 @@ fi
 
 "$HOME"/etc/setup_kubernetes.sh
 
+# ---------- cleanup
+
+# remove dead symlinks
+find "$HOME"/.local/bin/ -xtype l -delete
+
 echo "Successfully run setup!"
