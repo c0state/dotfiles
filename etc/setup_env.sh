@@ -70,7 +70,7 @@ else
     # TODO: this seems to exit before the update is finished
     nvim +NvChadUpdate +qall
 fi
-ln -s -f -n "$HOME"/.dotfiles/.config_custom/nvim_custom/ "$HOME"/.config/nvim/lua/custom
+rm -rf "$HOME"/.config/nvim/lua/custom && ln -s "$HOME"/.dotfiles/.config_custom/nvim_custom/ "$HOME"/.config/nvim/lua/custom
 
 # ---------- set up lunarvim
 
