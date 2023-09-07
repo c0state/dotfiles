@@ -113,12 +113,12 @@ sudo apt -y install alacritty || true
 # install developer packages
 sudo apt -y install \
     fonts-firacode \
+    # browser dependency, for chrome I believe
+    fonts-liberation
     gh \
     lens \
     tmux \
     vagrant
-
-# ---------- set up lsd ls replacement
 
 LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | command grep -Po '"tag_name": "v\K[^"]*')
 curl -L "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz" | \
@@ -142,9 +142,6 @@ fi
 
 # install vscode
 [ -z $IS_WSL ] && sudo apt install code
-
-# install browsers
-sudo apt install fonts-liberation
 
 # chrome isn't in core repos for ubuntu
 if ! which google-chrome-stable; then

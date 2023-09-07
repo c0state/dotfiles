@@ -11,8 +11,9 @@ fi
 
 source "$HOME"/.cargo/env
 
-cargo install coreutils
-cargo install exa
-cargo install git-delta
-cargo install sd
-cargo install tree-sitter-cli
+cargo install --locked --features clipboard broot
+cargo install --locked coreutils
+cargo install --locked exa
+cargo install --locked git-delta
+cargo install --locked sd
+cargo install --locked tree-sitter-cli
