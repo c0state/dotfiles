@@ -9,6 +9,8 @@ else
     rustup self update
 fi
 
+rustup component add rust-analyzer
+
 source "$HOME"/.cargo/env
 
 cargo install --locked --features clipboard broot
