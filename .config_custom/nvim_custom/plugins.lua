@@ -50,6 +50,11 @@ local plugins = {
   {
     "pocco81/auto-save.nvim",
     lazy = false,
+  },
+
+  {
+    "christoomey/vim-tmux-navigator",
+    lazy = false,
   }
 
   -- To make a plugin not be loaded
