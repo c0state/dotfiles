@@ -15,8 +15,8 @@ _deno() {
 
     local context curcontext="$curcontext" state line
     _arguments "${_arguments_options[@]}" \
-'-L+[Set log level]: :(debug info)' \
-'--log-level=[Set log level]: :(debug info)' \
+'-L+[Set log level]: :(trace debug info)' \
+'--log-level=[Set log level]: :(trace debug info)' \
 '--unstable[Enable unstable features and APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
@@ -48,73 +48,73 @@ _arguments "${_arguments_options[@]}" \
 If value is not provided, defaults to "deno.lock" in the current working directory.]' \
 '--cert=[Load certificate authority from PEM encoded file]:FILE:_files' \
 '--allow-read=[Allow file system read access. Optionally specify allowed paths.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --allow-read
   --allow-read="/etc,/var/log.txt"]' \
 '--deny-read=[Deny file system read access. Optionally specify denied paths.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --deny-read
   --deny-read="/etc,/var/log.txt"]' \
 '--allow-write=[Allow file system write access. Optionally specify allowed paths.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --allow-write
   --allow-write="/etc,/var/log.txt"]' \
 '--deny-write=[Deny file system write access. Optionally specify denied paths.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --deny-write
   --deny-write="/etc,/var/log.txt"]' \
 '--allow-net=[Allow network access. Optionally specify allowed IP addresses and host names, with ports as necessary.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --allow-net
   --allow-net="localhost\:8080,deno.land"]' \
 '--deny-net=[Deny network access. Optionally specify denied IP addresses and host names, with ports as necessary.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --deny-net
   --deny-net="localhost\:8080,deno.land"]' \
 '--unsafely-ignore-certificate-errors=[DANGER\: Disables verification of TLS certificates]' \
 '--allow-env=[Allow access to system environment information. Optionally specify accessible environment variables.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --allow-env
   --allow-env="PORT,HOME,PATH"]' \
 '--deny-env=[Deny access to system environment information. Optionally specify accessible environment variables.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --deny-env
   --deny-env="PORT,HOME,PATH"]' \
 '--allow-sys=[Allow access to OS information. Optionally allow specific APIs by function name.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --allow-sys
   --allow-sys="systemMemoryInfo,osRelease"]' \
 '--deny-sys=[Deny access to OS information. Optionally deny specific APIs by function name.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --deny-sys
   --deny-sys="systemMemoryInfo,osRelease"]' \
 '--allow-run=[Allow running subprocesses. Optionally specify allowed runnable program names.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --allow-run
   --allow-run="whoami,ps"]' \
 '--deny-run=[Deny running subprocesses. Optionally specify denied runnable program names.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --deny-run
   --deny-run="whoami,ps"]' \
 '--allow-ffi=[(Unstable) Allow loading dynamic libraries. Optionally specify allowed directories or files.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --allow-ffi
   --allow-ffi="./libfoo.so"]' \
 '--deny-ffi=[(Unstable) Deny loading dynamic libraries. Optionally specify denied directories or files.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --deny-ffi
   --deny-ffi="./libfoo.so"]' \
@@ -127,24 +127,24 @@ Examples\:
 '(--no-check)--check=[Type-check modules]' \
 '(--inspect --inspect-wait --inspect-brk)--watch=[Watch for file changes and restart automatically]' \
 '--ext=[Set content type of the supplied file]: :(ts tsx js jsx)' \
-'-L+[Set log level]: :(debug info)' \
-'--log-level=[Set log level]: :(debug info)' \
+'-L+[Set log level]: :(trace debug info)' \
+'--log-level=[Set log level]: :(trace debug info)' \
 '--no-remote[Do not resolve remote modules]' \
 '--no-npm[Do not resolve npm modules]' \
 '(-c --config)--no-config[Disable automatic loading of the configuration file.]' \
 '(--no-lock)--lock-write[Force overwriting the lock file.]' \
 '(--lock)--no-lock[Disable auto discovery of the lock file.]' \
 '--allow-hrtime[Allow high-resolution time measurement. Note\: this can enable timing attacks and fingerprinting.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 ]' \
 '--deny-hrtime[Deny high-resolution time measurement. Note\: this can prevent timing attacks and fingerprinting.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 ]' \
 '-A[Allow all permissions. Learn more about permissions in Deno\:
-https\://deno.land/manual@v1.36.4/basics/permissions
+https\://deno.land/manual@v1.37.0/basics/permissions
 ]' \
 '--allow-all[Allow all permissions. Learn more about permissions in Deno\:
-https\://deno.land/manual@v1.36.4/basics/permissions
+https\://deno.land/manual@v1.37.0/basics/permissions
 ]' \
 '--prompt[deprecated\: Fallback to prompt if required permission wasn'\''t passed]' \
 '--no-prompt[Always throw if required permission wasn'\''t passed]' \
@@ -161,8 +161,8 @@ https\://deno.land/manual@v1.36.4/basics/permissions
 ;;
 (bench)
 _arguments "${_arguments_options[@]}" \
-'-L+[Set log level]: :(debug info)' \
-'--log-level=[Set log level]: :(debug info)' \
+'-L+[Set log level]: :(trace debug info)' \
+'--log-level=[Set log level]: :(trace debug info)' \
 '--no-check=[Skip type-checking modules]' \
 '--import-map=[Load import map file]:FILE:_files' \
 '--node-modules-dir=[Enables or disables the use of a local node_modules folder for npm packages]' \
@@ -176,73 +176,73 @@ _arguments "${_arguments_options[@]}" \
 If value is not provided, defaults to "deno.lock" in the current working directory.]' \
 '--cert=[Load certificate authority from PEM encoded file]:FILE:_files' \
 '--allow-read=[Allow file system read access. Optionally specify allowed paths.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --allow-read
   --allow-read="/etc,/var/log.txt"]' \
 '--deny-read=[Deny file system read access. Optionally specify denied paths.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --deny-read
   --deny-read="/etc,/var/log.txt"]' \
 '--allow-write=[Allow file system write access. Optionally specify allowed paths.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --allow-write
   --allow-write="/etc,/var/log.txt"]' \
 '--deny-write=[Deny file system write access. Optionally specify denied paths.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --deny-write
   --deny-write="/etc,/var/log.txt"]' \
 '--allow-net=[Allow network access. Optionally specify allowed IP addresses and host names, with ports as necessary.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --allow-net
   --allow-net="localhost\:8080,deno.land"]' \
 '--deny-net=[Deny network access. Optionally specify denied IP addresses and host names, with ports as necessary.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --deny-net
   --deny-net="localhost\:8080,deno.land"]' \
 '--unsafely-ignore-certificate-errors=[DANGER\: Disables verification of TLS certificates]' \
 '--allow-env=[Allow access to system environment information. Optionally specify accessible environment variables.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --allow-env
   --allow-env="PORT,HOME,PATH"]' \
 '--deny-env=[Deny access to system environment information. Optionally specify accessible environment variables.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --deny-env
   --deny-env="PORT,HOME,PATH"]' \
 '--allow-sys=[Allow access to OS information. Optionally allow specific APIs by function name.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --allow-sys
   --allow-sys="systemMemoryInfo,osRelease"]' \
 '--deny-sys=[Deny access to OS information. Optionally deny specific APIs by function name.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --deny-sys
   --deny-sys="systemMemoryInfo,osRelease"]' \
 '--allow-run=[Allow running subprocesses. Optionally specify allowed runnable program names.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --allow-run
   --allow-run="whoami,ps"]' \
 '--deny-run=[Deny running subprocesses. Optionally specify denied runnable program names.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --deny-run
   --deny-run="whoami,ps"]' \
 '--allow-ffi=[(Unstable) Allow loading dynamic libraries. Optionally specify allowed directories or files.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --allow-ffi
   --allow-ffi="./libfoo.so"]' \
 '--deny-ffi=[(Unstable) Deny loading dynamic libraries. Optionally specify denied directories or files.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --deny-ffi
   --deny-ffi="./libfoo.so"]' \
@@ -261,16 +261,16 @@ Examples\:
 '(--no-lock)--lock-write[Force overwriting the lock file.]' \
 '(--lock)--no-lock[Disable auto discovery of the lock file.]' \
 '--allow-hrtime[Allow high-resolution time measurement. Note\: this can enable timing attacks and fingerprinting.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 ]' \
 '--deny-hrtime[Deny high-resolution time measurement. Note\: this can prevent timing attacks and fingerprinting.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 ]' \
 '-A[Allow all permissions. Learn more about permissions in Deno\:
-https\://deno.land/manual@v1.36.4/basics/permissions
+https\://deno.land/manual@v1.37.0/basics/permissions
 ]' \
 '--allow-all[Allow all permissions. Learn more about permissions in Deno\:
-https\://deno.land/manual@v1.36.4/basics/permissions
+https\://deno.land/manual@v1.37.0/basics/permissions
 ]' \
 '--prompt[deprecated\: Fallback to prompt if required permission wasn'\''t passed]' \
 '--no-prompt[Always throw if required permission wasn'\''t passed]' \
@@ -287,8 +287,8 @@ https\://deno.land/manual@v1.36.4/basics/permissions
 ;;
 (bundle)
 _arguments "${_arguments_options[@]}" \
-'-L+[Set log level]: :(debug info)' \
-'--log-level=[Set log level]: :(debug info)' \
+'-L+[Set log level]: :(trace debug info)' \
+'--log-level=[Set log level]: :(trace debug info)' \
 '--no-check=[Skip type-checking modules]' \
 '--import-map=[Load import map file]:FILE:_files' \
 '--node-modules-dir=[Enables or disables the use of a local node_modules folder for npm packages]' \
@@ -321,8 +321,8 @@ If value is not provided, defaults to "deno.lock" in the current working directo
 ;;
 (cache)
 _arguments "${_arguments_options[@]}" \
-'-L+[Set log level]: :(debug info)' \
-'--log-level=[Set log level]: :(debug info)' \
+'-L+[Set log level]: :(trace debug info)' \
+'--log-level=[Set log level]: :(trace debug info)' \
 '--no-check=[Skip type-checking modules]' \
 '--import-map=[Load import map file]:FILE:_files' \
 '--node-modules-dir=[Enables or disables the use of a local node_modules folder for npm packages]' \
@@ -351,8 +351,8 @@ If value is not provided, defaults to "deno.lock" in the current working directo
 ;;
 (check)
 _arguments "${_arguments_options[@]}" \
-'-L+[Set log level]: :(debug info)' \
-'--log-level=[Set log level]: :(debug info)' \
+'-L+[Set log level]: :(trace debug info)' \
+'--log-level=[Set log level]: :(trace debug info)' \
 '--import-map=[Load import map file]:FILE:_files' \
 '--node-modules-dir=[Enables or disables the use of a local node_modules folder for npm packages]' \
 '--vendor=[UNSTABLE\: Enables or disables the use of a local vendor folder for remote modules and node_modules folder for npm packages]' \
@@ -381,8 +381,8 @@ If value is not provided, defaults to "deno.lock" in the current working directo
 ;;
 (compile)
 _arguments "${_arguments_options[@]}" \
-'-L+[Set log level]: :(debug info)' \
-'--log-level=[Set log level]: :(debug info)' \
+'-L+[Set log level]: :(trace debug info)' \
+'--log-level=[Set log level]: :(trace debug info)' \
 '--no-check=[Skip type-checking modules]' \
 '--import-map=[Load import map file]:FILE:_files' \
 '--node-modules-dir=[Enables or disables the use of a local node_modules folder for npm packages]' \
@@ -396,73 +396,73 @@ _arguments "${_arguments_options[@]}" \
 If value is not provided, defaults to "deno.lock" in the current working directory.]' \
 '--cert=[Load certificate authority from PEM encoded file]:FILE:_files' \
 '--allow-read=[Allow file system read access. Optionally specify allowed paths.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --allow-read
   --allow-read="/etc,/var/log.txt"]' \
 '--deny-read=[Deny file system read access. Optionally specify denied paths.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --deny-read
   --deny-read="/etc,/var/log.txt"]' \
 '--allow-write=[Allow file system write access. Optionally specify allowed paths.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --allow-write
   --allow-write="/etc,/var/log.txt"]' \
 '--deny-write=[Deny file system write access. Optionally specify denied paths.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --deny-write
   --deny-write="/etc,/var/log.txt"]' \
 '--allow-net=[Allow network access. Optionally specify allowed IP addresses and host names, with ports as necessary.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --allow-net
   --allow-net="localhost\:8080,deno.land"]' \
 '--deny-net=[Deny network access. Optionally specify denied IP addresses and host names, with ports as necessary.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --deny-net
   --deny-net="localhost\:8080,deno.land"]' \
 '--unsafely-ignore-certificate-errors=[DANGER\: Disables verification of TLS certificates]' \
 '--allow-env=[Allow access to system environment information. Optionally specify accessible environment variables.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --allow-env
   --allow-env="PORT,HOME,PATH"]' \
 '--deny-env=[Deny access to system environment information. Optionally specify accessible environment variables.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --deny-env
   --deny-env="PORT,HOME,PATH"]' \
 '--allow-sys=[Allow access to OS information. Optionally allow specific APIs by function name.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --allow-sys
   --allow-sys="systemMemoryInfo,osRelease"]' \
 '--deny-sys=[Deny access to OS information. Optionally deny specific APIs by function name.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --deny-sys
   --deny-sys="systemMemoryInfo,osRelease"]' \
 '--allow-run=[Allow running subprocesses. Optionally specify allowed runnable program names.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --allow-run
   --allow-run="whoami,ps"]' \
 '--deny-run=[Deny running subprocesses. Optionally specify denied runnable program names.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --deny-run
   --deny-run="whoami,ps"]' \
 '--allow-ffi=[(Unstable) Allow loading dynamic libraries. Optionally specify allowed directories or files.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --allow-ffi
   --allow-ffi="./libfoo.so"]' \
 '--deny-ffi=[(Unstable) Deny loading dynamic libraries. Optionally specify denied directories or files.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --deny-ffi
   --deny-ffi="./libfoo.so"]' \
@@ -484,16 +484,16 @@ Examples\:
 '(--no-lock)--lock-write[Force overwriting the lock file.]' \
 '(--lock)--no-lock[Disable auto discovery of the lock file.]' \
 '--allow-hrtime[Allow high-resolution time measurement. Note\: this can enable timing attacks and fingerprinting.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 ]' \
 '--deny-hrtime[Deny high-resolution time measurement. Note\: this can prevent timing attacks and fingerprinting.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 ]' \
 '-A[Allow all permissions. Learn more about permissions in Deno\:
-https\://deno.land/manual@v1.36.4/basics/permissions
+https\://deno.land/manual@v1.37.0/basics/permissions
 ]' \
 '--allow-all[Allow all permissions. Learn more about permissions in Deno\:
-https\://deno.land/manual@v1.36.4/basics/permissions
+https\://deno.land/manual@v1.37.0/basics/permissions
 ]' \
 '--prompt[deprecated\: Fallback to prompt if required permission wasn'\''t passed]' \
 '--no-prompt[Always throw if required permission wasn'\''t passed]' \
@@ -507,8 +507,8 @@ https\://deno.land/manual@v1.36.4/basics/permissions
 ;;
 (completions)
 _arguments "${_arguments_options[@]}" \
-'-L+[Set log level]: :(debug info)' \
-'--log-level=[Set log level]: :(debug info)' \
+'-L+[Set log level]: :(trace debug info)' \
+'--log-level=[Set log level]: :(trace debug info)' \
 '--unstable[Enable unstable features and APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
@@ -519,8 +519,8 @@ _arguments "${_arguments_options[@]}" \
 ;;
 (coverage)
 _arguments "${_arguments_options[@]}" \
-'-L+[Set log level]: :(debug info)' \
-'--log-level=[Set log level]: :(debug info)' \
+'-L+[Set log level]: :(trace debug info)' \
+'--log-level=[Set log level]: :(trace debug info)' \
 '--ignore=[Ignore coverage files]: :_files' \
 '*--include=[Include source files in the report]:regex: ' \
 '*--exclude=[Exclude source files from the report]:regex: ' \
@@ -536,8 +536,8 @@ _arguments "${_arguments_options[@]}" \
 ;;
 (doc)
 _arguments "${_arguments_options[@]}" \
-'-L+[Set log level]: :(debug info)' \
-'--log-level=[Set log level]: :(debug info)' \
+'-L+[Set log level]: :(trace debug info)' \
+'--log-level=[Set log level]: :(trace debug info)' \
 '--import-map=[Load import map file]:FILE:_files' \
 '-r+[Reload source code cache (recompile TypeScript)]' \
 '--reload=[Reload source code cache (recompile TypeScript)]' \
@@ -560,8 +560,8 @@ If value is not provided, defaults to "deno.lock" in the current working directo
 ;;
 (eval)
 _arguments "${_arguments_options[@]}" \
-'-L+[Set log level]: :(debug info)' \
-'--log-level=[Set log level]: :(debug info)' \
+'-L+[Set log level]: :(trace debug info)' \
+'--log-level=[Set log level]: :(trace debug info)' \
 '--no-check=[Skip type-checking modules]' \
 '--import-map=[Load import map file]:FILE:_files' \
 '--node-modules-dir=[Enables or disables the use of a local node_modules folder for npm packages]' \
@@ -603,8 +603,8 @@ If value is not provided, defaults to "deno.lock" in the current working directo
 ;;
 (fmt)
 _arguments "${_arguments_options[@]}" \
-'-L+[Set log level]: :(debug info)' \
-'--log-level=[Set log level]: :(debug info)' \
+'-L+[Set log level]: :(trace debug info)' \
+'--log-level=[Set log level]: :(trace debug info)' \
 '-c+[Specify the configuration file]:FILE:_files' \
 '--config=[Specify the configuration file]:FILE:_files' \
 '--ext=[Set content type of the supplied file]: :(ts tsx js jsx md json jsonc)' \
@@ -629,8 +629,8 @@ _arguments "${_arguments_options[@]}" \
 ;;
 (init)
 _arguments "${_arguments_options[@]}" \
-'-L+[Set log level]: :(debug info)' \
-'--log-level=[Set log level]: :(debug info)' \
+'-L+[Set log level]: :(trace debug info)' \
+'--log-level=[Set log level]: :(trace debug info)' \
 '--unstable[Enable unstable features and APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
@@ -641,8 +641,8 @@ _arguments "${_arguments_options[@]}" \
 ;;
 (info)
 _arguments "${_arguments_options[@]}" \
-'-L+[Set log level]: :(debug info)' \
-'--log-level=[Set log level]: :(debug info)' \
+'-L+[Set log level]: :(trace debug info)' \
+'--log-level=[Set log level]: :(trace debug info)' \
 '-r+[Reload source code cache (recompile TypeScript)]' \
 '--reload=[Reload source code cache (recompile TypeScript)]' \
 '--cert=[Load certificate authority from PEM encoded file]:FILE:_files' \
@@ -671,8 +671,8 @@ If value is not provided, defaults to "deno.lock" in the current working directo
 ;;
 (install)
 _arguments "${_arguments_options[@]}" \
-'-L+[Set log level]: :(debug info)' \
-'--log-level=[Set log level]: :(debug info)' \
+'-L+[Set log level]: :(trace debug info)' \
+'--log-level=[Set log level]: :(trace debug info)' \
 '--no-check=[Skip type-checking modules]' \
 '--import-map=[Load import map file]:FILE:_files' \
 '--node-modules-dir=[Enables or disables the use of a local node_modules folder for npm packages]' \
@@ -686,73 +686,73 @@ _arguments "${_arguments_options[@]}" \
 If value is not provided, defaults to "deno.lock" in the current working directory.]' \
 '--cert=[Load certificate authority from PEM encoded file]:FILE:_files' \
 '--allow-read=[Allow file system read access. Optionally specify allowed paths.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --allow-read
   --allow-read="/etc,/var/log.txt"]' \
 '--deny-read=[Deny file system read access. Optionally specify denied paths.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --deny-read
   --deny-read="/etc,/var/log.txt"]' \
 '--allow-write=[Allow file system write access. Optionally specify allowed paths.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --allow-write
   --allow-write="/etc,/var/log.txt"]' \
 '--deny-write=[Deny file system write access. Optionally specify denied paths.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --deny-write
   --deny-write="/etc,/var/log.txt"]' \
 '--allow-net=[Allow network access. Optionally specify allowed IP addresses and host names, with ports as necessary.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --allow-net
   --allow-net="localhost\:8080,deno.land"]' \
 '--deny-net=[Deny network access. Optionally specify denied IP addresses and host names, with ports as necessary.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --deny-net
   --deny-net="localhost\:8080,deno.land"]' \
 '--unsafely-ignore-certificate-errors=[DANGER\: Disables verification of TLS certificates]' \
 '--allow-env=[Allow access to system environment information. Optionally specify accessible environment variables.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --allow-env
   --allow-env="PORT,HOME,PATH"]' \
 '--deny-env=[Deny access to system environment information. Optionally specify accessible environment variables.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --deny-env
   --deny-env="PORT,HOME,PATH"]' \
 '--allow-sys=[Allow access to OS information. Optionally allow specific APIs by function name.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --allow-sys
   --allow-sys="systemMemoryInfo,osRelease"]' \
 '--deny-sys=[Deny access to OS information. Optionally deny specific APIs by function name.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --deny-sys
   --deny-sys="systemMemoryInfo,osRelease"]' \
 '--allow-run=[Allow running subprocesses. Optionally specify allowed runnable program names.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --allow-run
   --allow-run="whoami,ps"]' \
 '--deny-run=[Deny running subprocesses. Optionally specify denied runnable program names.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --deny-run
   --deny-run="whoami,ps"]' \
 '--allow-ffi=[(Unstable) Allow loading dynamic libraries. Optionally specify allowed directories or files.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --allow-ffi
   --allow-ffi="./libfoo.so"]' \
 '--deny-ffi=[(Unstable) Deny loading dynamic libraries. Optionally specify denied directories or files.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --deny-ffi
   --deny-ffi="./libfoo.so"]' \
@@ -775,16 +775,16 @@ Examples\:
 '(--no-lock)--lock-write[Force overwriting the lock file.]' \
 '(--lock)--no-lock[Disable auto discovery of the lock file.]' \
 '--allow-hrtime[Allow high-resolution time measurement. Note\: this can enable timing attacks and fingerprinting.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 ]' \
 '--deny-hrtime[Deny high-resolution time measurement. Note\: this can prevent timing attacks and fingerprinting.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 ]' \
 '-A[Allow all permissions. Learn more about permissions in Deno\:
-https\://deno.land/manual@v1.36.4/basics/permissions
+https\://deno.land/manual@v1.37.0/basics/permissions
 ]' \
 '--allow-all[Allow all permissions. Learn more about permissions in Deno\:
-https\://deno.land/manual@v1.36.4/basics/permissions
+https\://deno.land/manual@v1.37.0/basics/permissions
 ]' \
 '--prompt[deprecated\: Fallback to prompt if required permission wasn'\''t passed]' \
 '--no-prompt[Always throw if required permission wasn'\''t passed]' \
@@ -797,10 +797,24 @@ https\://deno.land/manual@v1.36.4/basics/permissions
 '*::cmd:_files' \
 && ret=0
 ;;
+(jupyter)
+_arguments "${_arguments_options[@]}" \
+'(--install)--conn=[Path to JSON file describing connection parameters, provided by Jupyter]: :_files' \
+'-L+[Set log level]: :(trace debug info)' \
+'--log-level=[Set log level]: :(trace debug info)' \
+'(--kernel)--install[Installs kernelspec, requires '\''jupyter'\'' command to be available.]' \
+'(--install)--kernel[Start the kernel]' \
+'--unstable[Enable unstable features and APIs]' \
+'-q[Suppress diagnostic output]' \
+'--quiet[Suppress diagnostic output]' \
+'-h[Print help]' \
+'--help[Print help]' \
+&& ret=0
+;;
 (uninstall)
 _arguments "${_arguments_options[@]}" \
-'-L+[Set log level]: :(debug info)' \
-'--log-level=[Set log level]: :(debug info)' \
+'-L+[Set log level]: :(trace debug info)' \
+'--log-level=[Set log level]: :(trace debug info)' \
 '--root=[Installation root]: :_files -/' \
 '--unstable[Enable unstable features and APIs]' \
 '-q[Suppress diagnostic output]' \
@@ -812,8 +826,8 @@ _arguments "${_arguments_options[@]}" \
 ;;
 (lsp)
 _arguments "${_arguments_options[@]}" \
-'-L+[Set log level]: :(debug info)' \
-'--log-level=[Set log level]: :(debug info)' \
+'-L+[Set log level]: :(trace debug info)' \
+'--log-level=[Set log level]: :(trace debug info)' \
 '--unstable[Enable unstable features and APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
@@ -823,8 +837,8 @@ _arguments "${_arguments_options[@]}" \
 ;;
 (lint)
 _arguments "${_arguments_options[@]}" \
-'-L+[Set log level]: :(debug info)' \
-'--log-level=[Set log level]: :(debug info)' \
+'-L+[Set log level]: :(trace debug info)' \
+'--log-level=[Set log level]: :(trace debug info)' \
 '*--rules-tags=[Use set of rules with a tag]: : ' \
 '(--rules)--rules-include=[Include lint rules]: : ' \
 '(--rules)--rules-exclude=[Exclude lint rules]: : ' \
@@ -847,8 +861,8 @@ _arguments "${_arguments_options[@]}" \
 ;;
 (repl)
 _arguments "${_arguments_options[@]}" \
-'-L+[Set log level]: :(debug info)' \
-'--log-level=[Set log level]: :(debug info)' \
+'-L+[Set log level]: :(trace debug info)' \
+'--log-level=[Set log level]: :(trace debug info)' \
 '--no-check=[Skip type-checking modules]' \
 '--import-map=[Load import map file]:FILE:_files' \
 '--node-modules-dir=[Enables or disables the use of a local node_modules folder for npm packages]' \
@@ -862,73 +876,73 @@ _arguments "${_arguments_options[@]}" \
 If value is not provided, defaults to "deno.lock" in the current working directory.]' \
 '--cert=[Load certificate authority from PEM encoded file]:FILE:_files' \
 '--allow-read=[Allow file system read access. Optionally specify allowed paths.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --allow-read
   --allow-read="/etc,/var/log.txt"]' \
 '--deny-read=[Deny file system read access. Optionally specify denied paths.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --deny-read
   --deny-read="/etc,/var/log.txt"]' \
 '--allow-write=[Allow file system write access. Optionally specify allowed paths.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --allow-write
   --allow-write="/etc,/var/log.txt"]' \
 '--deny-write=[Deny file system write access. Optionally specify denied paths.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --deny-write
   --deny-write="/etc,/var/log.txt"]' \
 '--allow-net=[Allow network access. Optionally specify allowed IP addresses and host names, with ports as necessary.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --allow-net
   --allow-net="localhost\:8080,deno.land"]' \
 '--deny-net=[Deny network access. Optionally specify denied IP addresses and host names, with ports as necessary.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --deny-net
   --deny-net="localhost\:8080,deno.land"]' \
 '--unsafely-ignore-certificate-errors=[DANGER\: Disables verification of TLS certificates]' \
 '--allow-env=[Allow access to system environment information. Optionally specify accessible environment variables.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --allow-env
   --allow-env="PORT,HOME,PATH"]' \
 '--deny-env=[Deny access to system environment information. Optionally specify accessible environment variables.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --deny-env
   --deny-env="PORT,HOME,PATH"]' \
 '--allow-sys=[Allow access to OS information. Optionally allow specific APIs by function name.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --allow-sys
   --allow-sys="systemMemoryInfo,osRelease"]' \
 '--deny-sys=[Deny access to OS information. Optionally deny specific APIs by function name.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --deny-sys
   --deny-sys="systemMemoryInfo,osRelease"]' \
 '--allow-run=[Allow running subprocesses. Optionally specify allowed runnable program names.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --allow-run
   --allow-run="whoami,ps"]' \
 '--deny-run=[Deny running subprocesses. Optionally specify denied runnable program names.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --deny-run
   --deny-run="whoami,ps"]' \
 '--allow-ffi=[(Unstable) Allow loading dynamic libraries. Optionally specify allowed directories or files.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --allow-ffi
   --allow-ffi="./libfoo.so"]' \
 '--deny-ffi=[(Unstable) Deny loading dynamic libraries. Optionally specify denied directories or files.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --deny-ffi
   --deny-ffi="./libfoo.so"]' \
@@ -950,16 +964,16 @@ Examples\:
 '(--no-lock)--lock-write[Force overwriting the lock file.]' \
 '(--lock)--no-lock[Disable auto discovery of the lock file.]' \
 '--allow-hrtime[Allow high-resolution time measurement. Note\: this can enable timing attacks and fingerprinting.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 ]' \
 '--deny-hrtime[Deny high-resolution time measurement. Note\: this can prevent timing attacks and fingerprinting.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 ]' \
 '-A[Allow all permissions. Learn more about permissions in Deno\:
-https\://deno.land/manual@v1.36.4/basics/permissions
+https\://deno.land/manual@v1.37.0/basics/permissions
 ]' \
 '--allow-all[Allow all permissions. Learn more about permissions in Deno\:
-https\://deno.land/manual@v1.36.4/basics/permissions
+https\://deno.land/manual@v1.37.0/basics/permissions
 ]' \
 '--prompt[deprecated\: Fallback to prompt if required permission wasn'\''t passed]' \
 '--no-prompt[Always throw if required permission wasn'\''t passed]' \
@@ -971,8 +985,8 @@ https\://deno.land/manual@v1.36.4/basics/permissions
 ;;
 (task)
 _arguments "${_arguments_options[@]}" \
-'-L+[Set log level]: :(debug info)' \
-'--log-level=[Set log level]: :(debug info)' \
+'-L+[Set log level]: :(trace debug info)' \
+'--log-level=[Set log level]: :(trace debug info)' \
 '-c+[Specify the configuration file]:FILE:_files' \
 '--config=[Specify the configuration file]:FILE:_files' \
 '--cwd=[Specify the directory to run the task in]:DIR:_files -/' \
@@ -985,8 +999,8 @@ _arguments "${_arguments_options[@]}" \
 ;;
 (test)
 _arguments "${_arguments_options[@]}" \
-'-L+[Set log level]: :(debug info)' \
-'--log-level=[Set log level]: :(debug info)' \
+'-L+[Set log level]: :(trace debug info)' \
+'--log-level=[Set log level]: :(trace debug info)' \
 '--no-check=[Skip type-checking modules]' \
 '--import-map=[Load import map file]:FILE:_files' \
 '--node-modules-dir=[Enables or disables the use of a local node_modules folder for npm packages]' \
@@ -1000,73 +1014,73 @@ _arguments "${_arguments_options[@]}" \
 If value is not provided, defaults to "deno.lock" in the current working directory.]' \
 '--cert=[Load certificate authority from PEM encoded file]:FILE:_files' \
 '--allow-read=[Allow file system read access. Optionally specify allowed paths.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --allow-read
   --allow-read="/etc,/var/log.txt"]' \
 '--deny-read=[Deny file system read access. Optionally specify denied paths.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --deny-read
   --deny-read="/etc,/var/log.txt"]' \
 '--allow-write=[Allow file system write access. Optionally specify allowed paths.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --allow-write
   --allow-write="/etc,/var/log.txt"]' \
 '--deny-write=[Deny file system write access. Optionally specify denied paths.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --deny-write
   --deny-write="/etc,/var/log.txt"]' \
 '--allow-net=[Allow network access. Optionally specify allowed IP addresses and host names, with ports as necessary.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --allow-net
   --allow-net="localhost\:8080,deno.land"]' \
 '--deny-net=[Deny network access. Optionally specify denied IP addresses and host names, with ports as necessary.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --deny-net
   --deny-net="localhost\:8080,deno.land"]' \
 '--unsafely-ignore-certificate-errors=[DANGER\: Disables verification of TLS certificates]' \
 '--allow-env=[Allow access to system environment information. Optionally specify accessible environment variables.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --allow-env
   --allow-env="PORT,HOME,PATH"]' \
 '--deny-env=[Deny access to system environment information. Optionally specify accessible environment variables.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --deny-env
   --deny-env="PORT,HOME,PATH"]' \
 '--allow-sys=[Allow access to OS information. Optionally allow specific APIs by function name.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --allow-sys
   --allow-sys="systemMemoryInfo,osRelease"]' \
 '--deny-sys=[Deny access to OS information. Optionally deny specific APIs by function name.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --deny-sys
   --deny-sys="systemMemoryInfo,osRelease"]' \
 '--allow-run=[Allow running subprocesses. Optionally specify allowed runnable program names.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --allow-run
   --allow-run="whoami,ps"]' \
 '--deny-run=[Deny running subprocesses. Optionally specify denied runnable program names.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --deny-run
   --deny-run="whoami,ps"]' \
 '--allow-ffi=[(Unstable) Allow loading dynamic libraries. Optionally specify allowed directories or files.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --allow-ffi
   --allow-ffi="./libfoo.so"]' \
 '--deny-ffi=[(Unstable) Deny loading dynamic libraries. Optionally specify denied directories or files.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 Examples\:
   --deny-ffi
   --deny-ffi="./libfoo.so"]' \
@@ -1085,7 +1099,7 @@ Examples\:
 '-j+[deprecated\: Number of parallel workers, defaults to number of available CPUs when no value is provided. Defaults to 1 when the option is not present.]' \
 '--jobs=[deprecated\: Number of parallel workers, defaults to number of available CPUs when no value is provided. Defaults to 1 when the option is not present.]' \
 '--junit-path=[Write a JUnit XML test report to PATH. Use '\''-'\'' to write to stdout which is the default when PATH is not provided.]:PATH:_files' \
-'--reporter=[Select reporter to use. Default to '\''pretty'\''.]: :(pretty dot junit)' \
+'--reporter=[Select reporter to use. Default to '\''pretty'\''.]: :(pretty dot junit tap)' \
 '--unstable[Enable unstable features and APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
@@ -1095,16 +1109,16 @@ Examples\:
 '(--no-lock)--lock-write[Force overwriting the lock file.]' \
 '(--lock)--no-lock[Disable auto discovery of the lock file.]' \
 '--allow-hrtime[Allow high-resolution time measurement. Note\: this can enable timing attacks and fingerprinting.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 ]' \
 '--deny-hrtime[Deny high-resolution time measurement. Note\: this can prevent timing attacks and fingerprinting.
-Docs\: https\://deno.land/manual@v1.36.4/basics/permissions
+Docs\: https\://deno.land/manual@v1.37.0/basics/permissions
 ]' \
 '-A[Allow all permissions. Learn more about permissions in Deno\:
-https\://deno.land/manual@v1.36.4/basics/permissions
+https\://deno.land/manual@v1.37.0/basics/permissions
 ]' \
 '--allow-all[Allow all permissions. Learn more about permissions in Deno\:
-https\://deno.land/manual@v1.36.4/basics/permissions
+https\://deno.land/manual@v1.37.0/basics/permissions
 ]' \
 '--prompt[deprecated\: Fallback to prompt if required permission wasn'\''t passed]' \
 '--no-prompt[Always throw if required permission wasn'\''t passed]' \
@@ -1124,8 +1138,8 @@ https\://deno.land/manual@v1.36.4/basics/permissions
 ;;
 (types)
 _arguments "${_arguments_options[@]}" \
-'-L+[Set log level]: :(debug info)' \
-'--log-level=[Set log level]: :(debug info)' \
+'-L+[Set log level]: :(trace debug info)' \
+'--log-level=[Set log level]: :(trace debug info)' \
 '--unstable[Enable unstable features and APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
@@ -1135,8 +1149,8 @@ _arguments "${_arguments_options[@]}" \
 ;;
 (upgrade)
 _arguments "${_arguments_options[@]}" \
-'-L+[Set log level]: :(debug info)' \
-'--log-level=[Set log level]: :(debug info)' \
+'-L+[Set log level]: :(trace debug info)' \
+'--log-level=[Set log level]: :(trace debug info)' \
 '--version=[The version to upgrade to]: : ' \
 '--output=[The path to output the updated version to]: :_files' \
 '--cert=[Load certificate authority from PEM encoded file]:FILE:_files' \
@@ -1153,8 +1167,8 @@ _arguments "${_arguments_options[@]}" \
 ;;
 (vendor)
 _arguments "${_arguments_options[@]}" \
-'-L+[Set log level]: :(debug info)' \
-'--log-level=[Set log level]: :(debug info)' \
+'-L+[Set log level]: :(trace debug info)' \
+'--log-level=[Set log level]: :(trace debug info)' \
 '--output=[The directory to output the vendored modules to]: :_files -/' \
 '-c+[Specify the configuration file]:FILE:_files' \
 '--config=[Specify the configuration file]:FILE:_files' \
@@ -1205,6 +1219,7 @@ _deno_commands() {
 'init:Initialize a new project' \
 'info:Show info about cache or info related to source file' \
 'install:Install script as an executable' \
+'jupyter:Deno kernel for Jupyter notebooks' \
 'uninstall:Uninstall a script previously installed with deno install' \
 'lsp:Start the language server' \
 'lint:Lint source files' \
@@ -1287,6 +1302,11 @@ _deno__init_commands() {
 _deno__install_commands() {
     local commands; commands=()
     _describe -t commands 'deno install commands' commands "$@"
+}
+(( $+functions[_deno__jupyter_commands] )) ||
+_deno__jupyter_commands() {
+    local commands; commands=()
+    _describe -t commands 'deno jupyter commands' commands "$@"
 }
 (( $+functions[_deno__lint_commands] )) ||
 _deno__lint_commands() {
