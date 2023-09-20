@@ -66,9 +66,6 @@ vim +PlugUpdate +PlugUpgrade +UpdateRemotePlugins +qall
 
 if [[ ! -d $HOME/.config/nvim ]]; then
     git clone https://github.com/nvchad/nvchad "$HOME"/.config/nvim --depth 1 && nvim
-else
-    # TODO: this seems to exit before the update is finished
-    nvim +NvChadUpdate +qall
 fi
 rm -rf "$HOME"/.config/nvim/lua/custom && ln -s "$HOME"/.dotfiles/.config_custom/nvim_custom/ "$HOME"/.config/nvim/lua/custom
 
