@@ -12,9 +12,6 @@ alias fd="fd --hidden"
 alias findforks="find . -type f -exec test -s {}/..namedfork/rsrc \; -print"
 alias find_zombies="ps axo stat,ppid,pid,comm | grep -w defunct"
 
-# https://github.com/antonmedv/fx
-alias fx="npx fx"
-
 # git aliases
 alias gitvdiff="git difftool -t tkdiff --no-prompt"
 
