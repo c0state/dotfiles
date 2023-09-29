@@ -62,6 +62,7 @@ brew_packages=(
     fzf
     gh git git-delta git-extras git-lfs lazygit legit
     glances
+    harelba/q/q
     helix
     helm
     htop
@@ -90,12 +91,11 @@ brew_packages=(
     optipng
     packer
     parallel
+    pgcli
     pidcat
     pngquant
     podman podman-desktop podman-compose
-    postgresql
     progress
-    q
     qt
     ripgrep
     redis
@@ -163,7 +163,6 @@ brew_cask_packages=(
     google-drive
     graphql-playground
     handbrake
-    hwsensors
     imageoptim
     insomnia
     istat-menus
