@@ -116,8 +116,6 @@ sudo apt -y install alacritty || true
 # install developer packages
 sudo apt -y install \
     fonts-firacode \
-    # browser dependency, for chrome I believe
-    fonts-liberation
     gh \
     lens \
     tmux \
