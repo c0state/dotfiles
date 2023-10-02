@@ -96,11 +96,13 @@ sudo flatpak install --system -y touche
 # install compiler packages
 sudo apt -y install \
     build-essential cmake \
-    zlib1g-dev libbz2-dev \
+    zlib1g-dev \
+    libbz2-dev liblzma-dev \
     libreadline-dev libsqlite3-dev libssl-dev llvm \
     libncurses5-dev libncursesw5-dev \
     libxcb-render0-dev libxcb-shape0-dev libxcb-xfixes0-dev \
-    libxml2-dev
+    libxml2-dev \
+    tk-dev
 
 # install docker and set up group
 sudo apt-get -y install \
