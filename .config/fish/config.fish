@@ -85,10 +85,10 @@ set -gx PATH "$HOME/.poetry/bin" $PATH
 set -gx PATH (python3 -m site --user-base)"/bin" $PATH
 
 # pyenv init
-if command -v pyenv 1>/dev/null 2>&1
-    set -Ux PYENV_ROOT $HOME/.pyenv
-    fish_add_path $PYENV_ROOT/bin
+set -Ux PYENV_ROOT $HOME/.pyenv
+fish_add_path $PYENV_ROOT/bin
 
+if command -v pyenv 1>/dev/null 2>&1
     pyenv init - | source
 end
 
