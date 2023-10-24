@@ -174,6 +174,7 @@ brew_cask_packages=(
     libreoffice
     microsoft-edge
     microsoft-office
+    microsoft-teams
     ngrok
     obs obs-ndi
     outline-manager
