@@ -61,6 +61,8 @@ pip3 install --upgrade openai
 pip3 install --upgrade jedi
 pip3 install --upgrade pynvim
 
+pip3 install --upgrade pytest
+
 pip3 install --upgrade build twine
 
 #---------- pipx dependencies
