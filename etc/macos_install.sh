@@ -93,6 +93,7 @@ brew_packages=(
     parallel
     pgcli
     pidcat
+    pkg-config
     pngquant
     podman podman-desktop podman-compose
     progress
