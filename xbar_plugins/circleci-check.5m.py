@@ -26,8 +26,8 @@ config.read(config_path)
 config_section = config["circleci"] if "circleci" in config else None
 if not config_section:
     raise Exception(f"Could not find XBar config file {config_path}")
-API_TOKEN = config_section["API_KEY"]
-if not API_TOKEN:
+API_KEY = config_section["API_KEY"]
+if not API_KEY:
     raise Exception(f"API Token missing")
 
 # --------------------------------------------------------------------------------
@@ -65,7 +65,7 @@ NO_SYMBOL = ' ❂'
 
 
 def request(resource):
-    url = f"{CIRCLECI_API_ENDPOINT}{resource}?circle-token={API_TOKEN}"
+    url = f"{CIRCLECI_API_ENDPOINT}{resource}?circle-token={API_KEY}"
     headers = {'Accept': 'application/json'}
     req = urllib.request.Request(url, headers=headers)
     response = urllib.request.urlopen(req).read().decode("UTF-8")
