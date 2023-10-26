@@ -50,7 +50,6 @@ brew_packages=(
     ddrescue
     direnv
     dnsmasq
-    docker
     dos2unix
     exa
     exiftool
@@ -151,6 +150,7 @@ brew_cask_packages=(
     db-browser-for-sqlite
     discord
     divvy
+    docker
     dotnet-sdk
     evernote
     firefox
