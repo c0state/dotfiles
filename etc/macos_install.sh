@@ -4,15 +4,23 @@ set -eu
 
 IS_MACOS_ARM=$(uname -a | grep -i "darwin.*arm64" || echo "")
 
+#---------- utils ----------
+
+function exit_with_error {
+  echo $1
+  exit 1
+}
+
 #---------- brew setup ----------
 
 # add taps
-brew tap homebrew/autoupdate
-brew tap homebrew/cask-fonts
-brew tap homebrew/cask-versions
-brew tap wix/brew
+brew tap homebrew/autoupdate 2>&1 | grep -i error && exit_with_error "Could not run brew tap, check your permissions"
+brew tap homebrew/cask-fonts 2>&1 | grep -i error && exit_with_error "Could not run brew tap, check your permissions"
+brew tap homebrew/cask-versions 2>&1 | grep -i error && exit_with_error "Could not run brew tap, check your permissions"
+brew tap wix/brew 2>&1 | grep -i error && exit_with_error "Could not run brew tap, check your permissions"
 
-brew update && brew upgrade
+brew update
+brew upgrade
 
 #---------- high level dependencies ----------
 
