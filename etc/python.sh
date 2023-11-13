@@ -3,11 +3,12 @@
 set -eu
 
 DEFAULT_PYTHON_VENV_NAME="default_python_venv"
-PYTHON_VERSION=3.11.5
+PYTHON_VERSION=3.12.0
 REINSTALL_TOOLS=${REINSTALL_TOOLS:-""}
 
 if [[ -n "$REINSTALL_TOOLS" ]]; then
     rm -rf "$HOME"/.local/pipx
+    rm -rf "$HOME"/.local/bin/pipx
     rm -rf "$HOME"/.local/bin/poetry
     rm -rf "$HOME"/.local/share/pypoetry
     rm -rf "$HOME"/.cache/pypoetry
@@ -84,7 +85,7 @@ pipx install httpie
 pipx install ipython
 pipx install markdown
 pipx install mypy
-pipx install pgcli
+pipx install pgcli --pip-args pendulum==3.0.0b1 # override pendulum for python 3.12 support
 pipx install pip-tools
 pipx install pipdeptree
 pipx install pipenv
