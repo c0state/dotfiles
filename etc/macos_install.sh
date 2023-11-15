@@ -14,10 +14,16 @@ function exit_with_error {
 #---------- brew setup ----------
 
 # add taps
-brew tap homebrew/autoupdate 2>&1 | grep -i error && exit_with_error "Could not run brew tap, check your permissions"
-brew tap homebrew/cask-fonts 2>&1 | grep -i error && exit_with_error "Could not run brew tap, check your permissions"
-brew tap homebrew/cask-versions 2>&1 | grep -i error && exit_with_error "Could not run brew tap, check your permissions"
-brew tap wix/brew 2>&1 | grep -i error && exit_with_error "Could not run brew tap, check your permissions"
+brew_taps=(
+  homebrew/autoupdate
+  homebrew/cask-fonts
+  homebrew/cask-versions
+  wix/brew
+)
+
+for brew_tap in "${brew_taps[@]}"; do
+  brew tap $brew_tap 2>&1 | grep -i error >/dev/null && exit_with_error "Could not run brew tap, check your permissions"
+done
 
 brew update
 brew upgrade
