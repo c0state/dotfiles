@@ -2,6 +2,18 @@
 
 set -eu
 
+#------------------------------ install core utils
+
+sudo apt-get update
+sudo apt -y install curl
+
+# install shell packages
+sudo apt -y install \
+    fish \
+    zsh zsh-doc
+
+#------------------------------ install package sources
+
 IS_WSL=$(uname -a | grep -i microsoft || echo "")
 DPKG_ARCH=$(dpkg --print-architecture 2>/dev/null || echo "")
 
@@ -25,11 +37,6 @@ echo \
   "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
-# tabby
-curl -fsSL https://packagecloud.io/eugeny/tabby/gpgkey | sudo gpg --dearmor --yes -o /etc/apt/keyrings/eugeny_tabby-archive-keyring.gpg
-echo "deb [signed-by=/etc/apt/keyrings/eugeny_tabby-archive-keyring.gpg] https://packagecloud.io/eugeny/tabby/ubuntu kinetic main" | sudo tee /etc/apt/sources.list.d/eugeny_tabby.list
-echo "deb-src [signed-by=/etc/apt/keyrings/eugeny_tabby-archive-keyring.gpg] https://packagecloud.io/eugeny/tabby/ubuntu kinetic main" | sudo tee -a /etc/apt/sources.list.d/eugeny_tabby.list
-
 # lens
 curl -fsSL https://downloads.k8slens.dev/keys/gpg | sudo gpg --dearmor --yes -o /usr/share/keyrings/lens-archive-keyring.gpg
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/lens-archive-keyring.gpg] https://downloads.k8slens.dev/apt/debian stable main" | \
@@ -40,10 +47,6 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/lens-
 (ls /etc/apt/sources.list.d/alessandro-strada*) || sudo add-apt-repository -y ppa:alessandro-strada/ppa
 (ls /etc/apt/sources.list.d/fish-shell-ubuntu-release*) || sudo apt-add-repository -y ppa:fish-shell/release-3
 (ls /etc/apt/sources.list.d/touchegg*) || sudo add-apt-repository -y ppa:touchegg/stable
-
-#------------------------------ begin update and installs
-
-sudo apt-get update
 
 #------------------------------ install core packages
 
@@ -56,7 +59,7 @@ sudo apt -y install \
 sudo apt -y install \
     bat \
     colordiff icdiff \
-    curl wget \
+    wget \
     direnv \
     dos2unix \
     fd-find \
@@ -74,7 +77,6 @@ sudo apt -y install \
     parallel \
     ranger \
     ripgrep \
-    tabby-terminal \
     tree \
     wireshark \
     wmctrl \
@@ -90,6 +92,10 @@ sudo snap refresh
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 sudo flatpak install --system -y touche
+
+#------------------------------ general init
+
+mkdir -p "$HOME"/.local/bin
 
 #------------------------------ install packages
 
@@ -174,11 +180,6 @@ sudo apt -y install \
 # install ruby packages
 sudo apt -y install \
     ruby-dev
-
-# install shell packages
-sudo apt -y install \
-    fish \
-    zsh zsh-doc
 
 sudo apt install -y touchegg
 
