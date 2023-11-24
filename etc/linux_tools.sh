@@ -25,9 +25,9 @@ rm -rf "$TEMP_AWS_INSTALL_DIR"
 
 # ---------- gnome tweaks
 
-if ! which gsettings > /dev/null; then
+if which gsettings > /dev/null; then
     # clear conflicting keybindings
     gsettings set org.freedesktop.ibus.panel.emoji hotkey []
     # caps lock as ctrl
-    gsettings set org.gnome.desktop.input-sources xkb-options ['caps:ctrl_modifier']
+    gsettings set org.gnome.desktop.input-sources xkb-options '["caps:ctrl_modifier"]'
 fi
