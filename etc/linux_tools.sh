@@ -30,6 +30,7 @@ if which gsettings > /dev/null; then
     gsettings set org.freedesktop.ibus.panel.emoji hotkey []
     # caps lock as ctrl
     gsettings set org.gnome.desktop.input-sources xkb-options '["caps:ctrl_modifier"]'
+    gsettings set org.gnome.desktop.interface clock-show-weekday true 
     # auto hide dock
     gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed false
 fi
