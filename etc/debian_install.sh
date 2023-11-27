@@ -66,7 +66,7 @@ sudo apt -y install \
     git git-lfs \
     glances \
     gparted \
-    gnome-tweaks \
+    gnome-browser-connector gnome-tweaks \
     gnupg gpg ca-certificates \
     google-drive-ocamlfuse \
     keychain \
