@@ -39,4 +39,7 @@ if which gsettings > /dev/null; then
   gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name "toggle-terminal"
   gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding "<Control><Alt>i"
   gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command "guake-toggle"
+
+  # tiling assistant
+  gsettings set org.gnome.shell.extensions.tiling-assistant tile-bottom-half "['<Super>Down', '<Super>KP_2']"
 fi
