@@ -26,11 +26,17 @@ rm -rf "$TEMP_AWS_INSTALL_DIR"
 # ---------- gnome tweaks
 
 if which gsettings > /dev/null; then
-    # clear conflicting keybindings
-    gsettings set org.freedesktop.ibus.panel.emoji hotkey []
-    # caps lock as ctrl
-    gsettings set org.gnome.desktop.input-sources xkb-options '["caps:ctrl_modifier"]'
-    gsettings set org.gnome.desktop.interface clock-show-weekday true 
-    # auto hide dock
-    gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed false
+  # clear conflicting keybindings
+  gsettings set org.freedesktop.ibus.panel.emoji hotkey []
+  # caps lock as ctrl
+  gsettings set org.gnome.desktop.input-sources xkb-options '["caps:ctrl_modifier"]'
+  gsettings set org.gnome.desktop.interface clock-show-weekday true 
+  # auto hide dock
+  gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed false
+
+  # set custom key bindings
+  # note: this will overwrite existing ones
+  gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name "toggle-terminal"
+  gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding "<Control><Alt>i"
+  gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command "guake-toggle"
 fi
