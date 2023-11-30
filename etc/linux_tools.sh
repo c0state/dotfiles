@@ -36,10 +36,11 @@ if which gsettings > /dev/null; then
 
   # set custom key bindings
   # note: this will overwrite existing ones
-  gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name "toggle-terminal"
-  gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding "<Control><Alt>i"
-  gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command "guake-toggle"
+  gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name "'toggle-terminal'"
+  gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command "'guake-toggle'"
+  gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding "'<Control><Alt>i'"
 
   # tiling assistant
+  gsettings set org.gnome.shell.extensions.tiling-assistant enable-tiling-popup false
   gsettings set org.gnome.shell.extensions.tiling-assistant tile-bottom-half "['<Super>Down', '<Super>KP_2']"
 fi
