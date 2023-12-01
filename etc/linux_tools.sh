@@ -13,7 +13,11 @@ if ! which brew > /dev/null; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-brew install nerdctl
+if test -w /home/linuxbrew; then
+  brew install nerdctl
+else
+  echo "Linuxbrew dir not writable, was it installed by a different user?"
+fi
 
 # ---------- aws
 
