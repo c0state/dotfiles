@@ -153,12 +153,7 @@ fi
 # install vscode
 [ -z $IS_WSL ] && sudo apt install code
 
-# chrome isn't in core repos for ubuntu
-if ! which google-chrome-stable; then
-    bash -i -c "install_package https://dl.google.com/linux/direct/google-chrome-stable_current_$DPKG_ARCH.deb"
-else
-    sudo apt install -y google-chrome-stable
-fi
+sudo apt install -y google-chrome-stable
 
 # install image packages
 sudo apt -y install \
