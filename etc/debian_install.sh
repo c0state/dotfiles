@@ -4,7 +4,7 @@ set -eu
 
 #------------------------------ install core utils
 
-sudo apt-get update
+sudo apt update
 sudo apt -y install curl
 
 # install shell packages
@@ -49,13 +49,18 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/obs-o
 curl -fsSL https://download.opensuse.org/repositories/home:jstaf/xUbuntu_23.10/Release.key | gpg --dearmor | sudo tee /usr/share/keyrings/onedriver_jstaf.gpg > /dev/null
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/onedriver_jstaf.gpg] http://download.opensuse.org/repositories/home:/jstaf/xUbuntu_23.10/ /" | sudo tee /etc/apt/sources.list.d/onedriver_jstaf.list
 
+# tor
+curl -fsSL https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc | gpg --dearmor | sudo tee /usr/share/keyrings/tor-archive-keyring.gpg >/dev/null
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/tor-archive-keyring.gpg] https://deb.torproject.org/torproject.org mantic main" | sudo tee /etc/apt/sources.list.d/onedriver_jstaf.list
+
 #------------------------------ ppas
 
 (ls /etc/apt/sources.list.d/alessandro-strada*) || sudo add-apt-repository -y ppa:alessandro-strada/ppa
 (ls /etc/apt/sources.list.d/fish-shell-ubuntu-release*) || sudo apt-add-repository -y ppa:fish-shell/release-3
-(ls /etc/apt/sources.list.d/touchegg*) || sudo add-apt-repository -y ppa:touchegg/stable
 
 #------------------------------ install core packages
+
+sudo apt update
 
 sudo apt -y install \
     flatpak \
@@ -99,8 +104,6 @@ sudo snap refresh
 
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-sudo flatpak install --system -y touche
-
 #------------------------------ general init
 
 mkdir -p "$HOME"/.local/bin
@@ -119,7 +122,7 @@ sudo apt -y install \
     tk-dev
 
 # install docker and set up group
-sudo apt-get -y install \
+sudo apt -y install \
     docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 sudo groupadd --force docker
 sudo usermod -aG docker $USER
@@ -163,6 +166,8 @@ fi
 
 sudo apt install -y google-chrome-stable
 
+sudo apt install -y tor deb.torproject.org-keyring
+
 # install image packages
 sudo apt -y install \
     ffmpeg imagemagick pngquant
@@ -186,8 +191,6 @@ sudo apt -y install \
 # install ruby packages
 sudo apt -y install \
     ruby-dev
-
-sudo apt install -y touchegg
 
 echo "--------------------------------------------------"
 echo "Successfully installed all Linux packages!"
