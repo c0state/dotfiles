@@ -47,5 +47,7 @@ if which gsettings > /dev/null; then
   # tiling assistant
   gsettings set org.gnome.shell.extensions.tiling-assistant dynamic-keybinding-behavior 2
   gsettings set org.gnome.shell.extensions.tiling-assistant enable-tiling-popup false
-  gsettings set org.gnome.shell.extensions.tiling-assistant tile-bottom-half "['<Super>Down', '<Super>KP_2']"
+  gsettings set org.gnome.shell.extensions.tiling-assistant tile-left-half "['<Super>Left']"
+  gsettings set org.gnome.shell.extensions.tiling-assistant tile-right-half "['<Super>Right']"
+  gsettings set org.gnome.shell.extensions.tiling-assistant tile-bottom-half "['<Super>Down']"
 fi
