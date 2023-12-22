@@ -93,6 +93,7 @@ sudo apt -y install \
 
 #------------------------------ install packages
 
+sudo snap install firefox
 sudo snap install slack
 sudo snap refresh
 
