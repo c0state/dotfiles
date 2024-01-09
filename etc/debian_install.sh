@@ -49,6 +49,10 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/obs-o
 curl -fsSL https://download.opensuse.org/repositories/home:jstaf/xUbuntu_23.10/Release.key | gpg --dearmor | sudo tee /usr/share/keyrings/onedriver_jstaf.gpg > /dev/null
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/onedriver_jstaf.gpg] http://download.opensuse.org/repositories/home:/jstaf/xUbuntu_23.10/ /" | sudo tee /etc/apt/sources.list.d/onedriver_jstaf.list
 
+# signal
+wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor | sudo tee /usr/share/keyrings/signal-desktop-keyring.gpg > /dev/null
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main" | sudo tee /etc/apt/sources.list.d/signal-desktop.list
+
 #------------------------------ ppas
 
 (ls /etc/apt/sources.list.d/alessandro-strada*) || sudo add-apt-repository -y ppa:alessandro-strada/ppa
@@ -161,7 +165,10 @@ fi
 # install vscode
 [ -z $IS_WSL ] && sudo apt install code
 
-sudo apt install -y google-chrome-stable
+# install apps
+sudo apt -y install \
+  google-chrome-stable \
+  signal-desktop
 
 # install image packages
 sudo apt -y install \
