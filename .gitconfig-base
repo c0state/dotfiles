@@ -85,6 +85,8 @@
     navigate = true
     side-by-side = true
     syntax-theme = Dracula
+[stash]
+    showPatch = true
 [split-diffs]
     syntax-highlighting-theme = github-dark
     theme-name = dark
