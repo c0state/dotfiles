@@ -18,7 +18,7 @@ fi
 
 mkdir -p "$HOME"/.local/bin
 
-DOTFILES=".bash_functions .bash_profile .bashrc .editorconfig .gitconfig-base .gdbinit .ideavimrc .mrxvtrc .oh-my-zsh-custom .screenrc .shell_aliases .shell_functions .shell_functions.fish .shell_interactive.sh .studioforkdb .tmux.conf .toprc .vimrc .zsh_functions .zshrc"
+DOTFILES=".bash_functions .bash_profile .bashrc .editorconfig .gitconfig-base .gdbinit .mrxvtrc .oh-my-zsh-custom .screenrc .shell_aliases .shell_functions .shell_functions.fish .shell_interactive.sh .studioforkdb .tmux.conf .toprc .zsh_functions .zshrc"
 
 for FILE in $DOTFILES; do
     echo processing "$FILE"
@@ -27,9 +27,6 @@ done
 
 mkdir -p "$HOME"/.config
 (ln -s "$HOME"/.dotfiles/.config/* "$HOME"/.config || true)
-
-mkdir -p "$HOME"/.config/lvim
-ln -s -f "$HOME"/.dotfiles/.config_custom/lvim/config.lua "$HOME"/.config/lvim/config.lua
 
 if [[ ! -d $HOME/etc ]]; then
     ln -s "$HOME"/.dotfiles/etc "$HOME"/
@@ -58,24 +55,12 @@ else
     (cd "$HOME"/.oh-my-zsh && git pull)
 fi
 
-# ---------- set up vim plugins
-
-vim +PlugUpdate +PlugUpgrade +UpdateRemotePlugins +qall
-
 # ---------- set up nvchad
 
 if [[ ! -d $HOME/.config/nvim ]]; then
     git clone https://github.com/nvchad/nvchad "$HOME"/.config/nvim --depth 1 && nvim
 fi
 rm -rf "$HOME"/.config/nvim/lua/custom && ln -s "$HOME"/.dotfiles/.config_custom/nvim_custom/ "$HOME"/.config/nvim/lua/custom
-
-# ---------- set up lunarvim
-
-if ! which lvim > /dev/null; then
-    curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh | LV_BRANCH='release-1.3/neovim-0.9' bash -s -- --no-install-dependencies
-else
-    lvim +LvimUpdate +qall
-fi
 
 # ---------- set up fzf https://github.com/junegunn/fzf
 

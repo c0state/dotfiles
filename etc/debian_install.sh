@@ -158,10 +158,6 @@ if ! which nvim > /dev/null; then
     chmod +x "$HOME"/.local/bin/nvim
 fi
 
-if ! which lvim > /dev/null; then
-    LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh) -- --no-install-dependencies
-fi
-
 # install vscode
 [ -z $IS_WSL ] && sudo apt install code
 
