@@ -52,6 +52,7 @@ fi
 
 poetry self update
 poetry config virtualenvs.in-project true
+poetry config virtualenvs.prefer-active-python true
 
 #---------- pip packages
 
