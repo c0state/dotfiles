@@ -7,3 +7,6 @@ curl -L https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCod
     | tar zxvf - -C "$HOME"/Library/Fonts  
 curl -L https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Hack.tar.xz \
     | tar zxvf - -C "$HOME"/Library/Fonts  
+
+# for vscodevim key repeat
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
