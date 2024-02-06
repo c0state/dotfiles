@@ -19,3 +19,4 @@ cargo install --locked exa
 cargo install --locked git-delta
 cargo install --locked sd
 cargo install --locked tree-sitter-cli
+cargo install --locked zellij
