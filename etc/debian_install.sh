@@ -57,6 +57,7 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/signa
 
 (ls /etc/apt/sources.list.d/alessandro-strada*) || sudo add-apt-repository -y ppa:alessandro-strada/ppa
 (ls /etc/apt/sources.list.d/fish-shell-ubuntu-release*) || sudo apt-add-repository -y ppa:fish-shell/release-3
+sudo add-apt-repository -y ppa:obsproject/obs-studio
 
 #------------------------------ install core packages
 
