@@ -77,6 +77,7 @@ else
     (cd "$HOME"/.tmux/plugins/tpm && git pull)
 fi
 "$HOME"/.tmux/plugins/tpm/bin/install_plugins
+"$HOME"/.tmux/plugins/tpm/bin/update_plugins all
 
 # ---------- git sub-repo
 
