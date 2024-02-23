@@ -20,16 +20,9 @@ if test -z "$STALE_POD_REGEX"; then
   echo "Not Watching Pods|color=gray"
   echo ---
   echo "Missing configuration"
-  exit 0
+  exit 1
 fi
 
-if test -z "$STALE_POD_REGEX"; then
-    echo Missing configuration settings!
-    exit 1
-fi
-
-export PATH=$PATH:/usr/local/bin
-# also add new arm macos compatible homebrew path
 export PATH=$PATH:/opt/homebrew/bin
 
 FOUND_ZOMBIE_PODS=0
