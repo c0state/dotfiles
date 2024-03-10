@@ -51,4 +51,6 @@ if which gsettings > /dev/null; then
   gsettings set org.gnome.shell.extensions.tiling-assistant tile-left-half "['<Super>Left']"
   gsettings set org.gnome.shell.extensions.tiling-assistant tile-right-half "['<Super>Right']"
   gsettings set org.gnome.shell.extensions.tiling-assistant tile-bottom-half "['<Super>Down']"
+
+  gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
 fi
