@@ -120,6 +120,8 @@ fi
 
 if ! which mise >/dev/null ; then
     curl https://mise.run | sh
+else
+    mise self-update
 fi
 
 # ---------- nix
