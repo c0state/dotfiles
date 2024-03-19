@@ -163,3 +163,8 @@ starship init fish | source
 
 # https://github.com/direnv/direnv/blob/master/docs/hook.md
 direnv hook fish | source
+
+#---------- mise
+
+"$HOME"/.local/bin/mise activate fish | source
+

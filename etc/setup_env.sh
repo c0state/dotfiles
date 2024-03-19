@@ -116,6 +116,12 @@ if [[ ! -d $HOME/.krew ]]; then
     )
 fi
 
+# ---------- mise
+
+if ! which mise >/dev/null ; then
+    curl https://mise.run | sh
+fi
+
 # ---------- nix
 
 if ! which nix >/dev/null ; then
