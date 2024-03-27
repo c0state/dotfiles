@@ -78,12 +78,6 @@ set -gx DOCKER_BUILDKIT 1
 
 #----- python
 
-# poetry
-set -gx PATH "$HOME/.poetry/bin" $PATH
-
-# system binary path
-set -gx PATH (python3 -m site --user-base)"/bin" $PATH
-
 # pyenv init
 set -Ux PYENV_ROOT $HOME/.pyenv
 fish_add_path $PYENV_ROOT/bin
@@ -91,6 +85,12 @@ fish_add_path $PYENV_ROOT/bin
 if command -v pyenv 1>/dev/null 2>&1
     pyenv init - | source
 end
+
+# poetry
+set -gx PATH "$HOME/.poetry/bin" $PATH
+
+# system binary path
+set -gx PATH (python3 -m site --user-base)"/bin" $PATH
 
 #----- ruby
 
