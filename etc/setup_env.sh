@@ -122,7 +122,7 @@ fi
 if ! which mise >/dev/null ; then
     curl https://mise.run | sh
 else
-    mise self-update
+    mise self-update --yes -vv
 fi
 
 # ---------- nix
