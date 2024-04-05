@@ -95,10 +95,12 @@ pipx install ptpython
 pipx install pyright
 pipx install pyupgrade
 pipx install ranger-fm
+pipx install ruff
 pipx install semgrep
 pipx install snakeviz
 pipx install tox
 pipx install twine
+pipx install uv
 pipx install youtube-dl
 
 #---------- upgrade all pipx packages
