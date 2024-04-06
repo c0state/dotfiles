@@ -65,7 +65,7 @@ brew_packages=(
     direnv
     dnsmasq
     dos2unix
-    exa
+    eza
     exiftool
     fd
     ffmpeg
