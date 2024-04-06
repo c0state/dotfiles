@@ -105,7 +105,7 @@ sudo snap refresh
 
 flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak install --user -y flathub io.podman_desktop.PodmanDesktop
-flatpak update -y
+sudo flatpak update -y
 
 #------------------------------ general init
 
