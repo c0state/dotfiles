@@ -80,7 +80,7 @@
     fetchJobs = 0
 [delta]
     features = side-by-side line-numbers decorations
-    light = false
+    dark = true
     line-numbers = true
     navigate = true
     side-by-side = true
