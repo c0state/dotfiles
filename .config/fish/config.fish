@@ -1,8 +1,7 @@
 #---------- constants
 
 # platform
-set --local PLATFORM_FULL (uname -a)
-set --local PLATFORM (echo $PLATFORM_FULL | cut -d ' ' -f 1)
+set --local PLATFORM (uname -s)
 set --local MACH_TYPE (uname -m)
 set --local IS_MACOS_ARM (test $PLATFORM = "Darwin" && test $MACH_TYPE = "arm64" && echo "1" || echo "")
 if test "$PLATFORM" = "Darwin"
@@ -12,7 +11,6 @@ if test "$PLATFORM" = "Darwin"
         set --function MACOS_BREW_PREFIX "/usr/local/Homebrew"
     end
 end
-set --local IS_WSL (echo $PLATFORM_FULL | grep -i microsoft || echo "")
 
 # misc
 set --local REPORTTIME 3
