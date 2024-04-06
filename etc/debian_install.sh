@@ -14,7 +14,6 @@ sudo apt -y install \
 
 #------------------------------ install package sources
 
-IS_WSL=$(uname -a | grep -i microsoft || echo "")
 DPKG_ARCH=$(dpkg --print-architecture 2>/dev/null || echo "")
 
 # init vscode
@@ -162,7 +161,7 @@ if ! which nvim > /dev/null; then
 fi
 
 # install vscode
-[ -z $IS_WSL ] && sudo apt install code
+[ -z "$WSL_DISTRO_NAME" ] && sudo apt install code
 
 # install apps
 sudo apt -y install \
@@ -196,4 +195,3 @@ sudo apt -y install \
 echo "--------------------------------------------------"
 echo "Successfully installed all Linux packages!"
 echo "--------------------------------------------------"
-

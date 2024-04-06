@@ -14,7 +14,6 @@ if [[ "$PLATFORM" == "Darwin" ]]; then
         MACOS_BREW_PREFIX="/usr/local/Homebrew"
     fi
 fi
-IS_WSL=$(echo "$PLATFORM_FULL" | grep -i microsoft || echo "")
 
 #----- increase history file sizes
 export HISTSIZE=5000
@@ -131,7 +130,7 @@ if command -v keychain > /dev/null; then
 fi
 
 #----- google drive
-if command -v google-drive-ocamlfuse > /dev/null && test -z "$IS_WSL"; then
+if command -v google-drive-ocamlfuse > /dev/null && test -z "$WSL_DISTRO_NAME"; then
     GDRIVE_FOLDER="Google.Drive"
     mount | grep "${HOME}/${GDRIVE_FOLDER}" >/dev/null || google-drive-ocamlfuse "${HOME}/${GDRIVE_FOLDER}" &
 fi

@@ -6,7 +6,6 @@ set -eux
 
 PLATFORM_FULL=$(uname -a)
 PLATFORM=$(uname)
-IS_WSL=$(echo "$PLATFORM_FULL" | grep -i microsoft || echo "")
 
 # ---------- set up dotfiles links
 
@@ -34,7 +33,7 @@ fi
 
 # ---------- set up gitconfig
 
-if [[ -n "$IS_WSL" ]]; then
+if [[ -n "$WSL_DISTRO_NAME" ]]; then
     ln -s -f "$HOME"/.dotfiles/.gitconfig-linux "$HOME"/.gitconfig-linux
     ln -s -f "$HOME"/.dotfiles/.gitconfig-wsl "$HOME"/.gitconfig
 elif [[ "$PLATFORM" == "Linux" ]]; then
