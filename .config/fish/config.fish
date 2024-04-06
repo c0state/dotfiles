@@ -116,7 +116,7 @@ set -gx PATH $PATH $HOME/.krew/bin
 # gnu utils paths
 if test "$PLATFORM" = "Darwin"
     set -gx PATH "$MACOS_BREW_PREFIX"/opt/coreutils/libexec/gnubin $PATH
-    set -gx PATH "$MACOS_BREW_PREFIX"/opt/findutils/libexec/gnubin:$PATH
+    set -gx PATH "$MACOS_BREW_PREFIX"/opt/findutils/libexec/gnubin $PATH
 end
 
 #---------- kubectl
