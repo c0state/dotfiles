@@ -2,6 +2,8 @@
 
 set -eu
 
+WSL_DISTRO_NAME=${WSL_DISTRO_NAME:-""}
+
 #------------------------------ install core utils
 
 sudo apt update

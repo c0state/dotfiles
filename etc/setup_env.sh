@@ -6,6 +6,7 @@ set -eux
 
 PLATFORM_FULL=$(uname -a)
 PLATFORM=$(uname)
+WSL_DISTRO_NAME=${WSL_DISTRO_NAME:-""}
 
 # ---------- set up dotfiles links
 
