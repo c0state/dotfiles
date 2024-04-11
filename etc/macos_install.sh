@@ -2,7 +2,7 @@
 
 set -eu
 
-PLATFORM=$(uname -a)
+PLATFORM=$(uname -s)
 MACH_TYPE=$(uname -m)
 IS_MACOS_ARM=$(test "$PLATFORM" = "Darwin" && test "$MACH_TYPE" = "arm64" && echo "1" || echo "")
 
