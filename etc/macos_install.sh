@@ -4,7 +4,7 @@ set -eu
 
 PLATFORM=$(uname -a)
 MACH_TYPE=$(uname -m)
-IS_MACOS_ARM=$(test "$PLATHFORM" = "Darwin" && test "$MACH_TYPE" = "arm64" && echo "1" || echo "")
+IS_MACOS_ARM=$(test "$PLATFORM" = "Darwin" && test "$MACH_TYPE" = "arm64" && echo "1" || echo "")
 
 #---------- utils ----------
 
