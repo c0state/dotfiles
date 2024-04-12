@@ -62,7 +62,7 @@ if test "$PLATFORM" = "Linux"
     set -gx PATH "/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin" $PATH
     set -gx MANPATH "/home/linuxbrew/.linuxbrew/share/man" $MANPATH
     set -gx INFOPATH "/home/linuxbrew/.linuxbrew/share/info}" $INFOPATH
-fi
+end
 
 #----- js tools
 
