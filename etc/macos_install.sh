@@ -44,6 +44,7 @@ brew_packages=(
     # package dependencies first
     gmp 
     
+    7zip
     ack
     ag
     android-platform-tools
