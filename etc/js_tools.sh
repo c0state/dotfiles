@@ -28,4 +28,6 @@ npm install --global add \
 
 if ! which deno; then
     curl -fsSL https://raw.githubusercontent.com/denoland/deno_install/master/install.sh | sh
+else
+    deno upgrade
 fi
