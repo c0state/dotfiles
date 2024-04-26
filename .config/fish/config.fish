@@ -22,7 +22,7 @@ set -gx EDITOR vim
 if test "$PLATFORM" = "Darwin"
     set -gx SHELL /opt/homebrew/bin/fish
 else
-    set -gx SHELL /bin/fish
+    set -gx SHELL /usr/bin/fish
 end
 
 #---------- aliases and functions
