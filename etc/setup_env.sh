@@ -57,11 +57,9 @@ fi
 
 # ---------- set up nvchad
 
-if [[ ! -d $HOME/.config/nvim ]]; then
-    git clone https://github.com/nvchad/starter "$HOME"/.config/nvim --depth 1 && nvim
-    nvim +MasonInstallAll
-fi
-rm -rf "$HOME"/.config/nvim/lua/custom && ln -s "$HOME"/.dotfiles/.config_custom/nvim_custom/ "$HOME"/.config/nvim/lua/custom
+# TODO: figure out way to exit after each command
+nvim +MasonInstallAll
+nvim +Lazy sync
 
 # ---------- set up fzf https://github.com/junegunn/fzf
 
