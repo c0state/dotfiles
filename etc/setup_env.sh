@@ -57,9 +57,8 @@ fi
 
 # ---------- set up nvchad
 
-# TODO: figure out way to exit after each command
-nvim +MasonInstallAll
-nvim +Lazy sync
+nvim --headless +MasonInstallAll +qa
+nvim --headless "+Lazy! sync" +qa
 
 # ---------- set up fzf https://github.com/junegunn/fzf
 
