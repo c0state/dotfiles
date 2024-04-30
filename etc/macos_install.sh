@@ -75,7 +75,7 @@ brew_packages=(
     findutils
     fish
     fnm
-    gh git git-delta git-extras git-lfs lazygit legit
+    gh git git-delta git-extras git-lfs git-secrets lazygit legit
     glances
     harelba/q/q
     helix
