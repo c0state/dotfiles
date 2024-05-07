@@ -38,11 +38,6 @@ return {
 
   -- custom plugins
   {
-    "okuuva/auto-save.nvim",
-    lazy = false,
-  },
-
-  {
     "christoomey/vim-tmux-navigator",
     lazy = false,
   },
