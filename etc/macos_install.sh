@@ -19,7 +19,6 @@ function exit_with_error {
 brew_taps=(
   homebrew/autoupdate
   homebrew/cask-fonts
-  homebrew/cask-versions
   wix/brew
 )
 
