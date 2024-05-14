@@ -38,6 +38,13 @@ return {
 
   -- custom plugins
   {
+    "okuuva/auto-save.nvim",
+    event = { "InsertLeave", "TextChanged" }, -- optional for lazy loading on trigger events
+    opts = {
+    },
+    lazy = false,
+  },
+  {
     "christoomey/vim-tmux-navigator",
     lazy = false,
   },
