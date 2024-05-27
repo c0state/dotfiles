@@ -101,7 +101,6 @@ pipx install snakeviz
 pipx install tox
 pipx install twine
 pipx install uv
-pipx install youtube-dl
 
 #---------- upgrade all pipx packages
 
