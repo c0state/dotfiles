@@ -102,6 +102,7 @@ pipx install tox
 pipx install twine
 pipx install uv
 pipx install youtube-dl
+pipx install yt-dlp
 
 #---------- upgrade all pipx packages
 
