@@ -94,10 +94,10 @@ set -gx PATH (python3 -m site --user-base)"/bin" $PATH
 
 #----- ruby
 
-#set -gx PATH "$HOME/.rbenv/bin" $PATH
-#if command -v rbenv >/dev/null
-#  eval "$(rbenv init -)"
-#end
+set -gx PATH "$HOME/.rbenv/bin" $PATH
+if command -v rbenv >/dev/null
+  eval "$(rbenv init -)"
+end
 
 #----- rust
 
