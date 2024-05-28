@@ -166,7 +166,8 @@ fi
 # install apps
 sudo apt -y install \
   google-chrome-stable \
-  signal-desktop
+  signal-desktop \
+  vlc
 
 # install image packages
 sudo apt -y install \
