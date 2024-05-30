@@ -1,7 +1,5 @@
 [include]
 	path = .gitconfig-base
-[credential]
-	helper = osxkeychain
 [difftool "bc4"]
 	cmd = /opt/homebrew/bin/bcomp \"$LOCAL\" \"$REMOTE\"
 	trustExitCode = true
