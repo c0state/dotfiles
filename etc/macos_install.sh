@@ -172,6 +172,7 @@ brew_cask_packages=(
     flux
     font-hack-nerd-font
     gimp
+    git-credential-manager
     github
     gitkraken
     google-chrome
