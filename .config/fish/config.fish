@@ -129,6 +129,15 @@ if type -q aws_completer
     complete --command aws --no-files --arguments '(begin; set --local --export COMP_SHELL fish; set --local --export COMP_LINE (commandline); aws_completer | sed \'s/ $//\'; end)'
 end
 
+#---------- git credential manager
+
+# https://github.com/git-ecosystem/git-credential-manager/blob/release/docs/credstores.md
+
+# use git's built-in credential cache on Linux (on macOS, use native keychain)
+if test "$PLATFORM" = "Linux"
+    export GCM_CREDENTIAL_STORE=cache
+end
+
 #---------- keychain agent
 
 if type -q keychain
