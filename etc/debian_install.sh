@@ -149,6 +149,9 @@ curl -L "https://github.com/jesseduffield/lazygit/releases/latest/download/lazyg
 OPENLENS_VERSION=$(curl -s "https://api.github.com/repos/MuhammedKalkan/OpenLens/releases/latest" | command grep -Po '"tag_name": "v\K[^"]*')
 install_package "https://github.com/MuhammedKalkan/OpenLens/releases/latest/download/OpenLens-$OPENLENS_VERSION.$DPKG_ARCH.deb"
 
+GIT_CRED_MGR_VERSION=$(curl -s "https://api.github.com/repos/git-ecosystem/git-credential-manager/releases/latest" | command grep -Po '"tag_name": "v\K[^"]*')
+install_package "https://github.com/git-ecosystem/git-credential-manager/releases/latest/download/gcm-linux_$DPKG_ARCH.$GIT_CRED_MGR_VERSION.deb"
+
 which jetbrains-toolbox || \
     wget -O - https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.27.3.14493.tar.gz | \
         tar -xzO jetbrains-toolbox-1.27.3.14493/jetbrains-toolbox \
