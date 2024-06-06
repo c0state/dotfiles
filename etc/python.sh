@@ -9,10 +9,6 @@ REINSTALL_TOOLS=${REINSTALL_TOOLS:-""}
 if [[ -n "$REINSTALL_TOOLS" ]]; then
     rm -rf "$HOME"/.local/pipx
     rm -rf "$HOME"/.local/bin/pipx
-    rm -rf "$HOME"/.local/bin/poetry
-    rm -rf "$HOME"/.local/share/pypoetry
-    rm -rf "$HOME"/.cache/pypoetry
-    rm -rf "$HOME"/.config/pypoetry
     rm -rf "$HOME"/Library/"Application Support"/pypoetry
     rm -rf "$HOME"/Library/Caches/pypoetry
 
@@ -43,16 +39,6 @@ if ! pyenv versions | grep "$DEFAULT_PYTHON_VENV_NAME"; then
   pyenv virtualenv "$PYTHON_VERSION" "$DEFAULT_PYTHON_VENV_NAME"
 fi
 pyenv global "$DEFAULT_PYTHON_VENV_NAME"
-
-#---------- poetry
-
-if ! command -v poetry; then
-    curl -sSL https://install.python-poetry.org | "$HOME"/.pyenv/versions/"$PYTHON_VERSION"/bin/python3 - --force
-fi
-
-poetry self update
-poetry config virtualenvs.in-project true
-poetry config virtualenvs.prefer-active-python true
 
 #---------- pip packages
 
@@ -90,6 +76,7 @@ pipx install pgcli --pip-args pendulum==3.0.0b1 # override pendulum for python 3
 pipx install pip-tools
 pipx install pipdeptree
 pipx install pipenv
+pipx install poetry
 pipx install pre-commit
 pipx install ptpython
 pipx install pyright
@@ -103,6 +90,12 @@ pipx install twine
 pipx install uv
 pipx install youtube-dl
 pipx install yt-dlp
+
+#---------- poetry
+
+poetry self update
+poetry config virtualenvs.in-project true
+poetry config virtualenvs.prefer-active-python true
 
 #---------- upgrade all pipx packages
 
