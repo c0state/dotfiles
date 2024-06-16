@@ -1,21 +1,23 @@
 [include]
-	path = .gitconfig-base
+    path = .gitconfig-base
 [credential]
-	helper = /usr/local/bin/git-credential-manager
+    # this is actually needed to clear out any existing helpers
+    helper =
+    helper = /usr/local/bin/git-credential-manager
 [credential "https://dev.azure.com"]
-	useHttpPath = true
+    useHttpPath = true
 [diff]
-	tool = bc4
+    tool = bc4
 [difftool]
-	prompt = false
+    prompt = false
 [difftool "bc4"]
-	cmd = bcompare \"$LOCAL\" \"$REMOTE\"
-	trustExitCode = true
+    cmd = bcompare \"$LOCAL\" \"$REMOTE\"
+    trustExitCode = true
 [merge]
-	tool = bc4
+    tool = bc4
 [mergetool]
-	prompt = false
+    prompt = false
 [mergetool "bc4"]
-	cmd = bcompare \"$REMOTE\" \"$LOCAL\" \"$BASE\" \"$MERGED\"
-	trustExitCode = true
+    cmd = bcompare \"$REMOTE\" \"$LOCAL\" \"$BASE\" \"$MERGED\"
+    trustExitCode = true
 
