@@ -98,6 +98,14 @@ if [[ -e "$HOME/.cargo" ]]; then
     source "$HOME/.cargo/env"
 fi
 
+#----- postgres
+
+if [[ "$PLATFORM" == "Darwin" ]]; then
+    for pg_dir in /opt/homebrew/opt/postgresql*/bin; do
+        export PATH=:$pg_dir:$PATH
+    done
+fi
+
 #----- git-subrepo
 if [[ -e $HOME/.git-subrepo/.rc ]]; then
     source $HOME/.git-subrepo/.rc
@@ -105,7 +113,7 @@ fi
 
 #----- python
 if command -v register-python-argcomplete > /dev/null; then
-  eval "$(register-python-argcomplete pipx)"
+    eval "$(register-python-argcomplete pipx)"
 fi
 
 #----- deno

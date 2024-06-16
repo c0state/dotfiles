@@ -108,6 +108,12 @@ set -gx PATH "$HOME/.cargo/bin" $PATH
 set -gx GOPATH "$HOME/work/go"
 set -gx PATH "$HOME/.local/go/bin" "$GOPATH/bin" $PATH
 
+#----- postgres
+
+if test "$PLATFORM" = "Darwin"
+    fish_add_path /opt/homebrew/opt/postgresql*/bin
+end
+
 #----- kubernetes
 
 # kubectl krew

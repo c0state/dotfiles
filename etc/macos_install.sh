@@ -108,6 +108,7 @@ brew_packages=(
     pkg-config
     pngquant
     podman podman-desktop podman-compose
+    postgresql@16
     progress
     qt
     ripgrep
