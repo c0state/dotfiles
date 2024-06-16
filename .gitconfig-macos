@@ -1,18 +1,20 @@
 [include]
-	path = .gitconfig-base
+    path = .gitconfig-base
 [credential]
-	helper = /usr/local/share/gcm-core/git-credential-manager
+    # this is actually needed to clear out any existing helpers
+    helper =
+    helper = /usr/local/share/gcm-core/git-credential-manager
 [credential "https://dev.azure.com"]
-	useHttpPath = true
+    useHttpPath = true
 [difftool "bc4"]
-	cmd = /opt/homebrew/bin/bcomp \"$LOCAL\" \"$REMOTE\"
-	trustExitCode = true
+    cmd = /opt/homebrew/bin/bcomp \"$LOCAL\" \"$REMOTE\"
+    trustExitCode = true
 [difftool "sourcetree"]
-	cmd = /usr/local/bin/bcomp \"$LOCAL\" \"$REMOTE\"
-	path = -ro
+    cmd = /opt/homebrew/bin/bcomp \"$LOCAL\" \"$REMOTE\"
+    path = -ro
 [mergetool "bc4"]
-	cmd = /opt/homebrew/bin/bcomp \"$REMOTE\" \"$LOCAL\" \"$BASE\" \"$MERGED\"
-	trustExitCode = true
+    cmd = /opt/homebrew/bin/bcomp \"$REMOTE\" \"$LOCAL\" \"$BASE\" \"$MERGED\"
+    trustExitCode = true
 [mergetool "sourcetree"]
-	cmd = /usr/local/bin/bcomp \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
-	trustExitCode = true
+    cmd = /opt/homebrew/bin/bcomp \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
+    trustExitCode = true
