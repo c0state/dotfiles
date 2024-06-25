@@ -88,6 +88,7 @@ sudo apt -y install \
     nethogs \
     onedrive onedriver \
     parallel \
+    putty \
     ranger \
     ripgrep \
     tree \
