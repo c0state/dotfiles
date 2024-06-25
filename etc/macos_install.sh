@@ -159,6 +159,7 @@ brew_cask_packages=(
     beyond-compare
     brave-browser
     calibre
+    chatgpt
     chromedriver
     coconutbattery
     db-browser-for-sqlite
