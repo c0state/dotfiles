@@ -175,7 +175,7 @@ sudo apt -y install \
 
 # install image packages
 sudo apt -y install \
-    ffmpeg imagemagick pngquant
+    ffmpeg imagemagick libimage-exiftool-perl pngquant
 
 # install java packages
 sudo apt -y install \
