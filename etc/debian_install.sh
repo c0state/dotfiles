@@ -153,6 +153,8 @@ install_package "https://github.com/MuhammedKalkan/OpenLens/releases/latest/down
 GIT_CRED_MGR_VERSION=$(curl -s "https://api.github.com/repos/git-ecosystem/git-credential-manager/releases/latest" | command grep -Po '"tag_name": "v\K[^"]*')
 install_package "https://github.com/git-ecosystem/git-credential-manager/releases/latest/download/gcm-linux_$DPKG_ARCH.$GIT_CRED_MGR_VERSION.deb"
 
+install_package "https://discord.com/api/download?platform=linux&format=deb"
+
 which jetbrains-toolbox || \
     wget -O - https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.27.3.14493.tar.gz | \
         tar -xzO jetbrains-toolbox-1.27.3.14493/jetbrains-toolbox \
