@@ -162,7 +162,7 @@ which jetbrains-toolbox || \
     chmod u+x "$HOME"/.local/bin/jetbrains-toolbox
 
 if ! which nvim > /dev/null; then
-    wget https://github.com/neovim/neovim/releases/download/v0.9.0/nvim.appimage -O "$HOME"/.local/bin/nvim
+    wget https://github.com/neovim/neovim/releases/download/v0.10.0/nvim.appimage -O "$HOME"/.local/bin/nvim
     chmod +x "$HOME"/.local/bin/nvim
 fi
 
