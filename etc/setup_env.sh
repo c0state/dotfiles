@@ -122,6 +122,11 @@ else
     mise self-update --yes
 fi
 
+# install various tools
+mise plugin install kubetail https://github.com/janpieper/asdf-kubetail.git
+mise install kubetail
+mise use -g kubetail
+
 # ---------- nix
 
 if ! which nix >/dev/null ; then
