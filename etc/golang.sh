@@ -30,7 +30,8 @@ if (! command -v go >/dev/null) || ! (go version | grep "$GO_VERSION"); then
     curl -L https://golang.org/dl/"$GO_VERSION"."$PLATFORM_STRING"-"$ARCH_TYPE".tar.gz | tar zxvf - -C "$HOME"/.local
 fi
 
+go install github.com/ankitpokhrel/jira-cli/cmd/jira@latest
 go install github.com/antonmedv/fx@latest
-go install github.com/x-motemen/gore/cmd/gore@latest
 go install github.com/mdempsky/gocode@latest
+go install github.com/x-motemen/gore/cmd/gore@latest
 
