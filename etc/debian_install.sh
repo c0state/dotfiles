@@ -28,8 +28,8 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo 
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
 
 # init tailscale
-curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/lunar.noarmor.gpg | sudo tee /usr/share/keyrings/tailscale-archive-keyring.gpg >/dev/null
-curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/lunar.tailscale-keyring.list | sudo tee /etc/apt/sources.list.d/tailscale.list
+curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/noble.noarmor.gpg | sudo tee /usr/share/keyrings/tailscale-archive-keyring.gpg >/dev/null
+curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/noble.tailscale-keyring.list | sudo tee /etc/apt/sources.list.d/tailscale.list
 
 # docker
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor --yes -o /etc/apt/keyrings/docker.gpg
@@ -155,6 +155,8 @@ GIT_CRED_MGR_VERSION=$(curl -s "https://api.github.com/repos/git-ecosystem/git-c
 install_package "https://github.com/git-ecosystem/git-credential-manager/releases/latest/download/gcm-linux_$DPKG_ARCH.$GIT_CRED_MGR_VERSION.deb"
 
 install_package "https://discord.com/api/download?platform=linux&format=deb"
+
+install_package "https://cdn.insynchq.com/builds/linux/3.9.2.60014/insync_3.9.2.60014-noble_amd64.deb"
 
 which jetbrains-toolbox || \
     wget -O - https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.27.3.14493.tar.gz | \
