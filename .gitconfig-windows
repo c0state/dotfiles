@@ -3,10 +3,10 @@
 [include]
 	path = .gitconfig-base
 [diff]
-	tool = bc4
-[difftool "bc4"]
+	tool = bc
+[difftool "bc"]
 	path = "c:/program files (x86)/beyond compare 4/bcomp.exe"
 [merge]
-	tool = bc4
-[mergetool "bc4"]
+	tool = bc
+[mergetool "bc"]
 	path = "c:/program files (x86)/beyond compare 4/bcomp.exe"

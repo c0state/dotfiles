@@ -7,17 +7,17 @@
 [credential "https://dev.azure.com"]
     useHttpPath = true
 [diff]
-    tool = bc4
+    tool = bc
 [difftool]
     prompt = false
-[difftool "bc4"]
+[difftool "bc"]
     cmd = bcompare \"$LOCAL\" \"$REMOTE\"
     trustExitCode = true
 [merge]
-    tool = bc4
+    tool = bc
 [mergetool]
     prompt = false
-[mergetool "bc4"]
+[mergetool "bc"]
     cmd = bcompare \"$REMOTE\" \"$LOCAL\" \"$BASE\" \"$MERGED\"
     trustExitCode = true
 

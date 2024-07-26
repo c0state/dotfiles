@@ -6,7 +6,7 @@
     helper = /usr/local/share/gcm-core/git-credential-manager
 [credential "https://dev.azure.com"]
     useHttpPath = true
-[difftool "bc4"]
+[difftool "bc"]
     cmd = /opt/homebrew/bin/bcomp \"$LOCAL\" \"$REMOTE\"
     trustExitCode = true
 [difftool "sourcetree"]
