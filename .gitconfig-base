@@ -85,7 +85,7 @@
     line-numbers = true
     navigate = true
     side-by-side = true
-    syntax-theme = Dracula
+    syntax-theme = Coldark-Dark
 [stash]
     showPatch = true
 [split-diffs]
