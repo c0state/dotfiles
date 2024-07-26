@@ -12,9 +12,10 @@
 [difftool "sourcetree"]
     cmd = /opt/homebrew/bin/bcomp \"$LOCAL\" \"$REMOTE\"
     path = -ro
-[mergetool "bc4"]
-    cmd = /opt/homebrew/bin/bcomp \"$REMOTE\" \"$LOCAL\" \"$BASE\" \"$MERGED\"
+[merge]
+    tool = bc
+[mergetool "bc"]
     trustExitCode = true
 [mergetool "sourcetree"]
-    cmd = /opt/homebrew/bin/bcomp \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
+    cmd = bcomp \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
     trustExitCode = true
