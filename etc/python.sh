@@ -72,7 +72,7 @@ pipx install httpie
 pipx install ipython
 pipx install markdown
 pipx install mypy
-pipx install pgcli --pip-args pendulum==3.0.0b1 # override pendulum for python 3.12 support
+pipx install pgcli
 pipx install pip-tools
 pipx install pipdeptree
 pipx install pipenv
