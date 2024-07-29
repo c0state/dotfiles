@@ -156,15 +156,15 @@ install_package "https://github.com/git-ecosystem/git-credential-manager/release
 
 if ! which discord >/dev/null ; then
   install_package "https://discord.com/api/download?platform=linux&format=deb"
-end
+fi
 
 if ! which insync >/dev/null ; then
   install_package "https://cdn.insynchq.com/builds/linux/3.9.2.60014/insync_3.9.2.60014-noble_amd64.deb"
-end
+fi
 
 if ! which bcompare >/dev/null ; then
   install_package "https://www.scootersoftware.com/files/bcompare-5.0.1.29877_amd64.deb"
-end
+fi
 
 which jetbrains-toolbox || \
     wget -O - https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.27.3.14493.tar.gz | \
