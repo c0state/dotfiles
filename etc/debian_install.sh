@@ -159,7 +159,7 @@ if ! which discord >/dev/null ; then
 fi
 
 if ! which insync >/dev/null ; then
-  install_package "https://cdn.insynchq.com/builds/linux/3.9.2.60014/insync_3.9.2.60014-noble_amd64.deb"
+  install_package "https://cdn.insynchq.com/builds/linux/3.9.3.60019/insync_3.9.3.60019-noble_amd64.deb"
 fi
 
 if ! which bcompare >/dev/null ; then
