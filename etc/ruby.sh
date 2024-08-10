@@ -32,3 +32,6 @@ gem install --user-install fastlane
 gem install --user-install s3_website
 gem install --user-install terraforming
 gem install --user-install tmuxinator
+
+gem update --user-install
+
