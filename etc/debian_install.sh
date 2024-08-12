@@ -54,6 +54,10 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/onedr
 wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor | sudo tee /usr/share/keyrings/signal-desktop-keyring.gpg > /dev/null
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main" | sudo tee /etc/apt/sources.list.d/signal-desktop.list
 
+# wezterm - https://wezfurlong.org/wezterm
+curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /usr/share/keyrings/wezterm-fury.gpg
+echo 'deb [signed-by=/usr/share/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *' | sudo tee /etc/apt/sources.list.d/wezterm.list
+
 #------------------------------ ppas
 
 (ls /etc/apt/sources.list.d/alessandro-strada*) || sudo add-apt-repository -y ppa:alessandro-strada/ppa
@@ -93,6 +97,7 @@ sudo apt -y install \
     ranger \
     ripgrep \
     tree \
+    wezterm \
     wireshark \
     wmctrl \
     vim-nox
