@@ -21,8 +21,7 @@ npm install --global \
     imageoptim-cli \
     np \
     npm-check-updates \
-    tldr \
-    tslab
+    tldr
 
 # ---------- install deno https://github.com/denoland/deno
 
