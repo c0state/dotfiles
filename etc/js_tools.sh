@@ -15,7 +15,7 @@ volta install yarn
 
 # ---------- install global packages
 
-npm install --global add \
+npm install --global \
     diff-so-fancy \
     git-split-diffs \
     imageoptim-cli \
