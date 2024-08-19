@@ -15,3 +15,7 @@
 .config/fish/conf.d
 .config/fish/fish_variables
 .config/fish/functions
+
+# nvchad
+.config/nvim/lazy-lock.json
+
