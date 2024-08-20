@@ -96,6 +96,7 @@ sudo apt -y install \
     putty \
     ranger \
     ripgrep \
+    rpi-imager \
     tree \
     wezterm \
     wireshark \
