@@ -87,7 +87,6 @@ pipx install semgrep
 pipx install snakeviz
 pipx install tox
 pipx install twine
-pipx install uv
 pipx install youtube-dl
 pipx install yt-dlp
 

@@ -20,3 +20,10 @@ cargo install --locked git-delta
 cargo install --locked sd
 cargo install --locked tree-sitter-cli
 cargo install --locked zellij
+
+if ! command -v uv >/dev/null 2>&1; then
+  curl -LsSf https://astral.sh/uv/install.sh | sh
+else
+  uv self update
+fi
+
