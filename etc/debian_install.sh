@@ -17,6 +17,7 @@ sudo apt -y install \
 #------------------------------ install package sources
 
 DPKG_ARCH=$(dpkg --print-architecture 2>/dev/null || echo "")
+ARCH=$(arch)
 
 # init vscode
 curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor --yes -o /etc/apt/keyrings/packages.microsoft.gpg
@@ -150,7 +151,7 @@ sudo apt -y install \
     tmux
 
 LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | command grep -Po '"tag_name": "v\K[^"]*')
-curl -L "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz" | \
+curl -L "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_$ARCH.tar.gz" | \
     tar -xzO lazygit \
     > "$HOME"/.local/bin/lazygit && chmod ug+x "$HOME"/.local/bin/lazygit
 
@@ -165,16 +166,25 @@ if ! which discord >/dev/null ; then
 fi
 
 if ! which insync >/dev/null ; then
-  install_package "https://cdn.insynchq.com/builds/linux/3.9.3.60019/insync_3.9.3.60019-noble_amd64.deb"
+  install_package "https://cdn.insynchq.com/builds/linux/3.9.4.60020/insync_3.9.4.60020-noble_$DPKG_ARCH.deb"
 fi
 
 if ! which bcompare >/dev/null ; then
-  install_package "https://www.scootersoftware.com/files/bcompare-5.0.1.29877_amd64.deb"
+  install_package "https://www.scootersoftware.com/files/bcompare-5.0.1.29877_$DPKG_ARCH.deb"
+fi
+
+if ! which teamviewer >/dev/null ; then
+  install_package "https://download.teamviewer.com/download/linux/teamviewer_$DPKG_ARCH.deb"
+fi
+
+if ! which rustdesk >/dev/null ; then
+  RUSTDESK_VERSION=$(curl -s "https://api.github.com/repos/rustdesk/rustdesk/releases/latest" | command grep -Po '"tag_name": "\K[^"]*')
+  install_package "https://github.com/rustdesk/rustdesk/releases/latest/download/rustdesk-$RUSTDESK_VERSION-$ARCH.deb"
 fi
 
 which jetbrains-toolbox || \
-    wget -O - https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.27.3.14493.tar.gz | \
-        tar -xzO jetbrains-toolbox-1.27.3.14493/jetbrains-toolbox \
+    wget -O - https://download.jetbrains.com/toolbox/jetbrains-toolbox-2.4.2.32922.tar.gz \
+        tar -xzO jetbrains-toolbox-2.4.2.32922/jetbrains-toolbox \
     > "$HOME"/.local/bin/jetbrains-toolbox && \
     chmod u+x "$HOME"/.local/bin/jetbrains-toolbox
 
