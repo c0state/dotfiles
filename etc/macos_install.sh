@@ -17,6 +17,7 @@ function exit_with_error {
 
 # add taps
 brew_taps=(
+  hashicorp/tap
   homebrew/autoupdate
   wix/brew
 )
@@ -76,6 +77,7 @@ brew_packages=(
     gh git git-delta git-extras git-lfs git-secrets lazygit legit
     glances
     harelba/q/q
+    hashicorp/tap/terraform
     helix
     helm
     htop
