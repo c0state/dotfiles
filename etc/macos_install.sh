@@ -220,6 +220,7 @@ brew_cask_packages=(
     visual-studio-code
     vlc
     warp
+    wezterm
     whatsapp
     wireshark
     xbar
