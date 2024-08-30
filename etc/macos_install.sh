@@ -165,6 +165,7 @@ brew_cask_packages=(
     chromedriver
     coconutbattery
     db-browser-for-sqlite
+    dbeaver-community
     discord
     divvy
     docker
