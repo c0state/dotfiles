@@ -92,7 +92,6 @@ pipx install yt-dlp
 
 #---------- poetry
 
-poetry self update
 poetry config virtualenvs.in-project true
 poetry config virtualenvs.prefer-active-python true
 
