@@ -1,21 +1,5 @@
 #!/usr/bin/env fish
 
-#---------- oh-my-fish
-
-if not type -q omf
-    curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
-else
-    omf update
-end
-
-set omf_packages \
-    https://github.com/tom-doerr/codex.fish \
-    fzf
-
-for omf_package in $omf_packages
-    omf list | grep "$omf_package" || omf install "$omf_package"
-end
-
 #---------- poetry
 
 poetry completions fish > $HOME/.config/fish/completions/poetry.fish
