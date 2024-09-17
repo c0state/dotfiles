@@ -114,6 +114,7 @@ brew_packages=(
     progress
     qt
     ripgrep
+    ripgrep-all
     redis
     rlwrap
     getsentry/tools/sentry-cli

@@ -19,6 +19,8 @@ else
   echo "Linuxbrew dir not writable, was it installed by a different user?"
 fi
 
+brew install ripgrep-all
+
 # ---------- aws
 
 TEMP_AWS_INSTALL_DIR=$(mktemp --directory)
