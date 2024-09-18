@@ -20,5 +20,7 @@ kubectl completion fish > "$HOME"/.config/fish/completions/kubectl.fish
 
 #---------- nerdctl completions
 
-nerdctl completion fish > "$HOME"/.config/fish/completions/nerdctl.fish
+if type -q nerdctl ; and nerdctl 2>/dev/null
+  nerdctl completion fish > "$HOME"/.config/fish/completions/nerdctl.fish
+end
 
