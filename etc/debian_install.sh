@@ -66,7 +66,6 @@ echo 'deb [signed-by=/usr/share/keyrings/wezterm-fury.gpg] https://apt.fury.io/w
 #------------------------------ ppas
 
 (ls /etc/apt/sources.list.d/alessandro-strada*) || sudo add-apt-repository -y ppa:alessandro-strada/ppa
-(ls /etc/apt/sources.list.d/fish-shell-ubuntu-release*) || sudo apt-add-repository -y ppa:fish-shell/release-3
 
 #------------------------------ install core packages
 
