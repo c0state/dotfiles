@@ -163,6 +163,7 @@ fi
 "$HOME"/etc/rust.sh
 
 "$HOME"/etc/setup_kubernetes.sh
+"$HOME"/etc/setup_env.fish
 
 # ---------- cleanup
 
