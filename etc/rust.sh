@@ -15,7 +15,7 @@ source "$HOME"/.cargo/env
 
 cargo install --locked --features clipboard broot
 cargo install --locked coreutils
-cargo install --locked exa
+cargo install --locked eza
 cargo install --locked git-delta
 cargo install --locked sd
 cargo install --locked tree-sitter-cli
