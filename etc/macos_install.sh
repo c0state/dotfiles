@@ -45,6 +45,7 @@ brew_packages=(
     
     7zip
     ack
+    act
     ag
     android-platform-tools
     applesimutils
