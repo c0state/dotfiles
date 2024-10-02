@@ -73,9 +73,6 @@ set -gx PATH "$VOLTA_HOME/bin" $PATH
 # deno
 set -gx PATH "$HOME/.deno/bin" $PATH
 
-# docker
-set -gx DOCKER_BUILDKIT 1
-
 #----- python
 
 # pyenv init

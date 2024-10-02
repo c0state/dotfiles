@@ -119,9 +119,6 @@ fi
 #----- deno
 export PATH=$PATH:$HOME/.deno/bin
 
-#----- docker
-export DOCKER_BUILDKIT=1
-
 #----- volta
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
