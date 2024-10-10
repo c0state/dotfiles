@@ -17,21 +17,21 @@ _deno() {
     _arguments "${_arguments_options[@]}" : \
 '--no-check=[Skip type-checking. If the value of "remote" is supplied, diagnostic errors from remote modules will be ignored]' \
 '--import-map=[Load import map file from local file or remote URL   Docs\: https\://docs.deno.com/runtime/manual/basics/import_maps]:FILE:_files' \
-'--node-modules-dir=[Enables or disables the use of a local node_modules folder for npm packages]' \
+'--node-modules-dir=[Sets the node modules management mode for npm packages]' \
 '--vendor=[Toggles local vendor folder usage for remote modules and a node_modules folder for npm packages]' \
 '-c+[Configure different aspects of deno including TypeScript, linting, and code formatting   Typically the configuration file will be called \`deno.json\` or \`deno.jsonc\` and   automatically detected; in that case this flag is not necessary.   Docs\: https\://docs.deno.com/go/config]:FILE:_files' \
 '--config=[Configure different aspects of deno including TypeScript, linting, and code formatting   Typically the configuration file will be called \`deno.json\` or \`deno.jsonc\` and   automatically detected; in that case this flag is not necessary.   Docs\: https\://docs.deno.com/go/config]:FILE:_files' \
-'-r+[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
-'--reload=[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
+'*-r+[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
+'*--reload=[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
 '--lock=[Check the specified lock file. (If value is not provided, defaults to "./deno.lock")]' \
 '--cert=[Load certificate authority from PEM encoded file]:FILE:_files' \
 '--unsafely-ignore-certificate-errors=[DANGER\: Disables verification of TLS certificates]' \
-'-R+[Allow file system read access. Optionally specify allowed paths]' \
-'--allow-read=[Allow file system read access. Optionally specify allowed paths]' \
-'--deny-read=[Deny file system read access. Optionally specify denied paths]' \
-'-W+[Allow file system write access. Optionally specify allowed paths]' \
-'--allow-write=[Allow file system write access. Optionally specify allowed paths]' \
-'--deny-write=[Deny file system write access. Optionally specify denied paths]' \
+'*-R+[Allow file system read access. Optionally specify allowed paths]' \
+'*--allow-read=[Allow file system read access. Optionally specify allowed paths]' \
+'*--deny-read=[Deny file system read access. Optionally specify denied paths]' \
+'*-W+[Allow file system write access. Optionally specify allowed paths]' \
+'*--allow-write=[Allow file system write access. Optionally specify allowed paths]' \
+'*--deny-write=[Deny file system write access. Optionally specify denied paths]' \
 '-N+[Allow network access. Optionally specify allowed IP addresses and host names, with ports as necessary]' \
 '--allow-net=[Allow network access. Optionally specify allowed IP addresses and host names, with ports as necessary]' \
 '--deny-net=[Deny network access. Optionally specify denied IP addresses and host names, with ports as necessary]' \
@@ -43,20 +43,22 @@ _deno() {
 '--deny-sys=[Deny access to OS information. Optionally deny specific APIs by function name]' \
 '--allow-run=[Allow running subprocesses. Optionally specify allowed runnable program names]' \
 '--deny-run=[Deny running subprocesses. Optionally specify denied runnable program names]' \
-'--allow-ffi=[(Unstable) Allow loading dynamic libraries. Optionally specify allowed directories or files]' \
-'--deny-ffi=[(Unstable) Deny loading dynamic libraries. Optionally specify denied directories or files]' \
+'*--allow-ffi=[(Unstable) Allow loading dynamic libraries. Optionally specify allowed directories or files]' \
+'*--deny-ffi=[(Unstable) Deny loading dynamic libraries. Optionally specify denied directories or files]' \
+'-I+[Allow importing from remote hosts. Optionally specify allowed IP addresses and host names, with ports as necessary. Default value\: deno.land\:443,jsr.io\:443,esm.sh\:443,cdn.jsdelivr.net\:443,raw.githubusercontent.com\:443,user.githubusercontent.com\:443]' \
+'--allow-import=[Allow importing from remote hosts. Optionally specify allowed IP addresses and host names, with ports as necessary. Default value\: deno.land\:443,jsr.io\:443,esm.sh\:443,cdn.jsdelivr.net\:443,raw.githubusercontent.com\:443,user.githubusercontent.com\:443]' \
 '--inspect=[Activate inspector on host\:port \[default\: 127.0.0.1\:9229\]]' \
 '--inspect-brk=[Activate inspector on host\:port, wait for debugger to connect and break at the start of user script]' \
 '--inspect-wait=[Activate inspector on host\:port and wait for debugger to connect before running user code]' \
 '--frozen=[Error out if lockfile is out of date]' \
-'--location=[Value of '\''globalThis.location'\'' used by some web APIs]:HREF:_urls' \
+'--location=[Value of globalThis.location used by some web APIs]:HREF:_urls' \
 '--v8-flags=[To see a list of all available flags use --v8-flags=--help   Flags can also be set via the DENO_V8_FLAGS environment variable.   Any flags set with this flag are appended after the DENO_V8_FLAGS environment variable]' \
 '--seed=[Set the random number generator seed]:NUMBER: ' \
 '--strace-ops=[Trace low-level op calls]' \
 '(--no-check)--check=[Enable type-checking. This subcommand does not type-check by default   If the value of "all" is supplied, remote modules will be included.   Alternatively, the '\''deno check'\'' subcommand can be used]' \
-'--watch=[Watch for file changes and restart process automatically.   Local files from entry point module graph are watched by default.   Additional paths might be watched by passing them as arguments to this flag.]' \
-'(--watch)--watch-hmr=[Watch for file changes and restart process automatically.   Local files from entry point module graph are watched by default.   Additional paths might be watched by passing them as arguments to this flag.]' \
-'--watch-exclude=[Exclude provided files/patterns from watch mode]' \
+'*--watch=[Watch for file changes and restart process automatically.   Local files from entry point module graph are watched by default.   Additional paths might be watched by passing them as arguments to this flag.]' \
+'(--watch)*--watch-hmr=[Watch for file changes and restart process automatically.   Local files from entry point module graph are watched by default.   Additional paths might be watched by passing them as arguments to this flag.]' \
+'*--watch-exclude=[Exclude provided files/patterns from watch mode]' \
 '--ext=[Set content type of the supplied file]: :(ts tsx js jsx)' \
 '--env-file=[Load environment variables from local file   Only the first environment variable with a given key is used.   Existing process environment variables are not overwritten.]' \
 '*-h+[]' \
@@ -66,12 +68,11 @@ _deno() {
 '--no-remote[Do not resolve remote modules]' \
 '--no-npm[Do not resolve npm modules]' \
 '(-c --config)--no-config[Disable automatic loading of the configuration file]' \
-'(--no-lock)--lock-write[Force overwriting the lock file]' \
 '(--lock)--no-lock[Disable auto discovery of the lock file]' \
-'-A[Allow all permissions]' \
-'--allow-all[Allow all permissions]' \
-'--allow-hrtime[Allow high-resolution time measurement. Note\: this can enable timing attacks and fingerprinting]' \
-'--deny-hrtime[Deny high-resolution time measurement. Note\: this can prevent timing attacks and fingerprinting]' \
+'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import)-A[Allow all permissions]' \
+'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import)--allow-all[Allow all permissions]' \
+'--allow-hrtime[REMOVED in Deno 2.0]' \
+'--deny-hrtime[REMOVED in Deno 2.0]' \
 '--no-prompt[Always throw if required permission wasn'\''t passed]' \
 '--cached-only[Require that remote dependencies are already cached]' \
 '--enable-testing-features-do-not-use[INTERNAL\: Enable internal features used during integration testing]' \
@@ -79,7 +80,7 @@ _deno() {
 '--no-code-cache[Disable V8 code cache feature]' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-byonm[Enable unstable '\''bring your own node_modules'\'' feature]' \
+'--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
@@ -91,7 +92,7 @@ _deno() {
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` API]' \
+'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-V[Print version]' \
 '--version[Print version]' \
@@ -111,21 +112,21 @@ _deno() {
 _arguments "${_arguments_options[@]}" : \
 '--no-check=[Skip type-checking. If the value of "remote" is supplied, diagnostic errors from remote modules will be ignored]' \
 '--import-map=[Load import map file from local file or remote URL   Docs\: https\://docs.deno.com/runtime/manual/basics/import_maps]:FILE:_files' \
-'--node-modules-dir=[Enables or disables the use of a local node_modules folder for npm packages]' \
+'--node-modules-dir=[Sets the node modules management mode for npm packages]' \
 '--vendor=[Toggles local vendor folder usage for remote modules and a node_modules folder for npm packages]' \
 '-c+[Configure different aspects of deno including TypeScript, linting, and code formatting   Typically the configuration file will be called \`deno.json\` or \`deno.jsonc\` and   automatically detected; in that case this flag is not necessary.   Docs\: https\://docs.deno.com/go/config]:FILE:_files' \
 '--config=[Configure different aspects of deno including TypeScript, linting, and code formatting   Typically the configuration file will be called \`deno.json\` or \`deno.jsonc\` and   automatically detected; in that case this flag is not necessary.   Docs\: https\://docs.deno.com/go/config]:FILE:_files' \
-'-r+[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
-'--reload=[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
+'*-r+[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
+'*--reload=[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
 '--lock=[Check the specified lock file. (If value is not provided, defaults to "./deno.lock")]' \
 '--cert=[Load certificate authority from PEM encoded file]:FILE:_files' \
 '--unsafely-ignore-certificate-errors=[DANGER\: Disables verification of TLS certificates]' \
-'-R+[Allow file system read access. Optionally specify allowed paths]' \
-'--allow-read=[Allow file system read access. Optionally specify allowed paths]' \
-'--deny-read=[Deny file system read access. Optionally specify denied paths]' \
-'-W+[Allow file system write access. Optionally specify allowed paths]' \
-'--allow-write=[Allow file system write access. Optionally specify allowed paths]' \
-'--deny-write=[Deny file system write access. Optionally specify denied paths]' \
+'*-R+[Allow file system read access. Optionally specify allowed paths]' \
+'*--allow-read=[Allow file system read access. Optionally specify allowed paths]' \
+'*--deny-read=[Deny file system read access. Optionally specify denied paths]' \
+'*-W+[Allow file system write access. Optionally specify allowed paths]' \
+'*--allow-write=[Allow file system write access. Optionally specify allowed paths]' \
+'*--deny-write=[Deny file system write access. Optionally specify denied paths]' \
 '-N+[Allow network access. Optionally specify allowed IP addresses and host names, with ports as necessary]' \
 '--allow-net=[Allow network access. Optionally specify allowed IP addresses and host names, with ports as necessary]' \
 '--deny-net=[Deny network access. Optionally specify denied IP addresses and host names, with ports as necessary]' \
@@ -137,20 +138,22 @@ _arguments "${_arguments_options[@]}" : \
 '--deny-sys=[Deny access to OS information. Optionally deny specific APIs by function name]' \
 '--allow-run=[Allow running subprocesses. Optionally specify allowed runnable program names]' \
 '--deny-run=[Deny running subprocesses. Optionally specify denied runnable program names]' \
-'--allow-ffi=[(Unstable) Allow loading dynamic libraries. Optionally specify allowed directories or files]' \
-'--deny-ffi=[(Unstable) Deny loading dynamic libraries. Optionally specify denied directories or files]' \
+'*--allow-ffi=[(Unstable) Allow loading dynamic libraries. Optionally specify allowed directories or files]' \
+'*--deny-ffi=[(Unstable) Deny loading dynamic libraries. Optionally specify denied directories or files]' \
+'-I+[Allow importing from remote hosts. Optionally specify allowed IP addresses and host names, with ports as necessary. Default value\: deno.land\:443,jsr.io\:443,esm.sh\:443,cdn.jsdelivr.net\:443,raw.githubusercontent.com\:443,user.githubusercontent.com\:443]' \
+'--allow-import=[Allow importing from remote hosts. Optionally specify allowed IP addresses and host names, with ports as necessary. Default value\: deno.land\:443,jsr.io\:443,esm.sh\:443,cdn.jsdelivr.net\:443,raw.githubusercontent.com\:443,user.githubusercontent.com\:443]' \
 '--inspect=[Activate inspector on host\:port \[default\: 127.0.0.1\:9229\]]' \
 '--inspect-brk=[Activate inspector on host\:port, wait for debugger to connect and break at the start of user script]' \
 '--inspect-wait=[Activate inspector on host\:port and wait for debugger to connect before running user code]' \
 '--frozen=[Error out if lockfile is out of date]' \
-'--location=[Value of '\''globalThis.location'\'' used by some web APIs]:HREF:_urls' \
+'--location=[Value of globalThis.location used by some web APIs]:HREF:_urls' \
 '--v8-flags=[To see a list of all available flags use --v8-flags=--help   Flags can also be set via the DENO_V8_FLAGS environment variable.   Any flags set with this flag are appended after the DENO_V8_FLAGS environment variable]' \
 '--seed=[Set the random number generator seed]:NUMBER: ' \
 '--strace-ops=[Trace low-level op calls]' \
 '(--no-check)--check=[Enable type-checking. This subcommand does not type-check by default   If the value of "all" is supplied, remote modules will be included.   Alternatively, the '\''deno check'\'' subcommand can be used]' \
-'--watch=[Watch for file changes and restart process automatically.   Local files from entry point module graph are watched by default.   Additional paths might be watched by passing them as arguments to this flag.]' \
-'(--watch)--watch-hmr=[Watch for file changes and restart process automatically.   Local files from entry point module graph are watched by default.   Additional paths might be watched by passing them as arguments to this flag.]' \
-'--watch-exclude=[Exclude provided files/patterns from watch mode]' \
+'*--watch=[Watch for file changes and restart process automatically.   Local files from entry point module graph are watched by default.   Additional paths might be watched by passing them as arguments to this flag.]' \
+'(--watch)*--watch-hmr=[Watch for file changes and restart process automatically.   Local files from entry point module graph are watched by default.   Additional paths might be watched by passing them as arguments to this flag.]' \
+'*--watch-exclude=[Exclude provided files/patterns from watch mode]' \
 '--ext=[Set content type of the supplied file]: :(ts tsx js jsx)' \
 '--env-file=[Load environment variables from local file   Only the first environment variable with a given key is used.   Existing process environment variables are not overwritten.]' \
 '*-h+[]' \
@@ -159,7 +162,7 @@ _arguments "${_arguments_options[@]}" : \
 '--log-level=[Set log level]: :(trace debug info)' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-byonm[Enable unstable '\''bring your own node_modules'\'' feature]' \
+'--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
@@ -171,17 +174,16 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` API]' \
+'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '--no-remote[Do not resolve remote modules]' \
 '--no-npm[Do not resolve npm modules]' \
 '(-c --config)--no-config[Disable automatic loading of the configuration file]' \
-'(--no-lock)--lock-write[Force overwriting the lock file]' \
 '(--lock)--no-lock[Disable auto discovery of the lock file]' \
-'-A[Allow all permissions]' \
-'--allow-all[Allow all permissions]' \
-'--allow-hrtime[Allow high-resolution time measurement. Note\: this can enable timing attacks and fingerprinting]' \
-'--deny-hrtime[Deny high-resolution time measurement. Note\: this can prevent timing attacks and fingerprinting]' \
+'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import)-A[Allow all permissions]' \
+'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import)--allow-all[Allow all permissions]' \
+'--allow-hrtime[REMOVED in Deno 2.0]' \
+'--deny-hrtime[REMOVED in Deno 2.0]' \
 '--no-prompt[Always throw if required permission wasn'\''t passed]' \
 '--cached-only[Require that remote dependencies are already cached]' \
 '--enable-testing-features-do-not-use[INTERNAL\: Enable internal features used during integration testing]' \
@@ -196,21 +198,21 @@ _arguments "${_arguments_options[@]}" : \
 _arguments "${_arguments_options[@]}" : \
 '--no-check=[Skip type-checking. If the value of "remote" is supplied, diagnostic errors from remote modules will be ignored]' \
 '--import-map=[Load import map file from local file or remote URL   Docs\: https\://docs.deno.com/runtime/manual/basics/import_maps]:FILE:_files' \
-'--node-modules-dir=[Enables or disables the use of a local node_modules folder for npm packages]' \
+'--node-modules-dir=[Sets the node modules management mode for npm packages]' \
 '--vendor=[Toggles local vendor folder usage for remote modules and a node_modules folder for npm packages]' \
 '-c+[Configure different aspects of deno including TypeScript, linting, and code formatting   Typically the configuration file will be called \`deno.json\` or \`deno.jsonc\` and   automatically detected; in that case this flag is not necessary.   Docs\: https\://docs.deno.com/go/config]:FILE:_files' \
 '--config=[Configure different aspects of deno including TypeScript, linting, and code formatting   Typically the configuration file will be called \`deno.json\` or \`deno.jsonc\` and   automatically detected; in that case this flag is not necessary.   Docs\: https\://docs.deno.com/go/config]:FILE:_files' \
-'-r+[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
-'--reload=[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
+'*-r+[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
+'*--reload=[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
 '--lock=[Check the specified lock file. (If value is not provided, defaults to "./deno.lock")]' \
 '--cert=[Load certificate authority from PEM encoded file]:FILE:_files' \
 '--unsafely-ignore-certificate-errors=[DANGER\: Disables verification of TLS certificates]' \
-'-R+[Allow file system read access. Optionally specify allowed paths]' \
-'--allow-read=[Allow file system read access. Optionally specify allowed paths]' \
-'--deny-read=[Deny file system read access. Optionally specify denied paths]' \
-'-W+[Allow file system write access. Optionally specify allowed paths]' \
-'--allow-write=[Allow file system write access. Optionally specify allowed paths]' \
-'--deny-write=[Deny file system write access. Optionally specify denied paths]' \
+'*-R+[Allow file system read access. Optionally specify allowed paths]' \
+'*--allow-read=[Allow file system read access. Optionally specify allowed paths]' \
+'*--deny-read=[Deny file system read access. Optionally specify denied paths]' \
+'*-W+[Allow file system write access. Optionally specify allowed paths]' \
+'*--allow-write=[Allow file system write access. Optionally specify allowed paths]' \
+'*--deny-write=[Deny file system write access. Optionally specify denied paths]' \
 '-N+[Allow network access. Optionally specify allowed IP addresses and host names, with ports as necessary]' \
 '--allow-net=[Allow network access. Optionally specify allowed IP addresses and host names, with ports as necessary]' \
 '--deny-net=[Deny network access. Optionally specify denied IP addresses and host names, with ports as necessary]' \
@@ -222,22 +224,24 @@ _arguments "${_arguments_options[@]}" : \
 '--deny-sys=[Deny access to OS information. Optionally deny specific APIs by function name]' \
 '--allow-run=[Allow running subprocesses. Optionally specify allowed runnable program names]' \
 '--deny-run=[Deny running subprocesses. Optionally specify denied runnable program names]' \
-'--allow-ffi=[(Unstable) Allow loading dynamic libraries. Optionally specify allowed directories or files]' \
-'--deny-ffi=[(Unstable) Deny loading dynamic libraries. Optionally specify denied directories or files]' \
+'*--allow-ffi=[(Unstable) Allow loading dynamic libraries. Optionally specify allowed directories or files]' \
+'*--deny-ffi=[(Unstable) Deny loading dynamic libraries. Optionally specify denied directories or files]' \
+'-I+[Allow importing from remote hosts. Optionally specify allowed IP addresses and host names, with ports as necessary. Default value\: deno.land\:443,jsr.io\:443,esm.sh\:443,cdn.jsdelivr.net\:443,raw.githubusercontent.com\:443,user.githubusercontent.com\:443]' \
+'--allow-import=[Allow importing from remote hosts. Optionally specify allowed IP addresses and host names, with ports as necessary. Default value\: deno.land\:443,jsr.io\:443,esm.sh\:443,cdn.jsdelivr.net\:443,raw.githubusercontent.com\:443,user.githubusercontent.com\:443]' \
 '--inspect=[Activate inspector on host\:port \[default\: 127.0.0.1\:9229\]]' \
 '--inspect-brk=[Activate inspector on host\:port, wait for debugger to connect and break at the start of user script]' \
 '--inspect-wait=[Activate inspector on host\:port and wait for debugger to connect before running user code]' \
 '--frozen=[Error out if lockfile is out of date]' \
-'--location=[Value of '\''globalThis.location'\'' used by some web APIs]:HREF:_urls' \
+'--location=[Value of globalThis.location used by some web APIs]:HREF:_urls' \
 '--v8-flags=[To see a list of all available flags use --v8-flags=--help   Flags can also be set via the DENO_V8_FLAGS environment variable.   Any flags set with this flag are appended after the DENO_V8_FLAGS environment variable]' \
 '--seed=[Set the random number generator seed]:NUMBER: ' \
 '--strace-ops=[Trace low-level op calls]' \
-'--port=[The TCP port to serve on, defaulting to 8000. Pass 0 to pick a random free port]: : ' \
+'--port=[The TCP port to serve on. Pass 0 to pick a random free port \[default\: 8000\]]: : ' \
 '--host=[The TCP address to serve on, defaulting to 0.0.0.0 (all interfaces)]: : ' \
 '(--no-check)--check=[Enable type-checking. This subcommand does not type-check by default   If the value of "all" is supplied, remote modules will be included.   Alternatively, the '\''deno check'\'' subcommand can be used]' \
-'--watch=[Watch for file changes and restart process automatically.   Local files from entry point module graph are watched by default.   Additional paths might be watched by passing them as arguments to this flag.]' \
-'(--watch)--watch-hmr=[Watch for file changes and restart process automatically.   Local files from entry point module graph are watched by default.   Additional paths might be watched by passing them as arguments to this flag.]' \
-'--watch-exclude=[Exclude provided files/patterns from watch mode]' \
+'*--watch=[Watch for file changes and restart process automatically.   Local files from entry point module graph are watched by default.   Additional paths might be watched by passing them as arguments to this flag.]' \
+'(--watch)*--watch-hmr=[Watch for file changes and restart process automatically.   Local files from entry point module graph are watched by default.   Additional paths might be watched by passing them as arguments to this flag.]' \
+'*--watch-exclude=[Exclude provided files/patterns from watch mode]' \
 '--ext=[Set content type of the supplied file]: :(ts tsx js jsx)' \
 '--env-file=[Load environment variables from local file   Only the first environment variable with a given key is used.   Existing process environment variables are not overwritten.]' \
 '*-h+[]' \
@@ -246,7 +250,7 @@ _arguments "${_arguments_options[@]}" : \
 '--log-level=[Set log level]: :(trace debug info)' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-byonm[Enable unstable '\''bring your own node_modules'\'' feature]' \
+'--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
@@ -258,17 +262,16 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` API]' \
+'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '--no-remote[Do not resolve remote modules]' \
 '--no-npm[Do not resolve npm modules]' \
 '(-c --config)--no-config[Disable automatic loading of the configuration file]' \
-'(--no-lock)--lock-write[Force overwriting the lock file]' \
 '(--lock)--no-lock[Disable auto discovery of the lock file]' \
-'-A[Allow all permissions]' \
-'--allow-all[Allow all permissions]' \
-'--allow-hrtime[Allow high-resolution time measurement. Note\: this can enable timing attacks and fingerprinting]' \
-'--deny-hrtime[Deny high-resolution time measurement. Note\: this can prevent timing attacks and fingerprinting]' \
+'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import)-A[Allow all permissions]' \
+'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import)--allow-all[Allow all permissions]' \
+'--allow-hrtime[REMOVED in Deno 2.0]' \
+'--deny-hrtime[REMOVED in Deno 2.0]' \
 '--no-prompt[Always throw if required permission wasn'\''t passed]' \
 '--cached-only[Require that remote dependencies are already cached]' \
 '--enable-testing-features-do-not-use[INTERNAL\: Enable internal features used during integration testing]' \
@@ -288,7 +291,7 @@ _arguments "${_arguments_options[@]}" : \
 '--log-level=[Set log level]: :(trace debug info)' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-byonm[Enable unstable '\''bring your own node_modules'\'' feature]' \
+'--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
@@ -300,10 +303,12 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` API]' \
+'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
+'-D[Add as a dev dependency]' \
+'--dev[Add as a dev dependency]' \
 '*::packages -- List of packages to add:' \
 && ret=0
 ;;
@@ -315,7 +320,7 @@ _arguments "${_arguments_options[@]}" : \
 '--log-level=[Set log level]: :(trace debug info)' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-byonm[Enable unstable '\''bring your own node_modules'\'' feature]' \
+'--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
@@ -327,7 +332,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` API]' \
+'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
@@ -342,21 +347,21 @@ _arguments "${_arguments_options[@]}" : \
 '--log-level=[Set log level]: :(trace debug info)' \
 '--no-check=[Skip type-checking. If the value of "remote" is supplied, diagnostic errors from remote modules will be ignored]' \
 '--import-map=[Load import map file from local file or remote URL   Docs\: https\://docs.deno.com/runtime/manual/basics/import_maps]:FILE:_files' \
-'--node-modules-dir=[Enables or disables the use of a local node_modules folder for npm packages]' \
+'--node-modules-dir=[Sets the node modules management mode for npm packages]' \
 '--vendor=[Toggles local vendor folder usage for remote modules and a node_modules folder for npm packages]' \
 '-c+[Configure different aspects of deno including TypeScript, linting, and code formatting   Typically the configuration file will be called \`deno.json\` or \`deno.jsonc\` and   automatically detected; in that case this flag is not necessary.   Docs\: https\://docs.deno.com/go/config]:FILE:_files' \
 '--config=[Configure different aspects of deno including TypeScript, linting, and code formatting   Typically the configuration file will be called \`deno.json\` or \`deno.jsonc\` and   automatically detected; in that case this flag is not necessary.   Docs\: https\://docs.deno.com/go/config]:FILE:_files' \
-'-r+[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
-'--reload=[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
+'*-r+[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
+'*--reload=[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
 '--lock=[Check the specified lock file. (If value is not provided, defaults to "./deno.lock")]' \
 '--cert=[Load certificate authority from PEM encoded file]:FILE:_files' \
 '--unsafely-ignore-certificate-errors=[DANGER\: Disables verification of TLS certificates]' \
-'-R+[Allow file system read access. Optionally specify allowed paths]' \
-'--allow-read=[Allow file system read access. Optionally specify allowed paths]' \
-'--deny-read=[Deny file system read access. Optionally specify denied paths]' \
-'-W+[Allow file system write access. Optionally specify allowed paths]' \
-'--allow-write=[Allow file system write access. Optionally specify allowed paths]' \
-'--deny-write=[Deny file system write access. Optionally specify denied paths]' \
+'*-R+[Allow file system read access. Optionally specify allowed paths]' \
+'*--allow-read=[Allow file system read access. Optionally specify allowed paths]' \
+'*--deny-read=[Deny file system read access. Optionally specify denied paths]' \
+'*-W+[Allow file system write access. Optionally specify allowed paths]' \
+'*--allow-write=[Allow file system write access. Optionally specify allowed paths]' \
+'*--deny-write=[Deny file system write access. Optionally specify denied paths]' \
 '-N+[Allow network access. Optionally specify allowed IP addresses and host names, with ports as necessary]' \
 '--allow-net=[Allow network access. Optionally specify allowed IP addresses and host names, with ports as necessary]' \
 '--deny-net=[Deny network access. Optionally specify denied IP addresses and host names, with ports as necessary]' \
@@ -368,21 +373,24 @@ _arguments "${_arguments_options[@]}" : \
 '--deny-sys=[Deny access to OS information. Optionally deny specific APIs by function name]' \
 '--allow-run=[Allow running subprocesses. Optionally specify allowed runnable program names]' \
 '--deny-run=[Deny running subprocesses. Optionally specify denied runnable program names]' \
-'--allow-ffi=[(Unstable) Allow loading dynamic libraries. Optionally specify allowed directories or files]' \
-'--deny-ffi=[(Unstable) Deny loading dynamic libraries. Optionally specify denied directories or files]' \
+'*--allow-ffi=[(Unstable) Allow loading dynamic libraries. Optionally specify allowed directories or files]' \
+'*--deny-ffi=[(Unstable) Deny loading dynamic libraries. Optionally specify denied directories or files]' \
+'-I+[Allow importing from remote hosts. Optionally specify allowed IP addresses and host names, with ports as necessary. Default value\: deno.land\:443,jsr.io\:443,esm.sh\:443,cdn.jsdelivr.net\:443,raw.githubusercontent.com\:443,user.githubusercontent.com\:443]' \
+'--allow-import=[Allow importing from remote hosts. Optionally specify allowed IP addresses and host names, with ports as necessary. Default value\: deno.land\:443,jsr.io\:443,esm.sh\:443,cdn.jsdelivr.net\:443,raw.githubusercontent.com\:443,user.githubusercontent.com\:443]' \
 '--frozen=[Error out if lockfile is out of date]' \
-'--location=[Value of '\''globalThis.location'\'' used by some web APIs]:HREF:_urls' \
+'--location=[Value of globalThis.location used by some web APIs]:HREF:_urls' \
 '--v8-flags=[To see a list of all available flags use --v8-flags=--help   Flags can also be set via the DENO_V8_FLAGS environment variable.   Any flags set with this flag are appended after the DENO_V8_FLAGS environment variable]' \
 '--seed=[Set the random number generator seed]:NUMBER: ' \
 '--strace-ops=[Trace low-level op calls]' \
 '(--no-check)--check=[Set type-checking behavior. This subcommand type-checks local modules by default, so adding --check is redundant   If the value of "all" is supplied, remote modules will be included.   Alternatively, the '\''deno check'\'' subcommand can be used]' \
-'--ignore=[Ignore files]: : ' \
+'*--ignore=[Ignore files]: : ' \
 '--filter=[Run benchmarks with this string or regexp pattern in the bench name]: : ' \
-'--watch-exclude=[Exclude provided files/patterns from watch mode]' \
+'*--watch-exclude=[Exclude provided files/patterns from watch mode]' \
 '--env-file=[Load environment variables from local file   Only the first environment variable with a given key is used.   Existing process environment variables are not overwritten.]' \
+'--ext=[Set content type of the supplied file]: :(ts tsx js jsx)' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-byonm[Enable unstable '\''bring your own node_modules'\'' feature]' \
+'--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
@@ -394,19 +402,18 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` API]' \
+'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
 '--no-remote[Do not resolve remote modules]' \
 '--no-npm[Do not resolve npm modules]' \
 '(-c --config)--no-config[Disable automatic loading of the configuration file]' \
-'(--no-lock)--lock-write[Force overwriting the lock file]' \
 '(--lock)--no-lock[Disable auto discovery of the lock file]' \
-'-A[Allow all permissions]' \
-'--allow-all[Allow all permissions]' \
-'--allow-hrtime[Allow high-resolution time measurement. Note\: this can enable timing attacks and fingerprinting]' \
-'--deny-hrtime[Deny high-resolution time measurement. Note\: this can prevent timing attacks and fingerprinting]' \
+'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import)-A[Allow all permissions]' \
+'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import)--allow-all[Allow all permissions]' \
+'--allow-hrtime[REMOVED in Deno 2.0]' \
+'--deny-hrtime[REMOVED in Deno 2.0]' \
 '--no-prompt[Always throw if required permission wasn'\''t passed]' \
 '--cached-only[Require that remote dependencies are already cached]' \
 '--enable-testing-features-do-not-use[INTERNAL\: Enable internal features used during integration testing]' \
@@ -423,23 +430,9 @@ _arguments "${_arguments_options[@]}" : \
 '*--help=[]' \
 '-L+[Set log level]: :(trace debug info)' \
 '--log-level=[Set log level]: :(trace debug info)' \
-'--no-check=[Skip type-checking. If the value of "remote" is supplied, diagnostic errors from remote modules will be ignored]' \
-'--import-map=[Load import map file from local file or remote URL   Docs\: https\://docs.deno.com/runtime/manual/basics/import_maps]:FILE:_files' \
-'--node-modules-dir=[Enables or disables the use of a local node_modules folder for npm packages]' \
-'--vendor=[Toggles local vendor folder usage for remote modules and a node_modules folder for npm packages]' \
-'-c+[Configure different aspects of deno including TypeScript, linting, and code formatting   Typically the configuration file will be called \`deno.json\` or \`deno.jsonc\` and   automatically detected; in that case this flag is not necessary.   Docs\: https\://docs.deno.com/go/config]:FILE:_files' \
-'--config=[Configure different aspects of deno including TypeScript, linting, and code formatting   Typically the configuration file will be called \`deno.json\` or \`deno.jsonc\` and   automatically detected; in that case this flag is not necessary.   Docs\: https\://docs.deno.com/go/config]:FILE:_files' \
-'-r+[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
-'--reload=[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
-'--lock=[Check the specified lock file. (If value is not provided, defaults to "./deno.lock")]' \
-'--cert=[Load certificate authority from PEM encoded file]:FILE:_files' \
-'--unsafely-ignore-certificate-errors=[DANGER\: Disables verification of TLS certificates]' \
-'(--no-check)--check=[Set type-checking behavior. This subcommand type-checks local modules by default, so adding --check is redundant   If the value of "all" is supplied, remote modules will be included.   Alternatively, the '\''deno check'\'' subcommand can be used]' \
-'--watch-exclude=[Exclude provided files/patterns from watch mode]' \
-'--ext=[Set content type of the supplied file]: :(ts tsx js jsx)' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-byonm[Enable unstable '\''bring your own node_modules'\'' feature]' \
+'--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
@@ -451,19 +444,10 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` API]' \
+'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
-'--no-remote[Do not resolve remote modules]' \
-'--no-npm[Do not resolve npm modules]' \
-'(-c --config)--no-config[Disable automatic loading of the configuration file]' \
-'(--no-lock)--lock-write[Force overwriting the lock file]' \
-'(--lock)--no-lock[Disable auto discovery of the lock file]' \
-'--watch[Watch for file changes and restart process automatically.   Only local files from entry point module graph are watched.]' \
-'--no-clear-screen[Do not clear terminal screen when under watch mode]' \
-'::source_file:_files' \
-'::out_file:_files' \
 && ret=0
 ;;
 (cache)
@@ -474,21 +458,23 @@ _arguments "${_arguments_options[@]}" : \
 '--log-level=[Set log level]: :(trace debug info)' \
 '--no-check=[Skip type-checking. If the value of "remote" is supplied, diagnostic errors from remote modules will be ignored]' \
 '--import-map=[Load import map file from local file or remote URL   Docs\: https\://docs.deno.com/runtime/manual/basics/import_maps]:FILE:_files' \
-'--node-modules-dir=[Enables or disables the use of a local node_modules folder for npm packages]' \
+'--node-modules-dir=[Sets the node modules management mode for npm packages]' \
 '--vendor=[Toggles local vendor folder usage for remote modules and a node_modules folder for npm packages]' \
 '-c+[Configure different aspects of deno including TypeScript, linting, and code formatting   Typically the configuration file will be called \`deno.json\` or \`deno.jsonc\` and   automatically detected; in that case this flag is not necessary.   Docs\: https\://docs.deno.com/go/config]:FILE:_files' \
 '--config=[Configure different aspects of deno including TypeScript, linting, and code formatting   Typically the configuration file will be called \`deno.json\` or \`deno.jsonc\` and   automatically detected; in that case this flag is not necessary.   Docs\: https\://docs.deno.com/go/config]:FILE:_files' \
-'-r+[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
-'--reload=[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
+'*-r+[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
+'*--reload=[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
 '--lock=[Check the specified lock file. (If value is not provided, defaults to "./deno.lock")]' \
 '--cert=[Load certificate authority from PEM encoded file]:FILE:_files' \
 '--unsafely-ignore-certificate-errors=[DANGER\: Disables verification of TLS certificates]' \
 '(--no-check)--check=[Enable type-checking. This subcommand does not type-check by default   If the value of "all" is supplied, remote modules will be included.   Alternatively, the '\''deno check'\'' subcommand can be used]' \
 '--frozen=[Error out if lockfile is out of date]' \
-'--allow-scripts=[Allow running npm lifecycle scripts for the given packages   Note\: Scripts will only be executed when using a node_modules directory (\`--node-modules-dir\`)]' \
+'*--allow-scripts=[Allow running npm lifecycle scripts for the given packages   Note\: Scripts will only be executed when using a node_modules directory (\`--node-modules-dir\`)]' \
+'-I+[Allow importing from remote hosts. Optionally specify allowed IP addresses and host names, with ports as necessary. Default value\: deno.land\:443,jsr.io\:443,esm.sh\:443,cdn.jsdelivr.net\:443,raw.githubusercontent.com\:443,user.githubusercontent.com\:443]' \
+'--allow-import=[Allow importing from remote hosts. Optionally specify allowed IP addresses and host names, with ports as necessary. Default value\: deno.land\:443,jsr.io\:443,esm.sh\:443,cdn.jsdelivr.net\:443,raw.githubusercontent.com\:443,user.githubusercontent.com\:443]' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-byonm[Enable unstable '\''bring your own node_modules'\'' feature]' \
+'--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
@@ -500,14 +486,13 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` API]' \
+'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
 '--no-remote[Do not resolve remote modules]' \
 '--no-npm[Do not resolve npm modules]' \
 '(-c --config)--no-config[Disable automatic loading of the configuration file]' \
-'(--no-lock)--lock-write[Force overwriting the lock file]' \
 '(--lock)--no-lock[Disable auto discovery of the lock file]' \
 '*::file:_files' \
 && ret=0
@@ -519,18 +504,20 @@ _arguments "${_arguments_options[@]}" : \
 '-L+[Set log level]: :(trace debug info)' \
 '--log-level=[Set log level]: :(trace debug info)' \
 '--import-map=[Load import map file from local file or remote URL   Docs\: https\://docs.deno.com/runtime/manual/basics/import_maps]:FILE:_files' \
-'--node-modules-dir=[Enables or disables the use of a local node_modules folder for npm packages]' \
+'--node-modules-dir=[Sets the node modules management mode for npm packages]' \
 '--vendor=[Toggles local vendor folder usage for remote modules and a node_modules folder for npm packages]' \
 '-c+[Configure different aspects of deno including TypeScript, linting, and code formatting   Typically the configuration file will be called \`deno.json\` or \`deno.jsonc\` and   automatically detected; in that case this flag is not necessary.   Docs\: https\://docs.deno.com/go/config]:FILE:_files' \
 '--config=[Configure different aspects of deno including TypeScript, linting, and code formatting   Typically the configuration file will be called \`deno.json\` or \`deno.jsonc\` and   automatically detected; in that case this flag is not necessary.   Docs\: https\://docs.deno.com/go/config]:FILE:_files' \
-'-r+[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
-'--reload=[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
+'*-r+[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
+'*--reload=[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
 '--lock=[Check the specified lock file. (If value is not provided, defaults to "./deno.lock")]' \
 '--cert=[Load certificate authority from PEM encoded file]:FILE:_files' \
 '--unsafely-ignore-certificate-errors=[DANGER\: Disables verification of TLS certificates]' \
+'-I+[Allow importing from remote hosts. Optionally specify allowed IP addresses and host names, with ports as necessary. Default value\: deno.land\:443,jsr.io\:443,esm.sh\:443,cdn.jsdelivr.net\:443,raw.githubusercontent.com\:443,user.githubusercontent.com\:443]' \
+'--allow-import=[Allow importing from remote hosts. Optionally specify allowed IP addresses and host names, with ports as necessary. Default value\: deno.land\:443,jsr.io\:443,esm.sh\:443,cdn.jsdelivr.net\:443,raw.githubusercontent.com\:443,user.githubusercontent.com\:443]' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-byonm[Enable unstable '\''bring your own node_modules'\'' feature]' \
+'--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
@@ -542,17 +529,18 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` API]' \
+'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
 '--no-remote[Do not resolve remote modules]' \
 '--no-npm[Do not resolve npm modules]' \
 '(-c --config)--no-config[Disable automatic loading of the configuration file]' \
-'(--no-lock)--lock-write[Force overwriting the lock file]' \
 '(--lock)--no-lock[Disable auto discovery of the lock file]' \
 '(--no-remote)--all[Type-check all code, including remote modules and npm packages]' \
 '(--no-remote)--remote[Type-check all modules, including remote ones]' \
+'--doc[Type-check code blocks in JSDoc as well as actual code]' \
+'(--doc)--doc-only[Type-check code blocks in JSDoc and Markdown only]' \
 '*::file:_files' \
 && ret=0
 ;;
@@ -564,7 +552,7 @@ _arguments "${_arguments_options[@]}" : \
 '--log-level=[Set log level]: :(trace debug info)' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-byonm[Enable unstable '\''bring your own node_modules'\'' feature]' \
+'--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
@@ -576,7 +564,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` API]' \
+'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
@@ -590,21 +578,21 @@ _arguments "${_arguments_options[@]}" : \
 '--log-level=[Set log level]: :(trace debug info)' \
 '--no-check=[Skip type-checking. If the value of "remote" is supplied, diagnostic errors from remote modules will be ignored]' \
 '--import-map=[Load import map file from local file or remote URL   Docs\: https\://docs.deno.com/runtime/manual/basics/import_maps]:FILE:_files' \
-'--node-modules-dir=[Enables or disables the use of a local node_modules folder for npm packages]' \
+'--node-modules-dir=[Sets the node modules management mode for npm packages]' \
 '--vendor=[Toggles local vendor folder usage for remote modules and a node_modules folder for npm packages]' \
 '-c+[Configure different aspects of deno including TypeScript, linting, and code formatting   Typically the configuration file will be called \`deno.json\` or \`deno.jsonc\` and   automatically detected; in that case this flag is not necessary.   Docs\: https\://docs.deno.com/go/config]:FILE:_files' \
 '--config=[Configure different aspects of deno including TypeScript, linting, and code formatting   Typically the configuration file will be called \`deno.json\` or \`deno.jsonc\` and   automatically detected; in that case this flag is not necessary.   Docs\: https\://docs.deno.com/go/config]:FILE:_files' \
-'-r+[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
-'--reload=[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
+'*-r+[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
+'*--reload=[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
 '--lock=[Check the specified lock file. (If value is not provided, defaults to "./deno.lock")]' \
 '--cert=[Load certificate authority from PEM encoded file]:FILE:_files' \
 '--unsafely-ignore-certificate-errors=[DANGER\: Disables verification of TLS certificates]' \
-'-R+[Allow file system read access. Optionally specify allowed paths]' \
-'--allow-read=[Allow file system read access. Optionally specify allowed paths]' \
-'--deny-read=[Deny file system read access. Optionally specify denied paths]' \
-'-W+[Allow file system write access. Optionally specify allowed paths]' \
-'--allow-write=[Allow file system write access. Optionally specify allowed paths]' \
-'--deny-write=[Deny file system write access. Optionally specify denied paths]' \
+'*-R+[Allow file system read access. Optionally specify allowed paths]' \
+'*--allow-read=[Allow file system read access. Optionally specify allowed paths]' \
+'*--deny-read=[Deny file system read access. Optionally specify denied paths]' \
+'*-W+[Allow file system write access. Optionally specify allowed paths]' \
+'*--allow-write=[Allow file system write access. Optionally specify allowed paths]' \
+'*--deny-write=[Deny file system write access. Optionally specify denied paths]' \
 '-N+[Allow network access. Optionally specify allowed IP addresses and host names, with ports as necessary]' \
 '--allow-net=[Allow network access. Optionally specify allowed IP addresses and host names, with ports as necessary]' \
 '--deny-net=[Deny network access. Optionally specify denied IP addresses and host names, with ports as necessary]' \
@@ -616,10 +604,12 @@ _arguments "${_arguments_options[@]}" : \
 '--deny-sys=[Deny access to OS information. Optionally deny specific APIs by function name]' \
 '--allow-run=[Allow running subprocesses. Optionally specify allowed runnable program names]' \
 '--deny-run=[Deny running subprocesses. Optionally specify denied runnable program names]' \
-'--allow-ffi=[(Unstable) Allow loading dynamic libraries. Optionally specify allowed directories or files]' \
-'--deny-ffi=[(Unstable) Deny loading dynamic libraries. Optionally specify denied directories or files]' \
+'*--allow-ffi=[(Unstable) Allow loading dynamic libraries. Optionally specify allowed directories or files]' \
+'*--deny-ffi=[(Unstable) Deny loading dynamic libraries. Optionally specify denied directories or files]' \
+'-I+[Allow importing from remote hosts. Optionally specify allowed IP addresses and host names, with ports as necessary. Default value\: deno.land\:443,jsr.io\:443,esm.sh\:443,cdn.jsdelivr.net\:443,raw.githubusercontent.com\:443,user.githubusercontent.com\:443]' \
+'--allow-import=[Allow importing from remote hosts. Optionally specify allowed IP addresses and host names, with ports as necessary. Default value\: deno.land\:443,jsr.io\:443,esm.sh\:443,cdn.jsdelivr.net\:443,raw.githubusercontent.com\:443,user.githubusercontent.com\:443]' \
 '--frozen=[Error out if lockfile is out of date]' \
-'--location=[Value of '\''globalThis.location'\'' used by some web APIs]:HREF:_urls' \
+'--location=[Value of globalThis.location used by some web APIs]:HREF:_urls' \
 '--v8-flags=[To see a list of all available flags use --v8-flags=--help   Flags can also be set via the DENO_V8_FLAGS environment variable.   Any flags set with this flag are appended after the DENO_V8_FLAGS environment variable]' \
 '--seed=[Set the random number generator seed]:NUMBER: ' \
 '--strace-ops=[Trace low-level op calls]' \
@@ -633,7 +623,7 @@ _arguments "${_arguments_options[@]}" : \
 '--env-file=[Load environment variables from local file   Only the first environment variable with a given key is used.   Existing process environment variables are not overwritten.]' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-byonm[Enable unstable '\''bring your own node_modules'\'' feature]' \
+'--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
@@ -645,19 +635,18 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` API]' \
+'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
 '--no-remote[Do not resolve remote modules]' \
 '--no-npm[Do not resolve npm modules]' \
 '(-c --config)--no-config[Disable automatic loading of the configuration file]' \
-'(--no-lock)--lock-write[Force overwriting the lock file]' \
 '(--lock)--no-lock[Disable auto discovery of the lock file]' \
-'-A[Allow all permissions]' \
-'--allow-all[Allow all permissions]' \
-'--allow-hrtime[Allow high-resolution time measurement. Note\: this can enable timing attacks and fingerprinting]' \
-'--deny-hrtime[Deny high-resolution time measurement. Note\: this can prevent timing attacks and fingerprinting]' \
+'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import)-A[Allow all permissions]' \
+'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import)--allow-all[Allow all permissions]' \
+'--allow-hrtime[REMOVED in Deno 2.0]' \
+'--deny-hrtime[REMOVED in Deno 2.0]' \
 '--no-prompt[Always throw if required permission wasn'\''t passed]' \
 '--cached-only[Require that remote dependencies are already cached]' \
 '--enable-testing-features-do-not-use[INTERNAL\: Enable internal features used during integration testing]' \
@@ -673,7 +662,7 @@ _arguments "${_arguments_options[@]}" : \
 '--log-level=[Set log level]: :(trace debug info)' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-byonm[Enable unstable '\''bring your own node_modules'\'' feature]' \
+'--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
@@ -685,7 +674,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` API]' \
+'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
@@ -698,13 +687,13 @@ _arguments "${_arguments_options[@]}" : \
 '*--help=[]' \
 '-L+[Set log level]: :(trace debug info)' \
 '--log-level=[Set log level]: :(trace debug info)' \
-'--ignore=[Ignore coverage files]: :_files' \
+'*--ignore=[Ignore coverage files]: :_files' \
 '*--include=[Include source files in the report]:regex: ' \
 '*--exclude=[Exclude source files from the report]:regex: ' \
 '--output=[Exports the coverage report in lcov format to the given file.   If no --output arg is specified then the report is written to stdout.]: :_files' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-byonm[Enable unstable '\''bring your own node_modules'\'' feature]' \
+'--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
@@ -716,7 +705,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` API]' \
+'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
@@ -733,9 +722,11 @@ _arguments "${_arguments_options[@]}" : \
 '-L+[Set log level]: :(trace debug info)' \
 '--log-level=[Set log level]: :(trace debug info)' \
 '--import-map=[Load import map file from local file or remote URL   Docs\: https\://docs.deno.com/runtime/manual/basics/import_maps]:FILE:_files' \
-'-r+[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
-'--reload=[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
+'*-r+[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
+'*--reload=[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
 '--lock=[Check the specified lock file. (If value is not provided, defaults to "./deno.lock")]' \
+'-I+[Allow importing from remote hosts. Optionally specify allowed IP addresses and host names, with ports as necessary. Default value\: deno.land\:443,jsr.io\:443,esm.sh\:443,cdn.jsdelivr.net\:443,raw.githubusercontent.com\:443,user.githubusercontent.com\:443]' \
+'--allow-import=[Allow importing from remote hosts. Optionally specify allowed IP addresses and host names, with ports as necessary. Default value\: deno.land\:443,jsr.io\:443,esm.sh\:443,cdn.jsdelivr.net\:443,raw.githubusercontent.com\:443,user.githubusercontent.com\:443]' \
 '--name=[The name that will be used in the docs (ie for breadcrumbs)]: : ' \
 '--category-docs=[Path to a JSON file keyed by category and an optional value of a markdown doc]: : ' \
 '--symbol-redirect-map=[Path to a JSON file keyed by file, with an inner map of symbol to an external link]: : ' \
@@ -744,7 +735,7 @@ _arguments "${_arguments_options[@]}" : \
 '(--json --lint --html)--filter=[Dot separated path to symbol]: : ' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-byonm[Enable unstable '\''bring your own node_modules'\'' feature]' \
+'--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
@@ -756,7 +747,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` API]' \
+'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
@@ -779,12 +770,12 @@ _arguments "${_arguments_options[@]}" : \
 '--log-level=[Set log level]: :(trace debug info)' \
 '--no-check=[Skip type-checking. If the value of "remote" is supplied, diagnostic errors from remote modules will be ignored]' \
 '--import-map=[Load import map file from local file or remote URL   Docs\: https\://docs.deno.com/runtime/manual/basics/import_maps]:FILE:_files' \
-'--node-modules-dir=[Enables or disables the use of a local node_modules folder for npm packages]' \
+'--node-modules-dir=[Sets the node modules management mode for npm packages]' \
 '--vendor=[Toggles local vendor folder usage for remote modules and a node_modules folder for npm packages]' \
 '-c+[Configure different aspects of deno including TypeScript, linting, and code formatting   Typically the configuration file will be called \`deno.json\` or \`deno.jsonc\` and   automatically detected; in that case this flag is not necessary.   Docs\: https\://docs.deno.com/go/config]:FILE:_files' \
 '--config=[Configure different aspects of deno including TypeScript, linting, and code formatting   Typically the configuration file will be called \`deno.json\` or \`deno.jsonc\` and   automatically detected; in that case this flag is not necessary.   Docs\: https\://docs.deno.com/go/config]:FILE:_files' \
-'-r+[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
-'--reload=[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
+'*-r+[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
+'*--reload=[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
 '--lock=[Check the specified lock file. (If value is not provided, defaults to "./deno.lock")]' \
 '--cert=[Load certificate authority from PEM encoded file]:FILE:_files' \
 '--unsafely-ignore-certificate-errors=[DANGER\: Disables verification of TLS certificates]' \
@@ -792,7 +783,7 @@ _arguments "${_arguments_options[@]}" : \
 '--inspect-brk=[Activate inspector on host\:port, wait for debugger to connect and break at the start of user script]' \
 '--inspect-wait=[Activate inspector on host\:port and wait for debugger to connect before running user code]' \
 '--frozen=[Error out if lockfile is out of date]' \
-'--location=[Value of '\''globalThis.location'\'' used by some web APIs]:HREF:_urls' \
+'--location=[Value of globalThis.location used by some web APIs]:HREF:_urls' \
 '--v8-flags=[To see a list of all available flags use --v8-flags=--help   Flags can also be set via the DENO_V8_FLAGS environment variable.   Any flags set with this flag are appended after the DENO_V8_FLAGS environment variable]' \
 '--seed=[Set the random number generator seed]:NUMBER: ' \
 '--strace-ops=[Trace low-level op calls]' \
@@ -801,7 +792,7 @@ _arguments "${_arguments_options[@]}" : \
 '--env-file=[Load environment variables from local file   Only the first environment variable with a given key is used.   Existing process environment variables are not overwritten.]' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-byonm[Enable unstable '\''bring your own node_modules'\'' feature]' \
+'--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
@@ -813,19 +804,16 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` API]' \
+'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
 '--no-remote[Do not resolve remote modules]' \
 '--no-npm[Do not resolve npm modules]' \
 '(-c --config)--no-config[Disable automatic loading of the configuration file]' \
-'(--no-lock)--lock-write[Force overwriting the lock file]' \
 '(--lock)--no-lock[Disable auto discovery of the lock file]' \
 '--cached-only[Require that remote dependencies are already cached]' \
 '--enable-testing-features-do-not-use[INTERNAL\: Enable internal features used during integration testing]' \
-'(--ext)-T[deprecated\: Use \`--ext=ts\` instead. The \`--ts\` and \`-T\` flags are deprecated and will be removed in Deno 2.0.]' \
-'(--ext)--ts[deprecated\: Use \`--ext=ts\` instead. The \`--ts\` and \`-T\` flags are deprecated and will be removed in Deno 2.0.]' \
 '-p[print result to stdout]' \
 '--print[print result to stdout]' \
 '*::code_arg -- Code to evaluate:' \
@@ -840,8 +828,8 @@ _arguments "${_arguments_options[@]}" : \
 '-c+[Configure different aspects of deno including TypeScript, linting, and code formatting   Typically the configuration file will be called \`deno.json\` or \`deno.jsonc\` and   automatically detected; in that case this flag is not necessary.   Docs\: https\://docs.deno.com/go/config]:FILE:_files' \
 '--config=[Configure different aspects of deno including TypeScript, linting, and code formatting   Typically the configuration file will be called \`deno.json\` or \`deno.jsonc\` and   automatically detected; in that case this flag is not necessary.   Docs\: https\://docs.deno.com/go/config]:FILE:_files' \
 '--ext=[Set content type of the supplied file]: :(ts tsx js jsx md json jsonc css scss sass less html svelte vue astro yml yaml ipynb)' \
-'--ignore=[Ignore formatting particular source files]: :_files' \
-'--watch-exclude=[Exclude provided files/patterns from watch mode]' \
+'*--ignore=[Ignore formatting particular source files]: :_files' \
+'*--watch-exclude=[Exclude provided files/patterns from watch mode]' \
 '--use-tabs=[Use tabs instead of spaces for indentation \[default\: false\]]' \
 '--line-width=[Define maximum line width \[default\: 80\]]: : ' \
 '--indent-width=[Define indentation width \[default\: 2\]]: : ' \
@@ -850,7 +838,7 @@ _arguments "${_arguments_options[@]}" : \
 '--no-semicolons=[Don'\''t use semicolons except where necessary \[default\: false\]]' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-byonm[Enable unstable '\''bring your own node_modules'\'' feature]' \
+'--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
@@ -862,7 +850,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` API]' \
+'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
@@ -885,7 +873,7 @@ _arguments "${_arguments_options[@]}" : \
 '--log-level=[Set log level]: :(trace debug info)' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-byonm[Enable unstable '\''bring your own node_modules'\'' feature]' \
+'--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
@@ -897,7 +885,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` API]' \
+'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
@@ -908,25 +896,27 @@ _arguments "${_arguments_options[@]}" : \
 ;;
 (info)
 _arguments "${_arguments_options[@]}" : \
+'-I+[Allow importing from remote hosts. Optionally specify allowed IP addresses and host names, with ports as necessary. Default value\: deno.land\:443,jsr.io\:443,esm.sh\:443,cdn.jsdelivr.net\:443,raw.githubusercontent.com\:443,user.githubusercontent.com\:443]' \
+'--allow-import=[Allow importing from remote hosts. Optionally specify allowed IP addresses and host names, with ports as necessary. Default value\: deno.land\:443,jsr.io\:443,esm.sh\:443,cdn.jsdelivr.net\:443,raw.githubusercontent.com\:443,user.githubusercontent.com\:443]' \
 '*-h+[]' \
 '*--help=[]' \
 '-L+[Set log level]: :(trace debug info)' \
 '--log-level=[Set log level]: :(trace debug info)' \
-'-r+[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
-'--reload=[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
+'*-r+[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
+'*--reload=[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
 '--cert=[Load certificate authority from PEM encoded file]:FILE:_files' \
 '--unsafely-ignore-certificate-errors=[DANGER\: Disables verification of TLS certificates]' \
-'()--location=[Show files used for origin bound APIs like the Web Storage API when running a script with '\''--location=<HREF>'\'']:HREF:_urls' \
+'()--location=[Show files used for origin bound APIs like the Web Storage API when running a script with --location=<HREF>]:HREF:_urls' \
 '--no-check=[Skip type-checking. If the value of "remote" is supplied, diagnostic errors from remote modules will be ignored]' \
 '--lock=[Check the specified lock file. (If value is not provided, defaults to "./deno.lock")]' \
 '-c+[Configure different aspects of deno including TypeScript, linting, and code formatting   Typically the configuration file will be called \`deno.json\` or \`deno.jsonc\` and   automatically detected; in that case this flag is not necessary.   Docs\: https\://docs.deno.com/go/config]:FILE:_files' \
 '--config=[Configure different aspects of deno including TypeScript, linting, and code formatting   Typically the configuration file will be called \`deno.json\` or \`deno.jsonc\` and   automatically detected; in that case this flag is not necessary.   Docs\: https\://docs.deno.com/go/config]:FILE:_files' \
 '--import-map=[Load import map file from local file or remote URL   Docs\: https\://docs.deno.com/runtime/manual/basics/import_maps]:FILE:_files' \
-'--node-modules-dir=[Enables or disables the use of a local node_modules folder for npm packages]' \
+'--node-modules-dir=[Sets the node modules management mode for npm packages]' \
 '--vendor=[Toggles local vendor folder usage for remote modules and a node_modules folder for npm packages]' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-byonm[Enable unstable '\''bring your own node_modules'\'' feature]' \
+'--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
@@ -938,14 +928,13 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` API]' \
+'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
 '(-c --config)--no-config[Disable automatic loading of the configuration file]' \
 '--no-remote[Do not resolve remote modules]' \
 '--no-npm[Do not resolve npm modules]' \
-'(--no-lock)--lock-write[Force overwriting the lock file]' \
 '(--lock)--no-lock[Disable auto discovery of the lock file]' \
 '--json[UNSTABLE\: Outputs the information in JSON format]' \
 '::file:_files' \
@@ -959,21 +948,29 @@ _arguments "${_arguments_options[@]}" : \
 '--log-level=[Set log level]: :(trace debug info)' \
 '--no-check=[Skip type-checking. If the value of "remote" is supplied, diagnostic errors from remote modules will be ignored]' \
 '--import-map=[Load import map file from local file or remote URL   Docs\: https\://docs.deno.com/runtime/manual/basics/import_maps]:FILE:_files' \
-'--node-modules-dir=[Enables or disables the use of a local node_modules folder for npm packages]' \
+'--node-modules-dir=[Sets the node modules management mode for npm packages]' \
 '--vendor=[Toggles local vendor folder usage for remote modules and a node_modules folder for npm packages]' \
 '-c+[Configure different aspects of deno including TypeScript, linting, and code formatting   Typically the configuration file will be called \`deno.json\` or \`deno.jsonc\` and   automatically detected; in that case this flag is not necessary.   Docs\: https\://docs.deno.com/go/config]:FILE:_files' \
 '--config=[Configure different aspects of deno including TypeScript, linting, and code formatting   Typically the configuration file will be called \`deno.json\` or \`deno.jsonc\` and   automatically detected; in that case this flag is not necessary.   Docs\: https\://docs.deno.com/go/config]:FILE:_files' \
-'-r+[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
-'--reload=[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
+'*-r+[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
+'*--reload=[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
 '--lock=[Check the specified lock file. (If value is not provided, defaults to "./deno.lock")]' \
 '--cert=[Load certificate authority from PEM encoded file]:FILE:_files' \
 '--unsafely-ignore-certificate-errors=[DANGER\: Disables verification of TLS certificates]' \
-'-R+[Allow file system read access. Optionally specify allowed paths]' \
-'--allow-read=[Allow file system read access. Optionally specify allowed paths]' \
-'--deny-read=[Deny file system read access. Optionally specify denied paths]' \
-'-W+[Allow file system write access. Optionally specify allowed paths]' \
-'--allow-write=[Allow file system write access. Optionally specify allowed paths]' \
-'--deny-write=[Deny file system write access. Optionally specify denied paths]' \
+'--inspect=[Activate inspector on host\:port \[default\: 127.0.0.1\:9229\]]' \
+'--inspect-brk=[Activate inspector on host\:port, wait for debugger to connect and break at the start of user script]' \
+'--inspect-wait=[Activate inspector on host\:port and wait for debugger to connect before running user code]' \
+'--frozen=[Error out if lockfile is out of date]' \
+'--location=[Value of globalThis.location used by some web APIs]:HREF:_urls' \
+'--v8-flags=[To see a list of all available flags use --v8-flags=--help   Flags can also be set via the DENO_V8_FLAGS environment variable.   Any flags set with this flag are appended after the DENO_V8_FLAGS environment variable]' \
+'--seed=[Set the random number generator seed]:NUMBER: ' \
+'--strace-ops=[Trace low-level op calls]' \
+'*-R+[Allow file system read access. Optionally specify allowed paths]' \
+'*--allow-read=[Allow file system read access. Optionally specify allowed paths]' \
+'*--deny-read=[Deny file system read access. Optionally specify denied paths]' \
+'*-W+[Allow file system write access. Optionally specify allowed paths]' \
+'*--allow-write=[Allow file system write access. Optionally specify allowed paths]' \
+'*--deny-write=[Deny file system write access. Optionally specify denied paths]' \
 '-N+[Allow network access. Optionally specify allowed IP addresses and host names, with ports as necessary]' \
 '--allow-net=[Allow network access. Optionally specify allowed IP addresses and host names, with ports as necessary]' \
 '--deny-net=[Deny network access. Optionally specify denied IP addresses and host names, with ports as necessary]' \
@@ -985,24 +982,19 @@ _arguments "${_arguments_options[@]}" : \
 '--deny-sys=[Deny access to OS information. Optionally deny specific APIs by function name]' \
 '--allow-run=[Allow running subprocesses. Optionally specify allowed runnable program names]' \
 '--deny-run=[Deny running subprocesses. Optionally specify denied runnable program names]' \
-'--allow-ffi=[(Unstable) Allow loading dynamic libraries. Optionally specify allowed directories or files]' \
-'--deny-ffi=[(Unstable) Deny loading dynamic libraries. Optionally specify denied directories or files]' \
-'--inspect=[Activate inspector on host\:port \[default\: 127.0.0.1\:9229\]]' \
-'--inspect-brk=[Activate inspector on host\:port, wait for debugger to connect and break at the start of user script]' \
-'--inspect-wait=[Activate inspector on host\:port and wait for debugger to connect before running user code]' \
-'--frozen=[Error out if lockfile is out of date]' \
-'--location=[Value of '\''globalThis.location'\'' used by some web APIs]:HREF:_urls' \
-'--v8-flags=[To see a list of all available flags use --v8-flags=--help   Flags can also be set via the DENO_V8_FLAGS environment variable.   Any flags set with this flag are appended after the DENO_V8_FLAGS environment variable]' \
-'--seed=[Set the random number generator seed]:NUMBER: ' \
-'--strace-ops=[Trace low-level op calls]' \
+'*--allow-ffi=[(Unstable) Allow loading dynamic libraries. Optionally specify allowed directories or files]' \
+'*--deny-ffi=[(Unstable) Deny loading dynamic libraries. Optionally specify denied directories or files]' \
+'-I+[Allow importing from remote hosts. Optionally specify allowed IP addresses and host names, with ports as necessary. Default value\: deno.land\:443,jsr.io\:443,esm.sh\:443,cdn.jsdelivr.net\:443,raw.githubusercontent.com\:443,user.githubusercontent.com\:443]' \
+'--allow-import=[Allow importing from remote hosts. Optionally specify allowed IP addresses and host names, with ports as necessary. Default value\: deno.land\:443,jsr.io\:443,esm.sh\:443,cdn.jsdelivr.net\:443,raw.githubusercontent.com\:443,user.githubusercontent.com\:443]' \
 '(--no-check)--check=[Set type-checking behavior. This subcommand type-checks local modules by default, so adding --check is redundant   If the value of "all" is supplied, remote modules will be included.   Alternatively, the '\''deno check'\'' subcommand can be used]' \
+'*--allow-scripts=[Allow running npm lifecycle scripts for the given packages   Note\: Scripts will only be executed when using a node_modules directory (\`--node-modules-dir\`)]' \
 '-n+[Executable file name]: : ' \
 '--name=[Executable file name]: : ' \
 '--root=[Installation root]: :_files -/' \
 '--env-file=[Load environment variables from local file   Only the first environment variable with a given key is used.   Existing process environment variables are not overwritten.]' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-byonm[Enable unstable '\''bring your own node_modules'\'' feature]' \
+'--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
@@ -1014,26 +1006,121 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` API]' \
+'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
 '--no-remote[Do not resolve remote modules]' \
 '--no-npm[Do not resolve npm modules]' \
 '(-c --config)--no-config[Disable automatic loading of the configuration file]' \
-'(--no-lock)--lock-write[Force overwriting the lock file]' \
 '(--lock)--no-lock[Disable auto discovery of the lock file]' \
-'-A[Allow all permissions]' \
-'--allow-all[Allow all permissions]' \
-'--allow-hrtime[Allow high-resolution time measurement. Note\: this can enable timing attacks and fingerprinting]' \
-'--deny-hrtime[Deny high-resolution time measurement. Note\: this can prevent timing attacks and fingerprinting]' \
-'--no-prompt[Always throw if required permission wasn'\''t passed]' \
 '--cached-only[Require that remote dependencies are already cached]' \
 '--enable-testing-features-do-not-use[INTERNAL\: Enable internal features used during integration testing]' \
+'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import)-A[Allow all permissions]' \
+'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import)--allow-all[Allow all permissions]' \
+'--allow-hrtime[REMOVED in Deno 2.0]' \
+'--deny-hrtime[REMOVED in Deno 2.0]' \
+'--no-prompt[Always throw if required permission wasn'\''t passed]' \
 '-f[Forcefully overwrite existing installation]' \
 '--force[Forcefully overwrite existing installation]' \
 '-g[Install a package or script as a globally available executable]' \
 '--global[Install a package or script as a globally available executable]' \
+'(-g --global)-e[Install dependents of the specified entrypoint(s)]' \
+'(-g --global)--entrypoint[Install dependents of the specified entrypoint(s)]' \
+'(-e --entrypoint -g --global)-D[Add as a dev dependency]' \
+'(-e --entrypoint -g --global)--dev[Add as a dev dependency]' \
+'*::cmd:_files' \
+&& ret=0
+;;
+(i)
+_arguments "${_arguments_options[@]}" : \
+'*-h+[]' \
+'*--help=[]' \
+'-L+[Set log level]: :(trace debug info)' \
+'--log-level=[Set log level]: :(trace debug info)' \
+'--no-check=[Skip type-checking. If the value of "remote" is supplied, diagnostic errors from remote modules will be ignored]' \
+'--import-map=[Load import map file from local file or remote URL   Docs\: https\://docs.deno.com/runtime/manual/basics/import_maps]:FILE:_files' \
+'--node-modules-dir=[Sets the node modules management mode for npm packages]' \
+'--vendor=[Toggles local vendor folder usage for remote modules and a node_modules folder for npm packages]' \
+'-c+[Configure different aspects of deno including TypeScript, linting, and code formatting   Typically the configuration file will be called \`deno.json\` or \`deno.jsonc\` and   automatically detected; in that case this flag is not necessary.   Docs\: https\://docs.deno.com/go/config]:FILE:_files' \
+'--config=[Configure different aspects of deno including TypeScript, linting, and code formatting   Typically the configuration file will be called \`deno.json\` or \`deno.jsonc\` and   automatically detected; in that case this flag is not necessary.   Docs\: https\://docs.deno.com/go/config]:FILE:_files' \
+'*-r+[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
+'*--reload=[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
+'--lock=[Check the specified lock file. (If value is not provided, defaults to "./deno.lock")]' \
+'--cert=[Load certificate authority from PEM encoded file]:FILE:_files' \
+'--unsafely-ignore-certificate-errors=[DANGER\: Disables verification of TLS certificates]' \
+'--inspect=[Activate inspector on host\:port \[default\: 127.0.0.1\:9229\]]' \
+'--inspect-brk=[Activate inspector on host\:port, wait for debugger to connect and break at the start of user script]' \
+'--inspect-wait=[Activate inspector on host\:port and wait for debugger to connect before running user code]' \
+'--frozen=[Error out if lockfile is out of date]' \
+'--location=[Value of globalThis.location used by some web APIs]:HREF:_urls' \
+'--v8-flags=[To see a list of all available flags use --v8-flags=--help   Flags can also be set via the DENO_V8_FLAGS environment variable.   Any flags set with this flag are appended after the DENO_V8_FLAGS environment variable]' \
+'--seed=[Set the random number generator seed]:NUMBER: ' \
+'--strace-ops=[Trace low-level op calls]' \
+'*-R+[Allow file system read access. Optionally specify allowed paths]' \
+'*--allow-read=[Allow file system read access. Optionally specify allowed paths]' \
+'*--deny-read=[Deny file system read access. Optionally specify denied paths]' \
+'*-W+[Allow file system write access. Optionally specify allowed paths]' \
+'*--allow-write=[Allow file system write access. Optionally specify allowed paths]' \
+'*--deny-write=[Deny file system write access. Optionally specify denied paths]' \
+'-N+[Allow network access. Optionally specify allowed IP addresses and host names, with ports as necessary]' \
+'--allow-net=[Allow network access. Optionally specify allowed IP addresses and host names, with ports as necessary]' \
+'--deny-net=[Deny network access. Optionally specify denied IP addresses and host names, with ports as necessary]' \
+'-E+[Allow access to system environment information. Optionally specify accessible environment variables]' \
+'--allow-env=[Allow access to system environment information. Optionally specify accessible environment variables]' \
+'--deny-env=[Deny access to system environment information. Optionally specify accessible environment variables]' \
+'-S+[Allow access to OS information. Optionally allow specific APIs by function name]' \
+'--allow-sys=[Allow access to OS information. Optionally allow specific APIs by function name]' \
+'--deny-sys=[Deny access to OS information. Optionally deny specific APIs by function name]' \
+'--allow-run=[Allow running subprocesses. Optionally specify allowed runnable program names]' \
+'--deny-run=[Deny running subprocesses. Optionally specify denied runnable program names]' \
+'*--allow-ffi=[(Unstable) Allow loading dynamic libraries. Optionally specify allowed directories or files]' \
+'*--deny-ffi=[(Unstable) Deny loading dynamic libraries. Optionally specify denied directories or files]' \
+'-I+[Allow importing from remote hosts. Optionally specify allowed IP addresses and host names, with ports as necessary. Default value\: deno.land\:443,jsr.io\:443,esm.sh\:443,cdn.jsdelivr.net\:443,raw.githubusercontent.com\:443,user.githubusercontent.com\:443]' \
+'--allow-import=[Allow importing from remote hosts. Optionally specify allowed IP addresses and host names, with ports as necessary. Default value\: deno.land\:443,jsr.io\:443,esm.sh\:443,cdn.jsdelivr.net\:443,raw.githubusercontent.com\:443,user.githubusercontent.com\:443]' \
+'(--no-check)--check=[Set type-checking behavior. This subcommand type-checks local modules by default, so adding --check is redundant   If the value of "all" is supplied, remote modules will be included.   Alternatively, the '\''deno check'\'' subcommand can be used]' \
+'*--allow-scripts=[Allow running npm lifecycle scripts for the given packages   Note\: Scripts will only be executed when using a node_modules directory (\`--node-modules-dir\`)]' \
+'-n+[Executable file name]: : ' \
+'--name=[Executable file name]: : ' \
+'--root=[Installation root]: :_files -/' \
+'--env-file=[Load environment variables from local file   Only the first environment variable with a given key is used.   Existing process environment variables are not overwritten.]' \
+'--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
+'--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
+'--unstable-byonm[]' \
+'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
+'--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
+'--unstable-cron[Enable unstable Deno.cron API]' \
+'--unstable-ffi[Enable unstable FFI APIs]' \
+'--unstable-fs[Enable unstable file system APIs]' \
+'--unstable-http[Enable unstable HTTP APIs]' \
+'--unstable-kv[Enable unstable Key-Value store APIs]' \
+'--unstable-net[Enable unstable net APIs]' \
+'--unstable-process[Enable unstable process APIs]' \
+'--unstable-temporal[Enable unstable Temporal API]' \
+'--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
+'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
+'--unstable-worker-options[Enable unstable Web Worker APIs]' \
+'-q[Suppress diagnostic output]' \
+'--quiet[Suppress diagnostic output]' \
+'--no-remote[Do not resolve remote modules]' \
+'--no-npm[Do not resolve npm modules]' \
+'(-c --config)--no-config[Disable automatic loading of the configuration file]' \
+'(--lock)--no-lock[Disable auto discovery of the lock file]' \
+'--cached-only[Require that remote dependencies are already cached]' \
+'--enable-testing-features-do-not-use[INTERNAL\: Enable internal features used during integration testing]' \
+'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import)-A[Allow all permissions]' \
+'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import)--allow-all[Allow all permissions]' \
+'--allow-hrtime[REMOVED in Deno 2.0]' \
+'--deny-hrtime[REMOVED in Deno 2.0]' \
+'--no-prompt[Always throw if required permission wasn'\''t passed]' \
+'-f[Forcefully overwrite existing installation]' \
+'--force[Forcefully overwrite existing installation]' \
+'-g[Install a package or script as a globally available executable]' \
+'--global[Install a package or script as a globally available executable]' \
+'(-g --global)-e[Install dependents of the specified entrypoint(s)]' \
+'(-g --global)--entrypoint[Install dependents of the specified entrypoint(s)]' \
+'(-e --entrypoint -g --global)-D[Add as a dev dependency]' \
+'(-e --entrypoint -g --global)--dev[Add as a dev dependency]' \
 '*::cmd:_files' \
 && ret=0
 ;;
@@ -1054,6 +1141,22 @@ _arguments "${_arguments_options[@]}" : \
 '*--help=[]' \
 '-L+[Set log level]: :(trace debug info)' \
 '--log-level=[Set log level]: :(trace debug info)' \
+'--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
+'--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
+'--unstable-byonm[]' \
+'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
+'--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
+'--unstable-cron[Enable unstable Deno.cron API]' \
+'--unstable-ffi[Enable unstable FFI APIs]' \
+'--unstable-fs[Enable unstable file system APIs]' \
+'--unstable-http[Enable unstable HTTP APIs]' \
+'--unstable-kv[Enable unstable Key-Value store APIs]' \
+'--unstable-net[Enable unstable net APIs]' \
+'--unstable-process[Enable unstable process APIs]' \
+'--unstable-temporal[Enable unstable Temporal API]' \
+'--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
+'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
+'--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '(--kernel)--install[Installs kernelspec, requires '\''jupyter'\'' command to be available.]' \
 '(--install)--kernel[Start the kernel]' \
 '-q[Suppress diagnostic output]' \
@@ -1069,7 +1172,7 @@ _arguments "${_arguments_options[@]}" : \
 '--root=[Installation root]: :_files -/' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-byonm[Enable unstable '\''bring your own node_modules'\'' feature]' \
+'--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
@@ -1081,13 +1184,14 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` API]' \
+'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
 '-g[Remove globally installed package or module]' \
 '--global[Remove globally installed package or module]' \
-'::name:' \
+'::name-or-package:' \
+'*::additional-packages -- List of additional packages to remove:' \
 && ret=0
 ;;
 (lsp)
@@ -1112,11 +1216,11 @@ _arguments "${_arguments_options[@]}" : \
 '(--rules)--rules-exclude=[Exclude lint rules]: : ' \
 '-c+[Configure different aspects of deno including TypeScript, linting, and code formatting   Typically the configuration file will be called \`deno.json\` or \`deno.jsonc\` and   automatically detected; in that case this flag is not necessary.   Docs\: https\://docs.deno.com/go/config]:FILE:_files' \
 '--config=[Configure different aspects of deno including TypeScript, linting, and code formatting   Typically the configuration file will be called \`deno.json\` or \`deno.jsonc\` and   automatically detected; in that case this flag is not necessary.   Docs\: https\://docs.deno.com/go/config]:FILE:_files' \
-'--ignore=[Ignore linting particular source files]: :_files' \
-'--watch-exclude=[Exclude provided files/patterns from watch mode]' \
+'*--ignore=[Ignore linting particular source files]: :_files' \
+'*--watch-exclude=[Exclude provided files/patterns from watch mode]' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-byonm[Enable unstable '\''bring your own node_modules'\'' feature]' \
+'--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
@@ -1128,7 +1232,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` API]' \
+'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
@@ -1155,7 +1259,7 @@ _arguments "${_arguments_options[@]}" : \
 '--no-check=[Skip type-checking. If the value of "remote" is supplied, diagnostic errors from remote modules will be ignored]' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-byonm[Enable unstable '\''bring your own node_modules'\'' feature]' \
+'--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
@@ -1167,7 +1271,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` API]' \
+'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
@@ -1187,21 +1291,21 @@ _arguments "${_arguments_options[@]}" : \
 '--log-level=[Set log level]: :(trace debug info)' \
 '--no-check=[Skip type-checking. If the value of "remote" is supplied, diagnostic errors from remote modules will be ignored]' \
 '--import-map=[Load import map file from local file or remote URL   Docs\: https\://docs.deno.com/runtime/manual/basics/import_maps]:FILE:_files' \
-'--node-modules-dir=[Enables or disables the use of a local node_modules folder for npm packages]' \
+'--node-modules-dir=[Sets the node modules management mode for npm packages]' \
 '--vendor=[Toggles local vendor folder usage for remote modules and a node_modules folder for npm packages]' \
 '-c+[Configure different aspects of deno including TypeScript, linting, and code formatting   Typically the configuration file will be called \`deno.json\` or \`deno.jsonc\` and   automatically detected; in that case this flag is not necessary.   Docs\: https\://docs.deno.com/go/config]:FILE:_files' \
 '--config=[Configure different aspects of deno including TypeScript, linting, and code formatting   Typically the configuration file will be called \`deno.json\` or \`deno.jsonc\` and   automatically detected; in that case this flag is not necessary.   Docs\: https\://docs.deno.com/go/config]:FILE:_files' \
-'-r+[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
-'--reload=[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
+'*-r+[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
+'*--reload=[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
 '--lock=[Check the specified lock file. (If value is not provided, defaults to "./deno.lock")]' \
 '--cert=[Load certificate authority from PEM encoded file]:FILE:_files' \
 '--unsafely-ignore-certificate-errors=[DANGER\: Disables verification of TLS certificates]' \
-'-R+[Allow file system read access. Optionally specify allowed paths]' \
-'--allow-read=[Allow file system read access. Optionally specify allowed paths]' \
-'--deny-read=[Deny file system read access. Optionally specify denied paths]' \
-'-W+[Allow file system write access. Optionally specify allowed paths]' \
-'--allow-write=[Allow file system write access. Optionally specify allowed paths]' \
-'--deny-write=[Deny file system write access. Optionally specify denied paths]' \
+'*-R+[Allow file system read access. Optionally specify allowed paths]' \
+'*--allow-read=[Allow file system read access. Optionally specify allowed paths]' \
+'*--deny-read=[Deny file system read access. Optionally specify denied paths]' \
+'*-W+[Allow file system write access. Optionally specify allowed paths]' \
+'*--allow-write=[Allow file system write access. Optionally specify allowed paths]' \
+'*--deny-write=[Deny file system write access. Optionally specify denied paths]' \
 '-N+[Allow network access. Optionally specify allowed IP addresses and host names, with ports as necessary]' \
 '--allow-net=[Allow network access. Optionally specify allowed IP addresses and host names, with ports as necessary]' \
 '--deny-net=[Deny network access. Optionally specify denied IP addresses and host names, with ports as necessary]' \
@@ -1213,22 +1317,24 @@ _arguments "${_arguments_options[@]}" : \
 '--deny-sys=[Deny access to OS information. Optionally deny specific APIs by function name]' \
 '--allow-run=[Allow running subprocesses. Optionally specify allowed runnable program names]' \
 '--deny-run=[Deny running subprocesses. Optionally specify denied runnable program names]' \
-'--allow-ffi=[(Unstable) Allow loading dynamic libraries. Optionally specify allowed directories or files]' \
-'--deny-ffi=[(Unstable) Deny loading dynamic libraries. Optionally specify denied directories or files]' \
+'*--allow-ffi=[(Unstable) Allow loading dynamic libraries. Optionally specify allowed directories or files]' \
+'*--deny-ffi=[(Unstable) Deny loading dynamic libraries. Optionally specify denied directories or files]' \
+'-I+[Allow importing from remote hosts. Optionally specify allowed IP addresses and host names, with ports as necessary. Default value\: deno.land\:443,jsr.io\:443,esm.sh\:443,cdn.jsdelivr.net\:443,raw.githubusercontent.com\:443,user.githubusercontent.com\:443]' \
+'--allow-import=[Allow importing from remote hosts. Optionally specify allowed IP addresses and host names, with ports as necessary. Default value\: deno.land\:443,jsr.io\:443,esm.sh\:443,cdn.jsdelivr.net\:443,raw.githubusercontent.com\:443,user.githubusercontent.com\:443]' \
 '--inspect=[Activate inspector on host\:port \[default\: 127.0.0.1\:9229\]]' \
 '--inspect-brk=[Activate inspector on host\:port, wait for debugger to connect and break at the start of user script]' \
 '--inspect-wait=[Activate inspector on host\:port and wait for debugger to connect before running user code]' \
 '--frozen=[Error out if lockfile is out of date]' \
-'--location=[Value of '\''globalThis.location'\'' used by some web APIs]:HREF:_urls' \
+'--location=[Value of globalThis.location used by some web APIs]:HREF:_urls' \
 '--v8-flags=[To see a list of all available flags use --v8-flags=--help   Flags can also be set via the DENO_V8_FLAGS environment variable.   Any flags set with this flag are appended after the DENO_V8_FLAGS environment variable]' \
 '--seed=[Set the random number generator seed]:NUMBER: ' \
 '--strace-ops=[Trace low-level op calls]' \
 '(--no-check)--check=[Enable type-checking. This subcommand does not type-check by default   If the value of "all" is supplied, remote modules will be included.   Alternatively, the '\''deno check'\'' subcommand can be used]' \
-'--eval-file=[Evaluates the provided file(s) as scripts when the REPL starts. Accepts file paths and URLs]: :_files' \
+'*--eval-file=[Evaluates the provided file(s) as scripts when the REPL starts. Accepts file paths and URLs]: :_files' \
 '--eval=[Evaluates the provided code when the REPL starts]:code: ' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-byonm[Enable unstable '\''bring your own node_modules'\'' feature]' \
+'--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
@@ -1240,22 +1346,22 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` API]' \
+'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
 '--no-remote[Do not resolve remote modules]' \
 '--no-npm[Do not resolve npm modules]' \
 '(-c --config)--no-config[Disable automatic loading of the configuration file]' \
-'(--no-lock)--lock-write[Force overwriting the lock file]' \
 '(--lock)--no-lock[Disable auto discovery of the lock file]' \
-'-A[Allow all permissions]' \
-'--allow-all[Allow all permissions]' \
-'--allow-hrtime[Allow high-resolution time measurement. Note\: this can enable timing attacks and fingerprinting]' \
-'--deny-hrtime[Deny high-resolution time measurement. Note\: this can prevent timing attacks and fingerprinting]' \
+'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import)-A[Allow all permissions]' \
+'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import)--allow-all[Allow all permissions]' \
+'--allow-hrtime[REMOVED in Deno 2.0]' \
+'--deny-hrtime[REMOVED in Deno 2.0]' \
 '--no-prompt[Always throw if required permission wasn'\''t passed]' \
 '--cached-only[Require that remote dependencies are already cached]' \
 '--enable-testing-features-do-not-use[INTERNAL\: Enable internal features used during integration testing]' \
+'*::args:' \
 && ret=0
 ;;
 (task)
@@ -1267,9 +1373,10 @@ _arguments "${_arguments_options[@]}" : \
 '-c+[Configure different aspects of deno including TypeScript, linting, and code formatting   Typically the configuration file will be called \`deno.json\` or \`deno.jsonc\` and   automatically detected; in that case this flag is not necessary.   Docs\: https\://docs.deno.com/go/config]:FILE:_files' \
 '--config=[Configure different aspects of deno including TypeScript, linting, and code formatting   Typically the configuration file will be called \`deno.json\` or \`deno.jsonc\` and   automatically detected; in that case this flag is not necessary.   Docs\: https\://docs.deno.com/go/config]:FILE:_files' \
 '--cwd=[Specify the directory to run the task in]:DIR:_files -/' \
+'--node-modules-dir=[Sets the node modules management mode for npm packages]' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-byonm[Enable unstable '\''bring your own node_modules'\'' feature]' \
+'--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
@@ -1281,7 +1388,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` API]' \
+'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
@@ -1295,21 +1402,21 @@ _arguments "${_arguments_options[@]}" : \
 '--log-level=[Set log level]: :(trace debug info)' \
 '--no-check=[Skip type-checking. If the value of "remote" is supplied, diagnostic errors from remote modules will be ignored]' \
 '--import-map=[Load import map file from local file or remote URL   Docs\: https\://docs.deno.com/runtime/manual/basics/import_maps]:FILE:_files' \
-'--node-modules-dir=[Enables or disables the use of a local node_modules folder for npm packages]' \
+'--node-modules-dir=[Sets the node modules management mode for npm packages]' \
 '--vendor=[Toggles local vendor folder usage for remote modules and a node_modules folder for npm packages]' \
 '-c+[Configure different aspects of deno including TypeScript, linting, and code formatting   Typically the configuration file will be called \`deno.json\` or \`deno.jsonc\` and   automatically detected; in that case this flag is not necessary.   Docs\: https\://docs.deno.com/go/config]:FILE:_files' \
 '--config=[Configure different aspects of deno including TypeScript, linting, and code formatting   Typically the configuration file will be called \`deno.json\` or \`deno.jsonc\` and   automatically detected; in that case this flag is not necessary.   Docs\: https\://docs.deno.com/go/config]:FILE:_files' \
-'-r+[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
-'--reload=[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
+'*-r+[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
+'*--reload=[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
 '--lock=[Check the specified lock file. (If value is not provided, defaults to "./deno.lock")]' \
 '--cert=[Load certificate authority from PEM encoded file]:FILE:_files' \
 '--unsafely-ignore-certificate-errors=[DANGER\: Disables verification of TLS certificates]' \
-'-R+[Allow file system read access. Optionally specify allowed paths]' \
-'--allow-read=[Allow file system read access. Optionally specify allowed paths]' \
-'--deny-read=[Deny file system read access. Optionally specify denied paths]' \
-'-W+[Allow file system write access. Optionally specify allowed paths]' \
-'--allow-write=[Allow file system write access. Optionally specify allowed paths]' \
-'--deny-write=[Deny file system write access. Optionally specify denied paths]' \
+'*-R+[Allow file system read access. Optionally specify allowed paths]' \
+'*--allow-read=[Allow file system read access. Optionally specify allowed paths]' \
+'*--deny-read=[Deny file system read access. Optionally specify denied paths]' \
+'*-W+[Allow file system write access. Optionally specify allowed paths]' \
+'*--allow-write=[Allow file system write access. Optionally specify allowed paths]' \
+'*--deny-write=[Deny file system write access. Optionally specify denied paths]' \
 '-N+[Allow network access. Optionally specify allowed IP addresses and host names, with ports as necessary]' \
 '--allow-net=[Allow network access. Optionally specify allowed IP addresses and host names, with ports as necessary]' \
 '--deny-net=[Deny network access. Optionally specify denied IP addresses and host names, with ports as necessary]' \
@@ -1321,32 +1428,33 @@ _arguments "${_arguments_options[@]}" : \
 '--deny-sys=[Deny access to OS information. Optionally deny specific APIs by function name]' \
 '--allow-run=[Allow running subprocesses. Optionally specify allowed runnable program names]' \
 '--deny-run=[Deny running subprocesses. Optionally specify denied runnable program names]' \
-'--allow-ffi=[(Unstable) Allow loading dynamic libraries. Optionally specify allowed directories or files]' \
-'--deny-ffi=[(Unstable) Deny loading dynamic libraries. Optionally specify denied directories or files]' \
+'*--allow-ffi=[(Unstable) Allow loading dynamic libraries. Optionally specify allowed directories or files]' \
+'*--deny-ffi=[(Unstable) Deny loading dynamic libraries. Optionally specify denied directories or files]' \
+'-I+[Allow importing from remote hosts. Optionally specify allowed IP addresses and host names, with ports as necessary. Default value\: deno.land\:443,jsr.io\:443,esm.sh\:443,cdn.jsdelivr.net\:443,raw.githubusercontent.com\:443,user.githubusercontent.com\:443]' \
+'--allow-import=[Allow importing from remote hosts. Optionally specify allowed IP addresses and host names, with ports as necessary. Default value\: deno.land\:443,jsr.io\:443,esm.sh\:443,cdn.jsdelivr.net\:443,raw.githubusercontent.com\:443,user.githubusercontent.com\:443]' \
 '--inspect=[Activate inspector on host\:port \[default\: 127.0.0.1\:9229\]]' \
 '--inspect-brk=[Activate inspector on host\:port, wait for debugger to connect and break at the start of user script]' \
 '--inspect-wait=[Activate inspector on host\:port and wait for debugger to connect before running user code]' \
 '--frozen=[Error out if lockfile is out of date]' \
-'--location=[Value of '\''globalThis.location'\'' used by some web APIs]:HREF:_urls' \
+'--location=[Value of globalThis.location used by some web APIs]:HREF:_urls' \
 '--v8-flags=[To see a list of all available flags use --v8-flags=--help   Flags can also be set via the DENO_V8_FLAGS environment variable.   Any flags set with this flag are appended after the DENO_V8_FLAGS environment variable]' \
 '--seed=[Set the random number generator seed]:NUMBER: ' \
 '--strace-ops=[Trace low-level op calls]' \
 '(--no-check)--check=[Set type-checking behavior. This subcommand type-checks local modules by default, so adding --check is redundant   If the value of "all" is supplied, remote modules will be included.   Alternatively, the '\''deno check'\'' subcommand can be used]' \
-'--ignore=[Ignore files]: :_files' \
+'*--ignore=[Ignore files]: :_files' \
 '--fail-fast=[Stop after N errors. Defaults to stopping after first failure]' \
 '--filter=[Run tests with this string or regexp pattern in the test name]: : ' \
 '--shuffle=[Shuffle the order in which the tests are run]' \
 '(--inspect --inspect-wait --inspect-brk)--coverage=[Collect coverage profile data into DIR. If DIR is not specified, it uses '\''coverage/'\'']' \
-'-j+[deprecated\: The \`--jobs\` flag is deprecated and will be removed in Deno 2.0. Use the \`--parallel\` flag with possibly the \`DENO_JOBS\` environment variable instead.]' \
-'--jobs=[deprecated\: The \`--jobs\` flag is deprecated and will be removed in Deno 2.0. Use the \`--parallel\` flag with possibly the \`DENO_JOBS\` environment variable instead.]' \
-'(--no-run --coverage)--watch=[Watch for file changes and restart process automatically.   Local files from entry point module graph are watched by default.   Additional paths might be watched by passing them as arguments to this flag.]' \
-'--watch-exclude=[Exclude provided files/patterns from watch mode]' \
+'(--no-run --coverage)*--watch=[Watch for file changes and restart process automatically.   Local files from entry point module graph are watched by default.   Additional paths might be watched by passing them as arguments to this flag.]' \
+'*--watch-exclude=[Exclude provided files/patterns from watch mode]' \
 '--junit-path=[Write a JUnit XML test report to PATH. Use '\''-'\'' to write to stdout which is the default when PATH is not provided]:PATH:_files' \
 '--reporter=[Select reporter to use. Default to '\''pretty'\'']: :(pretty dot junit tap)' \
 '--env-file=[Load environment variables from local file   Only the first environment variable with a given key is used.   Existing process environment variables are not overwritten.]' \
+'--ext=[Set content type of the supplied file]: :(ts tsx js jsx)' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-byonm[Enable unstable '\''bring your own node_modules'\'' feature]' \
+'--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
@@ -1358,30 +1466,27 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` API]' \
+'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
 '--no-remote[Do not resolve remote modules]' \
 '--no-npm[Do not resolve npm modules]' \
 '(-c --config)--no-config[Disable automatic loading of the configuration file]' \
-'(--no-lock)--lock-write[Force overwriting the lock file]' \
 '(--lock)--no-lock[Disable auto discovery of the lock file]' \
-'-A[Allow all permissions]' \
-'--allow-all[Allow all permissions]' \
-'--allow-hrtime[Allow high-resolution time measurement. Note\: this can enable timing attacks and fingerprinting]' \
-'--deny-hrtime[Deny high-resolution time measurement. Note\: this can prevent timing attacks and fingerprinting]' \
+'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import)-A[Allow all permissions]' \
+'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import)--allow-all[Allow all permissions]' \
+'--allow-hrtime[REMOVED in Deno 2.0]' \
+'--deny-hrtime[REMOVED in Deno 2.0]' \
 '--no-prompt[Always throw if required permission wasn'\''t passed]' \
 '--cached-only[Require that remote dependencies are already cached]' \
 '--enable-testing-features-do-not-use[INTERNAL\: Enable internal features used during integration testing]' \
 '--no-run[Cache test modules, but don'\''t run tests]' \
-'--trace-ops[Deprecated alias for --trace-leaks]' \
 '--trace-leaks[Enable tracing of leaks. Useful when debugging leaking ops in test, but impacts test execution time]' \
-'--doc[Type-check code blocks in JSDoc and Markdown]' \
-'--allow-none[Don'\''t return error code if no test files are found]' \
-'(--allow-none)--permit-no-files[Don'\''t return an error code if no test files were found]' \
+'--doc[Evaluate code blocks in JSDoc and Markdown]' \
+'--permit-no-files[Don'\''t return an error code if no test files were found]' \
 '--clean[Empty the temporary coverage profile data directory before running tests.   Note\: running multiple \`deno test --clean\` calls in series or parallel for the same coverage directory may cause race conditions.]' \
-'(-j --jobs)--parallel[Run test modules in parallel. Parallelism defaults to the number of available CPUs or the value of the DENO_JOBS environment variable]' \
+'--parallel[Run test modules in parallel. Parallelism defaults to the number of available CPUs or the value of the DENO_JOBS environment variable]' \
 '--no-clear-screen[Do not clear terminal screen when under watch mode]' \
 '--hide-stacktraces[Hide stack traces for errors in failure test results.]' \
 '*::files -- List of file names to run:_files' \
@@ -1395,7 +1500,7 @@ _arguments "${_arguments_options[@]}" : \
 '--log-level=[Set log level]: :(trace debug info)' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-byonm[Enable unstable '\''bring your own node_modules'\'' feature]' \
+'--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
@@ -1407,7 +1512,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` API]' \
+'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
@@ -1425,7 +1530,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unsafely-ignore-certificate-errors=[DANGER\: Disables verification of TLS certificates]' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-byonm[Enable unstable '\''bring your own node_modules'\'' feature]' \
+'--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
@@ -1437,7 +1542,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` API]' \
+'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
@@ -1455,20 +1560,9 @@ _arguments "${_arguments_options[@]}" : \
 '*--help=[]' \
 '-L+[Set log level]: :(trace debug info)' \
 '--log-level=[Set log level]: :(trace debug info)' \
-'--output=[The directory to output the vendored modules to]: :_files -/' \
-'-c+[Configure different aspects of deno including TypeScript, linting, and code formatting   Typically the configuration file will be called \`deno.json\` or \`deno.jsonc\` and   automatically detected; in that case this flag is not necessary.   Docs\: https\://docs.deno.com/go/config]:FILE:_files' \
-'--config=[Configure different aspects of deno including TypeScript, linting, and code formatting   Typically the configuration file will be called \`deno.json\` or \`deno.jsonc\` and   automatically detected; in that case this flag is not necessary.   Docs\: https\://docs.deno.com/go/config]:FILE:_files' \
-'--import-map=[Load import map file from local file or remote URL   Docs\: https\://docs.deno.com/runtime/manual/basics/import_maps]:FILE:_files' \
-'--lock=[Check the specified lock file. (If value is not provided, defaults to "./deno.lock")]' \
-'--node-modules-dir=[Enables or disables the use of a local node_modules folder for npm packages]' \
-'--vendor=[Toggles local vendor folder usage for remote modules and a node_modules folder for npm packages]' \
-'-r+[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
-'--reload=[Reload source code cache (recompile TypeScript)   no value                                                 Reload everything   jsr\:@std/http/file-server,jsr\:@std/assert/assert-equals  Reloads specific modules   npm\:                                                     Reload all npm modules   npm\:chalk                                                Reload specific npm module]' \
-'--cert=[Load certificate authority from PEM encoded file]:FILE:_files' \
-'--unsafely-ignore-certificate-errors=[DANGER\: Disables verification of TLS certificates]' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-byonm[Enable unstable '\''bring your own node_modules'\'' feature]' \
+'--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
@@ -1480,14 +1574,10 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` API]' \
+'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
-'-f[Forcefully overwrite conflicting files in existing output directory]' \
-'--force[Forcefully overwrite conflicting files in existing output directory]' \
-'(-c --config)--no-config[Disable automatic loading of the configuration file]' \
-'*::specifiers:' \
 && ret=0
 ;;
 (help)
@@ -1498,7 +1588,7 @@ _arguments "${_arguments_options[@]}" : \
 '--log-level=[Set log level]: :(trace debug info)' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-byonm[Enable unstable '\''bring your own node_modules'\'' feature]' \
+'--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
@@ -1510,7 +1600,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` API]' \
+'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
@@ -1836,36 +1926,37 @@ esac
 (( $+functions[_deno_commands] )) ||
 _deno_commands() {
     local commands; commands=(
-'run:Run a JavaScript or TypeScript program, or a task or script.  By default all programs are run in sandbox without access to disk, network or ability to spawn subprocesses.   deno run https\://examples.deno.land/hello-world.ts  Grant permission to read from disk and listen to network\:   deno run --allow-read --allow-net jsr\:@std/http/file-server  Grant permission to read allow-listed files from disk\:   deno run --allow-read=/etc jsr\:@std/http/file-server  Grant all permissions\:   deno run -A jsr\:@std/http/file-server  Specifying the filename '\''-'\'' to read the file from stdin.   curl https\://examples.deno.land/hello-world.ts | deno run -' \
-'serve:Run a server defined in a main module  The serve command uses the default exports of the main module to determine which servers to start.  See https\://docs.deno.com/runtime/manual/tools/serve for more detailed information.  Start a server defined in server.ts\:    deno serve server.ts  Start a server defined in server.ts, watching for changes and running on port 5050\:    deno serve --watch --port 5050 server.ts' \
-'add:Add dependencies to the configuration file.    deno add @std/path  You can add multiple dependencies at once\:   deno add @std/path @std/assert ' \
-'remove:Remove dependencies from the configuration file.    deno remove @std/path  You can remove multiple dependencies at once\:   deno remove @std/path @std/assert ' \
-'bench:Run benchmarks using Deno'\''s built-in bench tool.  Evaluate the given modules, run all benches declared with '\''Deno.bench()'\'' and report results to standard output\:   deno bench src/fetch_bench.ts src/signal_bench.ts  Directory arguments are expanded to all contained files matching the glob {*_,*.,}bench.{js,mjs,ts,mts,jsx,tsx}\:   deno bench src/' \
-'bundle:⚠️ Warning\: \`deno bundle\` is deprecated and will be removed in Deno 2.0. Use an alternative bundler like "deno_emit", "esbuild" or "rollup" instead.  Output a single JavaScript file with all dependencies.   deno bundle jsr\:@std/http/file-server file_server.bundle.js  If no output file is given, the output is written to standard output\:   deno bundle jsr\:@std/http/file-server' \
-'cache:Cache and compile remote dependencies recursively.  Download and compile a module with all of its static dependencies and save them in the local cache, without running any code\:   deno cache jsr\:@std/http/file-server  Future runs of this module will trigger no downloads or compilation unless --reload is specified.' \
-'check:Download and type-check without execution.    deno check jsr\:@std/http/file-server  Unless --reload is specified, this command will not re-download already cached dependencies.' \
+'run:Run a JavaScript or TypeScript program, or a task or script.  By default all programs are run in sandbox without access to disk, network or ability to spawn subprocesses.   deno run https\://examples.deno.land/hello-world.ts  Grant permission to read from disk and listen to network\:   deno run --allow-read --allow-net jsr\:@std/http/file-server  Grant permission to read allow-listed files from disk\:   deno run --allow-read=/etc jsr\:@std/http/file-server  Grant all permissions\:   deno run -A jsr\:@std/http/file-server  Specifying the filename '\''-'\'' to read the file from stdin.   curl https\://examples.deno.land/hello-world.ts | deno run -  Read more\: https\://docs.deno.com/go/run' \
+'serve:Run a server defined in a main module  The serve command uses the default exports of the main module to determine which servers to start.  Start a server defined in server.ts\:   deno serve server.ts  Start a server defined in server.ts, watching for changes and running on port 5050\:   deno serve --watch --port 5050 server.ts  Read more\: https\://docs.deno.com/go/serve' \
+'add:Add dependencies to your configuration file.   deno add @std/path  You can add multiple dependencies at once\:   deno add @std/path @std/assert' \
+'remove:Remove dependencies from the configuration file.   deno remove @std/path  You can remove multiple dependencies at once\:   deno remove @std/path @std/assert ' \
+'bench:Run benchmarks using Deno'\''s built-in bench tool.  Evaluate the given files, run all benches declared with '\''Deno.bench()'\'' and report results to standard output\:   deno bench src/fetch_bench.ts src/signal_bench.ts  If you specify a directory instead of a file, the path is expanded to all contained files matching the glob {*_,*.,}bench.{js,mjs,ts,mts,jsx,tsx}\:   deno bench src/  Read more\: https\://docs.deno.com/go/bench' \
+'bundle:⚠️ \`deno bundle\` was removed in Deno 2.  See the Deno 1.x to 2.x Migration Guide for migration instructions\: https\://docs.deno.com/runtime/manual/advanced/migrate_deprecations' \
+'cache:Cache and compile remote dependencies.  Download and compile a module with all of its static dependencies and save them in the local cache, without running any code\:   deno cache jsr\:@std/http/file-server  Future runs of this module will trigger no downloads or compilation unless --reload is specified  Read more\: https\://docs.deno.com/go/cache' \
+'check:Download and type-check without execution.    deno check jsr\:@std/http/file-server  Unless --reload is specified, this command will not re-download already cached dependencies  Read more\: https\://docs.deno.com/go/check' \
 'clean:Remove the cache directory (\$DENO_DIR)' \
-'compile:Compiles the given script into a self contained executable.    deno compile -A jsr\:@std/http/file-server   deno compile --output file_server jsr\:@std/http/file-server  Any flags passed which affect runtime behavior, such as '\''--unstable'\'', '\''--allow-*'\'', '\''--v8-flags'\'', etc. are encoded into the output executable and used at runtime as if they were passed to a similar '\''deno run'\'' command.  The executable name is inferred by default\: Attempt to take the file stem of the URL path. The above example would become '\''file_server'\''. If the file stem is something generic like '\''main'\'', '\''mod'\'', '\''index'\'' or '\''cli'\'', and the path has no parent, take the file name of the parent path. Otherwise settle with the generic name. If the resulting name has an '\''@...'\'' suffix, strip it.  Cross-compiling to different target architectures is supported using the \`--target\` flag. On the first invocation with deno will download proper binary and cache it in \$DENO_DIR. The aarch64-apple-darwin target is not supported in canary. ' \
+'compile:Compiles the given script into a self contained executable.    deno compile --allow-read --allow-net jsr\:@std/http/file-server   deno compile --output file_server jsr\:@std/http/file-server  Any flags specified which affect runtime behavior will be applied to the resulting binary.  This allows distribution of a Deno application to systems that do not have Deno installed. Under the hood, it bundles a slimmed down version of the Deno runtime along with your JavaScript or TypeScript code.  Cross-compiling to different target architectures is supported using the --target flag. On the first invocation with deno will download the proper binary and cache it in \$DENO_DIR.  Read more\: https\://docs.deno.com/go/compile ' \
 'completions:Output shell completion script to standard output.    deno completions bash > /usr/local/etc/bash_completion.d/deno.bash   source /usr/local/etc/bash_completion.d/deno.bash' \
-'coverage:Print coverage reports from coverage profiles.  Collect a coverage profile with deno test\:   deno test --coverage=cov_profile  Print a report to stdout\:   deno coverage cov_profile  Include urls that start with the file schema\:   deno coverage --include="^file\:" cov_profile  Exclude urls ending with test.ts and test.js\:   deno coverage --exclude="test\\.(ts|js)" cov_profile  Include urls that start with the file schema and exclude files ending with test.ts and test.js, for an url to match it must match the include pattern and not match the exclude pattern\:   deno coverage --include="^file\:" --exclude="test\\.(ts|js)" cov_profile  Write a report using the lcov format\:   deno coverage --lcov --output=cov.lcov cov_profile/  Generate html reports from lcov\:   genhtml -o html_cov cov.lcov ' \
-'doc:Show documentation for a module.  Output documentation to standard output\:     deno doc ./path/to/module.ts  Output documentation in HTML format\:     deno doc --html --name="My library" ./path/to/module.ts     deno doc --html --name="My library" ./main.ts ./dev.ts     deno doc --html --name="My library" --output=./documentation/ ./path/to/module.ts  Output private documentation to standard output\:     deno doc --private ./path/to/module.ts  Output documentation in JSON format\:     deno doc --json ./path/to/module.ts  Lint a module for documentation diagnostics\:     deno doc --lint ./path/to/module.ts  Target a specific symbol\:     deno doc ./path/to/module.ts MyClass.someField  Show documentation for runtime built-ins\:     deno doc     deno doc --filter Deno.Listener' \
-'eval:Evaluate JavaScript from the command line.    deno eval "console.log('\''hello world'\'')"  To evaluate as TypeScript\:   deno eval --ext=ts "const v\: string = '\''hello'\''; console.log(v)"  This command has implicit access to all permissions (--allow-all).' \
-'fmt:Auto-format JavaScript, TypeScript, Markdown, and JSON files.    deno fmt   deno fmt myfile1.ts myfile2.ts   deno fmt --check  Format stdin and write to stdout\:   cat file.ts | deno fmt -  Ignore formatting code by preceding it with an ignore comment\:   // deno-fmt-ignore  Ignore formatting a file by adding an ignore comment at the top of the file\:   // deno-fmt-ignore-file' \
-'init:Initialize a new project' \
-'info:Information about a module or the cache directories.  Get information about a module\:   deno info jsr\:@std/http/file-server  The following information is shown\:  local\: Local path of the file. type\: JavaScript, TypeScript, or JSON. emit\: Local path of compiled source code. (TypeScript only.) dependencies\: Dependency tree of the source file.  Without any additional arguments, '\''deno info'\'' shows\:  DENO_DIR\: Directory containing Deno-managed files. Remote modules cache\: Subdirectory containing downloaded remote modules. TypeScript compiler cache\: Subdirectory containing TS compiler output.' \
-'install:Installs a script as an executable in the installation root'\''s bin directory.    deno install --global --allow-net --allow-read jsr\:@std/http/file-server   deno install -g https\://examples.deno.land/color-logging.ts  To change the executable name, use -n/--name\:   deno install -g --allow-net --allow-read -n serve jsr\:@std/http/file-server  The executable name is inferred by default\:   - Attempt to take the file stem of the URL path. The above example would     become '\''file_server'\''.   - If the file stem is something generic like '\''main'\'', '\''mod'\'', '\''index'\'' or '\''cli'\'',     and the path has no parent, take the file name of the parent path. Otherwise     settle with the generic name.   - If the resulting name has an '\''@...'\'' suffix, strip it.  To change the installation root, use --root\:   deno install -g --allow-net --allow-read --root /usr/local jsr\:@std/http/file-server  The installation root is determined, in order of precedence\:   - --root option   - DENO_INSTALL_ROOT environment variable   - \$HOME/.deno  These must be added to the path manually if required.' \
+'coverage:Print coverage reports from coverage profiles.  Collect a coverage profile with deno test\:   deno test --coverage=cov_profile  Print a report to stdout\:   deno coverage cov_profile  Include urls that start with the file schema and exclude files ending with test.ts and test.js, for an url to match it must match the include pattern and not match the exclude pattern\:   deno coverage --include="^file\:" --exclude="test\\.(ts|js)" cov_profile  Write a report using the lcov format\:   deno coverage --lcov --output=cov.lcov cov_profile/  Generate html reports from lcov\:   genhtml -o html_cov cov.lcov  Read more\: https\://docs.deno.com/go/coverage' \
+'doc:Show documentation for a module.  Output documentation to standard output\:     deno doc ./path/to/module.ts  Output documentation in HTML format\:     deno doc --html --name="My library" ./path/to/module.ts  Lint a module for documentation diagnostics\:     deno doc --lint ./path/to/module.ts  Target a specific symbol\:     deno doc ./path/to/module.ts MyClass.someField  Show documentation for runtime built-ins\:     deno doc     deno doc --filter Deno.Listener  Read more\: https\://docs.deno.com/go/doc' \
+'eval:Evaluate JavaScript from the command line.   deno eval "console.log('\''hello world'\'')"  To evaluate as TypeScript\:   deno eval --ext=ts "const v\: string = '\''hello'\''; console.log(v)"  This command has implicit access to all permissions.  Read more\: https\://docs.deno.com/go/eval' \
+'fmt:Auto-format various file types.   deno fmt myfile1.ts myfile2.ts  Supported file types are\:   JavaScript, TypeScript, Markdown, JSON(C) and Jupyter Notebooks  Supported file types which are behind corresponding unstable flags (see formatting options)\:   HTML, CSS, SCSS, SASS, LESS, YAML, Svelte, Vue, Astro and Angular  Format stdin and write to stdout\:   cat file.ts | deno fmt -  Check if the files are formatted\:   deno fmt --check  Ignore formatting code by preceding it with an ignore comment\:   // deno-fmt-ignore  Ignore formatting a file by adding an ignore comment at the top of the file\:   // deno-fmt-ignore-file  Read more\: https\://docs.deno.com/go/fmt' \
+'init:scaffolds a basic Deno project with a script, test, and configuration file' \
+'info:Show information about a module or the cache directories.  Get information about a module\:   deno info jsr\:@std/http/file-server  The following information is shown\:   local\: Local path of the file   type\: JavaScript, TypeScript, or JSON   emit\: Local path of compiled source code (TypeScript only)   dependencies\: Dependency tree of the source file  Read more\: https\://docs.deno.com/go/info' \
+'install:Installs dependencies either in the local project or globally to a bin directory.  Local installation  Add dependencies to the local project'\''s configuration (deno.json / package.json) and installs them in the package cache. If no dependency is specified, installs all dependencies listed in the config file. If the --entrypoint flag is passed, installs the dependencies of the specified entrypoint(s).    deno install   deno install @std/bytes   deno install npm\:chalk   deno install --entrypoint entry1.ts entry2.ts  Global installation  If the --global flag is set, installs a script as an executable in the installation root'\''s bin directory.    deno install --global --allow-net --allow-read jsr\:@std/http/file-server   deno install -g https\://examples.deno.land/color-logging.ts  To change the executable name, use -n/--name\:   deno install -g --allow-net --allow-read -n serve jsr\:@std/http/file-server  The executable name is inferred by default\:   - Attempt to take the file stem of the URL path. The above example would     become file_server.   - If the file stem is something generic like main, mod, index or cli,     and the path has no parent, take the file name of the parent path. Otherwise     settle with the generic name.   - If the resulting name has an @... suffix, strip it.  To change the installation root, use --root\:   deno install -g --allow-net --allow-read --root /usr/local jsr\:@std/http/file-server  The installation root is determined, in order of precedence\:   - --root option   - DENO_INSTALL_ROOT environment variable   - \$HOME/.deno  These must be added to the path manually if required.' \
+'i:Installs dependencies either in the local project or globally to a bin directory.  Local installation  Add dependencies to the local project'\''s configuration (deno.json / package.json) and installs them in the package cache. If no dependency is specified, installs all dependencies listed in the config file. If the --entrypoint flag is passed, installs the dependencies of the specified entrypoint(s).    deno install   deno install @std/bytes   deno install npm\:chalk   deno install --entrypoint entry1.ts entry2.ts  Global installation  If the --global flag is set, installs a script as an executable in the installation root'\''s bin directory.    deno install --global --allow-net --allow-read jsr\:@std/http/file-server   deno install -g https\://examples.deno.land/color-logging.ts  To change the executable name, use -n/--name\:   deno install -g --allow-net --allow-read -n serve jsr\:@std/http/file-server  The executable name is inferred by default\:   - Attempt to take the file stem of the URL path. The above example would     become file_server.   - If the file stem is something generic like main, mod, index or cli,     and the path has no parent, take the file name of the parent path. Otherwise     settle with the generic name.   - If the resulting name has an @... suffix, strip it.  To change the installation root, use --root\:   deno install -g --allow-net --allow-read --root /usr/local jsr\:@std/http/file-server  The installation root is determined, in order of precedence\:   - --root option   - DENO_INSTALL_ROOT environment variable   - \$HOME/.deno  These must be added to the path manually if required.' \
 'json_reference:' \
 'jupyter:Deno kernel for Jupyter notebooks' \
-'uninstall:Uninstalls an executable script in the installation root'\''s bin directory.    deno uninstall serve  To change the installation root, use --root\:   deno uninstall --root /usr/local serve  The installation root is determined, in order of precedence\:   - --root option   - DENO_INSTALL_ROOT environment variable   - \$HOME/.deno' \
+'uninstall:Uninstalls a dependency or an executable script in the installation root'\''s bin directory.   deno uninstall @std/dotenv chalk   deno uninstall --global file_server  To change the installation root, use --root flag\:   deno uninstall --global --root /usr/local serve  The installation root is determined, in order of precedence\:   - --root option   - DENO_INSTALL_ROOT environment variable   - \$HOME/.deno' \
 'lsp:The '\''deno lsp'\'' subcommand provides a way for code editors and IDEs to interact with Deno using the Language Server Protocol. Usually humans do not use this subcommand directly. For example, '\''deno lsp'\'' can provide IDEs with go-to-definition support and automatic code formatting.  How to connect various editors and IDEs to '\''deno lsp'\''\: https\://docs.deno.com/go/lsp' \
-'lint:Lint JavaScript/TypeScript source code.    deno lint   deno lint myfile1.ts myfile2.js  Print result as JSON\:   deno lint --json  Read from stdin\:   cat file.ts | deno lint -   cat file.ts | deno lint --json -  List available rules\:   deno lint --rules  Ignore diagnostics on the next line by preceding it with an ignore comment and rule name\:   // deno-lint-ignore no-explicit-any   // deno-lint-ignore require-await no-empty  Names of rules to ignore must be specified after ignore comment.  Ignore linting a file by adding an ignore comment at the top of the file\:   // deno-lint-ignore-file ' \
-'publish:Publish the current working directory'\''s package or workspace' \
-'repl:Read Eval Print Loop' \
-'task:Run a task defined in the configuration file    deno task build' \
-'test:Run tests using Deno'\''s built-in test runner.  Evaluate the given modules, run all tests declared with '\''Deno.test()'\'' and report results to standard output\:   deno test src/fetch_test.ts src/signal_test.ts  Directory arguments are expanded to all contained files matching the glob {*_,*.,}test.{js,mjs,ts,mts,jsx,tsx} or **/__tests__/**\:   deno test src/' \
+'lint:Lint JavaScript/TypeScript source code.    deno lint   deno lint myfile1.ts myfile2.js  Print result as JSON\:   deno lint --json  Read from stdin\:   cat file.ts | deno lint -   cat file.ts | deno lint --json -  List available rules\:   deno lint --rules  To ignore specific diagnostics, you can write an ignore comment on the preceding line with a rule name (or multiple)\:   // deno-lint-ignore no-explicit-any   // deno-lint-ignore require-await no-empty  To ignore linting on an entire file, you can add an ignore comment at the top of the file\:   // deno-lint-ignore-file  Read more\: https\://docs.deno.com/go/lint ' \
+'publish:Publish the current working directory'\''s package or workspace to JSR' \
+'repl:Starts a read-eval-print-loop, which lets you interactively build up program state in the global context. It is especially useful for quick prototyping and checking snippets of code.  TypeScript is supported, however it is not type-checked, only transpiled.' \
+'task:Run a task defined in the configuration file.   deno task build  List all available tasks\:   deno task' \
+'test:Run tests using Deno'\''s built-in test runner.  Evaluate the given modules, run all tests declared with Deno.test() and report results to standard output\:   deno test src/fetch_test.ts src/signal_test.ts  Directory arguments are expanded to all contained files matching the glob {*_,*.,}test.{js,mjs,ts,mts,jsx,tsx} or **/__tests__/**\:  deno test src/  Read more\: https\://docs.deno.com/go/test' \
 'types:Print runtime TypeScript declarations.    deno types > lib.deno.d.ts  The declaration file could be saved and used for typing information.' \
-'upgrade:Upgrade deno executable to the given version.  Latest    deno upgrade  Specific version    deno upgrade 1.45.0   deno upgrade 1.46.0-rc.1   deno upgrade 9bc2dd29ad6ba334fd57a20114e367d3c04763d4  Channel    deno upgrade stable   deno upgrade rc   deno upgrade canary  The version is downloaded from https\://github.com/denoland/deno/releases and is used to replace the current executable.  If you want to not replace the current Deno executable but instead download an update to a different location, use the --output flag\:   deno upgrade --output \$HOME/my_deno' \
-'vendor:⚠️ Warning\: \`deno vendor\` is deprecated and will be removed in Deno 2.0. Add \`"vendor"\: true\` to your \`deno.json\` or use the \`--vendor\` flag instead.  Vendor remote modules into a local directory.  Analyzes the provided modules along with their dependencies, downloads remote modules to the output directory, and produces an import map that maps remote specifiers to the downloaded files.   deno vendor main.ts   deno run --import-map vendor/import_map.json main.ts  Remote modules and multiple modules may also be specified\:   deno vendor main.ts test.deps.ts jsr\:@std/path' \
+'upgrade:Upgrade deno executable to the given version.  Latest   deno upgrade  Specific version   deno upgrade 1.45.0   deno upgrade 1.46.0-rc.1   deno upgrade 9bc2dd29ad6ba334fd57a20114e367d3c04763d4  Channel   deno upgrade stable   deno upgrade rc   deno upgrade canary  The version is downloaded from https\://dl.deno.land and is used to replace the current executable.  If you want to not replace the current Deno executable but instead download an update to a different location, use the --output flag\:   deno upgrade --output \$HOME/my_deno  Read more\: https\://docs.deno.com/go/upgrade' \
+'vendor:⚠️ \`deno vendor\` was removed in Deno 2.  See the Deno 1.x to 2.x Migration Guide for migration instructions\: https\://docs.deno.com/runtime/manual/advanced/migrate_deprecations' \
 'help:' \
     )
     _describe -t commands 'deno commands' commands "$@"
