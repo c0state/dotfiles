@@ -93,7 +93,6 @@ sudo apt -y install \
     keychain \
     lsd \
     ncdu \
-    neovim \
     nethogs \
     onedrive onedriver \
     parallel \
@@ -191,6 +190,9 @@ which jetbrains-toolbox || \
         tar -xzO jetbrains-toolbox-2.4.2.32922/jetbrains-toolbox \
     > "$HOME"/.local/bin/jetbrains-toolbox && \
     chmod u+x "$HOME"/.local/bin/jetbrains-toolbox
+
+sudo curl -L https://github.com/neovim/neovim/releases/latest/download/nvim.appimage --output /usr/local/bin/nvim
+sudo chmod +x /usr/local/bin/nvim
 
 # install vscode
 [ -z "$WSL_DISTRO_NAME" ] && sudo apt install code
