@@ -50,6 +50,7 @@ _deno() {
 '--inspect=[Activate inspector on host\:port \[default\: 127.0.0.1\:9229\]]' \
 '--inspect-brk=[Activate inspector on host\:port, wait for debugger to connect and break at the start of user script]' \
 '--inspect-wait=[Activate inspector on host\:port and wait for debugger to connect before running user code]' \
+'*--allow-scripts=[Allow running npm lifecycle scripts for the given packages   Note\: Scripts will only be executed when using a node_modules directory (\`--node-modules-dir\`)]' \
 '--frozen=[Error out if lockfile is out of date]' \
 '--location=[Value of globalThis.location used by some web APIs]:HREF:_urls' \
 '--v8-flags=[To see a list of all available flags use --v8-flags=--help   Flags can also be set via the DENO_V8_FLAGS environment variable.   Any flags set with this flag are appended after the DENO_V8_FLAGS environment variable]' \
@@ -80,6 +81,7 @@ _deno() {
 '--no-code-cache[Disable V8 code cache feature]' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
+'--unstable-detect-cjs[Reads the package.json type field in a project to treat .js files as .cjs]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -145,6 +147,7 @@ _arguments "${_arguments_options[@]}" : \
 '--inspect=[Activate inspector on host\:port \[default\: 127.0.0.1\:9229\]]' \
 '--inspect-brk=[Activate inspector on host\:port, wait for debugger to connect and break at the start of user script]' \
 '--inspect-wait=[Activate inspector on host\:port and wait for debugger to connect before running user code]' \
+'*--allow-scripts=[Allow running npm lifecycle scripts for the given packages   Note\: Scripts will only be executed when using a node_modules directory (\`--node-modules-dir\`)]' \
 '--frozen=[Error out if lockfile is out of date]' \
 '--location=[Value of globalThis.location used by some web APIs]:HREF:_urls' \
 '--v8-flags=[To see a list of all available flags use --v8-flags=--help   Flags can also be set via the DENO_V8_FLAGS environment variable.   Any flags set with this flag are appended after the DENO_V8_FLAGS environment variable]' \
@@ -162,6 +165,7 @@ _arguments "${_arguments_options[@]}" : \
 '--log-level=[Set log level]: :(trace debug info)' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
+'--unstable-detect-cjs[Reads the package.json type field in a project to treat .js files as .cjs]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -231,6 +235,7 @@ _arguments "${_arguments_options[@]}" : \
 '--inspect=[Activate inspector on host\:port \[default\: 127.0.0.1\:9229\]]' \
 '--inspect-brk=[Activate inspector on host\:port, wait for debugger to connect and break at the start of user script]' \
 '--inspect-wait=[Activate inspector on host\:port and wait for debugger to connect before running user code]' \
+'*--allow-scripts=[Allow running npm lifecycle scripts for the given packages   Note\: Scripts will only be executed when using a node_modules directory (\`--node-modules-dir\`)]' \
 '--frozen=[Error out if lockfile is out of date]' \
 '--location=[Value of globalThis.location used by some web APIs]:HREF:_urls' \
 '--v8-flags=[To see a list of all available flags use --v8-flags=--help   Flags can also be set via the DENO_V8_FLAGS environment variable.   Any flags set with this flag are appended after the DENO_V8_FLAGS environment variable]' \
@@ -250,6 +255,7 @@ _arguments "${_arguments_options[@]}" : \
 '--log-level=[Set log level]: :(trace debug info)' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
+'--unstable-detect-cjs[Reads the package.json type field in a project to treat .js files as .cjs]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -289,8 +295,10 @@ _arguments "${_arguments_options[@]}" : \
 '*--help=[]' \
 '-L+[Set log level]: :(trace debug info)' \
 '--log-level=[Set log level]: :(trace debug info)' \
+'*--allow-scripts=[Allow running npm lifecycle scripts for the given packages   Note\: Scripts will only be executed when using a node_modules directory (\`--node-modules-dir\`)]' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
+'--unstable-detect-cjs[Reads the package.json type field in a project to treat .js files as .cjs]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -320,6 +328,7 @@ _arguments "${_arguments_options[@]}" : \
 '--log-level=[Set log level]: :(trace debug info)' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
+'--unstable-detect-cjs[Reads the package.json type field in a project to treat .js files as .cjs]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -377,6 +386,7 @@ _arguments "${_arguments_options[@]}" : \
 '*--deny-ffi=[(Unstable) Deny loading dynamic libraries. Optionally specify denied directories or files]' \
 '-I+[Allow importing from remote hosts. Optionally specify allowed IP addresses and host names, with ports as necessary. Default value\: deno.land\:443,jsr.io\:443,esm.sh\:443,cdn.jsdelivr.net\:443,raw.githubusercontent.com\:443,user.githubusercontent.com\:443]' \
 '--allow-import=[Allow importing from remote hosts. Optionally specify allowed IP addresses and host names, with ports as necessary. Default value\: deno.land\:443,jsr.io\:443,esm.sh\:443,cdn.jsdelivr.net\:443,raw.githubusercontent.com\:443,user.githubusercontent.com\:443]' \
+'*--allow-scripts=[Allow running npm lifecycle scripts for the given packages   Note\: Scripts will only be executed when using a node_modules directory (\`--node-modules-dir\`)]' \
 '--frozen=[Error out if lockfile is out of date]' \
 '--location=[Value of globalThis.location used by some web APIs]:HREF:_urls' \
 '--v8-flags=[To see a list of all available flags use --v8-flags=--help   Flags can also be set via the DENO_V8_FLAGS environment variable.   Any flags set with this flag are appended after the DENO_V8_FLAGS environment variable]' \
@@ -390,6 +400,7 @@ _arguments "${_arguments_options[@]}" : \
 '--ext=[Set content type of the supplied file]: :(ts tsx js jsx)' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
+'--unstable-detect-cjs[Reads the package.json type field in a project to treat .js files as .cjs]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -432,6 +443,7 @@ _arguments "${_arguments_options[@]}" : \
 '--log-level=[Set log level]: :(trace debug info)' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
+'--unstable-detect-cjs[Reads the package.json type field in a project to treat .js files as .cjs]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -474,6 +486,7 @@ _arguments "${_arguments_options[@]}" : \
 '--allow-import=[Allow importing from remote hosts. Optionally specify allowed IP addresses and host names, with ports as necessary. Default value\: deno.land\:443,jsr.io\:443,esm.sh\:443,cdn.jsdelivr.net\:443,raw.githubusercontent.com\:443,user.githubusercontent.com\:443]' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
+'--unstable-detect-cjs[Reads the package.json type field in a project to treat .js files as .cjs]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -517,6 +530,7 @@ _arguments "${_arguments_options[@]}" : \
 '--allow-import=[Allow importing from remote hosts. Optionally specify allowed IP addresses and host names, with ports as necessary. Default value\: deno.land\:443,jsr.io\:443,esm.sh\:443,cdn.jsdelivr.net\:443,raw.githubusercontent.com\:443,user.githubusercontent.com\:443]' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
+'--unstable-detect-cjs[Reads the package.json type field in a project to treat .js files as .cjs]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -552,6 +566,7 @@ _arguments "${_arguments_options[@]}" : \
 '--log-level=[Set log level]: :(trace debug info)' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
+'--unstable-detect-cjs[Reads the package.json type field in a project to treat .js files as .cjs]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -608,6 +623,7 @@ _arguments "${_arguments_options[@]}" : \
 '*--deny-ffi=[(Unstable) Deny loading dynamic libraries. Optionally specify denied directories or files]' \
 '-I+[Allow importing from remote hosts. Optionally specify allowed IP addresses and host names, with ports as necessary. Default value\: deno.land\:443,jsr.io\:443,esm.sh\:443,cdn.jsdelivr.net\:443,raw.githubusercontent.com\:443,user.githubusercontent.com\:443]' \
 '--allow-import=[Allow importing from remote hosts. Optionally specify allowed IP addresses and host names, with ports as necessary. Default value\: deno.land\:443,jsr.io\:443,esm.sh\:443,cdn.jsdelivr.net\:443,raw.githubusercontent.com\:443,user.githubusercontent.com\:443]' \
+'*--allow-scripts=[Allow running npm lifecycle scripts for the given packages   Note\: Scripts will only be executed when using a node_modules directory (\`--node-modules-dir\`)]' \
 '--frozen=[Error out if lockfile is out of date]' \
 '--location=[Value of globalThis.location used by some web APIs]:HREF:_urls' \
 '--v8-flags=[To see a list of all available flags use --v8-flags=--help   Flags can also be set via the DENO_V8_FLAGS environment variable.   Any flags set with this flag are appended after the DENO_V8_FLAGS environment variable]' \
@@ -623,6 +639,7 @@ _arguments "${_arguments_options[@]}" : \
 '--env-file=[Load environment variables from local file   Only the first environment variable with a given key is used.   Existing process environment variables are not overwritten.]' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
+'--unstable-detect-cjs[Reads the package.json type field in a project to treat .js files as .cjs]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -662,6 +679,7 @@ _arguments "${_arguments_options[@]}" : \
 '--log-level=[Set log level]: :(trace debug info)' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
+'--unstable-detect-cjs[Reads the package.json type field in a project to treat .js files as .cjs]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -693,6 +711,7 @@ _arguments "${_arguments_options[@]}" : \
 '--output=[Exports the coverage report in lcov format to the given file.   If no --output arg is specified then the report is written to stdout.]: :_files' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
+'--unstable-detect-cjs[Reads the package.json type field in a project to treat .js files as .cjs]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -735,6 +754,7 @@ _arguments "${_arguments_options[@]}" : \
 '(--json --lint --html)--filter=[Dot separated path to symbol]: : ' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
+'--unstable-detect-cjs[Reads the package.json type field in a project to treat .js files as .cjs]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -782,6 +802,7 @@ _arguments "${_arguments_options[@]}" : \
 '--inspect=[Activate inspector on host\:port \[default\: 127.0.0.1\:9229\]]' \
 '--inspect-brk=[Activate inspector on host\:port, wait for debugger to connect and break at the start of user script]' \
 '--inspect-wait=[Activate inspector on host\:port and wait for debugger to connect before running user code]' \
+'*--allow-scripts=[Allow running npm lifecycle scripts for the given packages   Note\: Scripts will only be executed when using a node_modules directory (\`--node-modules-dir\`)]' \
 '--frozen=[Error out if lockfile is out of date]' \
 '--location=[Value of globalThis.location used by some web APIs]:HREF:_urls' \
 '--v8-flags=[To see a list of all available flags use --v8-flags=--help   Flags can also be set via the DENO_V8_FLAGS environment variable.   Any flags set with this flag are appended after the DENO_V8_FLAGS environment variable]' \
@@ -792,6 +813,7 @@ _arguments "${_arguments_options[@]}" : \
 '--env-file=[Load environment variables from local file   Only the first environment variable with a given key is used.   Existing process environment variables are not overwritten.]' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
+'--unstable-detect-cjs[Reads the package.json type field in a project to treat .js files as .cjs]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -838,6 +860,7 @@ _arguments "${_arguments_options[@]}" : \
 '--no-semicolons=[Don'\''t use semicolons except where necessary \[default\: false\]]' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
+'--unstable-detect-cjs[Reads the package.json type field in a project to treat .js files as .cjs]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -873,6 +896,7 @@ _arguments "${_arguments_options[@]}" : \
 '--log-level=[Set log level]: :(trace debug info)' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
+'--unstable-detect-cjs[Reads the package.json type field in a project to treat .js files as .cjs]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -916,6 +940,7 @@ _arguments "${_arguments_options[@]}" : \
 '--vendor=[Toggles local vendor folder usage for remote modules and a node_modules folder for npm packages]' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
+'--unstable-detect-cjs[Reads the package.json type field in a project to treat .js files as .cjs]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -994,6 +1019,7 @@ _arguments "${_arguments_options[@]}" : \
 '--env-file=[Load environment variables from local file   Only the first environment variable with a given key is used.   Existing process environment variables are not overwritten.]' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
+'--unstable-detect-cjs[Reads the package.json type field in a project to treat .js files as .cjs]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -1086,6 +1112,7 @@ _arguments "${_arguments_options[@]}" : \
 '--env-file=[Load environment variables from local file   Only the first environment variable with a given key is used.   Existing process environment variables are not overwritten.]' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
+'--unstable-detect-cjs[Reads the package.json type field in a project to treat .js files as .cjs]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -1143,6 +1170,7 @@ _arguments "${_arguments_options[@]}" : \
 '--log-level=[Set log level]: :(trace debug info)' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
+'--unstable-detect-cjs[Reads the package.json type field in a project to treat .js files as .cjs]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -1172,6 +1200,7 @@ _arguments "${_arguments_options[@]}" : \
 '--root=[Installation root]: :_files -/' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
+'--unstable-detect-cjs[Reads the package.json type field in a project to treat .js files as .cjs]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -1220,6 +1249,7 @@ _arguments "${_arguments_options[@]}" : \
 '*--watch-exclude=[Exclude provided files/patterns from watch mode]' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
+'--unstable-detect-cjs[Reads the package.json type field in a project to treat .js files as .cjs]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -1259,6 +1289,7 @@ _arguments "${_arguments_options[@]}" : \
 '--no-check=[Skip type-checking. If the value of "remote" is supplied, diagnostic errors from remote modules will be ignored]' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
+'--unstable-detect-cjs[Reads the package.json type field in a project to treat .js files as .cjs]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -1289,7 +1320,6 @@ _arguments "${_arguments_options[@]}" : \
 '*--help=[]' \
 '-L+[Set log level]: :(trace debug info)' \
 '--log-level=[Set log level]: :(trace debug info)' \
-'--no-check=[Skip type-checking. If the value of "remote" is supplied, diagnostic errors from remote modules will be ignored]' \
 '--import-map=[Load import map file from local file or remote URL   Docs\: https\://docs.deno.com/runtime/manual/basics/import_maps]:FILE:_files' \
 '--node-modules-dir=[Sets the node modules management mode for npm packages]' \
 '--vendor=[Toggles local vendor folder usage for remote modules and a node_modules folder for npm packages]' \
@@ -1300,6 +1330,9 @@ _arguments "${_arguments_options[@]}" : \
 '--lock=[Check the specified lock file. (If value is not provided, defaults to "./deno.lock")]' \
 '--cert=[Load certificate authority from PEM encoded file]:FILE:_files' \
 '--unsafely-ignore-certificate-errors=[DANGER\: Disables verification of TLS certificates]' \
+'--inspect=[Activate inspector on host\:port \[default\: 127.0.0.1\:9229\]]' \
+'--inspect-brk=[Activate inspector on host\:port, wait for debugger to connect and break at the start of user script]' \
+'--inspect-wait=[Activate inspector on host\:port and wait for debugger to connect before running user code]' \
 '*-R+[Allow file system read access. Optionally specify allowed paths]' \
 '*--allow-read=[Allow file system read access. Optionally specify allowed paths]' \
 '*--deny-read=[Deny file system read access. Optionally specify denied paths]' \
@@ -1321,19 +1354,16 @@ _arguments "${_arguments_options[@]}" : \
 '*--deny-ffi=[(Unstable) Deny loading dynamic libraries. Optionally specify denied directories or files]' \
 '-I+[Allow importing from remote hosts. Optionally specify allowed IP addresses and host names, with ports as necessary. Default value\: deno.land\:443,jsr.io\:443,esm.sh\:443,cdn.jsdelivr.net\:443,raw.githubusercontent.com\:443,user.githubusercontent.com\:443]' \
 '--allow-import=[Allow importing from remote hosts. Optionally specify allowed IP addresses and host names, with ports as necessary. Default value\: deno.land\:443,jsr.io\:443,esm.sh\:443,cdn.jsdelivr.net\:443,raw.githubusercontent.com\:443,user.githubusercontent.com\:443]' \
-'--inspect=[Activate inspector on host\:port \[default\: 127.0.0.1\:9229\]]' \
-'--inspect-brk=[Activate inspector on host\:port, wait for debugger to connect and break at the start of user script]' \
-'--inspect-wait=[Activate inspector on host\:port and wait for debugger to connect before running user code]' \
 '--frozen=[Error out if lockfile is out of date]' \
 '--location=[Value of globalThis.location used by some web APIs]:HREF:_urls' \
 '--v8-flags=[To see a list of all available flags use --v8-flags=--help   Flags can also be set via the DENO_V8_FLAGS environment variable.   Any flags set with this flag are appended after the DENO_V8_FLAGS environment variable]' \
 '--seed=[Set the random number generator seed]:NUMBER: ' \
 '--strace-ops=[Trace low-level op calls]' \
-'(--no-check)--check=[Enable type-checking. This subcommand does not type-check by default   If the value of "all" is supplied, remote modules will be included.   Alternatively, the '\''deno check'\'' subcommand can be used]' \
 '*--eval-file=[Evaluates the provided file(s) as scripts when the REPL starts. Accepts file paths and URLs]: :_files' \
 '--eval=[Evaluates the provided code when the REPL starts]:code: ' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
+'--unstable-detect-cjs[Reads the package.json type field in a project to treat .js files as .cjs]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -1376,6 +1406,7 @@ _arguments "${_arguments_options[@]}" : \
 '--node-modules-dir=[Sets the node modules management mode for npm packages]' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
+'--unstable-detect-cjs[Reads the package.json type field in a project to treat .js files as .cjs]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -1435,6 +1466,7 @@ _arguments "${_arguments_options[@]}" : \
 '--inspect=[Activate inspector on host\:port \[default\: 127.0.0.1\:9229\]]' \
 '--inspect-brk=[Activate inspector on host\:port, wait for debugger to connect and break at the start of user script]' \
 '--inspect-wait=[Activate inspector on host\:port and wait for debugger to connect before running user code]' \
+'*--allow-scripts=[Allow running npm lifecycle scripts for the given packages   Note\: Scripts will only be executed when using a node_modules directory (\`--node-modules-dir\`)]' \
 '--frozen=[Error out if lockfile is out of date]' \
 '--location=[Value of globalThis.location used by some web APIs]:HREF:_urls' \
 '--v8-flags=[To see a list of all available flags use --v8-flags=--help   Flags can also be set via the DENO_V8_FLAGS environment variable.   Any flags set with this flag are appended after the DENO_V8_FLAGS environment variable]' \
@@ -1454,6 +1486,7 @@ _arguments "${_arguments_options[@]}" : \
 '--ext=[Set content type of the supplied file]: :(ts tsx js jsx)' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
+'--unstable-detect-cjs[Reads the package.json type field in a project to treat .js files as .cjs]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -1500,6 +1533,7 @@ _arguments "${_arguments_options[@]}" : \
 '--log-level=[Set log level]: :(trace debug info)' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
+'--unstable-detect-cjs[Reads the package.json type field in a project to treat .js files as .cjs]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -1530,6 +1564,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unsafely-ignore-certificate-errors=[DANGER\: Disables verification of TLS certificates]' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
+'--unstable-detect-cjs[Reads the package.json type field in a project to treat .js files as .cjs]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -1562,6 +1597,7 @@ _arguments "${_arguments_options[@]}" : \
 '--log-level=[Set log level]: :(trace debug info)' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
+'--unstable-detect-cjs[Reads the package.json type field in a project to treat .js files as .cjs]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -1588,6 +1624,7 @@ _arguments "${_arguments_options[@]}" : \
 '--log-level=[Set log level]: :(trace debug info)' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
+'--unstable-detect-cjs[Reads the package.json type field in a project to treat .js files as .cjs]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -1928,7 +1965,7 @@ _deno_commands() {
     local commands; commands=(
 'run:Run a JavaScript or TypeScript program, or a task or script.  By default all programs are run in sandbox without access to disk, network or ability to spawn subprocesses.   deno run https\://examples.deno.land/hello-world.ts  Grant permission to read from disk and listen to network\:   deno run --allow-read --allow-net jsr\:@std/http/file-server  Grant permission to read allow-listed files from disk\:   deno run --allow-read=/etc jsr\:@std/http/file-server  Grant all permissions\:   deno run -A jsr\:@std/http/file-server  Specifying the filename '\''-'\'' to read the file from stdin.   curl https\://examples.deno.land/hello-world.ts | deno run -  Read more\: https\://docs.deno.com/go/run' \
 'serve:Run a server defined in a main module  The serve command uses the default exports of the main module to determine which servers to start.  Start a server defined in server.ts\:   deno serve server.ts  Start a server defined in server.ts, watching for changes and running on port 5050\:   deno serve --watch --port 5050 server.ts  Read more\: https\://docs.deno.com/go/serve' \
-'add:Add dependencies to your configuration file.   deno add @std/path  You can add multiple dependencies at once\:   deno add @std/path @std/assert' \
+'add:Add dependencies to your configuration file.   deno add jsr\:@std/path  You can add multiple dependencies at once\:   deno add jsr\:@std/path jsr\:@std/assert' \
 'remove:Remove dependencies from the configuration file.   deno remove @std/path  You can remove multiple dependencies at once\:   deno remove @std/path @std/assert ' \
 'bench:Run benchmarks using Deno'\''s built-in bench tool.  Evaluate the given files, run all benches declared with '\''Deno.bench()'\'' and report results to standard output\:   deno bench src/fetch_bench.ts src/signal_bench.ts  If you specify a directory instead of a file, the path is expanded to all contained files matching the glob {*_,*.,}bench.{js,mjs,ts,mts,jsx,tsx}\:   deno bench src/  Read more\: https\://docs.deno.com/go/bench' \
 'bundle:⚠️ \`deno bundle\` was removed in Deno 2.  See the Deno 1.x to 2.x Migration Guide for migration instructions\: https\://docs.deno.com/runtime/manual/advanced/migrate_deprecations' \
@@ -1943,8 +1980,8 @@ _deno_commands() {
 'fmt:Auto-format various file types.   deno fmt myfile1.ts myfile2.ts  Supported file types are\:   JavaScript, TypeScript, Markdown, JSON(C) and Jupyter Notebooks  Supported file types which are behind corresponding unstable flags (see formatting options)\:   HTML, CSS, SCSS, SASS, LESS, YAML, Svelte, Vue, Astro and Angular  Format stdin and write to stdout\:   cat file.ts | deno fmt -  Check if the files are formatted\:   deno fmt --check  Ignore formatting code by preceding it with an ignore comment\:   // deno-fmt-ignore  Ignore formatting a file by adding an ignore comment at the top of the file\:   // deno-fmt-ignore-file  Read more\: https\://docs.deno.com/go/fmt' \
 'init:scaffolds a basic Deno project with a script, test, and configuration file' \
 'info:Show information about a module or the cache directories.  Get information about a module\:   deno info jsr\:@std/http/file-server  The following information is shown\:   local\: Local path of the file   type\: JavaScript, TypeScript, or JSON   emit\: Local path of compiled source code (TypeScript only)   dependencies\: Dependency tree of the source file  Read more\: https\://docs.deno.com/go/info' \
-'install:Installs dependencies either in the local project or globally to a bin directory.  Local installation  Add dependencies to the local project'\''s configuration (deno.json / package.json) and installs them in the package cache. If no dependency is specified, installs all dependencies listed in the config file. If the --entrypoint flag is passed, installs the dependencies of the specified entrypoint(s).    deno install   deno install @std/bytes   deno install npm\:chalk   deno install --entrypoint entry1.ts entry2.ts  Global installation  If the --global flag is set, installs a script as an executable in the installation root'\''s bin directory.    deno install --global --allow-net --allow-read jsr\:@std/http/file-server   deno install -g https\://examples.deno.land/color-logging.ts  To change the executable name, use -n/--name\:   deno install -g --allow-net --allow-read -n serve jsr\:@std/http/file-server  The executable name is inferred by default\:   - Attempt to take the file stem of the URL path. The above example would     become file_server.   - If the file stem is something generic like main, mod, index or cli,     and the path has no parent, take the file name of the parent path. Otherwise     settle with the generic name.   - If the resulting name has an @... suffix, strip it.  To change the installation root, use --root\:   deno install -g --allow-net --allow-read --root /usr/local jsr\:@std/http/file-server  The installation root is determined, in order of precedence\:   - --root option   - DENO_INSTALL_ROOT environment variable   - \$HOME/.deno  These must be added to the path manually if required.' \
-'i:Installs dependencies either in the local project or globally to a bin directory.  Local installation  Add dependencies to the local project'\''s configuration (deno.json / package.json) and installs them in the package cache. If no dependency is specified, installs all dependencies listed in the config file. If the --entrypoint flag is passed, installs the dependencies of the specified entrypoint(s).    deno install   deno install @std/bytes   deno install npm\:chalk   deno install --entrypoint entry1.ts entry2.ts  Global installation  If the --global flag is set, installs a script as an executable in the installation root'\''s bin directory.    deno install --global --allow-net --allow-read jsr\:@std/http/file-server   deno install -g https\://examples.deno.land/color-logging.ts  To change the executable name, use -n/--name\:   deno install -g --allow-net --allow-read -n serve jsr\:@std/http/file-server  The executable name is inferred by default\:   - Attempt to take the file stem of the URL path. The above example would     become file_server.   - If the file stem is something generic like main, mod, index or cli,     and the path has no parent, take the file name of the parent path. Otherwise     settle with the generic name.   - If the resulting name has an @... suffix, strip it.  To change the installation root, use --root\:   deno install -g --allow-net --allow-read --root /usr/local jsr\:@std/http/file-server  The installation root is determined, in order of precedence\:   - --root option   - DENO_INSTALL_ROOT environment variable   - \$HOME/.deno  These must be added to the path manually if required.' \
+'install:Installs dependencies either in the local project or globally to a bin directory.  Local installation  Add dependencies to the local project'\''s configuration (deno.json / package.json) and installs them in the package cache. If no dependency is specified, installs all dependencies listed in the config file. If the --entrypoint flag is passed, installs the dependencies of the specified entrypoint(s).    deno install   deno install jsr\:@std/bytes   deno install npm\:chalk   deno install --entrypoint entry1.ts entry2.ts  Global installation  If the --global flag is set, installs a script as an executable in the installation root'\''s bin directory.    deno install --global --allow-net --allow-read jsr\:@std/http/file-server   deno install -g https\://examples.deno.land/color-logging.ts  To change the executable name, use -n/--name\:   deno install -g --allow-net --allow-read -n serve jsr\:@std/http/file-server  The executable name is inferred by default\:   - Attempt to take the file stem of the URL path. The above example would     become file_server.   - If the file stem is something generic like main, mod, index or cli,     and the path has no parent, take the file name of the parent path. Otherwise     settle with the generic name.   - If the resulting name has an @... suffix, strip it.  To change the installation root, use --root\:   deno install -g --allow-net --allow-read --root /usr/local jsr\:@std/http/file-server  The installation root is determined, in order of precedence\:   - --root option   - DENO_INSTALL_ROOT environment variable   - \$HOME/.deno  These must be added to the path manually if required.' \
+'i:Installs dependencies either in the local project or globally to a bin directory.  Local installation  Add dependencies to the local project'\''s configuration (deno.json / package.json) and installs them in the package cache. If no dependency is specified, installs all dependencies listed in the config file. If the --entrypoint flag is passed, installs the dependencies of the specified entrypoint(s).    deno install   deno install jsr\:@std/bytes   deno install npm\:chalk   deno install --entrypoint entry1.ts entry2.ts  Global installation  If the --global flag is set, installs a script as an executable in the installation root'\''s bin directory.    deno install --global --allow-net --allow-read jsr\:@std/http/file-server   deno install -g https\://examples.deno.land/color-logging.ts  To change the executable name, use -n/--name\:   deno install -g --allow-net --allow-read -n serve jsr\:@std/http/file-server  The executable name is inferred by default\:   - Attempt to take the file stem of the URL path. The above example would     become file_server.   - If the file stem is something generic like main, mod, index or cli,     and the path has no parent, take the file name of the parent path. Otherwise     settle with the generic name.   - If the resulting name has an @... suffix, strip it.  To change the installation root, use --root\:   deno install -g --allow-net --allow-read --root /usr/local jsr\:@std/http/file-server  The installation root is determined, in order of precedence\:   - --root option   - DENO_INSTALL_ROOT environment variable   - \$HOME/.deno  These must be added to the path manually if required.' \
 'json_reference:' \
 'jupyter:Deno kernel for Jupyter notebooks' \
 'uninstall:Uninstalls a dependency or an executable script in the installation root'\''s bin directory.   deno uninstall @std/dotenv chalk   deno uninstall --global file_server  To change the installation root, use --root flag\:   deno uninstall --global --root /usr/local serve  The installation root is determined, in order of precedence\:   - --root option   - DENO_INSTALL_ROOT environment variable   - \$HOME/.deno' \
