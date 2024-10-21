@@ -3,6 +3,13 @@
 set -eu
 
 WSL_DISTRO_NAME=${WSL_DISTRO_NAME:-""}
+DPKG_ARCH=$(dpkg --print-architecture 2>/dev/null || echo "")
+ARCH=$(arch)
+
+function get_github_release_version {
+  REPO_RELEASE_VERSION=$(curl -L -s "$1" | grep -P "meta.*\breleases/tag/(v|[0-9])" | head -n 1 | command grep -oP "releases/tag/v\K[^\"]*")
+  echo $REPO_RELEASE_VERSION
+}
 
 #------------------------------ install core utils
 
@@ -15,9 +22,6 @@ sudo apt -y install \
     zsh zsh-doc
 
 #------------------------------ install package sources
-
-DPKG_ARCH=$(dpkg --print-architecture 2>/dev/null || echo "")
-ARCH=$(arch)
 
 # init vscode
 curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor --yes -o /etc/apt/keyrings/packages.microsoft.gpg
@@ -153,16 +157,16 @@ sudo apt -y install \
     lens \
     tmux
 
-LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | command grep -Po '"tag_name": "v\K[^"]*')
+LAZYGIT_VERSION=$(get_github_release_version "https://github.com/jesseduffield/lazygit/releases/latest")
 curl -L "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_$ARCH.tar.gz" | \
     tar -xzO lazygit \
     > "$HOME"/.local/bin/lazygit && chmod ug+x "$HOME"/.local/bin/lazygit
 
-OPENLENS_VERSION=$(curl -s "https://api.github.com/repos/MuhammedKalkan/OpenLens/releases/latest" | command grep -Po '"tag_name": "v\K[^"]*')
-install_package "https://github.com/MuhammedKalkan/OpenLens/releases/latest/download/OpenLens-$OPENLENS_VERSION.$DPKG_ARCH.deb"
+OPENLENS_VERSION=$(get_github_release_version "https://github.com/MuhammedKalkan/OpenLens/releases/latest")
+install_package "https://github.com/MuhammedKalkan/OpenLens/releases/download/v$OPENLENS_VERSION/OpenLens-$OPENLENS_VERSION.$DPKG_ARCH.deb"
 
-GIT_CRED_MGR_VERSION=$(curl -s "https://api.github.com/repos/git-ecosystem/git-credential-manager/releases/latest" | command grep -Po '"tag_name": "v\K[^"]*')
-install_package "https://github.com/git-ecosystem/git-credential-manager/releases/latest/download/gcm-linux_$DPKG_ARCH.$GIT_CRED_MGR_VERSION.deb"
+GIT_CRED_MGR_VERSION=$(get_github_release_version "https://github.com/git-ecosystem/git-credential-manager/releases/latest")
+install_package "https://github.com/git-ecosystem/git-credential-manager/releases/download/v$GIT_CRED_MGR_VERSION/gcm-linux_$DPKG_ARCH.$GIT_CRED_MGR_VERSION.deb"
 
 if ! which discord >/dev/null ; then
   install_package "https://discord.com/api/download?platform=linux&format=deb"
@@ -181,8 +185,8 @@ if ! which teamviewer >/dev/null ; then
 fi
 
 if ! which rustdesk >/dev/null ; then
-  RUSTDESK_VERSION=$(curl -s "https://api.github.com/repos/rustdesk/rustdesk/releases/latest" | command grep -Po '"tag_name": "\K[^"]*')
-  install_package "https://github.com/rustdesk/rustdesk/releases/latest/download/rustdesk-$RUSTDESK_VERSION-$ARCH.deb"
+  RUSTDESK_VERSION=$(get_github_release_version "https://github.com/rustdesk/rustdesk/releases/latest")
+  install_package "https://github.com/rustdesk/rustdesk/releases/download/v$RUSTDESK_VERSION/rustdesk-$RUSTDESK_VERSION-$ARCH.deb"
 fi
 
 which jetbrains-toolbox || \
