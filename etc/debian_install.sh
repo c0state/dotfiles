@@ -186,7 +186,7 @@ fi
 
 if ! which rustdesk >/dev/null ; then
   RUSTDESK_VERSION=$(get_github_release_version "https://github.com/rustdesk/rustdesk/releases/latest")
-  install_package "https://github.com/rustdesk/rustdesk/releases/download/v$RUSTDESK_VERSION/rustdesk-$RUSTDESK_VERSION-$ARCH.deb"
+  install_package "https://github.com/rustdesk/rustdesk/releases/download/$RUSTDESK_VERSION/rustdesk-$RUSTDESK_VERSION-$ARCH.deb"
 fi
 
 which jetbrains-toolbox || \
