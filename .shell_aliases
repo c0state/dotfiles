@@ -15,7 +15,6 @@ alias find_zombies="ps axo stat,ppid,pid,comm | grep -w defunct"
 # git aliases
 alias gitvdiff="git difftool -t tkdiff --no-prompt"
 
-alias grep="egrep"
 alias h="history"
 alias hg="history | grep"
 
