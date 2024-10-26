@@ -13,14 +13,14 @@ rustup component add rust-analyzer
 
 source "$HOME"/.cargo/env
 
-cargo install --locked --features clipboard broot
-cargo install --locked coreutils
-cargo install --locked eza
-cargo install --locked git-delta
-cargo install --locked sd
-cargo install --locked tree-sitter-cli
-cargo install --locked wasm-pack
-cargo install --locked zellij
+cargo install --features clipboard broot
+cargo install coreutils
+cargo install eza
+cargo install git-delta
+cargo install sd
+cargo install tree-sitter-cli
+cargo install wasm-pack
+cargo install zellij
 
 if ! command -v uv >/dev/null 2>&1; then
   curl -LsSf https://astral.sh/uv/install.sh | sh
