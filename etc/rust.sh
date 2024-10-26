@@ -19,6 +19,7 @@ cargo install --locked eza
 cargo install --locked git-delta
 cargo install --locked sd
 cargo install --locked tree-sitter-cli
+cargo install --locked wasm-pack
 cargo install --locked zellij
 
 if ! command -v uv >/dev/null 2>&1; then
