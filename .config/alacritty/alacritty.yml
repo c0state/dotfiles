@@ -1,7 +1,0 @@
-font:
-  normal:
-    family: Hack Nerd Font
-  size: 12.0
-
-shell:
-  program: zsh
