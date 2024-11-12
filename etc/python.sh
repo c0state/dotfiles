@@ -9,6 +9,7 @@ REINSTALL_TOOLS=${REINSTALL_TOOLS:-""}
 if [[ -n "$REINSTALL_TOOLS" ]]; then
     rm -rf "$HOME"/.local/pipx
     rm -rf "$HOME"/.local/bin/pipx
+    rm -rf "$HOME"/.local/share/pipx
     rm -rf "$HOME"/Library/"Application Support"/pypoetry
     rm -rf "$HOME"/Library/Caches/pypoetry
 
