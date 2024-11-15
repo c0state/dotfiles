@@ -49,11 +49,8 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/lens-
   sudo tee /etc/apt/sources.list.d/lens.list > /dev/null
 
 # onedrive
-wget -qO - https://download.opensuse.org/repositories/home:/npreining:/debian-ubuntu-onedrive/xUbuntu_24.04/Release.key | gpg --dearmor | sudo tee /usr/share/keyrings/onedrive.gpg > /dev/null
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/onedrive.gpg] https://download.opensuse.org/repositories/home:/npreining:/debian-ubuntu-onedrive/xUbuntu_24.04/ ./" | sudo tee /etc/apt/sources.list.d/onedrive.list
-
-curl -fsSL https://download.opensuse.org/repositories/home:jstaf/xUbuntu_23.10/Release.key | gpg --dearmor | sudo tee /usr/share/keyrings/onedriver_jstaf.gpg > /dev/null
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/onedriver_jstaf.gpg] http://download.opensuse.org/repositories/home:/jstaf/xUbuntu_23.10/ /" | sudo tee /etc/apt/sources.list.d/onedriver_jstaf.list
+wget -qO - https://download.opensuse.org/repositories/home:/npreining:/debian-ubuntu-onedrive/xUbuntu_24.10/Release.key | gpg --dearmor | sudo tee /usr/share/keyrings/onedrive.gpg > /dev/null
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/onedrive.gpg] https://download.opensuse.org/repositories/home:/npreining:/debian-ubuntu-onedrive/xUbuntu_24.10/ ./" | sudo tee /etc/apt/sources.list.d/onedrive.list
 
 # signal
 wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor | sudo tee /usr/share/keyrings/signal-desktop-keyring.gpg > /dev/null
@@ -98,7 +95,7 @@ sudo apt -y install \
     lsd \
     ncdu \
     nethogs \
-    onedrive onedriver \
+    onedrive \
     parallel \
     putty \
     ranger \
