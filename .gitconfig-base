@@ -79,6 +79,7 @@
     autoSetupRemote = true
 [submodule]
     fetchJobs = 0
+    recurse = true
 [delta]
     features = side-by-side line-numbers decorations
     dark = true
