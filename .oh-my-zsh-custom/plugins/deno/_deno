@@ -84,6 +84,7 @@ _deno() {
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -170,6 +171,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -262,6 +264,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -307,6 +310,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -339,6 +343,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -413,6 +418,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -458,6 +464,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -503,6 +510,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -550,6 +558,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -588,6 +597,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -663,6 +673,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -706,6 +717,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -740,6 +752,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -785,6 +798,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -846,6 +860,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -895,6 +910,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -934,6 +950,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -981,6 +998,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -1062,6 +1080,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -1157,6 +1176,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -1217,6 +1237,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -1249,6 +1270,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -1283,6 +1305,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -1333,11 +1356,14 @@ _arguments "${_arguments_options[@]}" : \
 '--config=[Configure different aspects of deno including TypeScript, linting, and code formatting   Typically the configuration file will be called \`deno.json\` or \`deno.jsonc\` and   automatically detected; in that case this flag is not necessary.   Docs\: https\://docs.deno.com/go/config]:FILE:_files' \
 '*--ignore=[Ignore linting particular source files]: :_files' \
 '*--watch-exclude=[Exclude provided files/patterns from watch mode]' \
+'-I+[Allow importing from remote hosts. Optionally specify allowed IP addresses and host names, with ports as necessary. Default value\: deno.land\:443,jsr.io\:443,esm.sh\:443,cdn.jsdelivr.net\:443,raw.githubusercontent.com\:443,user.githubusercontent.com\:443]' \
+'--allow-import=[Allow importing from remote hosts. Optionally specify allowed IP addresses and host names, with ports as necessary. Default value\: deno.land\:443,jsr.io\:443,esm.sh\:443,cdn.jsdelivr.net\:443,raw.githubusercontent.com\:443,user.githubusercontent.com\:443]' \
 '--unstable[Enable all unstable features and APIs. Instead of using this flag, consider enabling individual unstable features   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -1381,6 +1407,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -1457,6 +1484,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -1504,6 +1532,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -1589,6 +1618,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -1638,6 +1668,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -1671,6 +1702,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -1706,6 +1738,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -1735,6 +1768,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
