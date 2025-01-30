@@ -99,7 +99,7 @@ eval "$(direnv hook zsh)"
 
 # ---------- fzf
 
-[ -f "$HOME"/.fzf.zsh ] && source "$HOME"/.fzf.zsh
+command -v fzf >/dev/null 2>&1 && source <(fzf --zsh)
 
 # ---------- google cloud sdk
 

@@ -124,7 +124,9 @@ if test "$PLATFORM" = "Darwin"
     set -gx PATH "$MACOS_BREW_PREFIX"/opt/findutils/libexec/gnubin $PATH
 end
 
-#---------- kubectl
+#---------- fzf
+
+fzf --fish | source
 
 #----- completions
 
