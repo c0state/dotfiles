@@ -177,6 +177,7 @@ brew_cask_packages=(
     flutter
     flux
     font-hack-nerd-font
+    ghostty
     gimp
     git-credential-manager
     github
