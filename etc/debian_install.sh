@@ -102,6 +102,7 @@ sudo apt -y install \
     ripgrep \
     rpi-imager \
     terraform \
+    traceroute \
     tree \
     wezterm \
     wireshark \
