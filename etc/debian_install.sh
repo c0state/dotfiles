@@ -193,7 +193,7 @@ which jetbrains-toolbox || \
     > "$HOME"/.local/bin/jetbrains-toolbox && \
     chmod u+x "$HOME"/.local/bin/jetbrains-toolbox
 
-sudo curl -L https://github.com/neovim/neovim/releases/latest/download/nvim.appimage --output /usr/local/bin/nvim
+sudo curl --fail -L https://github.com/neovim/neovim/releases/latest/download/nvim-linux-$ARCH.appimage --output /usr/local/bin/nvim
 sudo chmod +x /usr/local/bin/nvim
 
 # install vscode
