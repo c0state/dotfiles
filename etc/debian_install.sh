@@ -7,7 +7,7 @@ DPKG_ARCH=$(dpkg --print-architecture 2>/dev/null || echo "")
 ARCH=$(arch)
 
 function get_github_release_version {
-  REPO_RELEASE_VERSION=$(curl -L -s "$1" | grep -P "meta.*\breleases/tag/v?[0-9]" | head -n 1 | command grep -oP "releases/tag/v?\K[^\"]*")
+  REPO_RELEASE_VERSION=$(curl --fail -L -s "$1" | grep -P "meta.*\breleases/tag/v?[0-9]" | head -n 1 | command grep -oP "releases/tag/v?\K[^\"]*")
   echo $REPO_RELEASE_VERSION
 }
 
@@ -156,7 +156,7 @@ sudo apt -y install \
     tmux
 
 LAZYGIT_VERSION=$(get_github_release_version "https://github.com/jesseduffield/lazygit/releases/latest")
-curl -L "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_$ARCH.tar.gz" | \
+curl --fail -L "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_$ARCH.tar.gz" | \
     tar -xzO lazygit \
     > "$HOME"/.local/bin/lazygit && chmod ug+x "$HOME"/.local/bin/lazygit
 
