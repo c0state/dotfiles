@@ -93,6 +93,7 @@ brew_packages=(
     macvim
     mas
     media-info
+    minicom
     minikube
     mkcert
     mobile-shell
