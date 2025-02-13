@@ -93,6 +93,7 @@ sudo apt -y install \
     google-drive-ocamlfuse \
     keychain \
     lsd \
+    minicom \
     ncdu \
     nethogs \
     onedrive \
