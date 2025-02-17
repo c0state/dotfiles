@@ -165,6 +165,10 @@ fi
 "$HOME"/etc/setup_kubernetes.sh
 "$HOME"/etc/setup_env.fish
 
+if [[ "$PLATFORM" == "Linux" ]]; then
+  "$HOME"/etc/linux_tools.sh
+fi
+
 # ---------- cleanup
 
 # remove dead symlinks
