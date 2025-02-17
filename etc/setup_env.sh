@@ -133,6 +133,11 @@ if ! which nix >/dev/null ; then
     curl -L https://nixos.org/nix/install | sh -s -- --daemon
 fi
 
+# ---------- github cli
+
+gh extension install github/gh-copilot
+gh extension upgrade --all
+
 # ---------- google cloud sdk
 
 if ! which gcloud; then
