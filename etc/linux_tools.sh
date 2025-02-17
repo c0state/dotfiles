@@ -14,12 +14,14 @@ if ! which brew > /dev/null; then
 fi
 
 if test -w /home/linuxbrew/.linuxbrew; then
+  brew update
+  brew upgrade
+
   brew install nerdctl
+  brew install ripgrep-all
 else
   echo "Linuxbrew dir not writable, was it installed by a different user?"
 fi
-
-brew install ripgrep-all
 
 # ---------- aws
 
