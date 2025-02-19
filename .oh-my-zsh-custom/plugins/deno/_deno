@@ -448,6 +448,7 @@ _arguments "${_arguments_options[@]}" : \
 '--enable-testing-features-do-not-use[INTERNAL\: Enable internal features used during integration testing]' \
 '--json[UNSTABLE\: Output benchmark result in JSON format]' \
 '--no-run[Cache bench modules, but don'\''t run benchmarks]' \
+'--permit-no-files[Don'\''t return an error code if no bench files were found]' \
 '--watch[Watch for file changes and restart process automatically.   Only local files from entry point module graph are watched.]' \
 '--no-clear-screen[Do not clear terminal screen when under watch mode]' \
 '*::files -- List of file names to run:' \
@@ -579,6 +580,7 @@ _arguments "${_arguments_options[@]}" : \
 '--no-npm[Do not resolve npm modules]' \
 '(-c --config)--no-config[Disable automatic loading of the configuration file]' \
 '(--lock)--no-lock[Disable auto discovery of the lock file]' \
+'--no-code-cache[Disable V8 code cache feature]' \
 '(--no-remote)--all[Type-check all code, including remote modules and npm packages]' \
 '(--no-remote)--remote[Type-check all modules, including remote ones]' \
 '--doc[Type-check code blocks in JSDoc as well as actual code]' \
@@ -1323,10 +1325,12 @@ _arguments "${_arguments_options[@]}" : \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
 '(--lock)--no-lock[Disable auto discovery of the lock file]' \
-'(--compatible)--latest[Update to the latest version, regardless of semver constraints]' \
-'(--compatible)-u[Update dependency versions]' \
-'(--compatible)--update[Update dependency versions]' \
-'(-u --update)--compatible[Only output versions that satisfy semver requirements]' \
+'(--compatible)--latest[Consider the latest version, regardless of semver constraints]' \
+'-u[Update dependency versions]' \
+'--update[Update dependency versions]' \
+'-i[Interactively select which dependencies to update]' \
+'--interactive[Interactively select which dependencies to update]' \
+'--compatible[Only consider versions that satisfy semver requirements]' \
 '-r[include all workspace members]' \
 '--recursive[include all workspace members]' \
 '*::filters -- Filters selecting which packages to act on. Can include wildcards (*) to match multiple packages. If a version requirement is specified, the matching packages will be updated to the given requirement.:' \
@@ -1523,9 +1527,10 @@ _arguments "${_arguments_options[@]}" : \
 '--log-level=[Set log level]: :(trace debug info)' \
 '-c+[Configure different aspects of deno including TypeScript, linting, and code formatting   Typically the configuration file will be called \`deno.json\` or \`deno.jsonc\` and   automatically detected; in that case this flag is not necessary.   Docs\: https\://docs.deno.com/go/config]:FILE:_files' \
 '--config=[Configure different aspects of deno including TypeScript, linting, and code formatting   Typically the configuration file will be called \`deno.json\` or \`deno.jsonc\` and   automatically detected; in that case this flag is not necessary.   Docs\: https\://docs.deno.com/go/config]:FILE:_files' \
+'--frozen=[Error out if lockfile is out of date]' \
 '--cwd=[Specify the directory to run the task in]:DIR:_files -/' \
-'-f+[Filter members of the workspace by name - should be used with --recursive]: : ' \
-'--filter=[Filter members of the workspace by name - should be used with --recursive]: : ' \
+'-f+[Filter members of the workspace by name, implies --recursive flag]: : ' \
+'--filter=[Filter members of the workspace by name, implies --recursive flag]: : ' \
 '--node-modules-dir=[Sets the node modules management mode for npm packages]' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
@@ -1551,7 +1556,7 @@ _arguments "${_arguments_options[@]}" : \
 '--quiet[Suppress diagnostic output]' \
 '-r[Run the task in all projects in the workspace]' \
 '--recursive[Run the task in all projects in the workspace]' \
-'--eval[Evaluate the passed value as if, it was a task in a configuration file]' \
+'--eval[Evaluate the passed value as if it was a task in a configuration file]' \
 && ret=0
 ;;
 (test)
@@ -2122,7 +2127,7 @@ _deno_commands() {
 'add:Add dependencies to your configuration file.   deno add jsr\:@std/path  You can also add npm packages\:   deno add npm\:react  Or multiple dependencies at once\:   deno add jsr\:@std/path jsr\:@std/assert npm\:chalk' \
 'remove:Remove dependencies from the configuration file.   deno remove @std/path  You can remove multiple dependencies at once\:   deno remove @std/path @std/assert ' \
 'bench:Run benchmarks using Deno'\''s built-in bench tool.  Evaluate the given files, run all benches declared with '\''Deno.bench()'\'' and report results to standard output\:   deno bench src/fetch_bench.ts src/signal_bench.ts  If you specify a directory instead of a file, the path is expanded to all contained files matching the glob {*_,*.,}bench.{js,mjs,ts,mts,jsx,tsx}\:   deno bench src/  Read more\: https\://docs.deno.com/go/bench' \
-'bundle:⚠️ \`deno bundle\` was removed in Deno 2.  See the Deno 1.x to 2.x Migration Guide for migration instructions\: https\://docs.deno.com/runtime/manual/advanced/migrate_deprecations' \
+'bundle:\`deno bundle\` was removed in Deno 2.  See the Deno 1.x to 2.x Migration Guide for migration instructions\: https\://docs.deno.com/runtime/manual/advanced/migrate_deprecations' \
 'cache:Cache and compile remote dependencies.  Download and compile a module with all of its static dependencies and save them in the local cache, without running any code\:   deno cache jsr\:@std/http/file-server  Future runs of this module will trigger no downloads or compilation unless --reload is specified  Read more\: https\://docs.deno.com/go/cache' \
 'check:Download and type-check without execution.    deno check jsr\:@std/http/file-server  Unless --reload is specified, this command will not re-download already cached dependencies  Read more\: https\://docs.deno.com/go/check' \
 'clean:Remove the cache directory (\$DENO_DIR)' \
@@ -2148,7 +2153,7 @@ _deno_commands() {
 'test:Run tests using Deno'\''s built-in test runner.  Evaluate the given modules, run all tests declared with Deno.test() and report results to standard output\:   deno test src/fetch_test.ts src/signal_test.ts  Directory arguments are expanded to all contained files matching the glob {*_,*.,}test.{js,mjs,ts,mts,jsx,tsx} or **/__tests__/**\:  deno test src/  Read more\: https\://docs.deno.com/go/test' \
 'types:Print runtime TypeScript declarations.    deno types > lib.deno.d.ts  The declaration file could be saved and used for typing information.' \
 'upgrade:Upgrade deno executable to the given version.  Latest   deno upgrade  Specific version   deno upgrade 1.45.0   deno upgrade 1.46.0-rc.1   deno upgrade 9bc2dd29ad6ba334fd57a20114e367d3c04763d4  Channel   deno upgrade stable   deno upgrade rc   deno upgrade canary  The version is downloaded from https\://dl.deno.land and is used to replace the current executable.  If you want to not replace the current Deno executable but instead download an update to a different location, use the --output flag\:   deno upgrade --output \$HOME/my_deno  Read more\: https\://docs.deno.com/go/upgrade' \
-'vendor:⚠️ \`deno vendor\` was removed in Deno 2.  See the Deno 1.x to 2.x Migration Guide for migration instructions\: https\://docs.deno.com/runtime/manual/advanced/migrate_deprecations' \
+'vendor:\`deno vendor\` was removed in Deno 2.  See the Deno 1.x to 2.x Migration Guide for migration instructions\: https\://docs.deno.com/runtime/manual/advanced/migrate_deprecations' \
 'help:' \
     )
     _describe -t commands 'deno commands' commands "$@"
