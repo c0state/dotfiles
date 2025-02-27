@@ -57,7 +57,6 @@ fi
 
 # ---------- set up nvchad
 
-nvim --headless +MasonInstallAll +qa
 nvim --headless "+Lazy! sync" +qa
 
 # ---------- set up fzf https://github.com/junegunn/fzf
