@@ -16,6 +16,7 @@ volta install yarn
 # ---------- install global packages
 
 npm install --global \
+    cdktf-cli \
     diff-so-fancy \
     git-split-diffs \
     imageoptim-cli \
