@@ -18,6 +18,7 @@ if test -w /home/linuxbrew/.linuxbrew; then
   brew upgrade
 
   brew install nerdctl
+  brew install nushell
   brew install ripgrep-all
 else
   echo "Linuxbrew dir not writable, was it installed by a different user?"
