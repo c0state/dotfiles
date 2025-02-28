@@ -102,6 +102,7 @@ brew_packages=(
     neovim
     nmap
     nnn
+    nushell
     openjdk
     openssl
     optipng
