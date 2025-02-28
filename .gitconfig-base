@@ -36,24 +36,35 @@
     type = cat-file -t
     unpublish = !legit unpublish \"$@\"
     up = !git pull --rebase --prune $@ && git submodule update --init --recursive
+[branch]
+    sort = -committerdate
 [color]
     ui = true
+[column]
+    ui = auto
+[commit]
+    verbose = true
 [core]
     editor = vim
-    excludesfile = ~/.gitignore_global
+    excludesfile = ~/.gitignore
     filemode = false
     fscache = true
     pager = git-split-diffs
     autocrlf = input
     eol = lf
 [diff]
+    algorithm = histogram
     colorMoved = default
+    mnemonicPrefix = true
+    renames = true
 [difftool]
     prompt = false
 [difftool "meld"]
     cmd = meld "$LOCAL" "$REMOTE"
 [fetch]
+    all = true
     prune = true
+    pruneTags = true
 [filter "lfs"]
     clean = git-lfs clean -- %f
     smudge = git-lfs smudge -- %f
@@ -63,12 +74,14 @@
     pretty = oneline
 [gc]
     auto = 256
+[help]
+    autocorrect = prompt
 [init]
 	defaultBranch = main
 [interactive]
     diffFilter = "diff-so-fancy --patch"
 [merge]
-    conflictStyle = diff3
+    conflictStyle = zdiff3
 [mergetool]
     prompt = false
 [mergetool "meld"]
@@ -77,6 +90,14 @@
     rebase = true
 [push]
     autoSetupRemote = true
+    followTags = true
+[rebase]
+    autoSquash = true
+    autoStash = true
+    updateRefs = true
+[rerere]
+    enabled = true
+    autoupdate = true
 [submodule]
     fetchJobs = 0
     recurse = true
@@ -92,3 +113,6 @@
 [split-diffs]
     syntax-highlighting-theme = github-dark
     theme-name = dark
+[tag]
+    sort = version:refname
+
