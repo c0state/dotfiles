@@ -327,8 +327,8 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
-'-D[Add as a dev dependency]' \
-'--dev[Add as a dev dependency]' \
+'-D[Add the package as a dev dependency. Note\: This only applies when adding to a \`package.json\` file.]' \
+'--dev[Add the package as a dev dependency. Note\: This only applies when adding to a \`package.json\` file.]' \
 '*::packages -- List of packages to add:_default' \
 && ret=0
 ;;
@@ -1116,8 +1116,8 @@ _arguments "${_arguments_options[@]}" : \
 '--global[Install a package or script as a globally available executable]' \
 '(-g --global)-e[Install dependents of the specified entrypoint(s)]' \
 '(-g --global)--entrypoint[Install dependents of the specified entrypoint(s)]' \
-'(-e --entrypoint -g --global)-D[Add as a dev dependency]' \
-'(-e --entrypoint -g --global)--dev[Add as a dev dependency]' \
+'(-e --entrypoint -g --global)-D[Add the package as a dev dependency. Note\: This only applies when adding to a \`package.json\` file.]' \
+'(-e --entrypoint -g --global)--dev[Add the package as a dev dependency. Note\: This only applies when adding to a \`package.json\` file.]' \
 '*::cmd:_files' \
 && ret=0
 ;;
@@ -1212,8 +1212,8 @@ _arguments "${_arguments_options[@]}" : \
 '--global[Install a package or script as a globally available executable]' \
 '(-g --global)-e[Install dependents of the specified entrypoint(s)]' \
 '(-g --global)--entrypoint[Install dependents of the specified entrypoint(s)]' \
-'(-e --entrypoint -g --global)-D[Add as a dev dependency]' \
-'(-e --entrypoint -g --global)--dev[Add as a dev dependency]' \
+'(-e --entrypoint -g --global)-D[Add the package as a dev dependency. Note\: This only applies when adding to a \`package.json\` file.]' \
+'(-e --entrypoint -g --global)--dev[Add the package as a dev dependency. Note\: This only applies when adding to a \`package.json\` file.]' \
 '*::cmd:_files' \
 && ret=0
 ;;
