@@ -99,7 +99,7 @@ eval "$(direnv hook zsh)"
 
 # ---------- fzf
 
-command -v fzf >/dev/null 2>&1 && source <(fzf --zsh)
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # ---------- google cloud sdk
 
@@ -123,3 +123,4 @@ eval "$(starship init zsh)"
 
 # uncomment to profile startup
 # zprof
+

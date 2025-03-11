@@ -27,7 +27,7 @@ export PS1='\[\e[0;31m\][\D{%Y-%m-%d} \t]\[\e[m\]\[\e[0;37m\]\u@\h\[\e[m\]\[\e[0
 
 #---------- fzf
 
-command -v fzf >/dev/null 2>&1 && eval "$(fzf --bash)"
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 #---------- google cloud sdk
 
