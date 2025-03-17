@@ -122,6 +122,7 @@ sudo snap refresh
 flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak install --user -y flathub io.podman_desktop.PodmanDesktop
 flatpak install --user -y flathub com.obsproject.Studio
+flatpak install --user -y flathub org.gimp.GIMP
 sudo flatpak update -y
 
 #------------------------------ general init
