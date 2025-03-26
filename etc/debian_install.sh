@@ -131,7 +131,7 @@ mkdir -p "$HOME"/.local/bin
 
 #------------------------------ install packages
 
-# install compiler packages
+# install development packages
 sudo apt -y install \
     build-essential cmake \
     zlib1g-dev \
@@ -140,6 +140,7 @@ sudo apt -y install \
     libncurses5-dev libncursesw5-dev \
     libxcb-render0-dev libxcb-shape0-dev libxcb-xfixes0-dev \
     libxml2-dev \
+    swig \
     tk-dev
 
 # install docker and set up group
