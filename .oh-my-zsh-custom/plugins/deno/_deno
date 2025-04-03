@@ -84,6 +84,7 @@ _deno() {
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -93,6 +94,7 @@ _deno() {
 '--unstable-http[Enable unstable HTTP APIs]' \
 '--unstable-kv[Enable unstable Key-Value store APIs]' \
 '--unstable-net[Enable unstable net APIs]' \
+'--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
@@ -171,6 +173,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -180,6 +183,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-http[Enable unstable HTTP APIs]' \
 '--unstable-kv[Enable unstable Key-Value store APIs]' \
 '--unstable-net[Enable unstable net APIs]' \
+'--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
@@ -265,6 +269,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -274,6 +279,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-http[Enable unstable HTTP APIs]' \
 '--unstable-kv[Enable unstable Key-Value store APIs]' \
 '--unstable-net[Enable unstable net APIs]' \
+'--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
@@ -312,6 +318,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -321,6 +328,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-http[Enable unstable HTTP APIs]' \
 '--unstable-kv[Enable unstable Key-Value store APIs]' \
 '--unstable-net[Enable unstable net APIs]' \
+'--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
@@ -345,6 +353,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -354,6 +363,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-http[Enable unstable HTTP APIs]' \
 '--unstable-kv[Enable unstable Key-Value store APIs]' \
 '--unstable-net[Enable unstable net APIs]' \
+'--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
@@ -420,6 +430,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -429,6 +440,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-http[Enable unstable HTTP APIs]' \
 '--unstable-kv[Enable unstable Key-Value store APIs]' \
 '--unstable-net[Enable unstable net APIs]' \
+'--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
@@ -468,6 +480,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -477,6 +490,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-http[Enable unstable HTTP APIs]' \
 '--unstable-kv[Enable unstable Key-Value store APIs]' \
 '--unstable-net[Enable unstable net APIs]' \
+'--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
@@ -514,6 +528,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -523,6 +538,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-http[Enable unstable HTTP APIs]' \
 '--unstable-kv[Enable unstable Key-Value store APIs]' \
 '--unstable-net[Enable unstable net APIs]' \
+'--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
@@ -562,6 +578,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -571,6 +588,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-http[Enable unstable HTTP APIs]' \
 '--unstable-kv[Enable unstable Key-Value store APIs]' \
 '--unstable-net[Enable unstable net APIs]' \
+'--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
@@ -602,6 +620,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -611,6 +630,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-http[Enable unstable HTTP APIs]' \
 '--unstable-kv[Enable unstable Key-Value store APIs]' \
 '--unstable-net[Enable unstable net APIs]' \
+'--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
@@ -678,6 +698,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -687,6 +708,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-http[Enable unstable HTTP APIs]' \
 '--unstable-kv[Enable unstable Key-Value store APIs]' \
 '--unstable-net[Enable unstable net APIs]' \
+'--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
@@ -723,6 +745,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -732,6 +755,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-http[Enable unstable HTTP APIs]' \
 '--unstable-kv[Enable unstable Key-Value store APIs]' \
 '--unstable-net[Enable unstable net APIs]' \
+'--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
@@ -758,6 +782,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -767,6 +792,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-http[Enable unstable HTTP APIs]' \
 '--unstable-kv[Enable unstable Key-Value store APIs]' \
 '--unstable-net[Enable unstable net APIs]' \
+'--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
@@ -804,6 +830,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -813,6 +840,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-http[Enable unstable HTTP APIs]' \
 '--unstable-kv[Enable unstable Key-Value store APIs]' \
 '--unstable-net[Enable unstable net APIs]' \
+'--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
@@ -866,6 +894,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -875,6 +904,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-http[Enable unstable HTTP APIs]' \
 '--unstable-kv[Enable unstable Key-Value store APIs]' \
 '--unstable-net[Enable unstable net APIs]' \
+'--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
@@ -917,6 +947,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -926,6 +957,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-http[Enable unstable HTTP APIs]' \
 '--unstable-kv[Enable unstable Key-Value store APIs]' \
 '--unstable-net[Enable unstable net APIs]' \
+'--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
@@ -957,6 +989,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -966,6 +999,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-http[Enable unstable HTTP APIs]' \
 '--unstable-kv[Enable unstable Key-Value store APIs]' \
 '--unstable-net[Enable unstable net APIs]' \
+'--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
@@ -1005,6 +1039,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -1014,6 +1049,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-http[Enable unstable HTTP APIs]' \
 '--unstable-kv[Enable unstable Key-Value store APIs]' \
 '--unstable-net[Enable unstable net APIs]' \
+'--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
@@ -1087,6 +1123,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -1096,6 +1133,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-http[Enable unstable HTTP APIs]' \
 '--unstable-kv[Enable unstable Key-Value store APIs]' \
 '--unstable-net[Enable unstable net APIs]' \
+'--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
@@ -1184,6 +1222,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -1193,6 +1232,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-http[Enable unstable HTTP APIs]' \
 '--unstable-kv[Enable unstable Key-Value store APIs]' \
 '--unstable-net[Enable unstable net APIs]' \
+'--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
@@ -1246,6 +1286,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -1255,6 +1296,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-http[Enable unstable HTTP APIs]' \
 '--unstable-kv[Enable unstable Key-Value store APIs]' \
 '--unstable-net[Enable unstable net APIs]' \
+'--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
@@ -1279,6 +1321,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -1288,6 +1331,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-http[Enable unstable HTTP APIs]' \
 '--unstable-kv[Enable unstable Key-Value store APIs]' \
 '--unstable-net[Enable unstable net APIs]' \
+'--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
@@ -1314,6 +1358,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -1323,6 +1368,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-http[Enable unstable HTTP APIs]' \
 '--unstable-kv[Enable unstable Key-Value store APIs]' \
 '--unstable-net[Enable unstable net APIs]' \
+'--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
@@ -1374,6 +1420,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -1383,6 +1430,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-http[Enable unstable HTTP APIs]' \
 '--unstable-kv[Enable unstable Key-Value store APIs]' \
 '--unstable-net[Enable unstable net APIs]' \
+'--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
@@ -1418,6 +1466,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -1427,6 +1476,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-http[Enable unstable HTTP APIs]' \
 '--unstable-kv[Enable unstable Key-Value store APIs]' \
 '--unstable-net[Enable unstable net APIs]' \
+'--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
@@ -1495,6 +1545,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -1504,6 +1555,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-http[Enable unstable HTTP APIs]' \
 '--unstable-kv[Enable unstable Key-Value store APIs]' \
 '--unstable-net[Enable unstable net APIs]' \
+'--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
@@ -1545,6 +1597,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -1554,6 +1607,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-http[Enable unstable HTTP APIs]' \
 '--unstable-kv[Enable unstable Key-Value store APIs]' \
 '--unstable-net[Enable unstable net APIs]' \
+'--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
@@ -1631,6 +1685,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -1640,6 +1695,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-http[Enable unstable HTTP APIs]' \
 '--unstable-kv[Enable unstable Key-Value store APIs]' \
 '--unstable-net[Enable unstable net APIs]' \
+'--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
@@ -1682,6 +1738,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -1691,6 +1748,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-http[Enable unstable HTTP APIs]' \
 '--unstable-kv[Enable unstable Key-Value store APIs]' \
 '--unstable-net[Enable unstable net APIs]' \
+'--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
@@ -1716,6 +1774,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -1725,6 +1784,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-http[Enable unstable HTTP APIs]' \
 '--unstable-kv[Enable unstable Key-Value store APIs]' \
 '--unstable-net[Enable unstable net APIs]' \
+'--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
@@ -1752,6 +1812,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -1761,6 +1822,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-http[Enable unstable HTTP APIs]' \
 '--unstable-kv[Enable unstable Key-Value store APIs]' \
 '--unstable-net[Enable unstable net APIs]' \
+'--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
@@ -1782,6 +1844,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
 '--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-byonm[]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -1791,6 +1854,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-http[Enable unstable HTTP APIs]' \
 '--unstable-kv[Enable unstable Key-Value store APIs]' \
 '--unstable-net[Enable unstable net APIs]' \
+'--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
