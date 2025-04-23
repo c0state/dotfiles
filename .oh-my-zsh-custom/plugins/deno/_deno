@@ -87,6 +87,7 @@ _deno() {
 '--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -100,6 +101,7 @@ _deno() {
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
+'--unstable-vsock[Enable unstable VSOCK APIs]' \
 '--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-V[Print version]' \
@@ -176,6 +178,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -189,6 +192,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
+'--unstable-vsock[Enable unstable VSOCK APIs]' \
 '--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '--no-remote[Do not resolve remote modules]' \
@@ -272,6 +276,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -285,6 +290,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
+'--unstable-vsock[Enable unstable VSOCK APIs]' \
 '--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '--no-remote[Do not resolve remote modules]' \
@@ -321,6 +327,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -334,6 +341,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
+'--unstable-vsock[Enable unstable VSOCK APIs]' \
 '--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
@@ -356,6 +364,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -369,6 +378,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
+'--unstable-vsock[Enable unstable VSOCK APIs]' \
 '--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
@@ -433,6 +443,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -446,6 +457,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
+'--unstable-vsock[Enable unstable VSOCK APIs]' \
 '--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
@@ -483,6 +495,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -496,6 +509,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
+'--unstable-vsock[Enable unstable VSOCK APIs]' \
 '--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
@@ -531,6 +545,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -544,6 +559,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
+'--unstable-vsock[Enable unstable VSOCK APIs]' \
 '--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
@@ -581,6 +597,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -594,6 +611,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
+'--unstable-vsock[Enable unstable VSOCK APIs]' \
 '--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
@@ -623,6 +641,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -636,6 +655,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
+'--unstable-vsock[Enable unstable VSOCK APIs]' \
 '--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
@@ -701,6 +721,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -714,6 +735,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
+'--unstable-vsock[Enable unstable VSOCK APIs]' \
 '--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
@@ -748,6 +770,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -761,6 +784,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
+'--unstable-vsock[Enable unstable VSOCK APIs]' \
 '--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
@@ -785,6 +809,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -798,6 +823,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
+'--unstable-vsock[Enable unstable VSOCK APIs]' \
 '--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
@@ -833,6 +859,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -846,6 +873,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
+'--unstable-vsock[Enable unstable VSOCK APIs]' \
 '--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
@@ -897,6 +925,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -910,6 +939,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
+'--unstable-vsock[Enable unstable VSOCK APIs]' \
 '--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
@@ -950,6 +980,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -963,6 +994,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
+'--unstable-vsock[Enable unstable VSOCK APIs]' \
 '--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
@@ -992,6 +1024,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -1005,6 +1038,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
+'--unstable-vsock[Enable unstable VSOCK APIs]' \
 '--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
@@ -1042,6 +1076,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -1055,6 +1090,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
+'--unstable-vsock[Enable unstable VSOCK APIs]' \
 '--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
@@ -1126,6 +1162,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -1139,6 +1176,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
+'--unstable-vsock[Enable unstable VSOCK APIs]' \
 '--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
@@ -1225,6 +1263,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -1238,6 +1277,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
+'--unstable-vsock[Enable unstable VSOCK APIs]' \
 '--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
@@ -1289,6 +1329,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -1302,6 +1343,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
+'--unstable-vsock[Enable unstable VSOCK APIs]' \
 '--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '(--kernel)--install[Installs kernelspec, requires '\''jupyter'\'' command to be available.]' \
@@ -1324,6 +1366,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -1337,6 +1380,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
+'--unstable-vsock[Enable unstable VSOCK APIs]' \
 '--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
@@ -1361,6 +1405,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -1374,6 +1419,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
+'--unstable-vsock[Enable unstable VSOCK APIs]' \
 '--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
@@ -1423,6 +1469,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -1436,6 +1483,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
+'--unstable-vsock[Enable unstable VSOCK APIs]' \
 '--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
@@ -1469,6 +1517,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -1482,6 +1531,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
+'--unstable-vsock[Enable unstable VSOCK APIs]' \
 '--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
@@ -1548,6 +1598,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -1561,6 +1612,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
+'--unstable-vsock[Enable unstable VSOCK APIs]' \
 '--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
@@ -1600,6 +1652,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -1613,6 +1666,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
+'--unstable-vsock[Enable unstable VSOCK APIs]' \
 '--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
@@ -1674,7 +1728,7 @@ _arguments "${_arguments_options[@]}" : \
 '--fail-fast=[Stop after N errors. Defaults to stopping after first failure]' \
 '--filter=[Run tests with this string or regexp pattern in the test name]: :_default' \
 '--shuffle=[Shuffle the order in which the tests are run]' \
-'(--inspect --inspect-wait --inspect-brk)--coverage=[Collect coverage profile data into DIR. If DIR is not specified, it uses '\''coverage/'\'']' \
+'(--inspect --inspect-wait --inspect-brk)--coverage=[Collect coverage profile data into DIR. If DIR is not specified, it uses '\''coverage/'\''.   This option can also be set via the DENO_COVERAGE_DIR environment variable.]' \
 '(--no-run --coverage)*--watch=[Watch for file changes and restart process automatically.   Local files from entry point module graph are watched by default.   Additional paths might be watched by passing them as arguments to this flag.]' \
 '*--watch-exclude=[Exclude provided files/patterns from watch mode]' \
 '--junit-path=[Write a JUnit XML test report to PATH. Use '\''-'\'' to write to stdout which is the default when PATH is not provided]:PATH:_files' \
@@ -1688,6 +1742,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -1701,6 +1756,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
+'--unstable-vsock[Enable unstable VSOCK APIs]' \
 '--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
@@ -1741,6 +1797,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -1754,6 +1811,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
+'--unstable-vsock[Enable unstable VSOCK APIs]' \
 '--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
@@ -1777,6 +1835,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -1790,6 +1849,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
+'--unstable-vsock[Enable unstable VSOCK APIs]' \
 '--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
@@ -1815,6 +1875,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -1828,6 +1889,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
+'--unstable-vsock[Enable unstable VSOCK APIs]' \
 '--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
@@ -1847,6 +1909,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
 '--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
 '--unstable-cron[Enable unstable Deno.cron API]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
@@ -1860,6 +1923,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-process[Enable unstable process APIs]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
+'--unstable-vsock[Enable unstable VSOCK APIs]' \
 '--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
@@ -2223,7 +2287,7 @@ _deno_commands() {
 'lint:Lint JavaScript/TypeScript source code.    deno lint   deno lint myfile1.ts myfile2.js  Print result as JSON\:   deno lint --json  Read from stdin\:   cat file.ts | deno lint -   cat file.ts | deno lint --json -  List available rules\:   deno lint --rules  To ignore specific diagnostics, you can write an ignore comment on the preceding line with a rule name (or multiple)\:   // deno-lint-ignore no-explicit-any   // deno-lint-ignore require-await no-empty  To ignore linting on an entire file, you can add an ignore comment at the top of the file\:   // deno-lint-ignore-file  Read more\: https\://docs.deno.com/go/lint ' \
 'publish:Publish the current working directory'\''s package or workspace to JSR' \
 'repl:Starts a read-eval-print-loop, which lets you interactively build up program state in the global context. It is especially useful for quick prototyping and checking snippets of code.  TypeScript is supported, however it is not type-checked, only transpiled.' \
-'task:Run a task defined in the configuration file.   deno task build  List all available tasks\:   deno task  Evaluate a task from string   deno task --eval "echo \$(pwd)"' \
+'task:Run a task defined in the configuration file\:   deno task build  List all available tasks (from config files in the current and ancestor directories)\:   deno task  Evaluate a task from string\:   deno task --eval "echo \$(pwd)"' \
 'test:Run tests using Deno'\''s built-in test runner.  Evaluate the given modules, run all tests declared with Deno.test() and report results to standard output\:   deno test src/fetch_test.ts src/signal_test.ts  Directory arguments are expanded to all contained files matching the glob {*_,*.,}test.{js,mjs,ts,mts,jsx,tsx} or **/__tests__/**\:  deno test src/  Read more\: https\://docs.deno.com/go/test' \
 'types:Print runtime TypeScript declarations.    deno types > lib.deno.d.ts  The declaration file could be saved and used for typing information.' \
 'upgrade:Upgrade deno executable to the given version.  Latest   deno upgrade  Specific version   deno upgrade 1.45.0   deno upgrade 1.46.0-rc.1   deno upgrade 9bc2dd29ad6ba334fd57a20114e367d3c04763d4  Channel   deno upgrade stable   deno upgrade rc   deno upgrade canary  The version is downloaded from https\://dl.deno.land and is used to replace the current executable.  If you want to not replace the current Deno executable but instead download an update to a different location, use the --output flag\:   deno upgrade --output \$HOME/my_deno  Read more\: https\://docs.deno.com/go/upgrade' \
