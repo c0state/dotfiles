@@ -70,7 +70,6 @@ pipx install git-delete-merged-branches
 pipx install graphtage
 pipx install howdoi
 pipx install httpie
-pipx install ipython
 pipx install markdown
 pipx install mypy
 pipx install pgcli
