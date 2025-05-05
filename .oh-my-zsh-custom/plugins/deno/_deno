@@ -82,27 +82,27 @@ _deno() {
 '--no-code-cache[Disable V8 code cache feature]' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
-'--unstable-byonm[]' \
-'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
-'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
-'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
-'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
-'--unstable-cron[Enable unstable Deno.cron API]' \
+'--unstable-byonm[]' \
+'--unstable-cron[Enable unstable \`Deno.cron\` API]' \
+'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
 '--unstable-fs[Enable unstable file system APIs]' \
 '--unstable-http[Enable unstable HTTP APIs]' \
-'--unstable-kv[Enable unstable Key-Value store APIs]' \
-'--unstable-net[Enable unstable net APIs]' \
+'--unstable-kv[Enable unstable KV APIs]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
+'--unstable-net[enable unstable net APIs]' \
 '--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
+'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
 '--unstable-vsock[Enable unstable VSOCK APIs]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
+'--unstable-webgpu[Enable unstable WebGPU APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-V[Print version]' \
 '--version[Print version]' \
@@ -173,27 +173,27 @@ _arguments "${_arguments_options[@]}" : \
 '--log-level=[Set log level]: :(trace debug info)' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
-'--unstable-byonm[]' \
-'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
-'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
-'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
-'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
-'--unstable-cron[Enable unstable Deno.cron API]' \
+'--unstable-byonm[]' \
+'--unstable-cron[Enable unstable \`Deno.cron\` API]' \
+'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
 '--unstable-fs[Enable unstable file system APIs]' \
 '--unstable-http[Enable unstable HTTP APIs]' \
-'--unstable-kv[Enable unstable Key-Value store APIs]' \
-'--unstable-net[Enable unstable net APIs]' \
+'--unstable-kv[Enable unstable KV APIs]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
+'--unstable-net[enable unstable net APIs]' \
 '--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
+'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
 '--unstable-vsock[Enable unstable VSOCK APIs]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
+'--unstable-webgpu[Enable unstable WebGPU APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '--no-remote[Do not resolve remote modules]' \
 '--no-npm[Do not resolve npm modules]' \
@@ -271,27 +271,27 @@ _arguments "${_arguments_options[@]}" : \
 '--log-level=[Set log level]: :(trace debug info)' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
-'--unstable-byonm[]' \
-'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
-'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
-'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
-'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
-'--unstable-cron[Enable unstable Deno.cron API]' \
+'--unstable-byonm[]' \
+'--unstable-cron[Enable unstable \`Deno.cron\` API]' \
+'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
 '--unstable-fs[Enable unstable file system APIs]' \
 '--unstable-http[Enable unstable HTTP APIs]' \
-'--unstable-kv[Enable unstable Key-Value store APIs]' \
-'--unstable-net[Enable unstable net APIs]' \
+'--unstable-kv[Enable unstable KV APIs]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
+'--unstable-net[enable unstable net APIs]' \
 '--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
+'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
 '--unstable-vsock[Enable unstable VSOCK APIs]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
+'--unstable-webgpu[Enable unstable WebGPU APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '--no-remote[Do not resolve remote modules]' \
 '--no-npm[Do not resolve npm modules]' \
@@ -305,6 +305,7 @@ _arguments "${_arguments_options[@]}" : \
 '--cached-only[Require that remote dependencies are already cached]' \
 '--enable-testing-features-do-not-use[INTERNAL\: Enable internal features used during integration testing]' \
 '--eszip-internal-do-not-use[]' \
+'--open[Open the browser on the address that the server is running on.]' \
 '--parallel[Run multiple server workers in parallel. Parallelism defaults to the number of available CPUs or the value of the DENO_JOBS environment variable]' \
 '--no-clear-screen[Do not clear terminal screen when under watch mode]' \
 '--no-code-cache[Disable V8 code cache feature]' \
@@ -322,32 +323,34 @@ _arguments "${_arguments_options[@]}" : \
 '*--allow-scripts=[Allow running npm lifecycle scripts for the given packages   Note\: Scripts will only be executed when using a node_modules directory (\`--node-modules-dir\`)]' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
-'--unstable-byonm[]' \
-'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
-'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
-'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
-'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
-'--unstable-cron[Enable unstable Deno.cron API]' \
+'--unstable-byonm[]' \
+'--unstable-cron[Enable unstable \`Deno.cron\` API]' \
+'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
 '--unstable-fs[Enable unstable file system APIs]' \
 '--unstable-http[Enable unstable HTTP APIs]' \
-'--unstable-kv[Enable unstable Key-Value store APIs]' \
-'--unstable-net[Enable unstable net APIs]' \
+'--unstable-kv[Enable unstable KV APIs]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
+'--unstable-net[enable unstable net APIs]' \
 '--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
+'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
 '--unstable-vsock[Enable unstable VSOCK APIs]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
+'--unstable-webgpu[Enable unstable WebGPU APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
 '-D[Add the package as a dev dependency. Note\: This only applies when adding to a \`package.json\` file.]' \
 '--dev[Add the package as a dev dependency. Note\: This only applies when adding to a \`package.json\` file.]' \
+'(--jsr)--npm[assume unprefixed package names are npm packages]' \
+'(--npm)--jsr[assume unprefixed package names are jsr packages]' \
 '*::packages -- List of packages to add:_default' \
 && ret=0
 ;;
@@ -359,27 +362,27 @@ _arguments "${_arguments_options[@]}" : \
 '--log-level=[Set log level]: :(trace debug info)' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
-'--unstable-byonm[]' \
-'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
-'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
-'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
-'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
-'--unstable-cron[Enable unstable Deno.cron API]' \
+'--unstable-byonm[]' \
+'--unstable-cron[Enable unstable \`Deno.cron\` API]' \
+'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
 '--unstable-fs[Enable unstable file system APIs]' \
 '--unstable-http[Enable unstable HTTP APIs]' \
-'--unstable-kv[Enable unstable Key-Value store APIs]' \
-'--unstable-net[Enable unstable net APIs]' \
+'--unstable-kv[Enable unstable KV APIs]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
+'--unstable-net[enable unstable net APIs]' \
 '--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
+'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
 '--unstable-vsock[Enable unstable VSOCK APIs]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
+'--unstable-webgpu[Enable unstable WebGPU APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
@@ -438,27 +441,27 @@ _arguments "${_arguments_options[@]}" : \
 '--ext=[Set content type of the supplied file]: :(ts tsx js jsx)' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
-'--unstable-byonm[]' \
-'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
-'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
-'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
-'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
-'--unstable-cron[Enable unstable Deno.cron API]' \
+'--unstable-byonm[]' \
+'--unstable-cron[Enable unstable \`Deno.cron\` API]' \
+'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
 '--unstable-fs[Enable unstable file system APIs]' \
 '--unstable-http[Enable unstable HTTP APIs]' \
-'--unstable-kv[Enable unstable Key-Value store APIs]' \
-'--unstable-net[Enable unstable net APIs]' \
+'--unstable-kv[Enable unstable KV APIs]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
+'--unstable-net[enable unstable net APIs]' \
 '--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
+'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
 '--unstable-vsock[Enable unstable VSOCK APIs]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
+'--unstable-webgpu[Enable unstable WebGPU APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
@@ -476,7 +479,7 @@ _arguments "${_arguments_options[@]}" : \
 '--eszip-internal-do-not-use[]' \
 '--json[UNSTABLE\: Output benchmark result in JSON format]' \
 '--no-run[Cache bench modules, but don'\''t run benchmarks]' \
-'--permit-no-files[Don'\''t return an error code if no bench files were found]' \
+'--permit-no-files[Don'\''t return an error code if no files were found]' \
 '--watch[Watch for file changes and restart process automatically.   Only local files from entry point module graph are watched.]' \
 '--no-clear-screen[Do not clear terminal screen when under watch mode]' \
 '*::files -- List of file names to run:_default' \
@@ -490,27 +493,27 @@ _arguments "${_arguments_options[@]}" : \
 '--log-level=[Set log level]: :(trace debug info)' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
-'--unstable-byonm[]' \
-'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
-'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
-'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
-'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
-'--unstable-cron[Enable unstable Deno.cron API]' \
+'--unstable-byonm[]' \
+'--unstable-cron[Enable unstable \`Deno.cron\` API]' \
+'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
 '--unstable-fs[Enable unstable file system APIs]' \
 '--unstable-http[Enable unstable HTTP APIs]' \
-'--unstable-kv[Enable unstable Key-Value store APIs]' \
-'--unstable-net[Enable unstable net APIs]' \
+'--unstable-kv[Enable unstable KV APIs]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
+'--unstable-net[enable unstable net APIs]' \
 '--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
+'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
 '--unstable-vsock[Enable unstable VSOCK APIs]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
+'--unstable-webgpu[Enable unstable WebGPU APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
@@ -540,27 +543,27 @@ _arguments "${_arguments_options[@]}" : \
 '--allow-import=[Allow importing from remote hosts. Optionally specify allowed IP addresses and host names, with ports as necessary. Default value\: deno.land\:443,jsr.io\:443,esm.sh\:443,cdn.jsdelivr.net\:443,raw.githubusercontent.com\:443,user.githubusercontent.com\:443]' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
-'--unstable-byonm[]' \
-'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
-'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
-'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
-'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
-'--unstable-cron[Enable unstable Deno.cron API]' \
+'--unstable-byonm[]' \
+'--unstable-cron[Enable unstable \`Deno.cron\` API]' \
+'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
 '--unstable-fs[Enable unstable file system APIs]' \
 '--unstable-http[Enable unstable HTTP APIs]' \
-'--unstable-kv[Enable unstable Key-Value store APIs]' \
-'--unstable-net[Enable unstable net APIs]' \
+'--unstable-kv[Enable unstable KV APIs]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
+'--unstable-net[enable unstable net APIs]' \
 '--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
+'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
 '--unstable-vsock[Enable unstable VSOCK APIs]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
+'--unstable-webgpu[Enable unstable WebGPU APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
@@ -592,27 +595,27 @@ _arguments "${_arguments_options[@]}" : \
 '--allow-import=[Allow importing from remote hosts. Optionally specify allowed IP addresses and host names, with ports as necessary. Default value\: deno.land\:443,jsr.io\:443,esm.sh\:443,cdn.jsdelivr.net\:443,raw.githubusercontent.com\:443,user.githubusercontent.com\:443]' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
-'--unstable-byonm[]' \
-'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
-'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
-'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
-'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
-'--unstable-cron[Enable unstable Deno.cron API]' \
+'--unstable-byonm[]' \
+'--unstable-cron[Enable unstable \`Deno.cron\` API]' \
+'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
 '--unstable-fs[Enable unstable file system APIs]' \
 '--unstable-http[Enable unstable HTTP APIs]' \
-'--unstable-kv[Enable unstable Key-Value store APIs]' \
-'--unstable-net[Enable unstable net APIs]' \
+'--unstable-kv[Enable unstable KV APIs]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
+'--unstable-net[enable unstable net APIs]' \
 '--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
+'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
 '--unstable-vsock[Enable unstable VSOCK APIs]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
+'--unstable-webgpu[Enable unstable WebGPU APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
@@ -634,32 +637,38 @@ _arguments "${_arguments_options[@]}" : \
 '*--help=[]' \
 '-L+[Set log level]: :(trace debug info)' \
 '--log-level=[Set log level]: :(trace debug info)' \
+'--node-modules-dir=[Sets the node modules management mode for npm packages]' \
+'--vendor=[Toggles local vendor folder usage for remote modules and a node_modules folder for npm packages]' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
-'--unstable-byonm[]' \
-'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
-'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
-'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
-'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
-'--unstable-cron[Enable unstable Deno.cron API]' \
+'--unstable-byonm[]' \
+'--unstable-cron[Enable unstable \`Deno.cron\` API]' \
+'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
 '--unstable-fs[Enable unstable file system APIs]' \
 '--unstable-http[Enable unstable HTTP APIs]' \
-'--unstable-kv[Enable unstable Key-Value store APIs]' \
-'--unstable-net[Enable unstable net APIs]' \
+'--unstable-kv[Enable unstable KV APIs]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
+'--unstable-net[enable unstable net APIs]' \
 '--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
+'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
 '--unstable-vsock[Enable unstable VSOCK APIs]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
+'--unstable-webgpu[Enable unstable WebGPU APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
+'-e[Retain cache data needed by the given files]' \
+'--except[Retain cache data needed by the given files]' \
+'--dry-run[Show what would be removed without performing any actions]' \
+'*::except-paths:_files' \
 && ret=0
 ;;
 (compile)
@@ -708,6 +717,7 @@ _arguments "${_arguments_options[@]}" : \
 '--strace-ops=[Trace low-level op calls]' \
 '(--no-check)--check=[Set type-checking behavior. This subcommand type-checks local modules by default, so adding --check is redundant   If the value of "all" is supplied, remote modules will be included.   Alternatively, the '\''deno check'\'' subcommand can be used]' \
 '*--include=[Includes an additional module or file/directory in the compiled executable.   Use this flag if a dynamically imported module or a web worker main module   fails to load in the executable or to embed a file or directory in the executable.   This flag can be passed multiple times, to include multiple additional modules.]: :_files' \
+'*--exclude=[Excludes a file/directory in the compiled executable.   Use this flag to exclude a specific file or directory within the included files.   For example, to exclude a certain folder in the bundled node_modules directory.]: :_files' \
 '-o+[Output file (defaults to \$PWD/<inferred-name>)]: :_files' \
 '--output=[Output file (defaults to \$PWD/<inferred-name>)]: :_files' \
 '--target=[Target OS architecture]: :(x86_64-unknown-linux-gnu aarch64-unknown-linux-gnu x86_64-pc-windows-msvc x86_64-apple-darwin aarch64-apple-darwin)' \
@@ -716,27 +726,27 @@ _arguments "${_arguments_options[@]}" : \
 '*--env-file=[Load environment variables from local file   Only the first environment variable with a given key is used.   Existing process environment variables are not overwritten, so if variables with the same names already exist in the environment, their values will be preserved.   Where multiple declarations for the same environment variable exist in your .env file, the first one encountered is applied. This is determined by the order of the files you pass as arguments.]' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
-'--unstable-byonm[]' \
-'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
-'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
-'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
-'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
-'--unstable-cron[Enable unstable Deno.cron API]' \
+'--unstable-byonm[]' \
+'--unstable-cron[Enable unstable \`Deno.cron\` API]' \
+'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
 '--unstable-fs[Enable unstable file system APIs]' \
 '--unstable-http[Enable unstable HTTP APIs]' \
-'--unstable-kv[Enable unstable Key-Value store APIs]' \
-'--unstable-net[Enable unstable net APIs]' \
+'--unstable-kv[Enable unstable KV APIs]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
+'--unstable-net[enable unstable net APIs]' \
 '--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
+'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
 '--unstable-vsock[Enable unstable VSOCK APIs]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
+'--unstable-webgpu[Enable unstable WebGPU APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
@@ -765,27 +775,27 @@ _arguments "${_arguments_options[@]}" : \
 '--log-level=[Set log level]: :(trace debug info)' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
-'--unstable-byonm[]' \
-'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
-'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
-'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
-'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
-'--unstable-cron[Enable unstable Deno.cron API]' \
+'--unstable-byonm[]' \
+'--unstable-cron[Enable unstable \`Deno.cron\` API]' \
+'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
 '--unstable-fs[Enable unstable file system APIs]' \
 '--unstable-http[Enable unstable HTTP APIs]' \
-'--unstable-kv[Enable unstable Key-Value store APIs]' \
-'--unstable-net[Enable unstable net APIs]' \
+'--unstable-kv[Enable unstable KV APIs]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
+'--unstable-net[enable unstable net APIs]' \
 '--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
+'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
 '--unstable-vsock[Enable unstable VSOCK APIs]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
+'--unstable-webgpu[Enable unstable WebGPU APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
@@ -804,27 +814,27 @@ _arguments "${_arguments_options[@]}" : \
 '--output=[Exports the coverage report in lcov format to the given file.   If no --output arg is specified then the report is written to stdout.]: :_files' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
-'--unstable-byonm[]' \
-'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
-'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
-'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
-'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
-'--unstable-cron[Enable unstable Deno.cron API]' \
+'--unstable-byonm[]' \
+'--unstable-cron[Enable unstable \`Deno.cron\` API]' \
+'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
 '--unstable-fs[Enable unstable file system APIs]' \
 '--unstable-http[Enable unstable HTTP APIs]' \
-'--unstable-kv[Enable unstable Key-Value store APIs]' \
-'--unstable-net[Enable unstable net APIs]' \
+'--unstable-kv[Enable unstable KV APIs]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
+'--unstable-net[enable unstable net APIs]' \
 '--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
+'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
 '--unstable-vsock[Enable unstable VSOCK APIs]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
+'--unstable-webgpu[Enable unstable WebGPU APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
@@ -854,27 +864,27 @@ _arguments "${_arguments_options[@]}" : \
 '(--json --lint --html)--filter=[Dot separated path to symbol]: :_default' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
-'--unstable-byonm[]' \
-'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
-'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
-'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
-'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
-'--unstable-cron[Enable unstable Deno.cron API]' \
+'--unstable-byonm[]' \
+'--unstable-cron[Enable unstable \`Deno.cron\` API]' \
+'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
 '--unstable-fs[Enable unstable file system APIs]' \
 '--unstable-http[Enable unstable HTTP APIs]' \
-'--unstable-kv[Enable unstable Key-Value store APIs]' \
-'--unstable-net[Enable unstable net APIs]' \
+'--unstable-kv[Enable unstable KV APIs]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
+'--unstable-net[enable unstable net APIs]' \
 '--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
+'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
 '--unstable-vsock[Enable unstable VSOCK APIs]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
+'--unstable-webgpu[Enable unstable WebGPU APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
@@ -920,27 +930,27 @@ _arguments "${_arguments_options[@]}" : \
 '*--env-file=[Load environment variables from local file   Only the first environment variable with a given key is used.   Existing process environment variables are not overwritten, so if variables with the same names already exist in the environment, their values will be preserved.   Where multiple declarations for the same environment variable exist in your .env file, the first one encountered is applied. This is determined by the order of the files you pass as arguments.]' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
-'--unstable-byonm[]' \
-'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
-'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
-'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
-'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
-'--unstable-cron[Enable unstable Deno.cron API]' \
+'--unstable-byonm[]' \
+'--unstable-cron[Enable unstable \`Deno.cron\` API]' \
+'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
 '--unstable-fs[Enable unstable file system APIs]' \
 '--unstable-http[Enable unstable HTTP APIs]' \
-'--unstable-kv[Enable unstable Key-Value store APIs]' \
-'--unstable-net[Enable unstable net APIs]' \
+'--unstable-kv[Enable unstable KV APIs]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
+'--unstable-net[enable unstable net APIs]' \
 '--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
+'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
 '--unstable-vsock[Enable unstable VSOCK APIs]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
+'--unstable-webgpu[Enable unstable WebGPU APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
@@ -975,32 +985,33 @@ _arguments "${_arguments_options[@]}" : \
 '--no-semicolons=[Don'\''t use semicolons except where necessary \[default\: false\]]' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
-'--unstable-byonm[]' \
-'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
-'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
-'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
-'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
-'--unstable-cron[Enable unstable Deno.cron API]' \
+'--unstable-byonm[]' \
+'--unstable-cron[Enable unstable \`Deno.cron\` API]' \
+'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
 '--unstable-fs[Enable unstable file system APIs]' \
 '--unstable-http[Enable unstable HTTP APIs]' \
-'--unstable-kv[Enable unstable Key-Value store APIs]' \
-'--unstable-net[Enable unstable net APIs]' \
+'--unstable-kv[Enable unstable KV APIs]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
+'--unstable-net[enable unstable net APIs]' \
 '--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
+'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
 '--unstable-vsock[Enable unstable VSOCK APIs]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
+'--unstable-webgpu[Enable unstable WebGPU APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
 '(-c --config)--no-config[Disable automatic loading of the configuration file]' \
 '--check[Check if the source files are formatted]' \
+'--permit-no-files[Don'\''t return an error code if no files were found]' \
 '--watch[Watch for file changes and restart process automatically.   Only local files from entry point module graph are watched.]' \
 '--no-clear-screen[Do not clear terminal screen when under watch mode]' \
 '--unstable-css[Enable formatting CSS, SCSS, Sass and Less files]' \
@@ -1019,27 +1030,27 @@ _arguments "${_arguments_options[@]}" : \
 '--log-level=[Set log level]: :(trace debug info)' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
-'--unstable-byonm[]' \
-'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
-'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
-'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
-'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
-'--unstable-cron[Enable unstable Deno.cron API]' \
+'--unstable-byonm[]' \
+'--unstable-cron[Enable unstable \`Deno.cron\` API]' \
+'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
 '--unstable-fs[Enable unstable file system APIs]' \
 '--unstable-http[Enable unstable HTTP APIs]' \
-'--unstable-kv[Enable unstable Key-Value store APIs]' \
-'--unstable-net[Enable unstable net APIs]' \
+'--unstable-kv[Enable unstable KV APIs]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
+'--unstable-net[enable unstable net APIs]' \
 '--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
+'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
 '--unstable-vsock[Enable unstable VSOCK APIs]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
+'--unstable-webgpu[Enable unstable WebGPU APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
@@ -1071,27 +1082,27 @@ _arguments "${_arguments_options[@]}" : \
 '--vendor=[Toggles local vendor folder usage for remote modules and a node_modules folder for npm packages]' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
-'--unstable-byonm[]' \
-'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
-'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
-'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
-'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
-'--unstable-cron[Enable unstable Deno.cron API]' \
+'--unstable-byonm[]' \
+'--unstable-cron[Enable unstable \`Deno.cron\` API]' \
+'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
 '--unstable-fs[Enable unstable file system APIs]' \
 '--unstable-http[Enable unstable HTTP APIs]' \
-'--unstable-kv[Enable unstable Key-Value store APIs]' \
-'--unstable-net[Enable unstable net APIs]' \
+'--unstable-kv[Enable unstable KV APIs]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
+'--unstable-net[enable unstable net APIs]' \
 '--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
+'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
 '--unstable-vsock[Enable unstable VSOCK APIs]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
+'--unstable-webgpu[Enable unstable WebGPU APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
@@ -1157,27 +1168,27 @@ _arguments "${_arguments_options[@]}" : \
 '*--env-file=[Load environment variables from local file   Only the first environment variable with a given key is used.   Existing process environment variables are not overwritten, so if variables with the same names already exist in the environment, their values will be preserved.   Where multiple declarations for the same environment variable exist in your .env file, the first one encountered is applied. This is determined by the order of the files you pass as arguments.]' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
-'--unstable-byonm[]' \
-'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
-'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
-'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
-'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
-'--unstable-cron[Enable unstable Deno.cron API]' \
+'--unstable-byonm[]' \
+'--unstable-cron[Enable unstable \`Deno.cron\` API]' \
+'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
 '--unstable-fs[Enable unstable file system APIs]' \
 '--unstable-http[Enable unstable HTTP APIs]' \
-'--unstable-kv[Enable unstable Key-Value store APIs]' \
-'--unstable-net[Enable unstable net APIs]' \
+'--unstable-kv[Enable unstable KV APIs]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
+'--unstable-net[enable unstable net APIs]' \
 '--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
+'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
 '--unstable-vsock[Enable unstable VSOCK APIs]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
+'--unstable-webgpu[Enable unstable WebGPU APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
@@ -1201,6 +1212,8 @@ _arguments "${_arguments_options[@]}" : \
 '(-g --global)--entrypoint[Install dependents of the specified entrypoint(s)]' \
 '(-e --entrypoint -g --global)-D[Add the package as a dev dependency. Note\: This only applies when adding to a \`package.json\` file.]' \
 '(-e --entrypoint -g --global)--dev[Add the package as a dev dependency. Note\: This only applies when adding to a \`package.json\` file.]' \
+'(--jsr -e --entrypoint -g --global)--npm[assume unprefixed package names are npm packages]' \
+'(--npm -e --entrypoint -g --global)--jsr[assume unprefixed package names are jsr packages]' \
 '*::cmd:_files' \
 && ret=0
 ;;
@@ -1258,27 +1271,27 @@ _arguments "${_arguments_options[@]}" : \
 '*--env-file=[Load environment variables from local file   Only the first environment variable with a given key is used.   Existing process environment variables are not overwritten, so if variables with the same names already exist in the environment, their values will be preserved.   Where multiple declarations for the same environment variable exist in your .env file, the first one encountered is applied. This is determined by the order of the files you pass as arguments.]' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
-'--unstable-byonm[]' \
-'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
-'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
-'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
-'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
-'--unstable-cron[Enable unstable Deno.cron API]' \
+'--unstable-byonm[]' \
+'--unstable-cron[Enable unstable \`Deno.cron\` API]' \
+'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
 '--unstable-fs[Enable unstable file system APIs]' \
 '--unstable-http[Enable unstable HTTP APIs]' \
-'--unstable-kv[Enable unstable Key-Value store APIs]' \
-'--unstable-net[Enable unstable net APIs]' \
+'--unstable-kv[Enable unstable KV APIs]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
+'--unstable-net[enable unstable net APIs]' \
 '--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
+'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
 '--unstable-vsock[Enable unstable VSOCK APIs]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
+'--unstable-webgpu[Enable unstable WebGPU APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
@@ -1302,6 +1315,8 @@ _arguments "${_arguments_options[@]}" : \
 '(-g --global)--entrypoint[Install dependents of the specified entrypoint(s)]' \
 '(-e --entrypoint -g --global)-D[Add the package as a dev dependency. Note\: This only applies when adding to a \`package.json\` file.]' \
 '(-e --entrypoint -g --global)--dev[Add the package as a dev dependency. Note\: This only applies when adding to a \`package.json\` file.]' \
+'(--jsr -e --entrypoint -g --global)--npm[assume unprefixed package names are npm packages]' \
+'(--npm -e --entrypoint -g --global)--jsr[assume unprefixed package names are jsr packages]' \
 '*::cmd:_files' \
 && ret=0
 ;;
@@ -1324,27 +1339,27 @@ _arguments "${_arguments_options[@]}" : \
 '--log-level=[Set log level]: :(trace debug info)' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
-'--unstable-byonm[]' \
-'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
-'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
-'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
-'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
-'--unstable-cron[Enable unstable Deno.cron API]' \
+'--unstable-byonm[]' \
+'--unstable-cron[Enable unstable \`Deno.cron\` API]' \
+'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
 '--unstable-fs[Enable unstable file system APIs]' \
 '--unstable-http[Enable unstable HTTP APIs]' \
-'--unstable-kv[Enable unstable Key-Value store APIs]' \
-'--unstable-net[Enable unstable net APIs]' \
+'--unstable-kv[Enable unstable KV APIs]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
+'--unstable-net[enable unstable net APIs]' \
 '--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
+'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
 '--unstable-vsock[Enable unstable VSOCK APIs]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
+'--unstable-webgpu[Enable unstable WebGPU APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '(--kernel)--install[Installs kernelspec, requires '\''jupyter'\'' command to be available.]' \
 '(--install)--kernel[Start the kernel]' \
@@ -1361,27 +1376,27 @@ _arguments "${_arguments_options[@]}" : \
 '--root=[Installation root]: :_files -/' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
-'--unstable-byonm[]' \
-'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
-'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
-'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
-'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
-'--unstable-cron[Enable unstable Deno.cron API]' \
+'--unstable-byonm[]' \
+'--unstable-cron[Enable unstable \`Deno.cron\` API]' \
+'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
 '--unstable-fs[Enable unstable file system APIs]' \
 '--unstable-http[Enable unstable HTTP APIs]' \
-'--unstable-kv[Enable unstable Key-Value store APIs]' \
-'--unstable-net[Enable unstable net APIs]' \
+'--unstable-kv[Enable unstable KV APIs]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
+'--unstable-net[enable unstable net APIs]' \
 '--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
+'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
 '--unstable-vsock[Enable unstable VSOCK APIs]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
+'--unstable-webgpu[Enable unstable WebGPU APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
@@ -1400,27 +1415,27 @@ _arguments "${_arguments_options[@]}" : \
 '--lock=[Check the specified lock file. (If value is not provided, defaults to "./deno.lock")]' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
-'--unstable-byonm[]' \
-'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
-'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
-'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
-'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
-'--unstable-cron[Enable unstable Deno.cron API]' \
+'--unstable-byonm[]' \
+'--unstable-cron[Enable unstable \`Deno.cron\` API]' \
+'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
 '--unstable-fs[Enable unstable file system APIs]' \
 '--unstable-http[Enable unstable HTTP APIs]' \
-'--unstable-kv[Enable unstable Key-Value store APIs]' \
-'--unstable-net[Enable unstable net APIs]' \
+'--unstable-kv[Enable unstable KV APIs]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
+'--unstable-net[enable unstable net APIs]' \
 '--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
+'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
 '--unstable-vsock[Enable unstable VSOCK APIs]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
+'--unstable-webgpu[Enable unstable WebGPU APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
@@ -1464,27 +1479,27 @@ _arguments "${_arguments_options[@]}" : \
 '--allow-import=[Allow importing from remote hosts. Optionally specify allowed IP addresses and host names, with ports as necessary. Default value\: deno.land\:443,jsr.io\:443,esm.sh\:443,cdn.jsdelivr.net\:443,raw.githubusercontent.com\:443,user.githubusercontent.com\:443]' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
-'--unstable-byonm[]' \
-'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
-'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
-'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
-'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
-'--unstable-cron[Enable unstable Deno.cron API]' \
+'--unstable-byonm[]' \
+'--unstable-cron[Enable unstable \`Deno.cron\` API]' \
+'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
 '--unstable-fs[Enable unstable file system APIs]' \
 '--unstable-http[Enable unstable HTTP APIs]' \
-'--unstable-kv[Enable unstable Key-Value store APIs]' \
-'--unstable-net[Enable unstable net APIs]' \
+'--unstable-kv[Enable unstable KV APIs]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
+'--unstable-net[enable unstable net APIs]' \
 '--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
+'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
 '--unstable-vsock[Enable unstable VSOCK APIs]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
+'--unstable-webgpu[Enable unstable WebGPU APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
@@ -1493,6 +1508,7 @@ _arguments "${_arguments_options[@]}" : \
 '(-c --config)--no-config[Disable automatic loading of the configuration file]' \
 '--json[Output lint result in JSON format]' \
 '(--json)--compact[Output lint result in compact format]' \
+'--permit-no-files[Don'\''t return an error code if no files were found]' \
 '--watch[Watch for file changes and restart process automatically.   Only local files from entry point module graph are watched.]' \
 '--no-clear-screen[Do not clear terminal screen when under watch mode]' \
 '*::files:_files' \
@@ -1512,27 +1528,27 @@ _arguments "${_arguments_options[@]}" : \
 '--no-check=[Skip type-checking. If the value of "remote" is supplied, diagnostic errors from remote modules will be ignored]' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
-'--unstable-byonm[]' \
-'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
-'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
-'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
-'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
-'--unstable-cron[Enable unstable Deno.cron API]' \
+'--unstable-byonm[]' \
+'--unstable-cron[Enable unstable \`Deno.cron\` API]' \
+'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
 '--unstable-fs[Enable unstable file system APIs]' \
 '--unstable-http[Enable unstable HTTP APIs]' \
-'--unstable-kv[Enable unstable Key-Value store APIs]' \
-'--unstable-net[Enable unstable net APIs]' \
+'--unstable-kv[Enable unstable KV APIs]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
+'--unstable-net[enable unstable net APIs]' \
 '--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
+'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
 '--unstable-vsock[Enable unstable VSOCK APIs]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
+'--unstable-webgpu[Enable unstable WebGPU APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
@@ -1593,27 +1609,27 @@ _arguments "${_arguments_options[@]}" : \
 '--eval=[Evaluates the provided code when the REPL starts]:code:_default' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
-'--unstable-byonm[]' \
-'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
-'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
-'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
-'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
-'--unstable-cron[Enable unstable Deno.cron API]' \
+'--unstable-byonm[]' \
+'--unstable-cron[Enable unstable \`Deno.cron\` API]' \
+'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
 '--unstable-fs[Enable unstable file system APIs]' \
 '--unstable-http[Enable unstable HTTP APIs]' \
-'--unstable-kv[Enable unstable Key-Value store APIs]' \
-'--unstable-net[Enable unstable net APIs]' \
+'--unstable-kv[Enable unstable KV APIs]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
+'--unstable-net[enable unstable net APIs]' \
 '--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
+'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
 '--unstable-vsock[Enable unstable VSOCK APIs]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
+'--unstable-webgpu[Enable unstable WebGPU APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
@@ -1647,27 +1663,27 @@ _arguments "${_arguments_options[@]}" : \
 '--node-modules-dir=[Sets the node modules management mode for npm packages]' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
-'--unstable-byonm[]' \
-'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
-'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
-'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
-'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
-'--unstable-cron[Enable unstable Deno.cron API]' \
+'--unstable-byonm[]' \
+'--unstable-cron[Enable unstable \`Deno.cron\` API]' \
+'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
 '--unstable-fs[Enable unstable file system APIs]' \
 '--unstable-http[Enable unstable HTTP APIs]' \
-'--unstable-kv[Enable unstable Key-Value store APIs]' \
-'--unstable-net[Enable unstable net APIs]' \
+'--unstable-kv[Enable unstable KV APIs]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
+'--unstable-net[enable unstable net APIs]' \
 '--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
+'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
 '--unstable-vsock[Enable unstable VSOCK APIs]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
+'--unstable-webgpu[Enable unstable WebGPU APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
@@ -1737,27 +1753,27 @@ _arguments "${_arguments_options[@]}" : \
 '--ext=[Set content type of the supplied file]: :(ts tsx js jsx)' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
-'--unstable-byonm[]' \
-'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
-'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
-'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
-'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
-'--unstable-cron[Enable unstable Deno.cron API]' \
+'--unstable-byonm[]' \
+'--unstable-cron[Enable unstable \`Deno.cron\` API]' \
+'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
 '--unstable-fs[Enable unstable file system APIs]' \
 '--unstable-http[Enable unstable HTTP APIs]' \
-'--unstable-kv[Enable unstable Key-Value store APIs]' \
-'--unstable-net[Enable unstable net APIs]' \
+'--unstable-kv[Enable unstable KV APIs]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
+'--unstable-net[enable unstable net APIs]' \
 '--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
+'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
 '--unstable-vsock[Enable unstable VSOCK APIs]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
+'--unstable-webgpu[Enable unstable WebGPU APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
@@ -1776,7 +1792,8 @@ _arguments "${_arguments_options[@]}" : \
 '--no-run[Cache test modules, but don'\''t run tests]' \
 '--trace-leaks[Enable tracing of leaks. Useful when debugging leaking ops in test, but impacts test execution time]' \
 '--doc[Evaluate code blocks in JSDoc and Markdown]' \
-'--permit-no-files[Don'\''t return an error code if no test files were found]' \
+'--permit-no-files[Don'\''t return an error code if no files were found]' \
+'--coverage-raw-data-only[Only collect raw coverage data, without generating a report]' \
 '--clean[Empty the temporary coverage profile data directory before running tests.   Note\: running multiple \`deno test --clean\` calls in series or parallel for the same coverage directory may cause race conditions.]' \
 '--parallel[Run test modules in parallel. Parallelism defaults to the number of available CPUs or the value of the DENO_JOBS environment variable]' \
 '--no-clear-screen[Do not clear terminal screen when under watch mode]' \
@@ -1792,27 +1809,27 @@ _arguments "${_arguments_options[@]}" : \
 '--log-level=[Set log level]: :(trace debug info)' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
-'--unstable-byonm[]' \
-'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
-'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
-'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
-'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
-'--unstable-cron[Enable unstable Deno.cron API]' \
+'--unstable-byonm[]' \
+'--unstable-cron[Enable unstable \`Deno.cron\` API]' \
+'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
 '--unstable-fs[Enable unstable file system APIs]' \
 '--unstable-http[Enable unstable HTTP APIs]' \
-'--unstable-kv[Enable unstable Key-Value store APIs]' \
-'--unstable-net[Enable unstable net APIs]' \
+'--unstable-kv[Enable unstable KV APIs]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
+'--unstable-net[enable unstable net APIs]' \
 '--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
+'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
 '--unstable-vsock[Enable unstable VSOCK APIs]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
+'--unstable-webgpu[Enable unstable WebGPU APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
@@ -1830,27 +1847,27 @@ _arguments "${_arguments_options[@]}" : \
 '--unsafely-ignore-certificate-errors=[DANGER\: Disables verification of TLS certificates]' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
-'--unstable-byonm[]' \
-'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
-'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
-'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
-'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
-'--unstable-cron[Enable unstable Deno.cron API]' \
+'--unstable-byonm[]' \
+'--unstable-cron[Enable unstable \`Deno.cron\` API]' \
+'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
 '--unstable-fs[Enable unstable file system APIs]' \
 '--unstable-http[Enable unstable HTTP APIs]' \
-'--unstable-kv[Enable unstable Key-Value store APIs]' \
-'--unstable-net[Enable unstable net APIs]' \
+'--unstable-kv[Enable unstable KV APIs]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
+'--unstable-net[enable unstable net APIs]' \
 '--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
+'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
 '--unstable-vsock[Enable unstable VSOCK APIs]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
+'--unstable-webgpu[Enable unstable WebGPU APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
@@ -1870,27 +1887,27 @@ _arguments "${_arguments_options[@]}" : \
 '--log-level=[Set log level]: :(trace debug info)' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
-'--unstable-byonm[]' \
-'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
-'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
-'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
-'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
-'--unstable-cron[Enable unstable Deno.cron API]' \
+'--unstable-byonm[]' \
+'--unstable-cron[Enable unstable \`Deno.cron\` API]' \
+'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
 '--unstable-fs[Enable unstable file system APIs]' \
 '--unstable-http[Enable unstable HTTP APIs]' \
-'--unstable-kv[Enable unstable Key-Value store APIs]' \
-'--unstable-net[Enable unstable net APIs]' \
+'--unstable-kv[Enable unstable KV APIs]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
+'--unstable-net[enable unstable net APIs]' \
 '--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
+'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
 '--unstable-vsock[Enable unstable VSOCK APIs]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
+'--unstable-webgpu[Enable unstable WebGPU APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
@@ -1904,27 +1921,27 @@ _arguments "${_arguments_options[@]}" : \
 '--log-level=[Set log level]: :(trace debug info)' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
-'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
-'--unstable-byonm[]' \
-'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
-'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
-'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
-'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
-'--unstable-cron[Enable unstable Deno.cron API]' \
+'--unstable-byonm[]' \
+'--unstable-cron[Enable unstable \`Deno.cron\` API]' \
+'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
 '--unstable-ffi[Enable unstable FFI APIs]' \
 '--unstable-fs[Enable unstable file system APIs]' \
 '--unstable-http[Enable unstable HTTP APIs]' \
-'--unstable-kv[Enable unstable Key-Value store APIs]' \
-'--unstable-net[Enable unstable net APIs]' \
+'--unstable-kv[Enable unstable KV APIs]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
+'--unstable-net[enable unstable net APIs]' \
 '--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
 '--unstable-node-globals[Expose Node globals everywhere]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
 '--unstable-otel[Enable unstable OpenTelemetry features]' \
 '--unstable-process[Enable unstable process APIs]' \
+'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
 '--unstable-temporal[Enable unstable Temporal API]' \
 '--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
 '--unstable-vsock[Enable unstable VSOCK APIs]' \
-'--unstable-webgpu[Enable unstable \`WebGPU\` APIs]' \
+'--unstable-webgpu[Enable unstable WebGPU APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
