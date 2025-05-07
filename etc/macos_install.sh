@@ -202,6 +202,7 @@ brew_cask_packages=(
     microsoft-teams
     ngrok
     obs obs-ndi
+    obsidian
     outline-manager
     postman
     powershell
