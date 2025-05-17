@@ -11,6 +11,7 @@ if test "$PLATFORM" = "Darwin"
         set --function MACOS_BREW_PREFIX "/usr/local/Homebrew"
     end
 end
+set --local TAILSCALE_APP_STORE_PATH "/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 
 # misc
 set --local REPORTTIME 3
@@ -35,6 +36,10 @@ if test "$PLATFORM" = "Linux"
     alias cat=batcat
 else
     alias cat=bat
+end
+
+if test -e "$TAILSCALE_APP_STORE_PATH"
+  alias tailscale="$TAILSCALE_APP_STORE_PATH"
 end
 
 #---------- homebrew
