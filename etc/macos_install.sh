@@ -232,6 +232,7 @@ brew_cask_packages=(
     wireshark
     xbar
     xquartz inkscape
+    zed
     zeplin
     zoom
 )
