@@ -541,6 +541,7 @@ _arguments "${_arguments_options[@]}" : \
 '*--allow-scripts=[Allow running npm lifecycle scripts for the given packages   Note\: Scripts will only be executed when using a node_modules directory (\`--node-modules-dir\`)]' \
 '-I+[Allow importing from remote hosts. Optionally specify allowed IP addresses and host names, with ports as necessary. Default value\: deno.land\:443,jsr.io\:443,esm.sh\:443,cdn.jsdelivr.net\:443,raw.githubusercontent.com\:443,user.githubusercontent.com\:443]' \
 '--allow-import=[Allow importing from remote hosts. Optionally specify allowed IP addresses and host names, with ports as necessary. Default value\: deno.land\:443,jsr.io\:443,esm.sh\:443,cdn.jsdelivr.net\:443,raw.githubusercontent.com\:443,user.githubusercontent.com\:443]' \
+'*--env-file=[Load environment variables from local file   Only the first environment variable with a given key is used.   Existing process environment variables are not overwritten, so if variables with the same names already exist in the environment, their values will be preserved.   Where multiple declarations for the same environment variable exist in your .env file, the first one encountered is applied. This is determined by the order of the files you pass as arguments.]' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -1332,6 +1333,10 @@ _arguments "${_arguments_options[@]}" : \
 ;;
 (jupyter)
 _arguments "${_arguments_options[@]}" : \
+'(--kernel)-n+[Set a name for the kernel (defaults to '\''deno'\''). Useful when maintaing multiple Deno kernels.]: :_default' \
+'(--kernel)--name=[Set a name for the kernel (defaults to '\''deno'\''). Useful when maintaing multiple Deno kernels.]: :_default' \
+'-d+[Set a display name for the kernel (defaults to '\''Deno'\''). Useful when maintaing multiple Deno kernels.]: :_default' \
+'--display=[Set a display name for the kernel (defaults to '\''Deno'\''). Useful when maintaing multiple Deno kernels.]: :_default' \
 '(--install)--conn=[Path to JSON file describing connection parameters, provided by Jupyter]: :_files' \
 '*-h+[]' \
 '*--help=[]' \
@@ -1361,7 +1366,8 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-vsock[Enable unstable VSOCK APIs]' \
 '--unstable-webgpu[Enable unstable WebGPU APIs]' \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
-'(--kernel)--install[Installs kernelspec, requires '\''jupyter'\'' command to be available.]' \
+'(--kernel)--install[Install a kernelspec]' \
+'--force[Force installation of a kernel, overwriting previously existing kernelspec]' \
 '(--install)--kernel[Start the kernel]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
