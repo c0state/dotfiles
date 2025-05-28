@@ -59,3 +59,8 @@ if which gsettings > /dev/null; then
 
   gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
 fi
+
+curl -s 'https://www.cursor.com/api/download?platform=linux-x64&releaseTrack=stable' | \
+  jq -r '.downloadUrl' | \
+  xargs -I{} sudo bash -c 'f=/usr/local/bin/cursor; curl -L -o "$f" {}; chmod +x "$f"'
+
