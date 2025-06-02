@@ -134,8 +134,10 @@ fi
 
 # ---------- github cli
 
-gh extension install github/gh-copilot
-gh extension upgrade --all
+if gh auth status; then
+  gh extension install github/gh-copilot
+  gh extension upgrade --all
+fi
 
 # ---------- google cloud sdk
 
