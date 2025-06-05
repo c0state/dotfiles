@@ -167,6 +167,7 @@ brew_cask_packages=(
     calibre
     chatgpt
     chromedriver
+    claude
     coconutbattery
     db-browser-for-sqlite
     dbeaver-community
@@ -254,10 +255,6 @@ fi
 #---------- Configure auto updater ----------
 
 brew autoupdate delete && brew autoupdate start --cleanup
-
-#---------- App store ----------
-
-# TODO: install app store packages via mas CLI tool
 
 #---------- Cleanup ----------
 
