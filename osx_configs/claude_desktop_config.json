@@ -1,0 +1,72 @@
+{
+    "mcpServers": {
+        "awslabs.core-mcp-server": {
+            "command": "/Users/stephen/.cargo/bin/uvx",
+            "args": [
+                "awslabs.core-mcp-server@latest"
+            ],
+            "env": {
+                "FASTMCP_LOG_LEVEL": "ERROR"
+            },
+            "autoApprove": [],
+            "disabled": false
+        },
+        "awslabs.aws-documentation-mcp-server": {
+            "command": "/Users/stephen/.cargo/bin/uvx",
+            "args": [
+                "awslabs.aws-documentation-mcp-server@latest"
+            ],
+            "env": {
+                "FASTMCP_LOG_LEVEL": "ERROR",
+                "AWS_DOCUMENTATION_PARTITION": "aws"
+            },
+            "disabled": false,
+            "autoApprove": []
+        },
+        "awslabs.cfn-mcp-server": {
+            "command": "/Users/stephen/.cargo/bin/uvx",
+            "args": [
+                "awslabs.cfn-mcp-server@latest",
+                "--readonly"
+            ],
+            "env": {
+                "__AWS_PROFILE": "${AWS_PROFILE_NAME}"
+            },
+            "disabled": false,
+            "autoApprove": []
+        },
+        "awslabs.terraform-mcp-server": {
+            "command": "/Users/stephen/.cargo/bin/uvx",
+            "args": [
+                "awslabs.terraform-mcp-server@latest"
+            ],
+            "env": {
+                "FASTMCP_LOG_LEVEL": "ERROR"
+            },
+            "disabled": false,
+            "autoApprove": []
+        },
+        "awslabs.cdk-mcp-server": {
+            "command": "/Users/stephen/.cargo/bin/uvx",
+            "args": [
+                "awslabs.cdk-mcp-server@latest"
+            ],
+            "env": {
+                "FASTMCP_LOG_LEVEL": "ERROR"
+            },
+            "disabled": false,
+            "autoApprove": []
+        },
+        "awslabs.eks-mcp-server": {
+            "command": "/Users/stephen/.cargo/bin/uvx",
+            "args": [
+                "awslabs.eks-mcp-server@latest"
+            ],
+            "env": {
+                "FASTMCP_LOG_LEVEL": "ERROR"
+            },
+            "autoApprove": [],
+            "disabled": false
+        }
+    }
+}

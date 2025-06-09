@@ -139,6 +139,12 @@ if gh auth status; then
   gh extension upgrade --all
 fi
 
+# ---------- claude
+
+if [[ -f "$HOME/Library/Application Support/Claude/claude_desktop_config.json" ]]; then
+  ln -f -s "$HOME/.dotfiles/osx_configs/claude_desktop_config.json" "$HOME/Library/Application Support/Claude/claude_desktop_config.json"
+fi
+
 # ---------- google cloud sdk
 
 if ! which gcloud; then
