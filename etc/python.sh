@@ -85,6 +85,7 @@ pipx install ranger-fm
 pipx install ruff
 pipx install semgrep
 pipx install snakeviz
+pipx install s-tui
 pipx install tox
 pipx install twine
 pipx install youtube-dl

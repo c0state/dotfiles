@@ -103,6 +103,7 @@ sudo apt -y install \
     ranger \
     ripgrep \
     rpi-imager \
+    stress-ng \
     terraform \
     traceroute \
     tree \
