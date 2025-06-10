@@ -80,6 +80,7 @@ sudo apt -y install \
 #------------------------------ install utility packages
 
 sudo apt -y install \
+    adb \
     bat \
     colordiff icdiff \
     wget \
