@@ -4,5 +4,5 @@ size = 12.0
 [font.normal]
 family = "Hack Nerd Font"
 
-[shell]
+[terminal.shell]
 program = "zsh"
