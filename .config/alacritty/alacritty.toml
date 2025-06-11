@@ -5,4 +5,4 @@ size = 12.0
 family = "Hack Nerd Font"
 
 [terminal.shell]
-program = "zsh"
+program = "fish"
