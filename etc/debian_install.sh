@@ -23,11 +23,6 @@ sudo apt -y install \
 
 #------------------------------ install package sources
 
-# init vscode
-curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor --yes -o /etc/apt/keyrings/packages.microsoft.gpg
-sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
-rm -f /tmp/packages.microsoft.gpg
-
 # init github cli
 curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo gpg --dearmor --yes -o /usr/share/keyrings/githubcli-archive-keyring.gpg
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
@@ -195,6 +190,10 @@ if ! which rustdesk >/dev/null ; then
   install_package "https://github.com/rustdesk/rustdesk/releases/download/$RUSTDESK_VERSION/rustdesk-$RUSTDESK_VERSION-$ARCH.deb"
 fi
 
+if ! which code >/dev/null ; then
+  install_package "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
+fi
+
 which jetbrains-toolbox || \
     wget -O - https://download.jetbrains.com/toolbox/jetbrains-toolbox-2.4.2.32922.tar.gz \
         tar -xzO jetbrains-toolbox-2.4.2.32922/jetbrains-toolbox \
@@ -203,9 +202,6 @@ which jetbrains-toolbox || \
 
 sudo curl --fail -L https://github.com/neovim/neovim/releases/latest/download/nvim-linux-$ARCH.appimage --output /usr/local/bin/nvim
 sudo chmod +x /usr/local/bin/nvim
-
-# install vscode
-[ -z "$WSL_DISTRO_NAME" ] && sudo apt install code
 
 # install apps
 sudo apt -y install \
