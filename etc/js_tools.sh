@@ -15,6 +15,8 @@ volta install yarn
 
 # ---------- install global packages
 
+npm install --global npm
+
 npm install --global \
     @anthropic-ai/claude-code \
     @google/gemini-cli \
