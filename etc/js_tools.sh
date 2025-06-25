@@ -17,6 +17,7 @@ volta install yarn
 
 npm install --global \
     @anthropic-ai/claude-code \
+    @google/gemini-cli \
     cdktf-cli \
     diff-so-fancy \
     git-split-diffs \
