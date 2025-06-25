@@ -4,7 +4,7 @@ set -eu
 
 # ----------
 
-GITHUB_API_TOKEN=${GITHUB_API_TOKEN:-""}
+GITHUB_TOKEN=${GITHUB_TOKEN:-""}
 
 # ----------
 
@@ -31,8 +31,8 @@ cargo install zellij
 if ! command -v uv >/dev/null 2>&1; then
   curl -LsSf https://astral.sh/uv/install.sh | sh
 else
-  if [ -n "$GITHUB_API_TOKEN" ]; then
-    TOKEN_ARG="--token $GITHUB_API_TOKEN"
+  if [ -n "$GITHUB_TOKEN" ]; then
+    TOKEN_ARG="--token $GITHUB_TOKEN"
   else
     TOKEN_ARG=""
   fi
