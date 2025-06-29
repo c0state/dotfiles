@@ -4,7 +4,7 @@ set -eu
 
 # ----------
 
-GITHUB_TOKEN=${GITHUB_TOKEN:-""}
+GITHUB_TOKEN_SCRIPTS=${GITHUB_TOKEN_SCRIPTS:-""}
 
 # ----------
 
@@ -20,7 +20,7 @@ rustup component add rust-analyzer
 source "$HOME"/.cargo/env
 
 cargo install --features clipboard broot
-cargo install coreutils
+PROJECT_NAME_FOR_VERSION_STRING="uutils coreutils" cargo install coreutils
 cargo install eza
 cargo install git-delta
 cargo install sd
@@ -31,8 +31,8 @@ cargo install zellij
 if ! command -v uv >/dev/null 2>&1; then
   curl -LsSf https://astral.sh/uv/install.sh | sh
 else
-  if [ -n "$GITHUB_TOKEN" ]; then
-    TOKEN_ARG="--token $GITHUB_TOKEN"
+  if [ -n "$GITHUB_TOKEN_SCRIPTS" ]; then
+    TOKEN_ARG="--token $GITHUB_TOKEN_SCRIPTS"
   else
     TOKEN_ARG=""
   fi

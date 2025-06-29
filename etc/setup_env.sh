@@ -115,6 +115,8 @@ fi
 
 # ---------- mise
 
+export MISE_GITHUB_TOKEN=${GITHUB_TOKEN_SCRIPTS:-""}
+
 if ! which mise >/dev/null ; then
     curl https://mise.run | sh
 else
