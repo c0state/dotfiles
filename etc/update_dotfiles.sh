@@ -2,6 +2,12 @@
 
 # TODO: consolidate into setup_env.sh
 
+#---------- vars
+
+if [ -n "$GITHUB_TOKEN_SCRIPTS" ]; then
+  export GITHUB_TOKEN="$GITHUB_TOKEN_SCRIPTS"
+fi
+
 #---------- update dotfiles folder
 
 (cd "$HOME"/.dotfiles && git pullr --all)
