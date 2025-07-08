@@ -77,6 +77,7 @@ sudo apt -y install \
 sudo apt -y install \
     adb \
     bat \
+    cpu-x \
     colordiff icdiff \
     wget \
     direnv \
