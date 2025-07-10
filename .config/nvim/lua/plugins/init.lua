@@ -17,13 +17,13 @@ return {
   },
 
   {
-  	"williamboman/mason.nvim",
-  	opts = {
-  		ensure_installed = {
-  			"lua-language-server", "stylua",
-  			"html-lsp", "css-lsp" , "prettier"
-  		},
-  	},
+    "williamboman/mason.nvim",
+    opts = {
+    	ensure_installed = {
+    		"lua-language-server", "stylua",
+    		"html-lsp", "css-lsp" , "prettier"
+    	},
+    },
   },
 
   -- {
@@ -52,5 +52,10 @@ return {
   {
     "simrat39/rust-tools.nvim",
     lazy = false,
-  }
+  },
+
+   {
+     'tpope/vim-fugitive',
+     lazy = true, -- Only load when needed
+   },
 }
