@@ -17,6 +17,7 @@ if test -w /home/linuxbrew/.linuxbrew; then
   brew update
   brew upgrade
 
+  brew install neovim
   brew install nerdctl
   brew install nushell
   brew install ripgrep-all
