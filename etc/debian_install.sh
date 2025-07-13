@@ -112,7 +112,6 @@ sudo apt -y install \
 #------------------------------ install packages
 
 sudo snap install firefox
-sudo snap install ghostty --classic
 sudo snap install slack
 sudo snap install steam
 sudo snap refresh
