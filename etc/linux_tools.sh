@@ -69,5 +69,5 @@ fi
 
 curl -L -s 'https://www.cursor.com/api/download?platform=linux-x64&releaseTrack=stable' | \
   jq -r '.downloadUrl' | \
-  xargs -I{} sudo bash -c 'f=/usr/local/bin/cursor; curl -L -o "$f" {}; chmod +x "$f"'
+  xargs -I{} bash -c 'f=~/.local/bin/cursor; curl -L -o "$f" {}; chmod +x "$f"'
 
