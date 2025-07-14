@@ -89,6 +89,7 @@ sudo apt -y install \
     gnome-browser-connector gnome-tweaks \
     gnupg gpg ca-certificates \
     google-drive-ocamlfuse \
+    jq \
     keychain \
     lsd \
     minicom \
