@@ -20,6 +20,7 @@ npm install --global npm
 npm install --global \
     @anthropic-ai/claude-code \
     @google/gemini-cli \
+    @openai/codex \
     cdktf-cli \
     diff-so-fancy \
     git-split-diffs \
