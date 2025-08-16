@@ -1802,6 +1802,7 @@ _arguments "${_arguments_options[@]}" : \
 '--cached-only[Require that remote dependencies are already cached]' \
 '--enable-testing-features-do-not-use[INTERNAL\: Enable internal features used during integration testing]' \
 '--eszip-internal-do-not-use[]' \
+'--json[]' \
 '*::args:_default' \
 && ret=0
 ;;
