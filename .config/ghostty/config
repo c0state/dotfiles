@@ -42,6 +42,8 @@
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
 
+confirm-close-surface = false
+
 keybind = global:ctrl+cmd+i=toggle_visibility
 # for later use on windows/linux/etc. as above
 # only works on macos
