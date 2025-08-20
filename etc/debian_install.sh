@@ -181,7 +181,7 @@ if ! which insync >/dev/null ; then
 fi
 
 if ! which bcompare >/dev/null ; then
-  install_package "https://www.scootersoftware.com/files/bcompare-5.0.7.30840_$DPKG_ARCH.deb"
+  install_package "https://www.scootersoftware.com/files/bcompare-5.1.2.31185_$DPKG_ARCH.deb"
 fi
 
 if ! which teamviewer >/dev/null ; then
