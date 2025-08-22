@@ -63,7 +63,7 @@ _deno() {
 '*--watch=[Watch for file changes and restart process automatically.   Local files from entry point module graph are watched by default.   Additional paths might be watched by passing them as arguments to this flag.]' \
 '(--watch)*--watch-hmr=[Watch for file changes and restart process automatically.   Local files from entry point module graph are watched by default.   Additional paths might be watched by passing them as arguments to this flag.]' \
 '*--watch-exclude=[Exclude provided files/patterns from watch mode]' \
-'--ext=[Set content type of the supplied file]: :(ts tsx js jsx)' \
+'--ext=[Set content type of the supplied file]: :(ts tsx js jsx mts mjs cts cjs)' \
 '*--env-file=[Load environment variables from local file   Only the first environment variable with a given key is used.   Existing process environment variables are not overwritten, so if variables with the same names already exist in the environment, their values will be preserved.   Where multiple declarations for the same environment variable exist in your .env file, the first one encountered is applied. This is determined by the order of the files you pass as arguments.]' \
 '(--inspect --inspect-wait --inspect-brk)--coverage=[Collect coverage profile data into DIR. If DIR is not specified, it uses '\''coverage/'\''.   This option can also be set via the DENO_COVERAGE_DIR environment variable.]' \
 '--connected=[]' \
@@ -175,7 +175,7 @@ _arguments "${_arguments_options[@]}" : \
 '*--watch=[Watch for file changes and restart process automatically.   Local files from entry point module graph are watched by default.   Additional paths might be watched by passing them as arguments to this flag.]' \
 '(--watch)*--watch-hmr=[Watch for file changes and restart process automatically.   Local files from entry point module graph are watched by default.   Additional paths might be watched by passing them as arguments to this flag.]' \
 '*--watch-exclude=[Exclude provided files/patterns from watch mode]' \
-'--ext=[Set content type of the supplied file]: :(ts tsx js jsx)' \
+'--ext=[Set content type of the supplied file]: :(ts tsx js jsx mts mjs cts cjs)' \
 '*--env-file=[Load environment variables from local file   Only the first environment variable with a given key is used.   Existing process environment variables are not overwritten, so if variables with the same names already exist in the environment, their values will be preserved.   Where multiple declarations for the same environment variable exist in your .env file, the first one encountered is applied. This is determined by the order of the files you pass as arguments.]' \
 '(--inspect --inspect-wait --inspect-brk)--coverage=[Collect coverage profile data into DIR. If DIR is not specified, it uses '\''coverage/'\''.   This option can also be set via the DENO_COVERAGE_DIR environment variable.]' \
 '--connected=[]' \
@@ -280,7 +280,7 @@ _arguments "${_arguments_options[@]}" : \
 '*--watch=[Watch for file changes and restart process automatically.   Local files from entry point module graph are watched by default.   Additional paths might be watched by passing them as arguments to this flag.]' \
 '(--watch)*--watch-hmr=[Watch for file changes and restart process automatically.   Local files from entry point module graph are watched by default.   Additional paths might be watched by passing them as arguments to this flag.]' \
 '*--watch-exclude=[Exclude provided files/patterns from watch mode]' \
-'--ext=[Set content type of the supplied file]: :(ts tsx js jsx)' \
+'--ext=[Set content type of the supplied file]: :(ts tsx js jsx mts mjs cts cjs)' \
 '*--env-file=[Load environment variables from local file   Only the first environment variable with a given key is used.   Existing process environment variables are not overwritten, so if variables with the same names already exist in the environment, their values will be preserved.   Where multiple declarations for the same environment variable exist in your .env file, the first one encountered is applied. This is determined by the order of the files you pass as arguments.]' \
 '--connected=[]' \
 '*-h+[]' \
@@ -471,7 +471,7 @@ _arguments "${_arguments_options[@]}" : \
 '--filter=[Run benchmarks with this string or regexp pattern in the bench name]: :_default' \
 '*--watch-exclude=[Exclude provided files/patterns from watch mode]' \
 '*--env-file=[Load environment variables from local file   Only the first environment variable with a given key is used.   Existing process environment variables are not overwritten, so if variables with the same names already exist in the environment, their values will be preserved.   Where multiple declarations for the same environment variable exist in your .env file, the first one encountered is applied. This is determined by the order of the files you pass as arguments.]' \
-'--ext=[Set content type of the supplied file]: :(ts tsx js jsx)' \
+'--ext=[Set content type of the supplied file]: :(ts tsx js jsx mts mjs cts cjs)' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -811,7 +811,7 @@ _arguments "${_arguments_options[@]}" : \
 '--output=[Output file (defaults to \$PWD/<inferred-name>)]: :_files' \
 '--target=[Target OS architecture]: :(x86_64-unknown-linux-gnu aarch64-unknown-linux-gnu x86_64-pc-windows-msvc x86_64-apple-darwin aarch64-apple-darwin)' \
 '--icon=[Set the icon of the executable on Windows (.ico)]: :_default' \
-'--ext=[Set content type of the supplied file]: :(ts tsx js jsx)' \
+'--ext=[Set content type of the supplied file]: :(ts tsx js jsx mts mjs cts cjs)' \
 '*--env-file=[Load environment variables from local file   Only the first environment variable with a given key is used.   Existing process environment variables are not overwritten, so if variables with the same names already exist in the environment, their values will be preserved.   Where multiple declarations for the same environment variable exist in your .env file, the first one encountered is applied. This is determined by the order of the files you pass as arguments.]' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
@@ -1038,7 +1038,7 @@ _arguments "${_arguments_options[@]}" : \
 '--seed=[Set the random number generator seed]:NUMBER:_default' \
 '--strace-ops=[Trace low-level op calls]' \
 '(--no-check)--check=[Enable type-checking. This subcommand does not type-check by default   If the value of "all" is supplied, remote modules will be included.   Alternatively, the '\''deno check'\'' subcommand can be used]' \
-'--ext=[Set content type of the supplied file]: :(ts tsx js jsx)' \
+'--ext=[Set content type of the supplied file]: :(ts tsx js jsx mts mjs cts cjs)' \
 '*--env-file=[Load environment variables from local file   Only the first environment variable with a given key is used.   Existing process environment variables are not overwritten, so if variables with the same names already exist in the environment, their values will be preserved.   Where multiple declarations for the same environment variable exist in your .env file, the first one encountered is applied. This is determined by the order of the files you pass as arguments.]' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
@@ -1088,7 +1088,7 @@ _arguments "${_arguments_options[@]}" : \
 '--log-level=[Set log level]: :(trace debug info)' \
 '-c+[Configure different aspects of deno including TypeScript, linting, and code formatting.   Typically the configuration file will be called \`deno.json\` or \`deno.jsonc\` and   automatically detected; in that case this flag is not necessary.   Docs\: https\://docs.deno.com/go/config]:FILE:_files' \
 '--config=[Configure different aspects of deno including TypeScript, linting, and code formatting.   Typically the configuration file will be called \`deno.json\` or \`deno.jsonc\` and   automatically detected; in that case this flag is not necessary.   Docs\: https\://docs.deno.com/go/config]:FILE:_files' \
-'--ext=[Set content type of the supplied file]: :(ts tsx js jsx md json jsonc css scss sass less html svelte vue astro yml yaml ipynb sql vto njk)' \
+'--ext=[Set content type of the supplied file]: :(ts tsx js jsx mts mjs cts cjs md json jsonc css scss sass less html svelte vue astro yml yaml ipynb sql vto njk)' \
 '*--ignore=[Ignore formatting particular source files]: :_files' \
 '*--watch-exclude=[Exclude provided files/patterns from watch mode]' \
 '--use-tabs=[Use tabs instead of spaces for indentation \[default\: false\]]' \
@@ -1916,7 +1916,7 @@ _arguments "${_arguments_options[@]}" : \
 '--junit-path=[Write a JUnit XML test report to PATH. Use '\''-'\'' to write to stdout which is the default when PATH is not provided]:PATH:_files' \
 '--reporter=[Select reporter to use. Default to '\''pretty'\'']: :(pretty dot junit tap)' \
 '*--env-file=[Load environment variables from local file   Only the first environment variable with a given key is used.   Existing process environment variables are not overwritten, so if variables with the same names already exist in the environment, their values will be preserved.   Where multiple declarations for the same environment variable exist in your .env file, the first one encountered is applied. This is determined by the order of the files you pass as arguments.]' \
-'--ext=[Set content type of the supplied file]: :(ts tsx js jsx)' \
+'--ext=[Set content type of the supplied file]: :(ts tsx js jsx mts mjs cts cjs)' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
