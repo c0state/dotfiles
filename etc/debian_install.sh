@@ -124,7 +124,7 @@ flatpak install --user -y flathub io.podman_desktop.PodmanDesktop
 flatpak install --user -y flathub com.obsproject.Studio
 flatpak install --user -y flathub org.gimp.GIMP
 flatpak install --user -y flathub com.usebottles.bottles
-flatpak update -y
+flatpak update --user -y
 sudo flatpak update -y
 
 #------------------------------ general init
