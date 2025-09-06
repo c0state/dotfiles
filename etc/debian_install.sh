@@ -213,6 +213,11 @@ if ! which code >/dev/null ; then
   install_package "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
 fi
 
+if ! which obsidian >/dev/null ; then
+  OBSIDIAN_VERSION=$(get_github_release_version "https://github.com/obsidianmd/obsidian-releases/releases/latest")
+  install_package "https://github.com/obsidianmd/obsidian-releases/releases/download/v$OBSIDIAN_VERSION/obsidian_${OBSIDIAN_VERSION}_$DPKG_ARCH.deb"
+fi
+
 which jetbrains-toolbox || \
     wget -O - https://download.jetbrains.com/toolbox/jetbrains-toolbox-2.4.2.32922.tar.gz \
         tar -xzO jetbrains-toolbox-2.4.2.32922/jetbrains-toolbox \
