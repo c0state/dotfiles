@@ -2,7 +2,7 @@
 
 set -eux
 
-NODE_VERSION=22
+NODE_VERSION=24
 
 # ---------- volta https://github.com/volta-cli/volta
 
