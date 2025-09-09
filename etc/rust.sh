@@ -20,7 +20,6 @@ rustup component add rust-analyzer
 source "$HOME"/.cargo/env
 
 cargo install --features clipboard broot
-cargo install coreutils
 cargo install eza
 cargo install git-delta
 cargo install sd
