@@ -169,6 +169,7 @@ brew_cask_packages=(
     chromedriver
     claude
     coconutbattery
+    cursor
     db-browser-for-sqlite
     dbeaver-community
     discord
