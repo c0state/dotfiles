@@ -229,6 +229,7 @@ sudo chmod +x /usr/local/bin/nvim
 
 # install apps
 sudo apt -y install \
+  firefox \
   google-chrome-stable \
   signal-desktop \
   vlc
