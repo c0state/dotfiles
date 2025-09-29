@@ -228,6 +228,9 @@ which jetbrains-toolbox || \
 sudo curl --fail -L https://github.com/neovim/neovim/releases/latest/download/nvim-linux-$ARCH.appimage --output /usr/local/bin/nvim
 sudo chmod +x /usr/local/bin/nvim
 
+sudo curl --fail -L https://s3.amazonaws.com/outline-releases/manager/linux/stable/Outline-Manager.AppImage --output /usr/local/bin/Outline-Manager
+sudo chmod +x /usr/local/bin/Outline-Manager
+
 # install apps
 sudo apt -y install \
   firefox \
