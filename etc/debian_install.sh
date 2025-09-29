@@ -131,6 +131,7 @@ sudo apt -y install \
 
 sudo snap install slack
 sudo snap install steam
+sudo snap install telegram-desktop
 sudo snap refresh
 
 #------------------------------ flatpak repos
