@@ -247,12 +247,6 @@ done
 
 brew completions link
 
-#---------- Intel only packages ----------
-
-if [[ -z $IS_MACOS_ARM ]]; then
-    brew install --cask intel-haxm
-fi
-
 #---------- Configure auto updater ----------
 
 brew autoupdate delete && brew autoupdate start --cleanup
