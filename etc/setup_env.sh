@@ -22,7 +22,7 @@ DOTFILES=".bash_functions .bash_profile .bashrc .editorconfig .gitconfig-base .g
 
 for FILE in $DOTFILES; do
     echo processing "$FILE"
-    ln -s -f "$HOME"/.dotfiles/"$FILE" "$HOME"/
+    ln -s -f "$HOME"/.dotfiles/"$FILE" "$HOME"/"$FILE"
 done
 
 mkdir -p "$HOME"/.config
@@ -35,7 +35,6 @@ fi
 # ---------- set up gitconfig
 
 if [[ -n "$WSL_DISTRO_NAME" ]]; then
-    ln -s -f "$HOME"/.dotfiles/.gitconfig-linux "$HOME"/.gitconfig-linux
     ln -s -f "$HOME"/.dotfiles/.gitconfig-wsl "$HOME"/.gitconfig
 elif [[ "$PLATFORM" == "Linux" ]]; then
     ln -s -f "$HOME"/.dotfiles/.gitconfig-linux "$HOME"/.gitconfig
