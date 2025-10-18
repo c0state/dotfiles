@@ -68,8 +68,8 @@ _deno() {
 '--ext=[Set content type of the supplied file]: :(ts tsx js jsx mts mjs cts cjs)' \
 '*--env-file=[Load environment variables from local file   Only the first environment variable with a given key is used.   Existing process environment variables are not overwritten, so if variables with the same names already exist in the environment, their values will be preserved.   Where multiple declarations for the same environment variable exist in your .env file, the first one encountered is applied. This is determined by the order of the files you pass as arguments.]' \
 '(--inspect --inspect-wait --inspect-brk)--coverage=[Collect coverage profile data into DIR. If DIR is not specified, it uses '\''coverage/'\''.   This option can also be set via the DENO_COVERAGE_DIR environment variable.]' \
-'-t+[]' \
-'--tunnel=[]' \
+'-t+[Execute tasks with a tunnel to Deno Deploy.      Create a secure connection between your local machine and Deno Deploy,     providing access to centralised environment variables, logging,     and serving from your local environment to the public internet]' \
+'--tunnel=[Execute tasks with a tunnel to Deno Deploy.      Create a secure connection between your local machine and Deno Deploy,     providing access to centralised environment variables, logging,     and serving from your local environment to the public internet]' \
 '*-h+[]' \
 '*--help=[]' \
 '-L+[Set log level]: :(trace debug info)' \
@@ -184,8 +184,8 @@ _arguments "${_arguments_options[@]}" : \
 '--ext=[Set content type of the supplied file]: :(ts tsx js jsx mts mjs cts cjs)' \
 '*--env-file=[Load environment variables from local file   Only the first environment variable with a given key is used.   Existing process environment variables are not overwritten, so if variables with the same names already exist in the environment, their values will be preserved.   Where multiple declarations for the same environment variable exist in your .env file, the first one encountered is applied. This is determined by the order of the files you pass as arguments.]' \
 '(--inspect --inspect-wait --inspect-brk)--coverage=[Collect coverage profile data into DIR. If DIR is not specified, it uses '\''coverage/'\''.   This option can also be set via the DENO_COVERAGE_DIR environment variable.]' \
-'-t+[]' \
-'--tunnel=[]' \
+'-t+[Execute tasks with a tunnel to Deno Deploy.      Create a secure connection between your local machine and Deno Deploy,     providing access to centralised environment variables, logging,     and serving from your local environment to the public internet]' \
+'--tunnel=[Execute tasks with a tunnel to Deno Deploy.      Create a secure connection between your local machine and Deno Deploy,     providing access to centralised environment variables, logging,     and serving from your local environment to the public internet]' \
 '*-h+[]' \
 '*--help=[]' \
 '-L+[Set log level]: :(trace debug info)' \
@@ -292,8 +292,8 @@ _arguments "${_arguments_options[@]}" : \
 '*--watch-exclude=[Exclude provided files/patterns from watch mode]' \
 '--ext=[Set content type of the supplied file]: :(ts tsx js jsx mts mjs cts cjs)' \
 '*--env-file=[Load environment variables from local file   Only the first environment variable with a given key is used.   Existing process environment variables are not overwritten, so if variables with the same names already exist in the environment, their values will be preserved.   Where multiple declarations for the same environment variable exist in your .env file, the first one encountered is applied. This is determined by the order of the files you pass as arguments.]' \
-'-t+[]' \
-'--tunnel=[]' \
+'-t+[Execute tasks with a tunnel to Deno Deploy.      Create a secure connection between your local machine and Deno Deploy,     providing access to centralised environment variables, logging,     and serving from your local environment to the public internet]' \
+'--tunnel=[Execute tasks with a tunnel to Deno Deploy.      Create a secure connection between your local machine and Deno Deploy,     providing access to centralised environment variables, logging,     and serving from your local environment to the public internet]' \
 '*-h+[]' \
 '*--help=[]' \
 '-L+[Set log level]: :(trace debug info)' \
@@ -1866,8 +1866,8 @@ _arguments "${_arguments_options[@]}" : \
 '-f+[Filter members of the workspace by name, implies --recursive flag]: :_default' \
 '--filter=[Filter members of the workspace by name, implies --recursive flag]: :_default' \
 '--node-modules-dir=[Sets the node modules management mode for npm packages]' \
-'-t+[]' \
-'--tunnel=[]' \
+'-t+[Execute tasks with a tunnel to Deno Deploy.      Create a secure connection between your local machine and Deno Deploy,     providing access to centralised environment variables, logging,     and serving from your local environment to the public internet]' \
+'--tunnel=[Execute tasks with a tunnel to Deno Deploy.      Create a secure connection between your local machine and Deno Deploy,     providing access to centralised environment variables, logging,     and serving from your local environment to the public internet]' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
