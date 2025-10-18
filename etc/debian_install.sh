@@ -129,6 +129,7 @@ sudo apt -y install \
 
 #------------------------------ install packages
 
+sudo snap install firefox
 sudo snap install slack
 sudo snap install steam
 sudo snap install telegram-desktop
@@ -233,7 +234,6 @@ sudo chmod +x /usr/local/bin/Outline-Manager
 
 # install apps
 sudo apt -y install \
-  firefox \
   google-chrome-stable \
   signal-desktop \
   vlc
