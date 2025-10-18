@@ -17,6 +17,7 @@ if test -w /home/linuxbrew/.linuxbrew; then
   brew update
   brew upgrade
 
+  brew install derailed/k9s/k9s
   brew install neovim
   brew install nerdctl
   brew install nushell
