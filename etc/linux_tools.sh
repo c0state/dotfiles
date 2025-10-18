@@ -21,6 +21,7 @@ if test -w /home/linuxbrew/.linuxbrew; then
   brew install nerdctl
   brew install nushell
   brew install ripgrep-all
+  brew install yq
 else
   echo "Linuxbrew dir not writable, was it installed by a different user?"
 fi
