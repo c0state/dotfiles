@@ -13,6 +13,7 @@ end
 #---------- completions
 
 docker completion fish > "$HOME"/.config/fish/completions/docker.fish
+k9s completion fish > "$HOME"/.config/fish/completions/k9s.fish
 kubectl completion fish > "$HOME"/.config/fish/completions/kubectl.fish
 uv generate-shell-completion fish > "$HOME"/.config/fish/completions/uv.fish
 
