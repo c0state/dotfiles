@@ -129,7 +129,9 @@ sudo apt -y install \
 
 #------------------------------ install packages
 
+sudo snap install dbeaver-ce
 sudo snap install firefox
+sudo snap install postman
 sudo snap install slack
 sudo snap install steam
 sudo snap install telegram-desktop
