@@ -22,7 +22,7 @@ DOTFILES=".bash_functions .bash_profile .bashrc .editorconfig .gitconfig-base .g
 
 for FILE in $DOTFILES; do
     echo processing "$FILE"
-    ln -s -f "$HOME"/.dotfiles/"$FILE" "$HOME"/"$FILE"
+    ln -s -f -n "$HOME"/.dotfiles/"$FILE" "$HOME"/"$FILE"
 done
 
 mkdir -p "$HOME"/.config
