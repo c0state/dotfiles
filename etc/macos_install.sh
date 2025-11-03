@@ -165,7 +165,7 @@ brew_cask_packages=(
     beyond-compare
     brave-browser
     calibre
-    chatgpt
+    chatgpt chatgpt-atlas
     chromedriver
     claude
     coconutbattery
