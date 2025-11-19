@@ -173,7 +173,6 @@ brew_cask_packages=(
     db-browser-for-sqlite
     dbeaver-community
     discord
-    divvy
     docker
     dotnet-sdk
     evernote

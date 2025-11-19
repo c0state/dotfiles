@@ -64,19 +64,3 @@ function install_package {
         rm -f "$TEMP_PKG_INSTALL_FILE"
     )
 }
-
-# ---------- macos
-
-function divvy_export {
-    if [[ $1 == "" ]]; then
-        echo "Please provide filename to write divvy config to"
-    else
-        open -a Safari divvy://export && (pbpaste > "$1")
-    fi
-}
-
-function clear_macos_timemachine_snapshots {
-    for curr_dir in $(tmutil listlocalsnapshotdates | grep "-"); do
-        sudo tmutil deletelocalsnapshots $curr_dir
-    done
-}

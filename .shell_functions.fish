@@ -72,19 +72,3 @@ function install_package
     rm -f "$TEMP_PKG_INSTALL_FILE"
     set --erase TEMP_PKG_INSTALL_FILE
 end
-
-# ---------- macos
-
-function divvy_export 
-    if test -z $argv
-        echo "Please provide filename to write divvy config to"
-    else
-        open -a Safari divvy://export && pbpaste > "$argv"
-    end
-end
-
-function clear_macos_timemachine_snapshots 
-    for curr_dir in (tmutil listlocalsnapshotdates | grep "-")
-        sudo tmutil deletelocalsnapshots $curr_dir
-    end
-end
