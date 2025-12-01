@@ -189,6 +189,7 @@ brew_cask_packages=(
     google-drive
     graphql-playground
     handbrake
+    headlamp
     imageoptim
     insomnia
     istat-menus
@@ -196,7 +197,7 @@ brew_cask_packages=(
     itsycal
     jetbrains-toolbox
     kitty
-    lens openlens headlamp
+    lens openlens
     libreoffice
     microsoft-edge
     microsoft-office
