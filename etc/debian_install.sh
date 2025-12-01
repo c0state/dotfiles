@@ -138,6 +138,7 @@ sudo apt -y install \
 
 sudo snap install dbeaver-ce
 sudo snap install firefox
+sudo snap install helm --classic
 sudo snap install postman
 sudo snap install slack
 sudo snap install steam
