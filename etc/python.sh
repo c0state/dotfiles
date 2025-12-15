@@ -94,6 +94,7 @@ pipx install yt-dlp
 #---------- poetry
 
 poetry config virtualenvs.in-project true
+poetry self update
 
 #---------- upgrade all pipx packages
 
