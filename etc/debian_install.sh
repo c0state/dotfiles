@@ -202,16 +202,16 @@ install_package "https://github.com/MuhammedKalkan/OpenLens/releases/download/v$
 GIT_CRED_MGR_VERSION=$(get_github_release_version "https://github.com/git-ecosystem/git-credential-manager/releases/latest")
 install_package "https://github.com/git-ecosystem/git-credential-manager/releases/download/v$GIT_CRED_MGR_VERSION/gcm-linux_$DPKG_ARCH.$GIT_CRED_MGR_VERSION.deb"
 
-if ! which discord >/dev/null ; then
-  install_package "https://discord.com/api/download?platform=linux&format=deb"
-fi
+# discord doesn't have an apt repo, so install each time this script is run to get latest
+# note: there *is* this third party option: https://github.com/palfrey/discord-apt
+install_package "https://discord.com/api/download?platform=linux&format=deb"
 
 if ! which insync >/dev/null ; then
   install_package "https://cdn.insynchq.com/builds/linux/3.9.4.60020/insync_3.9.4.60020-noble_$DPKG_ARCH.deb"
 fi
 
 if ! which bcompare >/dev/null ; then
-  install_package "https://www.scootersoftware.com/files/bcompare-5.1.2.31185_$DPKG_ARCH.deb"
+  install_package "https://www.scootersoftware.com/files/bcompare-5.1.6.31527_$DPKG_ARCH.deb"
 fi
 
 if ! which teamviewer >/dev/null ; then
