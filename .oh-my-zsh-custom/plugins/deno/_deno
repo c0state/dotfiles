@@ -1119,6 +1119,17 @@ _arguments "${_arguments_options[@]}" : \
 '*::args:_default' \
 && ret=0
 ;;
+(sandbox)
+_arguments "${_arguments_options[@]}" : \
+'*-h+[]' \
+'*--help=[]' \
+'-L+[Set log level]: :(trace debug info)' \
+'--log-level=[Set log level]: :(trace debug info)' \
+'-q[Suppress diagnostic output]' \
+'--quiet[Suppress diagnostic output]' \
+'*::args:_default' \
+&& ret=0
+;;
 (eval)
 _arguments "${_arguments_options[@]}" : \
 '*-h+[]' \
@@ -2659,6 +2670,16 @@ _arguments "${_arguments_options[@]}" : \
 '--quiet[Suppress diagnostic output]' \
 && ret=0
 ;;
+(sandbox)
+_arguments "${_arguments_options[@]}" : \
+'*-h+[]' \
+'*--help=[]' \
+'-L+[Set log level]: :(trace debug info)' \
+'--log-level=[Set log level]: :(trace debug info)' \
+'-q[Suppress diagnostic output]' \
+'--quiet[Suppress diagnostic output]' \
+&& ret=0
+;;
 (eval)
 _arguments "${_arguments_options[@]}" : \
 '*-h+[]' \
@@ -2896,6 +2917,7 @@ _deno_commands() {
 'coverage:Print coverage reports from coverage profiles.  Collect a coverage profile with deno test\:   deno test --coverage=cov_profile  Print a report to stdout\:   deno coverage cov_profile  Include urls that start with the file schema and exclude files ending with test.ts and test.js, for an url to match it must match the include pattern and not match the exclude pattern\:   deno coverage --include="^file\:" --exclude="test\\.(ts|js)" cov_profile  Write a report using the lcov format\:   deno coverage --lcov --output=cov.lcov cov_profile/  Generate html reports from lcov\:   genhtml -o html_cov cov.lcov  Read more\: https\://docs.deno.com/go/coverage' \
 'doc:Show documentation for a module.  Output documentation to standard output\:     deno doc ./path/to/module.ts  Output documentation in HTML format\:     deno doc --html --name="My library" ./path/to/module.ts  Lint a module for documentation diagnostics\:     deno doc --lint ./path/to/module.ts  Target a specific symbol\:     deno doc ./path/to/module.ts MyClass.someField  Show documentation for runtime built-ins\:     deno doc     deno doc --filter Deno.Listener  Read more\: https\://docs.deno.com/go/doc' \
 'deploy:' \
+'sandbox:' \
 'eval:Evaluate JavaScript from the command line.   deno eval "console.log('\''hello world'\'')"  To evaluate as TypeScript\:   deno eval --ext=ts "const v\: string = '\''hello'\''; console.log(v)"  This command has implicit access to all permissions.  Read more\: https\://docs.deno.com/go/eval' \
 'fmt:Auto-format various file types.   deno fmt myfile1.ts myfile2.ts  Supported file types are\:   JavaScript, TypeScript, Markdown, JSON(C) and Jupyter Notebooks  Supported file types which are behind corresponding unstable flags (see formatting options)\:   HTML, CSS, SCSS, SASS, LESS, YAML, Svelte, Vue, Astro and Angular  Format stdin and write to stdout\:   cat file.ts | deno fmt -  Check if the files are formatted\:   deno fmt --check  Ignore formatting code by preceding it with an ignore comment\:   // deno-fmt-ignore  Ignore formatting a file by adding an ignore comment at the top of the file\:   // deno-fmt-ignore-file  Read more\: https\://docs.deno.com/go/fmt' \
 'init:scaffolds a basic Deno project with a script, test, and configuration file' \
@@ -3015,6 +3037,7 @@ _deno__help_commands() {
 'coverage:' \
 'doc:' \
 'deploy:' \
+'sandbox:' \
 'eval:' \
 'fmt:' \
 'init:' \
@@ -3174,6 +3197,11 @@ _deno__help__run_commands() {
     local commands; commands=()
     _describe -t commands 'deno help run commands' commands "$@"
 }
+(( $+functions[_deno__help__sandbox_commands] )) ||
+_deno__help__sandbox_commands() {
+    local commands; commands=()
+    _describe -t commands 'deno help sandbox commands' commands "$@"
+}
 (( $+functions[_deno__help__serve_commands] )) ||
 _deno__help__serve_commands() {
     local commands; commands=()
@@ -3278,6 +3306,11 @@ _deno__repl_commands() {
 _deno__run_commands() {
     local commands; commands=()
     _describe -t commands 'deno run commands' commands "$@"
+}
+(( $+functions[_deno__sandbox_commands] )) ||
+_deno__sandbox_commands() {
+    local commands; commands=()
+    _describe -t commands 'deno sandbox commands' commands "$@"
 }
 (( $+functions[_deno__serve_commands] )) ||
 _deno__serve_commands() {
