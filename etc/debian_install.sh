@@ -155,6 +155,7 @@ flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flath
 flatpak install --system -y flathub io.kinvolk.Headlamp
 flatpak install --system -y flathub io.podman_desktop.PodmanDesktop
 flatpak install --system -y flathub com.obsproject.Studio
+flatpak install --system -y flathub com.usebottles.bottles
 flatpak install --user -y flathub org.gimp.GIMP
 flatpak install --user -y flathub com.usebottles.bottles
 flatpak update --user -y
