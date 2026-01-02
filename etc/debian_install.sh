@@ -5,6 +5,10 @@ set -eu
 WSL_DISTRO_NAME=${WSL_DISTRO_NAME:-""}
 DPKG_ARCH=$(dpkg --print-architecture 2>/dev/null || echo "")
 ARCH=$(arch)
+CURSOR_ARCH="$DPKG_ARCH"
+if [ "$CURSOR_ARCH" = "amd64" ]; then
+    CURSOR_ARCH="x64"
+fi
 
 function get_github_release_version {
   REPO_RELEASE_VERSION=$(curl --fail -L -s "$1" | grep -P "meta.*\breleases/tag/v?[0-9]" | head -n 1 | command grep -oP "releases/tag/v?\K[^\"]*")
@@ -231,6 +235,8 @@ if ! which obsidian >/dev/null ; then
   OBSIDIAN_VERSION=$(get_github_release_version "https://github.com/obsidianmd/obsidian-releases/releases/latest")
   install_package "https://github.com/obsidianmd/obsidian-releases/releases/download/v$OBSIDIAN_VERSION/obsidian_${OBSIDIAN_VERSION}_$DPKG_ARCH.deb"
 fi
+
+install_package https://api2.cursor.sh/updates/download/golden/linux-${CURSOR_ARCH}-deb/cursor/2.2
 
 which jetbrains-toolbox || \
     wget -O - https://download.jetbrains.com/toolbox/jetbrains-toolbox-2.4.2.32922.tar.gz \
