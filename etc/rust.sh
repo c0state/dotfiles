@@ -23,7 +23,6 @@ cargo install --features clipboard broot
 cargo install eza
 cargo install git-delta
 cargo install sd
-cargo install tree-sitter-cli
 cargo install wasm-pack
 cargo install zellij
 
