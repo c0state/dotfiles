@@ -198,6 +198,7 @@ sudo apt -y install \
     fonts-firacode \
     gh \
     lens \
+    sourcegit \
     tmux
 
 LAZYGIT_VERSION=$(get_github_release_version "https://github.com/jesseduffield/lazygit/releases/latest")
