@@ -245,6 +245,8 @@ fi
 
 install_package https://api2.cursor.sh/updates/download/golden/linux-${CURSOR_ARCH}-deb/cursor/2.2
 
+install_package https://api.gitkraken.dev/releases/production/linux/x64/active/gitkraken-amd64.deb
+
 which jetbrains-toolbox || \
     wget -O - https://download.jetbrains.com/toolbox/jetbrains-toolbox-2.4.2.32922.tar.gz \
         tar -xzO jetbrains-toolbox-2.4.2.32922/jetbrains-toolbox \
