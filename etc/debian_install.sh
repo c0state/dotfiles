@@ -156,6 +156,7 @@ sudo snap refresh
 #------------------------------ flatpak repos
 
 flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak install --system -y flathub io.github.shiftey.Desktop
 flatpak install --system -y flathub io.kinvolk.Headlamp
 flatpak install --system -y flathub io.podman_desktop.PodmanDesktop
 flatpak install --system -y flathub com.obsproject.Studio
