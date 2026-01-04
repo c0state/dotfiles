@@ -138,6 +138,7 @@ sudo apt -y install \
     traceroute \
     tree \
     wezterm \
+    wine \
     wireshark \
     wmctrl \
     vim-nox
