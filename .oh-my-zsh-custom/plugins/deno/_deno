@@ -82,8 +82,8 @@ _deno() {
 '--no-npm[Do not resolve npm modules]' \
 '(-c --config)--no-config[Disable automatic loading of the configuration file]' \
 '(--lock)--no-lock[Disable auto discovery of the lock file]' \
-'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import -P --permission-set)-A[Allow all permissions]' \
-'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import -P --permission-set)--allow-all[Allow all permissions]' \
+'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import -P --permission-set)*-A[Allow all permissions]' \
+'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import -P --permission-set)*--allow-all[Allow all permissions]' \
 '--allow-hrtime[]' \
 '--deny-hrtime[]' \
 '--no-prompt[]' \
@@ -231,8 +231,8 @@ _arguments "${_arguments_options[@]}" : \
 '--no-npm[Do not resolve npm modules]' \
 '(-c --config)--no-config[Disable automatic loading of the configuration file]' \
 '(--lock)--no-lock[Disable auto discovery of the lock file]' \
-'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import -P --permission-set)-A[Allow all permissions]' \
-'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import -P --permission-set)--allow-all[Allow all permissions]' \
+'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import -P --permission-set)*-A[Allow all permissions]' \
+'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import -P --permission-set)*--allow-all[Allow all permissions]' \
 '--allow-hrtime[]' \
 '--deny-hrtime[]' \
 '--no-prompt[]' \
@@ -344,8 +344,8 @@ _arguments "${_arguments_options[@]}" : \
 '--no-npm[Do not resolve npm modules]' \
 '(-c --config)--no-config[Disable automatic loading of the configuration file]' \
 '(--lock)--no-lock[Disable auto discovery of the lock file]' \
-'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import -P --permission-set)-A[Allow all permissions]' \
-'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import -P --permission-set)--allow-all[Allow all permissions]' \
+'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import -P --permission-set)*-A[Allow all permissions]' \
+'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import -P --permission-set)*--allow-all[Allow all permissions]' \
 '--allow-hrtime[]' \
 '--deny-hrtime[]' \
 '--no-prompt[]' \
@@ -590,8 +590,8 @@ _arguments "${_arguments_options[@]}" : \
 '--no-npm[Do not resolve npm modules]' \
 '(-c --config)--no-config[Disable automatic loading of the configuration file]' \
 '(--lock)--no-lock[Disable auto discovery of the lock file]' \
-'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import -P --permission-set)-A[Allow all permissions]' \
-'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import -P --permission-set)--allow-all[Allow all permissions]' \
+'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import -P --permission-set)*-A[Allow all permissions]' \
+'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import -P --permission-set)*--allow-all[Allow all permissions]' \
 '--allow-hrtime[]' \
 '--deny-hrtime[]' \
 '--no-prompt[]' \
@@ -948,8 +948,8 @@ _arguments "${_arguments_options[@]}" : \
 '--no-npm[Do not resolve npm modules]' \
 '(-c --config)--no-config[Disable automatic loading of the configuration file]' \
 '(--lock)--no-lock[Disable auto discovery of the lock file]' \
-'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import -P --permission-set)-A[Allow all permissions]' \
-'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import -P --permission-set)--allow-all[Allow all permissions]' \
+'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import -P --permission-set)*-A[Allow all permissions]' \
+'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import -P --permission-set)*--allow-all[Allow all permissions]' \
 '--allow-hrtime[]' \
 '--deny-hrtime[]' \
 '--no-prompt[]' \
@@ -1468,8 +1468,8 @@ _arguments "${_arguments_options[@]}" : \
 '--cached-only[Require that remote dependencies are already cached]' \
 '--enable-testing-features-do-not-use[INTERNAL\: Enable internal features used during integration testing]' \
 '--eszip-internal-do-not-use[]' \
-'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import -P --permission-set)-A[Allow all permissions]' \
-'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import -P --permission-set)--allow-all[Allow all permissions]' \
+'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import -P --permission-set)*-A[Allow all permissions]' \
+'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import -P --permission-set)*--allow-all[Allow all permissions]' \
 '--allow-hrtime[]' \
 '--deny-hrtime[]' \
 '--no-prompt[]' \
@@ -1585,8 +1585,8 @@ _arguments "${_arguments_options[@]}" : \
 '--cached-only[Require that remote dependencies are already cached]' \
 '--enable-testing-features-do-not-use[INTERNAL\: Enable internal features used during integration testing]' \
 '--eszip-internal-do-not-use[]' \
-'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import -P --permission-set)-A[Allow all permissions]' \
-'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import -P --permission-set)--allow-all[Allow all permissions]' \
+'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import -P --permission-set)*-A[Allow all permissions]' \
+'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import -P --permission-set)*--allow-all[Allow all permissions]' \
 '--allow-hrtime[]' \
 '--deny-hrtime[]' \
 '--no-prompt[]' \
@@ -2007,8 +2007,8 @@ _arguments "${_arguments_options[@]}" : \
 '--no-npm[Do not resolve npm modules]' \
 '(-c --config)--no-config[Disable automatic loading of the configuration file]' \
 '(--lock)--no-lock[Disable auto discovery of the lock file]' \
-'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import -P --permission-set)-A[Allow all permissions]' \
-'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import -P --permission-set)--allow-all[Allow all permissions]' \
+'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import -P --permission-set)*-A[Allow all permissions]' \
+'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import -P --permission-set)*--allow-all[Allow all permissions]' \
 '--allow-hrtime[]' \
 '--deny-hrtime[]' \
 '--no-prompt[]' \
@@ -2174,8 +2174,8 @@ _arguments "${_arguments_options[@]}" : \
 '--no-npm[Do not resolve npm modules]' \
 '(-c --config)--no-config[Disable automatic loading of the configuration file]' \
 '(--lock)--no-lock[Disable auto discovery of the lock file]' \
-'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import -P --permission-set)-A[Allow all permissions]' \
-'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import -P --permission-set)--allow-all[Allow all permissions]' \
+'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import -P --permission-set)*-A[Allow all permissions]' \
+'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import -P --permission-set)*--allow-all[Allow all permissions]' \
 '--allow-hrtime[]' \
 '--deny-hrtime[]' \
 '--no-prompt[]' \
@@ -2461,8 +2461,8 @@ _arguments "${_arguments_options[@]}" : \
 '--no-npm[Do not resolve npm modules]' \
 '(-c --config)--no-config[Disable automatic loading of the configuration file]' \
 '(--lock)--no-lock[Disable auto discovery of the lock file]' \
-'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import -P --permission-set)-A[Allow all permissions]' \
-'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import -P --permission-set)--allow-all[Allow all permissions]' \
+'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import -P --permission-set)*-A[Allow all permissions]' \
+'(-R --allow-read -W --allow-write -N --allow-net -E --allow-env --allow-run -S --allow-sys --allow-ffi -I --allow-import -P --permission-set)*--allow-all[Allow all permissions]' \
 '--allow-hrtime[]' \
 '--deny-hrtime[]' \
 '--no-prompt[]' \
@@ -2937,7 +2937,7 @@ _deno_commands() {
 'test:Run tests using Deno'\''s built-in test runner.  Evaluate the given modules, run all tests declared with Deno.test() and report results to standard output\:   deno test src/fetch_test.ts src/signal_test.ts  Directory arguments are expanded to all contained files matching the glob {*_,*.,}test.{js,mjs,ts,mts,jsx,tsx} or **/__tests__/**\:  deno test src/  Read more\: https\://docs.deno.com/go/test' \
 'types:Print runtime TypeScript declarations.    deno types > lib.deno.d.ts  The declaration file could be saved and used for typing information.' \
 'update:Update outdated dependencies.  Update dependencies to the latest semver compatible versions\:   deno update Update dependencies to the latest versions, ignoring semver requirements\:   deno update --latest  This command is an alias of deno outdated --update  Filters can be used to select which packages to act on. Filters can include wildcards (*) to match multiple packages.   deno update --latest "@std/*"   deno update --latest "react*" Note that filters act on their aliases configured in deno.json / package.json, not the actual package names\:   Given "foobar"\: "npm\:react@17.0.0" in deno.json or package.json, the filter "foobar" would update npm\:react to   the latest version.   deno update --latest foobar Filters can be combined, and negative filters can be used to exclude results\:   deno update --latest "@std/*" "!@std/fmt*"  Specific version requirements to update to can be specified\:   deno update @std/fmt@^1.0.2 ' \
-'upgrade:Upgrade deno executable to the given version.  Latest   deno upgrade  Specific version   deno upgrade 1.45.0   deno upgrade 1.46.0-rc.1   deno upgrade 9bc2dd29ad6ba334fd57a20114e367d3c04763d4  Channel   deno upgrade stable   deno upgrade rc   deno upgrade canary  The version is downloaded from https\://dl.deno.land and is used to replace the current executable.  If you want to not replace the current Deno executable but instead download an update to a different location, use the --output flag\:   deno upgrade --output \$HOME/my_deno  Read more\: https\://docs.deno.com/go/upgrade' \
+'upgrade:Upgrade deno executable to the given version.  Latest   deno upgrade  Specific version   deno upgrade 1.45.0   deno upgrade 1.46.0-rc.1   deno upgrade 9bc2dd29ad6ba334fd57a20114e367d3c04763d4  Channel   deno upgrade stable   deno upgrade rc   deno upgrade canary  The version is resolved via https\://dl.deno.land and then downloaded from either there or GitHub releases, replacing the current executable.  If you want to not replace the current Deno executable but instead download an update to a different location, use the --output flag\:   deno upgrade --output \$HOME/my_deno  Read more\: https\://docs.deno.com/go/upgrade' \
 'vendor:\`deno vendor\` was removed in Deno 2.  See the Deno 1.x to 2.x Migration Guide for migration instructions\: https\://docs.deno.com/runtime/manual/advanced/migrate_deprecations' \
 'x:Execute a binary from npm or jsr, like npx' \
 'help:' \
