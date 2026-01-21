@@ -19,6 +19,7 @@ npm install --global npm
 
 npm install --global \
     @anthropic-ai/claude-code \
+    @beads/bd \
     @github/copilot \
     @google/gemini-cli \
     @openai/codex \
