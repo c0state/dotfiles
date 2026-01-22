@@ -8,6 +8,12 @@ NODE_VERSION=24
 
 curl https://get.volta.sh | bash -s -- --skip-setup
 
+if ! which bun; then
+  curl -fsSL https://bun.com/install | bash
+else
+  bun upgrade
+fi
+
 # ---------- install js tools
 
 volta install node@"$NODE_VERSION"
