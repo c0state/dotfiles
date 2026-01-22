@@ -5,9 +5,9 @@ set -eu
 WSL_DISTRO_NAME=${WSL_DISTRO_NAME:-""}
 DPKG_ARCH=$(dpkg --print-architecture 2>/dev/null || echo "")
 ARCH=$(arch)
-CURSOR_ARCH="$DPKG_ARCH"
-if [ "$CURSOR_ARCH" = "amd64" ]; then
-    CURSOR_ARCH="x64"
+SHORT_ARCH="$DPKG_ARCH"
+if [ "$SHORT_ARCH" = "amd64" ]; then
+    SHORT_ARCH="x64"
 fi
 
 function get_github_release_version {
@@ -244,9 +244,12 @@ if ! which obsidian >/dev/null ; then
   install_package "https://github.com/obsidianmd/obsidian-releases/releases/download/v$OBSIDIAN_VERSION/obsidian_${OBSIDIAN_VERSION}_$DPKG_ARCH.deb"
 fi
 
-install_package https://api2.cursor.sh/updates/download/golden/linux-${CURSOR_ARCH}-deb/cursor/2.2
+install_package https://api2.cursor.sh/updates/download/golden/linux-${SHORT_ARCH}-deb/cursor/2.2
 
-install_package https://api.gitkraken.dev/releases/production/linux/x64/active/gitkraken-amd64.deb
+install_package https://api.gitkraken.dev/releases/production/linux/${SHORT_ARCH}/active/gitkraken-${DPKG_ARCH}.deb
+
+RPI_IMAGER_VERSION=$(get_github_release_version "https://github.com/raspberrypi/rpi-imager/releases/latest")
+install_package https://github.com/raspberrypi/rpi-imager/releases/download/v${RPI_IMAGER_VERSION}/rpi-imager_${RPI_IMAGER_VERSION}_${DPKG_ARCH}.deb
 
 which jetbrains-toolbox || \
     wget -O - https://download.jetbrains.com/toolbox/jetbrains-toolbox-2.4.2.32922.tar.gz \
