@@ -21,7 +21,7 @@
     ffm = "!sh -c 'git fetch origin master:master || (echo Trying main && git fetch origin main:main)'"
     graft = !legit graft \"$@\"
     harvest = !legit harvest \"$@\"
-    hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+    hist = log --pretty=format:'%H %ad | %s%d [%an]' --graph --date=short
     ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
     lh = "!lh() { git log --pretty=full -L $1,$1:\"$2\"; }; lh"
     mm = merge origin/master --autostash
