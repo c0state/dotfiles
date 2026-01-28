@@ -1,5 +1,6 @@
 [include]
     path = .gitconfig-custom
+    path = .gitconfig-delta-themes.gitconfig
 [alias]
     addi = "!git add --patch"
     br = !git branch -vv
@@ -12,9 +13,9 @@
     dmbr = "!git dmb --effort 3"
     dt = difftool
     dtbc = difftool --tool=bc
-    dtd = "!git diff HEAD --unified=8 | delta"
+    dtd = "!dtd() { git diff $@ HEAD --unified=8 | delta; }; dtd"
     dtm = difftool --tool=meld
-    dtsd = "!git diff HEAD --unified=8 | git-split-diffs --color | less --RAW-CONTROL-CHARS --quit-if-one-screen"
+    dtsd = "!dtsd() { git diff $@ HEAD --unified=8 | git-split-diffs --color --side-by-side | less --RAW-CONTROL-CHARS --quit-if-one-screen; }; dtsd"
     dump = cat-file -p
     ff = !git fetch origin \"$@\":\"$@\"
     ffm = "!sh -c 'git fetch origin master:master || (echo Trying main && git fetch origin main:main)'"
@@ -49,9 +50,14 @@
     excludesfile = ~/.gitignore
     filemode = false
     fscache = true
-    pager = git-split-diffs
+    pager = git-split-diffs --color | less -RFX
     autocrlf = input
     eol = lf
+[delta]
+    features = colibri
+    syntax-theme = Coldark-Dark
+    navigate = true
+    side-by-side = true
 [diff]
     algorithm = histogram
     colorMoved = default
@@ -79,7 +85,7 @@
 [init]
 	defaultBranch = main
 [interactive]
-    diffFilter = "diff-so-fancy --patch"
+    diffFilter = delta --color-only
 [merge]
     conflictStyle = zdiff3
 [mergetool]
@@ -101,16 +107,10 @@
 [submodule]
     fetchJobs = 0
     recurse = true
-[delta]
-    features = side-by-side line-numbers decorations
-    dark = true
-    line-numbers = true
-    navigate = true
-    side-by-side = true
-    syntax-theme = Coldark-Dark
 [stash]
     showPatch = true
 [split-diffs]
+    min-line-width = 0
     syntax-highlighting-theme = github-dark
     theme-name = dark
 [tag]

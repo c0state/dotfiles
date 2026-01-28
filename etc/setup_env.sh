@@ -41,6 +41,7 @@ elif [[ "$PLATFORM" == "Linux" ]]; then
 elif [[ "$PLATFORM" == "Darwin" ]]; then
     ln -s -f "$HOME"/.dotfiles/.gitconfig-macos "$HOME"/.gitconfig
 fi
+curl -fsSL https://raw.githubusercontent.com/dandavison/delta/refs/heads/main/themes.gitconfig -o "$HOME"/.gitconfig-delta.themes.gitconfig
 
 # ---------- set up prompt
 
