@@ -5,19 +5,23 @@ set -eu
 if [[ ! -e $HOME/.rbenv ]]; then
     git clone https://github.com/rbenv/rbenv "$HOME"/.rbenv
     (cd "$HOME"/.rbenv && src/configure && make -C src)
+else
+    (cd "$HOME"/.rbenv && git pull)
 fi
 
 if [[ ! -e $HOME/.rbenv/plugins/rbenv-gemset ]]; then
     git clone https://github.com/jf/rbenv-gemset.git "$HOME"/.rbenv/plugins/rbenv-gemset
+else
+    (cd "$HOME"/.rbenv/plugins/rbenv-gemset && git pull)
 fi
 
 if [[ ! -e $HOME/.rbenv/plugins/ruby-build ]]; then
     git clone https://github.com/rbenv/ruby-build.git "$HOME"/.rbenv/plugins/ruby-build
+else
+    (cd "$HOME"/.rbenv/plugins/ruby-build && git pull)
 fi
 
 PATH=$PATH:$HOME/.rbenv/bin
-
-eval "$(rbenv init -)"
 
 LATEST_RUBY_VERSION=$(rbenv install --list | grep -E "^\d" | sort | tail -n 1)
 
@@ -27,11 +31,10 @@ fi
 
 rbenv global "$LATEST_RUBY_VERSION"
 
+eval "$(rbenv init -)"
+
 gem install --user-install cocoapods
 gem install --user-install fastlane
-gem install --user-install s3_website
-gem install --user-install terraforming
-gem install --user-install tmuxinator
 
 gem update --user-install
 
