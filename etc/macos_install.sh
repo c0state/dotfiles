@@ -231,7 +231,6 @@ brew_cask_packages=(
     vlc
     warp
     wezterm
-    whatsapp
     wireshark
     xbar
     xquartz inkscape
