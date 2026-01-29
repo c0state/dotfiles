@@ -160,6 +160,7 @@ brew_cask_packages=(
     alfred
     amorphousdiskmark
     angry-ip-scanner
+    antigravity
     balenaetcher
     beekeeper-studio
     beyond-compare
