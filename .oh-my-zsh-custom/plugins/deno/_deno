@@ -58,6 +58,7 @@ _deno() {
 '--inspect=[Activate inspector on host\:port \[default\: 127.0.0.1\:9229\]. Host and port are optional. Using port 0 will assign a random free port.]' \
 '--inspect-brk=[Activate inspector on host\:port, wait for debugger to connect and break at the start of user script]' \
 '--inspect-wait=[Activate inspector on host\:port and wait for debugger to connect before running user code]' \
+'--inspect-publish-uid=[]:VALUE:_default' \
 '*--allow-scripts=[Allow running npm lifecycle scripts for the given packages   Note\: Scripts will only be executed when using a node_modules directory (\`--node-modules-dir\`)]' \
 '--location=[Value of globalThis.location used by some web APIs]:HREF:_urls' \
 '--v8-flags=[To see a list of all available flags use --v8-flags=--help   Flags can also be set via the DENO_V8_FLAGS environment variable.   Any flags set with this flag are appended after the DENO_V8_FLAGS environment variable]' \
@@ -179,6 +180,7 @@ _arguments "${_arguments_options[@]}" : \
 '--inspect=[Activate inspector on host\:port \[default\: 127.0.0.1\:9229\]. Host and port are optional. Using port 0 will assign a random free port.]' \
 '--inspect-brk=[Activate inspector on host\:port, wait for debugger to connect and break at the start of user script]' \
 '--inspect-wait=[Activate inspector on host\:port and wait for debugger to connect before running user code]' \
+'--inspect-publish-uid=[]:VALUE:_default' \
 '*--allow-scripts=[Allow running npm lifecycle scripts for the given packages   Note\: Scripts will only be executed when using a node_modules directory (\`--node-modules-dir\`)]' \
 '--location=[Value of globalThis.location used by some web APIs]:HREF:_urls' \
 '--v8-flags=[To see a list of all available flags use --v8-flags=--help   Flags can also be set via the DENO_V8_FLAGS environment variable.   Any flags set with this flag are appended after the DENO_V8_FLAGS environment variable]' \
@@ -291,6 +293,7 @@ _arguments "${_arguments_options[@]}" : \
 '--inspect=[Activate inspector on host\:port \[default\: 127.0.0.1\:9229\]. Host and port are optional. Using port 0 will assign a random free port.]' \
 '--inspect-brk=[Activate inspector on host\:port, wait for debugger to connect and break at the start of user script]' \
 '--inspect-wait=[Activate inspector on host\:port and wait for debugger to connect before running user code]' \
+'--inspect-publish-uid=[]:VALUE:_default' \
 '*--allow-scripts=[Allow running npm lifecycle scripts for the given packages   Note\: Scripts will only be executed when using a node_modules directory (\`--node-modules-dir\`)]' \
 '--location=[Value of globalThis.location used by some web APIs]:HREF:_urls' \
 '--v8-flags=[To see a list of all available flags use --v8-flags=--help   Flags can also be set via the DENO_V8_FLAGS environment variable.   Any flags set with this flag are appended after the DENO_V8_FLAGS environment variable]' \
@@ -1153,6 +1156,7 @@ _arguments "${_arguments_options[@]}" : \
 '--inspect=[Activate inspector on host\:port \[default\: 127.0.0.1\:9229\]. Host and port are optional. Using port 0 will assign a random free port.]' \
 '--inspect-brk=[Activate inspector on host\:port, wait for debugger to connect and break at the start of user script]' \
 '--inspect-wait=[Activate inspector on host\:port and wait for debugger to connect before running user code]' \
+'--inspect-publish-uid=[]:VALUE:_default' \
 '*--allow-scripts=[Allow running npm lifecycle scripts for the given packages   Note\: Scripts will only be executed when using a node_modules directory (\`--node-modules-dir\`)]' \
 '--location=[Value of globalThis.location used by some web APIs]:HREF:_urls' \
 '--v8-flags=[To see a list of all available flags use --v8-flags=--help   Flags can also be set via the DENO_V8_FLAGS environment variable.   Any flags set with this flag are appended after the DENO_V8_FLAGS environment variable]' \
@@ -1393,6 +1397,7 @@ _arguments "${_arguments_options[@]}" : \
 '--inspect=[Activate inspector on host\:port \[default\: 127.0.0.1\:9229\]. Host and port are optional. Using port 0 will assign a random free port.]' \
 '--inspect-brk=[Activate inspector on host\:port, wait for debugger to connect and break at the start of user script]' \
 '--inspect-wait=[Activate inspector on host\:port and wait for debugger to connect before running user code]' \
+'--inspect-publish-uid=[]:VALUE:_default' \
 '--location=[Value of globalThis.location used by some web APIs]:HREF:_urls' \
 '--v8-flags=[To see a list of all available flags use --v8-flags=--help   Flags can also be set via the DENO_V8_FLAGS environment variable.   Any flags set with this flag are appended after the DENO_V8_FLAGS environment variable]' \
 '--seed=[Set the random number generator seed]:NUMBER:_default' \
@@ -1510,6 +1515,7 @@ _arguments "${_arguments_options[@]}" : \
 '--inspect=[Activate inspector on host\:port \[default\: 127.0.0.1\:9229\]. Host and port are optional. Using port 0 will assign a random free port.]' \
 '--inspect-brk=[Activate inspector on host\:port, wait for debugger to connect and break at the start of user script]' \
 '--inspect-wait=[Activate inspector on host\:port and wait for debugger to connect before running user code]' \
+'--inspect-publish-uid=[]:VALUE:_default' \
 '--location=[Value of globalThis.location used by some web APIs]:HREF:_urls' \
 '--v8-flags=[To see a list of all available flags use --v8-flags=--help   Flags can also be set via the DENO_V8_FLAGS environment variable.   Any flags set with this flag are appended after the DENO_V8_FLAGS environment variable]' \
 '--seed=[Set the random number generator seed]:NUMBER:_default' \
@@ -1939,6 +1945,7 @@ _arguments "${_arguments_options[@]}" : \
 '--inspect=[Activate inspector on host\:port \[default\: 127.0.0.1\:9229\]. Host and port are optional. Using port 0 will assign a random free port.]' \
 '--inspect-brk=[Activate inspector on host\:port, wait for debugger to connect and break at the start of user script]' \
 '--inspect-wait=[Activate inspector on host\:port and wait for debugger to connect before running user code]' \
+'--inspect-publish-uid=[]:VALUE:_default' \
 '-P+[]' \
 '--permission-set=[]' \
 '*-R+[]' \
@@ -2121,6 +2128,7 @@ _arguments "${_arguments_options[@]}" : \
 '--inspect=[Activate inspector on host\:port \[default\: 127.0.0.1\:9229\]. Host and port are optional. Using port 0 will assign a random free port.]' \
 '--inspect-brk=[Activate inspector on host\:port, wait for debugger to connect and break at the start of user script]' \
 '--inspect-wait=[Activate inspector on host\:port and wait for debugger to connect before running user code]' \
+'--inspect-publish-uid=[]:VALUE:_default' \
 '*--allow-scripts=[Allow running npm lifecycle scripts for the given packages   Note\: Scripts will only be executed when using a node_modules directory (\`--node-modules-dir\`)]' \
 '--location=[Value of globalThis.location used by some web APIs]:HREF:_urls' \
 '--v8-flags=[To see a list of all available flags use --v8-flags=--help   Flags can also be set via the DENO_V8_FLAGS environment variable.   Any flags set with this flag are appended after the DENO_V8_FLAGS environment variable]' \
@@ -2417,6 +2425,7 @@ _arguments "${_arguments_options[@]}" : \
 '--inspect=[Activate inspector on host\:port \[default\: 127.0.0.1\:9229\]. Host and port are optional. Using port 0 will assign a random free port.]' \
 '--inspect-brk=[Activate inspector on host\:port, wait for debugger to connect and break at the start of user script]' \
 '--inspect-wait=[Activate inspector on host\:port and wait for debugger to connect before running user code]' \
+'--inspect-publish-uid=[]:VALUE:_default' \
 '*--allow-scripts=[Allow running npm lifecycle scripts for the given packages   Note\: Scripts will only be executed when using a node_modules directory (\`--node-modules-dir\`)]' \
 '--location=[Value of globalThis.location used by some web APIs]:HREF:_urls' \
 '--v8-flags=[To see a list of all available flags use --v8-flags=--help   Flags can also be set via the DENO_V8_FLAGS environment variable.   Any flags set with this flag are appended after the DENO_V8_FLAGS environment variable]' \
