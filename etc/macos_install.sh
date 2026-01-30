@@ -35,7 +35,8 @@ echo "---------- Installing core dependencies"
 
 #---------- fonts ----------
 
-brew install --cask font-fira-code
+brew install font-fira-code font-fira-code-nerd-font
+brew install font-jetbrains-mono font-jetbrains-mono-nerd-font
 
 #---------- brew packages ----------
 
