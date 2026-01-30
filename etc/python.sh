@@ -23,6 +23,7 @@ uv generate-shell-completion fish > ~/.config/fish/completions/uv.fish
 #---------- set up default python venv
 
 uv python install "$PYTHON_VERSION" --default
+uv python pin "$PYTHON_VERSION" --global
 
 DEFAULT_VENV_PATH="$HOME/.local/share/python-venvs/$DEFAULT_PYTHON_VENV_NAME"
 
