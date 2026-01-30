@@ -3,100 +3,83 @@
 set -eu
 
 DEFAULT_PYTHON_VENV_NAME="default_python_venv"
-PYTHON_VERSION=3.14.2
+PYTHON_VERSION=3.14
 REINSTALL_TOOLS=${REINSTALL_TOOLS:-""}
 
 if [[ -n "$REINSTALL_TOOLS" ]]; then
-    rm -rf "$HOME"/.local/pipx
-    rm -rf "$HOME"/.local/bin/pipx
-    rm -rf "$HOME"/.local/share/pipx
-    rm -rf "$HOME"/Library/"Application Support"/pypoetry
-    rm -rf "$HOME"/Library/Caches/pypoetry
-
-    pyenv uninstall -f "$DEFAULT_PYTHON_VENV_NAME" || true
-    pyenv global system
+    rm -rf "$HOME"/.local/share/uv
 fi
 
-#---------- pyenv
+#---------- uv
 
-if [[ ! -e "$HOME/.pyenv" ]]; then
-    curl https://pyenv.run | bash
-
-    # init just for this session (eg: used below)
-    export PYENV_ROOT="$HOME/.pyenv"
-    export PATH="$PYENV_ROOT/bin:$PATH"
-    eval "$(pyenv init --path)"
+if ! command -v uv &> /dev/null; then
+    curl -LsSf https://astral.sh/uv/install.sh | sh
 else
-    pyenv update
+    uv self update
 fi
+
+uv generate-shell-completion fish > ~/.config/fish/completions/uv.fish
 
 #---------- set up default python venv
 
-if ! (pyenv versions | grep "$PYTHON_VERSION"); then
-  pyenv install "$PYTHON_VERSION"
+uv python install "$PYTHON_VERSION" --default
+
+DEFAULT_VENV_PATH="$HOME/.local/share/python-venvs/$DEFAULT_PYTHON_VENV_NAME"
+
+if [[ ! -d "$DEFAULT_VENV_PATH" ]]; then
+    uv venv "$DEFAULT_VENV_PATH" --python "$PYTHON_VERSION"
 fi
 
-if ! pyenv versions | grep "$DEFAULT_PYTHON_VENV_NAME"; then
-  pyenv virtualenv "$PYTHON_VERSION" "$DEFAULT_PYTHON_VENV_NAME"
-fi
-pyenv global "$DEFAULT_PYTHON_VENV_NAME"
+uv python upgrade
 
 #---------- pip packages
 
-pip3 install --upgrade pip setuptools
-pip3 install --upgrade pipx
+# Install packages into the default virtualenv
+uv pip install -p "$DEFAULT_VENV_PATH" --upgrade pip setuptools
+uv pip install -p "$DEFAULT_VENV_PATH" --upgrade \
+    openai \
+    jedi \
+    pynvim \
+    pytest \
+    build twine
 
-pip3 install --upgrade openai
-pip3 install --upgrade jedi
-pip3 install --upgrade pynvim
+#---------- uv tools
 
-pip3 install --upgrade pytest
+uv tool install --force ansible
+uv tool install --force black
+uv tool install --force autoenv
+uv tool install --force cdiff
+uv tool install --force codemod
+uv tool install --force cookiecutter
+uv tool install --force csvkit
+uv tool install --force cwlref-runner
+uv tool install --force cwltool
+uv tool install --force dbt-core
+uv tool install --force git-delete-merged-branches
+uv tool install --force graphtage
+uv tool install --force howdoi
+uv tool install --force httpie
+uv tool install --force markdown
+uv tool install --force mypy
+uv tool install --force pgcli
+uv tool install --force pip-tools
+uv tool install --force pipdeptree
+uv tool install --force pipenv
+uv tool install --force pre-commit
+uv tool install --force ptpython
+uv tool install --force pyright
+uv tool install --force pyupgrade
+uv tool install --force ranger-fm
+uv tool install --force ruff
+uv tool install --force semgrep
+uv tool install --force snakeviz
+uv tool install --force s-tui
+uv tool install --force tox
+uv tool install --force twine
+uv tool install --force youtube-dl
+uv tool install --force yt-dlp
 
-pip3 install --upgrade build twine
+#---------- upgrade all uv tools
 
-#---------- pipx dependencies
-
-pipx install --include-deps ansible
-pipx install --include-deps black
-pipx install autoenv
-pipx install cdiff
-pipx install codemod
-pipx install cookiecutter
-pipx install csvkit
-pipx install cwlref-runner
-pipx install cwltool
-pipx install --include-deps dbt-core
-pipx install git-delete-merged-branches
-pipx install graphtage
-pipx install howdoi
-pipx install httpie
-pipx install markdown
-pipx install mypy
-pipx install pgcli
-pipx install pip-tools
-pipx install pipdeptree
-pipx install pipenv
-pipx install poetry
-pipx install pre-commit
-pipx install ptpython
-pipx install pyright
-pipx install pyupgrade
-pipx install ranger-fm
-pipx install ruff
-pipx install semgrep
-pipx install snakeviz
-pipx install s-tui
-pipx install tox
-pipx install twine
-pipx install youtube-dl
-pipx install yt-dlp
-
-#---------- poetry
-
-poetry config virtualenvs.in-project true
-poetry self update
-
-#---------- upgrade all pipx packages
-
-pipx upgrade-all
+uv tool upgrade --all
 

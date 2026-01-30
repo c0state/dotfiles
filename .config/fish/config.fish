@@ -78,22 +78,6 @@ set -gx PATH "$VOLTA_HOME/bin" $PATH
 # deno
 set -gx PATH "$HOME/.deno/bin" $PATH
 
-#----- python
-
-# pyenv init
-set -Ux PYENV_ROOT $HOME/.pyenv
-fish_add_path $PYENV_ROOT/bin
-
-if command -v pyenv 1>/dev/null 2>&1
-    pyenv init - | source
-end
-
-# poetry
-set -gx PATH "$HOME/.poetry/bin" $PATH
-
-# system binary path
-set -gx PATH (python3 -m site --user-base)"/bin" $PATH
-
 #----- ruby
 
 set -gx PATH "$HOME/.rbenv/bin" $PATH
