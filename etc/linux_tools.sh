@@ -70,6 +70,17 @@ if which gsettings > /dev/null; then
   gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
 fi
 
+# ---------- nerd fonts
+
+mkdir -p ~/.local/share/fonts/NerdFonts && \
+wget -q -O- https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Hack.zip |\
+  bsdtar -x -f - -C "$HOME"/.local/share/fonts/NerdFonts -
+
+wget -q -O- https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip | \
+  bsdtar -x -f - -C "$HOME"/.local/share/fonts/NerdFonts -
+
+fc-cache --force --verbose >/dev/null
+
 # ---------- local applications data
 
 mkdir -p ~/.local/share/applications

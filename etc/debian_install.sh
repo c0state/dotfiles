@@ -123,6 +123,7 @@ sudo apt -y install \
     google-drive-ocamlfuse \
     jq \
     keychain \
+    libarchive-tools \
     lsd \
     minicom \
     ncdu \
@@ -197,7 +198,7 @@ sudo apt -y install alacritty || true
 # install developer packages
 sudo apt -y install \
     antigravity \
-    fonts-firacode \
+    fonts-firacode fonts-hack fonts-jetbrains-mono \
     gh \
     lens \
     sourcegit \
