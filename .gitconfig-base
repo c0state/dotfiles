@@ -13,9 +13,9 @@
     dmbr = "!git dmb --effort 3"
     dt = difftool
     dtbc = difftool --tool=bc
-    dtd = "!dtd() { git diff $@ HEAD --unified=8 | delta; }; dtd"
+    dtd = "!dtd() { git diff $@ | delta; }; dtd"
     dtm = difftool --tool=meld
-    dtsd = "!dtsd() { git diff $@ HEAD --unified=8 | git-split-diffs --color --side-by-side | less --RAW-CONTROL-CHARS --quit-if-one-screen; }; dtsd"
+    dtsd = "!dtsd() { git diff $@ | git-split-diffs --color --side-by-side | less --RAW-CONTROL-CHARS --quit-if-one-screen; }; dtsd"
     dump = cat-file -p
     ff = !git fetch origin \"$@\":\"$@\"
     ffm = "!sh -c 'git fetch origin master:master || (echo Trying main && git fetch origin main:main)'"
