@@ -78,6 +78,10 @@ set -gx PATH "$VOLTA_HOME/bin" $PATH
 # deno
 set -gx PATH "$HOME/.deno/bin" $PATH
 
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
+
 #----- ruby
 
 set -gx PATH "$HOME/.rbenv/bin" $PATH
@@ -170,4 +174,3 @@ direnv hook fish | source
 #---------- mise
 
 "$HOME"/.local/bin/mise activate fish | source
-
