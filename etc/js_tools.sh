@@ -21,15 +21,12 @@ volta install yarn
 
 # ---------- install global packages
 
-npm install --global npm
-
-npm install --global \
+bun add --global \
     @anthropic-ai/claude-code \
     @beads/bd \
     @github/copilot \
     @google/gemini-cli \
     @openai/codex \
-    cdktf-cli \
     diff-so-fancy \
     git-split-diffs \
     imageoptim-cli \
