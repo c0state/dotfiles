@@ -43,7 +43,6 @@ echo \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 # google
-
 curl -fsSL https://us-central1-apt.pkg.dev/doc/repo-signing-key.gpg | \
   sudo gpg --dearmor --yes -o /etc/apt/keyrings/antigravity-repo-key.gpg
 echo "deb [signed-by=/etc/apt/keyrings/antigravity-repo-key.gpg] https://us-central1-apt.pkg.dev/projects/antigravity-auto-updater-dev/ antigravity-debian main" | \
@@ -151,7 +150,6 @@ sudo snap install firefox
 sudo snap install helm --classic
 sudo snap install postman
 sudo snap install slack
-sudo snap install steam
 sudo snap install telegram-desktop
 sudo snap refresh
 
@@ -163,6 +161,7 @@ flatpak install --system -y flathub io.kinvolk.Headlamp
 flatpak install --system -y flathub io.podman_desktop.PodmanDesktop
 flatpak install --system -y flathub com.obsproject.Studio
 flatpak install --system -y flathub com.usebottles.bottles
+flatpak install --system -y flathub com.valvesoftware.Steam
 flatpak install --user -y flathub org.gimp.GIMP
 flatpak install --user -y flathub com.usebottles.bottles
 flatpak update --user -y
