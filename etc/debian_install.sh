@@ -212,7 +212,7 @@ OPENLENS_VERSION=$(get_github_release_version "https://github.com/MuhammedKalkan
 install_package "https://github.com/MuhammedKalkan/OpenLens/releases/download/v$OPENLENS_VERSION/OpenLens-$OPENLENS_VERSION.$DPKG_ARCH.deb"
 
 GIT_CRED_MGR_VERSION=$(get_github_release_version "https://github.com/git-ecosystem/git-credential-manager/releases/latest")
-install_package "https://github.com/git-ecosystem/git-credential-manager/releases/download/v$GIT_CRED_MGR_VERSION/gcm-linux_$DPKG_ARCH.$GIT_CRED_MGR_VERSION.deb"
+install_package "https://github.com/git-ecosystem/git-credential-manager/releases/download/v$GIT_CRED_MGR_VERSION/gcm-linux-$SHORT_ARCH-$GIT_CRED_MGR_VERSION.deb"
 
 # discord doesn't have an apt repo, so install each time this script is run to get latest
 # note: there *is* this third party option: https://github.com/palfrey/discord-apt
