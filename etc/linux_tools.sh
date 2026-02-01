@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -eu
+
 if [[ "$(uname)" != *"Linux"* ]]; then
   echo "This script is for Linux only, exiting"
   exit
