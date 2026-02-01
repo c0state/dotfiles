@@ -23,7 +23,7 @@ fi
 
 PATH=$PATH:$HOME/.rbenv/bin
 
-LATEST_RUBY_VERSION=$(rbenv install --list | grep -E "^\d" | sort | tail -n 1)
+LATEST_RUBY_VERSION=$(rbenv install --list | grep -E "^[0-9]" | sort -V | tail -n 1)
 
 if ! (rbenv versions | grep "$LATEST_RUBY_VERSION"); then
     rbenv install "$LATEST_RUBY_VERSION"

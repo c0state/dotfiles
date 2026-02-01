@@ -182,6 +182,7 @@ sudo apt -y install \
     libncurses5-dev libncursesw5-dev \
     libxcb-render0-dev libxcb-shape0-dev libxcb-xfixes0-dev \
     libxml2-dev \
+    libyaml-dev \
     swig \
     tk-dev
 
