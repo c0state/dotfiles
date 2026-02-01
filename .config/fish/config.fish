@@ -31,11 +31,15 @@ end
 source ~/.shell_aliases
 source ~/.shell_functions.fish
 
-if test "$PLATFORM" = "Linux"
-    alias bat=batcat
-    alias cat=batcat
-else
-    alias cat=bat
+# some agents set the pager (eg: antigravity), usually to cat, so don't modify if so
+if test -z "$PAGER"
+    # use bat in place of cat
+    if test "$PLATFORM" = "Linux"
+        alias bat=batcat
+        alias cat=batcat
+    else
+        alias cat=bat
+    end
 end
 
 if test -e "$TAILSCALE_APP_STORE_PATH"
