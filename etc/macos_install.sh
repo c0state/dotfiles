@@ -207,6 +207,7 @@ brew_cask_packages=(
     ngrok
     obs obs-ndi
     obsidian
+    orbstack
     outline-manager
     postman
     powershell
