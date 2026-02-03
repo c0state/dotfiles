@@ -39,4 +39,3 @@ fi
 #---------- bit https://github.com/chriswalz/bit
 
 complete -C $HOME/.local/bin/bit bit
-

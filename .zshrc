@@ -123,4 +123,3 @@ eval "$(starship init zsh)"
 
 # uncomment to profile startup
 # zprof
-

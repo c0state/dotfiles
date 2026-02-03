@@ -90,7 +90,7 @@ end
 
 #----- rust
 
-set -gx PATH "$HOME/.cargo/bin" $PATH
+source "$HOME/.cargo/env.fish"
 
 #----- golang
 
