@@ -26,6 +26,7 @@ bun add --global \
     @beads/bd \
     @github/copilot \
     @google/gemini-cli \
+    @j178/prek \
     @openai/codex \
     diff-so-fancy \
     git-split-diffs \
