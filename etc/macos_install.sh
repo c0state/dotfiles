@@ -132,6 +132,7 @@ brew_packages=(
     telnet
     terraform
     terraform_landscape
+    tig
     tmux
     tree
     watchman
