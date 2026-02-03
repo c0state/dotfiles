@@ -30,10 +30,8 @@ export TERM=xterm-256color
 
 source "$HOME"/.shell_aliases
 
-if [[ "$PLATFORM" == "Linux" ]]; then
-    alias bat=batcat
-    alias cat=batcat
-else
+# some agents set the pager (eg: antigravity), usually to cat, so don't modify if so
+if [[ -z "$PAGER" ]]; then
     alias cat=bat
 fi
 

@@ -43,6 +43,13 @@ elif [[ "$PLATFORM" == "Darwin" ]]; then
 fi
 curl -fsSL https://raw.githubusercontent.com/dandavison/delta/refs/heads/main/themes.gitconfig -o "$HOME"/.gitconfig-delta.themes.gitconfig
 
+# ---------- bat (link batcat to bat on ubuntu due to name conflict)
+if command -v batcat >/dev/null; then
+    if [[ ! -e "$HOME"/.local/bin/bat ]]; then
+        ln -s "$(command -v batcat)" "$HOME"/.local/bin/bat
+    fi
+fi
+
 # ---------- set up prompt
 
 curl -fsSL https://raw.githubusercontent.com/starship/starship/master/install/install.sh | sh -s -- --yes --bin-dir "$HOME"/.local/bin
