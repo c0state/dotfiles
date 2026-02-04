@@ -10,6 +10,9 @@ curl https://get.volta.sh | bash -s -- --skip-setup
 
 if ! which bun; then
   curl -fsSL https://bun.com/install | bash
+
+  export BUN_INSTALL="$HOME/.bun"
+  export PATH="$BUN_INSTALL/bin:$PATH"
 else
   bun upgrade
 fi
