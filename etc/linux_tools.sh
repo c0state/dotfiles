@@ -47,29 +47,47 @@ fi
 
 if which gsettings > /dev/null; then
   # clear conflicting keybindings
-  gsettings set org.freedesktop.ibus.panel.emoji hotkey []
+  INSTALLED_SCHEMAS="$(gsettings list-schemas)"
+
+  gset() {
+    local schema="$1"
+    local key="$2"
+    local value="$3"
+    
+    # Extract base schema if contains : (for relocatable schemas)
+    local schema_base="${schema%%:*}"
+
+    if echo "$INSTALLED_SCHEMAS" | grep -F -x -q "$schema_base"; then
+      gsettings set "$schema" "$key" "$value"
+    fi
+  }
+
+  # clear conflicting keybindings
+  gset org.freedesktop.ibus.panel.emoji hotkey []
+  
   # caps lock as ctrl
-  gsettings set org.gnome.desktop.input-sources xkb-options '["caps:ctrl_modifier"]'
-  gsettings set org.gnome.desktop.interface clock-show-weekday true 
+  gset org.gnome.desktop.input-sources xkb-options '["caps:ctrl_modifier"]'
+  gset org.gnome.desktop.interface clock-show-weekday true 
+  
   # auto hide dock
-  gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed false
+  gset org.gnome.shell.extensions.dash-to-dock dock-fixed false
 
   # set custom key bindings
   # note: this will overwrite existing ones
-  gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name "'toggle-terminal'"
-  gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command "'guake-toggle'"
-  gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding "'<Control><Alt>i'"
+  gset org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name "'toggle-terminal'"
+  gset org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command "'guake-toggle'"
+  gset org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding "'<Control><Alt>i'"
 
   # tiling assistant
-  gsettings set org.gnome.shell.extensions.tiling-assistant dynamic-keybinding-behavior 2
-  gsettings set org.gnome.shell.extensions.tiling-assistant enable-tiling-popup false
-  gsettings set org.gnome.shell.extensions.tiling-assistant enable-raise-tile-group false
-  gsettings set org.gnome.shell.extensions.tiling-assistant tile-left-half "['<Super>Left']"
-  gsettings set org.gnome.shell.extensions.tiling-assistant tile-right-half "['<Super>Right']"
-  gsettings set org.gnome.shell.extensions.tiling-assistant tile-bottom-half "['<Super>Down']"
-  gsettings set org.gnome.shell.extensions.tiling-assistant restore-window []
+  gset org.gnome.shell.extensions.tiling-assistant dynamic-keybinding-behavior 2
+  gset org.gnome.shell.extensions.tiling-assistant enable-tiling-popup false
+  gset org.gnome.shell.extensions.tiling-assistant enable-raise-tile-group false
+  gset org.gnome.shell.extensions.tiling-assistant tile-left-half "['<Super>Left']"
+  gset org.gnome.shell.extensions.tiling-assistant tile-right-half "['<Super>Right']"
+  gset org.gnome.shell.extensions.tiling-assistant tile-bottom-half "['<Super>Down']"
+  gset org.gnome.shell.extensions.tiling-assistant restore-window []
 
-  gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
+  gset org.gnome.settings-daemon.plugins.color night-light-enabled true
 fi
 
 # ---------- nerd fonts
