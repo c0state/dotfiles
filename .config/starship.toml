@@ -105,4 +105,3 @@ disabled = false
 disabled = false
 format = '[\[$time\]]($style)'
 time_format = "%T"
-
