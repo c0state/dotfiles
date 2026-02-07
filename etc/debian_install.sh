@@ -238,7 +238,7 @@ if ! which rustdesk >/dev/null ; then
 fi
 
 if ! which code >/dev/null ; then
-  install_package "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
+  install_package "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-$SHORT_ARCH"
 fi
 
 if ! which obsidian >/dev/null ; then
