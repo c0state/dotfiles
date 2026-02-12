@@ -161,7 +161,6 @@ sudo flatpak install --system -y flathub io.kinvolk.Headlamp
 sudo flatpak install --system -y flathub io.podman_desktop.PodmanDesktop
 sudo flatpak install --system -y flathub com.obsproject.Studio
 sudo flatpak install --system -y flathub com.usebottles.bottles
-sudo flatpak install --system -y flathub com.valvesoftware.Steam
 flatpak install --user -y flathub org.gimp.GIMP
 flatpak install --user -y flathub com.usebottles.bottles
 flatpak update --user -y
@@ -260,6 +259,10 @@ which jetbrains-toolbox || \
         tar -xzO jetbrains-toolbox-2.4.2.32922/jetbrains-toolbox \
     > "$HOME"/.local/bin/jetbrains-toolbox && \
     chmod u+x "$HOME"/.local/bin/jetbrains-toolbox
+
+if ! which steam >/dev/null ; then
+  install_package https://cdn.fastly.steamstatic.com/client/installer/steam.deb
+fi
 
 sudo curl --fail -L https://github.com/neovim/neovim/releases/latest/download/nvim-linux-$ARCH.appimage --output /usr/local/bin/nvim
 sudo chmod +x /usr/local/bin/nvim
