@@ -264,6 +264,12 @@ if ! which steam >/dev/null ; then
   install_package https://cdn.fastly.steamstatic.com/client/installer/steam.deb
 fi
 
+if ! which google-chrome >/dev/null ; then
+  # remove token file for clean install
+  sudo rm /etc/default/google-chrome
+  install_package https://dl.google.com/linux/direct/google-chrome-stable_current_${DPKG_ARCH}.deb
+fi
+
 sudo curl --fail -L https://github.com/neovim/neovim/releases/latest/download/nvim-linux-$ARCH.appimage --output /usr/local/bin/nvim
 sudo chmod +x /usr/local/bin/nvim
 
@@ -272,7 +278,6 @@ sudo chmod +x /usr/local/bin/Outline-Manager
 
 # install apps
 sudo apt -y install \
-  google-chrome-stable \
   signal-desktop \
   vlc
 
