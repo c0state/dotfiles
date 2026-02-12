@@ -54,8 +54,8 @@
     autocrlf = input
     eol = lf
 [delta]
-    features = colibri
-    syntax-theme = Coldark-Dark
+    features = nord
+    keep-plus-minus-markers = true
     navigate = true
     side-by-side = true
 [diff]
