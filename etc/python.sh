@@ -8,6 +8,8 @@ REINSTALL_TOOLS=${REINSTALL_TOOLS:-""}
 
 if [[ -n "$REINSTALL_TOOLS" ]]; then
     rm -rf "$HOME"/.local/share/uv
+    rm -rf "$HOME"/Library/"Application Support"/pypoetry
+    rm -rf "$HOME"/Library/Caches/pypoetry
 fi
 
 #---------- uv
@@ -66,6 +68,10 @@ uv tool install --force pgcli
 uv tool install --force pip-tools
 uv tool install --force pipdeptree
 uv tool install --force pipenv
+
+uv tool install --force poetry
+poetry config virtualenvs.in-project true
+
 uv tool install --force pre-commit
 uv tool install --force ptpython
 uv tool install --force pyright

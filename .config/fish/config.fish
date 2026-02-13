@@ -81,6 +81,10 @@ set -gx PATH "$HOME/.deno/bin" $PATH
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
 
+#----- python
+
+set -gx PATH "$HOME/.poetry/bin" $PATH
+
 #----- ruby
 
 set -gx PATH "$HOME/.rbenv/bin" $PATH
