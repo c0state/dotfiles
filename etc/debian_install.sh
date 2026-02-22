@@ -145,7 +145,7 @@ sudo apt -y install \
 
 #------------------------------ install packages
 
-sudo snap install dbeaver-ce
+sudo snap install dbeaver-ce --classic
 sudo snap install firefox
 sudo snap install helm --classic
 sudo snap install postman
