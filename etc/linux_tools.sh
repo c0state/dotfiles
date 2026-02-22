@@ -90,6 +90,13 @@ if which gsettings > /dev/null; then
   gset org.gnome.settings-daemon.plugins.color night-light-enabled true
 fi
 
+# ---------- sysctl tweaks
+
+cat <<EOF | sudo tee /etc/sysctl.d/99-vscode.conf
+fs.inotify.max_user_watches=524288
+EOF
+sudo sysctl fs.inotify.max_user_watches=524288
+
 # ---------- nerd fonts
 
 mkdir -p ~/.local/share/fonts/NerdFonts && \
@@ -113,4 +120,3 @@ if [[ ! -f "$GOOGLE_CHROME_DESKTOP_LAUNCHER_FILE" ]]; then
   sed -i -E 's#^(Exec=.*(google-chrome(-stable)?))#\1 --enable-features=TouchpadOverscrollHistoryNavigation#' \
     "$GOOGLE_CHROME_DESKTOP_LAUNCHER_FILE"
 fi
-
