@@ -90,6 +90,17 @@ echo "deb [signed-by=/usr/share/keyrings/wezterm-fury.gpg] https://apt.fury.io/w
 curl -fsSL https://codeberg.org/api/packages/yataro/debian/repository.key | sudo gpg --yes --dearmor -o /usr/share/keyrings/sourcegit.gpg
 echo "deb [signed-by=/usr/share/keyrings/sourcegit.gpg, arch=amd64,arm64] https://codeberg.org/api/packages/yataro/debian generic main" | sudo tee /etc/apt/sources.list.d/sourcegit.list
 
+# vscode
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --yes --dearmor -o /usr/share/keyrings/microsoft.gpg 
+cat <<EOF | sudo tee /etc/apt/sources.list.d/vscode.sources >/dev/null
+Types: deb
+URIs: https://packages.microsoft.com/repos/code
+Suites: stable
+Components: main
+Architectures: amd64,arm64,armhf
+Signed-By: /usr/share/keyrings/microsoft.gpg
+EOF
+
 #------------------------------ ppas
 
 (ls /etc/apt/sources.list.d/alessandro-strada*) || sudo add-apt-repository -y ppa:alessandro-strada/ppa
@@ -197,6 +208,7 @@ sudo apt -y install alacritty || true
 # install developer packages
 sudo apt -y install \
     antigravity \
+    code \
     fonts-firacode fonts-hack fonts-jetbrains-mono \
     gh \
     lens \
@@ -234,10 +246,6 @@ fi
 if ! which rustdesk >/dev/null ; then
   RUSTDESK_VERSION=$(get_github_release_version "https://github.com/rustdesk/rustdesk/releases/latest")
   install_package "https://github.com/rustdesk/rustdesk/releases/download/$RUSTDESK_VERSION/rustdesk-$RUSTDESK_VERSION-$ARCH.deb"
-fi
-
-if ! which code >/dev/null ; then
-  install_package "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-$SHORT_ARCH"
 fi
 
 if ! which obsidian >/dev/null ; then
