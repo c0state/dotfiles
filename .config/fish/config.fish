@@ -56,7 +56,7 @@ set -gx TERM xterm-256color
 
 #---------- paths
 
-set -gx PATH $PATH ~/.local/bin;
+set -gx PATH ~/.local/bin $PATH;
 
 # linuxbrew
 if test "$PLATFORM" = "Linux"

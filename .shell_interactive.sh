@@ -64,7 +64,7 @@ if [[ -n "$ANDROID_SDK_ROOT" ]]; then
 fi
 
 #----- add system agnostic apps to path
-export PATH=$PATH:$HOME/bin:$HOME/.local/bin
+export PATH=$HOME/bin:$HOME/.local/bin:$PATH
 
 #----- add fastlane to path
 if [[ -e "$HOME/.fastlane/bin" ]]; then
