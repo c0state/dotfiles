@@ -6,10 +6,18 @@ DEFAULT_PYTHON_VENV_NAME="default_python_venv"
 PYTHON_VERSION=3.14
 REINSTALL_TOOLS=${REINSTALL_TOOLS:-""}
 
-if [[ -n "$REINSTALL_TOOLS" ]]; then
+DEFAULT_VENV_PATH="$HOME/.local/share/python-venvs/$DEFAULT_PYTHON_VENV_NAME"
+
+CURRENT_PYTHON_VERSION=""
+if command -v python &> /dev/null; then
+    CURRENT_PYTHON_VERSION=$(python --version 2>&1 | awk '{print $2}' | cut -d. -f1,2)
+fi
+
+if [[ -n "$REINSTALL_TOOLS" ]] || [[ "$CURRENT_PYTHON_VERSION" != "$PYTHON_VERSION" ]]; then
     rm -rf "$HOME"/.local/share/uv
     rm -rf "$HOME"/Library/"Application Support"/pypoetry
     rm -rf "$HOME"/Library/Caches/pypoetry
+    rm -rf "$DEFAULT_VENV_PATH"
 fi
 
 #---------- uv
@@ -26,8 +34,6 @@ uv generate-shell-completion fish > ~/.config/fish/completions/uv.fish
 
 uv python install "$PYTHON_VERSION" --default
 uv python pin "$PYTHON_VERSION" --global
-
-DEFAULT_VENV_PATH="$HOME/.local/share/python-venvs/$DEFAULT_PYTHON_VENV_NAME"
 
 if [[ ! -d "$DEFAULT_VENV_PATH" ]]; then
     uv venv "$DEFAULT_VENV_PATH" --python "$PYTHON_VERSION"
