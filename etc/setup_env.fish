@@ -21,4 +21,3 @@ zellij setup --generate-completion fish > "$HOME"/.config/fish/completions/zelli
 if type -q nerdctl ; and nerdctl 2>/dev/null
   nerdctl completion fish > "$HOME"/.config/fish/completions/nerdctl.fish
 end
-
