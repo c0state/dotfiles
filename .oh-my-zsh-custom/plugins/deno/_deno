@@ -409,6 +409,7 @@ _arguments "${_arguments_options[@]}" : \
 '--lockfile-only[Install only updating the lockfile]' \
 '(--jsr)--npm[assume unprefixed package names are npm packages]' \
 '(--npm)--jsr[assume unprefixed package names are jsr packages]' \
+'--save-exact[Save exact version without the caret (^)]' \
 '*::packages -- List of packages to add:_default' \
 && ret=0
 ;;
@@ -421,6 +422,7 @@ _arguments "${_arguments_options[@]}" : \
 '--lock=[Check the specified lock file. (If value is not provided, defaults to "./deno.lock")]::FILE:_files' \
 '--frozen=[Error out if lockfile is out of date]::BOOLEAN:(true false)' \
 '--level=[Only show advisories with severity greater or equal to the one specified]: :(low moderate high critical)' \
+'*--ignore=[Ignore advisories matching the given CVE IDs]:CVE:_default' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -678,6 +680,7 @@ _arguments "${_arguments_options[@]}" : \
 '(-c --config)--no-config[Disable automatic loading of the configuration file]' \
 '(--lock)--no-lock[Disable auto discovery of the lock file]' \
 '--minify[Minify the output]' \
+'--keep-names[Keep function and class names]' \
 '--code-splitting[Enable code splitting]' \
 '--watch[Watch and rebuild on changes]' \
 '*::file:_files' \
@@ -808,6 +811,7 @@ _arguments "${_arguments_options[@]}" : \
 '(--no-remote)--remote[Type-check all modules, including remote ones]' \
 '--doc[Type-check code blocks in JSDoc as well as actual code]' \
 '(--doc)--doc-only[Type-check code blocks in JSDoc and Markdown only]' \
+'--check-js[Enable type-checking of JavaScript files (equivalent to \`compilerOptions.checkJs\: true\`)]' \
 '*::file:_files' \
 && ret=0
 ;;
@@ -961,7 +965,52 @@ _arguments "${_arguments_options[@]}" : \
 '--eszip-internal-do-not-use[]' \
 '--no-code-cache[Disable V8 code cache feature]' \
 '--no-terminal[Hide terminal on Windows]' \
+'--self-extracting[Create a self-extracting binary that extracts the embedded file system to disk on first run and then runs from there]' \
 '*::script_arg -- Script arg:_files' \
+&& ret=0
+;;
+(create)
+_arguments "${_arguments_options[@]}" : \
+'*-h+[]::CONTEXT:(unstable full)' \
+'*--help=[]::CONTEXT:(unstable full)' \
+'-L+[Set log level]: :(trace debug info)' \
+'--log-level=[Set log level]: :(trace debug info)' \
+'--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
+'--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
+'--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
+'--unstable-bundle[Enable unstable bundle runtime API]' \
+'--unstable-byonm[]' \
+'--unstable-cron[Enable unstable \`Deno.cron\` API]' \
+'--unstable-detect-cjs[Treats ambiguous .js, .jsx, .ts, .tsx files as CommonJS modules in more cases]' \
+'--unstable-ffi[Enable unstable FFI APIs]' \
+'--unstable-fs[Enable unstable file system APIs]' \
+'--unstable-http[Enable unstable HTTP APIs]' \
+'--unstable-kv[Enable unstable KV APIs]' \
+'--unstable-lazy-dynamic-imports[Lazily loads statically analyzable dynamic imports when not running with type checking. Warning\: This may change the order of semver specifier resolution.]' \
+'--unstable-lockfile-v5[Enable unstable lockfile v5]' \
+'--unstable-net[enable unstable net APIs]' \
+'--unstable-no-legacy-abort[Enable abort signal in Deno.serve without legacy behavior. This will not abort the server when the request is handled successfully.]' \
+'--unstable-node-globals[Prefer Node.js globals over Deno globals - currently this refers to \`setTimeout\` and \`setInterval\` APIs.]' \
+'--unstable-npm-lazy-caching[Enable unstable lazy caching of npm dependencies, downloading them only as needed (disabled\: all npm packages in package.json are installed on startup; enabled\: only npm packages that are actually referenced in an import are installed]' \
+'--unstable-otel[Enable unstable OpenTelemetry features]' \
+'--unstable-process[Enable unstable process APIs]' \
+'--unstable-raw-imports[Enable unstable '\''bytes'\'' and '\''text'\'' imports.]' \
+'--unstable-sloppy-imports[Enable unstable resolving of specifiers by extension probing, .js to .ts, and directory probing]' \
+'--unstable-subdomain-wildcards[Enable subdomain wildcards support for the \`--allow-net\` flag]' \
+'--unstable-temporal[Enable unstable Temporal API]' \
+'--unstable-tsgo[Enable unstable TypeScript Go integration]' \
+'--unstable-unsafe-proto[Enable unsafe __proto__ support. This is a security risk.]' \
+'--unstable-vsock[Enable unstable VSOCK APIs]' \
+'--unstable-webgpu[Enable unstable WebGPU APIs]' \
+'--unstable-worker-options[Enable unstable Web Worker APIs]' \
+'-q[Suppress diagnostic output]' \
+'--quiet[Suppress diagnostic output]' \
+'(--jsr)--npm[Treat unprefixed package names as npm packages]' \
+'(--npm)--jsr[Treat unprefixed package names as JSR packages]' \
+'-y[Bypass the prompt and run with full permissions]' \
+'--yes[Bypass the prompt and run with full permissions]' \
+'::package:_default' \
+'*::package_args:_default' \
 && ret=0
 ;;
 (completions)
@@ -1258,6 +1307,7 @@ _arguments "${_arguments_options[@]}" : \
 '--quiet[Suppress diagnostic output]' \
 '(-c --config)--no-config[Disable automatic loading of the configuration file]' \
 '--check[Check if the source files are formatted]' \
+'--fail-fast[Stop checking files on first format error]' \
 '--permit-no-files[Don'\''t return an error code if no files were found]' \
 '--watch[Watch for file changes and restart process automatically.   Only local files from entry point module graph are watched.]' \
 '--no-clear-screen[Do not clear terminal screen when under watch mode]' \
@@ -1305,10 +1355,11 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
-'(--lib --serve --empty)--npm[Generate a npm create-* project]' \
+'(--lib --serve --empty --jsr)--npm[Generate a npm create-* project]' \
+'(--lib --serve --empty --npm)--jsr[Generate a project from a JSR package]' \
 '--lib[Generate an example library project]' \
 '(--lib)--serve[Generate an example project for \`deno serve\`]' \
-'(--lib --serve --npm)--empty[Generate a minimal project with just main.ts and deno.json]' \
+'(--lib --serve --npm --jsr)--empty[Generate a minimal project with just main.ts and deno.json]' \
 '-y[Bypass the prompt and run with full permissions]' \
 '--yes[Bypass the prompt and run with full permissions]' \
 '*::args:_default' \
@@ -1489,6 +1540,7 @@ _arguments "${_arguments_options[@]}" : \
 '(-e --entrypoint -g --global)--dev[Add the package as a dev dependency. Note\: This only applies when adding to a \`package.json\` file.]' \
 '(--jsr -e --entrypoint -g --global)--npm[assume unprefixed package names are npm packages]' \
 '(--npm -e --entrypoint -g --global)--jsr[assume unprefixed package names are jsr packages]' \
+'(-e --entrypoint -g --global)--save-exact[Save exact version without the caret (^)]' \
 '(-g --global)--lockfile-only[Install only updating the lockfile]' \
 '*::cmd:_files' \
 && ret=0
@@ -1608,6 +1660,7 @@ _arguments "${_arguments_options[@]}" : \
 '(-e --entrypoint -g --global)--dev[Add the package as a dev dependency. Note\: This only applies when adding to a \`package.json\` file.]' \
 '(--jsr -e --entrypoint -g --global)--npm[assume unprefixed package names are npm packages]' \
 '(--npm -e --entrypoint -g --global)--jsr[assume unprefixed package names are jsr packages]' \
+'(-e --entrypoint -g --global)--save-exact[Save exact version without the caret (^)]' \
 '(-g --global)--lockfile-only[Install only updating the lockfile]' \
 '*::cmd:_files' \
 && ret=0
@@ -2642,6 +2695,16 @@ _arguments "${_arguments_options[@]}" : \
 '--quiet[Suppress diagnostic output]' \
 && ret=0
 ;;
+(create)
+_arguments "${_arguments_options[@]}" : \
+'*-h+[]::CONTEXT:(unstable full)' \
+'*--help=[]::CONTEXT:(unstable full)' \
+'-L+[Set log level]: :(trace debug info)' \
+'--log-level=[Set log level]: :(trace debug info)' \
+'-q[Suppress diagnostic output]' \
+'--quiet[Suppress diagnostic output]' \
+&& ret=0
+;;
 (completions)
 _arguments "${_arguments_options[@]}" : \
 '*-h+[]::CONTEXT:(unstable full)' \
@@ -2925,6 +2988,7 @@ _deno_commands() {
 'check:Download and type-check without execution.    deno check jsr\:@std/http/file-server  Unless --reload is specified, this command will not re-download already cached dependencies  Read more\: https\://docs.deno.com/go/check' \
 'clean:Remove the cache directory (\$DENO_DIR)' \
 'compile:Compiles the given script into a self contained executable.    deno compile --allow-read --allow-net jsr\:@std/http/file-server   deno compile --output file_server jsr\:@std/http/file-server  Any flags specified which affect runtime behavior will be applied to the resulting binary.  This allows distribution of a Deno application to systems that do not have Deno installed. Under the hood, it bundles a slimmed down version of the Deno runtime along with your JavaScript or TypeScript code.  Cross-compiling to different target architectures is supported using the --target flag. On the first invocation of \`deno compile\`, Deno will download the relevant binary and cache it in \$DENO_DIR.  Read more\: https\://docs.deno.com/go/compile ' \
+'create:scaffolds a project from a package' \
 'completions:Output shell completion script to standard output.    deno completions bash > /usr/local/etc/bash_completion.d/deno.bash   source /usr/local/etc/bash_completion.d/deno.bash' \
 'coverage:Print coverage reports from coverage profiles.  Collect a coverage profile with deno test\:   deno test --coverage=cov_profile  Print a report to stdout\:   deno coverage cov_profile  Include urls that start with the file schema and exclude files ending with test.ts and test.js, for an url to match it must match the include pattern and not match the exclude pattern\:   deno coverage --include="^file\:" --exclude="test\\.(ts|js)" cov_profile  Write a report using the lcov format\:   deno coverage --lcov --output=cov.lcov cov_profile/  Generate html reports from lcov\:   genhtml -o html_cov cov.lcov  Read more\: https\://docs.deno.com/go/coverage' \
 'doc:Show documentation for a module.  Output documentation to standard output\:     deno doc ./path/to/module.ts  Output documentation in HTML format\:     deno doc --html --name="My library" ./path/to/module.ts  Lint a module for documentation diagnostics\:     deno doc --lint ./path/to/module.ts  Target a specific symbol\:     deno doc ./path/to/module.ts MyClass.someField  Show documentation for runtime built-ins\:     deno doc     deno doc --filter Deno.Listener  Read more\: https\://docs.deno.com/go/doc' \
@@ -3011,6 +3075,11 @@ _deno__coverage_commands() {
     local commands; commands=()
     _describe -t commands 'deno coverage commands' commands "$@"
 }
+(( $+functions[_deno__create_commands] )) ||
+_deno__create_commands() {
+    local commands; commands=()
+    _describe -t commands 'deno create commands' commands "$@"
+}
 (( $+functions[_deno__deploy_commands] )) ||
 _deno__deploy_commands() {
     local commands; commands=()
@@ -3045,6 +3114,7 @@ _deno__help_commands() {
 'check:' \
 'clean:' \
 'compile:' \
+'create:' \
 'completions:' \
 'coverage:' \
 'doc:' \
@@ -3128,6 +3198,11 @@ _deno__help__completions_commands() {
 _deno__help__coverage_commands() {
     local commands; commands=()
     _describe -t commands 'deno help coverage commands' commands "$@"
+}
+(( $+functions[_deno__help__create_commands] )) ||
+_deno__help__create_commands() {
+    local commands; commands=()
+    _describe -t commands 'deno help create commands' commands "$@"
 }
 (( $+functions[_deno__help__deploy_commands] )) ||
 _deno__help__deploy_commands() {
