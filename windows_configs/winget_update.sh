@@ -21,6 +21,7 @@ winget install --id flux.flux
 winget install --id git.git
 winget install --id github.cli
 winget install --id github.githubdesktop
+winget install --id google.antigravity
 winget install --id google.chrome
 winget install --id google.drive
 winget install --id jetbrains.toolbox 
