@@ -109,11 +109,6 @@ if [[ -e $HOME/.git-subrepo/.rc ]]; then
     source $HOME/.git-subrepo/.rc
 fi
 
-#----- python
-if command -v register-python-argcomplete > /dev/null; then
-    eval "$(register-python-argcomplete pipx)"
-fi
-
 #----- deno
 export PATH=$PATH:$HOME/.deno/bin
 

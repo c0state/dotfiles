@@ -4,12 +4,6 @@
 
 poetry completions fish > $HOME/.config/fish/completions/poetry.fish
 
-#---------- pipx
-
-if type -q register-python-argcomplete
-    register-python-argcomplete --shell fish pipx > "$HOME"/.config/fish/completions/pipx.fish
-end
-
 #---------- completions
 
 docker completion fish > "$HOME"/.config/fish/completions/docker.fish
