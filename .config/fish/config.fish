@@ -64,8 +64,9 @@ if test "$PLATFORM" = "Linux"
     set -gx HOMEBREW_CELLAR "/home/linuxbrew/.linuxbrew/Cellar";
     set -gx HOMEBREW_REPOSITORY "/home/linuxbrew/.linuxbrew/Homebrew";
     set -gx PATH "/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin" $PATH
-    set -gx MANPATH "/home/linuxbrew/.linuxbrew/share/man" $MANPATH
-    set -gx INFOPATH "/home/linuxbrew/.linuxbrew/share/info}" $INFOPATH
+    # "" suffix generates an :, which instructs man and info to append system paths
+    set -gx MANPATH "/home/linuxbrew/.linuxbrew/share/man" $MANPATH ""
+    set -gx INFOPATH "/home/linuxbrew/.linuxbrew/share/info" $INFOPATH ""
 end
 
 #----- js tools
