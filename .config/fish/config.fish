@@ -144,10 +144,10 @@ end
 
 #---------- google drive
 
-if type -q google-drive-ocamlfuse && ping -q -c 1 -W 1 8.8.8.8 >/dev/null 2>&1
+if type -q google-drive-ocamlfuse
     set --local GDRIVE_FOLDER "Google.Drive"
     mount | grep "$HOME/$GDRIVE_FOLDER" >/dev/null || \
-        begin; test -e "$HOME/$GDRIVE_FOLDER" && google-drive-ocamlfuse "$HOME/$GDRIVE_FOLDER"; end
+        begin; test -e "$HOME/$GDRIVE_FOLDER" && google-drive-ocamlfuse "$HOME/$GDRIVE_FOLDER" &; end
 end
 
 #---------- gcloud
