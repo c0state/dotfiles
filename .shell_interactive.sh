@@ -112,10 +112,6 @@ fi
 #----- deno
 export PATH=$PATH:$HOME/.deno/bin
 
-#----- volta
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
-
 #----- kubectl krew
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 

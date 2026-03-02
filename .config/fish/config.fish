@@ -71,10 +71,6 @@ end
 
 #----- js tools
 
-# volta
-set -gx VOLTA_HOME "$HOME/.volta"
-set -gx PATH "$VOLTA_HOME/bin" $PATH
-
 # deno
 set -gx PATH "$HOME/.deno/bin" $PATH
 

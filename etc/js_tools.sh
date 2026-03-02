@@ -4,9 +4,7 @@ set -eux
 
 NODE_VERSION=24
 
-# ---------- volta https://github.com/volta-cli/volta
-
-curl https://get.volta.sh | bash -s -- --skip-setup
+# ---------- bun
 
 if ! which bun; then
   curl -fsSL https://bun.com/install | bash
@@ -19,8 +17,9 @@ fi
 
 # ---------- install js tools
 
-volta install node@"$NODE_VERSION"
-volta install yarn
+mise use --global node@"$NODE_VERSION"
+corepack enable
+corepack prepare yarn@stable --activate
 
 # ---------- install global packages
 
