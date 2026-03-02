@@ -82,6 +82,7 @@ else
 fi
 "$HOME"/.tmux/plugins/tpm/bin/install_plugins
 "$HOME"/.tmux/plugins/tpm/bin/update_plugins all
+tmux source-file "$HOME"/.tmux.conf
 
 # ---------- git sub-repo
 
