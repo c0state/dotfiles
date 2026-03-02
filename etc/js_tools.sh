@@ -2,7 +2,7 @@
 
 set -eux
 
-NODE_VERSION=24
+NODE_VERSION=25
 
 # ---------- bun
 
@@ -18,6 +18,7 @@ fi
 # ---------- install js tools
 
 mise use --global node@"$NODE_VERSION"
+npm install -g corepack
 corepack enable
 corepack prepare yarn@stable --activate
 

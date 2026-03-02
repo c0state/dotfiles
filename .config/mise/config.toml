@@ -2,4 +2,4 @@
 idiomatic_version_file_enable_tools = []
 
 [tools]
-node = "24"
+node = "25"
