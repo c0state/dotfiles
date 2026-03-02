@@ -31,6 +31,7 @@ cargo binstall -y broot
 cargo binstall -y eza
 cargo binstall -y git-delta
 cargo binstall -y sd
+cargo binstall -y tealdeer
 cargo binstall -y wasm-pack
 cargo binstall -y zellij
 
@@ -46,3 +47,6 @@ else
   fi
   uv self update $TOKEN_ARG
 fi
+
+tldr --update
+

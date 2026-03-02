@@ -34,8 +34,7 @@ bun add --global \
     git-split-diffs \
     imageoptim-cli \
     np \
-    npm-check-updates \
-    tldr
+    npm-check-updates
 
 # ---------- install deno https://github.com/denoland/deno
 
