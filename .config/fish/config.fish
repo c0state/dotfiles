@@ -89,10 +89,6 @@ if command -v rbenv >/dev/null
   eval "$(rbenv init -)"
 end
 
-#----- rust
-
-source "$HOME/.cargo/env.fish"
-
 #----- golang
 
 set -gx GOPATH "$HOME/work/go"

@@ -8,12 +8,7 @@ GITHUB_TOKEN_SCRIPTS=${GITHUB_TOKEN_SCRIPTS:-""}
 
 # ---------- rustup
 
-if ! command -v rustc >/dev/null 2>&1; then
-    curl --proto '=https' --tls-max default -sSf https://sh.rustup.rs | bash -s -- -y
-else
-    rustup update
-    rustup self update
-fi
+curl --proto '=https' --tls-max default -sSf https://sh.rustup.rs | bash -s -- -y
 
 rustup component add rust-analyzer
 
