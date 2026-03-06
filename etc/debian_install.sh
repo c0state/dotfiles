@@ -104,7 +104,7 @@ EOF
 #------------------------------ ppas
 
 (ls /etc/apt/sources.list.d/alessandro-strada*) || sudo add-apt-repository -y ppa:alessandro-strada/ppa
-(ls /etc/apt/sources.list.d/fish-shell*4*) || sudo add-apt-repository -y ppa:fish-shell/release-4
+sudo rm -f /etc/apt/sources.list.d/fish-shell*4* && sudo add-apt-repository -y ppa:fish-shell/release-4
 
 #------------------------------ install core packages
 
