@@ -150,6 +150,7 @@ if [[ -f "$HOME/Library/Application Support/Claude/claude_desktop_config.json" ]
 fi
 
 curl -fsSL https://raw.githubusercontent.com/danielmiessler/fabric/main/scripts/installer/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/danielmiessler/Fabric/refs/heads/main/completions/fabric.fish -o "$HOME"/.config/fish/completions/fabric.fish
 
 # ---------- google cloud sdk
 
