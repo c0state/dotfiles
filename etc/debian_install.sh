@@ -103,7 +103,6 @@ EOF
 
 #------------------------------ ppas
 
-(ls /etc/apt/sources.list.d/alessandro-strada*) || sudo add-apt-repository -y ppa:alessandro-strada/ppa
 sudo rm -f /etc/apt/sources.list.d/fish-shell*4* && sudo add-apt-repository -y ppa:fish-shell/release-4
 
 #------------------------------ install core packages
@@ -130,7 +129,6 @@ sudo apt -y install \
     gparted \
     gnome-browser-connector gnome-tweaks \
     gnupg gpg ca-certificates \
-    google-drive-ocamlfuse \
     jq \
     keychain \
     libarchive-tools \
@@ -142,6 +140,7 @@ sudo apt -y install \
     parallel \
     putty \
     ranger \
+    rclone \
     ripgrep \
     rpi-imager \
     stress-ng \
@@ -312,6 +311,31 @@ sudo apt -y install \
 # install ruby packages
 sudo apt -y install \
     ruby-dev
+
+#------------------------------ set up rclone systemd service
+
+mkdir -p "$HOME"/.config/systemd/user
+cat << 'EOF' > "$HOME"/.config/systemd/user/rclone-gdrive.service
+[Unit]
+Description=Rclone mount for Google Drive (gdrive remote)
+AssertPathIsDirectory=%h/Google.Drive
+After=network-online.target
+
+[Service]
+Type=notify
+ExecStart=/usr/bin/rclone mount gdrive: %h/Google.Drive \
+    --vfs-cache-mode writes \
+    --dir-cache-time 48h \
+    --vfs-read-chunk-size 32M \
+    --vfs-read-chunk-size-limit off
+ExecStop=/bin/fusermount -u %h/Google.Drive
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=default.target
+EOF
+systemctl --user daemon-reload
 
 echo "--------------------------------------------------"
 echo "Successfully installed all Linux packages!"
