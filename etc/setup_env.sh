@@ -149,6 +149,8 @@ if [[ -f "$HOME/Library/Application Support/Claude/claude_desktop_config.json" ]
   ln -f -s "$HOME/.dotfiles/osx_configs/claude_desktop_config.json" "$HOME/Library/Application Support/Claude/claude_desktop_config.json"
 fi
 
+curl -fsSL https://raw.githubusercontent.com/danielmiessler/fabric/main/scripts/installer/install.sh | bash
+
 # ---------- google cloud sdk
 
 if ! which gcloud; then
