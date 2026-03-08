@@ -151,6 +151,8 @@ sudo apt -y install \
     wine \
     wireshark \
     wmctrl \
+    wl-clipboard \
+    xclip \
     vim-nox
 
 #------------------------------ install packages

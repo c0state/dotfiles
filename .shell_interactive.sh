@@ -35,6 +35,21 @@ if [[ -z "$PAGER" ]]; then
     alias cat=bat
 fi
 
+#---------- clipboard (pbcopy/pbpaste on Linux)
+
+if [ "$(uname -s)" = "Linux" ]; then
+    if [ -n "$WSL_DISTRO_NAME" ]; then
+        alias pbcopy="clip.exe"
+        alias pbpaste="powershell.exe -noprofile -command Get-Clipboard"
+    elif command -v wl-copy >/dev/null 2>&1; then
+        alias pbcopy="wl-copy"
+        alias pbpaste="wl-paste"
+    elif command -v xclip >/dev/null 2>&1; then
+        alias pbcopy="xclip -selection clipboard"
+        alias pbpaste="xclip -selection clipboard -o"
+    fi
+fi
+
 #----- node config
 
 # linuxbrew

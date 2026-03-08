@@ -41,6 +41,21 @@ if test -e "$TAILSCALE_APP_STORE_PATH"
   alias tailscale="$TAILSCALE_APP_STORE_PATH"
 end
 
+#---------- clipboard (pbcopy/pbpaste on Linux)
+
+if test "$PLATFORM" = "Linux"
+    if test -n "$WSL_DISTRO_NAME"
+        alias pbcopy="clip.exe"
+        alias pbpaste="powershell.exe -noprofile -command Get-Clipboard"
+    else if type -q wl-copy
+        alias pbcopy="wl-copy"
+        alias pbpaste="wl-paste"
+    else if type -q xclip
+        alias pbcopy="xclip -selection clipboard"
+        alias pbpaste="xclip -selection clipboard -o"
+    end
+end
+
 #---------- homebrew
 
 if test "$PLATFORM" = "Darwin"
