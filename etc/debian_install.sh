@@ -11,8 +11,9 @@ if [ "$SHORT_ARCH" = "amd64" ]; then
 fi
 
 function get_github_release_version {
-  REPO_RELEASE_VERSION=$(curl --fail -L -s "$1" | grep -P "meta.*\breleases/tag/v?[0-9]" | head -n 1 | command grep -oP "releases/tag/v?\K[^\"]*")
-  echo $REPO_RELEASE_VERSION
+  local repo=$(echo "$1" | sed 's|.*github.com/||' | sed 's|/releases.*||')
+  local version=$(curl --fail -sL "https://api.github.com/repos/$repo/releases/latest" | grep '"tag_name":' | head -n 1 | sed -E 's/.*"v?([^"]+)".*/\1/')
+  echo "$version"
 }
 
 #------------------------------ install core utils
