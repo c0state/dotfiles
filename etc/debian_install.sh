@@ -233,10 +233,6 @@ install_package "https://github.com/git-ecosystem/git-credential-manager/release
 # note: there *is* this third party option: https://github.com/palfrey/discord-apt
 install_package "https://discord.com/api/download?platform=linux&format=deb"
 
-if ! which insync >/dev/null ; then
-  install_package "https://cdn.insynchq.com/builds/linux/3.9.4.60020/insync_3.9.4.60020-noble_$DPKG_ARCH.deb"
-fi
-
 if ! which bcompare >/dev/null ; then
   install_package "https://www.scootersoftware.com/files/bcompare-5.1.6.31527_$DPKG_ARCH.deb"
 fi
