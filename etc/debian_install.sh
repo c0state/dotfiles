@@ -39,8 +39,8 @@ curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/plucky.tailscale-keyring.lis
 # docker
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor --yes -o /etc/apt/keyrings/docker.gpg
 echo \
-  "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-  "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu " \
+  "$(source /etc/os-release && echo "$VERSION_CODENAME") stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 # google
@@ -202,7 +202,7 @@ sudo apt -y install \
 sudo apt -y install \
     docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 sudo groupadd --force docker
-sudo usermod -aG docker $USER
+sudo usermod -aG docker "$USER"
 
 # only available on pop os out of the box
 sudo apt -y install alacritty || true
