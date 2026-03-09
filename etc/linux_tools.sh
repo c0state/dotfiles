@@ -94,8 +94,10 @@ fi
 
 cat <<EOF | sudo tee /etc/sysctl.d/99-vscode.conf
 fs.inotify.max_user_watches=524288
+fs.inotify.max_user_instances=512
 EOF
 sudo sysctl fs.inotify.max_user_watches=524288
+sudo sysctl fs.inotify.max_user_instances=512
 
 # ---------- nerd fonts
 
