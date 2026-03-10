@@ -4,7 +4,6 @@ set -eux
 
 # ---------- shared variables
 
-PLATFORM_FULL=$(uname -a)
 PLATFORM=$(uname)
 WSL_DISTRO_NAME=${WSL_DISTRO_NAME:-""}
 
