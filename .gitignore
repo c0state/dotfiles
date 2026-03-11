@@ -10,6 +10,9 @@
 .idea
 .vscode
 
+# nvim
+.config/nvim/lazy-lock.json
+
 # fish
 .config/fish/completions
 .config/fish/conf.d
