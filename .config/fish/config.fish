@@ -4,11 +4,11 @@
 set --local PLATFORM (uname -s)
 set --local MACH_TYPE (uname -m)
 set --local IS_MACOS_ARM (test $PLATFORM = "Darwin" && test $MACH_TYPE = "arm64" && echo "1" || echo "")
-if test "$PLATFORM" = "Darwin"
+if test "$PLATFORM" = Darwin
     if test -n $IS_MACOS_ARM
-        set --function MACOS_BREW_PREFIX "/opt/homebrew"
+        set --function MACOS_BREW_PREFIX /opt/homebrew
     else
-        set --function MACOS_BREW_PREFIX "/usr/local/Homebrew"
+        set --function MACOS_BREW_PREFIX /usr/local/Homebrew
     end
 end
 set --local TAILSCALE_APP_STORE_PATH "/Applications/Tailscale.app/Contents/MacOS/Tailscale"
@@ -20,7 +20,7 @@ set --local REPORTTIME 3
 
 set -gx EDITOR vim
 
-if test "$PLATFORM" = "Darwin"
+if test "$PLATFORM" = Darwin
     set -gx SHELL /opt/homebrew/bin/fish
 else
     set -gx SHELL /usr/bin/fish
@@ -38,12 +38,12 @@ if test -z "$PAGER"
 end
 
 if test -e "$TAILSCALE_APP_STORE_PATH"
-  alias tailscale="$TAILSCALE_APP_STORE_PATH"
+    alias tailscale="$TAILSCALE_APP_STORE_PATH"
 end
 
 #---------- clipboard (pbcopy/pbpaste on Linux)
 
-if test "$PLATFORM" = "Linux"
+if test "$PLATFORM" = Linux
     if test -n "$WSL_DISTRO_NAME"
         alias pbcopy="clip.exe"
         alias pbpaste="powershell.exe -noprofile -command Get-Clipboard"
@@ -58,7 +58,7 @@ end
 
 #---------- homebrew
 
-if test "$PLATFORM" = "Darwin"
+if test "$PLATFORM" = Darwin
     if test -n $IS_MACOS_ARM
         eval (/opt/homebrew/bin/brew shellenv)
     else
@@ -71,13 +71,13 @@ set -gx TERM xterm-256color
 
 #---------- paths
 
-set -gx PATH ~/.local/bin $PATH;
+set -gx PATH ~/.local/bin $PATH
 
 # linuxbrew
-if test "$PLATFORM" = "Linux"
-    set -gx HOMEBREW_PREFIX "/home/linuxbrew/.linuxbrew";
-    set -gx HOMEBREW_CELLAR "/home/linuxbrew/.linuxbrew/Cellar";
-    set -gx HOMEBREW_REPOSITORY "/home/linuxbrew/.linuxbrew/Homebrew";
+if test "$PLATFORM" = Linux
+    set -gx HOMEBREW_PREFIX "/home/linuxbrew/.linuxbrew"
+    set -gx HOMEBREW_CELLAR "/home/linuxbrew/.linuxbrew/Cellar"
+    set -gx HOMEBREW_REPOSITORY "/home/linuxbrew/.linuxbrew/Homebrew"
     set -gx PATH "/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin" $PATH
     # "" suffix generates an :, which instructs man and info to append system paths
     set -gx MANPATH "/home/linuxbrew/.linuxbrew/share/man" $MANPATH ""
@@ -101,7 +101,7 @@ set -gx PATH "$HOME/.poetry/bin" $PATH
 
 set -gx PATH "$HOME/.rbenv/bin" $PATH
 if command -v rbenv >/dev/null
-  eval "$(rbenv init -)"
+    eval "$(rbenv init -)"
 end
 
 #----- golang
@@ -111,7 +111,7 @@ set -gx PATH "$HOME/.local/go/bin" "$GOPATH/bin" $PATH
 
 #----- postgres
 
-if test "$PLATFORM" = "Darwin"
+if test "$PLATFORM" = Darwin
     fish_add_path /opt/homebrew/opt/postgresql*/bin
 end
 
@@ -123,7 +123,7 @@ set -gx PATH $PATH $HOME/.krew/bin
 #----- brew
 
 # gnu utils paths
-if test "$PLATFORM" = "Darwin"
+if test "$PLATFORM" = Darwin
     set -gx PATH "$MACOS_BREW_PREFIX"/opt/coreutils/libexec/gnubin $PATH
     set -gx PATH "$MACOS_BREW_PREFIX"/opt/findutils/libexec/gnubin $PATH
 end
@@ -143,7 +143,7 @@ end
 # https://github.com/git-ecosystem/git-credential-manager/blob/release/docs/credstores.md
 
 # use git's built-in credential cache on Linux (on macOS, use native keychain)
-if test "$PLATFORM" = "Linux"
+if test "$PLATFORM" = Linux
     export GCM_CREDENTIAL_STORE=cache
 end
 
