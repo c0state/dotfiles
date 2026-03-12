@@ -73,6 +73,9 @@ _deno() {
 '--ext=[Set content type of the supplied file]: :(ts tsx js jsx mts mjs cts cjs)' \
 '*--env-file=[Load environment variables from local file   Only the first environment variable with a given key is used.   Existing process environment variables are not overwritten, so if variables with the same names already exist in the environment, their values will be preserved.   Where multiple declarations for the same environment variable exist in your .env file, the first one encountered is applied. This is determined by the order of the files you pass as arguments.]::FILE:_files' \
 '(--inspect --inspect-wait --inspect-brk)--coverage=[Collect coverage profile data into DIR. If DIR is not specified, it uses '\''coverage/'\''.   This option can also be set via the DENO_COVERAGE_DIR environment variable.]::DIR:_files' \
+'--cpu-prof-dir=[Directory where the V8 CPU profiles will be written. Implicitly enables --cpu-prof]:DIR:_files -/' \
+'--cpu-prof-name=[Filename for the CPU profile (defaults to CPU.<timestamp>.<pid>.cpuprofile)]:NAME:_default' \
+'--cpu-prof-interval=[Sampling interval in microseconds for CPU profiling (default\: 1000)]:MICROSECONDS:_default' \
 '-t+[Execute tasks with a tunnel to Deno Deploy.      Create a secure connection between your local machine and Deno Deploy,     providing access to centralised environment variables, logging,     and serving from your local environment to the public internet]:: :(true false)' \
 '--tunnel=[Execute tasks with a tunnel to Deno Deploy.      Create a secure connection between your local machine and Deno Deploy,     providing access to centralised environment variables, logging,     and serving from your local environment to the public internet]:: :(true false)' \
 '*-h+[]::CONTEXT:(unstable full)' \
@@ -93,6 +96,8 @@ _deno() {
 '--eszip-internal-do-not-use[]' \
 '--no-clear-screen[Do not clear terminal screen when under watch mode]' \
 '--no-code-cache[Disable V8 code cache feature]' \
+'--cpu-prof[Start the V8 CPU profiler on startup and write the profile to disk on exit. Profiles are written to the current directory by default]' \
+'--cpu-prof-md[Generate a human-readable markdown report alongside the CPU profile]' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -195,6 +200,9 @@ _arguments "${_arguments_options[@]}" : \
 '--ext=[Set content type of the supplied file]: :(ts tsx js jsx mts mjs cts cjs)' \
 '*--env-file=[Load environment variables from local file   Only the first environment variable with a given key is used.   Existing process environment variables are not overwritten, so if variables with the same names already exist in the environment, their values will be preserved.   Where multiple declarations for the same environment variable exist in your .env file, the first one encountered is applied. This is determined by the order of the files you pass as arguments.]::FILE:_files' \
 '(--inspect --inspect-wait --inspect-brk)--coverage=[Collect coverage profile data into DIR. If DIR is not specified, it uses '\''coverage/'\''.   This option can also be set via the DENO_COVERAGE_DIR environment variable.]::DIR:_files' \
+'--cpu-prof-dir=[Directory where the V8 CPU profiles will be written. Implicitly enables --cpu-prof]:DIR:_files -/' \
+'--cpu-prof-name=[Filename for the CPU profile (defaults to CPU.<timestamp>.<pid>.cpuprofile)]:NAME:_default' \
+'--cpu-prof-interval=[Sampling interval in microseconds for CPU profiling (default\: 1000)]:MICROSECONDS:_default' \
 '-t+[Execute tasks with a tunnel to Deno Deploy.      Create a secure connection between your local machine and Deno Deploy,     providing access to centralised environment variables, logging,     and serving from your local environment to the public internet]:: :(true false)' \
 '--tunnel=[Execute tasks with a tunnel to Deno Deploy.      Create a secure connection between your local machine and Deno Deploy,     providing access to centralised environment variables, logging,     and serving from your local environment to the public internet]:: :(true false)' \
 '*-h+[]::CONTEXT:(unstable full)' \
@@ -243,6 +251,8 @@ _arguments "${_arguments_options[@]}" : \
 '--eszip-internal-do-not-use[]' \
 '--no-clear-screen[Do not clear terminal screen when under watch mode]' \
 '--no-code-cache[Disable V8 code cache feature]' \
+'--cpu-prof[Start the V8 CPU profiler on startup and write the profile to disk on exit. Profiles are written to the current directory by default]' \
+'--cpu-prof-md[Generate a human-readable markdown report alongside the CPU profile]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
 '*::script_arg -- Script arg:_files' \
@@ -309,6 +319,9 @@ _arguments "${_arguments_options[@]}" : \
 '*--watch-exclude=[Exclude provided files/patterns from watch mode]::FILES:_files' \
 '--ext=[Set content type of the supplied file]: :(ts tsx js jsx mts mjs cts cjs)' \
 '*--env-file=[Load environment variables from local file   Only the first environment variable with a given key is used.   Existing process environment variables are not overwritten, so if variables with the same names already exist in the environment, their values will be preserved.   Where multiple declarations for the same environment variable exist in your .env file, the first one encountered is applied. This is determined by the order of the files you pass as arguments.]::FILE:_files' \
+'--cpu-prof-dir=[Directory where the V8 CPU profiles will be written. Implicitly enables --cpu-prof]:DIR:_files -/' \
+'--cpu-prof-name=[Filename for the CPU profile (defaults to CPU.<timestamp>.<pid>.cpuprofile)]:NAME:_default' \
+'--cpu-prof-interval=[Sampling interval in microseconds for CPU profiling (default\: 1000)]:MICROSECONDS:_default' \
 '-t+[Execute tasks with a tunnel to Deno Deploy.      Create a secure connection between your local machine and Deno Deploy,     providing access to centralised environment variables, logging,     and serving from your local environment to the public internet]:: :(true false)' \
 '--tunnel=[Execute tasks with a tunnel to Deno Deploy.      Create a secure connection between your local machine and Deno Deploy,     providing access to centralised environment variables, logging,     and serving from your local environment to the public internet]:: :(true false)' \
 '*-h+[]::CONTEXT:(unstable full)' \
@@ -359,6 +372,8 @@ _arguments "${_arguments_options[@]}" : \
 '--parallel[Run multiple server workers in parallel. Parallelism defaults to the number of available CPUs or the value of the DENO_JOBS environment variable]' \
 '--no-clear-screen[Do not clear terminal screen when under watch mode]' \
 '--no-code-cache[Disable V8 code cache feature]' \
+'--cpu-prof[Start the V8 CPU profiler on startup and write the profile to disk on exit. Profiles are written to the current directory by default]' \
+'--cpu-prof-md[Generate a human-readable markdown report alongside the CPU profile]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
 '*::script_arg -- Script arg:_files' \
@@ -1216,6 +1231,9 @@ _arguments "${_arguments_options[@]}" : \
 '(--no-check)--check=[Enable type-checking. This subcommand does not type-check by default   If the value of "all" is supplied, remote modules will be included.   Alternatively, the '\''deno check'\'' subcommand can be used]::CHECK_TYPE:_default' \
 '--ext=[Set content type of the supplied file]: :(ts tsx js jsx mts mjs cts cjs)' \
 '*--env-file=[Load environment variables from local file   Only the first environment variable with a given key is used.   Existing process environment variables are not overwritten, so if variables with the same names already exist in the environment, their values will be preserved.   Where multiple declarations for the same environment variable exist in your .env file, the first one encountered is applied. This is determined by the order of the files you pass as arguments.]::FILE:_files' \
+'--cpu-prof-dir=[Directory where the V8 CPU profiles will be written. Implicitly enables --cpu-prof]:DIR:_files -/' \
+'--cpu-prof-name=[Filename for the CPU profile (defaults to CPU.<timestamp>.<pid>.cpuprofile)]:NAME:_default' \
+'--cpu-prof-interval=[Sampling interval in microseconds for CPU profiling (default\: 1000)]:MICROSECONDS:_default' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -1255,6 +1273,8 @@ _arguments "${_arguments_options[@]}" : \
 '--eszip-internal-do-not-use[]' \
 '-p[print result to stdout]' \
 '--print[print result to stdout]' \
+'--cpu-prof[Start the V8 CPU profiler on startup and write the profile to disk on exit. Profiles are written to the current directory by default]' \
+'--cpu-prof-md[Generate a human-readable markdown report alongside the CPU profile]' \
 '*::code_arg -- Code to evaluate:_default' \
 && ret=0
 ;;
