@@ -273,12 +273,6 @@ if ! which steam >/dev/null; then
 	install_package https://cdn.fastly.steamstatic.com/client/installer/steam.deb
 fi
 
-if ! which balena-etcher >/dev/null; then
-	ETCHER_VERSION=$(get_github_release_version "https://github.com/balena-io/etcher/releases/latest")
-	# TODO: "or true" to fix https://github.com/balena-io/etcher/pull/4538
-	install_package "https://github.com/balena-io/etcher/releases/download/v${ETCHER_VERSION}/balena-etcher_${ETCHER_VERSION}_${DPKG_ARCH}.deb" || true
-fi
-
 if ! which google-chrome >/dev/null; then
 	# remove token file for clean install
 	sudo rm /etc/default/google-chrome
