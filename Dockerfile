@@ -1,4 +1,4 @@
-FROM ubuntu:20.10 as dotfiles-base
+FROM ubuntu:25.10 as dotfiles-base
 
 #---------- system setup
 
