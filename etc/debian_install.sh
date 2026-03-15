@@ -7,13 +7,13 @@ DPKG_ARCH=$(dpkg --print-architecture 2>/dev/null || echo "")
 ARCH=$(arch)
 SHORT_ARCH="$DPKG_ARCH"
 if [ "$SHORT_ARCH" = "amd64" ]; then
-    SHORT_ARCH="x64"
+	SHORT_ARCH="x64"
 fi
 
 function get_github_release_version {
-  local repo=$(echo "$1" | sed 's|.*github.com/||' | sed 's|/releases.*||')
-  local version=$(curl --fail -sL "https://api.github.com/repos/$repo/releases/latest" | grep '"tag_name":' | head -n 1 | sed -E 's/.*"v?([^"]+)".*/\1/')
-  echo "$version"
+	local repo=$(echo "$1" | sed 's|.*github.com/||' | sed 's|/releases.*||')
+	local version=$(curl --fail -sL "https://api.github.com/repos/$repo/releases/latest" | grep '"tag_name":' | head -n 1 | sed -E 's/.*"v?([^"]+)".*/\1/')
+	echo "$version"
 }
 
 #------------------------------ install core utils
@@ -23,14 +23,14 @@ sudo apt -y install curl
 
 # install shell packages
 sudo apt -y install \
-    fish \
-    zsh zsh-doc
+	fish \
+	zsh zsh-doc
 
 #------------------------------ install package sources
 
 # init github cli
 curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo gpg --dearmor --yes -o /usr/share/keyrings/githubcli-archive-keyring.gpg
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list >/dev/null
 
 # init tailscale
 curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/plucky.noarmor.gpg | sudo tee /usr/share/keyrings/tailscale-archive-keyring.gpg >/dev/null
@@ -39,15 +39,15 @@ curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/plucky.tailscale-keyring.lis
 # docker
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor --yes -o /etc/apt/keyrings/docker.gpg
 echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu " \
-  "$(source /etc/os-release && echo "$VERSION_CODENAME") stable" | \
-  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+	"deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu " \
+	"$(source /etc/os-release && echo "$VERSION_CODENAME") stable" |
+	sudo tee /etc/apt/sources.list.d/docker.list >/dev/null
 
 # google
-curl -fsSL https://us-central1-apt.pkg.dev/doc/repo-signing-key.gpg | \
-  sudo gpg --dearmor --yes -o /etc/apt/keyrings/antigravity-repo-key.gpg
-echo "deb [signed-by=/etc/apt/keyrings/antigravity-repo-key.gpg] https://us-central1-apt.pkg.dev/projects/antigravity-auto-updater-dev/ antigravity-debian main" | \
-  sudo tee /etc/apt/sources.list.d/antigravity.list > /dev/null
+curl -fsSL https://us-central1-apt.pkg.dev/doc/repo-signing-key.gpg |
+	sudo gpg --dearmor --yes -o /etc/apt/keyrings/antigravity-repo-key.gpg
+echo "deb [signed-by=/etc/apt/keyrings/antigravity-repo-key.gpg] https://us-central1-apt.pkg.dev/projects/antigravity-auto-updater-dev/ antigravity-debian main" |
+	sudo tee /etc/apt/sources.list.d/antigravity.list >/dev/null
 
 # mozilla
 curl -fsSL https://packages.mozilla.org/apt/repo-signing-key.gpg | sudo gpg --dearmor --yes -o /etc/apt/keyrings/packages.mozilla.gpg
@@ -68,19 +68,19 @@ Pin-Priority: 1000
 
 # lens
 curl -fsSL https://downloads.k8slens.dev/keys/gpg | sudo gpg --dearmor --yes -o /usr/share/keyrings/lens-archive-keyring.gpg
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/lens-archive-keyring.gpg] https://downloads.k8slens.dev/apt/debian stable main" | \
-  sudo tee /etc/apt/sources.list.d/lens.list > /dev/null
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/lens-archive-keyring.gpg] https://downloads.k8slens.dev/apt/debian stable main" |
+	sudo tee /etc/apt/sources.list.d/lens.list >/dev/null
 
 # onedrive
-wget -qO - https://download.opensuse.org/repositories/home:/npreining:/debian-ubuntu-onedrive/xUbuntu_25.04/Release.key | gpg --dearmor | sudo tee /usr/share/keyrings/onedrive.gpg > /dev/null
+wget -qO - https://download.opensuse.org/repositories/home:/npreining:/debian-ubuntu-onedrive/xUbuntu_25.04/Release.key | gpg --dearmor | sudo tee /usr/share/keyrings/onedrive.gpg >/dev/null
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/onedrive.gpg] https://download.opensuse.org/repositories/home:/npreining:/debian-ubuntu-onedrive/xUbuntu_25.04/ ./" | sudo tee /etc/apt/sources.list.d/onedrive.list
 
 # signal
-wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor | sudo tee /usr/share/keyrings/signal-desktop-keyring.gpg > /dev/null
+wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor | sudo tee /usr/share/keyrings/signal-desktop-keyring.gpg >/dev/null
 wget -0- https://updates.signal.org/static/desktop/apt/signal-desktop.sources | sudo tee /etc/apt/sources.list.d/signal-desktop.sources
 
 # terraform
-wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor | sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg > /dev/null
+wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor | sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg >/dev/null
 echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com plucky main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
 
 # wezterm - https://wezfurlong.org/wezterm
@@ -92,7 +92,7 @@ curl -fsSL https://codeberg.org/api/packages/yataro/debian/repository.key | sudo
 echo "deb [signed-by=/usr/share/keyrings/sourcegit.gpg, arch=amd64,arm64] https://codeberg.org/api/packages/yataro/debian generic main" | sudo tee /etc/apt/sources.list.d/sourcegit.list
 
 # vscode
-wget -qO- https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --yes --dearmor -o /usr/share/keyrings/microsoft.gpg 
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --yes --dearmor -o /usr/share/keyrings/microsoft.gpg
 cat <<EOF | sudo tee /etc/apt/sources.list.d/vscode.sources >/dev/null
 Types: deb
 URIs: https://packages.microsoft.com/repos/code
@@ -111,50 +111,53 @@ sudo rm -f /etc/apt/sources.list.d/fish-shell*4* && sudo add-apt-repository -y p
 sudo apt update
 
 sudo apt -y install \
-    flatpak \
-    snapd
+	flatpak \
+	snapd
 
 #------------------------------ install utility packages
 
 sudo apt -y install \
-    adb \
-    bat \
-    cpu-x \
-    colordiff icdiff \
-    wget \
-    direnv \
-    dos2unix \
-    fd-find \
-    git git-lfs \
-    glances \
-    gparted \
-    gnome-browser-connector gnome-tweaks \
-    gnupg gpg ca-certificates \
-    jq \
-    keychain \
-    libarchive-tools \
-    lsd \
-    minicom \
-    ncdu \
-    nethogs \
-    onedrive \
-    parallel \
-    putty \
-    ranger \
-    rclone \
-    ripgrep \
-    rpi-imager \
-    stress-ng \
-    terraform \
-    traceroute \
-    tree \
-    wezterm \
-    wine \
-    wireshark \
-    wmctrl \
-    wl-clipboard \
-    xclip \
-    vim-nox
+	adb \
+	bat \
+	cpu-x \
+	colordiff icdiff \
+	wget \
+	direnv \
+	dos2unix \
+	fd-find \
+	git git-lfs \
+	glances \
+	gparted \
+	gnome-browser-connector gnome-tweaks \
+	gnupg gpg ca-certificates \
+	jq \
+	keychain \
+	libarchive-tools \
+	lsd \
+	minicom \
+	ncdu \
+	nethogs \
+	onedrive \
+	parallel \
+	putty \
+	ranger \
+	rclone \
+	ripgrep \
+	rpi-imager \
+	smartmontools \
+	stress-ng \
+	terraform \
+	testdisk \
+	traceroute \
+	tree \
+	unrar \
+	wezterm \
+	wine \
+	wireshark \
+	wmctrl \
+	wl-clipboard \
+	xclip \
+	vim-nox
 
 #------------------------------ install packages
 
@@ -187,20 +190,20 @@ mkdir -p "$HOME"/.local/bin
 
 # install development packages
 sudo apt -y install \
-    build-essential cmake \
-    zlib1g-dev \
-    libbz2-dev liblzma-dev \
-    libreadline-dev libsqlite3-dev libssl-dev llvm \
-    libncurses5-dev libncursesw5-dev \
-    libxcb-render0-dev libxcb-shape0-dev libxcb-xfixes0-dev \
-    libxml2-dev \
-    libyaml-dev \
-    swig \
-    tk-dev
+	build-essential cmake \
+	zlib1g-dev \
+	libbz2-dev liblzma-dev \
+	libreadline-dev libsqlite3-dev libssl-dev llvm \
+	libncurses5-dev libncursesw5-dev \
+	libxcb-render0-dev libxcb-shape0-dev libxcb-xfixes0-dev \
+	libxml2-dev \
+	libyaml-dev \
+	swig \
+	tk-dev
 
 # install docker and set up group
 sudo apt -y install \
-    docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+	docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 sudo groupadd --force docker
 sudo usermod -aG docker "$USER"
 
@@ -209,19 +212,19 @@ sudo apt -y install alacritty || true
 
 # install developer packages
 sudo apt -y install \
-    antigravity \
-    code \
-    fonts-firacode fonts-hack fonts-jetbrains-mono \
-    gh \
-    lens \
-    sourcegit \
-    tig \
-    tmux
+	antigravity \
+	code \
+	fonts-firacode fonts-hack fonts-jetbrains-mono \
+	gh \
+	lens \
+	sourcegit \
+	tig \
+	tmux
 
 LAZYGIT_VERSION=$(get_github_release_version "https://github.com/jesseduffield/lazygit/releases/latest")
-curl --fail -L "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_$ARCH.tar.gz" | \
-    tar -xzO lazygit \
-    > "$HOME"/.local/bin/lazygit && chmod ug+x "$HOME"/.local/bin/lazygit
+curl --fail -L "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_$ARCH.tar.gz" |
+	tar -xzO lazygit \
+		>"$HOME"/.local/bin/lazygit && chmod ug+x "$HOME"/.local/bin/lazygit
 
 OPENLENS_VERSION=$(get_github_release_version "https://github.com/MuhammedKalkan/OpenLens/releases/latest")
 install_package "https://github.com/MuhammedKalkan/OpenLens/releases/download/v$OPENLENS_VERSION/OpenLens-$OPENLENS_VERSION.$DPKG_ARCH.deb"
@@ -233,26 +236,26 @@ install_package "https://github.com/git-ecosystem/git-credential-manager/release
 # note: there *is* this third party option: https://github.com/palfrey/discord-apt
 install_package "https://discord.com/api/download?platform=linux&format=deb"
 
-if ! which bcompare >/dev/null ; then
-  install_package "https://www.scootersoftware.com/files/bcompare-5.1.6.31527_$DPKG_ARCH.deb"
+if ! which bcompare >/dev/null; then
+	install_package "https://www.scootersoftware.com/files/bcompare-5.1.6.31527_$DPKG_ARCH.deb"
 fi
 
-if ! which teamviewer >/dev/null ; then
-  install_package "https://download.teamviewer.com/download/linux/teamviewer_$DPKG_ARCH.deb"
+if ! which teamviewer >/dev/null; then
+	install_package "https://download.teamviewer.com/download/linux/teamviewer_$DPKG_ARCH.deb"
 fi
 
-if ! which rustdesk >/dev/null ; then
-  RUSTDESK_VERSION=$(get_github_release_version "https://github.com/rustdesk/rustdesk/releases/latest")
-  install_package "https://github.com/rustdesk/rustdesk/releases/download/$RUSTDESK_VERSION/rustdesk-$RUSTDESK_VERSION-$ARCH.deb"
+if ! which rustdesk >/dev/null; then
+	RUSTDESK_VERSION=$(get_github_release_version "https://github.com/rustdesk/rustdesk/releases/latest")
+	install_package "https://github.com/rustdesk/rustdesk/releases/download/$RUSTDESK_VERSION/rustdesk-$RUSTDESK_VERSION-$ARCH.deb"
 fi
 
-if ! which obsidian >/dev/null ; then
-  OBSIDIAN_VERSION=$(get_github_release_version "https://github.com/obsidianmd/obsidian-releases/releases/latest")
-  install_package "https://github.com/obsidianmd/obsidian-releases/releases/download/v$OBSIDIAN_VERSION/obsidian_${OBSIDIAN_VERSION}_$DPKG_ARCH.deb"
+if ! which obsidian >/dev/null; then
+	OBSIDIAN_VERSION=$(get_github_release_version "https://github.com/obsidianmd/obsidian-releases/releases/latest")
+	install_package "https://github.com/obsidianmd/obsidian-releases/releases/download/v$OBSIDIAN_VERSION/obsidian_${OBSIDIAN_VERSION}_$DPKG_ARCH.deb"
 fi
 
-if ! which cursor >/dev/null ; then
-  install_package https://api2.cursor.sh/updates/download/golden/linux-${SHORT_ARCH}-deb/cursor/2.4
+if ! which cursor >/dev/null; then
+	install_package https://api2.cursor.sh/updates/download/golden/linux-${SHORT_ARCH}-deb/cursor/2.4
 fi
 
 install_package https://api.gitkraken.dev/releases/production/linux/${SHORT_ARCH}/active/gitkraken-${DPKG_ARCH}.deb
@@ -260,20 +263,26 @@ install_package https://api.gitkraken.dev/releases/production/linux/${SHORT_ARCH
 RPI_IMAGER_VERSION=$(get_github_release_version "https://github.com/raspberrypi/rpi-imager/releases/latest")
 install_package https://github.com/raspberrypi/rpi-imager/releases/download/v${RPI_IMAGER_VERSION}/rpi-imager_${RPI_IMAGER_VERSION}_${DPKG_ARCH}.deb
 
-which jetbrains-toolbox || \
-    wget -O - https://download.jetbrains.com/toolbox/jetbrains-toolbox-2.4.2.32922.tar.gz \
-        tar -xzO jetbrains-toolbox-2.4.2.32922/jetbrains-toolbox \
-    > "$HOME"/.local/bin/jetbrains-toolbox && \
-    chmod u+x "$HOME"/.local/bin/jetbrains-toolbox
+which jetbrains-toolbox ||
+	wget -O - https://download.jetbrains.com/toolbox/jetbrains-toolbox-2.4.2.32922.tar.gz \
+		tar -xzO jetbrains-toolbox-2.4.2.32922/jetbrains-toolbox \
+		>"$HOME"/.local/bin/jetbrains-toolbox &&
+	chmod u+x "$HOME"/.local/bin/jetbrains-toolbox
 
-if ! which steam >/dev/null ; then
-  install_package https://cdn.fastly.steamstatic.com/client/installer/steam.deb
+if ! which steam >/dev/null; then
+	install_package https://cdn.fastly.steamstatic.com/client/installer/steam.deb
 fi
 
-if ! which google-chrome >/dev/null ; then
-  # remove token file for clean install
-  sudo rm /etc/default/google-chrome
-  install_package https://dl.google.com/linux/direct/google-chrome-stable_current_${DPKG_ARCH}.deb
+if ! which balena-etcher >/dev/null; then
+	ETCHER_VERSION=$(get_github_release_version "https://github.com/balena-io/etcher/releases/latest")
+	# TODO: "or true" to fix https://github.com/balena-io/etcher/pull/4538
+	install_package "https://github.com/balena-io/etcher/releases/download/v${ETCHER_VERSION}/balena-etcher_${ETCHER_VERSION}_${DPKG_ARCH}.deb" || true
+fi
+
+if ! which google-chrome >/dev/null; then
+	# remove token file for clean install
+	sudo rm /etc/default/google-chrome
+	install_package https://dl.google.com/linux/direct/google-chrome-stable_current_${DPKG_ARCH}.deb
 fi
 
 sudo curl --fail -L https://github.com/neovim/neovim/releases/latest/download/nvim-linux-$ARCH.appimage --output /usr/local/bin/nvim
@@ -284,37 +293,37 @@ sudo chmod +x /usr/local/bin/Outline-Manager
 
 # install apps
 sudo apt -y install \
-  signal-desktop \
-  vlc
+	signal-desktop \
+	vlc
 
 # install image packages
 sudo apt -y install \
-    ffmpeg imagemagick libimage-exiftool-perl pngquant
+	ffmpeg imagemagick libimage-exiftool-perl pngquant
 
 # install java packages
 sudo apt -y install \
-    default-jdk
+	default-jdk
 
 # install networking packages
 sudo apt -y install avahi-daemon samba \
-    tailscale \
-    winbind
+	tailscale \
+	winbind
 
 # install db packages
 sudo apt -y install libpq-dev postgresql-client
 
 # install python packages
 sudo apt -y install \
-    python3-dev python3-pip python3-venv python-is-python3
+	python3-dev python3-pip python3-venv python-is-python3
 
 # install ruby packages
 sudo apt -y install \
-    ruby-dev
+	ruby-dev
 
 #------------------------------ set up rclone systemd service
 
 mkdir -p "$HOME"/.config/systemd/user
-cat << 'EOF' > "$HOME"/.config/systemd/user/rclone-gdrive.service
+cat <<'EOF' >"$HOME"/.config/systemd/user/rclone-gdrive.service
 [Unit]
 Description=Rclone mount for Google Drive (gdrive remote)
 AssertPathIsDirectory=%h/Google.Drive
