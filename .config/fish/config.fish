@@ -142,9 +142,9 @@ end
 
 # https://github.com/git-ecosystem/git-credential-manager/blob/release/docs/credstores.md
 
-# use git's built-in credential cache on Linux (on macOS, use native keychain)
+# use Linux Secret Service (freedesktop.org spec, backed by GNOME Keyring, KWallet, etc.)
 if test "$PLATFORM" = Linux
-    export GCM_CREDENTIAL_STORE=cache
+    export GCM_CREDENTIAL_STORE=secretservice
 end
 
 #---------- keychain agent
