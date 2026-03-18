@@ -2,6 +2,11 @@
 	fileMode = false
 [include]
 	path = .gitconfig-base
+[credential]
+    # this is actually needed to clear out any existing helpers
+    helper =
+    helper = git-credential-manager
+    credentialStore = wincred
 [diff]
 	tool = bc
 [difftool "bc"]

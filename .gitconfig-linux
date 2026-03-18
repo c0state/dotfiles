@@ -4,6 +4,7 @@
     # this is actually needed to clear out any existing helpers
     helper =
     helper = /usr/local/bin/git-credential-manager
+    credentialStore = secretservice
 [credential "https://dev.azure.com"]
     useHttpPath = true
 [diff]

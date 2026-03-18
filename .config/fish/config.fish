@@ -138,14 +138,6 @@ if type -q aws_completer
     complete --command aws --no-files --arguments '(begin; set --local --export COMP_SHELL fish; set --local --export COMP_LINE (commandline); aws_completer | sed \'s/ $//\'; end)'
 end
 
-#---------- git credential manager
-
-# https://github.com/git-ecosystem/git-credential-manager/blob/release/docs/credstores.md
-
-# use Linux Secret Service (freedesktop.org spec, backed by GNOME Keyring, KWallet, etc.)
-if test "$PLATFORM" = Linux
-    export GCM_CREDENTIAL_STORE=secretservice
-end
 
 #---------- keychain agent
 

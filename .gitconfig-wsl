@@ -1,5 +1,7 @@
 [include]
 	path = .gitconfig-linux
+[credential]
+    credentialStore = wincred
 [diff]
 	tool = bc
 [difftool]
