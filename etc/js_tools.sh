@@ -25,7 +25,6 @@ corepack prepare yarn@stable --activate
 # ---------- install global packages
 
 bun add --global \
-	@anthropic-ai/claude-code \
 	@beads/bd \
 	@github/copilot \
 	@google/gemini-cli \
@@ -37,6 +36,14 @@ bun add --global \
 	imageoptim-cli \
 	np \
 	npm-check-updates
+
+# ---------- install claude code (native installer)
+
+if ! which claude; then
+	curl -fsSL https://claude.ai/install.sh | bash
+else
+	claude update
+fi
 
 # ---------- install deno https://github.com/denoland/deno
 
