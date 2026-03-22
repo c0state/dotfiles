@@ -3,22 +3,22 @@
 set -eu
 
 if [[ ! -e $HOME/.rbenv ]]; then
-    git clone https://github.com/rbenv/rbenv "$HOME"/.rbenv
-    (cd "$HOME"/.rbenv && src/configure && make -C src)
+	git clone https://github.com/rbenv/rbenv "$HOME"/.rbenv
+	(cd "$HOME"/.rbenv && src/configure && make -C src)
 else
-    (cd "$HOME"/.rbenv && git pull)
+	(cd "$HOME"/.rbenv && git pull)
 fi
 
 if [[ ! -e $HOME/.rbenv/plugins/rbenv-gemset ]]; then
-    git clone https://github.com/jf/rbenv-gemset.git "$HOME"/.rbenv/plugins/rbenv-gemset
+	git clone https://github.com/jf/rbenv-gemset.git "$HOME"/.rbenv/plugins/rbenv-gemset
 else
-    (cd "$HOME"/.rbenv/plugins/rbenv-gemset && git pull)
+	(cd "$HOME"/.rbenv/plugins/rbenv-gemset && git pull)
 fi
 
 if [[ ! -e $HOME/.rbenv/plugins/ruby-build ]]; then
-    git clone https://github.com/rbenv/ruby-build.git "$HOME"/.rbenv/plugins/ruby-build
+	git clone https://github.com/rbenv/ruby-build.git "$HOME"/.rbenv/plugins/ruby-build
 else
-    (cd "$HOME"/.rbenv/plugins/ruby-build && git pull)
+	(cd "$HOME"/.rbenv/plugins/ruby-build && git pull)
 fi
 
 PATH=$PATH:$HOME/.rbenv/bin
@@ -26,7 +26,7 @@ PATH=$PATH:$HOME/.rbenv/bin
 LATEST_RUBY_VERSION=$(rbenv install --list | grep -E "^[0-9]" | sort -V | tail -n 1)
 
 if ! (rbenv versions | grep "$LATEST_RUBY_VERSION"); then
-    rbenv install "$LATEST_RUBY_VERSION"
+	rbenv install "$LATEST_RUBY_VERSION"
 fi
 
 rbenv global "$LATEST_RUBY_VERSION"
@@ -37,4 +37,3 @@ gem install --user-install cocoapods
 gem install --user-install fastlane
 
 gem update --user-install
-
