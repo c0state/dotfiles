@@ -32,7 +32,7 @@ plugins=(
     git
     git-extras
     golang
-    # iterm2
+    jj
     kubectl
     # pip
     poetry
