@@ -125,7 +125,7 @@ sudo apt -y install \
 	direnv \
 	dos2unix \
 	fd-find \
-	git git-lfs \
+	git git-filter-repo git-lfs \
 	glances \
 	gparted \
 	gnome-browser-connector gnome-tweaks \
