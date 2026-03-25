@@ -24,7 +24,6 @@ fi
 
 cargo binstall -y broot
 cargo binstall -y eza
-cargo binstall -y git-delta
 cargo binstall -y jj-cli
 cargo binstall -y sd
 cargo binstall -y tealdeer
