@@ -54,7 +54,6 @@ brew_packages=(
 	awscli
 	bash-completion@2
 	bat
-	bfg
 	bit-git
 	blast
 	boost cmake
@@ -76,7 +75,7 @@ brew_packages=(
 	findutils
 	fish
 	fnm
-	gh git git-delta git-extras git-lfs git-secrets lazygit
+	gh git git-delta git-extras git-filter-repo git-lfs git-secrets lazygit
 	glances
 	harelba/q/q
 	hashicorp/tap/terraform
