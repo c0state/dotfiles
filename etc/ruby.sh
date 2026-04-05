@@ -32,8 +32,3 @@ fi
 rbenv global "$LATEST_RUBY_VERSION"
 
 eval "$(rbenv init -)"
-
-gem install --user-install cocoapods
-gem install --user-install fastlane
-
-gem update --user-install
