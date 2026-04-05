@@ -35,7 +35,8 @@ bun add --global \
 	git-split-diffs \
 	imageoptim-cli \
 	np \
-	npm-check-updates
+	npm-check-updates \
+	opencode-ai
 
 # ---------- install claude code (native installer)
 
