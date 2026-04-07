@@ -24,7 +24,7 @@
     lh = "!lh() { git log --pretty=full -L $1,$1:\"$2\"; }; lh"
     mm = merge origin/master --autostash
     mtbc = mergetool --tool=bc
-    pullr = "!git fetch --all --autostash && git pull --rebase --autostash"
+    pullr = "!git fetch --all && git pull --rebase --autostash"
     rs = "!git restore . --recurse-submodules"
     sl = stash list
     st = status
