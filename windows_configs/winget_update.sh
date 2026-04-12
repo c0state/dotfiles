@@ -24,7 +24,7 @@ winget install --id github.githubdesktop
 winget install --id google.antigravity
 winget install --id google.chrome
 winget install --id google.drive
-winget install --id jetbrains.toolbox 
+winget install --id jetbrains.toolbox
 winget install --id jigsaw.outlinemanager
 winget install --id kubernetes.kubectl
 winget install --id kubernetes.minikube
@@ -52,4 +52,5 @@ winget install --id whatsapp.whatsapp
 winget install --id windirstat.windirstat
 winget install --name "windows subsystem for linux preview" --source msstore
 winget install --id wireguard.wireguard
+winget install --id zedIndustries.zed
 winget install --id zoom.zoom
