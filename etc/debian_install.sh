@@ -71,6 +71,10 @@ curl -fsSL https://downloads.k8slens.dev/keys/gpg | sudo gpg --dearmor --yes -o 
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/lens-archive-keyring.gpg] https://downloads.k8slens.dev/apt/debian stable main" |
 	sudo tee /etc/apt/sources.list.d/lens.list >/dev/null
 
+# claude desktop - https://github.com/aaddrick/claude-desktop-debian
+curl -fsSL https://aaddrick.github.io/claude-desktop-debian/KEY.gpg | sudo gpg --dearmor -o /usr/share/keyrings/claude-desktop.gpg
+echo "deb [signed-by=/usr/share/keyrings/claude-desktop.gpg arch=amd64,arm64] https://aaddrick.github.io/claude-desktop-debian stable main" | sudo tee /etc/apt/sources.list.d/claude-desktop.list
+
 # onedrive
 wget -qO - https://download.opensuse.org/repositories/home:/npreining:/debian-ubuntu-onedrive/xUbuntu_25.04/Release.key | gpg --dearmor | sudo tee /usr/share/keyrings/onedrive.gpg >/dev/null
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/onedrive.gpg] https://download.opensuse.org/repositories/home:/npreining:/debian-ubuntu-onedrive/xUbuntu_25.04/ ./" | sudo tee /etc/apt/sources.list.d/onedrive.list
@@ -213,6 +217,7 @@ sudo apt -y install alacritty || true
 # install developer packages
 sudo apt -y install \
 	antigravity \
+	claude-desktop \
 	code \
 	fonts-firacode fonts-hack fonts-jetbrains-mono \
 	gh \
