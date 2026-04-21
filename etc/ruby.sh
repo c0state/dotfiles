@@ -31,4 +31,7 @@ fi
 
 rbenv global "$LATEST_RUBY_VERSION"
 
+rm -f "$HOME/.rbenv/shims/.rbenv-shim"
+rbenv rehash
+
 eval "$(rbenv init -)"
