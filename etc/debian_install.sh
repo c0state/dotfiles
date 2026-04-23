@@ -320,6 +320,12 @@ sudo apt -y install \
 sudo apt -y install \
 	ruby-dev
 
+#------------------------------ enable systemd user session in WSL
+
+if [[ -n "$WSL_DISTRO_NAME" ]]; then
+	loginctl enable-linger "$USER"
+fi
+
 #------------------------------ set up rclone systemd service
 
 mkdir -p "$HOME"/.config/systemd/user
