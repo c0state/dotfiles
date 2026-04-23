@@ -73,7 +73,7 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/lens-
 
 # claude desktop - https://github.com/aaddrick/claude-desktop-debian
 curl -fsSL https://aaddrick.github.io/claude-desktop-debian/KEY.gpg | gpg --dearmor | sudo tee /usr/share/keyrings/claude-desktop.gpg
-echo "deb [signed-by=/usr/share/keyrings/claude-desktop.gpg arch=amd64,arm64] https://aaddrick.github.io/claude-desktop-debian stable main" | sudo tee /etc/apt/sources.list.d/claude-desktop.list
+echo "deb [signed-by=/usr/share/keyrings/claude-desktop.gpg arch=amd64,arm64] https://pkg.claude-desktop-debian.dev stable main" | sudo tee /etc/apt/sources.list.d/claude-desktop.list
 
 # onedrive
 wget -qO - https://download.opensuse.org/repositories/home:/npreining:/debian-ubuntu-onedrive/xUbuntu_25.04/Release.key | gpg --dearmor | sudo tee /usr/share/keyrings/onedrive.gpg >/dev/null
