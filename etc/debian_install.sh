@@ -329,6 +329,7 @@ fi
 #------------------------------ set up rclone systemd service
 
 mkdir -p "$HOME"/.config/systemd/user
+mkdir -p "$HOME/Google.Drive"
 cat <<'EOF' >"$HOME"/.config/systemd/user/rclone-gdrive.service
 [Unit]
 Description=Rclone mount for Google Drive (gdrive remote)
@@ -350,6 +351,10 @@ RestartSec=10
 WantedBy=default.target
 EOF
 systemctl --user daemon-reload
+# Note: rclone must be configured manually first via `rclone config` (OAuth browser flow)
+# Name the remote "gdrive", type "drive", full access scope. Then start with:
+#   systemctl --user start rclone-gdrive.service
+systemctl --user enable rclone-gdrive.service
 
 echo "--------------------------------------------------"
 echo "Successfully installed all Linux packages!"
