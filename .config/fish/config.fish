@@ -45,6 +45,7 @@ end
 
 if test "$PLATFORM" = Linux
     if test -n "$WSL_DISTRO_NAME"
+        set -gx GCM_CREDENTIAL_STORE wincred
         alias pbcopy="clip.exe"
         alias pbpaste="powershell.exe -noprofile -command Get-Clipboard"
     else if type -q wl-copy

@@ -39,6 +39,7 @@ fi
 
 if [ "$(uname -s)" = "Linux" ]; then
     if [ -n "$WSL_DISTRO_NAME" ]; then
+        export GCM_CREDENTIAL_STORE=wincred
         alias pbcopy="clip.exe"
         alias pbpaste="powershell.exe -noprofile -command Get-Clipboard"
     elif command -v wl-copy >/dev/null 2>&1; then
