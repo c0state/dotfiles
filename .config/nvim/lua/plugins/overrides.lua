@@ -1,16 +1,11 @@
 return {
-  -- snacks: show hidden files and search case-insensitively in the explorer
+  -- snacks: show hidden and gitignored files in pickers
   { "folke/snacks.nvim",
     opts = {
       picker = {
         sources = {
-          explorer = {
-            hidden = true,
-            matcher = {
-              ignorecase = true,
-              smartcase = false,
-            },
-          },
+          explorer = { hidden = true, ignored = true },
+          files = { hidden = true, ignored = true },
         },
       },
     },
