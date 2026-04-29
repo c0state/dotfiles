@@ -68,7 +68,7 @@ _deno() {
 '*--require=[A list of CommonJS modules that will be executed before the main module]:FILE:_files' \
 '(--no-check)--check=[Enable type-checking. This subcommand does not type-check by default   If the value of "all" is supplied, remote modules will be included.   Alternatively, the '\''deno check'\'' subcommand can be used]::CHECK_TYPE:_default' \
 '*--watch=[Watch for file changes and restart process automatically.   Local files from entry point module graph are watched by default.   Additional paths might be watched by passing them as arguments to this flag.]::FILES:_files' \
-'(--watch)*--watch-hmr=[Watch for file changes and restart process automatically.   Local files from entry point module graph are watched by default.   Additional paths might be watched by passing them as arguments to this flag.]::FILES:_files' \
+'(--watch)*--watch-hmr=[Watch for file changes and hot-replace modules. The process restarts if hot replacement fails.   Local files from entry point module graph are watched by default.   Additional paths might be watched by passing them as arguments to this flag.]::FILES:_files' \
 '*--watch-exclude=[Exclude provided files/patterns from watch mode]::FILES:_files' \
 '--ext=[Set content type of the supplied file]: :(ts tsx js jsx mts mjs cts cjs)' \
 '*--env-file=[Load environment variables from local file   Only the first environment variable with a given key is used.   Existing process environment variables are not overwritten, so if variables with the same names already exist in the environment, their values will be preserved.   Where multiple declarations for the same environment variable exist in your .env file, the first one encountered is applied. This is determined by the order of the files you pass as arguments.]::FILE:_files' \
@@ -196,7 +196,7 @@ _arguments "${_arguments_options[@]}" : \
 '*--require=[A list of CommonJS modules that will be executed before the main module]:FILE:_files' \
 '(--no-check)--check=[Enable type-checking. This subcommand does not type-check by default   If the value of "all" is supplied, remote modules will be included.   Alternatively, the '\''deno check'\'' subcommand can be used]::CHECK_TYPE:_default' \
 '*--watch=[Watch for file changes and restart process automatically.   Local files from entry point module graph are watched by default.   Additional paths might be watched by passing them as arguments to this flag.]::FILES:_files' \
-'(--watch)*--watch-hmr=[Watch for file changes and restart process automatically.   Local files from entry point module graph are watched by default.   Additional paths might be watched by passing them as arguments to this flag.]::FILES:_files' \
+'(--watch)*--watch-hmr=[Watch for file changes and hot-replace modules. The process restarts if hot replacement fails.   Local files from entry point module graph are watched by default.   Additional paths might be watched by passing them as arguments to this flag.]::FILES:_files' \
 '*--watch-exclude=[Exclude provided files/patterns from watch mode]::FILES:_files' \
 '--ext=[Set content type of the supplied file]: :(ts tsx js jsx mts mjs cts cjs)' \
 '*--env-file=[Load environment variables from local file   Only the first environment variable with a given key is used.   Existing process environment variables are not overwritten, so if variables with the same names already exist in the environment, their values will be preserved.   Where multiple declarations for the same environment variable exist in your .env file, the first one encountered is applied. This is determined by the order of the files you pass as arguments.]::FILE:_files' \
@@ -317,7 +317,7 @@ _arguments "${_arguments_options[@]}" : \
 '--host=[The TCP address to serve on, defaulting to 0.0.0.0 (all interfaces)]: :_default' \
 '(--no-check)--check=[Enable type-checking. This subcommand does not type-check by default   If the value of "all" is supplied, remote modules will be included.   Alternatively, the '\''deno check'\'' subcommand can be used]::CHECK_TYPE:_default' \
 '*--watch=[Watch for file changes and restart process automatically.   Local files from entry point module graph are watched by default.   Additional paths might be watched by passing them as arguments to this flag.]::FILES:_files' \
-'(--watch)*--watch-hmr=[Watch for file changes and restart process automatically.   Local files from entry point module graph are watched by default.   Additional paths might be watched by passing them as arguments to this flag.]::FILES:_files' \
+'(--watch)*--watch-hmr=[Watch for file changes and hot-replace modules. The process restarts if hot replacement fails.   Local files from entry point module graph are watched by default.   Additional paths might be watched by passing them as arguments to this flag.]::FILES:_files' \
 '*--watch-exclude=[Exclude provided files/patterns from watch mode]::FILES:_files' \
 '--ext=[Set content type of the supplied file]: :(ts tsx js jsx mts mjs cts cjs)' \
 '*--env-file=[Load environment variables from local file   Only the first environment variable with a given key is used.   Existing process environment variables are not overwritten, so if variables with the same names already exist in the environment, their values will be preserved.   Where multiple declarations for the same environment variable exist in your .env file, the first one encountered is applied. This is determined by the order of the files you pass as arguments.]::FILE:_files' \
@@ -2415,6 +2415,7 @@ _arguments "${_arguments_options[@]}" : \
 '--force[Replace current exe even if not out-of-date]' \
 '--canary[Upgrade to canary builds]' \
 '(--canary --version)--rc[Upgrade to a release candidate]' \
+'--no-delta[Disable delta updates and always download the full archive]' \
 '::version-or-hash-or-channel -- Version (v1.46.0), channel (alpha, beta, rc, canary), commit hash (9bc2dd29ad6ba334fd57a20114e367d3c04763d4), or pr 12345 to install from a PR:_default' \
 && ret=0
 ;;
