@@ -5,7 +5,7 @@
   "autoUpdatesChannel": "latest",
   "theme": "dark-daltonized",
   "permissions": {
-    "defaultMode": "default",
+    "defaultMode": "auto",
     "allow": [
       "WebFetch(domain:*)",
       "WebSearch",
