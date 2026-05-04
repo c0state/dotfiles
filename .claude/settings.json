@@ -1,11 +1,17 @@
 {
   "alwaysThinkingEnabled": true,
+  "model": "opus",
+  "effortLevel": "high",
+  "autoUpdatesChannel": "latest",
+  "theme": "dark-daltonized",
   "permissions": {
+    "defaultMode": "default",
     "allow": [
       "WebFetch(domain:*)",
       "WebSearch",
       "Read",
       "Glob",
+      "Bash(grep:*)",
       "Bash(gh pr view:*)",
       "Bash(gh pr diff:*)",
       "Bash(gh pr list:*)",
