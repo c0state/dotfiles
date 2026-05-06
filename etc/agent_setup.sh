@@ -2,21 +2,12 @@
 
 set -eux
 
-PLATFORM=$(uname)
-
 # ---------- claude code
 
 if ! which claude; then
   curl -fsSL https://claude.ai/install.sh | bash
 else
   claude update
-fi
-
-# link desktop config (macOS only)
-if [[ "$PLATFORM" == "Darwin" ]]; then
-  mkdir -p "$HOME/Library/Application Support/Claude"
-  ln -f -s "$HOME/.dotfiles/osx_configs/claude_desktop_config.json" \
-    "$HOME/Library/Application Support/Claude/claude_desktop_config.json"
 fi
 
 # symlink claude user settings
