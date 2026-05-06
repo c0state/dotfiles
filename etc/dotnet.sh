@@ -3,8 +3,8 @@
 PLATFORM=$(uname)
 
 if [[ $PLATFORM != 'Linux' ]]; then
-	echo "This script is only for Debian based Linux systems"
-	exit 0
+  echo "This script is only for Debian based Linux systems"
+  exit 0
 fi
 
 sudo apt-get update

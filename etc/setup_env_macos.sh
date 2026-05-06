@@ -6,9 +6,9 @@ defaults -currentHost write -globalDomain NSStatusItemSpacing -int 6
 defaults -currentHost write -globalDomain NSStatusItemSelectionPadding -int 4
 
 curl -L https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.tar.xz |
-	tar zxvf - -C "$HOME"/Library/Fonts
+  tar zxvf - -C "$HOME"/Library/Fonts
 curl -L https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Hack.tar.xz |
-	tar zxvf - -C "$HOME"/Library/Fonts
+  tar zxvf - -C "$HOME"/Library/Fonts
 
 # for vscodevim key repeat
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
