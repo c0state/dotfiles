@@ -36,5 +36,9 @@
       "Bash(rm -rf *)",
       "Bash(git push --force*)"
     ]
+  },
+  "enabledPlugins": {
+    "typescript-lsp@anthropics-claude-code": true,
+    "pyright-lsp@anthropics-claude-code": true
   }
 }
