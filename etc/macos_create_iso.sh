@@ -22,4 +22,3 @@ hdiutil detach /Volumes/Install\ macOS\ *
 hdiutil convert /tmp/macos.cdr.dmg -format UDTO -o /tmp/macos.iso
 mv /tmp/macos.iso.cdr ~/Desktop/macos.iso
 rm /tmp/macos.cdr.dmg
-

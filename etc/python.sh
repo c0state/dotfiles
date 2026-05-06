@@ -9,26 +9,26 @@ REINSTALL_TOOLS=${REINSTALL_TOOLS:-""}
 DEFAULT_VENV_PATH="$HOME/.local/share/python-venvs/$DEFAULT_PYTHON_VENV_NAME"
 
 CURRENT_PYTHON_VERSION=""
-if command -v python &> /dev/null; then
-    CURRENT_PYTHON_VERSION=$(python --version 2>&1 | awk '{print $2}' | cut -d. -f1,2)
+if command -v python &>/dev/null; then
+  CURRENT_PYTHON_VERSION=$(python --version 2>&1 | awk '{print $2}' | cut -d. -f1,2)
 fi
 
 if [[ -n "$REINSTALL_TOOLS" ]] || [[ "$CURRENT_PYTHON_VERSION" != "$PYTHON_VERSION" ]]; then
-    rm -rf "$HOME"/.local/share/uv
-    rm -rf "$HOME"/Library/"Application Support"/pypoetry
-    rm -rf "$HOME"/Library/Caches/pypoetry
-    rm -rf "$DEFAULT_VENV_PATH"
+  rm -rf "$HOME"/.local/share/uv
+  rm -rf "$HOME"/Library/"Application Support"/pypoetry
+  rm -rf "$HOME"/Library/Caches/pypoetry
+  rm -rf "$DEFAULT_VENV_PATH"
 fi
 
 #---------- uv
 
-if ! command -v uv &> /dev/null; then
-    curl -LsSf https://astral.sh/uv/install.sh | sh
+if ! command -v uv &>/dev/null; then
+  curl -LsSf https://astral.sh/uv/install.sh | sh
 else
-    uv self update
+  uv self update
 fi
 
-uv generate-shell-completion fish > ~/.config/fish/completions/uv.fish
+uv generate-shell-completion fish >~/.config/fish/completions/uv.fish
 
 #---------- set up default python venv
 
@@ -36,7 +36,7 @@ uv python install "$PYTHON_VERSION" --default
 uv python pin "$PYTHON_VERSION" --global
 
 if [[ ! -d "$DEFAULT_VENV_PATH" ]]; then
-    uv venv "$DEFAULT_VENV_PATH" --python "$PYTHON_VERSION"
+  uv venv "$DEFAULT_VENV_PATH" --python "$PYTHON_VERSION"
 fi
 
 uv python upgrade
@@ -46,11 +46,11 @@ uv python upgrade
 # Install packages into the default virtualenv
 uv pip install -p "$DEFAULT_VENV_PATH" --upgrade pip setuptools
 uv pip install -p "$DEFAULT_VENV_PATH" --upgrade \
-    openai \
-    jedi \
-    pynvim \
-    pytest \
-    build twine
+  openai \
+  jedi \
+  pynvim \
+  pytest \
+  build twine
 
 #---------- uv tools
 
@@ -95,4 +95,3 @@ uv tool install --force yt-dlp
 #---------- upgrade all uv tools
 
 uv tool upgrade --all
-
