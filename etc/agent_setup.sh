@@ -15,9 +15,12 @@ mkdir -p "$HOME/.claude"
 ln -s -f -n "$HOME/.dotfiles/.claude/settings.json" "$HOME/.claude/settings.json"
 
 # install claude plugins
-# NOTE: verify plugin names with `claude plugin list` or claude.ai/plugins
-claude plugin install typescript-lsp@anthropics-claude-code || true
-claude plugin install pyright-lsp@anthropics-claude-code || true
+claude plugin install typescript-lsp@claude-plugins-official || true
+claude plugin install pyright-lsp@claude-plugins-official || true
+
+claude plugin marketplace add aws/agent-toolkit-for-aws || true
+claude plugin install aws-core@agent-toolkit-for-aws || true
 
 # ---------- gemini cli (installed via bun in js_tools.sh — config here if needed)
+
 # ---------- openai codex (installed via bun in js_tools.sh — config here if needed)
