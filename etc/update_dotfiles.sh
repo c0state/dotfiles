@@ -17,11 +17,11 @@ fi
 #---------- update deno
 
 if command -v deno >/dev/null; then
-    deno upgrade
-    deno completions fish > "$HOME"/.config/fish/completions/deno.fish
-    deno completions zsh > "$HOME"/.oh-my-zsh-custom/plugins/deno/_deno
+  deno upgrade
+  deno completions fish >"$HOME"/.config/fish/completions/deno.fish
+  deno completions zsh >"$HOME"/.oh-my-zsh-custom/plugins/deno/_deno
 fi
 
 if command -v bit >/dev/null; then
-    bit update
+  bit update
 fi
