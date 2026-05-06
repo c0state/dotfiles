@@ -1,11 +1,5 @@
 {
-  "alwaysThinkingEnabled": true,
-  "model": "opus",
-  "effortLevel": "high",
-  "autoUpdatesChannel": "latest",
-  "theme": "dark-daltonized",
   "permissions": {
-    "defaultMode": "auto",
     "allow": [
       "WebFetch(domain:*)",
       "WebSearch",
@@ -35,10 +29,25 @@
     "deny": [
       "Bash(rm -rf *)",
       "Bash(git push --force*)"
-    ]
+    ],
+    "defaultMode": "auto"
   },
+  "model": "opus",
   "enabledPlugins": {
-    "typescript-lsp@anthropics-claude-code": true,
-    "pyright-lsp@anthropics-claude-code": true
-  }
+    "aws-core@agent-toolkit-for-aws": true,
+    "typescript-lsp@claude-plugins-official": true,
+    "pyright-lsp@claude-plugins-official": true
+  },
+  "extraKnownMarketplaces": {
+    "agent-toolkit-for-aws": {
+      "source": {
+        "source": "github",
+        "repo": "aws/agent-toolkit-for-aws"
+      }
+    }
+  },
+  "alwaysThinkingEnabled": true,
+  "effortLevel": "high",
+  "autoUpdatesChannel": "latest",
+  "theme": "dark-daltonized"
 }
