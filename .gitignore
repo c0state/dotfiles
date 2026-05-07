@@ -18,3 +18,6 @@
 .config/fish/conf.d
 .config/fish/fish_variables*
 .config/fish/functions
+
+# per-machine skip list for etc/macos_install.sh
+etc/macos_install.local.skip

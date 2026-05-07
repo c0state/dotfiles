@@ -144,12 +144,6 @@ if [[ -z $IS_MACOS_ARM ]]; then
   brew_packages+=(hyperkit)
 fi
 
-echo "---------- Installing brew packages"
-
-for brew_package in "${brew_packages[@]}"; do
-  brew list "$brew_package" >/dev/null 2>&1 || brew install "$brew_package"
-done
-
 #---------- brew cask packages ----------
 
 brew_cask_packages=(
@@ -240,6 +234,44 @@ brew_cask_packages=(
   zeplin
   zoom
 )
+
+#---------- local skip list ----------
+#
+# Optional, gitignored file to skip specific packages per machine.
+# Applies to both formula and cask lists.
+
+skip_file="$(dirname "$0")/macos_install.local.skip"
+declare -A skip_set=()
+if [[ -r $skip_file ]]; then
+  while IFS= read -r line; do
+    [[ -z $line ]] && continue
+    skip_set[$line]=1
+  done <"$skip_file"
+fi
+
+filter_skipped() {
+  local -n _src=$1 _dst=$2
+  _dst=()
+  local pkg
+  for pkg in "${_src[@]}"; do
+    if [[ -n ${skip_set[$pkg]+x} ]]; then
+      echo "  skipping (in $skip_file): $pkg"
+    else
+      _dst+=("$pkg")
+    fi
+  done
+}
+
+filter_skipped brew_packages brew_packages_filtered
+filter_skipped brew_cask_packages brew_cask_packages_filtered
+brew_packages=("${brew_packages_filtered[@]}")
+brew_cask_packages=("${brew_cask_packages_filtered[@]}")
+
+echo "---------- Installing brew packages"
+
+for brew_package in "${brew_packages[@]}"; do
+  brew list "$brew_package" >/dev/null 2>&1 || brew install "$brew_package"
+done
 
 echo "---------- Installing brew cask packages"
 
