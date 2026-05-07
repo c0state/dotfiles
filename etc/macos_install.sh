@@ -183,7 +183,7 @@ brew_cask_packages=(
   gitkraken
   google-chrome
   google-drive
-  graphql-playground
+  graphiql
   handbrake
   headlamp
   imageoptim
