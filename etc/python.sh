@@ -55,7 +55,6 @@ uv pip install -p "$DEFAULT_VENV_PATH" --upgrade \
 #---------- uv tools
 
 uv tool install --force ansible
-uv tool install --force black
 uv tool install --force autoenv
 uv tool install --force cdiff
 uv tool install --force codemod
