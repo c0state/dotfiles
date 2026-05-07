@@ -5,14 +5,14 @@ PLATFORM=$(uname)
 PLATFORM_FULL=$(uname -a)
 MACH_TYPE=$(uname -m)
 if [[ "$PLATFORM" == "Darwin" && "$MACH_TYPE" == "arm64" ]]; then
-    IS_MACOS_ARM=1
+  IS_MACOS_ARM=1
 fi
 if [[ "$PLATFORM" == "Darwin" ]]; then
-    if [[ -n "$IS_MACOS_ARM" ]]; then
-        MACOS_BREW_PREFIX="/opt/homebrew"
-    else
-        MACOS_BREW_PREFIX="/usr/local/Homebrew"
-    fi
+  if [[ -n "$IS_MACOS_ARM" ]]; then
+    MACOS_BREW_PREFIX="/opt/homebrew"
+  else
+    MACOS_BREW_PREFIX="/usr/local/Homebrew"
+  fi
 fi
 
 #----- increase history file sizes
@@ -30,35 +30,39 @@ export TERM=xterm-256color
 
 source "$HOME"/.shell_aliases
 
+if [[ -r "$HOME/.dotfiles/agents/copilot/copilot.zsh" ]]; then
+  source "$HOME/.dotfiles/agents/copilot/copilot.zsh"
+fi
+
 # some agents set the pager (eg: antigravity), usually to cat, so don't modify if so
 if [[ -z "$PAGER" ]]; then
-    alias cat=bat
+  alias cat=bat
 fi
 
 #---------- clipboard (pbcopy/pbpaste on Linux)
 
 if [ "$(uname -s)" = "Linux" ]; then
-    if [ -n "$WSL_DISTRO_NAME" ]; then
-        alias pbcopy="clip.exe"
-        alias pbpaste="powershell.exe -noprofile -command Get-Clipboard"
-    elif command -v wl-copy >/dev/null 2>&1; then
-        alias pbcopy="wl-copy"
-        alias pbpaste="wl-paste"
-    elif command -v xclip >/dev/null 2>&1; then
-        alias pbcopy="xclip -selection clipboard"
-        alias pbpaste="xclip -selection clipboard -o"
-    fi
+  if [ -n "$WSL_DISTRO_NAME" ]; then
+    alias pbcopy="clip.exe"
+    alias pbpaste="powershell.exe -noprofile -command Get-Clipboard"
+  elif command -v wl-copy >/dev/null 2>&1; then
+    alias pbcopy="wl-copy"
+    alias pbpaste="wl-paste"
+  elif command -v xclip >/dev/null 2>&1; then
+    alias pbcopy="xclip -selection clipboard"
+    alias pbpaste="xclip -selection clipboard -o"
+  fi
 fi
 
 #----- node config
 
 # linuxbrew
-export HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew";
-export HOMEBREW_CELLAR="/home/linuxbrew/.linuxbrew/Cellar";
-export HOMEBREW_REPOSITORY="/home/linuxbrew/.linuxbrew/Homebrew";
-export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin${PATH+:$PATH}";
-export MANPATH="/home/linuxbrew/.linuxbrew/share/man${MANPATH+:$MANPATH}:";
-export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:${INFOPATH:-}";
+export HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew"
+export HOMEBREW_CELLAR="/home/linuxbrew/.linuxbrew/Cellar"
+export HOMEBREW_REPOSITORY="/home/linuxbrew/.linuxbrew/Homebrew"
+export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin${PATH+:$PATH}"
+export MANPATH="/home/linuxbrew/.linuxbrew/share/man${MANPATH+:$MANPATH}:"
+export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:${INFOPATH:-}"
 
 # add yarn global bin path
 if [[ -e "$HOME/.yarn/bin" ]]; then
@@ -87,7 +91,7 @@ if [[ -e "$HOME/.fastlane/bin" ]]; then
 fi
 
 #----- php version manager
-if [[ -e "${HOME}/.php-version" ]] ; then
+if [[ -e "${HOME}/.php-version" ]]; then
   export PHP_VERSIONS="${HOME}/.php-version/versions"
   source $HOME/.php-version/php-version.sh && php-version 5
 fi
@@ -108,20 +112,20 @@ export PATH="$HOME/.local/go/bin":"$GOPATH/bin":$PATH
 
 #----- rust
 if [[ -e "$HOME/.cargo" ]]; then
-    source "$HOME/.cargo/env"
+  source "$HOME/.cargo/env"
 fi
 
 #----- postgres
 
 if [[ "$PLATFORM" == "Darwin" ]]; then
-    for pg_dir in /opt/homebrew/opt/postgresql*/bin; do
-        export PATH=:$pg_dir:$PATH
-    done
+  for pg_dir in /opt/homebrew/opt/postgresql*/bin; do
+    export PATH=:$pg_dir:$PATH
+  done
 fi
 
 #----- git-subrepo
 if [[ -e $HOME/.git-subrepo/.rc ]]; then
-    source $HOME/.git-subrepo/.rc
+  source $HOME/.git-subrepo/.rc
 fi
 
 #----- deno
@@ -134,8 +138,8 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export PATH="$MACOS_BREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH"
 
 #----- keychain agent
-if command -v keychain > /dev/null; then
-    eval "$(keychain --eval --quiet)"
+if command -v keychain >/dev/null; then
+  eval "$(keychain --eval --quiet)"
 fi
 
 #----- source any custom shell configuration

@@ -31,6 +31,10 @@ end
 source ~/.shell_aliases
 source ~/.shell_functions.fish
 
+if test -r ~/.dotfiles/agents/copilot/copilot.fish
+    source ~/.dotfiles/agents/copilot/copilot.fish
+end
+
 # some agents set the pager (eg: antigravity), usually to cat, so don't modify if so
 if test -z "$PAGER"
     # use bat in place of cat
@@ -137,7 +141,6 @@ fzf --fish | source
 if type -q aws_completer
     complete --command aws --no-files --arguments '(begin; set --local --export COMP_SHELL fish; set --local --export COMP_LINE (commandline); aws_completer | sed \'s/ $//\'; end)'
 end
-
 
 #---------- keychain agent
 
