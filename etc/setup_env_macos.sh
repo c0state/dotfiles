@@ -13,6 +13,15 @@ curl -L https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Hack.ta
 # for vscodevim key repeat
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 
+# disable Mission Control "Move left/right a space" so Ctrl+Left/Right reach apps (e.g. nvim window resize)
+# AppleSymbolicHotKeys IDs: 79/80 = move-left (with/without Option), 81/82 = move-right
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 79 '{enabled = 0; value = { parameters = (65535, 123, 262144); type = "standard"; }; }'
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 80 '{enabled = 0; value = { parameters = (65535, 123, 786432); type = "standard"; }; }'
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 81 '{enabled = 0; value = { parameters = (65535, 124, 262144); type = "standard"; }; }'
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 82 '{enabled = 0; value = { parameters = (65535, 124, 786432); type = "standard"; }; }'
+# apply without logout
+/System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
+
 # remove default usage of osxkeychain in xcode config
 # TODO: requires full disk permission for whatever term is calling or tool is editing this file
 #TMP_GITCONFIG_FILE=$(mktemp)
