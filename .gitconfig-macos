@@ -2,11 +2,9 @@
     path = .gitconfig-base
 [credential]
     # this is actually needed to clear out any existing helpers
-    helper =
-    helper = /usr/local/share/gcm-core/git-credential-manager
     credentialStore = keychain
-[credential "https://dev.azure.com"]
-    useHttpPath = true
+	helper = 
+	helper = /usr/local/share/gcm-core/git-credential-manager
 [difftool "bc"]
     cmd = /opt/homebrew/bin/bcomp \"$LOCAL\" \"$REMOTE\"
     trustExitCode = true
@@ -20,3 +18,5 @@
 [mergetool "sourcetree"]
     cmd = bcomp \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
     trustExitCode = true
+[credential "https://dev.azure.com"]
+	useHttpPath = true
