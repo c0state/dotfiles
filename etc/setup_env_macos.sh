@@ -19,7 +19,7 @@ defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 79 '{ena
 defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 80 '{enabled = 0; value = { parameters = (65535, 123, 786432); type = "standard"; }; }'
 defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 81 '{enabled = 0; value = { parameters = (65535, 124, 262144); type = "standard"; }; }'
 defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 82 '{enabled = 0; value = { parameters = (65535, 124, 786432); type = "standard"; }; }'
-# apply without logout
+# try to apply above settings, but still might need logout/reboot to take effect
 /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
 
 # remove default usage of osxkeychain in xcode config
