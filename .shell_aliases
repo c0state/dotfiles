@@ -1,3 +1,6 @@
+# claude code: default to continuing the most recent session in cwd
+alias claude="claude --continue"
+
 alias diff="colordiff --side-by-side --suppress-common-lines"
 alias dbox="dropbox.py"
 
