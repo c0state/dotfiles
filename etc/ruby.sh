@@ -25,13 +25,14 @@ PATH=$PATH:$HOME/.rbenv/bin
 
 LATEST_RUBY_VERSION=$(rbenv install --list | grep -E "^[0-9]" | sort -V | tail -n 1)
 
+rm -f "$HOME/.rbenv/shims/.rbenv-shim"
+
 if ! (rbenv versions | grep "$LATEST_RUBY_VERSION"); then
   rbenv install "$LATEST_RUBY_VERSION"
 fi
 
 rbenv global "$LATEST_RUBY_VERSION"
 
-rm -f "$HOME/.rbenv/shims/.rbenv-shim"
 rbenv rehash
 
 eval "$(rbenv init -)"
