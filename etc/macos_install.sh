@@ -183,7 +183,6 @@ brew_cask_packages=(
   gitkraken
   google-chrome
   google-drive
-  graphiql
   handbrake
   headlamp
   imageoptim
@@ -208,7 +207,6 @@ brew_cask_packages=(
   raspberry-pi-imager
   rectangle
   sketch
-  skype
   slack
   sourcetree
   spectacle
