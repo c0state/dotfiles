@@ -139,10 +139,13 @@ fi
 
 # ---------- github cli
 
-if gh auth status; then
-  gh extension install githubnext/gh-aw || true
-  gh extension upgrade --all
+if ! gh auth status; then
+  echo "gh is not authenticated; run 'gh auth login'" >&2
+  exit 1
 fi
+
+gh extension install githubnext/gh-aw || true
+gh extension upgrade --all
 
 # ---------- fabric
 
