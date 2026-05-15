@@ -140,6 +140,7 @@ fi
 # ---------- github cli
 
 if gh auth status; then
+  gh extension install githubnext/gh-aw || true
   gh extension upgrade --all
 fi
 
