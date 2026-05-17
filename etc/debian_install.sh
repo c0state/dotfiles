@@ -246,14 +246,10 @@ if ! which bcompare >/dev/null; then
   install_package "https://www.scootersoftware.com/files/bcompare-5.1.6.31527_$DPKG_ARCH.deb"
 fi
 
-if ! which teamviewer >/dev/null; then
-  install_package "https://download.teamviewer.com/download/linux/teamviewer_$DPKG_ARCH.deb"
-fi
+install_package "https://download.teamviewer.com/download/linux/teamviewer_$DPKG_ARCH.deb"
 
-if ! which rustdesk >/dev/null; then
-  RUSTDESK_VERSION=$(get_github_release_version "https://github.com/rustdesk/rustdesk/releases/latest")
-  install_package "https://github.com/rustdesk/rustdesk/releases/download/$RUSTDESK_VERSION/rustdesk-$RUSTDESK_VERSION-$ARCH.deb"
-fi
+RUSTDESK_VERSION=$(get_github_release_version "https://github.com/rustdesk/rustdesk/releases/latest")
+install_package "https://github.com/rustdesk/rustdesk/releases/download/$RUSTDESK_VERSION/rustdesk-$RUSTDESK_VERSION-$ARCH.deb"
 
 if ! which obsidian >/dev/null; then
   OBSIDIAN_VERSION=$(get_github_release_version "https://github.com/obsidianmd/obsidian-releases/releases/latest")
@@ -264,7 +260,9 @@ if ! which cursor >/dev/null; then
   install_package https://api2.cursor.sh/updates/download/golden/linux-${SHORT_ARCH}-deb/cursor/2.4
 fi
 
-install_package https://api.gitkraken.dev/releases/production/linux/${SHORT_ARCH}/active/gitkraken-${DPKG_ARCH}.deb
+if ! which gitkraken >/dev/null; then
+  install_package https://api.gitkraken.dev/releases/production/linux/${SHORT_ARCH}/active/gitkraken-${DPKG_ARCH}.deb
+fi
 
 RPI_IMAGER_VERSION=$(get_github_release_version "https://github.com/raspberrypi/rpi-imager/releases/latest")
 install_package https://github.com/raspberrypi/rpi-imager/releases/download/v${RPI_IMAGER_VERSION}/rpi-imager_${RPI_IMAGER_VERSION}_${DPKG_ARCH}.deb
