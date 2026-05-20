@@ -52,6 +52,7 @@ brew_packages=(
   applesimutils
   aws-iam-authenticator aws-sam-cli eksctl
   awscli
+  bash
   bash-completion@2
   bat
   bit-git
@@ -239,31 +240,46 @@ brew_cask_packages=(
 # Applies to both formula and cask lists.
 
 skip_file="$(dirname "$0")/macos_install.local.skip"
-declare -A skip_set=()
+skip_list=""
 if [[ -r $skip_file ]]; then
   while IFS= read -r line; do
     [[ -z $line ]] && continue
-    skip_set[$line]=1
+    skip_list="${skip_list}"$'\n'"${line}"
   done <"$skip_file"
 fi
 
-filter_skipped() {
-  local -n _src=$1 _dst=$2
-  _dst=()
-  local pkg
-  for pkg in "${_src[@]}"; do
-    if [[ -n ${skip_set[$pkg]+x} ]]; then
-      echo "  skipping (in $skip_file): $pkg"
-    else
-      _dst+=("$pkg")
-    fi
-  done
+is_skipped() {
+  local pkg=$1
+  [[ -z $skip_list ]] && return 1
+  printf '%s\n' "$skip_list" | grep -Fxq -- "$pkg"
 }
 
-filter_skipped brew_packages brew_packages_filtered
-filter_skipped brew_cask_packages brew_cask_packages_filtered
-brew_packages=("${brew_packages_filtered[@]}")
-brew_cask_packages=("${brew_cask_packages_filtered[@]}")
+filter_skipped() {
+  local pkg
+  local -a out=()
+  for pkg in "$@"; do
+    if is_skipped "$pkg"; then
+      echo "  skipping (in $skip_file): $pkg"
+    else
+      out+=("$pkg")
+    fi
+  done
+  printf '%s\n' "${out[@]+"${out[@]}"}"
+}
+
+# Read filtered output back into arrays (one package per line).
+brew_packages_filtered=()
+while IFS= read -r line; do
+  [[ -n $line ]] && brew_packages_filtered+=("$line")
+done < <(filter_skipped "${brew_packages[@]}")
+
+brew_cask_packages_filtered=()
+while IFS= read -r line; do
+  [[ -n $line ]] && brew_cask_packages_filtered+=("$line")
+done < <(filter_skipped "${brew_cask_packages[@]}")
+
+brew_packages=("${brew_packages_filtered[@]+"${brew_packages_filtered[@]}"}")
+brew_cask_packages=("${brew_cask_packages_filtered[@]+"${brew_cask_packages_filtered[@]}"}")
 
 echo "---------- Installing brew packages"
 
