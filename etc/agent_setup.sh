@@ -30,4 +30,8 @@ ln -s -f -n \
 
 # ---------- gemini cli (installed via bun in js_tools.sh — config here if needed)
 
+if ! command -v agy >/dev/null 2>&1; then
+  curl -fsSL https://antigravity.google/cli/install.sh | bash
+fi
+
 # ---------- openai codex (installed via bun in js_tools.sh — config here if needed)
