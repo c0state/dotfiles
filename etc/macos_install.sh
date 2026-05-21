@@ -259,7 +259,7 @@ filter_skipped() {
   local -a out=()
   for pkg in "$@"; do
     if is_skipped "$pkg"; then
-      echo "  skipping (in $skip_file): $pkg"
+      echo "  skipping (in $skip_file): $pkg" >&2
     else
       out+=("$pkg")
     fi
