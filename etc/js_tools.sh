@@ -27,7 +27,6 @@ corepack prepare yarn@stable --activate
 bun add --global \
   @beads/bd \
   @github/copilot \
-  @google/gemini-cli \
   @googleworkspace/cli \
   @j178/prek \
   @openai/codex \
