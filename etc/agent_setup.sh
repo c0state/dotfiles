@@ -32,6 +32,8 @@ ln -s -f -n \
 
 if ! command -v agy >/dev/null 2>&1; then
   curl -fsSL https://antigravity.google/cli/install.sh | bash
+else
+  agy update
 fi
 
 # ---------- openai codex (installed via bun in js_tools.sh — config here if needed)
