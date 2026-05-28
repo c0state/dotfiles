@@ -49,5 +49,6 @@
   "alwaysThinkingEnabled": true,
   "effortLevel": "high",
   "autoUpdatesChannel": "latest",
-  "theme": "dark-daltonized"
+  "theme": "dark-daltonized",
+  "skipAutoPermissionPrompt": true
 }
