@@ -30,6 +30,7 @@ bun add --global \
   @googleworkspace/cli \
   @j178/prek \
   @openai/codex \
+  ccusage \
   diff-so-fancy \
   git-split-diffs \
   imageoptim-cli \
