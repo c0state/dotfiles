@@ -2118,7 +2118,6 @@ _arguments "${_arguments_options[@]}" : \
 '--dry-run[Show what would be packed without creating the tarball]' \
 '--allow-slow-types[Skip fast-check type extraction; .d.ts files are omitted from the output]' \
 '--allow-dirty[Allow packing if the repository has uncommitted changes]' \
-'--no-deno-shim[Don'\''t automatically add @deno/shim-deno dependency]' \
 '--no-source-maps[Don'\''t include source maps in the output]' \
 '*::files -- List of file patterns to include:_default' \
 && ret=0
