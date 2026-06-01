@@ -297,6 +297,7 @@ brew completions link
 
 #---------- Configure auto updater ----------
 
+mkdir -p ~/Library/LaunchAgents
 brew autoupdate delete && brew autoupdate start --cleanup
 
 #---------- Cleanup ----------
