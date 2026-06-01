@@ -185,6 +185,7 @@ brew_cask_packages=(
   gitkraken
   google-chrome
   google-drive
+  google-gemini
   handbrake
   headlamp
   imageoptim
