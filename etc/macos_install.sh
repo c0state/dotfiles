@@ -76,6 +76,7 @@ brew_packages=(
   findutils
   fish
   fnm
+  fpart
   gh git git-delta git-extras git-filter-repo git-lfs git-secrets lazygit
   glances
   harelba/q/q
@@ -121,6 +122,7 @@ brew_packages=(
   ripgrep-all
   redis
   rlwrap
+  rsync
   getsentry/tools/sentry-cli
   selenium-server
   shellcheck
