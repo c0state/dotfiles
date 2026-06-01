@@ -156,7 +156,6 @@ brew_cask_packages=(
   aerial
   alacritty
   alfred
-  amorphousdiskmark
   angry-ip-scanner
   antigravity
   balenaetcher
@@ -212,7 +211,6 @@ brew_cask_packages=(
   sketch
   slack
   sourcetree
-  spectacle
   sqlitestudio
   sqlpro-for-sqlite
   steam
