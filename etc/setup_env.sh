@@ -9,12 +9,6 @@ WSL_DISTRO_NAME=${WSL_DISTRO_NAME:-""}
 
 # ---------- set up dotfiles links
 
-if [[ ! -d /usr/local/bin ]]; then
-  sudo mkdir /usr/local/bin
-  sudo chown "$USER" /usr/local/bin
-  sudo chgrp staff /usr/local/bin
-fi
-
 mkdir -p "$HOME"/.local/bin
 
 DOTFILES=".bash_functions .bash_profile .bashrc .editorconfig .gitconfig-base .gdbinit .mrxvtrc .oh-my-zsh-custom .screenrc .shell_aliases .shell_functions .shell_functions.fish .shell_interactive.sh .studioforkdb .tmux.conf .toprc .wezterm.lua .zsh_functions .zshrc"
