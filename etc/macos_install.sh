@@ -221,6 +221,7 @@ brew_cask_packages=(
   teamviewer
   tor-browser
   tower
+  tunnelblick
   utm
   vagrant
   visual-studio-code
