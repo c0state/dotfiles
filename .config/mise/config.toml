@@ -1,5 +1,8 @@
 [settings]
 idiomatic_version_file_enable_tools = ["node", "python"]
 
+[settings.node]
+corepack = true
+
 [tools]
 node = "25"
