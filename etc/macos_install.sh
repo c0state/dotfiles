@@ -157,7 +157,7 @@ brew_cask_packages=(
   alacritty
   alfred
   angry-ip-scanner
-  antigravity
+  antigravity antigravity-cli antigravity-ide
   balenaetcher
   beekeeper-studio
   beyond-compare
