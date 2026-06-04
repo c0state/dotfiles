@@ -100,6 +100,8 @@ _deno() {
 '--cpu-prof[Start the V8 CPU profiler on startup and write the profile to disk on exit. Profiles are written to the current directory by default]' \
 '--cpu-prof-md[Generate a human-readable markdown report alongside the CPU profile]' \
 '--cpu-prof-flamegraph[Generate an SVG flamegraph alongside the CPU profile]' \
+'(--no-use-env-proxy)--use-env-proxy[Use HTTP_PROXY, HTTPS_PROXY, and NO_PROXY for node\:http/node\:https]' \
+'(--use-env-proxy)--no-use-env-proxy[]' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -257,6 +259,8 @@ _arguments "${_arguments_options[@]}" : \
 '--cpu-prof[Start the V8 CPU profiler on startup and write the profile to disk on exit. Profiles are written to the current directory by default]' \
 '--cpu-prof-md[Generate a human-readable markdown report alongside the CPU profile]' \
 '--cpu-prof-flamegraph[Generate an SVG flamegraph alongside the CPU profile]' \
+'(--no-use-env-proxy)--use-env-proxy[Use HTTP_PROXY, HTTPS_PROXY, and NO_PROXY for node\:http/node\:https]' \
+'(--use-env-proxy)--no-use-env-proxy[]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
 '*::script_arg -- Script arg:_files' \
@@ -1000,6 +1004,8 @@ _arguments "${_arguments_options[@]}" : \
 '--no-code-cache[Disable V8 code cache feature]' \
 '--no-terminal[Hide terminal on Windows]' \
 '--self-extracting[Create a self-extracting binary that extracts the embedded file system to disk on first run and then runs from there]' \
+'--bundle[Experimental. Bundle the entrypoint with esbuild before embedding, instead of shipping the whole node_modules tree.   Produces a smaller binary with faster startup, at the cost of dropping dynamic require/import patterns that can'\''t be statically traced.]' \
+'--minify[Experimental. Minify the bundled output. Only meaningful with --bundle.   Reduces both the embedded bundle size and runtime memory use, at the cost of less readable stack traces.]' \
 '*::script_arg -- Script arg:_files' \
 && ret=0
 ;;
@@ -2240,6 +2246,7 @@ _arguments "${_arguments_options[@]}" : \
 '--cwd=[Specify the directory to run the task in]:DIR:_files -/' \
 '-f+[Filter members of the workspace by name, implies --recursive flag]: :_default' \
 '--filter=[Filter members of the workspace by name, implies --recursive flag]: :_default' \
+'*--env-file=[Load environment variables from local file   Only the first environment variable with a given key is used.   Existing process environment variables are not overwritten, so if variables with the same names already exist in the environment, their values will be preserved.   Where multiple declarations for the same environment variable exist in your .env file, the first one encountered is applied. This is determined by the order of the files you pass as arguments.]::FILE:_files' \
 '--node-modules-dir=[Sets the node modules management mode for npm packages]::MODE:_default' \
 '--node-modules-linker=[Sets the linker mode for npm packages (isolated or hoisted)]:MODE:_default' \
 '-t+[Execute tasks with a tunnel to Deno Deploy.      Create a secure connection between your local machine and Deno Deploy,     providing access to centralised environment variables, logging,     and serving from your local environment to the public internet]:: :(true false)' \
