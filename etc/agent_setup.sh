@@ -37,3 +37,15 @@ else
 fi
 
 # ---------- openai codex (installed via bun in js_tools.sh — config here if needed)
+
+if ! which rtk; then
+  curl -fsSL https://raw.githubusercontent.com/rtk-ai/rtk/refs/heads/master/install.sh | sh
+  rtk gain
+
+  rtk init -g
+  rtk init -g --gemini
+  rtk init -g --codex
+  rtk init -g --agent cursor
+  rtk init -g --agent pi
+  rtk init --agent antigravity
+fi

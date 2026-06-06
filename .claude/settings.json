@@ -33,6 +33,19 @@
     "defaultMode": "auto"
   },
   "model": "opus",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "rtk hook claude"
+          }
+        ]
+      }
+    ]
+  },
   "enabledPlugins": {
     "aws-core@agent-toolkit-for-aws": true,
     "typescript-lsp@claude-plugins-official": true,
