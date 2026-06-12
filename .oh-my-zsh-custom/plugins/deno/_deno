@@ -396,8 +396,12 @@ _arguments "${_arguments_options[@]}" : \
 '-L+[Set log level]: :(trace debug info)' \
 '--log-level=[Set log level]: :(trace debug info)' \
 '*--allow-scripts=[Allow running npm lifecycle scripts for the given packages   Note\: Scripts will only be executed when using a node_modules directory (\`--node-modules-dir\`)]::PACKAGE:_default' \
+'-I+[Allow importing from remote hosts. Optionally specify allowed IP addresses and host names, with ports as necessary. Default value\: deno.land\:443,jsr.io\:443,esm.sh\:443,raw.esm.sh\:443,cdn.jsdelivr.net\:443,raw.githubusercontent.com\:443,gist.githubusercontent.com\:443]::IP_OR_HOSTNAME:_default' \
+'--allow-import=[Allow importing from remote hosts. Optionally specify allowed IP addresses and host names, with ports as necessary. Default value\: deno.land\:443,jsr.io\:443,esm.sh\:443,raw.esm.sh\:443,cdn.jsdelivr.net\:443,raw.githubusercontent.com\:443,gist.githubusercontent.com\:443]::IP_OR_HOSTNAME:_default' \
+'--deny-import=[Deny importing from remote hosts. Optionally specify denied IP addresses and host names, with ports as necessary.]::IP_OR_HOSTNAME:_default' \
 '--lock=[Check the specified lock file. (If value is not provided, defaults to "./deno.lock")]::FILE:_files' \
 '--frozen=[Error out if lockfile is out of date]::BOOLEAN:(true false)' \
+'*--env-file=[Load environment variables from local file   Only the first environment variable with a given key is used.   Existing process environment variables are not overwritten, so if variables with the same names already exist in the environment, their values will be preserved.   Where multiple declarations for the same environment variable exist in your .env file, the first one encountered is applied. This is determined by the order of the files you pass as arguments.]::FILE:_files' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -447,6 +451,7 @@ _arguments "${_arguments_options[@]}" : \
 '--log-level=[Set log level]: :(trace debug info)' \
 '--lock=[Check the specified lock file. (If value is not provided, defaults to "./deno.lock")]::FILE:_files' \
 '--frozen=[Error out if lockfile is out of date]::BOOLEAN:(true false)' \
+'*--env-file=[Load environment variables from local file   Only the first environment variable with a given key is used.   Existing process environment variables are not overwritten, so if variables with the same names already exist in the environment, their values will be preserved.   Where multiple declarations for the same environment variable exist in your .env file, the first one encountered is applied. This is determined by the order of the files you pass as arguments.]::FILE:_files' \
 '--level=[Only show advisories with severity greater or equal to the one specified]: :(low moderate high critical)' \
 '*--ignore=[Ignore advisories matching the given CVE IDs]:CVE:_default' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
@@ -663,6 +668,7 @@ _arguments "${_arguments_options[@]}" : \
 '--unsafely-ignore-certificate-errors=[DANGER\: Disables verification of TLS certificates]::HOSTNAMES:_default' \
 '--minimum-dependency-age=[(Unstable) The age in minutes, ISO-8601 duration or RFC3339 absolute timestamp (e.g. '\''120'\'' for two hours, '\''P2D'\'' for two days, '\''2025-09-16'\'' for cutoff date, '\''2025-09-16T12\:00\:00+00\:00'\'' for cutoff time, '\''0'\'' to disable)]: :_default' \
 '(--no-check)--check=[Enable type-checking. This subcommand does not type-check by default   If the value of "all" is supplied, remote modules will be included.   Alternatively, the '\''deno check'\'' subcommand can be used]::CHECK_TYPE:_default' \
+'*--env-file=[Load environment variables from local file   Only the first environment variable with a given key is used.   Existing process environment variables are not overwritten, so if variables with the same names already exist in the environment, their values will be preserved.   Where multiple declarations for the same environment variable exist in your .env file, the first one encountered is applied. This is determined by the order of the files you pass as arguments.]::FILE:_files' \
 '-o+[Output path\`]: :_files' \
 '--output=[Output path\`]: :_files' \
 '--outdir=[Output directory for bundled files]: :_files -/' \
@@ -805,6 +811,7 @@ _arguments "${_arguments_options[@]}" : \
 '--allow-import=[Allow importing from remote hosts. Optionally specify allowed IP addresses and host names, with ports as necessary. Default value\: deno.land\:443,jsr.io\:443,esm.sh\:443,raw.esm.sh\:443,cdn.jsdelivr.net\:443,raw.githubusercontent.com\:443,gist.githubusercontent.com\:443]::IP_OR_HOSTNAME:_default' \
 '--deny-import=[Deny importing from remote hosts. Optionally specify denied IP addresses and host names, with ports as necessary.]::IP_OR_HOSTNAME:_default' \
 '--v8-flags=[To see a list of all available flags use --v8-flags=--help   Flags can also be set via the DENO_V8_FLAGS environment variable.   Any flags set with this flag are appended after the DENO_V8_FLAGS environment variable]::V8_FLAGS:_default' \
+'*--env-file=[Load environment variables from local file   Only the first environment variable with a given key is used.   Existing process environment variables are not overwritten, so if variables with the same names already exist in the environment, their values will be preserved.   Where multiple declarations for the same environment variable exist in your .env file, the first one encountered is applied. This is determined by the order of the files you pass as arguments.]::FILE:_files' \
 '*--watch-exclude=[Exclude provided files/patterns from watch mode]::FILES:_files' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
@@ -957,6 +964,7 @@ _arguments "${_arguments_options[@]}" : \
 '--output=[Output file (defaults to \$PWD/<inferred-name>)]: :_files' \
 '--target=[Target OS architecture]: :(x86_64-unknown-linux-gnu aarch64-unknown-linux-gnu x86_64-pc-windows-msvc x86_64-apple-darwin aarch64-apple-darwin)' \
 '--icon=[Set the icon of the executable on Windows (.ico)]: :_default' \
+'*--watch-exclude=[Exclude provided files/patterns from watch mode]::FILES:_files' \
 '--ext=[Set content type of the supplied file]: :(ts tsx js jsx mts mjs cts cjs)' \
 '*--env-file=[Load environment variables from local file   Only the first environment variable with a given key is used.   Existing process environment variables are not overwritten, so if variables with the same names already exist in the environment, their values will be preserved.   Where multiple declarations for the same environment variable exist in your .env file, the first one encountered is applied. This is determined by the order of the files you pass as arguments.]::FILE:_files' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
@@ -1006,6 +1014,9 @@ _arguments "${_arguments_options[@]}" : \
 '--self-extracting[Create a self-extracting binary that extracts the embedded file system to disk on first run and then runs from there]' \
 '--bundle[Experimental. Bundle the entrypoint with esbuild before embedding, instead of shipping the whole node_modules tree.   Produces a smaller binary with faster startup, at the cost of dropping dynamic require/import patterns that can'\''t be statically traced.]' \
 '--minify[Experimental. Minify the bundled output. Only meaningful with --bundle.   Reduces both the embedded bundle size and runtime memory use, at the cost of less readable stack traces.]' \
+'--exclude-unused-npm[Embed only the npm packages reachable from the module graph (managed npm; no node_modules directory).   Without this flag the full managed npm snapshot from the lockfile / package.json is embedded.   Reduces binary size when the lockfile contains packages the entrypoint does not import.   Skips packages that are only reached through non-statically-analyzable dynamic imports;   pass those with --include npm\:<pkg> if needed.]' \
+'--watch[Watch for file changes and restart process automatically.   Only local files from entry point module graph are watched.]' \
+'--no-clear-screen[Do not clear terminal screen when under watch mode]' \
 '*::script_arg -- Script arg:_files' \
 && ret=0
 ;;
@@ -1153,6 +1164,7 @@ _arguments "${_arguments_options[@]}" : \
 '-I+[Allow importing from remote hosts. Optionally specify allowed IP addresses and host names, with ports as necessary. Default value\: deno.land\:443,jsr.io\:443,esm.sh\:443,raw.esm.sh\:443,cdn.jsdelivr.net\:443,raw.githubusercontent.com\:443,gist.githubusercontent.com\:443]::IP_OR_HOSTNAME:_default' \
 '--allow-import=[Allow importing from remote hosts. Optionally specify allowed IP addresses and host names, with ports as necessary. Default value\: deno.land\:443,jsr.io\:443,esm.sh\:443,raw.esm.sh\:443,cdn.jsdelivr.net\:443,raw.githubusercontent.com\:443,gist.githubusercontent.com\:443]::IP_OR_HOSTNAME:_default' \
 '--deny-import=[Deny importing from remote hosts. Optionally specify denied IP addresses and host names, with ports as necessary.]::IP_OR_HOSTNAME:_default' \
+'*--env-file=[Load environment variables from local file   Only the first environment variable with a given key is used.   Existing process environment variables are not overwritten, so if variables with the same names already exist in the environment, their values will be preserved.   Where multiple declarations for the same environment variable exist in your .env file, the first one encountered is applied. This is determined by the order of the files you pass as arguments.]::FILE:_files' \
 '--name=[The name that will be used in the docs (ie for breadcrumbs)]: :_default' \
 '--category-docs=[Path to a JSON file keyed by category and an optional value of a markdown doc]: :_default' \
 '--symbol-redirect-map=[Path to a JSON file keyed by file, with an inner map of symbol to an external link]: :_default' \
@@ -1417,6 +1429,7 @@ _arguments "${_arguments_options[@]}" : \
 '-I+[Allow importing from remote hosts. Optionally specify allowed IP addresses and host names, with ports as necessary. Default value\: deno.land\:443,jsr.io\:443,esm.sh\:443,raw.esm.sh\:443,cdn.jsdelivr.net\:443,raw.githubusercontent.com\:443,gist.githubusercontent.com\:443]::IP_OR_HOSTNAME:_default' \
 '--allow-import=[Allow importing from remote hosts. Optionally specify allowed IP addresses and host names, with ports as necessary. Default value\: deno.land\:443,jsr.io\:443,esm.sh\:443,raw.esm.sh\:443,cdn.jsdelivr.net\:443,raw.githubusercontent.com\:443,gist.githubusercontent.com\:443]::IP_OR_HOSTNAME:_default' \
 '--deny-import=[Deny importing from remote hosts. Optionally specify denied IP addresses and host names, with ports as necessary.]::IP_OR_HOSTNAME:_default' \
+'*--env-file=[Load environment variables from local file   Only the first environment variable with a given key is used.   Existing process environment variables are not overwritten, so if variables with the same names already exist in the environment, their values will be preserved.   Where multiple declarations for the same environment variable exist in your .env file, the first one encountered is applied. This is determined by the order of the files you pass as arguments.]::FILE:_files' \
 '*-h+[]::CONTEXT:(unstable full)' \
 '*--help=[]::CONTEXT:(unstable full)' \
 '-L+[Set log level]: :(trace debug info)' \
@@ -1435,6 +1448,7 @@ _arguments "${_arguments_options[@]}" : \
 '--node-modules-dir=[Sets the node modules management mode for npm packages]::MODE:_default' \
 '--node-modules-linker=[Sets the linker mode for npm packages (isolated or hoisted)]:MODE:_default' \
 '--vendor=[Toggles local vendor folder usage for remote modules and a node_modules folder for npm packages]:: :(true false)' \
+'--minimum-dependency-age=[(Unstable) The age in minutes, ISO-8601 duration or RFC3339 absolute timestamp (e.g. '\''120'\'' for two hours, '\''P2D'\'' for two days, '\''2025-09-16'\'' for cutoff date, '\''2025-09-16T12\:00\:00+00\:00'\'' for cutoff time, '\''0'\'' to disable)]: :_default' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -1731,6 +1745,7 @@ _arguments "${_arguments_options[@]}" : \
 '*--help=[]::CONTEXT:(unstable full)' \
 '-L+[Set log level]: :(trace debug info)' \
 '--log-level=[Set log level]: :(trace debug info)' \
+'*--env-file=[Load environment variables from local file   Only the first environment variable with a given key is used.   Existing process environment variables are not overwritten, so if variables with the same names already exist in the environment, their values will be preserved.   Where multiple declarations for the same environment variable exist in your .env file, the first one encountered is applied. This is determined by the order of the files you pass as arguments.]::FILE:_files' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -1918,6 +1933,7 @@ _arguments "${_arguments_options[@]}" : \
 '--minimum-dependency-age=[(Unstable) The age in minutes, ISO-8601 duration or RFC3339 absolute timestamp (e.g. '\''120'\'' for two hours, '\''P2D'\'' for two days, '\''2025-09-16'\'' for cutoff date, '\''2025-09-16T12\:00\:00+00\:00'\'' for cutoff time, '\''0'\'' to disable)]: :_default' \
 '--lock=[Check the specified lock file. (If value is not provided, defaults to "./deno.lock")]::FILE:_files' \
 '--frozen=[Error out if lockfile is out of date]::BOOLEAN:(true false)' \
+'*--env-file=[Load environment variables from local file   Only the first environment variable with a given key is used.   Existing process environment variables are not overwritten, so if variables with the same names already exist in the environment, their values will be preserved.   Where multiple declarations for the same environment variable exist in your .env file, the first one encountered is applied. This is determined by the order of the files you pass as arguments.]::FILE:_files' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -2041,6 +2057,7 @@ _arguments "${_arguments_options[@]}" : \
 '--set-version=[Set version for a package to be published.   This flag can be used while publishing individual packages and cannot be used in a workspace.]:VERSION:_default' \
 '(--no-check)--check=[Set type-checking behavior. This subcommand type-checks local modules by default, so adding --check is redundant   If the value of "all" is supplied, remote modules will be included.   Alternatively, the '\''deno check'\'' subcommand can be used]::CHECK_TYPE:_default' \
 '--no-check=[Skip type-checking. If the value of "remote" is supplied, diagnostic errors from remote modules will be ignored]::NO_CHECK_TYPE:_default' \
+'*--env-file=[Load environment variables from local file   Only the first environment variable with a given key is used.   Existing process environment variables are not overwritten, so if variables with the same names already exist in the environment, their values will be preserved.   Where multiple declarations for the same environment variable exist in your .env file, the first one encountered is applied. This is determined by the order of the files you pass as arguments.]::FILE:_files' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -2090,6 +2107,7 @@ _arguments "${_arguments_options[@]}" : \
 '--config=[Configure different aspects of deno including TypeScript, linting, and code formatting.   Typically the configuration file will be called \`deno.json\` or \`deno.jsonc\` and   automatically detected; in that case this flag is not necessary.   Docs\: https\://docs.deno.com/go/config]:FILE:_files' \
 '--set-version=[Override the version in the tarball]:VERSION:_default' \
 '*--ignore=[Ignore files matching these patterns]: :_files' \
+'*--env-file=[Load environment variables from local file   Only the first environment variable with a given key is used.   Existing process environment variables are not overwritten, so if variables with the same names already exist in the environment, their values will be preserved.   Where multiple declarations for the same environment variable exist in your .env file, the first one encountered is applied. This is determined by the order of the files you pass as arguments.]::FILE:_files' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -2524,6 +2542,7 @@ _arguments "${_arguments_options[@]}" : \
 '--minimum-dependency-age=[(Unstable) The age in minutes, ISO-8601 duration or RFC3339 absolute timestamp (e.g. '\''120'\'' for two hours, '\''P2D'\'' for two days, '\''2025-09-16'\'' for cutoff date, '\''2025-09-16T12\:00\:00+00\:00'\'' for cutoff time, '\''0'\'' to disable)]: :_default' \
 '--lock=[Check the specified lock file. (If value is not provided, defaults to "./deno.lock")]::FILE:_files' \
 '--frozen=[Error out if lockfile is out of date]::BOOLEAN:(true false)' \
+'*--env-file=[Load environment variables from local file   Only the first environment variable with a given key is used.   Existing process environment variables are not overwritten, so if variables with the same names already exist in the environment, their values will be preserved.   Where multiple declarations for the same environment variable exist in your .env file, the first one encountered is applied. This is determined by the order of the files you pass as arguments.]::FILE:_files' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -2625,6 +2644,8 @@ _arguments "${_arguments_options[@]}" : \
 '--base=[\[conventional-commits mode\] Git ref to compare against. Default\: current branch]:REF:_default' \
 '--import-map=[Path to the import map to rewrite jsr\: version constraints in. Defaults to the root deno.json (or its importMap target)]:PATH:_default' \
 '--release-notes=[\[conventional-commits mode\] Path to the release notes file to prepend. Default\: Releases.md]:PATH:_default' \
+'(-w --workspace)-c+[Explicit path to the manifest file to bump.   May point to a \`deno.json\`/\`deno.jsonc\` or a \`package.json\`. When   set, single-file mode is forced (workspace auto-detection is bypassed).   Useful when both \`deno.json\` and \`package.json\` exist in the same   directory.]:FILE:_files' \
+'(-w --workspace)--config=[Explicit path to the manifest file to bump.   May point to a \`deno.json\`/\`deno.jsonc\` or a \`package.json\`. When   set, single-file mode is forced (workspace auto-detection is bypassed).   Useful when both \`deno.json\` and \`package.json\` exist in the same   directory.]:FILE:_files' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -2708,6 +2729,7 @@ _arguments "${_arguments_options[@]}" : \
 '--log-level=[Set log level]: :(trace debug info)' \
 '--lock=[Check the specified lock file. (If value is not provided, defaults to "./deno.lock")]::FILE:_files' \
 '--frozen=[Error out if lockfile is out of date]::BOOLEAN:(true false)' \
+'*--env-file=[Load environment variables from local file   Only the first environment variable with a given key is used.   Existing process environment variables are not overwritten, so if variables with the same names already exist in the environment, their values will be preserved.   Where multiple declarations for the same environment variable exist in your .env file, the first one encountered is applied. This is determined by the order of the files you pass as arguments.]::FILE:_files' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -2800,6 +2822,7 @@ _arguments "${_arguments_options[@]}" : \
 '--trace-ops=[Trace low-level op calls]::OPS:_default' \
 '*--preload=[A list of files that will be executed before the main module]:FILE:_files' \
 '*--require=[A list of CommonJS modules that will be executed before the main module]:FILE:_files' \
+'(--install-alias)*--ignore-scripts=[Do not run npm lifecycle scripts for the given packages]::PACKAGE:_default' \
 '(--install-alias)-p+[Package to install (use when the binary name differs from the package name)]: :_default' \
 '(--install-alias)--package=[Package to install (use when the binary name differs from the package name)]: :_default' \
 '(--no-check)--check=[Enable type-checking. This subcommand does not type-check by default   If the value of "all" is supplied, remote modules will be included.   Alternatively, the '\''deno check'\'' subcommand can be used]::CHECK_TYPE:_default' \
