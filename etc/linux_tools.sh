@@ -12,7 +12,7 @@ ARCH=$(uname -m)
 # ---------- brew
 
 if ! which brew >/dev/null; then
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
 if test -w /home/linuxbrew/.linuxbrew; then
