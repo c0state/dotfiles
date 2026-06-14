@@ -11,8 +11,10 @@ ARCH=$(uname -m)
 
 # ---------- brew
 
+export NONINTERACTIVE=1
+
 if ! which brew >/dev/null; then
-  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
 if test -w /home/linuxbrew/.linuxbrew; then
