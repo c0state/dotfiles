@@ -19,7 +19,7 @@ fi
 
 if test -w /home/linuxbrew/.linuxbrew; then
   brew update
-  brew upgrade
+  brew upgrade --yes
 
   brew install derailed/k9s/k9s
   brew install neovim
