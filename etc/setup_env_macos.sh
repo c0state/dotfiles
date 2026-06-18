@@ -27,3 +27,32 @@ defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 82 '{ena
 #TMP_GITCONFIG_FILE=$(mktemp)
 #sudo gsed --null-data --regexp-extended 's/^\[credential\]\n. *?helper = osxkeychain *?\n//g' /Applications/Xcode.app/Contents/Developer/usr/share/git-core/gitconfig > $TMP_GITCONFIG_FILE
 #sudo mv $TMP_GITCONFIG_FILE /Applications/Xcode.app/Contents/Developer/usr/share/git-core/gitconfig
+
+# bump max open file descriptors
+MAXFILES=524288
+
+sudo tee /Library/LaunchDaemons/limit.maxfiles.plist >/dev/null <<EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>Label</key><string>limit.maxfiles</string>
+    <key>ProgramArguments</key>
+    <array>
+      <string>launchctl</string>
+      <string>limit</string>
+      <string>maxfiles</string>
+      <string>$MAXFILES</string>
+      <string>$MAXFILES</string>
+    </array>
+    <key>RunAtLoad</key><true/>
+    <key>ServiceIPC</key><false/>
+  </dict>
+</plist>
+EOF
+
+sudo chown root:wheel /Library/LaunchDaemons/limit.maxfiles.plist
+sudo chmod 0644 /Library/LaunchDaemons/limit.maxfiles.plist
+
+sudo launchctl unload /Library/LaunchDaemons/limit.maxfiles.plist 2>/dev/null || true
+sudo launchctl load -w /Library/LaunchDaemons/limit.maxfiles.plist
