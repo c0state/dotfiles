@@ -33,7 +33,7 @@ for brew_tap in "${brew_taps[@]}"; do
 done
 
 brew update
-brew upgrade
+brew upgrade --yes
 
 #---------- high level dependencies ----------
 
