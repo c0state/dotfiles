@@ -48,6 +48,8 @@
     pager = git-split-diffs --color | less -RFX
     autocrlf = input
     eol = lf
+[credential]
+    gitHubAccountFiltering = false
 [delta]
     features = nord
     keep-plus-minus-markers = true
