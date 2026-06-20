@@ -41,9 +41,7 @@ rm -rf "$TEMP_AWS_INSTALL_DIR"
 
 # ---------- ghostty
 
-if ! command -v ghostty &>/dev/null; then
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/mkasberg/ghostty-ubuntu/HEAD/install.sh)"
-fi
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/mkasberg/ghostty-ubuntu/HEAD/install.sh)"
 
 if ! command -v zed &>/dev/null; then
   curl -f https://zed.dev/install.sh | sh
