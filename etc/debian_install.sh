@@ -146,6 +146,7 @@ sudo apt -y install \
   putty \
   ranger \
   rclone \
+  remmina \
   ripgrep \
   rpi-imager \
   smartmontools \
