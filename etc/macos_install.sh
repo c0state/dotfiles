@@ -188,6 +188,7 @@ brew_cask_packages=(
   gimp
   git-credential-manager
   github
+  github-copilot-app
   gitkraken
   google-chrome
   google-drive
