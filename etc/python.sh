@@ -46,7 +46,6 @@ uv python upgrade
 # Install packages into the default virtualenv
 uv pip install -p "$DEFAULT_VENV_PATH" --upgrade pip setuptools
 uv pip install -p "$DEFAULT_VENV_PATH" --upgrade \
-  openai \
   jedi \
   pynvim \
   pytest \

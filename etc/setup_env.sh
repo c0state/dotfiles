@@ -166,7 +166,6 @@ fi
 
 "$HOME"/etc/update_dotfiles.sh
 
-"$HOME"/etc/agent_setup.sh
 "$HOME"/etc/dotnet.sh
 "$HOME"/etc/golang.sh
 "$HOME"/etc/haskell.sh
@@ -174,6 +173,8 @@ fi
 "$HOME"/etc/python.sh
 "$HOME"/etc/ruby.sh
 "$HOME"/etc/rust.sh
+
+"$HOME"/etc/agent_setup.sh
 
 "$HOME"/etc/setup_kubernetes.sh
 "$HOME"/etc/setup_env.fish
