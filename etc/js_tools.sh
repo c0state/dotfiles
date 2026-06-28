@@ -25,18 +25,14 @@ corepack prepare yarn@stable --activate
 # ---------- install global packages
 
 bun add --global \
-  @beads/bd \
-  @github/copilot \
   @googleworkspace/cli \
   @j178/prek \
-  @openai/codex \
   ccusage \
   diff-so-fancy \
   git-split-diffs \
   imageoptim-cli \
   np \
-  npm-check-updates \
-  opencode-ai
+  npm-check-updates
 
 # ---------- install deno https://github.com/denoland/deno
 
