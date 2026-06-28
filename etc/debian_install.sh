@@ -142,6 +142,7 @@ sudo apt -y install \
   putty \
   ranger \
   rclone \
+  remmina \
   ripgrep \
   rpi-imager \
   smartmontools \
@@ -232,6 +233,9 @@ install_package "https://github.com/MuhammedKalkan/OpenLens/releases/download/v$
 
 GIT_CRED_MGR_VERSION=$(get_github_release_version "https://github.com/git-ecosystem/git-credential-manager/releases/latest")
 install_package "https://github.com/git-ecosystem/git-credential-manager/releases/download/v$GIT_CRED_MGR_VERSION/gcm-linux-$SHORT_ARCH-$GIT_CRED_MGR_VERSION.deb"
+
+# github copilot desktop app - https://github.com/features/ai/github-app
+install_package "https://github.com/github/app/releases/latest/download/GitHub-Copilot-linux-$SHORT_ARCH.deb"
 
 # discord doesn't have an apt repo, so install each time this script is run to get latest
 # note: there *is* this third party option: https://github.com/palfrey/discord-apt

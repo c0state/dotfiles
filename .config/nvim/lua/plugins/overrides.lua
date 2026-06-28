@@ -30,6 +30,17 @@ return {
       },
     },
   },
+  -- neo-tree: don't close explorer on <Esc>
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    opts = {
+      window = {
+        mappings = {
+          ["<esc>"] = "noop",
+        },
+      },
+    },
+  },
   -- conform: formatter config
   {
     "stevearc/conform.nvim",

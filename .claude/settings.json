@@ -62,5 +62,6 @@
   "effortLevel": "high",
   "autoUpdatesChannel": "latest",
   "theme": "dark-daltonized",
-  "skipAutoPermissionPrompt": true
+  "skipAutoPermissionPrompt": true,
+  "tui": "fullscreen"
 }
