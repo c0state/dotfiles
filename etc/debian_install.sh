@@ -228,6 +228,10 @@ sudo apt -y install \
   tig \
   tmux
 
+# claude desktop cowork runs its sandbox in a vm, which needs /dev/kvm access
+sudo groupadd --force --system kvm
+sudo usermod -aG kvm "$USER"
+
 LAZYGIT_VERSION=$(get_github_release_version "https://github.com/jesseduffield/lazygit/releases/latest")
 curl --fail -L "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_$ARCH.tar.gz" |
   tar -xzO lazygit \
