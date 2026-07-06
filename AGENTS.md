@@ -4,6 +4,36 @@ Personal, machine-wide, agent-agnostic instructions. Canonical source is
 `~/.dotfiles/AGENTS.md`; Claude loads it via `~/.claude/CLAUDE.md` (which
 `@import`s this file). Synced across machines via the dotfiles repo.
 
+## Branch naming
+
+Use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
+types as the branch prefix, followed by a short kebab-case description:
+
+```
+<type>/<short-description>
+```
+
+Allowed types:
+
+| Type       | Purpose                                          |
+|------------|--------------------------------------------------|
+| `feat`     | New feature                                      |
+| `fix`      | Bug fix                                          |
+| `docs`     | Documentation only                               |
+| `style`    | Formatting, whitespace — no logic change         |
+| `refactor` | Code restructuring — no feature or fix           |
+| `perf`     | Performance improvement                          |
+| `test`     | Adding or updating tests                         |
+| `build`    | Build system or dependency changes               |
+| `ci`       | CI/CD configuration                              |
+| `chore`    | Maintenance tasks that don't fit other types     |
+
+Rules:
+- Keep the description to 2–4 words in kebab-case.
+- Examples: `feat/add-oauth-login`, `fix/null-pointer-crash`,
+  `docs/update-readme`, `refactor/extract-auth-module`.
+- When creating a PR branch, always follow this convention.
+
 ## Code style
 
 - Indent with **spaces, never tabs** — for all code, config, and markup,
