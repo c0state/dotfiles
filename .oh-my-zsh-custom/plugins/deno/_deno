@@ -979,6 +979,7 @@ _arguments "${_arguments_options[@]}" : \
 '--doc[Type-check code blocks in JSDoc as well as actual code]' \
 '(--doc)--doc-only[Type-check code blocks in JSDoc and Markdown only]' \
 '--check-js[Enable type-checking of JavaScript files (equivalent to \`compilerOptions.checkJs\: true\`)]' \
+'--desktop[Type-check using the type definitions for \`deno desktop\`]' \
 '--watch[Watch for file changes and restart process automatically.   Only local files from entry point module graph are watched.]' \
 '--no-clear-screen[Do not clear terminal screen when under watch mode]' \
 '*::file:_files' \
