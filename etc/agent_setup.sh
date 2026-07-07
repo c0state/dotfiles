@@ -21,11 +21,11 @@ claude plugin install pyright-lsp@claude-plugins-official || true
 claude plugin marketplace add aws/agent-toolkit-for-aws || true
 claude plugin install aws-core@agent-toolkit-for-aws || true
 
-# ---------- claude desktop (debian/ubuntu only)
+# ---------- claude desktop official (debian/ubuntu only)
 
 if command -v apt >/dev/null 2>&1; then
-  curl -fsSL https://aaddrick.github.io/claude-desktop-debian/KEY.gpg | gpg --dearmor | sudo tee /usr/share/keyrings/claude-desktop.gpg >/dev/null
-  echo "deb [signed-by=/usr/share/keyrings/claude-desktop.gpg arch=amd64,arm64] https://pkg.claude-desktop-debian.dev stable main" | sudo tee /etc/apt/sources.list.d/claude-desktop.list
+  sudo curl -fsSLo /usr/share/keyrings/claude-desktop-archive-keyring.asc https://downloads.claude.ai/claude-desktop/key.asc
+  echo "deb [signed-by=/usr/share/keyrings/claude-desktop-archive-keyring.asc] https://downloads.claude.ai/claude-desktop/apt/stable stable main" | sudo tee /etc/apt/sources.list.d/claude-desktop-official.list
   sudo apt update
   sudo apt -y install claude-desktop
 fi
