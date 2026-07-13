@@ -45,6 +45,7 @@
       }
     ]
   },
+  "enableWorkflows": true,
   "enabledPlugins": {
     "aws-core@agent-toolkit-for-aws": true,
     "typescript-lsp@claude-plugins-official": true,
@@ -61,7 +62,7 @@
   "alwaysThinkingEnabled": true,
   "effortLevel": "high",
   "autoUpdatesChannel": "latest",
+  "tui": "fullscreen",
   "theme": "dark-daltonized",
-  "skipAutoPermissionPrompt": true,
-  "tui": "fullscreen"
+  "skipAutoPermissionPrompt": true
 }
