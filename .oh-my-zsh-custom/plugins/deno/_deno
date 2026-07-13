@@ -718,6 +718,7 @@ _arguments "${_arguments_options[@]}" : \
 '(--no-check)--check=[Set type-checking behavior. This subcommand type-checks local modules by default, so passing --check is redundant; pass --check=all to also type-check remote modules. Alternatively, use the '\''deno check'\'' subcommand.]::CHECK_TYPE:_default' \
 '*--ignore=[Ignore files]: :_default' \
 '--filter=[Run benchmarks with this string or regexp pattern in the bench name]: :_default' \
+'*--watch=[Watch for file changes and restart process automatically.   Local files from entry point module graph are watched by default.   Additional paths might be watched by passing them as arguments to this flag.]::FILES:_files' \
 '*--watch-exclude=[Exclude provided files/patterns from watch mode]::FILES:_files' \
 '*--env-file=[Load environment variables from local file   Only the first environment variable with a given key is used.   Existing process environment variables are not overwritten, so if variables with the same names already exist in the environment, their values will be preserved.   Where multiple declarations for the same environment variable exist in your .env file, the first one encountered is applied. This is determined by the order of the files you pass as arguments.]::FILE:_files' \
 '--ext=[Set content type of the supplied file]: :(ts tsx js jsx mts mjs cts cjs)' \
@@ -766,7 +767,6 @@ _arguments "${_arguments_options[@]}" : \
 '--json[UNSTABLE\: Output benchmark result in JSON format]' \
 '--no-run[Cache bench modules, but don'\''t run benchmarks]' \
 '--permit-no-files[Don'\''t return an error code if no files were found]' \
-'--watch[Watch for file changes and restart process automatically.   Only local files from entry point module graph are watched.]' \
 '--no-clear-screen[Do not clear terminal screen when under watch mode]' \
 '*::files -- List of file names to run:_default' \
 && ret=0
@@ -1304,6 +1304,7 @@ _arguments "${_arguments_options[@]}" : \
 '--cached-only[Require that remote dependencies are already cached]' \
 '--enable-testing-features-do-not-use[INTERNAL\: Enable internal features used during integration testing]' \
 '--eszip-internal-do-not-use[]' \
+'--exclude-unused-npm[Embed only the npm packages reachable from the module graph (managed npm; no node_modules directory).   Without this flag the full managed npm snapshot from the lockfile / package.json is embedded.   Reduces binary size when the lockfile contains packages the entrypoint does not import.   Skips packages that are only reached through non-statically-analyzable dynamic imports;   pass those with --include npm\:<pkg> if needed.]' \
 '--no-code-cache[Disable V8 code cache feature]' \
 '--hmr[Run the desktop app with Hot Module Replacement enabled]' \
 '--all-targets[Build for all supported target platforms]' \
@@ -1574,6 +1575,7 @@ _arguments "${_arguments_options[@]}" : \
 '--config=[Configure different aspects of deno including TypeScript, linting, and code formatting.   Typically the configuration file will be called \`deno.json\` or \`deno.jsonc\` and   automatically detected; in that case this flag is not necessary.   Docs\: https\://docs.deno.com/go/config]:FILE:_files' \
 '--ext=[Set content type of the supplied file]: :(ts tsx js jsx mts mjs cts cjs md json jsonc css scss less html svelte vue astro yml yaml ipynb sql vto njk)' \
 '*--ignore=[Ignore formatting particular source files]: :_files' \
+'*--watch=[Watch for file changes and restart process automatically.   Local files from entry point module graph are watched by default.   Additional paths might be watched by passing them as arguments to this flag.]::FILES:_files' \
 '*--watch-exclude=[Exclude provided files/patterns from watch mode]::FILES:_files' \
 '--use-tabs=[Use tabs instead of spaces for indentation \[default\: false\]]:: :(true false)' \
 '--line-width=[Define maximum line width \[default\: 80\]]: :_default' \
@@ -1615,7 +1617,6 @@ _arguments "${_arguments_options[@]}" : \
 '--check[Check if the source files are formatted]' \
 '--fail-fast[Stop checking files on first format error]' \
 '--permit-no-files[Don'\''t return an error code if no files were found]' \
-'--watch[Watch for file changes and restart process automatically.   Only local files from entry point module graph are watched.]' \
 '--no-clear-screen[Do not clear terminal screen when under watch mode]' \
 '--no-editorconfig[Don'\''t read .editorconfig files to infer formatting options \[default\: false\]]' \
 '--unstable-css[Enable formatting CSS, SCSS and Less files]' \
@@ -2207,8 +2208,8 @@ _arguments "${_arguments_options[@]}" : \
 '--unstable-worker-options[Enable unstable Web Worker APIs]' \
 '-q[Suppress diagnostic output]' \
 '--quiet[Suppress diagnostic output]' \
-'-g[Remove globally installed package or module]' \
-'--global[Remove globally installed package or module]' \
+'-g[Remove globally installed packages or modules]' \
+'--global[Remove globally installed packages or modules]' \
 '(--lock)--no-lock[Disable auto discovery of the lock file]' \
 '--lockfile-only[Install only updating the lockfile]' \
 '(-g --global)--package-json[Force using package.json for dependency management instead of deno.json]' \
@@ -2378,6 +2379,7 @@ _arguments "${_arguments_options[@]}" : \
 '-c+[Configure different aspects of deno including TypeScript, linting, and code formatting.   Typically the configuration file will be called \`deno.json\` or \`deno.jsonc\` and   automatically detected; in that case this flag is not necessary.   Docs\: https\://docs.deno.com/go/config]:FILE:_files' \
 '--config=[Configure different aspects of deno including TypeScript, linting, and code formatting.   Typically the configuration file will be called \`deno.json\` or \`deno.jsonc\` and   automatically detected; in that case this flag is not necessary.   Docs\: https\://docs.deno.com/go/config]:FILE:_files' \
 '*--ignore=[Ignore linting particular source files]: :_files' \
+'*--watch=[Watch for file changes and restart process automatically.   Local files from entry point module graph are watched by default.   Additional paths might be watched by passing them as arguments to this flag.]::FILES:_files' \
 '*--watch-exclude=[Exclude provided files/patterns from watch mode]::FILES:_files' \
 '-I+[Allow importing from remote hosts. Optionally specify allowed IP addresses and host names, with ports as necessary. Default value\: deno.land\:443,jsr.io\:443,esm.sh\:443,raw.esm.sh\:443,cdn.jsdelivr.net\:443,raw.githubusercontent.com\:443,gist.githubusercontent.com\:443]::IP_OR_HOSTNAME:_default' \
 '--allow-import=[Allow importing from remote hosts. Optionally specify allowed IP addresses and host names, with ports as necessary. Default value\: deno.land\:443,jsr.io\:443,esm.sh\:443,raw.esm.sh\:443,cdn.jsdelivr.net\:443,raw.githubusercontent.com\:443,gist.githubusercontent.com\:443]::IP_OR_HOSTNAME:_default' \
@@ -2418,7 +2420,6 @@ _arguments "${_arguments_options[@]}" : \
 '--json[Output lint result in JSON format]' \
 '(--json)--compact[Output lint result in compact format]' \
 '--permit-no-files[Don'\''t return an error code if no files were found]' \
-'--watch[Watch for file changes and restart process automatically.   Only local files from entry point module graph are watched.]' \
 '--no-clear-screen[Do not clear terminal screen when under watch mode]' \
 '*::files:_files' \
 && ret=0
@@ -3833,7 +3834,7 @@ _deno_commands() {
 'json_reference:' \
 'jupyter:Deno kernel for Jupyter notebooks' \
 'approve-scripts:Approve npm lifecycle scripts for installed dependencies.' \
-'uninstall:Uninstalls a dependency or an executable script in the installation root'\''s bin directory.   deno uninstall @std/dotenv chalk   deno uninstall --global file_server  To change the installation root, use --root flag\:   deno uninstall --global --root /usr/local serve  The installation root is determined, in order of precedence\:   - --root option   - DENO_INSTALL_ROOT environment variable   - \$HOME/.deno' \
+'uninstall:Uninstalls dependencies or an executable script in the installation root'\''s bin directory.   deno uninstall @std/dotenv chalk   deno uninstall --global file_server  To change the installation root, use --root flag\:   deno uninstall --global --root /usr/local cowsay serve  The installation root is determined, in order of precedence\:   - --root option   - DENO_INSTALL_ROOT environment variable   - \$HOME/.deno' \
 'outdated:Find and update outdated dependencies. By default, outdated dependencies are only displayed.  Display outdated dependencies\:   deno outdated   deno outdated --compatible  Update dependencies to the latest semver compatible versions\:   deno outdated --update Update dependencies to the latest versions, ignoring semver requirements\:   deno outdated --update --latest Update dependencies within their existing version ranges, without editing deno.json / package.json (like npm update)\:   deno outdated --update --lockfile-only  Filters can be used to select which packages to act on. Filters can include wildcards (*) to match multiple packages.   deno outdated --update --latest "@std/*"   deno outdated --update --latest "react*" Note that filters act on their aliases configured in deno.json / package.json, not the actual package names\:   Given "foobar"\: "npm\:react@17.0.0" in deno.json or package.json, the filter "foobar" would update npm\:react to   the latest version.   deno outdated --update --latest foobar Filters can be combined, and negative filters can be used to exclude results\:   deno outdated --update --latest "@std/*" "!@std/fmt*"  Specific version requirements to update to can be specified\:   deno outdated --update @std/fmt@^1.0.2 ' \
 'link:Link a local JSR package into the current project for development.    deno link ../my-local-pkg  Each path must be a directory containing a deno.json with a JSR-style "name" field. The path is appended to the "links" array in the nearest deno.json, and modules imported by that package'\''s name resolve to the local copy instead of the registry.  To stop using the local copy\:   deno unlink ../my-local-pkg   deno unlink @scope/name ' \
 'unlink:Remove a linked local package from the current project.    deno unlink ../my-local-pkg   deno unlink @scope/name  Accepts either a path that matches an existing entry in the "links" array, or the JSR-style name of a linked package. ' \
