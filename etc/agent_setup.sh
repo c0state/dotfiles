@@ -59,6 +59,76 @@ uv pip install -p "$DEFAULT_VENV_PATH" --upgrade openai
 
 # ---------- rtk (multi-agent router)
 
+# ---------- agentmemory (local memory server for AI coding agents)
+
+if ! command -v agentmemory >/dev/null 2>&1; then
+  npm install -g @agentmemory/agentmemory
+fi
+
+# wire MCP config for claude-code (idempotent)
+agentmemory connect claude-code || true
+
+# install agentmemory skills for all agents (idempotent)
+npx skills add rohitg00/agentmemory -g -y || true
+
+# user service for auto-start on login
+case "$(uname -s)" in
+  Linux)
+    AGENTMEMORY_SERVICE="$HOME/.config/systemd/user/agentmemory.service"
+    if [ ! -f "$AGENTMEMORY_SERVICE" ]; then
+      mkdir -p "$(dirname "$AGENTMEMORY_SERVICE")"
+      cat > "$AGENTMEMORY_SERVICE" <<'EOF'
+[Unit]
+Description=agentmemory local memory server for AI coding agents
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=%h/.local/share/mise/shims/agentmemory
+WorkingDirectory=%h/.agentmemory
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=5
+
+[Install]
+WantedBy=default.target
+EOF
+      systemctl --user daemon-reload
+      systemctl --user enable agentmemory.service
+      systemctl --user start agentmemory.service
+    fi
+    ;;
+  Darwin)
+    AGENTMEMORY_PLIST="$HOME/Library/LaunchAgents/dev.agentmemory.plist"
+    if [ ! -f "$AGENTMEMORY_PLIST" ]; then
+      mkdir -p "$(dirname "$AGENTMEMORY_PLIST")"
+      cat > "$AGENTMEMORY_PLIST" <<EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>dev.agentmemory</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>$HOME/.local/share/mise/shims/agentmemory</string>
+    </array>
+    <key>WorkingDirectory</key>
+    <string>$HOME/.agentmemory</string>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>KeepAlive</key>
+    <true/>
+</dict>
+</plist>
+EOF
+      launchctl load -w "$AGENTMEMORY_PLIST"
+    fi
+    ;;
+esac
+
+# ---------- rtk
+
 if ! which rtk; then
   curl -fsSL https://raw.githubusercontent.com/rtk-ai/rtk/refs/heads/master/install.sh | sh
   rtk gain
