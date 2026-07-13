@@ -357,6 +357,22 @@ systemctl --user daemon-reload
 #   systemctl --user start rclone-gdrive.service
 systemctl --user enable rclone-gdrive.service
 
+#------------------------------ power profile auto-switching (AC/battery)
+
+if [ -x /usr/bin/powerprofilesctl ]; then
+  cat <<'EOF' | sudo tee /etc/udev/rules.d/99-power-profile-switch.rules >/dev/null
+# AC plugged in
+SUBSYSTEM=="power_supply", ATTR{type}=="Mains", ENV{POWER_SUPPLY_ONLINE}=="1", ACTION=="change", RUN+="/usr/bin/powerprofilesctl set performance"
+
+# On battery
+SUBSYSTEM=="power_supply", ATTR{type}=="Mains", ENV{POWER_SUPPLY_ONLINE}=="0", ACTION=="change", RUN+="/usr/bin/powerprofilesctl set power-saver"
+EOF
+  sudo udevadm control --reload-rules
+  sudo udevadm trigger --subsystem-match=power_supply
+else
+  echo "powerprofilesctl not found; skipping power profile auto-switching udev rule"
+fi
+
 echo "--------------------------------------------------"
 echo "Successfully installed all Linux packages!"
 echo "--------------------------------------------------"
