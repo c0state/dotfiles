@@ -362,7 +362,7 @@ systemctl --user enable rclone-gdrive.service
 if [ -x /usr/bin/powerprofilesctl ]; then
   cat <<'EOF' | sudo tee /etc/udev/rules.d/99-power-profile-switch.rules >/dev/null
 # AC plugged in
-SUBSYSTEM=="power_supply", ATTR{type}=="Mains", ENV{POWER_SUPPLY_ONLINE}=="1", ACTION=="change", RUN+="/usr/bin/powerprofilesctl set performance"
+SUBSYSTEM=="power_supply", ATTR{type}=="Mains", ENV{POWER_SUPPLY_ONLINE}=="1", ACTION=="change", RUN+="/usr/bin/powerprofilesctl set balanced"
 
 # On battery
 SUBSYSTEM=="power_supply", ATTR{type}=="Mains", ENV{POWER_SUPPLY_ONLINE}=="0", ACTION=="change", RUN+="/usr/bin/powerprofilesctl set power-saver"
