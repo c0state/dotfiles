@@ -2,6 +2,8 @@
 
 set -eux
 
+DEFAULT_VENV_PATH="$HOME/.local/share/python-venvs/default_python_venv"
+
 # ---------- claude code
 
 if ! which claude; then
@@ -73,11 +75,11 @@ npx skills add rohitg00/agentmemory -g -y || true
 
 # user service for auto-start on login
 case "$(uname -s)" in
-  Linux)
-    AGENTMEMORY_SERVICE="$HOME/.config/systemd/user/agentmemory.service"
-    if [ ! -f "$AGENTMEMORY_SERVICE" ]; then
-      mkdir -p "$(dirname "$AGENTMEMORY_SERVICE")"
-      cat > "$AGENTMEMORY_SERVICE" <<'EOF'
+Linux)
+  AGENTMEMORY_SERVICE="$HOME/.config/systemd/user/agentmemory.service"
+  if [ ! -f "$AGENTMEMORY_SERVICE" ]; then
+    mkdir -p "$(dirname "$AGENTMEMORY_SERVICE")"
+    cat >"$AGENTMEMORY_SERVICE" <<'EOF'
 [Unit]
 Description=agentmemory local memory server for AI coding agents
 After=network.target
@@ -93,16 +95,16 @@ TimeoutStopSec=5
 [Install]
 WantedBy=default.target
 EOF
-      systemctl --user daemon-reload
-      systemctl --user enable agentmemory.service
-      systemctl --user start agentmemory.service
-    fi
-    ;;
-  Darwin)
-    AGENTMEMORY_PLIST="$HOME/Library/LaunchAgents/dev.agentmemory.plist"
-    if [ ! -f "$AGENTMEMORY_PLIST" ]; then
-      mkdir -p "$(dirname "$AGENTMEMORY_PLIST")"
-      cat > "$AGENTMEMORY_PLIST" <<EOF
+    systemctl --user daemon-reload
+    systemctl --user enable agentmemory.service
+    systemctl --user start agentmemory.service
+  fi
+  ;;
+Darwin)
+  AGENTMEMORY_PLIST="$HOME/Library/LaunchAgents/dev.agentmemory.plist"
+  if [ ! -f "$AGENTMEMORY_PLIST" ]; then
+    mkdir -p "$(dirname "$AGENTMEMORY_PLIST")"
+    cat >"$AGENTMEMORY_PLIST" <<EOF
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -122,9 +124,9 @@ EOF
 </dict>
 </plist>
 EOF
-      launchctl load -w "$AGENTMEMORY_PLIST"
-    fi
-    ;;
+    launchctl load -w "$AGENTMEMORY_PLIST"
+  fi
+  ;;
 esac
 
 # ---------- rtk
