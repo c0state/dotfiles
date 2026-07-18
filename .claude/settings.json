@@ -49,13 +49,20 @@
   "enabledPlugins": {
     "aws-core@agent-toolkit-for-aws": true,
     "typescript-lsp@claude-plugins-official": true,
-    "pyright-lsp@claude-plugins-official": true
+    "pyright-lsp@claude-plugins-official": true,
+    "agentmemory@agentmemory": true
   },
   "extraKnownMarketplaces": {
     "agent-toolkit-for-aws": {
       "source": {
         "source": "github",
         "repo": "aws/agent-toolkit-for-aws"
+      }
+    },
+    "agentmemory": {
+      "source": {
+        "source": "github",
+        "repo": "rohitg00/agentmemory"
       }
     }
   },

@@ -73,6 +73,11 @@ agentmemory connect claude-code || true
 # install agentmemory skills for all agents (idempotent)
 npx -y skills add rohitg00/agentmemory -g -y || true
 
+# install agentmemory plugin for claude-code (registers capture hooks; MCP
+# connect + skills above do NOT do this on their own)
+claude plugin marketplace add rohitg00/agentmemory || true
+claude plugin install agentmemory@agentmemory || true
+
 # user service for auto-start on login
 case "$(uname -s)" in
 Linux)
@@ -127,6 +132,48 @@ EOF
     launchctl load -w "$AGENTMEMORY_PLIST"
   fi
   ;;
+esac
+
+# ---------- ollama (local, zero-cost LLM provider for agentmemory)
+
+if ! command -v ollama >/dev/null 2>&1; then
+  curl -fsSL https://ollama.com/install.sh | sh
+fi
+
+case "$(uname -s)" in
+Linux)
+  # AMD/Intel iGPUs are opt-in in ollama; without this it silently runs on CPU
+  OLLAMA_OVERRIDE="/etc/systemd/system/ollama.service.d/override.conf"
+  if [ ! -f "$OLLAMA_OVERRIDE" ]; then
+    sudo mkdir -p "$(dirname "$OLLAMA_OVERRIDE")"
+    printf '[Service]\nEnvironment="OLLAMA_IGPU_ENABLE=1"\n' | sudo tee "$OLLAMA_OVERRIDE" >/dev/null
+    sudo systemctl daemon-reload
+    sudo systemctl restart ollama
+  fi
+  ;;
+esac
+
+ollama pull qwen2.5-coder:7b
+
+# agentmemory .env: local LLM provider + LLM-gated features (idempotent —
+# always re-asserts these values and restarts, no presence check needed)
+AGENTMEMORY_ENV="$HOME/.agentmemory/.env"
+mkdir -p "$(dirname "$AGENTMEMORY_ENV")"
+touch "$AGENTMEMORY_ENV"
+grep -vE '^(AGENTMEMORY_AUTO_COMPRESS|OPENAI_API_KEY|OPENAI_BASE_URL|OPENAI_MODEL|GRAPH_EXTRACTION_ENABLED|AGENTMEMORY_INJECT_CONTEXT)=' \
+  "$AGENTMEMORY_ENV" >"$AGENTMEMORY_ENV.tmp" || true
+mv "$AGENTMEMORY_ENV.tmp" "$AGENTMEMORY_ENV"
+cat >>"$AGENTMEMORY_ENV" <<'EOF'
+AGENTMEMORY_AUTO_COMPRESS=true
+OPENAI_API_KEY=ollama
+OPENAI_BASE_URL=http://localhost:11434/v1
+OPENAI_MODEL=qwen2.5-coder:7b
+GRAPH_EXTRACTION_ENABLED=true
+AGENTMEMORY_INJECT_CONTEXT=true
+EOF
+case "$(uname -s)" in
+Linux) systemctl --user restart agentmemory.service || true ;;
+Darwin) launchctl kickstart -k "gui/$(id -u)/dev.agentmemory" || true ;;
 esac
 
 # ---------- rtk
