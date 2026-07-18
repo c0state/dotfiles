@@ -71,7 +71,7 @@ fi
 agentmemory connect claude-code || true
 
 # install agentmemory skills for all agents (idempotent)
-npx skills add rohitg00/agentmemory -g -y || true
+npx -y skills add rohitg00/agentmemory -g -y || true
 
 # user service for auto-start on login
 case "$(uname -s)" in
