@@ -78,6 +78,19 @@ npx -y skills add rohitg00/agentmemory -g -y || true
 claude plugin marketplace add rohitg00/agentmemory || true
 claude plugin install agentmemory@agentmemory || true
 
+# wire and install the full agentmemory integration for codex CLI
+agentmemory connect codex || true
+codex plugin marketplace add rohitg00/agentmemory || true
+codex plugin add agentmemory@agentmemory || true
+
+# codex desktop does not currently load plugin hooks, so also install the
+# global hooks workaround. agentmemory 0.9.27 exits early when MCP is already
+# wired unless --force is used; guard it to avoid rewriting config every run.
+CODEX_HOOKS="$HOME/.codex/hooks.json"
+if [ ! -f "$CODEX_HOOKS" ] || ! grep -q 'agentmemory.*/plugin/scripts/' "$CODEX_HOOKS"; then
+  agentmemory connect codex --force --with-hooks || true
+fi
+
 # user service for auto-start on login
 case "$(uname -s)" in
 Linux)
