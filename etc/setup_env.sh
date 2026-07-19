@@ -66,17 +66,6 @@ if [[ ! -d $HOME/.fzf ]]; then
 fi
 cd "$HOME"/.fzf && git pull && "$HOME"/.fzf/install --key-bindings --completion --no-update-rc
 
-# ---------- set up tpm https://github.com/tmux-plugins/tpm
-
-if [[ ! -d $HOME/.tmux/plugins/tpm ]]; then
-  git clone https://github.com/tmux-plugins/tpm "$HOME"/.tmux/plugins/tpm
-else
-  (cd "$HOME"/.tmux/plugins/tpm && git pull)
-fi
-"$HOME"/.tmux/plugins/tpm/bin/install_plugins
-"$HOME"/.tmux/plugins/tpm/bin/update_plugins all
-[[ -n "${TMUX:-}" ]] && tmux source-file "$HOME"/.tmux.conf
-
 # ---------- git sub-repo
 
 if [[ ! -d $HOME/.git-subrepo ]]; then
@@ -182,6 +171,14 @@ fi
 if [[ "$PLATFORM" == "Linux" ]]; then
   "$HOME"/etc/linux_tools.sh
 fi
+
+# ---------- set up tmux plugins via tpack https://github.com/tmuxpack/tpack (TPM-compatible)
+
+if command -v tpack >/dev/null; then
+  tpack install
+  tpack update all
+fi
+[[ -n "${TMUX:-}" ]] && tmux source-file "$HOME"/.tmux.conf
 
 # ---------- cleanup
 

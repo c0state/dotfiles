@@ -220,8 +220,7 @@ sudo apt -y install \
   gh \
   lens \
   sourcegit \
-  tig \
-  tmux
+  tig
 
 # claude desktop cowork runs its sandbox in a vm, which needs /dev/kvm access
 sudo groupadd --force --system kvm

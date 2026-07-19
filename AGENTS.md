@@ -11,6 +11,10 @@ Personal, machine-wide, agent-agnostic instructions. Canonical source is
 - Exception: only use tabs where the format *requires* them — Makefile
   recipes and Go source (`gofmt`). Match an existing file's indentation
   when editing it.
+- Comments are opt-in, not default. Only add one when the code isn't
+  self-explanatory and the *why* is genuinely non-obvious (a hidden
+  constraint, a workaround for a specific bug). If the code speaks for
+  itself, skip the comment.
 
 ## Configuration changes
 

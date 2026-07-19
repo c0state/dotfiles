@@ -142,6 +142,7 @@ brew_packages=(
   terraform_landscape
   tig
   tmux
+  tpack
   tree
   watchman
   wget
