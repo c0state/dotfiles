@@ -133,6 +133,7 @@ sudo apt -y install \
   jq \
   keychain \
   libarchive-tools \
+  libreoffice \
   lsd \
   minicom \
   ncdu \
