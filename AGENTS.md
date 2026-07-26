@@ -6,7 +6,7 @@ Personal, machine-wide, agent-agnostic instructions. Canonical source is
 
 ## Branch naming
 
-Use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
+Use [Conventional Commits](https://www.conventionalcommits.org/en/)
 types as the branch prefix, followed by a short kebab-case description:
 
 ```
