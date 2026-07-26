@@ -4,6 +4,13 @@ set -eux
 
 DEFAULT_VENV_PATH="$HOME/.local/share/python-venvs/default_python_venv"
 
+# ---------- shared agent instructions (AGENTS.md)
+
+mkdir -p "$HOME/.codex" "$HOME/.gemini" "$HOME/.copilot"
+ln -s -f -n "$HOME/.dotfiles/AGENTS.md" "$HOME/.codex/AGENTS.md"
+ln -s -f -n "$HOME/.dotfiles/AGENTS.md" "$HOME/.gemini/GEMINI.md"
+ln -s -f -n "$HOME/.dotfiles/AGENTS.md" "$HOME/.copilot/copilot-instructions.md"
+
 # ---------- claude code
 
 if ! which claude; then
