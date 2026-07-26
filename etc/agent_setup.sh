@@ -6,9 +6,6 @@ DEFAULT_VENV_PATH="$HOME/.local/share/python-venvs/default_python_venv"
 
 # ---------- shared agent instructions (AGENTS.md)
 
-# Codex reads ~/.codex/AGENTS.md; Gemini reads ~/.gemini/GEMINI.md;
-# Copilot CLI reads ~/.copilot/copilot-instructions.md.
-# Symlink all to the canonical dotfiles copy so every agent shares one file.
 mkdir -p "$HOME/.codex" "$HOME/.gemini" "$HOME/.copilot"
 ln -s -f -n "$HOME/.dotfiles/AGENTS.md" "$HOME/.codex/AGENTS.md"
 ln -s -f -n "$HOME/.dotfiles/AGENTS.md" "$HOME/.gemini/GEMINI.md"
