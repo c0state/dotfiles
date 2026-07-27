@@ -154,29 +154,24 @@ EOF
   ;;
 esac
 
-# ---------- ollama (local, zero-cost LLM provider for agentmemory)
+# ---------- ollama (available for ad-hoc local inference)
 
+# deliberately no OLLAMA_IGPU_ENABLE override: on an APU laptop that puts
+# inference on the same GPU the desktop compositor uses, which starves the UI
 if ! command -v ollama >/dev/null 2>&1; then
   curl -fsSL https://ollama.com/install.sh | sh
 fi
 
-case "$(uname -s)" in
-Linux)
-  # AMD/Intel iGPUs are opt-in in ollama; without this it silently runs on CPU
-  OLLAMA_OVERRIDE="/etc/systemd/system/ollama.service.d/override.conf"
-  if [ ! -f "$OLLAMA_OVERRIDE" ]; then
-    sudo mkdir -p "$(dirname "$OLLAMA_OVERRIDE")"
-    printf '[Service]\nEnvironment="OLLAMA_IGPU_ENABLE=1"\n' | sudo tee "$OLLAMA_OVERRIDE" >/dev/null
-    sudo systemctl daemon-reload
-    sudo systemctl restart ollama
-  fi
-  ;;
-esac
-
-ollama pull qwen2.5-coder:7b
-
-# agentmemory .env: local LLM provider + LLM-gated features (idempotent —
-# always re-asserts these values and restarts, no presence check needed)
+# agentmemory .env: LLM-gated features (idempotent — always re-asserts these
+# values and restarts, no presence check needed). No LLM provider is configured,
+# so agentmemory runs in noop mode: capture, synthetic compression and hybrid
+# search still work; summarise / reflect / consolidate / graph-extract do not.
+#
+# AGENTMEMORY_AUTO_COMPRESS must stay false while there is no provider. With it
+# on, capture takes the mem::compress path, the noop provider returns "", the
+# XML parse fails, and the observation is never written to the store or added to
+# the BM25/vector indexes. Off takes the buildSyntheticCompression branch, which
+# does index. Flip back to true when a provider is configured.
 AGENTMEMORY_ENV="$HOME/.agentmemory/.env"
 mkdir -p "$(dirname "$AGENTMEMORY_ENV")"
 touch "$AGENTMEMORY_ENV"
@@ -184,14 +179,10 @@ grep -vE '^(AGENTMEMORY_AUTO_COMPRESS|EMBEDDING_PROVIDER|OPENAI_API_KEY|OPENAI_B
   "$AGENTMEMORY_ENV" >"$AGENTMEMORY_ENV.tmp" || true
 mv "$AGENTMEMORY_ENV.tmp" "$AGENTMEMORY_ENV"
 cat >>"$AGENTMEMORY_ENV" <<'EOF'
-AGENTMEMORY_AUTO_COMPRESS=true
+AGENTMEMORY_AUTO_COMPRESS=false
 EMBEDDING_PROVIDER=local
-OPENAI_API_KEY=ollama
-OPENAI_BASE_URL=http://localhost:11434/v1
-OPENAI_MODEL=qwen2.5-coder:7b
 GRAPH_EXTRACTION_ENABLED=true
 AGENTMEMORY_INJECT_CONTEXT=true
-AGENTMEMORY_LLM_TIMEOUT_MS=120000
 EOF
 case "$(uname -s)" in
 Linux) systemctl --user restart agentmemory.service || true ;;
