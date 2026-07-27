@@ -42,18 +42,15 @@ return {
     },
   },
   -- conform: formatter config
+  -- prettier itself is configured via the lazyvim.plugins.extras.formatting.prettier
+  -- extra (see lua/config/lazy.lua), which covers css/html/js/ts/jsx/tsx plus
+  -- json/jsonc/yaml/markdown/vue/graphql/less and handles mason install.
   {
     "stevearc/conform.nvim",
     opts = {
       formatters_by_ft = {
         lua = { "stylua" },
         python = { "ruff_organize_imports", "ruff_format" },
-        css = { "prettier" },
-        html = { "prettier" },
-        javascript = { "prettier" },
-        typescript = { "prettier" },
-        javascriptreact = { "prettier" },
-        typescriptreact = { "prettier" },
       },
     },
   },
