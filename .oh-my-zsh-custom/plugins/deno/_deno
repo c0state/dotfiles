@@ -524,6 +524,7 @@ _arguments "${_arguments_options[@]}" : \
 '--lock=[Check the specified lock file. (If value is not provided, defaults to "./deno.lock")]::FILE:_files' \
 '--frozen=[Error out if lockfile is out of date]::BOOLEAN:(true false)' \
 '*--env-file=[Load environment variables from local file   Only the first environment variable with a given key is used.   Existing process environment variables are not overwritten, so if variables with the same names already exist in the environment, their values will be preserved.   Where multiple declarations for the same environment variable exist in your .env file, the first one encountered is applied. This is determined by the order of the files you pass as arguments.]::FILE:_files' \
+'--minimum-dependency-age=[(Unstable) The age in minutes, ISO-8601 duration or RFC3339 absolute timestamp (e.g. '\''120'\'' for two hours, '\''P2D'\'' for two days, '\''2025-09-16'\'' for cutoff date, '\''2025-09-16T12\:00\:00+00\:00'\'' for cutoff time, '\''0'\'' to disable)]: :_default' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -556,6 +557,9 @@ _arguments "${_arguments_options[@]}" : \
 '--quiet[Suppress diagnostic output]' \
 '-D[Add the package as a dev dependency (under \`devDependencies\`). Note\: this only applies when adding to a \`package.json\` file.]' \
 '--dev[Add the package as a dev dependency (under \`devDependencies\`). Note\: this only applies when adding to a \`package.json\` file.]' \
+'(-D --dev)-O[Add the package as an optional dependency (under \`optionalDependencies\`). Note\: this only applies when adding to a \`package.json\` file.]' \
+'(-D --dev)--save-optional[Add the package as an optional dependency (under \`optionalDependencies\`). Note\: this only applies when adding to a \`package.json\` file.]' \
+'(-D --dev -O --save-optional)--no-save[Install the package(s) without adding them to the configuration file.]' \
 '(--lock)--no-lock[Disable auto discovery of the lock file]' \
 '--lockfile-only[Install only updating the lockfile]' \
 '(--jsr)--npm[assume unprefixed package names are npm packages (default)]' \
@@ -623,6 +627,7 @@ _arguments "${_arguments_options[@]}" : \
 '--root=[Installation root]: :_files -/' \
 '--lock=[Check the specified lock file. (If value is not provided, defaults to "./deno.lock")]::FILE:_files' \
 '--frozen=[Error out if lockfile is out of date]::BOOLEAN:(true false)' \
+'(-g --global)--minimum-dependency-age=[(Unstable) The age in minutes, ISO-8601 duration or RFC3339 absolute timestamp (e.g. '\''120'\'' for two hours, '\''P2D'\'' for two days, '\''2025-09-16'\'' for cutoff date, '\''2025-09-16T12\:00\:00+00\:00'\'' for cutoff time, '\''0'\'' to disable)]: :_default' \
 '--unstable[The \`--unstable\` flag has been deprecated. Use granular \`--unstable-*\` flags instead   To view the list of individual unstable feature flags, run this command again with --help=unstable]' \
 '--unstable-bare-node-builtins[Enable unstable bare node builtins feature]' \
 '--unstable-broadcast-channel[Enable unstable \`BroadcastChannel\` API]' \
@@ -1089,7 +1094,7 @@ _arguments "${_arguments_options[@]}" : \
 '*--exclude=[Excludes a file/directory in the compiled executable.   Use this flag to exclude a specific file or directory within the included files.   For example, to exclude a certain folder in the bundled node_modules directory.]: :_files' \
 '-o+[Output file (defaults to \$PWD/<inferred-name>)]: :_files' \
 '--output=[Output file (defaults to \$PWD/<inferred-name>)]: :_files' \
-'--target=[Target OS architecture]: :(x86_64-unknown-linux-gnu aarch64-unknown-linux-gnu x86_64-pc-windows-msvc x86_64-apple-darwin aarch64-apple-darwin)' \
+'--target=[Target OS architecture]: :(x86_64-unknown-linux-gnu aarch64-unknown-linux-gnu x86_64-pc-windows-msvc aarch64-pc-windows-msvc x86_64-apple-darwin aarch64-apple-darwin)' \
 '--icon=[Set the icon of the executable on Windows (.ico)]: :_default' \
 '--app-name=[Stable identity for the compiled app.   Determines where origin-bound storage such as the default \`Deno.openKv()\`,   \`localStorage\` and \`caches\` is persisted (under the platform'\''s app data directory).   Defaults to the output file name. Set this to keep storage stable across renames.]: :_default' \
 '*--watch-exclude=[Exclude provided files/patterns from watch mode]::FILES:_files' \
@@ -1256,7 +1261,7 @@ _arguments "${_arguments_options[@]}" : \
 '*--exclude=[Excludes a file/directory in the compiled executable.   Use this flag to exclude a specific file or directory within the included files.]: :_files' \
 '-o+[Output path (e.g. MyApp.app, MyApp.dmg, MyApp.AppImage, MyApp.deb, MyApp.rpm, MyApp.msi)]: :_files' \
 '--output=[Output path (e.g. MyApp.app, MyApp.dmg, MyApp.AppImage, MyApp.deb, MyApp.rpm, MyApp.msi)]: :_files' \
-'--target=[Target OS architecture]: :(x86_64-unknown-linux-gnu aarch64-unknown-linux-gnu x86_64-pc-windows-msvc x86_64-apple-darwin aarch64-apple-darwin)' \
+'--target=[Target OS architecture]: :(x86_64-unknown-linux-gnu aarch64-unknown-linux-gnu x86_64-pc-windows-msvc aarch64-pc-windows-msvc x86_64-apple-darwin aarch64-apple-darwin)' \
 '--icon=[Set the application icon (.ico on Windows, .icns or .png on macOS)]: :_default' \
 '--backend=[Backend to use for the desktop app]: :(webview cef raw)' \
 '--compress=[Make the packaged app self-extracting\: the payload is compressed inside the app and unpacked on first launch. Off by default. Defaults to xz (decompressed by the system \`tar\` everywhere); zstd is smaller/faster but needs the \`zstd\` tool at runtime.]:: :(xz lzma zstd)' \
@@ -1896,6 +1901,9 @@ _arguments "${_arguments_options[@]}" : \
 '(-g --global)--entrypoint[Install dependents of the specified entrypoint(s)]' \
 '(-e --entrypoint -g --global)-D[Add the package as a dev dependency (under \`devDependencies\`). Note\: this only applies when adding to a \`package.json\` file.]' \
 '(-e --entrypoint -g --global)--dev[Add the package as a dev dependency (under \`devDependencies\`). Note\: this only applies when adding to a \`package.json\` file.]' \
+'(-D --dev -e --entrypoint -g --global)-O[Add the package as an optional dependency (under \`optionalDependencies\`). Note\: this only applies when adding to a \`package.json\` file.]' \
+'(-D --dev -e --entrypoint -g --global)--save-optional[Add the package as an optional dependency (under \`optionalDependencies\`). Note\: this only applies when adding to a \`package.json\` file.]' \
+'(-D --dev -O --save-optional -e --entrypoint -g --global)--no-save[Install the package(s) without adding them to the configuration file.]' \
 '(--jsr -e --entrypoint -g --global)--npm[assume unprefixed package names are npm packages (default)]' \
 '(--npm -e --entrypoint -g --global)--jsr[assume unprefixed package names are jsr packages]' \
 '(-e --entrypoint -g --global)--save-exact[Save exact version without the caret (^)]' \
@@ -2022,6 +2030,9 @@ _arguments "${_arguments_options[@]}" : \
 '(-g --global)--entrypoint[Install dependents of the specified entrypoint(s)]' \
 '(-e --entrypoint -g --global)-D[Add the package as a dev dependency (under \`devDependencies\`). Note\: this only applies when adding to a \`package.json\` file.]' \
 '(-e --entrypoint -g --global)--dev[Add the package as a dev dependency (under \`devDependencies\`). Note\: this only applies when adding to a \`package.json\` file.]' \
+'(-D --dev -e --entrypoint -g --global)-O[Add the package as an optional dependency (under \`optionalDependencies\`). Note\: this only applies when adding to a \`package.json\` file.]' \
+'(-D --dev -e --entrypoint -g --global)--save-optional[Add the package as an optional dependency (under \`optionalDependencies\`). Note\: this only applies when adding to a \`package.json\` file.]' \
+'(-D --dev -O --save-optional -e --entrypoint -g --global)--no-save[Install the package(s) without adding them to the configuration file.]' \
 '(--jsr -e --entrypoint -g --global)--npm[assume unprefixed package names are npm packages (default)]' \
 '(--npm -e --entrypoint -g --global)--jsr[assume unprefixed package names are jsr packages]' \
 '(-e --entrypoint -g --global)--save-exact[Save exact version without the caret (^)]' \
