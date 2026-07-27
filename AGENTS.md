@@ -54,3 +54,19 @@ Rules:
   style — e.g. in `etc/agent_setup.sh`: idempotent guards before
   install/write steps, `case "$(uname -s)" in Linux|Darwin)` blocks for
   OS-specific logic.
+
+## Secrets
+
+- This dotfiles repo is **public** (`github.com/c0state/dotfiles`). Never
+  put a credential in a tracked file — not as a default, not as an
+  example, not "temporarily".
+- Machine-local secrets live outside the repo, as plain `export`s in
+  `~/.shellrc_custom.sh` (bash/zsh) and `~/.shellrc_custom.fish` (fish).
+  These are sourced by `.shell_interactive.sh` and
+  `.config/fish/config.fish`.
+- A setup script that needs a secret should source
+  `~/.shellrc_custom.sh` itself — scripts run non-interactively, so it is
+  not already loaded — and no-op when the variable is unset. Never
+  prompt for a secret, and never hardcode a fallback value.
+- Wrap secret handling in `set +x` / `set -x`. `etc/agent_setup.sh` runs
+  under `set -eux`, so an unguarded assignment echoes the value.
