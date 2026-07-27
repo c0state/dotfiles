@@ -76,5 +76,6 @@
   },
   "theme": "dark-daltonized",
   "skipAutoPermissionPrompt": true,
-  "voiceEnabled": true
+  "voiceEnabled": true,
+  "agentPushNotifEnabled": true
 }
