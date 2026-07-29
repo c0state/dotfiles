@@ -5,4 +5,4 @@ idiomatic_version_file_enable_tools = ["node", "python"]
 corepack = true
 
 [tools]
-node = "25"
+node = "26"

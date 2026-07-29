@@ -2,7 +2,7 @@
 
 set -eux
 
-NODE_VERSION=25
+NODE_VERSION=26
 
 # ---------- bun
 
