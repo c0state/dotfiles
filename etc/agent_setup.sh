@@ -54,6 +54,14 @@ else
   agy update
 fi
 
+# ---------- hermes agent
+
+if ! command -v hermes >/dev/null 2>&1; then
+  curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash
+else
+  hermes update --yes
+fi
+
 # ---------- agent bun packages
 
 bun add --global \
@@ -61,6 +69,19 @@ bun add --global \
   @github/copilot \
   @openai/codex \
   opencode-ai
+
+# ---------- herdr (agent-aware terminal multiplexer)
+
+if ! command -v herdr >/dev/null 2>&1; then
+  curl -fsSL https://herdr.dev/install.sh | sh
+else
+  herdr update
+fi
+
+herdr integration install claude || true
+herdr integration install copilot || true
+herdr integration install opencode || true
+herdr integration install hermes || true
 
 # ---------- openai python sdk
 
