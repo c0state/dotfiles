@@ -60,6 +60,7 @@
     colorMoved = default
     mnemonicPrefix = true
     renames = true
+    submodule = diff
 [difftool]
     prompt = false
 [difftool "meld"]
