@@ -18,6 +18,8 @@ fi
 # ---------- install js tools
 
 mise use --global node@"$NODE_VERSION"
+eval "$(mise env -s bash)"
+
 npm install -g corepack
 corepack enable
 corepack prepare yarn@stable --activate
