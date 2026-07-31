@@ -34,6 +34,14 @@ Rules:
   `docs/update-readme`, `refactor/extract-auth-module`.
 - When creating a PR branch, always follow this convention.
 
+## Git operations
+
+- Never force-push (`git push --force` or `--force-with-lease`), including
+  amending/rebasing an already-pushed commit and pushing the result, unless
+  I explicitly tell you to do so for that specific push. This applies even
+  to your own draft/unreviewed PR branches — ask first, don't assume it's
+  low-risk.
+
 ## Code style
 
 - Indent with **spaces, never tabs** — for all code, config, and markup,
@@ -45,6 +53,10 @@ Rules:
   self-explanatory and the *why* is genuinely non-obvious (a hidden
   constraint, a workaround for a specific bug). If the code speaks for
   itself, skip the comment.
+- Don't bake ticket/issue references (e.g. `C3D-2520:`, `JIRA-123`) into
+  code comments unless explicitly asked to. Tickets get closed/renumbered
+  and the reference rots; put that context in the commit message or PR
+  description instead, where it belongs with the change's history.
 
 ## Configuration changes
 
