@@ -57,7 +57,12 @@ fi
 # ---------- hermes agent
 
 if ! command -v hermes >/dev/null 2>&1; then
-  curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash
+  curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash -s -- --skip-setup
+  # only apply defaults if no config exists yet — command -v failing just means
+  # hermes isn't on PATH right now, not that this is a first-time install
+  if [ ! -f "$HOME/.hermes/config.yaml" ]; then
+    hermes setup --reset --non-interactive
+  fi
 else
   hermes update --yes
 fi
@@ -219,7 +224,7 @@ if ! which rtk; then
   rtk init -g
   rtk init -g --gemini
   rtk init -g --codex
-  rtk init -g --agent cursor
-  rtk init -g --agent pi
-  rtk init --agent antigravity
+  [ -d "$HOME/.cursor" ] && rtk init -g --agent cursor
+  [ -d "$HOME/.pi" ] && rtk init -g --agent pi
+  [ -d "$HOME/.antigravity" ] && rtk init --agent antigravity
 fi
