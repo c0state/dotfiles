@@ -134,6 +134,7 @@ sudo apt -y install \
   keychain \
   libarchive-tools \
   libreoffice \
+  libsox-fmt-pulse \
   lsd \
   minicom \
   ncdu \
@@ -147,6 +148,7 @@ sudo apt -y install \
   ripgrep \
   rpi-imager \
   smartmontools \
+  sox \
   stress-ng \
   terraform \
   testdisk \
