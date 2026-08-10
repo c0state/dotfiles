@@ -119,6 +119,7 @@ sudo apt -y install \
 sudo apt -y install \
   adb \
   bat \
+  clonezilla \
   cpu-x \
   colordiff icdiff \
   wget \
