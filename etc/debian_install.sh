@@ -140,6 +140,7 @@ sudo apt -y install \
   minicom \
   ncdu \
   nethogs \
+  nmap \
   onedrive \
   parallel \
   putty \
