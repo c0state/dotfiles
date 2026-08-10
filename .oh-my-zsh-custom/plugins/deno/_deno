@@ -565,6 +565,7 @@ _arguments "${_arguments_options[@]}" : \
 '(--jsr)--npm[assume unprefixed package names are npm packages (default)]' \
 '(--npm)--jsr[assume unprefixed package names are jsr packages]' \
 '--save-exact[Save exact version without the caret (^)]' \
+'--unscoped[Use the package name without its scope as the alias (ex. \`jsr\:@david/jsonc-morph\` is added as \`jsonc-morph\`). Packages given an explicit alias are unaffected.]' \
 '--package-json[Force using package.json for dependency management instead of deno.json]' \
 '*::packages -- List of packages to add:_default' \
 && ret=0
@@ -1095,6 +1096,7 @@ _arguments "${_arguments_options[@]}" : \
 '-o+[Output file (defaults to \$PWD/<inferred-name>)]: :_files' \
 '--output=[Output file (defaults to \$PWD/<inferred-name>)]: :_files' \
 '--target=[Target OS architecture]: :(x86_64-unknown-linux-gnu aarch64-unknown-linux-gnu x86_64-pc-windows-msvc aarch64-pc-windows-msvc x86_64-apple-darwin aarch64-apple-darwin)' \
+'--engine=[JS engine the compiled binary runs on (quickjs is smaller and experimental, and does not receive the same security updates as v8)]: :(v8 quickjs)' \
 '--icon=[Set the icon of the executable on Windows (.ico)]: :_default' \
 '--app-name=[Stable identity for the compiled app.   Determines where origin-bound storage such as the default \`Deno.openKv()\`,   \`localStorage\` and \`caches\` is persisted (under the platform'\''s app data directory).   Defaults to the output file name. Set this to keep storage stable across renames.]: :_default' \
 '*--watch-exclude=[Exclude provided files/patterns from watch mode]::FILES:_files' \
@@ -1264,6 +1266,7 @@ _arguments "${_arguments_options[@]}" : \
 '--target=[Target OS architecture]: :(x86_64-unknown-linux-gnu aarch64-unknown-linux-gnu x86_64-pc-windows-msvc aarch64-pc-windows-msvc x86_64-apple-darwin aarch64-apple-darwin)' \
 '--icon=[Set the application icon (.ico on Windows, .icns or .png on macOS)]: :_default' \
 '--backend=[Backend to use for the desktop app]: :(webview cef raw)' \
+'--engine=[JS engine the desktop binary runs on (quickjs is smaller and experimental, and does not receive the same security updates as v8)]: :(v8 quickjs)' \
 '--compress=[Make the packaged app self-extracting\: the payload is compressed inside the app and unpacked on first launch. Off by default. Defaults to xz (decompressed by the system \`tar\` everywhere); zstd is smaller/faster but needs the \`zstd\` tool at runtime.]:: :(xz lzma zstd)' \
 '--ext=[Set content type of the supplied file]: :(ts tsx js jsx mts mjs cts cjs)' \
 '*--env-file=[Load environment variables from local file   Only the first environment variable with a given key is used.   Existing process environment variables are not overwritten, so if variables with the same names already exist in the environment, their values will be preserved.   Where multiple declarations for the same environment variable exist in your .env file, the first one encountered is applied. This is determined by the order of the files you pass as arguments.]::FILE:_files' \
@@ -1578,7 +1581,7 @@ _arguments "${_arguments_options[@]}" : \
 '--log-level=[Set log level]: :(trace debug info)' \
 '-c+[Configure different aspects of deno including TypeScript, linting, and code formatting.   Typically the configuration file will be called \`deno.json\` or \`deno.jsonc\` and   automatically detected; in that case this flag is not necessary.   Docs\: https\://docs.deno.com/go/config]:FILE:_files' \
 '--config=[Configure different aspects of deno including TypeScript, linting, and code formatting.   Typically the configuration file will be called \`deno.json\` or \`deno.jsonc\` and   automatically detected; in that case this flag is not necessary.   Docs\: https\://docs.deno.com/go/config]:FILE:_files' \
-'--ext=[Set content type of the supplied file]: :(ts tsx js jsx mts mjs cts cjs md json jsonc css scss less html svelte vue astro yml yaml ipynb sql vto njk)' \
+'--ext=[Set content type of the supplied file]: :(ts tsx js jsx mts mjs cts cjs md json jsonc css scss less html xml svg svelte vue astro yml yaml ipynb sql vto njk)' \
 '*--ignore=[Ignore formatting particular source files]: :_files' \
 '*--watch=[Watch for file changes and restart process automatically.   Local files from entry point module graph are watched by default.   Additional paths might be watched by passing them as arguments to this flag.]::FILES:_files' \
 '*--watch-exclude=[Exclude provided files/patterns from watch mode]::FILES:_files' \
@@ -1907,6 +1910,7 @@ _arguments "${_arguments_options[@]}" : \
 '(--jsr -e --entrypoint -g --global)--npm[assume unprefixed package names are npm packages (default)]' \
 '(--npm -e --entrypoint -g --global)--jsr[assume unprefixed package names are jsr packages]' \
 '(-e --entrypoint -g --global)--save-exact[Save exact version without the caret (^)]' \
+'(-e --entrypoint -g --global)--unscoped[Use the package name without its scope as the alias (ex. \`jsr\:@david/jsonc-morph\` is added as \`jsonc-morph\`). Packages given an explicit alias are unaffected.]' \
 '(-g --global)--lockfile-only[Install only updating the lockfile]' \
 '(-e --entrypoint -g --global)--package-json[Force using package.json for dependency management instead of deno.json]' \
 '(-g --global -D --dev)--prod[Only install production dependencies (excludes devDependencies)]' \
@@ -2036,6 +2040,7 @@ _arguments "${_arguments_options[@]}" : \
 '(--jsr -e --entrypoint -g --global)--npm[assume unprefixed package names are npm packages (default)]' \
 '(--npm -e --entrypoint -g --global)--jsr[assume unprefixed package names are jsr packages]' \
 '(-e --entrypoint -g --global)--save-exact[Save exact version without the caret (^)]' \
+'(-e --entrypoint -g --global)--unscoped[Use the package name without its scope as the alias (ex. \`jsr\:@david/jsonc-morph\` is added as \`jsonc-morph\`). Packages given an explicit alias are unaffected.]' \
 '(-g --global)--lockfile-only[Install only updating the lockfile]' \
 '(-e --entrypoint -g --global)--package-json[Force using package.json for dependency management instead of deno.json]' \
 '(-g --global -D --dev)--prod[Only install production dependencies (excludes devDependencies)]' \
@@ -2695,6 +2700,7 @@ _arguments "${_arguments_options[@]}" : \
 '(--lock)--no-lock[Disable auto discovery of the lock file]' \
 '-r[Run the task in all projects in the workspace]' \
 '--recursive[Run the task in all projects in the workspace]' \
+'(-r --recursive -f --filter)--members[Run the task in all workspace members, but not in the workspace root]' \
 '--eval[Evaluate the passed value as if it was a task in a configuration file]' \
 '--no-prefix[Disable prefixing the output of concurrently-executing tasks with the task name]' \
 '--if-present[Exit with code 0 instead of an error when the task is not found]' \
