@@ -58,6 +58,12 @@ Rules:
   and the reference rots; put that context in the commit message or PR
   description instead, where it belongs with the change's history.
 
+## CLI commands
+
+- Always use long-form flags (e.g. `--verbose` instead of `-v`) when
+  running CLI commands. They're self-documenting when read back later,
+  in logs, or in shared command history.
+
 ## Configuration changes
 
 - When adding or changing configuration in this repo (setup scripts,
