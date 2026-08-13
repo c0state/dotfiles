@@ -53,6 +53,11 @@ Rules:
   self-explanatory and the *why* is genuinely non-obvious (a hidden
   constraint, a workaround for a specific bug). If the code speaks for
   itself, skip the comment.
+- Never comment *what* the code does — well-named identifiers already say
+  that. If it's worth explaining (context on the change, why this approach
+  over another), put it in the PR description or commit message, not an
+  inline comment — that's where it belongs and won't rot as the code
+  around it changes.
 - Don't bake ticket/issue references (e.g. `C3D-2520:`, `JIRA-123`) into
   code comments unless explicitly asked to. Tickets get closed/renumbered
   and the reference rots; put that context in the commit message or PR

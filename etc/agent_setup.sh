@@ -39,6 +39,19 @@ if command -v apt >/dev/null 2>&1; then
   sudo apt -y install claude-desktop
 fi
 
+# ---------- chatgpt desktop official preview (debian/ubuntu only)
+
+# no apt repo to pull from yet, so bootstrap via the vendor .deb; its
+# postinst registers the chatgpt-archive-keyring + sources.list.d entry,
+# after which a regular apt upgrade keeps it current
+if command -v apt >/dev/null 2>&1 && ! dpkg --status chatgpt >/dev/null 2>&1; then
+  CHATGPT_DEB="$(mktemp --suffix=.deb)"
+  curl --fail --silent --show-error --location --output "$CHATGPT_DEB" \
+    "https://persistent.oaistatic.com/codex-app-prod/linux/deb/latest/chatgpt_$(dpkg --print-architecture).deb"
+  sudo apt --yes install "$CHATGPT_DEB"
+  rm -f "$CHATGPT_DEB"
+fi
+
 # ---------- copilot cli session-pin extension
 
 mkdir -p "$HOME/.copilot/extensions/session-pin"
