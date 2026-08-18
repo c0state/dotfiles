@@ -55,6 +55,7 @@ brew_packages=(
   act
   ag
   android-platform-tools
+  ansible
   applesimutils
   aws-iam-authenticator aws-sam-cli eksctl
   awscli
