@@ -84,6 +84,7 @@ fi
 
 bun add --global \
   @beads/bd \
+  @deepseek-ai/dsh \
   @github/copilot \
   @openai/codex \
   opencode-ai
