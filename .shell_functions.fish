@@ -82,3 +82,12 @@ function copilot
         command copilot --experimental --mode autopilot $argv
     end
 end
+
+# claude code: bare `claude` opens the resume picker; subcommands/flags pass through
+function claude
+    if test (count $argv) -eq 0
+        command claude --resume
+    else
+        command claude $argv
+    end
+end

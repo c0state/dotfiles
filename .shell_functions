@@ -73,3 +73,12 @@ function copilot {
         command copilot --experimental --mode autopilot "$@"
     fi
 }
+
+# claude code: bare `claude` opens the resume picker; subcommands/flags pass through
+function claude {
+    if [[ $# -eq 0 ]]; then
+        command claude --resume
+    else
+        command claude "$@"
+    fi
+}
