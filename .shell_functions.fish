@@ -73,3 +73,12 @@ function install_package
     rm -f "$TEMP_PKG_INSTALL_FILE"
     set --erase TEMP_PKG_INSTALL_FILE
 end
+
+# copilot cli: always inject the standing flags; bare `copilot` opens the resume picker
+function copilot
+    if test (count $argv) -eq 0
+        command copilot --experimental --mode autopilot --resume
+    else
+        command copilot --experimental --mode autopilot $argv
+    end
+end

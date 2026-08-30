@@ -30,10 +30,6 @@ export TERM=xterm-256color
 
 source "$HOME"/.shell_aliases
 
-if [[ -r "$HOME/.dotfiles/agents/copilot/copilot.zsh" ]]; then
-  source "$HOME/.dotfiles/agents/copilot/copilot.zsh"
-fi
-
 # some agents set the pager (eg: antigravity), usually to cat, so don't modify if so
 if [[ -z "$PAGER" ]]; then
   alias cat=bat
