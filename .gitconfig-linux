@@ -7,6 +7,10 @@
     credentialStore = secretservice
 [credential "https://dev.azure.com"]
     useHttpPath = true
+[credential "https://github.com"]
+    # empty helper clears the inherited GCM helper for this host
+    helper =
+    helper = !gh auth git-credential
 [diff]
     tool = bc
 [difftool]
