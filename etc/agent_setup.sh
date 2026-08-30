@@ -52,13 +52,6 @@ if command -v apt >/dev/null 2>&1 && ! dpkg --status chatgpt >/dev/null 2>&1; th
   rm -f "$CHATGPT_DEB"
 fi
 
-# ---------- copilot cli session-pin extension
-
-mkdir -p "$HOME/.copilot/extensions/session-pin"
-ln -s -f -n \
-  "$HOME/.dotfiles/agents/copilot/extensions/session-pin/extension.mjs" \
-  "$HOME/.copilot/extensions/session-pin/extension.mjs"
-
 # ---------- gemini cli
 
 if ! command -v agy >/dev/null 2>&1; then

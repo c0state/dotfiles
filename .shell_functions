@@ -64,3 +64,21 @@ function install_package {
         rm -f "$TEMP_PKG_INSTALL_FILE"
     )
 }
+
+# copilot cli: always inject the standing flags; bare `copilot` opens the resume picker
+function copilot {
+    if [[ $# -eq 0 ]]; then
+        command copilot --experimental --mode autopilot --resume
+    else
+        command copilot --experimental --mode autopilot "$@"
+    fi
+}
+
+# claude code: bare `claude` opens the resume picker; subcommands/flags pass through
+function claude {
+    if [[ $# -eq 0 ]]; then
+        command claude --resume
+    else
+        command claude "$@"
+    fi
+}
