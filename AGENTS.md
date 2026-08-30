@@ -52,7 +52,9 @@ Rules:
 - Comments are opt-in, not default. Only add one when the code isn't
   self-explanatory and the *why* is genuinely non-obvious (a hidden
   constraint, a workaround for a specific bug). If the code speaks for
-  itself, skip the comment.
+  itself, skip the comment. When one is warranted, keep it to a single
+  terse line flagging just the non-obvious part — a multi-line
+  explanation belongs in the commit message or PR description.
 - Never comment *what* the code does — well-named identifiers already say
   that. If it's worth explaining (context on the change, why this approach
   over another), put it in the PR description or commit message, not an
