@@ -1,12 +1,17 @@
 [include]
     path = .gitconfig-base
 [credential]
-    # this is actually needed to clear out any existing helpers
     helper =
     helper = /usr/local/bin/git-credential-manager
     credentialStore = secretservice
 [credential "https://dev.azure.com"]
     useHttpPath = true
+[credential "https://github.com"]
+    helper =
+    helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+    helper =
+    helper = !/usr/bin/gh auth git-credential
 [diff]
     tool = bc
 [difftool]
@@ -21,4 +26,3 @@
 [mergetool "bc"]
     cmd = bcompare \"$REMOTE\" \"$LOCAL\" \"$BASE\" \"$MERGED\"
     trustExitCode = true
-
