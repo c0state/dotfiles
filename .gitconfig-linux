@@ -1,14 +1,12 @@
 [include]
     path = .gitconfig-base
 [credential]
-    # this is actually needed to clear out any existing helpers
     helper =
     helper = /usr/local/bin/git-credential-manager
     credentialStore = secretservice
 [credential "https://dev.azure.com"]
     useHttpPath = true
 [credential "https://github.com"]
-    # empty helper clears the inherited GCM helper for this host
     helper =
     helper = !gh auth git-credential
 [diff]
@@ -25,4 +23,3 @@
 [mergetool "bc"]
     cmd = bcompare \"$REMOTE\" \"$LOCAL\" \"$BASE\" \"$MERGED\"
     trustExitCode = true
-
