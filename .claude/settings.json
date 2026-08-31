@@ -90,5 +90,6 @@
   "agentPushNotifEnabled": true,
   "skipAutoPermissionPrompt": true,
   "voiceEnabled": true,
-  "inputNeededNotifEnabled": true
+  "inputNeededNotifEnabled": true,
+  "remoteControlAtStartup": true
 }
