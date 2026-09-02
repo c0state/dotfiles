@@ -91,3 +91,26 @@ function claude
         command claude $argv
     end
 end
+
+# codex cli: automatically select the platform-specific config profile
+function codex
+    set --local CODEX_PROFILE
+    switch (uname -s)
+        case Linux
+            set CODEX_PROFILE linux
+        case Darwin
+            set CODEX_PROFILE macos
+        case '*'
+            echo "Unsupported platform for Codex profile: "(uname -s) >&2
+            return 1
+    end
+
+    for ARG in $argv
+        if test "$ARG" = --profile; or test "$ARG" = -p; or string match --quiet -- '--profile=*' "$ARG"
+            command codex $argv
+            return
+        end
+    end
+
+    command codex --profile $CODEX_PROFILE $argv
+end

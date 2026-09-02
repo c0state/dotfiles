@@ -11,6 +11,45 @@ ln -s -f -n "$HOME/.dotfiles/AGENTS.md" "$HOME/.codex/AGENTS.md"
 ln -s -f -n "$HOME/.dotfiles/AGENTS.md" "$HOME/.gemini/GEMINI.md"
 ln -s -f -n "$HOME/.dotfiles/AGENTS.md" "$HOME/.copilot/copilot-instructions.md"
 
+# ---------- codex configuration
+
+link_codex_config() {
+  local source="$1"
+  local target="$2"
+  local backup="${target}.local"
+
+  if [ -L "$target" ] && [ "$(readlink "$target")" = "$source" ]; then
+    return
+  fi
+
+  if [ -e "$target" ] || [ -L "$target" ]; then
+    if [ -e "$backup" ] || [ -L "$backup" ]; then
+      echo "Cannot replace $target: backup already exists at $backup" >&2
+      return 1
+    fi
+    mv "$target" "$backup"
+  fi
+
+  ln -s "$source" "$target"
+}
+
+link_codex_config \
+  "$HOME/.dotfiles/.codex/config-base.toml" \
+  "$HOME/.codex/config.toml"
+
+case "$(uname -s)" in
+Linux)
+  link_codex_config \
+    "$HOME/.dotfiles/.codex/linux.config.toml" \
+    "$HOME/.codex/linux.config.toml"
+  ;;
+Darwin)
+  link_codex_config \
+    "$HOME/.dotfiles/.codex/macos.config.toml" \
+    "$HOME/.codex/macos.config.toml"
+  ;;
+esac
+
 # ---------- claude code
 
 if ! which claude; then

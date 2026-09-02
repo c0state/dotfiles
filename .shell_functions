@@ -82,3 +82,30 @@ function claude {
         command claude "$@"
     fi
 }
+
+# codex cli: automatically select the platform-specific config profile
+function codex {
+    local CODEX_PROFILE
+    local ARG
+    case "$(uname -s)" in
+    Linux)
+        CODEX_PROFILE="linux"
+        ;;
+    Darwin)
+        CODEX_PROFILE="macos"
+        ;;
+    *)
+        echo "Unsupported platform for Codex profile: $(uname -s)" >&2
+        return 1
+        ;;
+    esac
+
+    for ARG in "$@"; do
+        if [[ "$ARG" == "--profile" || "$ARG" == --profile=* || "$ARG" == "-p" ]]; then
+            command codex "$@"
+            return $?
+        fi
+    done
+
+    command codex --profile "$CODEX_PROFILE" "$@"
+}

@@ -1,0 +1,6 @@
+#:schema https://developers.openai.com/codex/config-schema.json
+
+[tui]
+alternate_screen = "never"
+notification_method = "bel"
+notifications = true
