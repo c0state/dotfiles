@@ -1,0 +1,6 @@
+#:schema https://developers.openai.com/codex/config-schema.json
+
+[tui]
+alternate_screen = "auto"
+notification_method = "osc9"
+notifications = true
