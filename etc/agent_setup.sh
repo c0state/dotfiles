@@ -11,9 +11,48 @@ ln -s -f -n "$HOME/.dotfiles/AGENTS.md" "$HOME/.codex/AGENTS.md"
 ln -s -f -n "$HOME/.dotfiles/AGENTS.md" "$HOME/.gemini/GEMINI.md"
 ln -s -f -n "$HOME/.dotfiles/AGENTS.md" "$HOME/.copilot/copilot-instructions.md"
 
-# ---------- codex configuration
+# ---------- codex profiles
 
-link_codex_config() {
+ensure_codex_local_config() {
+  local target="$HOME/.codex/config.toml"
+  local legacy_source="$HOME/.dotfiles/.codex/config-base.toml"
+  local backup="$target.repo-symlink"
+  local temp="$target.migration.tmp"
+
+  if [ ! -L "$target" ]; then
+    return
+  fi
+
+  if [ "$(readlink "$target")" != "$legacy_source" ]; then
+    echo "Cannot replace unrelated Codex config symlink: $target" >&2
+    return 1
+  fi
+
+  if [ -e "$backup" ] || [ -L "$backup" ]; then
+    echo "Cannot migrate $target: backup already exists at $backup" >&2
+    return 1
+  fi
+
+  if [ -e "$target" ]; then
+    cp -pL "$target" "$temp"
+  elif [ -f "${target}.local" ]; then
+    cp -p "${target}.local" "$temp"
+  elif [ ! -e "$target" ]; then
+    mv "$target" "$backup"
+    return
+  else
+    echo "Cannot migrate $target: no readable config or backup exists" >&2
+    return 1
+  fi
+
+  mv "$target" "$backup"
+  mv "$temp" "$target"
+  chmod 600 "$target"
+}
+
+ensure_codex_local_config
+
+link_codex_profile() {
   local source="$1"
   local target="$2"
   local backup="${target}.local"
@@ -33,18 +72,14 @@ link_codex_config() {
   ln -s "$source" "$target"
 }
 
-link_codex_config \
-  "$HOME/.dotfiles/.codex/config-base.toml" \
-  "$HOME/.codex/config.toml"
-
 case "$(uname -s)" in
 Linux)
-  link_codex_config \
+  link_codex_profile \
     "$HOME/.dotfiles/.codex/linux.config.toml" \
     "$HOME/.codex/linux.config.toml"
   ;;
 Darwin)
-  link_codex_config \
+  link_codex_profile \
     "$HOME/.dotfiles/.codex/macos.config.toml" \
     "$HOME/.codex/macos.config.toml"
   ;;
@@ -160,7 +195,9 @@ claude plugin install agentmemory@agentmemory || true
 # wire and install the full agentmemory integration for codex CLI
 agentmemory connect codex || true
 codex plugin marketplace add rohitg00/agentmemory || true
-codex plugin add agentmemory@agentmemory || true
+if ! codex plugin list --json | grep --fixed-strings --quiet '"pluginId": "agentmemory@agentmemory"'; then
+  codex plugin add agentmemory@agentmemory || true
+fi
 
 # codex desktop does not currently load plugin hooks, so also install the
 # global hooks workaround. agentmemory 0.9.27 exits early when MCP is already
