@@ -7,6 +7,9 @@ personality = "pragmatic"
 approval_policy = "on-request"
 sandbox_mode = "workspace-write"
 
+[desktop]
+followUpQueueMode = "steer"
+
 [features]
 memories = true
 
