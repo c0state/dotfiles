@@ -12,7 +12,7 @@ fi
 
 function get_github_release_version {
   local repo=$(echo "$1" | sed 's|.*github.com/||' | sed 's|/releases.*||')
-  local version=$(curl --fail -sL "https://api.github.com/repos/$repo/releases/latest" | grep '"tag_name":' | head -n 1 | sed -E 's/.*"v?([^"]+)".*/\1/')
+  local version=$(curl --fail --silent --location "https://api.github.com/repos/$repo/releases/latest" | grep '"tag_name":' | head -n 1 | sed -E 's/.*"v?([^"]+)".*/\1/')
   echo "$version"
 }
 
@@ -272,7 +272,7 @@ if ! which gitkraken >/dev/null; then
 fi
 
 RPI_IMAGER_VERSION=$(get_github_release_version "https://github.com/raspberrypi/rpi-imager/releases/latest")
-install_package https://github.com/raspberrypi/rpi-imager/releases/download/v${RPI_IMAGER_VERSION}/rpi-imager_${RPI_IMAGER_VERSION}_${DPKG_ARCH}.deb
+install_package "https://github.com/raspberrypi/rpi-imager/releases/download/v${RPI_IMAGER_VERSION}/rpi-imager_${RPI_IMAGER_VERSION}-1_${DPKG_ARCH}.deb"
 
 which jetbrains-toolbox ||
   wget -O - https://download.jetbrains.com/toolbox/jetbrains-toolbox-2.4.2.32922.tar.gz \
