@@ -62,6 +62,7 @@
     "agentmemory@agentmemory": true,
     "aws-core@agent-toolkit-for-aws": true,
     "pyright-lsp@claude-plugins-official": true,
+    "superpowers@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
