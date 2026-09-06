@@ -273,7 +273,7 @@ RPI_IMAGER_VERSION=$(get_github_release_version "https://github.com/raspberrypi/
 install_package "https://github.com/raspberrypi/rpi-imager/releases/download/v${RPI_IMAGER_VERSION}/rpi-imager_${RPI_IMAGER_VERSION}-1_${DPKG_ARCH}.deb"
 
 which jetbrains-toolbox ||
-  wget -O - https://download.jetbrains.com/toolbox/jetbrains-toolbox-2.4.2.32922.tar.gz \
+  wget -O - https://download.jetbrains.com/toolbox/jetbrains-toolbox-2.4.2.32922.tar.gz |
     tar -xzO jetbrains-toolbox-2.4.2.32922/jetbrains-toolbox \
     >"$HOME"/.local/bin/jetbrains-toolbox &&
   chmod u+x "$HOME"/.local/bin/jetbrains-toolbox
