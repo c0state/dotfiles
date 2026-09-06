@@ -302,8 +302,13 @@ if ! which cursor >/dev/null; then
   install_package https://api2.cursor.sh/updates/download/golden/linux-${SHORT_ARCH}-deb/cursor/2.4
 fi
 
+GITKRAKEN_PACKAGE_ARCH="$DPKG_ARCH"
+if [ "$DPKG_ARCH" = "arm64" ]; then
+  GITKRAKEN_PACKAGE_ARCH="$RAW_ARCH"
+fi
+
 if ! which gitkraken >/dev/null; then
-  install_package https://api.gitkraken.dev/releases/production/linux/${SHORT_ARCH}/active/gitkraken-${DPKG_ARCH}.deb
+  install_package "https://api.gitkraken.dev/releases/production/linux/${SHORT_ARCH}/active/gitkraken-${GITKRAKEN_PACKAGE_ARCH}.deb"
 fi
 
 RPI_IMAGER_VERSION=$(get_github_release_version "https://github.com/raspberrypi/rpi-imager/releases/latest")
