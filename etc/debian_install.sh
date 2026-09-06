@@ -272,11 +272,30 @@ fi
 RPI_IMAGER_VERSION=$(get_github_release_version "https://github.com/raspberrypi/rpi-imager/releases/latest")
 install_package "https://github.com/raspberrypi/rpi-imager/releases/download/v${RPI_IMAGER_VERSION}/rpi-imager_${RPI_IMAGER_VERSION}-1_${DPKG_ARCH}.deb"
 
-which jetbrains-toolbox ||
-  wget -O - https://download.jetbrains.com/toolbox/jetbrains-toolbox-3.7.2.87231.tar.gz |
-    tar -xzO jetbrains-toolbox-3.7.2.87231/jetbrains-toolbox \
-    >"$HOME"/.local/bin/jetbrains-toolbox &&
-  chmod u+x "$HOME"/.local/bin/jetbrains-toolbox
+TOOLBOX_VERSION=3.7.2.87231
+TOOLBOX_INSTALL_DIR="$HOME/.local/share/jetbrains-toolbox/$TOOLBOX_VERSION"
+
+case "$DPKG_ARCH" in
+  amd64)
+    TOOLBOX_URL="https://download.jetbrains.com/toolbox/jetbrains-toolbox-$TOOLBOX_VERSION.tar.gz"
+    ;;
+  arm64)
+    TOOLBOX_URL="https://download.jetbrains.com/toolbox/jetbrains-toolbox-$TOOLBOX_VERSION-arm64.tar.gz"
+    ;;
+  *)
+    echo "Unsupported Debian architecture for JetBrains Toolbox: $DPKG_ARCH" >&2
+    exit 1
+    ;;
+esac
+
+if ! which jetbrains-toolbox >/dev/null; then
+  mkdir --parents "$TOOLBOX_INSTALL_DIR"
+  wget --fail --location --output-document=- "$TOOLBOX_URL" |
+    tar --extract --gzip --directory="$TOOLBOX_INSTALL_DIR" --strip-components=1
+  ln --symbolic --force --no-dereference \
+    "$TOOLBOX_INSTALL_DIR/bin/jetbrains-toolbox" \
+    "$HOME/.local/bin/jetbrains-toolbox"
+fi
 
 if ! which steam >/dev/null; then
   install_package https://cdn.fastly.steamstatic.com/client/installer/steam.deb
