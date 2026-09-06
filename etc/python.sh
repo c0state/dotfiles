@@ -28,8 +28,6 @@ else
   uv self update
 fi
 
-uv generate-shell-completion fish >~/.config/fish/completions/uv.fish
-
 #---------- set up default python venv
 
 uv python install "$PYTHON_VERSION" --default
