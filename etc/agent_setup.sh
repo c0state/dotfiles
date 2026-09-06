@@ -130,7 +130,8 @@ fi
 # ---------- gemini cli
 
 if ! command -v agy >/dev/null 2>&1; then
-  curl -fsSL https://antigravity.google/cli/install.sh | bash
+  curl -fsSL https://antigravity.google/cli/install.sh |
+    bash -s -- --skip-aliases --skip-path
 else
   agy update
 fi
