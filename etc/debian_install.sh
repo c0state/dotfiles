@@ -177,16 +177,14 @@ sudo snap refresh
 
 #------------------------------ flatpak repos
 
-flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
+sudo flatpak remote-add --if-not-exists --system flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 sudo flatpak install --system -y flathub io.github.shiftey.Desktop
 sudo flatpak install --system -y flathub io.kinvolk.Headlamp
 sudo flatpak install --system -y flathub io.podman_desktop.PodmanDesktop
 sudo flatpak install --system -y flathub com.obsproject.Studio
 sudo flatpak install --system -y flathub com.usebottles.bottles
-flatpak install --user -y flathub org.gimp.GIMP
-flatpak install --user -y flathub com.usebottles.bottles
-flatpak update --user -y
-sudo flatpak update -y
+sudo flatpak install --system -y flathub org.gimp.GIMP
+sudo flatpak update --system -y
 
 #------------------------------ general init
 
