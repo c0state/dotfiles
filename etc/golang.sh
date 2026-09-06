@@ -7,11 +7,19 @@ set -eu
 GO_VERSION=$(curl -L https://golang.org/VERSION?m=text | head -n 1)
 PLATFORM=$(uname)
 MACH_TYPE=$(uname -m)
-ARCH_TYPE=$MACH_TYPE
 
-if [[ "$MACH_TYPE" == "x86_64" ]]; then
-  ARCH_TYPE="amd64"
-fi
+case "$MACH_TYPE" in
+  x86_64|amd64)
+    ARCH_TYPE="amd64"
+    ;;
+  aarch64|arm64)
+    ARCH_TYPE="arm64"
+    ;;
+  *)
+    echo "Architecture $MACH_TYPE not supported" >&2
+    exit 1
+    ;;
+esac
 
 if [[ "$PLATFORM" == "Darwin" ]]; then
   PLATFORM_STRING="darwin"
@@ -24,7 +32,8 @@ fi
 
 #---------- install section
 
-if (! command -v go >/dev/null) || ! (go version | grep "$GO_VERSION"); then
+if ! command -v go >/dev/null ||
+  ! go version 2>/dev/null | grep -Fq "$GO_VERSION $PLATFORM_STRING/$ARCH_TYPE"; then
   mkdir -p ~/.local
   rm -rf ~/.local/go
   curl -L https://golang.org/dl/"$GO_VERSION"."$PLATFORM_STRING"-"$ARCH_TYPE".tar.gz | tar zxvf - -C "$HOME"/.local
