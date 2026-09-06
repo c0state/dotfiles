@@ -69,6 +69,13 @@ Rules:
   running CLI commands. They're self-documenting when read back later,
   in logs, or in shared command history.
 
+## Research
+
+- When investigating a topic—especially a technical, product, integration, or
+  rapidly changing one—check current primary documentation and relevant
+  publicly available issue trackers and discussion forums. Distinguish
+  documented support from reported or experimental behavior.
+
 ## Configuration changes
 
 - When adding or changing configuration in this repo (setup scripts,
