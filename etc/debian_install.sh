@@ -4,11 +4,20 @@ set -eu
 
 WSL_DISTRO_NAME=${WSL_DISTRO_NAME:-""}
 DPKG_ARCH=$(dpkg --print-architecture 2>/dev/null || echo "")
-ARCH=$(arch)
+RAW_ARCH=$(arch)
 SHORT_ARCH="$DPKG_ARCH"
 if [ "$SHORT_ARCH" = "amd64" ]; then
   SHORT_ARCH="x64"
 fi
+
+case "$RAW_ARCH" in
+  aarch64)
+    ARCH="arm64"
+    ;;
+  *)
+    ARCH="$RAW_ARCH"
+    ;;
+esac
 
 function get_github_release_version {
   local repo=$(echo "$1" | sed 's|.*github.com/||' | sed 's|/releases.*||')
@@ -67,17 +76,21 @@ Pin-Priority: 1000
 ' | sudo tee /etc/apt/preferences.d/mozilla
 
 # lens
-curl -fsSL https://downloads.k8slens.dev/keys/gpg | sudo gpg --dearmor --yes -o /usr/share/keyrings/lens-archive-keyring.gpg
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/lens-archive-keyring.gpg] https://downloads.k8slens.dev/apt/debian stable main" |
-  sudo tee /etc/apt/sources.list.d/lens.list >/dev/null
+if [ "$DPKG_ARCH" = "amd64" ]; then
+  curl -fsSL https://downloads.k8slens.dev/keys/gpg | sudo gpg --dearmor --yes -o /usr/share/keyrings/lens-archive-keyring.gpg
+  echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/lens-archive-keyring.gpg] https://downloads.k8slens.dev/apt/debian stable main" |
+    sudo tee /etc/apt/sources.list.d/lens.list >/dev/null
+fi
 
 # onedrive
 wget -qO - https://download.opensuse.org/repositories/home:/npreining:/debian-ubuntu-onedrive/xUbuntu_26.04/Release.key | gpg --dearmor | sudo tee /usr/share/keyrings/onedrive.gpg >/dev/null
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/onedrive.gpg] https://download.opensuse.org/repositories/home:/npreining:/debian-ubuntu-onedrive/xUbuntu_26.04/ ./" | sudo tee /etc/apt/sources.list.d/onedrive.list
 
 # signal
-wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor | sudo tee /usr/share/keyrings/signal-desktop-keyring.gpg >/dev/null
-wget -O- https://updates.signal.org/static/desktop/apt/signal-desktop.sources | sudo tee /etc/apt/sources.list.d/signal-desktop.sources
+if [ "$DPKG_ARCH" = "amd64" ]; then
+  wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor | sudo tee /usr/share/keyrings/signal-desktop-keyring.gpg >/dev/null
+  wget -O- https://updates.signal.org/static/desktop/apt/signal-desktop.sources | sudo tee /etc/apt/sources.list.d/signal-desktop.sources
+fi
 
 # terraform
 wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor | sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg >/dev/null
@@ -171,7 +184,9 @@ sudo snap install dbeaver-ce --classic
 sudo snap install firefox
 sudo snap install helm --classic
 sudo snap install postman
-sudo snap install slack
+if [ "$DPKG_ARCH" = "amd64" ]; then
+  sudo snap install slack
+fi
 sudo snap install telegram-desktop
 sudo snap refresh
 
@@ -181,8 +196,10 @@ sudo flatpak remote-add --if-not-exists --system flathub https://dl.flathub.org/
 sudo flatpak install --system -y flathub io.github.shiftey.Desktop
 sudo flatpak install --system -y flathub io.kinvolk.Headlamp
 sudo flatpak install --system -y flathub io.podman_desktop.PodmanDesktop
-sudo flatpak install --system -y flathub com.obsproject.Studio
-sudo flatpak install --system -y flathub com.usebottles.bottles
+if [ "$DPKG_ARCH" = "amd64" ]; then
+  sudo flatpak install --system -y flathub com.obsproject.Studio
+  sudo flatpak install --system -y flathub com.usebottles.bottles
+fi
 sudo flatpak install --system -y flathub org.gimp.GIMP
 sudo flatpak update --system -y
 
@@ -221,9 +238,12 @@ sudo apt -y install \
   code \
   fonts-firacode fonts-hack fonts-jetbrains-mono \
   gh \
-  lens \
   sourcegit \
   tig
+
+if [ "$DPKG_ARCH" = "amd64" ]; then
+  sudo apt -y install lens
+fi
 
 # claude desktop cowork runs its sandbox in a vm, which needs /dev/kvm access
 sudo groupadd --force --system kvm
@@ -245,20 +265,37 @@ install_package "https://github.com/github/app/releases/latest/download/GitHub-C
 
 # discord doesn't have an apt repo, so install each time this script is run to get latest
 # note: there *is* this third party option: https://github.com/palfrey/discord-apt
-install_package "https://discord.com/api/download?platform=linux&format=deb"
+if [ "$DPKG_ARCH" = "amd64" ]; then
+  install_package "https://discord.com/api/download?platform=linux&format=deb"
+fi
 
-if ! which bcompare >/dev/null; then
+if [ "$DPKG_ARCH" = "amd64" ] && ! which bcompare >/dev/null; then
   install_package "https://www.scootersoftware.com/files/bcompare-5.1.6.31527_$DPKG_ARCH.deb"
 fi
 
 install_package "https://download.teamviewer.com/download/linux/teamviewer_$DPKG_ARCH.deb"
 
 RUSTDESK_VERSION=$(get_github_release_version "https://github.com/rustdesk/rustdesk/releases/latest")
-install_package "https://github.com/rustdesk/rustdesk/releases/download/$RUSTDESK_VERSION/rustdesk-$RUSTDESK_VERSION-$ARCH.deb"
+install_package "https://github.com/rustdesk/rustdesk/releases/download/$RUSTDESK_VERSION/rustdesk-$RUSTDESK_VERSION-$RAW_ARCH.deb"
 
 if ! which obsidian >/dev/null; then
-  OBSIDIAN_VERSION=$(get_github_release_version "https://github.com/obsidianmd/obsidian-releases/releases/latest")
-  install_package "https://github.com/obsidianmd/obsidian-releases/releases/download/v$OBSIDIAN_VERSION/obsidian_${OBSIDIAN_VERSION}_$DPKG_ARCH.deb"
+  OBSIDIAN_VERSION=1.13.7
+  case "$DPKG_ARCH" in
+    amd64)
+      OBSIDIAN_ASSET_SUFFIX=""
+      ;;
+    arm64)
+      OBSIDIAN_ASSET_SUFFIX="-arm64"
+      ;;
+    *)
+      echo "Unsupported Debian architecture for Obsidian: $DPKG_ARCH" >&2
+      exit 1
+      ;;
+  esac
+  sudo curl --fail --location \
+    "https://github.com/obsidianmd/obsidian-releases/releases/download/v$OBSIDIAN_VERSION/Obsidian-$OBSIDIAN_VERSION$OBSIDIAN_ASSET_SUFFIX.AppImage" \
+    --output /usr/local/bin/obsidian
+  sudo chmod +x /usr/local/bin/obsidian
 fi
 
 if ! which cursor >/dev/null; then
@@ -297,7 +334,7 @@ if ! which jetbrains-toolbox >/dev/null; then
     "$HOME/.local/bin/jetbrains-toolbox"
 fi
 
-if ! which steam >/dev/null; then
+if [ "$DPKG_ARCH" = "amd64" ] && ! which steam >/dev/null; then
   install_package https://cdn.fastly.steamstatic.com/client/installer/steam.deb
 fi
 
@@ -310,13 +347,16 @@ fi
 sudo curl --fail -L https://github.com/neovim/neovim/releases/latest/download/nvim-linux-$ARCH.appimage --output /usr/local/bin/nvim
 sudo chmod +x /usr/local/bin/nvim
 
-sudo curl --fail -L https://s3.amazonaws.com/outline-releases/manager/linux/stable/Outline-Manager.AppImage --output /usr/local/bin/Outline-Manager
-sudo chmod +x /usr/local/bin/Outline-Manager
+if [ "$DPKG_ARCH" = "amd64" ]; then
+  sudo curl --fail -L https://s3.amazonaws.com/outline-releases/manager/linux/stable/Outline-Manager.AppImage --output /usr/local/bin/Outline-Manager
+  sudo chmod +x /usr/local/bin/Outline-Manager
+fi
 
 # install apps
-sudo apt -y install \
-  signal-desktop \
-  vlc
+sudo apt -y install vlc
+if [ "$DPKG_ARCH" = "amd64" ]; then
+  sudo apt -y install signal-desktop
+fi
 
 # install image packages
 sudo apt -y install \
