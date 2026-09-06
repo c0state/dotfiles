@@ -314,13 +314,15 @@ esac
 # ---------- rtk
 
 if ! which rtk; then
+  export RTK_TELEMETRY_DISABLED=1
+
   curl -fsSL https://raw.githubusercontent.com/rtk-ai/rtk/refs/heads/master/install.sh | sh
   rtk gain
 
-  rtk init -g
-  rtk init -g --gemini
+  rtk init -g --auto-patch
+  rtk init -g --gemini --auto-patch
   rtk init -g --codex
-  [ -d "$HOME/.cursor" ] && rtk init -g --agent cursor
-  [ -d "$HOME/.pi" ] && rtk init -g --agent pi
-  [ -d "$HOME/.antigravity" ] && rtk init --agent antigravity
+  [ -d "$HOME/.cursor" ] && rtk init -g --agent cursor --auto-patch
+  [ -d "$HOME/.pi" ] && rtk init -g --agent pi --auto-patch
+  [ -d "$HOME/.antigravity" ] && rtk init --agent antigravity --auto-patch
 fi
