@@ -177,16 +177,14 @@ sudo snap refresh
 
 #------------------------------ flatpak repos
 
-flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
+sudo flatpak remote-add --if-not-exists --system flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 sudo flatpak install --system -y flathub io.github.shiftey.Desktop
 sudo flatpak install --system -y flathub io.kinvolk.Headlamp
 sudo flatpak install --system -y flathub io.podman_desktop.PodmanDesktop
 sudo flatpak install --system -y flathub com.obsproject.Studio
 sudo flatpak install --system -y flathub com.usebottles.bottles
-flatpak install --user -y flathub org.gimp.GIMP
-flatpak install --user -y flathub com.usebottles.bottles
-flatpak update --user -y
-sudo flatpak update -y
+sudo flatpak install --system -y flathub org.gimp.GIMP
+sudo flatpak update --system -y
 
 #------------------------------ general init
 
@@ -274,11 +272,30 @@ fi
 RPI_IMAGER_VERSION=$(get_github_release_version "https://github.com/raspberrypi/rpi-imager/releases/latest")
 install_package "https://github.com/raspberrypi/rpi-imager/releases/download/v${RPI_IMAGER_VERSION}/rpi-imager_${RPI_IMAGER_VERSION}-1_${DPKG_ARCH}.deb"
 
-which jetbrains-toolbox ||
-  wget -O - https://download.jetbrains.com/toolbox/jetbrains-toolbox-2.4.2.32922.tar.gz \
-    tar -xzO jetbrains-toolbox-2.4.2.32922/jetbrains-toolbox \
-    >"$HOME"/.local/bin/jetbrains-toolbox &&
-  chmod u+x "$HOME"/.local/bin/jetbrains-toolbox
+TOOLBOX_VERSION=3.7.2.87231
+TOOLBOX_INSTALL_DIR="$HOME/.local/share/jetbrains-toolbox/$TOOLBOX_VERSION"
+
+case "$DPKG_ARCH" in
+  amd64)
+    TOOLBOX_URL="https://download.jetbrains.com/toolbox/jetbrains-toolbox-$TOOLBOX_VERSION.tar.gz"
+    ;;
+  arm64)
+    TOOLBOX_URL="https://download.jetbrains.com/toolbox/jetbrains-toolbox-$TOOLBOX_VERSION-arm64.tar.gz"
+    ;;
+  *)
+    echo "Unsupported Debian architecture for JetBrains Toolbox: $DPKG_ARCH" >&2
+    exit 1
+    ;;
+esac
+
+if ! which jetbrains-toolbox >/dev/null; then
+  mkdir --parents "$TOOLBOX_INSTALL_DIR"
+  wget --fail --location --output-document=- "$TOOLBOX_URL" |
+    tar --extract --gzip --directory="$TOOLBOX_INSTALL_DIR" --strip-components=1
+  ln --symbolic --force --no-dereference \
+    "$TOOLBOX_INSTALL_DIR/bin/jetbrains-toolbox" \
+    "$HOME/.local/bin/jetbrains-toolbox"
+fi
 
 if ! which steam >/dev/null; then
   install_package https://cdn.fastly.steamstatic.com/client/installer/steam.deb
