@@ -177,16 +177,14 @@ sudo snap refresh
 
 #------------------------------ flatpak repos
 
-flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
+sudo flatpak remote-add --if-not-exists --system flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 sudo flatpak install --system -y flathub io.github.shiftey.Desktop
 sudo flatpak install --system -y flathub io.kinvolk.Headlamp
 sudo flatpak install --system -y flathub io.podman_desktop.PodmanDesktop
 sudo flatpak install --system -y flathub com.obsproject.Studio
 sudo flatpak install --system -y flathub com.usebottles.bottles
-flatpak install --user -y flathub org.gimp.GIMP
-flatpak install --user -y flathub com.usebottles.bottles
-flatpak update --user -y
-sudo flatpak update -y
+sudo flatpak install --system -y flathub org.gimp.GIMP
+sudo flatpak update --system -y
 
 #------------------------------ general init
 
@@ -275,8 +273,8 @@ RPI_IMAGER_VERSION=$(get_github_release_version "https://github.com/raspberrypi/
 install_package "https://github.com/raspberrypi/rpi-imager/releases/download/v${RPI_IMAGER_VERSION}/rpi-imager_${RPI_IMAGER_VERSION}-1_${DPKG_ARCH}.deb"
 
 which jetbrains-toolbox ||
-  wget -O - https://download.jetbrains.com/toolbox/jetbrains-toolbox-2.4.2.32922.tar.gz \
-    tar -xzO jetbrains-toolbox-2.4.2.32922/jetbrains-toolbox \
+  wget -O - https://download.jetbrains.com/toolbox/jetbrains-toolbox-3.7.2.87231.tar.gz |
+    tar -xzO jetbrains-toolbox-3.7.2.87231/jetbrains-toolbox \
     >"$HOME"/.local/bin/jetbrains-toolbox &&
   chmod u+x "$HOME"/.local/bin/jetbrains-toolbox
 
