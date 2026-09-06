@@ -100,6 +100,7 @@ ln -s -f -n "$HOME/.dotfiles/.claude/settings.json" "$HOME/.claude/settings.json
 # install claude plugins
 claude plugin install typescript-lsp@claude-plugins-official || true
 claude plugin install pyright-lsp@claude-plugins-official || true
+claude plugin install superpowers@claude-plugins-official || true
 
 claude plugin marketplace add aws/agent-toolkit-for-aws || true
 claude plugin install aws-core@agent-toolkit-for-aws || true
@@ -134,6 +135,8 @@ else
   agy update
 fi
 
+agy plugin install https://github.com/obra/superpowers || true
+
 # ---------- hermes agent
 
 if ! command -v hermes >/dev/null 2>&1; then
@@ -155,6 +158,11 @@ bun add --global \
   @github/copilot \
   @openai/codex \
   opencode-ai
+
+copilot plugin marketplace add obra/superpowers-marketplace || true
+copilot plugin install superpowers@superpowers-marketplace || true
+
+opencode plugin --global superpowers@git+https://github.com/obra/superpowers.git || true
 
 # ---------- herdr (agent-aware terminal multiplexer)
 
@@ -197,6 +205,10 @@ agentmemory connect codex || true
 codex plugin marketplace add rohitg00/agentmemory || true
 if ! codex plugin list --json | grep --fixed-strings --quiet '"pluginId": "agentmemory@agentmemory"'; then
   codex plugin add agentmemory@agentmemory || true
+fi
+
+if ! codex plugin list --json | grep --fixed-strings --quiet '"pluginId": "superpowers@openai-curated"'; then
+  codex plugin add superpowers@openai-curated || true
 fi
 
 # codex desktop does not currently load plugin hooks, so also install the
