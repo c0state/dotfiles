@@ -16,7 +16,10 @@ function Invoke-NativeCommand {
         [string[]]$ArgumentList,
 
         [Parameter(Mandatory = $true)]
-        [string]$Description
+        [string]$Description,
+
+        [Parameter(Mandatory = $false)]
+        [scriptblock]$AcceptFailure
     )
 
     Write-Host "`n$Description"
@@ -25,11 +28,19 @@ function Invoke-NativeCommand {
         & $FilePath @ArgumentList | ForEach-Object { Write-Host $_ }
         $exitCode = $LASTEXITCODE
     } catch {
+        if ($AcceptFailure -and (& $AcceptFailure)) {
+            return $true
+        }
+
         [void]$failures.Add("${Description}: $($_.Exception.Message)")
         return $false
     }
 
     if ($exitCode -ne 0) {
+        if ($AcceptFailure -and (& $AcceptFailure)) {
+            return $true
+        }
+
         [void]$failures.Add("$Description exited with code $exitCode")
         return $false
     }
@@ -42,7 +53,8 @@ function Get-InstalledDistributionNames {
     $exitCode = $LASTEXITCODE
     $names = @(
         $output |
-            ForEach-Object { $_.ToString().Trim() } |
+            ForEach-Object { $_.ToString() -replace "[\u0000\uFEFF]", "" } |
+            ForEach-Object { $_.Trim() } |
             Where-Object { $_ }
     )
 
@@ -50,6 +62,22 @@ function Get-InstalledDistributionNames {
         ExitCode = $exitCode
         Names    = $names
     }
+}
+
+function Test-DistributionInstalled {
+    param(
+        [Parameter(Mandatory = $true)]
+        [string]$DistributionName,
+
+        [Parameter(Mandatory = $true)]
+        [System.Collections.Generic.List[string]]$InstalledDistributions
+    )
+
+    $distributionPattern = "^{0}(?:[-.]|$)" -f [regex]::Escape($DistributionName)
+    $matchingDistributions = @($InstalledDistributions | Where-Object {
+        $_ -match $distributionPattern
+    })
+    return $matchingDistributions.Count -gt 0
 }
 
 if (-not (Get-Command -Name "wsl.exe" -ErrorAction SilentlyContinue)) {
@@ -70,12 +98,9 @@ if ($installedDistributions.Count -gt 0) {
 }
 
 foreach ($requestedDistribution in $wslDistributions) {
-    $distributionPattern = "^{0}(?:[-.]|$)" -f [regex]::Escape($requestedDistribution)
-    $alreadyInstalled = $installedDistributions | Where-Object {
-        $_ -match $distributionPattern
-    }
-
-    if ($alreadyInstalled) {
+    if (Test-DistributionInstalled `
+        -DistributionName $requestedDistribution `
+        -InstalledDistributions $installedDistributions) {
         Write-Host "WSL distribution already installed: $requestedDistribution"
         continue
     }
@@ -88,7 +113,23 @@ foreach ($requestedDistribution in $wslDistributions) {
             $requestedDistribution
             "--no-launch"
         ) `
-        -Description "Installing WSL distribution: $requestedDistribution"
+        -Description "Installing WSL distribution: $requestedDistribution" `
+        -AcceptFailure {
+            $currentState = Get-InstalledDistributionNames
+            $currentNames = [System.Collections.Generic.List[string]]::new()
+            foreach ($name in $currentState.Names) {
+                [void]$currentNames.Add($name)
+            }
+
+            if (Test-DistributionInstalled `
+                -DistributionName $requestedDistribution `
+                -InstalledDistributions $currentNames) {
+                Write-Host "WSL distribution already installed: $requestedDistribution"
+                return $true
+            }
+
+            return $false
+        }
 
     if ($installed) {
         [void]$installedDistributions.Add($requestedDistribution)

@@ -26,7 +26,7 @@
         { "PackageIdentifier": "Google.AntigravityCLI" },
         { "PackageIdentifier": "Google.AntigravityIDE" },
         { "PackageIdentifier": "Google.Chrome" },
-        { "PackageIdentifier": "Google.Drive" },
+        { "PackageIdentifier": "Google.GoogleDrive" },
         { "PackageIdentifier": "JetBrains.Toolbox" },
         { "PackageIdentifier": "Jigsaw.OutlineManager" },
         { "PackageIdentifier": "Kubernetes.kubectl" },
@@ -37,7 +37,6 @@
         { "PackageIdentifier": "Mirantis.Lens" },
         { "PackageIdentifier": "Mozilla.Firefox" },
         { "PackageIdentifier": "Neovim.Neovim" },
-        { "PackageIdentifier": "Nvidia.GeForceExperience" },
         { "PackageIdentifier": "OBSProject.OBSStudio" },
         { "PackageIdentifier": "OpenWhisperSystems.Signal" },
         { "PackageIdentifier": "MuhammedKalkan.OpenLens" },
@@ -50,7 +49,6 @@
         { "PackageIdentifier": "TechPowerUp.GPU-Z" },
         { "PackageIdentifier": "Valve.Steam" },
         { "PackageIdentifier": "VideoLAN.VLC" },
-        { "PackageIdentifier": "WhatsApp.WhatsApp" },
         { "PackageIdentifier": "WinDirStat.WinDirStat" },
         { "PackageIdentifier": "WireGuard.WireGuard" },
         { "PackageIdentifier": "ZedIndustries.Zed" },
@@ -61,6 +59,24 @@
         "Identifier": "Microsoft.Winget.Source_8wekyb3d8bbwe",
         "Name": "winget",
         "Type": "Microsoft.PreIndexed.Package"
+      }
+    },
+    {
+      "Packages": [
+        {
+          "PackageIdentifier": "XP8CLZL93F5Z4P",
+          "Comment": "NVIDIA App (Microsoft Store package)"
+        },
+        {
+          "PackageIdentifier": "9NKSQGP7F2NH",
+          "Comment": "WhatsApp Desktop (Microsoft Store package)"
+        }
+      ],
+      "SourceDetails": {
+        "Argument": "https://storeedgefd.dsx.mp.microsoft.com/v9.0",
+        "Identifier": "StoreEdgeFD",
+        "Name": "msstore",
+        "Type": "Microsoft.Rest"
       }
     }
   ]
