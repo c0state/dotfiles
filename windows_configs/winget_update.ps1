@@ -5,6 +5,7 @@ $ErrorActionPreference = "Stop"
 
 $importFile = Join-Path -Path $PSScriptRoot -ChildPath "winget_import.json"
 $wslSetupScript = Join-Path -Path $PSScriptRoot -ChildPath "wsl_setup.ps1"
+$profileSource = Join-Path -Path $PSScriptRoot -ChildPath "Microsoft.PowerShell_profile.ps1"
 $failures = [System.Collections.Generic.List[string]]::new()
 
 function Test-IsAdministrator {
@@ -71,6 +72,23 @@ function Invoke-NativeCommand {
     }
 }
 
+function Link-PowerShellProfile {
+    param(
+        [Parameter(Mandatory = $true)]
+        [string]$SourcePath
+    )
+
+    if (-not (Test-Path -LiteralPath $SourcePath -PathType Leaf)) {
+        throw "PowerShell profile source was not found: $SourcePath"
+    }
+
+    $profilePath = $PROFILE
+    $profileDirectory = Split-Path -Path $profilePath -Parent
+    New-Item -ItemType Directory -Path $profileDirectory -Force | Out-Null
+    New-Item -ItemType SymbolicLink -Path $profilePath -Target $SourcePath -Force | Out-Null
+    Write-Host "Linked PowerShell profile: $profilePath"
+}
+
 if (-not (Test-Path -LiteralPath $importFile -PathType Leaf)) {
     throw "WinGet import file was not found: $importFile"
 }
@@ -103,6 +121,8 @@ Invoke-NativeCommand `
         "--disable-interactivity"
     ) `
     -Description "Importing WinGet packages"
+
+Link-PowerShellProfile -SourcePath $profileSource
 
 if ($failures.Count -gt 0) {
     Write-Host "`nBootstrap completed with failures:" -ForegroundColor Red
