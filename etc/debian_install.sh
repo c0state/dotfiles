@@ -176,7 +176,8 @@ sudo apt -y install \
   wmctrl \
   wl-clipboard \
   xclip \
-  vim-nox
+  vim-nox \
+  zstd
 
 #------------------------------ install packages
 
