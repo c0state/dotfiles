@@ -39,7 +39,9 @@ bun add --global \
 # ---------- install deno https://github.com/denoland/deno
 
 if ! which deno; then
-  curl -fsSL https://raw.githubusercontent.com/denoland/deno_install/master/install.sh | sh
+  # CI suppresses Deno's terminal-triggered shell setup; shell configs add ~/.deno/bin to PATH.
+  curl --fail --silent --show-error --location https://raw.githubusercontent.com/denoland/deno_install/master/install.sh |
+    env CI=1 DENO_INSTALL="$HOME/.deno" sh
 else
   deno upgrade
 fi
