@@ -28,7 +28,7 @@ fi
 # ---------- set up gitconfig
 
 if [[ -n "$WSL_DISTRO_NAME" ]]; then
-  ln -s -f "$HOME"/.dotfiles/.gitconfig-wsl "$HOME"/.gitconfig
+  ln -s -f "$HOME"/.dotfiles/.gitconfig-linux "$HOME"/.gitconfig
 elif [[ "$PLATFORM" == "Linux" ]]; then
   ln -s -f "$HOME"/.dotfiles/.gitconfig-linux "$HOME"/.gitconfig
 elif [[ "$PLATFORM" == "Darwin" ]]; then

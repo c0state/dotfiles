@@ -2,6 +2,8 @@
 
 #---------- poetry
 
+mkdir -p "$HOME/.config/fish/completions"
+
 poetry completions fish >$HOME/.config/fish/completions/poetry.fish
 
 #---------- completions
