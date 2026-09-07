@@ -27,6 +27,7 @@
         { "PackageIdentifier": "Google.AntigravityIDE" },
         { "PackageIdentifier": "Google.Chrome" },
         { "PackageIdentifier": "Google.GoogleDrive" },
+        { "PackageIdentifier": "JanDeDobbeleer.OhMyPosh" },
         { "PackageIdentifier": "JetBrains.Toolbox" },
         { "PackageIdentifier": "Jigsaw.OutlineManager" },
         { "PackageIdentifier": "Kubernetes.kubectl" },
