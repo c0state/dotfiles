@@ -47,6 +47,7 @@
         { "PackageIdentifier": "Tailscale.Tailscale" },
         { "PackageIdentifier": "TeamViewer.TeamViewer" },
         { "PackageIdentifier": "TechPowerUp.GPU-Z" },
+        { "PackageIdentifier": "TheDocumentFoundation.LibreOffice" },
         { "PackageIdentifier": "Valve.Steam" },
         { "PackageIdentifier": "VideoLAN.VLC" },
         { "PackageIdentifier": "WinDirStat.WinDirStat" },
