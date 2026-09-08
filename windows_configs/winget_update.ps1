@@ -89,6 +89,35 @@ function Link-PowerShellProfile {
     Write-Host "Linked PowerShell profile: $profilePath"
 }
 
+function Set-ScancodeMap {
+    param(
+        [Parameter(Mandatory = $true)]
+        [byte[]]$Value,
+
+        [Parameter(Mandatory = $true)]
+        [string]$Description
+    )
+
+    $registryPath = "HKLM:\SYSTEM\CurrentControlSet\Control\Keyboard Layout"
+    $valueName = "Scancode Map"
+
+    try {
+        $existing = Get-ItemProperty -Path $registryPath -Name $valueName -ErrorAction SilentlyContinue
+        if ($existing) {
+            $current = $existing.PSObject.Properties[$valueName].Value
+            if ($current -is [byte[]] -and ($current -join ",") -eq ($Value -join ",")) {
+                Write-Host "Scancode map already configured: $Description"
+                return
+            }
+        }
+
+        Set-ItemProperty -Path $registryPath -Name $valueName -Value $Value -Type Binary
+        Write-Host "Scancode map updated: $Description (a reboot is required for it to take effect)"
+    } catch {
+        [void]$failures.Add("${Description}: $($_.Exception.Message)")
+    }
+}
+
 if (-not (Test-Path -LiteralPath $importFile -PathType Leaf)) {
     throw "WinGet import file was not found: $importFile"
 }
@@ -121,6 +150,14 @@ Invoke-NativeCommand `
         "--disable-interactivity"
     ) `
     -Description "Importing WinGet packages"
+
+$capsLockToControl = [byte[]]@(
+    0x00, 0x00, 0x00, 0x00,   # header
+    0x1D, 0x00, 0x00, 0x00,   # send: Left Ctrl
+    0x3A, 0x00, 0x00, 0x00,   # when: Caps Lock
+    0x00, 0x00, 0x00, 0x00    # terminator
+)
+Set-ScancodeMap -Value $capsLockToControl -Description "Caps Lock -> Left Ctrl"
 
 Link-PowerShellProfile -SourcePath $profileSource
 
