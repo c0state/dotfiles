@@ -42,17 +42,17 @@ Use [Conventional Commits](https://www.conventionalcommits.org/en/)
 format for PR titles, matching the branch type:
 
 ```
-<type>(<scope>): <short-description>
+<type>(<scope>): <short description>
 ```
 
 Rules:
 - `<type>` is one of the types above.
 - `<scope>` is optional; use `windows` for Windows-specific changes.
-- `<short-description>` is imperative, lowercase, and kebab-case
-  (words joined by hyphens).
-- Examples: `feat(windows): map-caps-lock-to-left-ctrl`,
-  `fix: use-linux-gitconfig-on-wsl`,
-  `docs: add-research-verification-guidance`.
+- `<short description>` is natural language, imperative, and lowercase
+  (except proper nouns).
+- Examples: `feat(windows): map Caps Lock to Left Ctrl`,
+  `fix: use Linux gitconfig on WSL`, `docs: add research verification
+  guidance`.
 
 ## Git operations
 
