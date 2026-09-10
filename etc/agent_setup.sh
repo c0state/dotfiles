@@ -127,7 +127,15 @@ if command -v apt >/dev/null 2>&1 && ! dpkg --status chatgpt >/dev/null 2>&1; th
   rm -f "$CHATGPT_DEB"
 fi
 
-# ---------- gemini cli
+# ---------- antigravity desktop (linux)
+
+if [ "$(uname -s)" = "Linux" ] && command -v snap >/dev/null 2>&1; then
+  if ! snap list antigravity >/dev/null 2>&1; then
+    sudo snap install antigravity --classic
+  fi
+fi
+
+# ---------- antigravity cli
 
 if ! command -v agy >/dev/null 2>&1; then
   curl -fsSL https://antigravity.google/cli/install.sh |
