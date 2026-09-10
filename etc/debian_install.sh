@@ -255,6 +255,8 @@ GIT_CRED_MGR_VERSION=$(get_github_release_version "https://github.com/git-ecosys
 install_package "https://github.com/git-ecosystem/git-credential-manager/releases/download/v$GIT_CRED_MGR_VERSION/gcm-linux-$SHORT_ARCH-$GIT_CRED_MGR_VERSION.deb"
 
 # github copilot desktop app - https://github.com/features/ai/github-app
+# .deb, not AppImage: AppImage forces GDK_BACKEND=x11, breaking Wayland (github/app#3060).
+# No official apt repo yet (github/app#3068), so re-run this script to upgrade.
 install_package "https://github.com/github/app/releases/latest/download/GitHub-Copilot-linux-$SHORT_ARCH.deb"
 
 # discord doesn't have an apt repo, so install each time this script is run to get latest
