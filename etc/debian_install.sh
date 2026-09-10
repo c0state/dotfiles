@@ -52,12 +52,6 @@ echo \
   "$(source /etc/os-release && echo "$VERSION_CODENAME") stable" |
   sudo tee /etc/apt/sources.list.d/docker.list >/dev/null
 
-# google
-curl -fsSL https://us-central1-apt.pkg.dev/doc/repo-signing-key.gpg |
-  sudo gpg --dearmor --yes -o /etc/apt/keyrings/antigravity-repo-key.gpg
-echo "deb [signed-by=/etc/apt/keyrings/antigravity-repo-key.gpg] https://us-central1-apt.pkg.dev/projects/antigravity-auto-updater-dev/ antigravity-debian main" |
-  sudo tee /etc/apt/sources.list.d/antigravity.list >/dev/null
-
 # mozilla
 curl -fsSL https://packages.mozilla.org/apt/repo-signing-key.gpg | sudo gpg --dearmor --yes -o /etc/apt/keyrings/packages.mozilla.gpg
 
@@ -235,7 +229,6 @@ sudo apt -y install alacritty || true
 
 # install developer packages
 sudo apt -y install \
-  antigravity \
   code \
   fonts-firacode fonts-hack fonts-jetbrains-mono \
   gh \
