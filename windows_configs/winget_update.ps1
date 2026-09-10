@@ -7,6 +7,7 @@ $importFile = Join-Path -Path $PSScriptRoot -ChildPath "winget_import.json"
 $wslSetupScript = Join-Path -Path $PSScriptRoot -ChildPath "wsl_setup.ps1"
 $profileSource = Join-Path -Path $PSScriptRoot -ChildPath "Microsoft.PowerShell_profile.ps1"
 $failures = [System.Collections.Generic.List[string]]::new()
+$wingetPackageFailures = [System.Collections.Generic.List[psobject]]::new()
 
 function Test-IsAdministrator {
     $identity = [Security.Principal.WindowsIdentity]::GetCurrent()
@@ -69,6 +70,66 @@ function Invoke-NativeCommand {
 
     if ($exitCode -ne 0) {
         [void]$failures.Add("$Description exited with code $exitCode")
+    }
+}
+
+function Install-WinGetPackages {
+    param(
+        [Parameter(Mandatory = $true)]
+        [string]$ImportFile
+    )
+
+    $import = Get-Content -LiteralPath $ImportFile -Raw | ConvertFrom-Json
+
+    foreach ($source in $import.Sources) {
+        $sourceName = $source.SourceDetails.Name
+        if ([string]::IsNullOrWhiteSpace($sourceName)) {
+            [void]$failures.Add("WinGet import source is missing a name")
+            continue
+        }
+
+        foreach ($package in $source.Packages) {
+            $packageIdentifier = $package.PackageIdentifier
+            if ([string]::IsNullOrWhiteSpace($packageIdentifier)) {
+                [void]$wingetPackageFailures.Add([pscustomobject]@{
+                    PackageIdentifier = "<missing identifier>"
+                    Source = $sourceName
+                    ExitCode = $null
+                    Error = "PackageIdentifier is required"
+                })
+                continue
+            }
+
+            Write-Host "`nInstalling WinGet package: $packageIdentifier (source: $sourceName)"
+
+            try {
+                & winget.exe install `
+                    --id $packageIdentifier `
+                    --exact `
+                    --source $sourceName `
+                    --accept-source-agreements `
+                    --accept-package-agreements `
+                    --disable-interactivity
+                $exitCode = $LASTEXITCODE
+            } catch {
+                [void]$wingetPackageFailures.Add([pscustomobject]@{
+                    PackageIdentifier = $packageIdentifier
+                    Source = $sourceName
+                    ExitCode = $null
+                    Error = $_.Exception.Message
+                })
+                continue
+            }
+
+            if ($exitCode -ne 0) {
+                [void]$wingetPackageFailures.Add([pscustomobject]@{
+                    PackageIdentifier = $packageIdentifier
+                    Source = $sourceName
+                    ExitCode = $exitCode
+                    Error = $null
+                })
+            }
+        }
     }
 }
 
@@ -139,17 +200,7 @@ Invoke-NativeCommand `
     -ArgumentList $wslArguments `
     -Description "Setting up WSL distributions"
 
-Invoke-NativeCommand `
-    -FilePath "winget.exe" `
-    -ArgumentList @(
-        "import",
-        "--import-file",
-        $importFile,
-        "--accept-source-agreements",
-        "--accept-package-agreements",
-        "--disable-interactivity"
-    ) `
-    -Description "Importing WinGet packages"
+Install-WinGetPackages -ImportFile $importFile
 
 $capsLockToControl = [byte[]]@(
     0x00, 0x00, 0x00, 0x00,   # header
@@ -161,11 +212,23 @@ Set-ScancodeMap -Value $capsLockToControl -Description "Caps Lock -> Left Ctrl"
 
 Link-PowerShellProfile -SourcePath $profileSource
 
-if ($failures.Count -gt 0) {
+if ($failures.Count -gt 0 -or $wingetPackageFailures.Count -gt 0) {
     Write-Host "`nBootstrap completed with failures:" -ForegroundColor Red
     foreach ($failure in $failures) {
         Write-Host "- $failure" -ForegroundColor Red
     }
+
+    if ($wingetPackageFailures.Count -gt 0) {
+        Write-Host "`nWinGet packages that failed:" -ForegroundColor Red
+        foreach ($packageFailure in $wingetPackageFailures) {
+            if ($null -ne $packageFailure.ExitCode) {
+                Write-Host "- $($packageFailure.PackageIdentifier) (source: $($packageFailure.Source)): exited with code $($packageFailure.ExitCode)" -ForegroundColor Red
+            } else {
+                Write-Host "- $($packageFailure.PackageIdentifier) (source: $($packageFailure.Source)): $($packageFailure.Error)" -ForegroundColor Red
+            }
+        }
+    }
+
     exit 1
 }
 
