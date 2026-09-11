@@ -189,6 +189,35 @@ Invoke-NativeCommand `
     -ArgumentList $wingetArguments `
     -Description "Installing WinGet packages"
 
+$env:Path = @(
+    $env:Path
+    [Environment]::GetEnvironmentVariable("Path", "Machine")
+    [Environment]::GetEnvironmentVariable("Path", "User")
+) -join ";"
+
+Invoke-NativeCommand `
+    -FilePath "npm.cmd" `
+    -ArgumentList @(
+        "install",
+        "--global",
+        "@google/gemini-cli@latest",
+        "--no-audit",
+        "--no-fund"
+    ) `
+    -Description "Installing/updating Gemini CLI"
+
+Invoke-NativeCommand `
+    -FilePath "npm.cmd" `
+    -ArgumentList @(
+        "install",
+        "--global",
+        "--ignore-scripts",
+        "@earendil-works/pi-coding-agent@latest",
+        "--no-audit",
+        "--no-fund"
+    ) `
+    -Description "Installing/updating Pi coding harness"
+
 $capsLockToControl = [byte[]]@(
     0x00, 0x00, 0x00, 0x00,   # header
     0x1D, 0x00, 0x00, 0x00,   # send: Left Ctrl

@@ -42,6 +42,7 @@
         { "PackageIdentifier": "Neovim.Neovim" },
         { "PackageIdentifier": "OBSProject.OBSStudio" },
         { "PackageIdentifier": "OpenAI.Codex" },
+        { "PackageIdentifier": "OpenJS.NodeJS" },
         { "PackageIdentifier": "OpenWhisperSystems.Signal" },
         { "PackageIdentifier": "MuhammedKalkan.OpenLens" },
         { "PackageIdentifier": "RaspberryPiFoundation.RaspberryPiImager" },
