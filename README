@@ -6,6 +6,7 @@ Installation
 To use:
 * Clone to ~/.dotfiles
 * Run ~/.dotfiles/etc/setup_env.sh
+* On Windows, run `& "$HOME\.dotfiles\windows_configs\windows_setup.ps1"` from PowerShell
 
 Additional Steps
 ================
