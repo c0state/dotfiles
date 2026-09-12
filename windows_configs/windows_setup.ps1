@@ -200,9 +200,7 @@ Invoke-NativeCommand `
     -ArgumentList @(
         "install",
         "--global",
-        "@google/gemini-cli@latest",
-        "--no-audit",
-        "--no-fund"
+        "@google/gemini-cli@latest"
     ) `
     -Description "Installing/updating Gemini CLI"
 
@@ -212,9 +210,7 @@ Invoke-NativeCommand `
         "install",
         "--global",
         "--ignore-scripts",
-        "@earendil-works/pi-coding-agent@latest",
-        "--no-audit",
-        "--no-fund"
+        "@earendil-works/pi-coding-agent@latest"
     ) `
     -Description "Installing/updating Pi coding harness"
 
