@@ -52,6 +52,7 @@
         { "PackageIdentifier": "TeamViewer.TeamViewer" },
         { "PackageIdentifier": "TechPowerUp.GPU-Z" },
         { "PackageIdentifier": "TheDocumentFoundation.LibreOffice" },
+        { "PackageIdentifier": "TorProject.TorBrowser" },
         { "PackageIdentifier": "Valve.Steam" },
         { "PackageIdentifier": "VideoLAN.VLC" },
         { "PackageIdentifier": "WinDirStat.WinDirStat" },
