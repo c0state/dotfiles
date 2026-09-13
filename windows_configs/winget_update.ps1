@@ -73,6 +73,19 @@ function Install-WinGetPackages {
 
             Write-Host "`nInstalling WinGet package: $packageIdentifier (source: $sourceName)"
 
+            $additionalArguments = @()
+            if ($packageIdentifier -eq "TorProject.TorBrowser") {
+                $torBrowserInstallPath = Join-Path `
+                    -Path $env:LOCALAPPDATA `
+                    -ChildPath "Programs\Tor Browser"
+                $additionalArguments = @(
+                    "--scope"
+                    "user"
+                    "--location"
+                    $torBrowserInstallPath
+                )
+            }
+
             try {
                 & winget.exe install `
                     --id $packageIdentifier `
@@ -80,7 +93,8 @@ function Install-WinGetPackages {
                     --source $sourceName `
                     --accept-source-agreements `
                     --accept-package-agreements `
-                    --disable-interactivity
+                    --disable-interactivity `
+                    @additionalArguments
                 $exitCode = $LASTEXITCODE
             } catch {
                 [void]$wingetPackageFailures.Add([pscustomobject]@{
