@@ -301,27 +301,13 @@ if [ ! -x "$TOOLBOX_INSTALL_DIR/bin/jetbrains-toolbox" ]; then
     TEMP_TOOLBOX_ARCHIVE=$(mktemp --suffix=.tar.gz)
     mkdir --parents "$TOOLBOX_PARENT_DIR"
     TEMP_TOOLBOX_INSTALL_DIR=$(mktemp --directory "$TOOLBOX_PARENT_DIR/.jetbrains-toolbox.$TOOLBOX_VERSION.XXXXXX")
-    TOOLBOX_BACKUP_DIR=""
-    trap 'rm --force "$TEMP_TOOLBOX_ARCHIVE"; rm --recursive --force "$TEMP_TOOLBOX_INSTALL_DIR"; if [ -n "$TOOLBOX_BACKUP_DIR" ] && [ ! -e "$TOOLBOX_INSTALL_DIR" ] && [ -e "$TOOLBOX_BACKUP_DIR" ]; then mv "$TOOLBOX_BACKUP_DIR" "$TOOLBOX_INSTALL_DIR"; fi' EXIT
+    trap 'rm --force "$TEMP_TOOLBOX_ARCHIVE"; rm --recursive --force "$TEMP_TOOLBOX_INSTALL_DIR"' EXIT
 
     wget --fail --location --output-document="$TEMP_TOOLBOX_ARCHIVE" "$TOOLBOX_URL"
     tar --extract --gzip --file="$TEMP_TOOLBOX_ARCHIVE" --directory="$TEMP_TOOLBOX_INSTALL_DIR" --strip-components=1
 
-    if [ -e "$TOOLBOX_INSTALL_DIR" ]; then
-      TOOLBOX_BACKUP_DIR=$(mktemp --directory "$TOOLBOX_PARENT_DIR/.jetbrains-toolbox.previous.XXXXXX")
-      rmdir "$TOOLBOX_BACKUP_DIR"
-      mv "$TOOLBOX_INSTALL_DIR" "$TOOLBOX_BACKUP_DIR"
-    fi
+    rm --recursive --force "$TOOLBOX_INSTALL_DIR"
     mv "$TEMP_TOOLBOX_INSTALL_DIR" "$TOOLBOX_INSTALL_DIR"
-
-    if [ -n "$TOOLBOX_BACKUP_DIR" ]; then
-      rm --recursive --force "$TOOLBOX_BACKUP_DIR"
-      TOOLBOX_BACKUP_DIR=""
-    fi
-
-    ln --symbolic --force --no-dereference \
-      "$TOOLBOX_INSTALL_DIR/bin/jetbrains-toolbox" \
-      "$HOME/.local/bin/jetbrains-toolbox"
   )
 fi
 
