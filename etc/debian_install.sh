@@ -296,12 +296,22 @@ case "$DPKG_ARCH" in
 esac
 
 if ! command -v jetbrains-toolbox >/dev/null 2>&1; then
-  mkdir --parents "$TOOLBOX_INSTALL_DIR"
-  wget --fail --location --output-document=- "$TOOLBOX_URL" |
-    tar --extract --gzip --directory="$TOOLBOX_INSTALL_DIR" --strip-components=1 &&
-  ln --symbolic --force --no-dereference \
-    "$TOOLBOX_INSTALL_DIR/bin/jetbrains-toolbox" \
-    "$HOME/.local/bin/jetbrains-toolbox"
+  (
+    TEMP_TOOLBOX_ARCHIVE=$(mktemp --suffix=.tar.gz)
+    TEMP_TOOLBOX_INSTALL_DIR=$(mktemp --directory)
+    trap 'rm --force "$TEMP_TOOLBOX_ARCHIVE"; rm --recursive --force "$TEMP_TOOLBOX_INSTALL_DIR"' EXIT
+
+    wget --fail --location --output-document="$TEMP_TOOLBOX_ARCHIVE" "$TOOLBOX_URL"
+    tar --extract --gzip --file="$TEMP_TOOLBOX_ARCHIVE" --directory="$TEMP_TOOLBOX_INSTALL_DIR" --strip-components=1
+
+    mkdir --parents "$(dirname "$TOOLBOX_INSTALL_DIR")"
+    rm --recursive --force "$TOOLBOX_INSTALL_DIR"
+    mv "$TEMP_TOOLBOX_INSTALL_DIR" "$TOOLBOX_INSTALL_DIR"
+
+    ln --symbolic --force --no-dereference \
+      "$TOOLBOX_INSTALL_DIR/bin/jetbrains-toolbox" \
+      "$HOME/.local/bin/jetbrains-toolbox"
+  )
 fi
 
 if ! which steam >/dev/null; then
