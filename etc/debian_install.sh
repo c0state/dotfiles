@@ -326,6 +326,7 @@ if [ ! -x "$TOOLBOX_INSTALL_DIR/bin/jetbrains-toolbox" ]; then
 fi
 
 if [ -x "$TOOLBOX_INSTALL_DIR/bin/jetbrains-toolbox" ] &&
+  { [ ! -e "$HOME/.local/bin/jetbrains-toolbox" ] || [ -L "$HOME/.local/bin/jetbrains-toolbox" ]; } &&
   [ "$(readlink "$HOME/.local/bin/jetbrains-toolbox" 2>/dev/null || true)" != "$TOOLBOX_INSTALL_DIR/bin/jetbrains-toolbox" ]; then
   ln --symbolic --force --no-dereference \
     "$TOOLBOX_INSTALL_DIR/bin/jetbrains-toolbox" \
