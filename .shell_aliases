@@ -28,7 +28,6 @@ alias lessc="less -i --chop-long-lines --shift 2 --RAW-CONTROL-CHARS"
 alias la="lsd -a"
 alias ls="lsd"
 alias mdv="$HOME/.terminal_markdown_viewer/mdv.py"
-alias mysql.start="/opt/local/share/mysql5/mysql/mysql.server"
 
 alias psg="ps aux | grep"
 alias rg="rg --hidden --pretty --sort path"
