@@ -151,10 +151,6 @@ brew_packages=(
   zsh
 )
 
-if [[ -z $IS_MACOS_ARM ]]; then
-  brew_packages+=(hyperkit)
-fi
-
 #---------- brew cask packages ----------
 
 brew_cask_packages=(
