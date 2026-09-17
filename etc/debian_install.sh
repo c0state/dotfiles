@@ -307,6 +307,9 @@ if ! command -v jetbrains-toolbox >/dev/null 2>&1; then
     mkdir --parents "$(dirname "$TOOLBOX_INSTALL_DIR")"
     rm --recursive --force "$TOOLBOX_INSTALL_DIR"
     mv "$TEMP_TOOLBOX_INSTALL_DIR" "$TOOLBOX_INSTALL_DIR"
+    trap 'rm --force "$TEMP_TOOLBOX_ARCHIVE"' EXIT
+    rm --force "$TEMP_TOOLBOX_ARCHIVE"
+    trap - EXIT
 
     ln --symbolic --force --no-dereference \
       "$TOOLBOX_INSTALL_DIR/bin/jetbrains-toolbox" \
