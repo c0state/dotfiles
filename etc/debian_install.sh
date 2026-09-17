@@ -295,10 +295,10 @@ case "$DPKG_ARCH" in
     ;;
 esac
 
-if ! which jetbrains-toolbox >/dev/null; then
+if ! command -v jetbrains-toolbox >/dev/null 2>&1; then
   mkdir --parents "$TOOLBOX_INSTALL_DIR"
   wget --fail --location --output-document=- "$TOOLBOX_URL" |
-    tar --extract --gzip --directory="$TOOLBOX_INSTALL_DIR" --strip-components=1
+    tar --extract --gzip --directory="$TOOLBOX_INSTALL_DIR" --strip-components=1 &&
   ln --symbolic --force --no-dereference \
     "$TOOLBOX_INSTALL_DIR/bin/jetbrains-toolbox" \
     "$HOME/.local/bin/jetbrains-toolbox"
