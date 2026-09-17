@@ -325,6 +325,12 @@ if [ ! -x "$TOOLBOX_INSTALL_DIR/bin/jetbrains-toolbox" ]; then
   )
 fi
 
+if [ "$(readlink "$HOME/.local/bin/jetbrains-toolbox" 2>/dev/null || true)" != "$TOOLBOX_INSTALL_DIR/bin/jetbrains-toolbox" ]; then
+  ln --symbolic --force --no-dereference \
+    "$TOOLBOX_INSTALL_DIR/bin/jetbrains-toolbox" \
+    "$HOME/.local/bin/jetbrains-toolbox"
+fi
+
 if ! which steam >/dev/null; then
   install_package https://cdn.fastly.steamstatic.com/client/installer/steam.deb
 fi
