@@ -25,7 +25,6 @@ fi
 brew_taps=(
   hashicorp/tap
   homebrew/autoupdate
-  wix/brew
 )
 
 for brew_tap in "${brew_taps[@]}"; do
@@ -56,7 +55,6 @@ brew_packages=(
   ag
   android-platform-tools
   ansible
-  applesimutils
   aws-iam-authenticator aws-sam-cli eksctl
   awscli
   bash
