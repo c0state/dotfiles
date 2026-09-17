@@ -3,7 +3,7 @@
 set -eu
 
 PLATFORM=$(uname)
-K8S_VERSION="v1.29"
+K8S_VERSION="v1.36"
 
 if [[ $PLATFORM == 'Linux' ]]; then
   sudo curl -fsSL https://pkgs.k8s.io/core:/stable:/"$K8S_VERSION"/deb/Release.key | sudo gpg --dearmor --yes -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
