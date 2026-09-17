@@ -67,7 +67,6 @@
     cmd = meld "$LOCAL" "$REMOTE"
 [fetch]
     all = true
-    auto = true
     prune = true
     pruneTags = true
 [filter "lfs"]
