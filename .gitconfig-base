@@ -1,6 +1,6 @@
 [include]
     path = .gitconfig-custom
-    path = .gitconfig-delta-themes.gitconfig
+    path = .gitconfig-delta.themes.gitconfig
 [alias]
     addi = "!git add --patch"
     br = !git branch -vv
