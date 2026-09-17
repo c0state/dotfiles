@@ -103,7 +103,7 @@ def update_statuses(projects):
                 continue
 
             if datetime.datetime.strptime(branch_info['recent_builds'][0]['added_at'], "%Y-%m-%dT%H:%M:%S.%fZ").replace(tzinfo=None) \
-                    < (datetime.datetime.utcnow().replace(tzinfo=None) - datetime.timedelta(days=MAX_BUILD_AGE_DAYS)):
+                    < (datetime.datetime.now(datetime.UTC).replace(tzinfo=None) - datetime.timedelta(days=MAX_BUILD_AGE_DAYS)):
                 continue
 
             match_results = [
