@@ -295,7 +295,7 @@ case "$DPKG_ARCH" in
     ;;
 esac
 
-if ! command -v jetbrains-toolbox >/dev/null 2>&1; then
+if [ ! -x "$TOOLBOX_INSTALL_DIR/bin/jetbrains-toolbox" ]; then
   (
     TOOLBOX_PARENT_DIR=$(dirname "$TOOLBOX_INSTALL_DIR")
     TEMP_TOOLBOX_ARCHIVE=$(mktemp --suffix=.tar.gz)
