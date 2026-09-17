@@ -210,7 +210,7 @@ sudo apt -y install \
   build-essential cmake \
   zlib1g-dev \
   libbz2-dev liblzma-dev \
-  libncurses5-dev libncursesw5-dev \
+  libncurses-dev \
   libreadline-dev libsqlite3-dev libssl-dev llvm \
   libudev-dev \
   libxcb-render0-dev libxcb-shape0-dev libxcb-xfixes0-dev \
