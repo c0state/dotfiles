@@ -83,12 +83,6 @@ fi
   fi
 )
 
-# ---------- fast node manager https://github.com/Schniz/fnm
-
-if [[ "$PLATFORM" != "Darwin" ]]; then
-  curl -fsSL https://fnm.vercel.app/install | bash -s -- --skip-shell
-fi
-
 # ---------- krew https://krew.sigs.k8s.io/docs/user-guide
 
 if [[ ! -d $HOME/.krew ]]; then

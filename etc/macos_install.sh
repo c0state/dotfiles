@@ -80,7 +80,6 @@ brew_packages=(
   ffmpeg
   findutils
   fish
-  fnm
   fpart
   gh git git-delta git-extras git-filter-repo git-lfs git-secrets lazygit
   glances
@@ -89,7 +88,6 @@ brew_packages=(
   helix
   helm
   htop
-  hub
   imagemagick
   ios-deploy
   jq
@@ -198,7 +196,7 @@ brew_cask_packages=(
   itsycal
   jetbrains-toolbox
   kitty
-  lens openlens
+  openlens
   libreoffice
   microsoft-edge
   microsoft-office
