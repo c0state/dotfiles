@@ -10,8 +10,8 @@ curl -L https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCod
 curl -L https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Hack.tar.xz |
   tar zxvf - -C "$HOME"/Library/Fonts
 
-# for vscodevim key repeat
-defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+# disable system-wide press-and-hold accent popup so held keys keep auto-repeating (e.g. j/k in less)
+defaults write -g ApplePressAndHoldEnabled -bool false
 
 # disable Mission Control "Move left/right a space" so Ctrl+Left/Right reach apps (e.g. nvim window resize)
 # AppleSymbolicHotKeys IDs: 79/80 = move-left (with/without Option), 81/82 = move-right
