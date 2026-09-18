@@ -21,7 +21,7 @@ fi
 brew_taps=(
   getsentry/tools
   hashicorp/tap
-  homebrew/autoupdate
+  domt4/autoupdate
 )
 
 for brew_tap in "${brew_taps[@]}"; do
