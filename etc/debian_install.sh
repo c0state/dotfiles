@@ -4,18 +4,28 @@ set -eu
 
 WSL_DISTRO_NAME=${WSL_DISTRO_NAME:-""}
 DPKG_ARCH=$(dpkg --print-architecture 2>/dev/null || echo "")
-ARCH=$(arch)
+RAW_ARCH=$(arch)
 SHORT_ARCH="$DPKG_ARCH"
 if [ "$SHORT_ARCH" = "amd64" ]; then
   SHORT_ARCH="x64"
 fi
 
 source /etc/os-release
-OS_CODENAME="${UBUNTU_CODENAME:-${VERSION_CODENAME:-}}"
+VERSION_CODENAME="${VERSION_CODENAME:-}"
+OS_CODENAME="${UBUNTU_CODENAME:-$VERSION_CODENAME}"
 if [ -z "$OS_CODENAME" ]; then
   echo "Unable to determine the OS codename from /etc/os-release" >&2
   exit 1
 fi
+
+case "$RAW_ARCH" in
+  aarch64)
+    ARCH="arm64"
+    ;;
+  *)
+    ARCH="$RAW_ARCH"
+    ;;
+esac
 
 function get_github_release_version {
   local repo=$(echo "$1" | sed 's|.*github.com/||' | sed 's|/releases.*||')
@@ -40,21 +50,15 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo 
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list >/dev/null
 
 # init tailscale
-curl -fsSL "https://pkgs.tailscale.com/stable/ubuntu/${OS_CODENAME}.noarmor.gpg" | sudo tee /usr/share/keyrings/tailscale-archive-keyring.gpg >/dev/null
-curl -fsSL "https://pkgs.tailscale.com/stable/ubuntu/${OS_CODENAME}.tailscale-keyring.list" | sudo tee /etc/apt/sources.list.d/tailscale.list
+curl -fsSL "https://pkgs.tailscale.com/stable/ubuntu/$OS_CODENAME.noarmor.gpg" | sudo tee /usr/share/keyrings/tailscale-archive-keyring.gpg >/dev/null
+curl -fsSL "https://pkgs.tailscale.com/stable/ubuntu/$OS_CODENAME.tailscale-keyring.list" | sudo tee /etc/apt/sources.list.d/tailscale.list
 
 # docker
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor --yes -o /etc/apt/keyrings/docker.gpg
 echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu " \
-  "$(source /etc/os-release && echo "$VERSION_CODENAME") stable" |
+  "$VERSION_CODENAME stable" |
   sudo tee /etc/apt/sources.list.d/docker.list >/dev/null
-
-# google
-curl -fsSL https://us-central1-apt.pkg.dev/doc/repo-signing-key.gpg |
-  sudo gpg --dearmor --yes -o /etc/apt/keyrings/antigravity-repo-key.gpg
-echo "deb [signed-by=/etc/apt/keyrings/antigravity-repo-key.gpg] https://us-central1-apt.pkg.dev/projects/antigravity-auto-updater-dev/ antigravity-debian main" |
-  sudo tee /etc/apt/sources.list.d/antigravity.list >/dev/null
 
 # mozilla
 curl -fsSL https://packages.mozilla.org/apt/repo-signing-key.gpg | sudo gpg --dearmor --yes -o /etc/apt/keyrings/packages.mozilla.gpg
@@ -74,21 +78,25 @@ Pin-Priority: 1000
 ' | sudo tee /etc/apt/preferences.d/mozilla
 
 # lens
-curl -fsSL https://downloads.k8slens.dev/keys/gpg | sudo gpg --dearmor --yes -o /usr/share/keyrings/lens-archive-keyring.gpg
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/lens-archive-keyring.gpg] https://downloads.k8slens.dev/apt/debian stable main" |
-  sudo tee /etc/apt/sources.list.d/lens.list >/dev/null
+if [ "$DPKG_ARCH" = "amd64" ]; then
+  curl -fsSL https://downloads.k8slens.dev/keys/gpg | sudo gpg --dearmor --yes -o /usr/share/keyrings/lens-archive-keyring.gpg
+  echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/lens-archive-keyring.gpg] https://downloads.k8slens.dev/apt/debian stable main" |
+    sudo tee /etc/apt/sources.list.d/lens.list >/dev/null
+fi
 
 # onedrive
 wget -qO - https://download.opensuse.org/repositories/home:/npreining:/debian-ubuntu-onedrive/xUbuntu_26.04/Release.key | gpg --dearmor | sudo tee /usr/share/keyrings/onedrive.gpg >/dev/null
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/onedrive.gpg] https://download.opensuse.org/repositories/home:/npreining:/debian-ubuntu-onedrive/xUbuntu_26.04/ ./" | sudo tee /etc/apt/sources.list.d/onedrive.list
 
 # signal
-wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor | sudo tee /usr/share/keyrings/signal-desktop-keyring.gpg >/dev/null
-wget -O- https://updates.signal.org/static/desktop/apt/signal-desktop.sources | sudo tee /etc/apt/sources.list.d/signal-desktop.sources
+if [ "$DPKG_ARCH" = "amd64" ]; then
+  wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor | sudo tee /usr/share/keyrings/signal-desktop-keyring.gpg >/dev/null
+  wget -O- https://updates.signal.org/static/desktop/apt/signal-desktop.sources | sudo tee /etc/apt/sources.list.d/signal-desktop.sources
+fi
 
 # terraform
 wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor | sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg >/dev/null
-echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com ${OS_CODENAME} main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $OS_CODENAME main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
 
 # wezterm - https://wezfurlong.org/wezterm
 curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /usr/share/keyrings/wezterm-fury.gpg
@@ -170,7 +178,8 @@ sudo apt -y install \
   wmctrl \
   wl-clipboard \
   xclip \
-  vim-nox
+  vim-nox \
+  zstd
 
 #------------------------------ install packages
 
@@ -178,7 +187,9 @@ sudo snap install dbeaver-ce --classic
 sudo snap install firefox
 sudo snap install helm --classic
 sudo snap install postman
-sudo snap install slack
+if [ "$DPKG_ARCH" = "amd64" ]; then
+  sudo snap install slack
+fi
 sudo snap install telegram-desktop
 sudo snap refresh
 
@@ -188,8 +199,10 @@ sudo flatpak remote-add --if-not-exists --system flathub https://dl.flathub.org/
 sudo flatpak install --system -y flathub io.github.shiftey.Desktop
 sudo flatpak install --system -y flathub io.kinvolk.Headlamp
 sudo flatpak install --system -y flathub io.podman_desktop.PodmanDesktop
-sudo flatpak install --system -y flathub com.obsproject.Studio
-sudo flatpak install --system -y flathub com.usebottles.bottles
+if [ "$DPKG_ARCH" = "amd64" ]; then
+  sudo flatpak install --system -y flathub com.obsproject.Studio
+  sudo flatpak install --system -y flathub com.usebottles.bottles
+fi
 sudo flatpak install --system -y flathub org.gimp.GIMP
 sudo flatpak update --system -y
 
@@ -204,7 +217,7 @@ sudo apt -y install \
   build-essential cmake \
   zlib1g-dev \
   libbz2-dev liblzma-dev \
-  libncurses5-dev libncursesw5-dev \
+  libncurses-dev \
   libreadline-dev libsqlite3-dev libssl-dev llvm \
   libudev-dev \
   libxcb-render0-dev libxcb-shape0-dev libxcb-xfixes0-dev \
@@ -224,13 +237,15 @@ sudo apt -y install alacritty || true
 
 # install developer packages
 sudo apt -y install \
-  antigravity \
   code \
   fonts-firacode fonts-hack fonts-jetbrains-mono \
   gh \
-  lens \
   sourcegit \
   tig
+
+if [ "$DPKG_ARCH" = "amd64" ]; then
+  sudo apt -y install lens
+fi
 
 # claude desktop cowork runs its sandbox in a vm, which needs /dev/kvm access
 sudo groupadd --force --system kvm
@@ -248,32 +263,56 @@ GIT_CRED_MGR_VERSION=$(get_github_release_version "https://github.com/git-ecosys
 install_package "https://github.com/git-ecosystem/git-credential-manager/releases/download/v$GIT_CRED_MGR_VERSION/gcm-linux-$SHORT_ARCH-$GIT_CRED_MGR_VERSION.deb"
 
 # github copilot desktop app - https://github.com/features/ai/github-app
+# .deb, not AppImage: AppImage forces GDK_BACKEND=x11, breaking Wayland (github/app#3060).
+# No official apt repo yet (github/app#3068), so re-run this script to upgrade.
 install_package "https://github.com/github/app/releases/latest/download/GitHub-Copilot-linux-$SHORT_ARCH.deb"
 
 # discord doesn't have an apt repo, so install each time this script is run to get latest
 # note: there *is* this third party option: https://github.com/palfrey/discord-apt
-install_package "https://discord.com/api/download?platform=linux&format=deb"
+if [ "$DPKG_ARCH" = "amd64" ]; then
+  install_package "https://discord.com/api/download?platform=linux&format=deb"
+fi
 
-if ! which bcompare >/dev/null; then
+if [ "$DPKG_ARCH" = "amd64" ] && ! which bcompare >/dev/null; then
   install_package "https://www.scootersoftware.com/files/bcompare-5.1.6.31527_$DPKG_ARCH.deb"
 fi
 
 install_package "https://download.teamviewer.com/download/linux/teamviewer_$DPKG_ARCH.deb"
 
 RUSTDESK_VERSION=$(get_github_release_version "https://github.com/rustdesk/rustdesk/releases/latest")
-install_package "https://github.com/rustdesk/rustdesk/releases/download/$RUSTDESK_VERSION/rustdesk-$RUSTDESK_VERSION-$ARCH.deb"
+install_package "https://github.com/rustdesk/rustdesk/releases/download/$RUSTDESK_VERSION/rustdesk-$RUSTDESK_VERSION-$RAW_ARCH.deb"
 
 if ! which obsidian >/dev/null; then
-  OBSIDIAN_VERSION=$(get_github_release_version "https://github.com/obsidianmd/obsidian-releases/releases/latest")
-  install_package "https://github.com/obsidianmd/obsidian-releases/releases/download/v$OBSIDIAN_VERSION/obsidian_${OBSIDIAN_VERSION}_$DPKG_ARCH.deb"
+  OBSIDIAN_VERSION=1.13.7
+  case "$DPKG_ARCH" in
+    amd64)
+      OBSIDIAN_ASSET_SUFFIX=""
+      ;;
+    arm64)
+      OBSIDIAN_ASSET_SUFFIX="-arm64"
+      ;;
+    *)
+      echo "Unsupported Debian architecture for Obsidian: $DPKG_ARCH" >&2
+      exit 1
+      ;;
+  esac
+  sudo curl --fail --location \
+    "https://github.com/obsidianmd/obsidian-releases/releases/download/v$OBSIDIAN_VERSION/Obsidian-$OBSIDIAN_VERSION$OBSIDIAN_ASSET_SUFFIX.AppImage" \
+    --output /usr/local/bin/obsidian
+  sudo chmod +x /usr/local/bin/obsidian
 fi
 
 if ! which cursor >/dev/null; then
   install_package https://api2.cursor.sh/updates/download/golden/linux-${SHORT_ARCH}-deb/cursor/2.4
 fi
 
+GITKRAKEN_PACKAGE_ARCH="$DPKG_ARCH"
+if [ "$DPKG_ARCH" = "arm64" ]; then
+  GITKRAKEN_PACKAGE_ARCH="$RAW_ARCH"
+fi
+
 if ! which gitkraken >/dev/null; then
-  install_package https://api.gitkraken.dev/releases/production/linux/${SHORT_ARCH}/active/gitkraken-${DPKG_ARCH}.deb
+  install_package "https://api.gitkraken.dev/releases/production/linux/${SHORT_ARCH}/active/gitkraken-${GITKRAKEN_PACKAGE_ARCH}.deb"
 fi
 
 RPI_IMAGER_VERSION=$(get_github_release_version "https://github.com/raspberrypi/rpi-imager/releases/latest")
@@ -295,31 +334,16 @@ case "$DPKG_ARCH" in
     ;;
 esac
 
-if [ ! -x "$TOOLBOX_INSTALL_DIR/bin/jetbrains-toolbox" ]; then
-  (
-    TOOLBOX_PARENT_DIR=$(dirname "$TOOLBOX_INSTALL_DIR")
-    TEMP_TOOLBOX_ARCHIVE=$(mktemp --suffix=.tar.gz)
-    mkdir --parents "$TOOLBOX_PARENT_DIR"
-    TEMP_TOOLBOX_INSTALL_DIR=$(mktemp --directory "$TOOLBOX_PARENT_DIR/.jetbrains-toolbox.$TOOLBOX_VERSION.XXXXXX")
-    trap 'rm --force "$TEMP_TOOLBOX_ARCHIVE"; rm --recursive --force "$TEMP_TOOLBOX_INSTALL_DIR"' EXIT
-
-    wget --fail --location --output-document="$TEMP_TOOLBOX_ARCHIVE" "$TOOLBOX_URL"
-    tar --extract --gzip --file="$TEMP_TOOLBOX_ARCHIVE" --directory="$TEMP_TOOLBOX_INSTALL_DIR" --strip-components=1
-
-    rm --recursive --force "$TOOLBOX_INSTALL_DIR"
-    mv "$TEMP_TOOLBOX_INSTALL_DIR" "$TOOLBOX_INSTALL_DIR"
-  )
-fi
-
-if [ -x "$TOOLBOX_INSTALL_DIR/bin/jetbrains-toolbox" ] &&
-  { [ ! -e "$HOME/.local/bin/jetbrains-toolbox" ] || [ -L "$HOME/.local/bin/jetbrains-toolbox" ]; } &&
-  [ "$(readlink "$HOME/.local/bin/jetbrains-toolbox" 2>/dev/null || true)" != "$TOOLBOX_INSTALL_DIR/bin/jetbrains-toolbox" ]; then
+if ! which jetbrains-toolbox >/dev/null; then
+  mkdir --parents "$TOOLBOX_INSTALL_DIR"
+  wget --fail --location --output-document=- "$TOOLBOX_URL" |
+    tar --extract --gzip --directory="$TOOLBOX_INSTALL_DIR" --strip-components=1
   ln --symbolic --force --no-dereference \
     "$TOOLBOX_INSTALL_DIR/bin/jetbrains-toolbox" \
     "$HOME/.local/bin/jetbrains-toolbox"
 fi
 
-if ! which steam >/dev/null; then
+if [ "$DPKG_ARCH" = "amd64" ] && ! which steam >/dev/null; then
   install_package https://cdn.fastly.steamstatic.com/client/installer/steam.deb
 fi
 
@@ -332,13 +356,16 @@ fi
 sudo curl --fail -L https://github.com/neovim/neovim/releases/latest/download/nvim-linux-$ARCH.appimage --output /usr/local/bin/nvim
 sudo chmod +x /usr/local/bin/nvim
 
-sudo curl --fail -L https://s3.amazonaws.com/outline-releases/manager/linux/stable/Outline-Manager.AppImage --output /usr/local/bin/Outline-Manager
-sudo chmod +x /usr/local/bin/Outline-Manager
+if [ "$DPKG_ARCH" = "amd64" ]; then
+  sudo curl --fail -L https://s3.amazonaws.com/outline-releases/manager/linux/stable/Outline-Manager.AppImage --output /usr/local/bin/Outline-Manager
+  sudo chmod +x /usr/local/bin/Outline-Manager
+fi
 
 # install apps
-sudo apt -y install \
-  signal-desktop \
-  vlc
+sudo apt -y install vlc
+if [ "$DPKG_ARCH" = "amd64" ]; then
+  sudo apt -y install signal-desktop
+fi
 
 # install image packages
 sudo apt -y install \
