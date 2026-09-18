@@ -10,7 +10,7 @@ fi
 
 #---------- update dotfiles folder
 
-(cd "$HOME"/.dotfiles && git pullr --all)
+(cd "$HOME"/.dotfiles && git fetch --all --prune && git pull --rebase --autostash)
 (cd "$HOME"/.dotfiles && git submodule update --init --recursive --remote)
 (cd "$HOME"/.dotfiles && git submodule foreach git pull origin master)
 

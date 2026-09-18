@@ -1,0 +1,94 @@
+{
+  "$schema": "https://aka.ms/winget-packages.schema.2.0.json",
+  "Sources": [
+    {
+      "Packages": [
+        { "PackageIdentifier": "7zip.7zip" },
+        { "PackageIdentifier": "Adobe.Acrobat.Reader.64-bit" },
+        { "PackageIdentifier": "ALCPU.CoreTemp" },
+        { "PackageIdentifier": "Alacritty.Alacritty" },
+        { "PackageIdentifier": "Anthropic.Claude" },
+        { "PackageIdentifier": "Anthropic.ClaudeCode" },
+        { "PackageIdentifier": "Atlassian.Sourcetree" },
+        { "PackageIdentifier": "Audacity.Audacity" },
+        { "PackageIdentifier": "Balena.Etcher" },
+        { "PackageIdentifier": "calibre.calibre" },
+        { "PackageIdentifier": "chrisant996.Clink" },
+        { "PackageIdentifier": "CPUID.CPU-Z" },
+        { "PackageIdentifier": "CPUID.HWMonitor" },
+        { "PackageIdentifier": "Discord.Discord" },
+        { "PackageIdentifier": "Docker.DockerDesktop" },
+        { "PackageIdentifier": "Eugeny.Tabby" },
+        { "PackageIdentifier": "FastStone.Viewer" },
+        { "PackageIdentifier": "flux.flux" },
+        { "PackageIdentifier": "Git.Git" },
+        { "PackageIdentifier": "GitHub.cli" },
+        { "PackageIdentifier": "GitHub.GitHubDesktop" },
+        { "PackageIdentifier": "Google.Antigravity" },
+        { "PackageIdentifier": "Google.AntigravityCLI" },
+        { "PackageIdentifier": "Google.AntigravityIDE" },
+        { "PackageIdentifier": "Google.Chrome" },
+        { "PackageIdentifier": "Google.GoogleDrive" },
+        { "PackageIdentifier": "JanDeDobbeleer.OhMyPosh" },
+        { "PackageIdentifier": "JetBrains.Toolbox" },
+        { "PackageIdentifier": "Jigsaw.OutlineManager" },
+        { "PackageIdentifier": "Kubernetes.kubectl" },
+        { "PackageIdentifier": "Kubernetes.minikube" },
+        { "PackageIdentifier": "Meld.Meld" },
+        { "PackageIdentifier": "Microsoft.DotNet.Runtime.10" },
+        { "PackageIdentifier": "Microsoft.VisualStudioCode" },
+        { "PackageIdentifier": "Mirantis.Lens" },
+        { "PackageIdentifier": "Mozilla.Firefox" },
+        { "PackageIdentifier": "Neovim.Neovim" },
+        { "PackageIdentifier": "OBSProject.OBSStudio" },
+        { "PackageIdentifier": "OpenAI.Codex" },
+        { "PackageIdentifier": "OpenJS.NodeJS" },
+        { "PackageIdentifier": "OpenWhisperSystems.Signal" },
+        { "PackageIdentifier": "MuhammedKalkan.OpenLens" },
+        { "PackageIdentifier": "RaspberryPiFoundation.RaspberryPiImager" },
+        { "PackageIdentifier": "RandyRants.SharpKeys" },
+        { "PackageIdentifier": "Rufus.Rufus" },
+        { "PackageIdentifier": "SlackTechnologies.Slack" },
+        { "PackageIdentifier": "Tailscale.Tailscale" },
+        { "PackageIdentifier": "TeamViewer.TeamViewer" },
+        { "PackageIdentifier": "TechPowerUp.GPU-Z" },
+        { "PackageIdentifier": "TheDocumentFoundation.LibreOffice" },
+        { "PackageIdentifier": "TorProject.TorBrowser" },
+        { "PackageIdentifier": "Valve.Steam" },
+        { "PackageIdentifier": "VideoLAN.VLC" },
+        { "PackageIdentifier": "WinDirStat.WinDirStat" },
+        { "PackageIdentifier": "WireGuard.WireGuard" },
+        { "PackageIdentifier": "ZedIndustries.Zed" },
+        { "PackageIdentifier": "Zoom.Zoom" }
+      ],
+      "SourceDetails": {
+        "Argument": "https://cdn.winget.microsoft.com/cache",
+        "Identifier": "Microsoft.Winget.Source_8wekyb3d8bbwe",
+        "Name": "winget",
+        "Type": "Microsoft.PreIndexed.Package"
+      }
+    },
+    {
+      "Packages": [
+        {
+          "PackageIdentifier": "XP8CLZL93F5Z4P",
+          "Comment": "NVIDIA App (Microsoft Store package)"
+        },
+        {
+          "PackageIdentifier": "9NKSQGP7F2NH",
+          "Comment": "WhatsApp Desktop (Microsoft Store package)"
+        },
+        {
+          "PackageIdentifier": "9PLM9XGG6VKS",
+          "Comment": "ChatGPT unified desktop app (Microsoft Store package)"
+        }
+      ],
+      "SourceDetails": {
+        "Argument": "https://storeedgefd.dsx.mp.microsoft.com/v9.0",
+        "Identifier": "StoreEdgeFD",
+        "Name": "msstore",
+        "Type": "Microsoft.Rest"
+      }
+    }
+  ]
+}

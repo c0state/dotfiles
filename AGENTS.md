@@ -29,10 +29,30 @@ Allowed types:
 | `chore`    | Maintenance tasks that don't fit other types     |
 
 Rules:
+- The branch name is exactly `<type>/<short-description>` — no
+  additional prefix (e.g. no username prefix).
 - Keep the description to 2–4 words in kebab-case.
 - Examples: `feat/add-oauth-login`, `fix/null-pointer-crash`,
   `docs/update-readme`, `refactor/extract-auth-module`.
 - When creating a PR branch, always follow this convention.
+
+## PR titles
+
+Use [Conventional Commits](https://www.conventionalcommits.org/en/)
+format for PR titles, matching the branch type:
+
+```
+<type>(<scope>): <short description>
+```
+
+Rules:
+- `<type>` is one of the types above.
+- `<scope>` is optional; use `windows` for Windows-specific changes.
+- `<short description>` is natural language, imperative, and lowercase
+  (except proper nouns).
+- Examples: `feat(windows): map Caps Lock to Left Ctrl`,
+  `fix: use Linux gitconfig on WSL`, `docs: add research verification
+  guidance`.
 
 ## Git operations
 
@@ -68,6 +88,13 @@ Rules:
 - Always use long-form flags (e.g. `--verbose` instead of `-v`) when
   running CLI commands. They're self-documenting when read back later,
   in logs, or in shared command history.
+
+## Research
+
+- When investigating a topic—especially a technical, product, integration, or
+  rapidly changing one—check current primary documentation and relevant
+  publicly available issue trackers and discussion forums. Distinguish
+  documented support from reported or experimental behavior.
 
 ## Configuration changes
 

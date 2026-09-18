@@ -41,7 +41,7 @@ end
 
 function pprint_json
     # pretty print json files
-    cat $argv | python -m json.tool | less -i
+    cat $argv | python3 -m json.tool | less -i
 end
 
 function pprint_xml

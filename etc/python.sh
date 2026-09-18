@@ -28,8 +28,6 @@ else
   uv self update
 fi
 
-uv generate-shell-completion fish >~/.config/fish/completions/uv.fish
-
 #---------- set up default python venv
 
 uv python install "$PYTHON_VERSION" --default
@@ -87,7 +85,6 @@ uv tool install --force snakeviz
 uv tool install --force s-tui
 uv tool install --force tox
 uv tool install --force twine
-uv tool install --force youtube-dl
 uv tool install --force yt-dlp
 
 #---------- upgrade all uv tools

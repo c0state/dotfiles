@@ -1,6 +1,6 @@
 [include]
     path = .gitconfig-custom
-    path = .gitconfig-delta-themes.gitconfig
+    path = .gitconfig-delta.themes.gitconfig
 [alias]
     addi = "!git add --patch"
     br = !git branch -vv
@@ -51,7 +51,7 @@
 [credential]
     gitHubAccountFiltering = false
 [delta]
-    features = nord
+    features = zebra-dark
     keep-plus-minus-markers = true
     navigate = true
     side-by-side = true
@@ -67,7 +67,6 @@
     cmd = meld "$LOCAL" "$REMOTE"
 [fetch]
     all = true
-    auto = true
     prune = true
     pruneTags = true
 [filter "lfs"]

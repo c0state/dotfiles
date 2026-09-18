@@ -9,6 +9,16 @@ SHORT_ARCH="$DPKG_ARCH"
 if [ "$SHORT_ARCH" = "amd64" ]; then
   SHORT_ARCH="x64"
 fi
+VERSION_CODENAME=$(source /etc/os-release && echo "$VERSION_CODENAME")
+
+case "$RAW_ARCH" in
+aarch64)
+  ARCH="arm64"
+  ;;
+*)
+  ARCH="$RAW_ARCH"
+  ;;
+esac
 
 source /etc/os-release
 VERSION_CODENAME="${VERSION_CODENAME:-}"
@@ -19,12 +29,12 @@ if [ -z "$OS_CODENAME" ]; then
 fi
 
 case "$RAW_ARCH" in
-  aarch64)
-    ARCH="arm64"
-    ;;
-  *)
-    ARCH="$RAW_ARCH"
-    ;;
+aarch64)
+  ARCH="arm64"
+  ;;
+*)
+  ARCH="$RAW_ARCH"
+  ;;
 esac
 
 function get_github_release_version {
@@ -50,8 +60,8 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo 
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list >/dev/null
 
 # init tailscale
-curl -fsSL "https://pkgs.tailscale.com/stable/ubuntu/$OS_CODENAME.noarmor.gpg" | sudo tee /usr/share/keyrings/tailscale-archive-keyring.gpg >/dev/null
-curl -fsSL "https://pkgs.tailscale.com/stable/ubuntu/$OS_CODENAME.tailscale-keyring.list" | sudo tee /etc/apt/sources.list.d/tailscale.list
+curl -fsSL "https://pkgs.tailscale.com/stable/ubuntu/$VERSION_CODENAME.noarmor.gpg" | sudo tee /usr/share/keyrings/tailscale-archive-keyring.gpg >/dev/null
+curl -fsSL "https://pkgs.tailscale.com/stable/ubuntu/$VERSION_CODENAME.tailscale-keyring.list" | sudo tee /etc/apt/sources.list.d/tailscale.list
 
 # docker
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor --yes -o /etc/apt/keyrings/docker.gpg
@@ -285,16 +295,16 @@ install_package "https://github.com/rustdesk/rustdesk/releases/download/$RUSTDES
 if ! which obsidian >/dev/null; then
   OBSIDIAN_VERSION=1.13.7
   case "$DPKG_ARCH" in
-    amd64)
-      OBSIDIAN_ASSET_SUFFIX=""
-      ;;
-    arm64)
-      OBSIDIAN_ASSET_SUFFIX="-arm64"
-      ;;
-    *)
-      echo "Unsupported Debian architecture for Obsidian: $DPKG_ARCH" >&2
-      exit 1
-      ;;
+  amd64)
+    OBSIDIAN_ASSET_SUFFIX=""
+    ;;
+  arm64)
+    OBSIDIAN_ASSET_SUFFIX="-arm64"
+    ;;
+  *)
+    echo "Unsupported Debian architecture for Obsidian: $DPKG_ARCH" >&2
+    exit 1
+    ;;
   esac
   sudo curl --fail --location \
     "https://github.com/obsidianmd/obsidian-releases/releases/download/v$OBSIDIAN_VERSION/Obsidian-$OBSIDIAN_VERSION$OBSIDIAN_ASSET_SUFFIX.AppImage" \
@@ -322,16 +332,16 @@ TOOLBOX_VERSION=3.7.2.87231
 TOOLBOX_INSTALL_DIR="$HOME/.local/share/jetbrains-toolbox/$TOOLBOX_VERSION"
 
 case "$DPKG_ARCH" in
-  amd64)
-    TOOLBOX_URL="https://download.jetbrains.com/toolbox/jetbrains-toolbox-$TOOLBOX_VERSION.tar.gz"
-    ;;
-  arm64)
-    TOOLBOX_URL="https://download.jetbrains.com/toolbox/jetbrains-toolbox-$TOOLBOX_VERSION-arm64.tar.gz"
-    ;;
-  *)
-    echo "Unsupported Debian architecture for JetBrains Toolbox: $DPKG_ARCH" >&2
-    exit 1
-    ;;
+amd64)
+  TOOLBOX_URL="https://download.jetbrains.com/toolbox/jetbrains-toolbox-$TOOLBOX_VERSION.tar.gz"
+  ;;
+arm64)
+  TOOLBOX_URL="https://download.jetbrains.com/toolbox/jetbrains-toolbox-$TOOLBOX_VERSION-arm64.tar.gz"
+  ;;
+*)
+  echo "Unsupported Debian architecture for JetBrains Toolbox: $DPKG_ARCH" >&2
+  exit 1
+  ;;
 esac
 
 if ! which jetbrains-toolbox >/dev/null; then

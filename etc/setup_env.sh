@@ -11,7 +11,7 @@ WSL_DISTRO_NAME=${WSL_DISTRO_NAME:-""}
 
 mkdir -p "$HOME"/.local/bin
 
-DOTFILES=".bash_functions .bash_profile .bashrc .editorconfig .gitconfig-base .gdbinit .mrxvtrc .oh-my-zsh-custom .screenrc .shell_aliases .shell_functions .shell_functions.fish .shell_interactive.sh .studioforkdb .tmux.conf .toprc .wezterm.lua .zsh_functions .zshrc"
+DOTFILES=".bash_functions .bash_profile .bashrc .editorconfig .gitconfig-base .gdbinit .oh-my-zsh-custom .screenrc .shell_aliases .shell_functions .shell_functions.fish .shell_interactive.sh .studioforkdb .tmux.conf .toprc .wezterm.lua .zsh_functions .zshrc"
 
 for FILE in $DOTFILES; do
   echo processing "$FILE"
@@ -28,7 +28,7 @@ fi
 # ---------- set up gitconfig
 
 if [[ -n "$WSL_DISTRO_NAME" ]]; then
-  ln -s -f "$HOME"/.dotfiles/.gitconfig-wsl "$HOME"/.gitconfig
+  ln -s -f "$HOME"/.dotfiles/.gitconfig-linux "$HOME"/.gitconfig
 elif [[ "$PLATFORM" == "Linux" ]]; then
   ln -s -f "$HOME"/.dotfiles/.gitconfig-linux "$HOME"/.gitconfig
 elif [[ "$PLATFORM" == "Darwin" ]]; then
@@ -55,7 +55,7 @@ else
   (cd "$HOME"/.oh-my-zsh && git pull)
 fi
 
-# ---------- set up nvchad
+# ---------- set up lazyvim
 
 nvim --headless "+Lazy! sync" +qa
 
