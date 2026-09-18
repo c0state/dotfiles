@@ -41,5 +41,4 @@ fi
 
 go install github.com/ankitpokhrel/jira-cli/cmd/jira@latest
 go install github.com/antonmedv/fx@latest
-go install github.com/mdempsky/gocode@latest
 go install github.com/x-motemen/gore/cmd/gore@latest
