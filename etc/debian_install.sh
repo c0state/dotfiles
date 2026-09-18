@@ -9,32 +9,20 @@ SHORT_ARCH="$DPKG_ARCH"
 if [ "$SHORT_ARCH" = "amd64" ]; then
   SHORT_ARCH="x64"
 fi
-VERSION_CODENAME=$(source /etc/os-release && echo "$VERSION_CODENAME")
-
-case "$RAW_ARCH" in
-aarch64)
-  ARCH="arm64"
-  ;;
-*)
-  ARCH="$RAW_ARCH"
-  ;;
-esac
-
 source /etc/os-release
 VERSION_CODENAME="${VERSION_CODENAME:-}"
-OS_CODENAME="${UBUNTU_CODENAME:-$VERSION_CODENAME}"
-if [ -z "$OS_CODENAME" ]; then
+if [ -z "$VERSION_CODENAME" ]; then
   echo "Unable to determine the OS codename from /etc/os-release" >&2
   exit 1
 fi
 
 case "$RAW_ARCH" in
-aarch64)
-  ARCH="arm64"
-  ;;
-*)
-  ARCH="$RAW_ARCH"
-  ;;
+  aarch64)
+    ARCH="arm64"
+    ;;
+  *)
+    ARCH="$RAW_ARCH"
+    ;;
 esac
 
 function get_github_release_version {
@@ -106,7 +94,7 @@ fi
 
 # terraform
 wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor | sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg >/dev/null
-echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $OS_CODENAME main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $VERSION_CODENAME main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
 
 # wezterm - https://wezfurlong.org/wezterm
 curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /usr/share/keyrings/wezterm-fury.gpg
@@ -295,16 +283,16 @@ install_package "https://github.com/rustdesk/rustdesk/releases/download/$RUSTDES
 if ! which obsidian >/dev/null; then
   OBSIDIAN_VERSION=1.13.7
   case "$DPKG_ARCH" in
-  amd64)
-    OBSIDIAN_ASSET_SUFFIX=""
-    ;;
-  arm64)
-    OBSIDIAN_ASSET_SUFFIX="-arm64"
-    ;;
-  *)
-    echo "Unsupported Debian architecture for Obsidian: $DPKG_ARCH" >&2
-    exit 1
-    ;;
+    amd64)
+      OBSIDIAN_ASSET_SUFFIX=""
+      ;;
+    arm64)
+      OBSIDIAN_ASSET_SUFFIX="-arm64"
+      ;;
+    *)
+      echo "Unsupported Debian architecture for Obsidian: $DPKG_ARCH" >&2
+      exit 1
+      ;;
   esac
   sudo curl --fail --location \
     "https://github.com/obsidianmd/obsidian-releases/releases/download/v$OBSIDIAN_VERSION/Obsidian-$OBSIDIAN_VERSION$OBSIDIAN_ASSET_SUFFIX.AppImage" \
@@ -332,16 +320,16 @@ TOOLBOX_VERSION=3.7.2.87231
 TOOLBOX_INSTALL_DIR="$HOME/.local/share/jetbrains-toolbox/$TOOLBOX_VERSION"
 
 case "$DPKG_ARCH" in
-amd64)
-  TOOLBOX_URL="https://download.jetbrains.com/toolbox/jetbrains-toolbox-$TOOLBOX_VERSION.tar.gz"
-  ;;
-arm64)
-  TOOLBOX_URL="https://download.jetbrains.com/toolbox/jetbrains-toolbox-$TOOLBOX_VERSION-arm64.tar.gz"
-  ;;
-*)
-  echo "Unsupported Debian architecture for JetBrains Toolbox: $DPKG_ARCH" >&2
-  exit 1
-  ;;
+  amd64)
+    TOOLBOX_URL="https://download.jetbrains.com/toolbox/jetbrains-toolbox-$TOOLBOX_VERSION.tar.gz"
+    ;;
+  arm64)
+    TOOLBOX_URL="https://download.jetbrains.com/toolbox/jetbrains-toolbox-$TOOLBOX_VERSION-arm64.tar.gz"
+    ;;
+  *)
+    echo "Unsupported Debian architecture for JetBrains Toolbox: $DPKG_ARCH" >&2
+    exit 1
+    ;;
 esac
 
 if ! which jetbrains-toolbox >/dev/null; then
