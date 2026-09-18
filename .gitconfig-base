@@ -51,7 +51,7 @@
 [credential]
     gitHubAccountFiltering = false
 [delta]
-    features = nord
+    features = zebra-dark
     keep-plus-minus-markers = true
     navigate = true
     side-by-side = true
