@@ -2,10 +2,6 @@
 
 set -eu
 
-PLATFORM=$(uname -s)
-MACH_TYPE=$(uname -m)
-IS_MACOS_ARM=$(test "$PLATFORM" = "Darwin" && test "$MACH_TYPE" = "arm64" && echo "1" || echo "")
-
 #---------- utils ----------
 
 function exit_with_error {
@@ -23,12 +19,14 @@ fi
 
 # add taps
 brew_taps=(
+  getsentry/tools
   hashicorp/tap
-  homebrew/autoupdate
+  domt4/autoupdate
 )
 
 for brew_tap in "${brew_taps[@]}"; do
   brew tap $brew_tap 2>&1 | grep -i error >/dev/null && exit_with_error "Could not run brew tap, check your permissions"
+  brew trust $brew_tap
 done
 
 brew update
@@ -53,7 +51,6 @@ brew_packages=(
   ack
   act
   ag
-  android-platform-tools
   ansible
   aws-iam-authenticator aws-sam-cli eksctl
   awscli
@@ -84,19 +81,16 @@ brew_packages=(
   fpart
   gh git git-delta git-extras git-filter-repo git-lfs git-secrets lazygit
   glances
-  harelba/q/q
   hashicorp/tap/terraform
   helix
   helm
   htop
-  hub
   imagemagick
   ios-deploy
   jq
   jmeter
   k9s kind kubernetes-cli
   lsd
-  lyft/formulae/set-simulator-location
   macvim
   mas
   media-info
@@ -119,7 +113,7 @@ brew_packages=(
   pidcat
   pkg-config
   pngquant
-  podman podman-desktop podman-compose
+  podman podman-compose
   postgresql@16
   progress
   qt
@@ -137,7 +131,6 @@ brew_packages=(
   stunnel
   svg2png
   telnet
-  terraform
   terraform_landscape
   tig
   tmux
@@ -156,17 +149,15 @@ brew_cask_packages=(
   1password
   adobe-acrobat-reader
   aerial
-  alacritty
   alfred
-  angry-ip-scanner
+  android-platform-tools
   antigravity antigravity-cli antigravity-ide
   balenaetcher
   beekeeper-studio
   beyond-compare
   brave-browser
   calibre
-  chatgpt chatgpt-atlas
-  chromedriver
+  chatgpt
   claude
   coconutbattery
   cursor
@@ -204,10 +195,11 @@ brew_cask_packages=(
   microsoft-office
   microsoft-teams
   ngrok
-  obs obs-ndi
+  obs
   obsidian
   orbstack
   outline-manager
+  podman-desktop
   postman
   powershell
   raspberry-pi-imager
@@ -231,7 +223,7 @@ brew_cask_packages=(
   vlc
   warp
   wezterm
-  wireshark
+  wireshark-app
   xbar
   xquartz inkscape
   zed
@@ -299,11 +291,6 @@ for brew_cask_package in "${brew_cask_packages[@]}"; do
 done
 
 brew completions link
-
-#---------- Configure auto updater ----------
-
-mkdir -p ~/Library/LaunchAgents
-brew autoupdate delete && brew autoupdate start --cleanup
 
 #---------- Cleanup ----------
 
