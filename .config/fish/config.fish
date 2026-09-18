@@ -19,6 +19,7 @@ set --local REPORTTIME 3
 #---------- vars
 
 set -gx EDITOR nvim
+set -gx LANG en_US.UTF-8
 
 if test "$PLATFORM" = Darwin
     set -gx SHELL /opt/homebrew/bin/fish
