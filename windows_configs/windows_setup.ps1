@@ -6,6 +6,7 @@ $ErrorActionPreference = "Stop"
 $wingetUpdateScript = Join-Path -Path $PSScriptRoot -ChildPath "winget_update.ps1"
 $wslSetupScript = Join-Path -Path $PSScriptRoot -ChildPath "wsl_setup.ps1"
 $profileSource = Join-Path -Path $PSScriptRoot -ChildPath "Microsoft.PowerShell_profile.ps1"
+$powerToysDscDocument = Join-Path -Path $PSScriptRoot -ChildPath "powertoys.dsc.yaml"
 $dotfilesRoot = Split-Path -Path $PSScriptRoot -Parent
 $failures = [System.Collections.Generic.List[string]]::new()
 
@@ -150,7 +151,7 @@ function Set-ScancodeMap {
     }
 }
 
-foreach ($path in @($wingetUpdateScript, $wslSetupScript, $profileSource)) {
+foreach ($path in @($wingetUpdateScript, $wslSetupScript, $profileSource, $powerToysDscDocument)) {
     if (-not (Test-Path -LiteralPath $path -PathType Leaf)) {
         throw "Windows setup source was not found: $path"
     }
@@ -194,6 +195,17 @@ $env:Path = @(
     [Environment]::GetEnvironmentVariable("Path", "Machine")
     [Environment]::GetEnvironmentVariable("Path", "User")
 ) -join ";"
+
+$powerToysArguments = @(
+    "configure"
+    "--file"
+    $powerToysDscDocument
+)
+
+Invoke-NativeCommand `
+    -FilePath "winget.exe" `
+    -ArgumentList $powerToysArguments `
+    -Description "Applying PowerToys configuration (Caps Lock -> Left Ctrl)"
 
 Invoke-NativeCommand `
     -FilePath "npm.cmd" `

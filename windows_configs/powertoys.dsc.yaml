@@ -1,0 +1,44 @@
+# Apply with: winget configure --file windows_configs/powertoys.dsc.yaml
+#
+# Applying the profile resource below replaces the entire Keyboard Manager
+# remapping profile, so any remaps configured in the PowerToys GUI are removed.
+# Remaps only take effect while the Keyboard Manager utility is enabled, and they
+# take effect immediately if PowerToys is already running, otherwise at the next
+# PowerToys start (no reboot required).
+#
+# run_elevated is left false to match the PowerToys default; remaps will not
+# apply inside elevated windows unless it is set to true.
+$schema: https://raw.githubusercontent.com/PowerShell/DSC/main/schemas/2023/08/config/document.json
+metadata:
+  winget:
+    processor: dscv3
+resources:
+  - name: Install PowerToys
+    type: Microsoft.WinGet.DSC/WinGetPackage
+    properties:
+      id: Microsoft.PowerToys
+      source: winget
+  - name: Configure PowerToys app settings
+    type: Microsoft.PowerToys/AppSettings
+    properties:
+      settings:
+        name: App
+        version: "1.0"
+        properties:
+          startup: true
+          run_elevated: false
+          theme: system
+  - name: Enable Keyboard Manager
+    type: Microsoft.PowerToys/KeyboardManagerSettings
+    properties:
+      settings:
+        name: KeyboardManager
+        version: "1.0"
+        properties:
+          Enabled: true
+  - name: Remap Caps Lock to Left Ctrl
+    type: Microsoft.PowerToys/KeyboardManagerProfile
+    properties:
+      profile:
+        keys:
+          - { from: CapsLock, to: Ctrl }
