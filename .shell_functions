@@ -28,7 +28,7 @@ function pprint_csv {
 
 function pprint_json {
     # pretty print json files
-    cat "$1" | python -m json.tool | less -i
+    cat "$1" | python3 -m json.tool | less -i
 }
 
 function pprint_xml {
