@@ -37,6 +37,7 @@
         { "PackageIdentifier": "Meld.Meld" },
         { "PackageIdentifier": "Microsoft.DotNet.Runtime.10" },
         { "PackageIdentifier": "Microsoft.VisualStudioCode" },
+        { "PackageIdentifier": "Mirantis.Lens" },
         { "PackageIdentifier": "Mozilla.Firefox" },
         { "PackageIdentifier": "Neovim.Neovim" },
         { "PackageIdentifier": "OBSProject.OBSStudio" },
