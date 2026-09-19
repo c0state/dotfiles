@@ -4,6 +4,16 @@ Personal, machine-wide, agent-agnostic instructions. Canonical source is
 `~/.dotfiles/AGENTS.md`; Claude loads it via `~/.claude/CLAUDE.md` (which
 `@import`s this file). Synced across machines via the dotfiles repo.
 
+## Communication
+
+- Keep replies concise and to the point. Answer the question that was
+  asked.
+- Match the length of the reply to the size of the question. A simple
+  question gets a short answer.
+- Don't pad replies with unrequested sections, verification tables,
+  caveats, or offers of further work. Follow-up questions will be asked
+  if more is wanted.
+
 ## Branch naming
 
 Use [Conventional Commits](https://www.conventionalcommits.org/en/)
