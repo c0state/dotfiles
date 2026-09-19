@@ -36,7 +36,6 @@
         { "PackageIdentifier": "Kubernetes.minikube" },
         { "PackageIdentifier": "Meld.Meld" },
         { "PackageIdentifier": "Microsoft.DotNet.Runtime.10" },
-        { "PackageIdentifier": "Microsoft.PowerToys" },
         { "PackageIdentifier": "Microsoft.VisualStudioCode" },
         { "PackageIdentifier": "Mirantis.Lens" },
         { "PackageIdentifier": "Mozilla.Firefox" },
