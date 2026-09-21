@@ -20,7 +20,9 @@ HIST_STAMPS="yyyy-mm-dd"
 
 ZSH_CUSTOM=~/.oh-my-zsh-custom
 
-export PATH="$HOME/.deno/bin:$PATH"
+if [[ -e $HOME/.shell_interactive.sh ]]; then
+    source $HOME/.shell_interactive.sh
+fi
 
 plugins=(
     brew
@@ -79,12 +81,6 @@ zstyle ':fzf-tab:*' show-group full
 zstyle ':autocomplete:*' min-input 1
 zstyle ':autocomplete:tab:*' insert-unambiguous yes
 zstyle ':autocomplete:tab:*' widget-style menu-complete
-
-#---------- load up shell agnostic interactive config
-
-if [[ -e $HOME/.shell_interactive.sh ]]; then
-    source $HOME/.shell_interactive.sh
-fi
 
 # ---------- zsh functions
 
