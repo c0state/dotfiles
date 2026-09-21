@@ -10,6 +10,7 @@ poetry completions fish >$HOME/.config/fish/completions/poetry.fish
 
 bun completions >"$HOME"/.config/fish/completions/bun.fish
 copilot completion fish >"$HOME"/.config/fish/completions/copilot.fish
+deno completions fish >"$HOME"/.config/fish/completions/deno.fish
 docker completion fish >"$HOME"/.config/fish/completions/docker.fish
 jj util completion fish >"$HOME"/.config/fish/completions/jj.fish
 k9s completion fish >"$HOME"/.config/fish/completions/k9s.fish
