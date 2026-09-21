@@ -65,7 +65,7 @@ symbol = "G☁️ "
 format = '[\[$symbol:$account(\($project\))]($style)\]'
 
 [git_branch]
-style = "bg:#ffff00 fg:black"
+style = "#ffff00 inverted"
 format = "[ $symbol$branch]($style)"
 
 [hostname]
