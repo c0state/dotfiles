@@ -20,6 +20,8 @@ HIST_STAMPS="yyyy-mm-dd"
 
 ZSH_CUSTOM=~/.oh-my-zsh-custom
 
+export PATH="$HOME/.deno/bin:$PATH"
+
 plugins=(
     brew
     colorize
