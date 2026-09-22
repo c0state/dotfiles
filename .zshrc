@@ -30,7 +30,6 @@ plugins=(
     deno
     docker
     docker-compose
-    fast-syntax-highlighting
     fzf-tab
     gcloud
     git
