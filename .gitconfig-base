@@ -18,12 +18,12 @@
     dtsd = "!dtsd() { git diff $@ | git-split-diffs --color --side-by-side | less --RAW-CONTROL-CHARS --quit-if-one-screen; }; dtsd"
     dump = cat-file -p
     ff = !git fetch origin \"$@\":\"$@\"
-    ffm = "!sh -c 'git fetch origin master:master || (echo Trying main && git fetch origin main:main)'"
+    ffm = "!ffm() { b=main; git show-ref --verify --quiet refs/remotes/origin/main || b=master; git fetch origin \"$b\":\"$b\"; }; ffm"
     hist = log --pretty=format:'%H %ad | %s%d [%an]' --graph --date=short
     hista = log --all --pretty=format:'%H %ad | %s%d [%an]' --graph --date=short
     ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
     lh = "!lh() { git log --pretty=full -L $1,$1:\"$2\"; }; lh"
-    mm = merge origin/master --autostash
+    mm = "!mm() { b=main; git show-ref --verify --quiet refs/remotes/origin/main || b=master; git merge \"origin/$b\" --autostash; }; mm"
     mtbc = mergetool --tool=bc
     mtnvim = mergetool --tool=nvimdiff
     pullr = "!git fetch --all --prune && git pull --rebase --autostash"
