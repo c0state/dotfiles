@@ -37,11 +37,8 @@ plugins=(
     golang
     jj
     kubectl
-    # pip
     poetry
     python
-    # web-search
-    # yarn
     zsh-autosuggestions
     zsh-completions
     zsh-syntax-highlighting
