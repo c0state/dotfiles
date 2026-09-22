@@ -36,11 +36,8 @@ plugins=(
     golang
     jj
     kubectl
-    # pip
     poetry
     python
-    # web-search
-    # yarn
 )
 
 # ---------- brew-managed zsh plugins
