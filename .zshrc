@@ -18,8 +18,6 @@ zstyle ':omz:update' mode disabled  # disable automatic updates
 ENABLE_CORRECTION="false"
 HIST_STAMPS="yyyy-mm-dd"
 
-ZSH_CUSTOM=~/.oh-my-zsh-custom
-
 if [[ -e $HOME/.shell_interactive.sh ]]; then
     source $HOME/.shell_interactive.sh
 fi
@@ -103,7 +101,7 @@ source $HOME/.zsh_functions
 
 # ---------- history
 
-setopt HIST_SAVE_NO_DUPS INC_APPEND_HISTORY
+setopt HIST_FIND_NO_DUPS HIST_IGNORE_ALL_DUPS HIST_SAVE_NO_DUPS INC_APPEND_HISTORY
 
 # ---------- direnv - https://github.com/direnv/direnv
 
