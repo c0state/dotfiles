@@ -5,6 +5,7 @@ $ErrorActionPreference = "Stop"
 
 $wingetUpdateScript = Join-Path -Path $PSScriptRoot -ChildPath "winget_update.ps1"
 $wslSetupScript = Join-Path -Path $PSScriptRoot -ChildPath "wsl_setup.ps1"
+$wslAutostartScript = Join-Path -Path $PSScriptRoot -ChildPath "wsl_autostart.ps1"
 $profileSource = Join-Path -Path $PSScriptRoot -ChildPath "Microsoft.PowerShell_profile.ps1"
 $powerToysDscDocument = Join-Path -Path $PSScriptRoot -ChildPath "powertoys.dsc.yaml"
 $dotfilesRoot = Split-Path -Path $PSScriptRoot -Parent
@@ -151,7 +152,7 @@ function Set-ScancodeMap {
     }
 }
 
-foreach ($path in @($wingetUpdateScript, $wslSetupScript, $profileSource, $powerToysDscDocument)) {
+foreach ($path in @($wingetUpdateScript, $wslSetupScript, $wslAutostartScript, $profileSource, $powerToysDscDocument)) {
     if (-not (Test-Path -LiteralPath $path -PathType Leaf)) {
         throw "Windows setup source was not found: $path"
     }
@@ -184,6 +185,19 @@ Invoke-NativeCommand `
     -FilePath $powershellPath `
     -ArgumentList $wslArguments `
     -Description "Setting up WSL distributions"
+
+$wslAutostartArguments = @(
+    "-NoProfile"
+    "-ExecutionPolicy"
+    "Bypass"
+    "-File"
+    $wslAutostartScript
+)
+
+Invoke-NativeCommand `
+    -FilePath $powershellPath `
+    -ArgumentList $wslAutostartArguments `
+    -Description "Registering WSL autostart scheduled task"
 
 Invoke-NativeCommand `
     -FilePath $powershellPath `
