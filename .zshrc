@@ -18,8 +18,6 @@ zstyle ':omz:update' mode disabled  # disable automatic updates
 ENABLE_CORRECTION="false"
 HIST_STAMPS="yyyy-mm-dd"
 
-ZSH_CUSTOM=~/.oh-my-zsh-custom
-
 if [[ -e $HOME/.shell_interactive.sh ]]; then
     source $HOME/.shell_interactive.sh
 fi
@@ -30,23 +28,23 @@ plugins=(
     deno
     docker
     docker-compose
-    fast-syntax-highlighting
-    fzf-tab
     gcloud
     git
     git-extras
     golang
     jj
     kubectl
-    # pip
     poetry
     python
-    # web-search
-    # yarn
-    zsh-autosuggestions
-    zsh-completions
-    zsh-syntax-highlighting
 )
+
+# ---------- brew-managed zsh plugins
+
+if (( $+commands[brew] )); then
+    _brew_prefix="$(brew --prefix)"
+    # completions must be on FPATH before compinit runs in oh-my-zsh.sh
+    FPATH="$_brew_prefix/share/zsh-completions:$FPATH"
+fi
 
 source $ZSH/oh-my-zsh.sh
 
@@ -56,6 +54,21 @@ source $ZSH/oh-my-zsh.sh
 
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 ZSH_AUTOSUGGEST_USE_ASYNC=true
+
+# ---------- brew-managed zsh plugins
+# fzf-tab must load after compinit but before plugins that wrap widgets;
+# zsh-syntax-highlighting must load after all widgets are bound
+
+if [[ -n ${_brew_prefix:-} ]]; then
+    for _plugin in \
+        fzf-tab/fzf-tab.zsh \
+        zsh-autosuggestions/zsh-autosuggestions.zsh \
+        zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    do
+        [[ -r $_brew_prefix/share/$_plugin ]] && source $_brew_prefix/share/$_plugin
+    done
+    unset _plugin
+fi
 
 # ---------- always show completions https://unix.stackexchange.com/a/30092/230764
 
@@ -88,7 +101,7 @@ source $HOME/.zsh_functions
 
 # ---------- history
 
-setopt HIST_SAVE_NO_DUPS INC_APPEND_HISTORY
+setopt HIST_FIND_NO_DUPS HIST_IGNORE_ALL_DUPS HIST_SAVE_NO_DUPS INC_APPEND_HISTORY
 
 # ---------- direnv - https://github.com/direnv/direnv
 
