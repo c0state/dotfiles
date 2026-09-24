@@ -54,6 +54,8 @@ function Invoke-WinGetCommand {
     }
 }
 
+# Stopgap: PowerToys DSC does not yet support AltWindowCycle. Move this
+# configuration into powertoys.dsc.yaml once native DSC support is available.
 function Set-PowerToysWindowHopper {
     $powerToysDirectory = Join-Path -Path $env:LOCALAPPDATA -ChildPath "Microsoft\PowerToys"
     $generalSettingsPath = Join-Path -Path $powerToysDirectory -ChildPath "settings.json"
