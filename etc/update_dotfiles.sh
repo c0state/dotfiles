@@ -11,15 +11,11 @@ fi
 #---------- update dotfiles folder
 
 (cd "$HOME"/.dotfiles && git fetch --all --prune && git pull --rebase --autostash)
-(cd "$HOME"/.dotfiles && git submodule update --init --recursive --remote)
-(cd "$HOME"/.dotfiles && git submodule foreach git pull origin master)
 
 #---------- update deno
 
 if command -v deno >/dev/null; then
   deno upgrade
-  deno completions fish >"$HOME"/.config/fish/completions/deno.fish
-  deno completions zsh >"$HOME"/.oh-my-zsh-custom/plugins/deno/_deno
 fi
 
 if command -v bit >/dev/null; then
