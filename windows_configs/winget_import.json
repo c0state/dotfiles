@@ -9,6 +9,7 @@
         { "PackageIdentifier": "Alacritty.Alacritty" },
         { "PackageIdentifier": "Anthropic.Claude" },
         { "PackageIdentifier": "Anthropic.ClaudeCode" },
+        { "PackageIdentifier": "astral-sh.uv" },
         { "PackageIdentifier": "Atlassian.Sourcetree" },
         { "PackageIdentifier": "Audacity.Audacity" },
         { "PackageIdentifier": "Balena.Etcher" },
