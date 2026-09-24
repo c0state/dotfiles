@@ -11,7 +11,7 @@ WSL_DISTRO_NAME=${WSL_DISTRO_NAME:-""}
 
 mkdir -p "$HOME"/.local/bin
 
-DOTFILES=".bash_functions .bash_profile .bashrc .editorconfig .gitconfig-base .gdbinit .oh-my-zsh-custom .screenrc .shell_aliases .shell_functions .shell_functions.fish .shell_interactive.sh .studioforkdb .tmux.conf .toprc .wezterm.lua .zsh_functions .zshrc"
+DOTFILES=".bash_functions .bash_profile .bashrc .editorconfig .gitconfig-base .gdbinit  .screenrc .shell_aliases .shell_functions .shell_functions.fish .shell_interactive.sh .studioforkdb .tmux.conf .toprc .wezterm.lua .zsh_functions .zshrc"
 
 for FILE in $DOTFILES; do
   echo processing "$FILE"
@@ -140,15 +140,6 @@ if ! which gcloud; then
   curl https://sdk.cloud.google.com | bash -s -- --disable-prompts --install-dir "$HOME"/.local
 else
   gcloud components update --quiet
-fi
-
-#---------- containers ----------
-
-if [[ "$PLATFORM" == "Darwin" ]]; then
-  # using docker or podman desktop for now as colima is a bit limiting (eg: x86 support)
-  # but keeping it for nerdctl
-  #colima start --runtime docker
-  colima nerdctl install --path "$HOME"/.local/bin/nerdctl --force
 fi
 
 # ---------- updates
