@@ -36,9 +36,11 @@ resources:
         version: "1.0"
         properties:
           Enabled: true
-  - name: Remap Caps Lock to Left Ctrl
-    type: Microsoft.PowerToys/KeyboardManagerProfile
-    properties:
-      profile:
-        keys:
-          - { from: CapsLock, to: Ctrl }
+# The KeyboardManagerProfile resource is currently available in Preview only.
+# Re-enable this resource once it is included in a stable PowerToys release.
+#  - name: Remap Caps Lock to Left Ctrl
+#    type: Microsoft.PowerToys/KeyboardManagerProfile
+#    properties:
+#      profile:
+#        keys:
+#          - { from: CapsLock, to: Ctrl }
