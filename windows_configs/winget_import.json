@@ -17,6 +17,7 @@
         { "PackageIdentifier": "chrisant996.Clink" },
         { "PackageIdentifier": "CPUID.CPU-Z" },
         { "PackageIdentifier": "CPUID.HWMonitor" },
+        { "PackageIdentifier": "dandavison.delta" },
         { "PackageIdentifier": "Discord.Discord" },
         { "PackageIdentifier": "Docker.DockerDesktop" },
         { "PackageIdentifier": "Eugeny.Tabby" },

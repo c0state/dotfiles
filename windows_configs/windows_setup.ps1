@@ -230,6 +230,15 @@ Invoke-NativeCommand `
     -ArgumentList @(
         "install",
         "--global",
+        "git-split-diffs@latest"
+    ) `
+    -Description "Installing/updating git-split-diffs"
+
+Invoke-NativeCommand `
+    -FilePath "npm.cmd" `
+    -ArgumentList @(
+        "install",
+        "--global",
         "@google/gemini-cli@latest"
     ) `
     -Description "Installing/updating Gemini CLI"
