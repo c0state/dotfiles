@@ -66,6 +66,10 @@ Rules:
 
 ## Git operations
 
+- Before making repository changes, fetch the latest mainline branch (usually
+  `master`). Fast-forward it when working on mainline. On a topic branch, update
+  from mainline using the repository's established merge/rebase workflow, while
+  preserving unrelated working-tree changes and following the no-force-push rule.
 - Never force-push (`git push --force` or `--force-with-lease`), including
   amending/rebasing an already-pushed commit and pushing the result, unless
   I explicitly tell you to do so for that specific push. This applies even
