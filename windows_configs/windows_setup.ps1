@@ -1,5 +1,7 @@
 [CmdletBinding()]
-param()
+param(
+    [switch]$SkipWinget
+)
 
 $ErrorActionPreference = "Stop"
 
@@ -31,6 +33,9 @@ if (-not (Test-IsAdministrator)) {
         "-File"
         "`"$PSCommandPath`""
     )
+    if ($SkipWinget) {
+        $elevatedArguments += "-SkipWinget"
+    }
 
     try {
         $elevatedProcess = Start-Process `
@@ -151,7 +156,12 @@ function Set-ScancodeMap {
     }
 }
 
-foreach ($path in @($wingetUpdateScript, $wslSetupScript, $profileSource, $powerToysSetupScript)) {
+$requiredSources = @($wslSetupScript, $profileSource)
+if (-not $SkipWinget) {
+    $requiredSources += @($wingetUpdateScript, $powerToysSetupScript)
+}
+
+foreach ($path in $requiredSources) {
     if (-not (Test-Path -LiteralPath $path -PathType Leaf)) {
         throw "Windows setup source was not found: $path"
     }
@@ -185,10 +195,14 @@ Invoke-NativeCommand `
     -ArgumentList $wslArguments `
     -Description "Setting up WSL distributions"
 
-Invoke-NativeCommand `
-    -FilePath $powershellPath `
-    -ArgumentList $wingetArguments `
-    -Description "Installing WinGet packages"
+if ($SkipWinget) {
+    Write-Host "`nSkipping WinGet package installation and PowerToys configuration"
+} else {
+    Invoke-NativeCommand `
+        -FilePath $powershellPath `
+        -ArgumentList $wingetArguments `
+        -Description "Installing WinGet packages"
+}
 
 $env:Path = @(
     $env:Path
@@ -196,18 +210,20 @@ $env:Path = @(
     [Environment]::GetEnvironmentVariable("Path", "User")
 ) -join ";"
 
-$powerToysArguments = @(
-    "-NoProfile"
-    "-ExecutionPolicy"
-    "Bypass"
-    "-File"
-    $powerToysSetupScript
-)
+if (-not $SkipWinget) {
+    $powerToysArguments = @(
+        "-NoProfile"
+        "-ExecutionPolicy"
+        "Bypass"
+        "-File"
+        $powerToysSetupScript
+    )
 
-Invoke-NativeCommand `
-    -FilePath $powershellPath `
-    -ArgumentList $powerToysArguments `
-    -Description "Applying PowerToys configuration"
+    Invoke-NativeCommand `
+        -FilePath $powershellPath `
+        -ArgumentList $powerToysArguments `
+        -Description "Applying PowerToys configuration"
+}
 
 Invoke-NativeCommand `
     -FilePath "npm.cmd" `

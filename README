@@ -7,6 +7,7 @@ To use:
 * Clone to ~/.dotfiles
 * Run ~/.dotfiles/etc/setup_env.sh
 * On Windows, run `& "$HOME\.dotfiles\windows_configs\windows_setup.ps1"` from PowerShell
+  Add `-SkipWinget` to skip WinGet package installation and PowerToys configuration.
 
 Additional Steps
 ================
