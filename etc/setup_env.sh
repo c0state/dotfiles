@@ -5,7 +5,6 @@ set -eux
 # ---------- shared variables
 
 PLATFORM=$(uname)
-WSL_DISTRO_NAME=${WSL_DISTRO_NAME:-""}
 
 # ---------- set up dotfiles links
 
@@ -35,21 +34,14 @@ mkdir -p "$HOME"/.config/git
 
 ln -s -f -n "$HOME"/.dotfiles/.config/git/.gitconfig-base "$HOME"/.config/git/.gitconfig-base
 
-if [[ -n "$WSL_DISTRO_NAME" ]]; then
-  GITCONFIG=.gitconfig-linux
-elif [[ "$PLATFORM" == "Linux" ]]; then
-  GITCONFIG=.gitconfig-linux
-elif [[ "$PLATFORM" == "Darwin" ]]; then
+GITCONFIG=.gitconfig-linux
+if [[ "$PLATFORM" == "Darwin" ]]; then
   GITCONFIG=.gitconfig-macos
 elif [[ "$PLATFORM" == CYGWIN* ]]; then
   GITCONFIG=.gitconfig-cygwin
-else
-  GITCONFIG=
 fi
 
-if [[ -n "$GITCONFIG" ]]; then
-  ln -s -f -n "$HOME"/.dotfiles/.config/git/"$GITCONFIG" "$HOME"/.config/git/config
-fi
+ln -s -f -n "$HOME"/.dotfiles/.config/git/"$GITCONFIG" "$HOME"/.config/git/config
 curl -fsSL https://raw.githubusercontent.com/dandavison/delta/refs/heads/main/themes.gitconfig -o "$HOME"/.config/git/.gitconfig-delta.themes.gitconfig
 
 # ---------- bat (link batcat to bat on ubuntu due to name conflict)
