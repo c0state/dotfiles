@@ -83,9 +83,6 @@ Rules:
 - Exception: only use tabs where the format *requires* them — Makefile
   recipes and Go source (`gofmt`). Match an existing file's indentation
   when editing it.
-- Preserve existing whitespace and line endings when editing or moving files.
-  Follow the file's established formatting conventions and avoid unrelated
-  whitespace-only changes unless requested or required for the change.
 - Comments are opt-in, not default. Only add one when the code isn't
   self-explanatory and the *why* is genuinely non-obvious (a hidden
   constraint, a workaround for a specific bug). If the code speaks for

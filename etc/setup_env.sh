@@ -33,22 +33,6 @@ fi
 
 mkdir -p "$HOME"/.config/git
 
-if [[ -e "$HOME"/.gitconfig-delta.themes.gitconfig ]]; then
-  if [[ -e "$HOME"/.config/git/.gitconfig-delta.themes.gitconfig ]]; then
-    echo "Both legacy and XDG Delta theme configs exist; resolve the conflict before setup." >&2
-    exit 1
-  fi
-  mv "$HOME"/.gitconfig-delta.themes.gitconfig "$HOME"/.config/git/.gitconfig-delta.themes.gitconfig
-fi
-
-if [[ -L "$HOME"/.gitconfig ]] && [[ "$(readlink "$HOME"/.gitconfig)" == "$HOME"/.dotfiles/.gitconfig-* ]]; then
-  unlink "$HOME"/.gitconfig
-fi
-
-if [[ -L "$HOME"/.gitconfig-base ]] && [[ "$(readlink "$HOME"/.gitconfig-base)" == "$HOME"/.dotfiles/.gitconfig-base ]]; then
-  unlink "$HOME"/.gitconfig-base
-fi
-
 ln -s -f -n "$HOME"/.dotfiles/.config/git/.gitconfig-base "$HOME"/.config/git/.gitconfig-base
 
 if [[ -n "$WSL_DISTRO_NAME" ]]; then

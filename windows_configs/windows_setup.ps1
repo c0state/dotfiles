@@ -106,33 +106,6 @@ function Link-GitConfig {
     $gitConfigDirectory = Join-Path -Path $HOME -ChildPath ".config\git"
     New-Item -ItemType Directory -Path $gitConfigDirectory -Force | Out-Null
 
-    $legacyThemes = Join-Path -Path $HOME -ChildPath ".gitconfig-delta.themes.gitconfig"
-    $themes = Join-Path -Path $gitConfigDirectory -ChildPath ".gitconfig-delta.themes.gitconfig"
-    if (Test-Path -LiteralPath $legacyThemes -PathType Leaf) {
-        if (Test-Path -LiteralPath $themes) {
-            throw "Both legacy and XDG Delta theme configs exist; resolve the conflict before setup."
-        }
-        Move-Item -LiteralPath $legacyThemes -Destination $themes
-    }
-
-    $legacyLinks = @(
-        @{
-            Path = Join-Path -Path $HOME -ChildPath ".gitconfig"
-            Target = Join-Path -Path $DotfilesRoot -ChildPath ".gitconfig-windows"
-        }
-        @{
-            Path = Join-Path -Path $HOME -ChildPath ".gitconfig-base"
-            Target = Join-Path -Path $DotfilesRoot -ChildPath ".gitconfig-base"
-        }
-    )
-
-    foreach ($legacyLink in $legacyLinks) {
-        $existingLink = Get-Item -LiteralPath $legacyLink.Path -Force -ErrorAction SilentlyContinue
-        if ($existingLink -and $existingLink.LinkType -eq "SymbolicLink" -and $existingLink.Target -eq $legacyLink.Target) {
-            Remove-Item -LiteralPath $legacyLink.Path
-        }
-    }
-
     $links = @(
         @{
             Path = Join-Path -Path $gitConfigDirectory -ChildPath "config"
