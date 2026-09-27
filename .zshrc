@@ -89,12 +89,6 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'lsd -1 --color=always $realpath'
 zstyle ':fzf-tab:*' switch-group ',' '.'
 zstyle ':fzf-tab:*' show-group full
 
-# ---------- zsh-autocomple - https://github.com/marlonrichert/zsh-autocomplete
-
-zstyle ':autocomplete:*' min-input 1
-zstyle ':autocomplete:tab:*' insert-unambiguous yes
-zstyle ':autocomplete:tab:*' widget-style menu-complete
-
 # ---------- zsh functions
 
 source $HOME/.zsh_functions
