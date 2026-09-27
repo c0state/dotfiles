@@ -5,13 +5,12 @@ set -eux
 # ---------- shared variables
 
 PLATFORM=$(uname)
-WSL_DISTRO_NAME=${WSL_DISTRO_NAME:-""}
 
 # ---------- set up dotfiles links
 
 mkdir -p "$HOME"/.local/bin
 
-DOTFILES=".bash_functions .bash_profile .bashrc .editorconfig .gitconfig-base .gdbinit  .screenrc .shell_aliases .shell_functions .shell_functions.fish .shell_interactive.sh .studioforkdb .tmux.conf .toprc .wezterm.lua .zsh_functions .zshrc"
+DOTFILES=".bash_functions .bash_profile .bashrc .editorconfig .gdbinit  .screenrc .shell_aliases .shell_functions .shell_functions.fish .shell_interactive.sh .studioforkdb .tmux.conf .toprc .wezterm.lua .zsh_functions .zshrc"
 
 for FILE in $DOTFILES; do
   echo processing "$FILE"
@@ -19,7 +18,11 @@ for FILE in $DOTFILES; do
 done
 
 mkdir -p "$HOME"/.config
-(ln -s "$HOME"/.dotfiles/.config/* "$HOME"/.config || true)
+for FILE in "$HOME"/.dotfiles/.config/*; do
+  if [[ "$FILE" != "$HOME"/.dotfiles/.config/git ]]; then
+    ln -s "$FILE" "$HOME"/.config || true
+  fi
+done
 
 if [[ ! -d $HOME/etc ]]; then
   ln -s "$HOME"/.dotfiles/etc "$HOME"/
@@ -27,14 +30,19 @@ fi
 
 # ---------- set up gitconfig
 
-if [[ -n "$WSL_DISTRO_NAME" ]]; then
-  ln -s -f "$HOME"/.dotfiles/.gitconfig-linux "$HOME"/.gitconfig
-elif [[ "$PLATFORM" == "Linux" ]]; then
-  ln -s -f "$HOME"/.dotfiles/.gitconfig-linux "$HOME"/.gitconfig
-elif [[ "$PLATFORM" == "Darwin" ]]; then
-  ln -s -f "$HOME"/.dotfiles/.gitconfig-macos "$HOME"/.gitconfig
+mkdir -p "$HOME"/.config/git
+
+ln -s -f -n "$HOME"/.dotfiles/.config/git/.gitconfig-base "$HOME"/.config/git/.gitconfig-base
+
+GITCONFIG=.gitconfig-linux
+if [[ "$PLATFORM" == "Darwin" ]]; then
+  GITCONFIG=.gitconfig-macos
+elif [[ "$PLATFORM" == CYGWIN* ]]; then
+  GITCONFIG=.gitconfig-cygwin
 fi
-curl -fsSL https://raw.githubusercontent.com/dandavison/delta/refs/heads/main/themes.gitconfig -o "$HOME"/.gitconfig-delta.themes.gitconfig
+
+ln -s -f -n "$HOME"/.dotfiles/.config/git/"$GITCONFIG" "$HOME"/.config/git/config
+curl -fsSL https://raw.githubusercontent.com/dandavison/delta/refs/heads/main/themes.gitconfig -o "$HOME"/.config/git/.gitconfig-delta.themes.gitconfig
 
 # ---------- bat (link batcat to bat on ubuntu due to name conflict)
 if command -v batcat >/dev/null; then

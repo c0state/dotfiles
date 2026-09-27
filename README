@@ -12,7 +12,7 @@ To use:
 Additional Steps
 ================
 
-* Put your name and email in ~/.gitconfig-custom
+* Put your name and email in `~/.config/git/.gitconfig-custom`
 ```
 [user]
     name = Joe Blogs

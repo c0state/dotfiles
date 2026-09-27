@@ -103,14 +103,17 @@ function Link-GitConfig {
         [string]$DotfilesRoot
     )
 
+    $gitConfigDirectory = Join-Path -Path $HOME -ChildPath ".config\git"
+    New-Item -ItemType Directory -Path $gitConfigDirectory -Force | Out-Null
+
     $links = @(
         @{
-            Path = Join-Path -Path $HOME -ChildPath ".gitconfig"
-            Target = Join-Path -Path $DotfilesRoot -ChildPath ".gitconfig-windows"
+            Path = Join-Path -Path $gitConfigDirectory -ChildPath "config"
+            Target = Join-Path -Path $DotfilesRoot -ChildPath ".config\git\.gitconfig-windows"
         }
         @{
-            Path = Join-Path -Path $HOME -ChildPath ".gitconfig-base"
-            Target = Join-Path -Path $DotfilesRoot -ChildPath ".gitconfig-base"
+            Path = Join-Path -Path $gitConfigDirectory -ChildPath ".gitconfig-base"
+            Target = Join-Path -Path $DotfilesRoot -ChildPath ".config\git\.gitconfig-base"
         }
     )
 
