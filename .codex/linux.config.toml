@@ -10,6 +10,12 @@ sandbox_mode = "workspace-write"
 [desktop]
 followUpQueueMode = "steer"
 
+[desktop.appearanceDarkChromeTheme.fonts]
+code = '"Hack Nerd Font"'
+
+[desktop.appearanceLightChromeTheme.fonts]
+code = '"Hack Nerd Font"'
+
 [features]
 memories = true
 
@@ -21,4 +27,3 @@ use_memories = true
 alternate_screen = "never"
 animations = true
 notification_method = "bel"
-notifications = true
