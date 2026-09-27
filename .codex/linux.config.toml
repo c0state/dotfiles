@@ -27,3 +27,4 @@ use_memories = true
 alternate_screen = "never"
 animations = true
 notification_method = "bel"
+notifications = true
