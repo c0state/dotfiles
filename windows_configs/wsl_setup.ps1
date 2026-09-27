@@ -136,6 +136,50 @@ foreach ($requestedDistribution in $wslDistributions) {
     }
 }
 
+$systemdConfScript = @'
+if ! [ -f /etc/wsl.conf ]; then
+  printf '\n[boot]\nsystemd=true\n' > /etc/wsl.conf
+  echo 'Enabled systemd in /etc/wsl.conf (takes effect after WSL restarts)'
+elif ! grep -q '^\[boot\]' /etc/wsl.conf; then
+  printf '\n[boot]\nsystemd=true\n' >> /etc/wsl.conf
+  echo 'Enabled systemd in /etc/wsl.conf (takes effect after WSL restarts)'
+elif grep -q '^systemd=true' /etc/wsl.conf; then
+  echo 'systemd is already enabled in /etc/wsl.conf'
+elif grep -q '^systemd=' /etc/wsl.conf; then
+  sed -i 's/^systemd=.*/systemd=true/' /etc/wsl.conf
+  echo 'Enabled systemd in /etc/wsl.conf (takes effect after WSL restarts)'
+else
+  sed -i '/^\[boot\]/a systemd=true' /etc/wsl.conf
+  echo 'Enabled systemd in /etc/wsl.conf (takes effect after WSL restarts)'
+fi
+'@
+
+foreach ($requestedDistribution in $wslDistributions) {
+    $distributionPattern = "^{0}(?:[-.]|$)" -f [regex]::Escape($requestedDistribution)
+    $distributionName = @(
+        $installedDistributions |
+            Where-Object { $_ -match $distributionPattern }
+    ) | Select-Object -First 1
+
+    if (-not $distributionName) {
+        continue
+    }
+
+    Invoke-NativeCommand `
+        -FilePath "wsl.exe" `
+        -ArgumentList @(
+            "--distribution"
+            $distributionName
+            "--user"
+            "root"
+            "--exec"
+            "sh"
+            "-c"
+            $systemdConfScript
+        ) `
+        -Description "Enabling systemd in WSL distribution: $distributionName"
+}
+
 if ($failures.Count -gt 0) {
     Write-Host "`nWSL setup completed with failures:" -ForegroundColor Red
     foreach ($failure in $failures) {
