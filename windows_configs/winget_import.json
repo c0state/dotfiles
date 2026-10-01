@@ -30,6 +30,7 @@
         { "PackageIdentifier": "Google.AntigravityCLI" },
         { "PackageIdentifier": "Google.AntigravityIDE" },
         { "PackageIdentifier": "Google.Chrome" },
+        { "PackageIdentifier": "Google.GeminiDesktop" },
         { "PackageIdentifier": "Google.GoogleDrive" },
         { "PackageIdentifier": "JanDeDobbeleer.OhMyPosh" },
         { "PackageIdentifier": "JetBrains.Toolbox" },
