@@ -129,7 +129,6 @@ sudo apt -y install \
   bat \
   clonezilla \
   cpu-x \
-  colordiff icdiff \
   wget \
   direnv \
   dos2unix \
