@@ -73,18 +73,11 @@ function Install-WinGetPackages {
 
             Write-Host "`nInstalling WinGet package: $packageIdentifier (source: $sourceName)"
 
-            $additionalArguments = @()
-            if ($packageIdentifier -eq "TorProject.TorBrowser") {
-                $torBrowserInstallPath = Join-Path `
-                    -Path $env:LOCALAPPDATA `
-                    -ChildPath "Programs\Tor Browser"
-                $additionalArguments = @(
-                    "--scope"
-                    "user"
-                    "--location"
-                    $torBrowserInstallPath
-                )
-            }
+            $additionalArguments = @(
+                foreach ($argument in $package.InstallArguments) {
+                    [Environment]::ExpandEnvironmentVariables([string]$argument)
+                }
+            )
 
             try {
                 & winget.exe install `
