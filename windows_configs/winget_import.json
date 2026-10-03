@@ -84,6 +84,10 @@
         {
           "PackageIdentifier": "9PLM9XGG6VKS",
           "Comment": "ChatGPT unified desktop app (Microsoft Store package)"
+        },
+        {
+          "PackageIdentifier": "XPDCK2L0R6V76J",
+          "Comment": "GitHub Copilot desktop app (Microsoft Store package)"
         }
       ],
       "SourceDetails": {

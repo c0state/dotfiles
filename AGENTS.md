@@ -118,6 +118,11 @@ Rules:
   style — e.g. in `etc/agent_setup.sh`: idempotent guards before
   install/write steps, `case "$(uname -s)" in Linux|Darwin)` blocks for
   OS-specific logic.
+- Add only official publisher apps to the Windows WinGet package list.
+  Verify package IDs against the publisher's official site or store listing;
+  use the official Microsoft Store product ID with the `msstore` source for
+  Store apps, and verify that `winget` installers come from the publisher's
+  own distribution channel. Avoid third-party repackaging.
 
 ## Secrets
 
