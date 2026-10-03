@@ -1,17 +1,17 @@
 [core]
-	fileMode = false
+  fileMode = false
 [include]
-	path = .gitconfig-base
+  path = .gitconfig-base
 [credential]
-    # this is actually needed to clear out any existing helpers
-    helper =
-    helper = git-credential-manager
-    credentialStore = wincred
+  # this is actually needed to clear out any existing helpers
+  helper =
+  helper = git-credential-manager
+  credentialStore = wincred
 [diff]
-	tool = bc
+  tool = bc
 [difftool "bc"]
-	path = "c:/program files (x86)/beyond compare 4/bcomp.exe"
+  path = "c:/program files (x86)/beyond compare 5/bcomp.exe"
 [merge]
-	tool = bc
+  tool = bc
 [mergetool "bc"]
-	path = "c:/program files (x86)/beyond compare 4/bcomp.exe"
+  path = "c:/program files (x86)/beyond compare 5/bcomp.exe"

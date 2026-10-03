@@ -52,11 +52,23 @@
         { "PackageIdentifier": "RandyRants.SharpKeys" },
         { "PackageIdentifier": "Rufus.Rufus" },
         { "PackageIdentifier": "SlackTechnologies.Slack" },
+        {
+          "PackageIdentifier": "ScooterSoftware.BeyondCompare.5",
+          "InstallArguments": [ "--scope", "machine" ]
+        },
         { "PackageIdentifier": "Tailscale.Tailscale" },
         { "PackageIdentifier": "TeamViewer.TeamViewer" },
         { "PackageIdentifier": "TechPowerUp.GPU-Z" },
         { "PackageIdentifier": "TheDocumentFoundation.LibreOffice" },
-        { "PackageIdentifier": "TorProject.TorBrowser" },
+        {
+          "PackageIdentifier": "TorProject.TorBrowser",
+          "InstallArguments": [
+            "--scope",
+            "user",
+            "--location",
+            "%LOCALAPPDATA%\\Programs\\Tor Browser"
+          ]
+        },
         { "PackageIdentifier": "Valve.Steam" },
         { "PackageIdentifier": "VideoLAN.VLC" },
         { "PackageIdentifier": "WinDirStat.WinDirStat" },
