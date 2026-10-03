@@ -4,7 +4,6 @@
 [alias]
     addi = "!git add --patch"
     br = !git branch -vv
-    cdiff = difftool -y -x 'icdiff --highlight --line-number'
     ci = commit
     co = checkout
     cos = "!cos() { git stash && git checkout \"$@\" && git stash pop; }; cos"
