@@ -53,7 +53,6 @@ uv pip install -p "$DEFAULT_VENV_PATH" --upgrade \
 
 uv tool install --force ansible
 uv tool install --force autoenv
-uv tool install --force cdiff
 uv tool install --force codemod
 uv tool install --force cookiecutter
 uv tool install --force csvkit

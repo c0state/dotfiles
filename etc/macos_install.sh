@@ -63,7 +63,6 @@ brew_packages=(
   carthage
   circleci
   cocoapods
-  colordiff icdiff
   coreutils
   dive
   ddrescue
