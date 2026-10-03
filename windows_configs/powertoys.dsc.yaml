@@ -1,4 +1,4 @@
-# Apply with: winget configure --file windows_configs/powertoys.dsc.yaml
+# Apply with: winget configure --file windows_configs/powertoys.dsc.yaml --accept-configuration-agreements --disable-interactivity
 #
 # Applying the profile resource below replaces the entire Keyboard Manager
 # remapping profile, so any remaps configured in the PowerToys GUI are removed.
