@@ -129,6 +129,8 @@ Invoke-WinGetCommand -ArgumentList @(
     "configure"
     "--file"
     $powerToysDscDocument
+    "--accept-configuration-agreements"
+    "--disable-interactivity"
 )
 
 Invoke-WinGetCommand -ArgumentList @(
