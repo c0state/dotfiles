@@ -4,7 +4,6 @@
 [alias]
     addi = "!git add --patch"
     br = !git branch -vv
-    cdiff = difftool -y -x 'icdiff --highlight --line-number'
     ci = commit
     co = checkout
     cos = "!cos() { git stash && git checkout \"$@\" && git stash pop; }; cos"
@@ -12,10 +11,10 @@
     dmbr = "!git dmb --effort 3"
     dt = difftool
     dtbc = difftool --tool=bc
-    dtd = "!dtd() { git diff $@ | delta; }; dtd"
+    dtd = "!dtd() { git diff \"$@\" | delta; }; dtd"
     dtm = difftool --tool=meld
     dtnvim = difftool --tool=nvimdiff
-    dtsd = "!dtsd() { git diff $@ | git-split-diffs --color --side-by-side | less --RAW-CONTROL-CHARS --quit-if-one-screen; }; dtsd"
+    dtsd = "!dtsd() { git diff \"$@\" | git-split-diffs --color --side-by-side | less --RAW-CONTROL-CHARS --quit-if-one-screen; }; dtsd"
     dump = cat-file -p
     ff = !git fetch origin \"$@\":\"$@\"
     ffm = "!ffm() { b=main; git show-ref --verify --quiet refs/remotes/origin/main || b=master; git fetch origin \"$b\":\"$b\"; }; ffm"
