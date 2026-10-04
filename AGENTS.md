@@ -102,6 +102,9 @@ Rules:
 - Always use long-form flags (e.g. `--verbose` instead of `-v`) when
   running CLI commands. They're self-documenting when read back later,
   in logs, or in shared command history.
+- For globally installed JavaScript tools in setup scripts, prefer
+  `bun add --global`, following `etc/js_tools.sh`. Keep other package
+  managers for bootstrap steps or documented compatibility requirements.
 
 ## Research
 
