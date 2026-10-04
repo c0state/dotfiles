@@ -168,6 +168,15 @@ bun add --global \
   @openai/codex \
   opencode-ai
 
+# ---------- playwright CLI
+
+npm install --global @playwright/cli@latest
+(
+  cd "$HOME"
+  playwright-cli install --skills=claude --global
+  playwright-cli install --skills=agents --global
+)
+
 copilot plugin marketplace add obra/superpowers-marketplace || true
 copilot plugin install superpowers@superpowers-marketplace || true
 
