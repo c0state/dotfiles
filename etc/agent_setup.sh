@@ -174,6 +174,34 @@ bun add --global @playwright/cli@latest
 playwright-cli install --skills=claude --global
 playwright-cli install --skills=agents --global
 
+# ---------- browser devtools
+
+register_browser_mcp() {
+  local name="$1"
+  shift
+
+  if ! jq --exit-status --arg name "$name" '.mcpServers[$name] != null' \
+    "$HOME/.claude.json" >/dev/null 2>&1; then
+    claude mcp add --scope user "$name" -- "$@"
+  fi
+
+  if ! codex mcp get "$name" >/dev/null 2>&1; then
+    codex mcp add "$name" -- "$@"
+  fi
+}
+
+case "$(uname -s)" in
+Linux|Darwin)
+  bun add --global chrome-devtools-mcp@latest @mozilla/firefox-devtools-mcp@latest
+  npx --yes skills add ChromeDevTools/chrome-devtools-mcp \
+    --skill chrome-devtools chrome-devtools-cli --agent claude-code codex --global --yes
+
+  register_browser_mcp chrome-devtools "$(command -v chrome-devtools-mcp)"
+  register_browser_mcp firefox-devtools "$(command -v firefox-devtools-mcp)" \
+    --tool-preset developer
+  ;;
+esac
+
 copilot plugin marketplace add obra/superpowers-marketplace || true
 copilot plugin install superpowers@superpowers-marketplace || true
 
