@@ -123,9 +123,7 @@ mkdir -p ~/.local/share/applications
 
 # google chrome desktop launcher override with touchpad overscroll (for 2 finger swipe navigation)
 GOOGLE_CHROME_DESKTOP_LAUNCHER_FILE="$HOME/.local/share/applications/google-chrome.desktop"
-if [[ ! -f "$GOOGLE_CHROME_DESKTOP_LAUNCHER_FILE" ]]; then
-  cp /usr/share/applications/google-chrome.desktop "$GOOGLE_CHROME_DESKTOP_LAUNCHER_FILE"
+cp /usr/share/applications/google-chrome.desktop "$GOOGLE_CHROME_DESKTOP_LAUNCHER_FILE"
 
-  sed -i -E 's#^(Exec=.*(google-chrome(-stable)?))#\1 --enable-features=TouchpadOverscrollHistoryNavigation#' \
-    "$GOOGLE_CHROME_DESKTOP_LAUNCHER_FILE"
-fi
+sed -i -E 's#^(Exec=.*(google-chrome(-stable)?))#\1 --enable-features=TouchpadOverscrollHistoryNavigation#' \
+  "$GOOGLE_CHROME_DESKTOP_LAUNCHER_FILE"
