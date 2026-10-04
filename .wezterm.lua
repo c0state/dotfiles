@@ -5,6 +5,8 @@ local config = wezterm.config_builder()
 config.enable_wayland = false
 config.color_scheme = 'Darcula'
 
+config.default_cursor_style = "SteadyBlock"
+
 config.audible_bell = "Disabled"
 config.visual_bell = {
   fade_in_function = 'EaseIn',

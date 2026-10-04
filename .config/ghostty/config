@@ -46,6 +46,8 @@ theme = Dracula
 
 confirm-close-surface = false
 
+cursor-style = block
+
 keybind = global:ctrl+cmd+i=toggle_visibility
 # for later use on windows/linux/etc. as above
 # only works on macos

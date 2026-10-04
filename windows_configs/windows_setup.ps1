@@ -131,6 +131,36 @@ function Link-GitConfig {
     }
 }
 
+function Install-WindowsTerminalFragment {
+    param(
+        [Parameter(Mandatory = $true)]
+        [string]$SourcePath
+    )
+
+    if (-not (Test-Path -LiteralPath $SourcePath -PathType Leaf)) {
+        throw "Windows Terminal fragment source was not found: $SourcePath"
+    }
+
+    # Windows Terminal merges (never rewrites) files in this directory into the
+    # user's settings.json. This is the supported way to version-control
+    # settings: https://learn.microsoft.com/windows/terminal/settings#settings-files
+    $fragmentDirectory = Join-Path -Path $env:LOCALAPPDATA -ChildPath `
+        "Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalSettings\settings\LocalSettings"
+    New-Item -ItemType Directory -Path $fragmentDirectory -Force | Out-Null
+
+    $fragmentName = Split-Path -Path $SourcePath -Leaf
+    $fragmentPath = Join-Path -Path $fragmentDirectory -ChildPath $fragmentName
+
+    if ((Test-Path -LiteralPath $fragmentPath -PathType Leaf) -and
+        ((Get-FileHash -LiteralPath $fragmentPath).Hash -eq (Get-FileHash -LiteralPath $SourcePath).Hash)) {
+        Write-Host "Windows Terminal fragment already installed: $fragmentPath"
+        return
+    }
+
+    Copy-Item -LiteralPath $SourcePath -Destination $fragmentPath -Force
+    Write-Host "Windows Terminal fragment installed: $fragmentPath"
+}
+
 function Set-ScancodeMap {
     param(
         [Parameter(Mandatory = $true)]
@@ -279,8 +309,11 @@ $capsLockToControl = [byte[]]@(
 )
 Set-ScancodeMap -Value $capsLockToControl -Description "Caps Lock -> Left Ctrl"
 
+$terminalFragmentSource = Join-Path -Path $PSScriptRoot -ChildPath "terminal_fragment_c0state-dotfiles.json"
+
 Link-PowerShellProfile -SourcePath $profileSource
 Link-GitConfig -DotfilesRoot $dotfilesRoot
+Install-WindowsTerminalFragment -SourcePath $terminalFragmentSource
 
 if ($failures.Count -gt 0) {
     Write-Host "`nWindows setup completed with failures:" -ForegroundColor Red
