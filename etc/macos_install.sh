@@ -102,6 +102,7 @@ brew_packages=(
   nmap
   nnn
   nushell
+  ollama
   openjdk
   openssl
   optipng
