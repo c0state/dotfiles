@@ -170,7 +170,7 @@ bun add --global \
 
 # ---------- playwright CLI
 
-npm install --global @playwright/cli@latest
+bun add --global @playwright/cli@latest
 (
   cd "$HOME"
   playwright-cli install --skills=claude --global
