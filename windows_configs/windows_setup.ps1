@@ -270,6 +270,15 @@ Invoke-NativeCommand `
     ) `
     -Description "Installing/updating Pi coding harness"
 
+if (-not (Get-Command -Name "muse" -ErrorAction SilentlyContinue)) {
+    Write-Host "`nInstalling Muse Code"
+    try {
+        Invoke-RestMethod -Uri "https://dev.meta.ai/install.ps1" | Invoke-Expression
+    } catch {
+        [void]$failures.Add("Installing Muse Code: $($_.Exception.Message)")
+    }
+}
+
 $capsLockToControl = [byte[]]@(
     0x00, 0x00, 0x00, 0x00,   # version
     0x00, 0x00, 0x00, 0x00,   # flags

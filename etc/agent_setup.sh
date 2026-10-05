@@ -146,6 +146,12 @@ fi
 
 agy plugin install https://github.com/obra/superpowers || true
 
+# ---------- muse code
+
+if ! command -v muse >/dev/null 2>&1; then
+  curl -fsSL https://dev.meta.ai/install.sh | sh
+fi
+
 # ---------- hermes agent
 
 if ! command -v hermes >/dev/null 2>&1; then
