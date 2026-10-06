@@ -309,7 +309,7 @@ $capsLockToControl = [byte[]]@(
 )
 Set-ScancodeMap -Value $capsLockToControl -Description "Caps Lock -> Left Ctrl"
 
-$terminalFragmentSource = Join-Path -Path $PSScriptRoot -ChildPath "terminal_fragment_c0state-dotfiles.json"
+$terminalFragmentSource = Join-Path -Path $PSScriptRoot -ChildPath "windows_terminal_config.json"
 
 Link-PowerShellProfile -SourcePath $profileSource
 Link-GitConfig -DotfilesRoot $dotfilesRoot
