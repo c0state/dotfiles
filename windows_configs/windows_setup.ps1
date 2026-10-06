@@ -148,14 +148,7 @@ function Install-WindowsTerminalFragment {
         "Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalSettings\settings\LocalSettings"
     New-Item -ItemType Directory -Path $fragmentDirectory -Force | Out-Null
 
-    $fragmentName = Split-Path -Path $SourcePath -Leaf
-    $fragmentPath = Join-Path -Path $fragmentDirectory -ChildPath $fragmentName
-
-    if ((Test-Path -LiteralPath $fragmentPath -PathType Leaf) -and
-        ((Get-FileHash -LiteralPath $fragmentPath).Hash -eq (Get-FileHash -LiteralPath $SourcePath).Hash)) {
-        Write-Host "Windows Terminal fragment already installed: $fragmentPath"
-        return
-    }
+    $fragmentPath = Join-Path -Path $fragmentDirectory -ChildPath (Split-Path -Path $SourcePath -Leaf)
 
     Copy-Item -LiteralPath $SourcePath -Destination $fragmentPath -Force
     Write-Host "Windows Terminal fragment installed: $fragmentPath"
