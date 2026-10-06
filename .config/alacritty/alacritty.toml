@@ -6,3 +6,6 @@ family = "Hack Nerd Font"
 
 [terminal.shell]
 program = "fish"
+
+[cursor.style]
+shape = "Block"
