@@ -55,7 +55,6 @@ if (-not (Test-IsAdministrator)) {
             -FilePath $powershellPath `
             -Verb RunAs `
             -ArgumentList $elevatedArguments `
-            -WindowStyle Hidden `
             -Wait `
             -PassThru
     } catch {
