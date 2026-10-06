@@ -6,6 +6,8 @@ $ErrorActionPreference = "Stop"
 $importFile = Join-Path -Path $PSScriptRoot -ChildPath "winget_import.json"
 $failures = [System.Collections.Generic.List[string]]::new()
 $wingetPackageFailures = [System.Collections.Generic.List[psobject]]::new()
+$packageAlreadyInstalledExitCode = -1978335135
+$noApplicableUpdateExitCode = -1978335189
 
 function Test-IsAdministrator {
     $identity = [Security.Principal.WindowsIdentity]::GetCurrent()
@@ -80,14 +82,14 @@ function Install-WinGetPackages {
             )
 
             try {
-                & winget.exe install `
+                $installOutput = @(& winget.exe install `
                     --id $packageIdentifier `
                     --exact `
                     --source $sourceName `
                     --accept-source-agreements `
                     --accept-package-agreements `
                     --disable-interactivity `
-                    @additionalArguments
+                    @additionalArguments 2>&1)
                 $exitCode = $LASTEXITCODE
             } catch {
                 [void]$wingetPackageFailures.Add([pscustomobject]@{
@@ -97,6 +99,20 @@ function Install-WinGetPackages {
                     Error = $_.Exception.Message
                 })
                 continue
+            }
+
+            if ($exitCode -eq $noApplicableUpdateExitCode) {
+                Write-Host "No applicable update found; package is already installed: $packageIdentifier"
+                continue
+            }
+
+            if ($exitCode -eq $packageAlreadyInstalledExitCode -and $additionalArguments -contains "--no-upgrade") {
+                Write-Host "Skipping upgrade because --no-upgrade is set and the package is already installed: $packageIdentifier"
+                continue
+            }
+
+            foreach ($outputLine in $installOutput) {
+                Write-Host $outputLine
             }
 
             if ($exitCode -ne 0) {

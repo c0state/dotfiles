@@ -1,6 +1,7 @@
 [CmdletBinding()]
 param(
-    [switch]$SkipWinget
+    [switch]$SkipWinget,
+    [string]$TranscriptPath
 )
 
 $ErrorActionPreference = "Stop"
@@ -12,6 +13,15 @@ $profileSource = Join-Path -Path $PSScriptRoot -ChildPath "Microsoft.PowerShell_
 $powerToysSetupScript = Join-Path -Path $PSScriptRoot -ChildPath "powertoys_setup.ps1"
 $dotfilesRoot = Split-Path -Path $PSScriptRoot -Parent
 $failures = [System.Collections.Generic.List[string]]::new()
+
+if ([string]::IsNullOrWhiteSpace($TranscriptPath)) {
+    $TranscriptPath = Join-Path -Path $env:TEMP -ChildPath "windows-setup-$([guid]::NewGuid().ToString('N')).txt"
+}
+
+$transcriptDirectory = Split-Path -Path $TranscriptPath -Parent
+if ($transcriptDirectory -and -not (Test-Path -LiteralPath $transcriptDirectory -PathType Container)) {
+    New-Item -ItemType Directory -Path $transcriptDirectory -Force | Out-Null
+}
 
 function Test-IsAdministrator {
     $identity = [Security.Principal.WindowsIdentity]::GetCurrent()
@@ -33,6 +43,8 @@ if (-not (Test-IsAdministrator)) {
         "Bypass"
         "-File"
         "`"$PSCommandPath`""
+        "-TranscriptPath"
+        "`"$TranscriptPath`""
     )
     if ($SkipWinget) {
         $elevatedArguments += "-SkipWinget"
@@ -43,6 +55,7 @@ if (-not (Test-IsAdministrator)) {
             -FilePath $powershellPath `
             -Verb RunAs `
             -ArgumentList $elevatedArguments `
+            -WindowStyle Hidden `
             -Wait `
             -PassThru
     } catch {
@@ -50,8 +63,16 @@ if (-not (Test-IsAdministrator)) {
         exit 1
     }
 
+    if (Test-Path -LiteralPath $TranscriptPath -PathType Leaf) {
+        Write-Host "`nElevated setup transcript: $TranscriptPath"
+        Get-Content -LiteralPath $TranscriptPath
+    }
+
     exit $elevatedProcess.ExitCode
 }
+
+Start-Transcript -Path $TranscriptPath -Force | Out-Null
+Write-Host "Windows setup transcript: $TranscriptPath"
 
 function Invoke-NativeCommand {
     param(
@@ -270,6 +291,15 @@ Invoke-NativeCommand `
     ) `
     -Description "Installing/updating Pi coding harness"
 
+if (-not (Get-Command -Name "muse" -ErrorAction SilentlyContinue)) {
+    Write-Host "`nInstalling Muse Code"
+    try {
+        Invoke-RestMethod -Uri "https://dev.meta.ai/install.ps1" | Invoke-Expression
+    } catch {
+        [void]$failures.Add("Installing Muse Code: $($_.Exception.Message)")
+    }
+}
+
 $capsLockToControl = [byte[]]@(
     0x00, 0x00, 0x00, 0x00,   # version
     0x00, 0x00, 0x00, 0x00,   # flags
@@ -287,7 +317,9 @@ if ($failures.Count -gt 0) {
     foreach ($failure in $failures) {
         Write-Host "- $failure" -ForegroundColor Red
     }
+    Stop-Transcript | Out-Null
     exit 1
 }
 
 Write-Host "`nWindows setup completed successfully."
+Stop-Transcript | Out-Null

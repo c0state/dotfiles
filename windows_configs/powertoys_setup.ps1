@@ -54,6 +54,34 @@ function Invoke-WinGetCommand {
     }
 }
 
+function Install-OrUpdate-PowerToys {
+    $process = Start-Process `
+        -FilePath "winget.exe" `
+        -ArgumentList @(
+            "install"
+            "--id"
+            "Microsoft.PowerToys"
+            "--exact"
+            "--source"
+            "winget"
+            "--accept-source-agreements"
+            "--accept-package-agreements"
+            "--disable-interactivity"
+        ) `
+        -NoNewWindow `
+        -PassThru `
+        -Wait
+
+    if ($process.ExitCode -eq -1978335189) {
+        Write-Host "No applicable update found; PowerToys is already installed and current."
+        return
+    }
+
+    if ($process.ExitCode -ne 0) {
+        throw "winget.exe exited with code $($process.ExitCode) while installing/updating PowerToys"
+    }
+}
+
 # Stopgap: PowerToys DSC does not yet support AltWindowCycle. Move this
 # configuration into powertoys.dsc.yaml once native DSC support is available.
 function Set-PowerToysWindowHopper {
@@ -125,22 +153,14 @@ if (-not (Test-Path -LiteralPath $powerToysDscDocument -PathType Leaf)) {
     throw "PowerToys DSC document was not found: $powerToysDscDocument"
 }
 
+Install-OrUpdate-PowerToys
+
 Invoke-WinGetCommand -ArgumentList @(
     "configure"
     "--file"
     $powerToysDscDocument
-)
-
-Invoke-WinGetCommand -ArgumentList @(
-    "upgrade"
-    "--id"
-    "Microsoft.PowerToys"
-    "--exact"
-    "--source"
-    "winget"
-    "--silent"
-    "--accept-package-agreements"
-    "--accept-source-agreements"
+    "--accept-configuration-agreements"
+    "--disable-interactivity"
 )
 
 Set-PowerToysWindowHopper
