@@ -13,6 +13,13 @@
         { "PackageIdentifier": "Atlassian.Sourcetree" },
         { "PackageIdentifier": "Audacity.Audacity" },
         { "PackageIdentifier": "Balena.Etcher" },
+        {
+          "PackageIdentifier": "Blizzard.BattleNet",
+          "InstallArguments": [
+            "--location",
+            "%ProgramFiles(x86)%\\Battle.net"
+          ]
+        },
         { "PackageIdentifier": "calibre.calibre" },
         { "PackageIdentifier": "chrisant996.Clink" },
         { "PackageIdentifier": "CPUID.CPU-Z" },
@@ -23,6 +30,7 @@
             "InstallArguments": ["--no-upgrade"]
         },
         { "PackageIdentifier": "Docker.DockerDesktop" },
+        { "PackageIdentifier": "EpicGames.EpicGamesLauncher" },
         { "PackageIdentifier": "Eugeny.Tabby" },
         { "PackageIdentifier": "FastStone.Viewer" },
         { "PackageIdentifier": "flux.flux" },
@@ -40,11 +48,13 @@
         { "PackageIdentifier": "Jigsaw.OutlineManager" },
         { "PackageIdentifier": "Kubernetes.kubectl" },
         { "PackageIdentifier": "Kubernetes.minikube" },
+        { "PackageIdentifier": "Logitech.GHUB" },
         { "PackageIdentifier": "Meld.Meld" },
         { "PackageIdentifier": "Microsoft.DotNet.Runtime.10" },
         { "PackageIdentifier": "Microsoft.VisualStudioCode" },
         { "PackageIdentifier": "Mirantis.Lens" },
         { "PackageIdentifier": "Mozilla.Firefox" },
+        { "PackageIdentifier": "NDI.NDITools" },
         { "PackageIdentifier": "Neovim.Neovim" },
         {
             "PackageIdentifier": "OBSProject.OBSStudio",
@@ -57,6 +67,7 @@
         { "PackageIdentifier": "RaspberryPiFoundation.RaspberryPiImager" },
         { "PackageIdentifier": "RandyRants.SharpKeys" },
         { "PackageIdentifier": "Rufus.Rufus" },
+        { "PackageIdentifier": "SanDisk.Dashboard" },
         { "PackageIdentifier": "SlackTechnologies.Slack" },
         {
           "PackageIdentifier": "ScooterSoftware.BeyondCompare.5",
@@ -91,6 +102,10 @@
     },
     {
       "Packages": [
+        {
+          "PackageIdentifier": "XP9CXNGPPJ97XX",
+          "Comment": "Microsoft Copilot (Microsoft Store package)"
+        },
         {
           "PackageIdentifier": "XP8CLZL93F5Z4P",
           "Comment": "NVIDIA App (Microsoft Store package)"
