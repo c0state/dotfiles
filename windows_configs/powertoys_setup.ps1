@@ -4,6 +4,8 @@ param()
 $ErrorActionPreference = "Stop"
 
 $powerToysDscDocument = Join-Path -Path $PSScriptRoot -ChildPath "powertoys.dsc.yaml"
+# APPINSTALLER_CLI_ERROR_UPDATE_NOT_APPLICABLE (0x8A15002B)
+$noApplicableUpdateExitCode = -1978335189
 
 function Test-IsAdministrator {
     $identity = [Security.Principal.WindowsIdentity]::GetCurrent()
@@ -72,7 +74,7 @@ function Install-OrUpdate-PowerToys {
         -PassThru `
         -Wait
 
-    if ($process.ExitCode -eq -1978335189) {
+    if ($process.ExitCode -eq $noApplicableUpdateExitCode) {
         Write-Host "No applicable update found; PowerToys is already installed and current."
         return
     }
