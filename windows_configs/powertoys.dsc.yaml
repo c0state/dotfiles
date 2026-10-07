@@ -13,11 +13,6 @@ metadata:
   winget:
     processor: dscv3
 resources:
-  - name: Install PowerToys
-    type: Microsoft.WinGet.DSC/WinGetPackage
-    properties:
-      id: Microsoft.PowerToys
-      source: winget
   - name: Configure PowerToys app settings
     type: Microsoft.PowerToys/AppSettings
     properties:

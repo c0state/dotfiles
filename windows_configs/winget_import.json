@@ -18,7 +18,10 @@
         { "PackageIdentifier": "CPUID.CPU-Z" },
         { "PackageIdentifier": "CPUID.HWMonitor" },
         { "PackageIdentifier": "dandavison.delta" },
-        { "PackageIdentifier": "Discord.Discord" },
+        {
+            "PackageIdentifier": "Discord.Discord",
+            "InstallArguments": ["--no-upgrade"]
+        },
         { "PackageIdentifier": "Docker.DockerDesktop" },
         { "PackageIdentifier": "Eugeny.Tabby" },
         { "PackageIdentifier": "FastStone.Viewer" },
@@ -43,7 +46,10 @@
         { "PackageIdentifier": "Mirantis.Lens" },
         { "PackageIdentifier": "Mozilla.Firefox" },
         { "PackageIdentifier": "Neovim.Neovim" },
-        { "PackageIdentifier": "OBSProject.OBSStudio" },
+        {
+            "PackageIdentifier": "OBSProject.OBSStudio",
+            "InstallArguments": ["--no-upgrade"]
+        },
         { "PackageIdentifier": "OpenAI.Codex" },
         { "PackageIdentifier": "OpenJS.NodeJS" },
         { "PackageIdentifier": "OpenWhisperSystems.Signal" },

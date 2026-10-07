@@ -4,6 +4,8 @@ param()
 $ErrorActionPreference = "Stop"
 
 $powerToysDscDocument = Join-Path -Path $PSScriptRoot -ChildPath "powertoys.dsc.yaml"
+# APPINSTALLER_CLI_ERROR_UPDATE_NOT_APPLICABLE (0x8A15002B)
+$noApplicableUpdateExitCode = -1978335189
 
 function Test-IsAdministrator {
     $identity = [Security.Principal.WindowsIdentity]::GetCurrent()
@@ -51,6 +53,34 @@ function Invoke-WinGetCommand {
 
     if ($process.ExitCode -ne 0) {
         throw "winget.exe exited with code $($process.ExitCode)"
+    }
+}
+
+function Install-OrUpdate-PowerToys {
+    $process = Start-Process `
+        -FilePath "winget.exe" `
+        -ArgumentList @(
+            "install"
+            "--id"
+            "Microsoft.PowerToys"
+            "--exact"
+            "--source"
+            "winget"
+            "--accept-source-agreements"
+            "--accept-package-agreements"
+            "--disable-interactivity"
+        ) `
+        -NoNewWindow `
+        -PassThru `
+        -Wait
+
+    if ($process.ExitCode -eq $noApplicableUpdateExitCode) {
+        Write-Host "No applicable update found; PowerToys is already installed and current."
+        return
+    }
+
+    if ($process.ExitCode -ne 0) {
+        throw "winget.exe exited with code $($process.ExitCode) while installing/updating PowerToys"
     }
 }
 
@@ -125,22 +155,14 @@ if (-not (Test-Path -LiteralPath $powerToysDscDocument -PathType Leaf)) {
     throw "PowerToys DSC document was not found: $powerToysDscDocument"
 }
 
+Install-OrUpdate-PowerToys
+
 Invoke-WinGetCommand -ArgumentList @(
     "configure"
     "--file"
     $powerToysDscDocument
-)
-
-Invoke-WinGetCommand -ArgumentList @(
-    "upgrade"
-    "--id"
-    "Microsoft.PowerToys"
-    "--exact"
-    "--source"
-    "winget"
-    "--silent"
-    "--accept-package-agreements"
-    "--accept-source-agreements"
+    "--accept-configuration-agreements"
+    "--disable-interactivity"
 )
 
 Set-PowerToysWindowHopper
