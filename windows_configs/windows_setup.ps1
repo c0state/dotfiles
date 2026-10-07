@@ -142,12 +142,35 @@ function Link-GitConfig {
             throw "Git config source was not found: $($link.Target)"
         }
 
+        $existingLink = Get-Item -LiteralPath $link.Path -Force -ErrorAction SilentlyContinue
+        if ($existingLink) {
+            if ($existingLink.PSIsContainer -and $existingLink.LinkType -ne "SymbolicLink") {
+                throw "Cannot replace a directory with a Git config link: $($link.Path)"
+            }
+
+            Remove-Item -LiteralPath $link.Path -Force
+        }
+
         New-Item `
             -ItemType SymbolicLink `
             -Path $link.Path `
             -Target $link.Target `
             -Force | Out-Null
         Write-Host "Linked Git config: $($link.Path)"
+    }
+
+    foreach ($legacyPath in @(
+        (Join-Path -Path $HOME -ChildPath ".gitconfig")
+        (Join-Path -Path $HOME -ChildPath ".gitconfig-base")
+    )) {
+        $legacyLink = Get-Item -LiteralPath $legacyPath -Force -ErrorAction SilentlyContinue
+        if (
+            $legacyLink -and
+            $legacyLink.LinkType -eq "SymbolicLink" -and
+            (Split-Path -Path $legacyLink.Target -Leaf) -in @(".gitconfig-windows", ".gitconfig-base")
+        ) {
+            Remove-Item -LiteralPath $legacyPath -Force
+        }
     }
 }
 
