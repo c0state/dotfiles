@@ -4,7 +4,10 @@
     {
       "Packages": [
         { "PackageIdentifier": "7zip.7zip" },
-        { "PackageIdentifier": "Adobe.Acrobat.Reader.64-bit" },
+        {
+          "PackageIdentifier": "Adobe.Acrobat.Reader.64-bit",
+          "InstallArguments": [ "--no-upgrade" ]
+        },
         { "PackageIdentifier": "ALCPU.CoreTemp" },
         { "PackageIdentifier": "Alacritty.Alacritty" },
         { "PackageIdentifier": "Anthropic.Claude" },
@@ -80,6 +83,7 @@
         {
           "PackageIdentifier": "TorProject.TorBrowser",
           "InstallArguments": [
+            "--no-upgrade",
             "--scope",
             "user",
             "--location",
