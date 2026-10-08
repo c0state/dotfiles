@@ -1,134 +1,2 @@
-{
-  "$schema": "https://aka.ms/winget-packages.schema.2.0.json",
-  "Sources": [
-    {
-      "Packages": [
-        { "PackageIdentifier": "7zip.7zip" },
-        { "PackageIdentifier": "Adobe.Acrobat.Reader.64-bit" },
-        { "PackageIdentifier": "ALCPU.CoreTemp" },
-        { "PackageIdentifier": "Alacritty.Alacritty" },
-        { "PackageIdentifier": "Anthropic.Claude" },
-        { "PackageIdentifier": "Anthropic.ClaudeCode" },
-        { "PackageIdentifier": "astral-sh.uv" },
-        { "PackageIdentifier": "Atlassian.Sourcetree" },
-        { "PackageIdentifier": "Audacity.Audacity" },
-        { "PackageIdentifier": "Balena.Etcher" },
-        {
-          "PackageIdentifier": "Blizzard.BattleNet",
-          "InstallArguments": [
-            "--location",
-            "%ProgramFiles(x86)%\\Battle.net"
-          ]
-        },
-        { "PackageIdentifier": "calibre.calibre" },
-        { "PackageIdentifier": "chrisant996.Clink" },
-        { "PackageIdentifier": "CPUID.CPU-Z" },
-        { "PackageIdentifier": "CPUID.HWMonitor" },
-        { "PackageIdentifier": "dandavison.delta" },
-        {
-            "PackageIdentifier": "Discord.Discord",
-            "InstallArguments": ["--no-upgrade"]
-        },
-        { "PackageIdentifier": "Docker.DockerDesktop" },
-        { "PackageIdentifier": "EpicGames.EpicGamesLauncher" },
-        { "PackageIdentifier": "Eugeny.Tabby" },
-        { "PackageIdentifier": "FastStone.Viewer" },
-        { "PackageIdentifier": "flux.flux" },
-        { "PackageIdentifier": "Git.Git" },
-        { "PackageIdentifier": "GitHub.cli" },
-        { "PackageIdentifier": "GitHub.GitHubDesktop" },
-        { "PackageIdentifier": "Google.Antigravity" },
-        { "PackageIdentifier": "Google.AntigravityCLI" },
-        { "PackageIdentifier": "Google.AntigravityIDE" },
-        { "PackageIdentifier": "Google.Chrome" },
-        { "PackageIdentifier": "Google.GeminiDesktop" },
-        { "PackageIdentifier": "Google.GoogleDrive" },
-        { "PackageIdentifier": "JanDeDobbeleer.OhMyPosh" },
-        { "PackageIdentifier": "JetBrains.Toolbox" },
-        { "PackageIdentifier": "Jigsaw.OutlineManager" },
-        { "PackageIdentifier": "Kubernetes.kubectl" },
-        { "PackageIdentifier": "Kubernetes.minikube" },
-        { "PackageIdentifier": "Logitech.GHUB" },
-        { "PackageIdentifier": "Meld.Meld" },
-        { "PackageIdentifier": "Microsoft.DotNet.Runtime.10" },
-        { "PackageIdentifier": "Microsoft.VisualStudioCode" },
-        { "PackageIdentifier": "Mirantis.Lens" },
-        { "PackageIdentifier": "Mozilla.Firefox" },
-        { "PackageIdentifier": "NDI.NDITools" },
-        { "PackageIdentifier": "Neovim.Neovim" },
-        {
-            "PackageIdentifier": "OBSProject.OBSStudio",
-            "InstallArguments": ["--no-upgrade"]
-        },
-        { "PackageIdentifier": "OpenAI.Codex" },
-        { "PackageIdentifier": "OpenJS.NodeJS" },
-        { "PackageIdentifier": "OpenWhisperSystems.Signal" },
-        { "PackageIdentifier": "MuhammedKalkan.OpenLens" },
-        { "PackageIdentifier": "RaspberryPiFoundation.RaspberryPiImager" },
-        { "PackageIdentifier": "RandyRants.SharpKeys" },
-        { "PackageIdentifier": "Rufus.Rufus" },
-        { "PackageIdentifier": "SanDisk.Dashboard" },
-        { "PackageIdentifier": "SlackTechnologies.Slack" },
-        {
-          "PackageIdentifier": "ScooterSoftware.BeyondCompare.5",
-          "InstallArguments": [ "--scope", "machine" ]
-        },
-        { "PackageIdentifier": "Tailscale.Tailscale" },
-        { "PackageIdentifier": "TeamViewer.TeamViewer" },
-        { "PackageIdentifier": "TechPowerUp.GPU-Z" },
-        { "PackageIdentifier": "TheDocumentFoundation.LibreOffice" },
-        {
-          "PackageIdentifier": "TorProject.TorBrowser",
-          "InstallArguments": [
-            "--scope",
-            "user",
-            "--location",
-            "%LOCALAPPDATA%\\Programs\\Tor Browser"
-          ]
-        },
-        { "PackageIdentifier": "Valve.Steam" },
-        { "PackageIdentifier": "VideoLAN.VLC" },
-        { "PackageIdentifier": "WinDirStat.WinDirStat" },
-        { "PackageIdentifier": "WireGuard.WireGuard" },
-        { "PackageIdentifier": "ZedIndustries.Zed" },
-        { "PackageIdentifier": "Zoom.Zoom" }
-      ],
-      "SourceDetails": {
-        "Argument": "https://cdn.winget.microsoft.com/cache",
-        "Identifier": "Microsoft.Winget.Source_8wekyb3d8bbwe",
-        "Name": "winget",
-        "Type": "Microsoft.PreIndexed.Package"
-      }
-    },
-    {
-      "Packages": [
-        {
-          "PackageIdentifier": "XP9CXNGPPJ97XX",
-          "Comment": "Microsoft Copilot (Microsoft Store package)"
-        },
-        {
-          "PackageIdentifier": "XP8CLZL93F5Z4P",
-          "Comment": "NVIDIA App (Microsoft Store package)"
-        },
-        {
-          "PackageIdentifier": "9NKSQGP7F2NH",
-          "Comment": "WhatsApp Desktop (Microsoft Store package)"
-        },
-        {
-          "PackageIdentifier": "9PLM9XGG6VKS",
-          "Comment": "ChatGPT unified desktop app (Microsoft Store package)"
-        },
-        {
-          "PackageIdentifier": "XPDCK2L0R6V76J",
-          "Comment": "GitHub Copilot desktop app (Microsoft Store package)"
-        }
-      ],
-      "SourceDetails": {
-        "Argument": "https://storeedgefd.dsx.mp.microsoft.com/v9.0",
-        "Identifier": "StoreEdgeFD",
-        "Name": "msstore",
-        "Type": "Microsoft.Rest"
-      }
-    }
-  ]
-}
+
+‹¥vz-~)İj–«¶‡í…êZ¶”±êì²×©„:ºg§¶ÃèÁêÒ…ée2'+¢Ê´ú0z´¡zYi®‡â•êlÕì(€€ˆ‘Í¡•µ„ˆè€‰¡ÑÑÁÌè¼½…­„¹µÌ½İ¥¹•ĞµÁ…­…•Ì¹Í¡•µ„¸È¸À¹©Í½¸ˆ°(€€‰M½ÕÉ•Ìˆèl(€€€ì(€€€€€€‰A…­…•Ìˆèl(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€ˆİé¥À¸İé¥Àˆô°(€€€€€€€ì(€€€€€€€€€€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰‘½‰”¹É½‰…Ğ¹I•…‘•È¸ØĞµ‰¥Ğˆ°(€€€€€€€€€€‰%¹ÍÑ…±±ÉÕµ•¹ÑÌˆèl€ˆ´µ¹¼µÕÁÉ…‘”ˆt(€€€€€€€ô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰1AT¹½É•Q•µÀˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰±…É¥ÑÑä¹±…É¥ÑÑäˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰¹Ñ¡É½Á¥Œ¹±…Õ‘”ˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰¹Ñ¡É½Á¥Œ¹±…Õ‘•½‘”ˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰…ÍÑÉ…°µÍ ¹ÕØˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰Ñ±…ÍÍ¥…¸¹M½ÕÉ•ÑÉ•”ˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰Õ‘…¥Ñä¹Õ‘…¥Ñäˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰	…±•¹„¹Ñ¡•Èˆô°(€€€€€€€ì(€€€€€€€€€€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰	±¥éé…É¹	…ÑÑ±•9•Ğˆ°(€€€€€€€€€€‰%¹ÍÑ…±±ÉÕµ•¹ÑÌˆèl(€€€€€€€€€€€€ˆ´µ±½…Ñ¥½¸ˆ°(€€€€€€€€€€€€ˆ•AÉ½É…µ¥±•Ì¡ààØ¤•qq	…ÑÑ±”¹¹•Ğˆ(€€€€€€€€€t(€€€€€€€ô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰…±¥‰É”¹…±¥‰É”ˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰¡É¥Í…¹ĞääØ¹±¥¹¬ˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰AU%¹ATµhˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰AU%¹!]5½¹¥Ñ½Èˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰‘…¹‘…Ù¥Í½¸¹‘•±Ñ„ˆô°(€€€€€€€ì(€€€€€€€€€€€€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰¥Í½É¹¥Í½Éˆ°(€€€€€€€€€€€€‰%¹ÍÑ…±±ÉÕµ•¹ÑÌˆèlˆ´µ¹¼µÕÁÉ…‘”‰t(€€€€€€€ô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰½­•È¹½­•É•Í­Ñ½Àˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰Á¥…µ•Ì¹Á¥…µ•Í1…Õ¹¡•Èˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰Õ•¹ä¹Q…‰‰äˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰…ÍÑMÑ½¹”¹Y¥•İ•Èˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰™±Õà¹™±Õàˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰¥Ğ¹¥Ğˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰¥Ñ!Õˆ¹±¤ˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰¥Ñ!Õˆ¹¥Ñ!Õ‰•Í­Ñ½Àˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰½½±”¹¹Ñ¥É…Ù¥Ñäˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰½½±”¹¹Ñ¥É…Ù¥Ñå1$ˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰½½±”¹¹Ñ¥É…Ù¥Ñå%ˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰½½±”¹¡É½µ”ˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰½½±”¹•µ¥¹¥•Í­Ñ½Àˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰½½±”¹½½±•É¥Ù”ˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰)…¹•½‰‰•±••È¹=¡5åA½Í ˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰)•Ñ	É…¥¹Ì¹Q½½±‰½àˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰)¥Í…Ü¹=ÕÑ±¥¹•5…¹…•Èˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰-Õ‰•É¹•Ñ•Ì¹­Õ‰•Ñ°ˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰-Õ‰•É¹•Ñ•Ì¹µ¥¹¥­Õ‰”ˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰1½¥Ñ• ¹!Uˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰5•±¹5•±ˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰5¥É½Í½™Ğ¹½Ñ9•Ğ¹IÕ¹Ñ¥µ”¸ÄÀˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰5¥É½Í½™Ğ¹Y¥ÍÕ…±MÑÕ‘¥½½‘”ˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰5¥É…¹Ñ¥Ì¹1•¹Ìˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰5½é¥±±„¹¥É•™½àˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰9$¹9%Q½½±Ìˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰9•½Ù¥´¹9•½Ù¥´ˆô°(€€€€€€€ì(€€€€€€€€€€€€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰=	MAÉ½©•Ğ¹=	MMÑÕ‘¥¼ˆ°(€€€€€€€€€€€€‰%¹ÍÑ…±±ÉÕµ•¹ÑÌˆèlˆ´µ¹¼µÕÁÉ…‘”‰t(€€€€€€€ô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰=Á•¹$¹½‘•àˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰=Á•¹)L¹9½‘•)Lˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰=Á•¹]¡¥ÍÁ•ÉMåÍÑ•µÌ¹M¥¹…°ˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰5Õ¡…µµ•‘-…±­…¸¹=Á•¹1•¹Ìˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰I…ÍÁ‰•ÉÉåA¥½Õ¹‘…Ñ¥½¸¹I…ÍÁ‰•ÉÉåA¥%µ…•Èˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰I…¹‘åI…¹ÑÌ¹M¡…ÉÁ-•åÌˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰IÕ™ÕÌ¹IÕ™ÕÌˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰M…¹¥Í¬¹…Í¡‰½…Éˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰M±…­Q•¡¹½±½¥•Ì¹M±…¬ˆô°(€€€€€€€ì(€€€€€€€€€€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰M½½Ñ•ÉM½™Ñİ…É”¹	•å½¹‘½µÁ…É”¸Ôˆ°(€€€€€€€€€€‰%¹ÍÑ…±±ÉÕµ•¹ÑÌˆèl€ˆ´µÍ½Á”ˆ°€‰µ…¡¥¹”ˆt(€€€€€€€ô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰Q…¥±Í…±”¹Q…¥±Í…±”ˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰Q•…µY¥•İ•È¹Q•…µY¥•İ•Èˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰Q•¡A½İ•ÉUÀ¹ATµhˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰Q¡•½Õµ•¹Ñ½Õ¹‘…Ñ¥½¸¹1¥‰É•=™™¥”ˆô°(€€€€€€€ì(€€€€€€€€€€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰Q½ÉAÉ½©•Ğ¹Q½É	É½İÍ•Èˆ°(€€€€€€€€€€‰%¹ÍÑ…±±ÉÕµ•¹ÑÌˆèl(€€€€€€€€€€€€ˆ´µ¹¼µÕÁÉ…‘”ˆ°(€€€€€€€€€€€€ˆ´µÍ½Á”ˆ°(€€€€€€€€€€€€‰ÕÍ•Èˆ°(€€€€€€€€€€€€ˆ´µ±½…Ñ¥½¸ˆ°(€€€€€€€€€€€€ˆ•1=1AAQ•qqAÉ½É…µÍqqQ½È	É½İÍ•Èˆ(€€€€€€€€€t(€€€€€€€ô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰Y…±Ù”¹MÑ•…´ˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰Y¥‘•½18¹Y1ˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰]¥¹¥ÉMÑ…Ğ¹]¥¹¥ÉMÑ…Ğˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰]¥É•Õ…É¹]¥É•Õ…Éˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰i•‘%¹‘ÕÍÑÉ¥•Ì¹i•ˆô°(€€€€€€€ì€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰i½½´¹i½½´ˆô(€€€€€t°(€€€€€€‰M½ÕÉ••Ñ…¥±Ìˆèì(€€€€€€€€‰ÉÕµ•¹Ğˆè€‰¡ÑÑÁÌè¼½‘¸¹İ¥¹•Ğ¹µ¥É½Í½™Ğ¹½´½…¡”ˆ°(€€€€€€€€‰%‘•¹Ñ¥™¥•Èˆè€‰5¥É½Í½™Ğ¹]¥¹•Ğ¹M½ÕÉ•|áİ•­åˆÍá‰‰İ”ˆ°(€€€€€€€€‰9…µ”ˆè€‰İ¥¹•Ğˆ°(€€€€€€€€‰QåÁ”ˆè€‰5¥É½Í½™Ğ¹AÉ•%¹‘•á•¹A…­…”ˆ(€€€€€ô(€€€ô°(€€€ì(€€€€€€‰A…­…•Ìˆèl(€€€€€€€ì(€€€€€€€€€€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰a@åa9AA(äİa`ˆ°(€€€€€€€€€€‰½µµ•¹Ğˆè€‰5¥É½Í½™Ğ½Á¥±½Ğ€¡5¥É½Í½™ĞMÑ½É”Á…­…”¤ˆ(€€€€€€€ô°(€€€€€€€ì(€€€€€€€€€€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰a@á1i0äÍÕhÑ@ˆ°(€€€€€€€€€€‰½µµ•¹Ğˆè€‰9Y%%ÁÀ€¡5¥É½Í½™ĞMÑ½É”Á…­…”¤ˆ(€€€€€€€ô°(€€€€€€€ì(€€€€€€€€€€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€ˆå9-ME@İÉ9 ˆ°(€€€€€€€€€€‰½µµ•¹Ğˆè€‰]¡…ÑÍÁÀ•Í­Ñ½À€¡5¥É½Í½™ĞMÑ½É”Á…­…”¤ˆ(€€€€€€€ô°(€€€€€€€ì(€€€€€€€€€€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€ˆåA14åaÙY-Lˆ°(€€€€€€€€€€‰½µµ•¹Ğˆè€‰¡…ÑAPÕ¹¥™¥•‘•Í­Ñ½À…ÁÀ€¡5¥É½Í½™ĞMÑ½É”Á…­…”¤ˆ(€€€€€€€ô°(€€€€€€€ì(€€€€€€€€€€‰A…­…•%‘•¹Ñ¥™¥•Èˆè€‰aA,É0ÁHÙXÜÙ(ˆ°(€€€€€€€€€€‰½µµ•¹Ğˆè€‰¥Ñ!Õˆ½Á¥±½Ğ‘•Í­Ñ½À…ÁÀ€¡5¥É½Í½™ĞMÑ½É”Á…­…”¤ˆ(€€€€€€€ô(€€€€€t°(€€€€€€‰M½ÕÉ••Ñ…¥±Ìˆèì(€€€€€€€€‰ÉÕµ•¹Ğˆè€‰¡ÑÑÁÌè¼½ÍÑ½É••‘•™¹‘Íà¹µÀ¹µ¥É½Í½™Ğ¹½´½Øä¸Àˆ°(€€€€€€€€‰%‘•¹Ñ¥™¥•Èˆè€‰MÑ½É•‘•ˆ°(€€€€€€€€‰9…µ”ˆè€‰µÍÍÑ½É”ˆ°(€€€€€€€€‰QåÁ”ˆè€‰5¥É½Í½™Ğ¹I•ÍĞˆ(€€€€€ô(€€€ô(€t)ô
