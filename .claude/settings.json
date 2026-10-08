@@ -50,7 +50,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash '/home/stephen/.claude/hooks/herdr-agent-state.sh' session",
+            "command": "bash -c 'hook=\"${HOME:-}/.claude/hooks/herdr-agent-state.sh\"; if [ -f \"$hook\" ]; then exec bash \"$hook\" session; else exit 0; fi'",
             "timeout": 10
           }
         ]
