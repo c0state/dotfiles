@@ -23,6 +23,7 @@
             "%ProgramFiles(x86)%\\Battle.net"
           ]
         },
+        { "PackageIdentifier": "BurntSushi.ripgrep.MSVC" },
         { "PackageIdentifier": "calibre.calibre" },
         { "PackageIdentifier": "chrisant996.Clink" },
         { "PackageIdentifier": "CPUID.CPU-Z" },
@@ -79,6 +80,7 @@
           "PackageIdentifier": "ScooterSoftware.BeyondCompare.5",
           "InstallArguments": [ "--scope", "machine" ]
         },
+        { "PackageIdentifier": "sharkdp.fd" },
         { "PackageIdentifier": "Tailscale.Tailscale" },
         { "PackageIdentifier": "TeamViewer.TeamViewer" },
         { "PackageIdentifier": "TechPowerUp.GPU-Z" },

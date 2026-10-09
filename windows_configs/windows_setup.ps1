@@ -174,6 +174,41 @@ function Link-GitConfig {
     }
 }
 
+function Link-NeovimConfig {
+    param(
+        [Parameter(Mandatory = $true)]
+        [string]$DotfilesRoot
+    )
+
+    $configSource = Join-Path -Path $DotfilesRoot -ChildPath ".config\nvim"
+    $configPath = Join-Path -Path $env:LOCALAPPDATA -ChildPath "nvim"
+
+    if (-not (Test-Path -LiteralPath $configSource -PathType Container)) {
+        throw "Neovim config source was not found: $configSource"
+    }
+
+    $existingConfig = Get-Item -LiteralPath $configPath -Force -ErrorAction SilentlyContinue
+    if ($existingConfig) {
+        if (
+            $existingConfig.LinkType -eq "SymbolicLink" -and
+            $existingConfig.Target -eq $configSource
+        ) {
+            Write-Host "Neovim config already linked: $configPath"
+            return
+        }
+
+        [void]$failures.Add("Neovim config was not linked because a path already exists: $configPath")
+        return
+    }
+
+    New-Item `
+        -ItemType SymbolicLink `
+        -Path $configPath `
+        -Target $configSource `
+        -Force | Out-Null
+    Write-Host "Linked Neovim config: $configPath"
+}
+
 function Install-WindowsTerminalFragment {
     param(
         [Parameter(Mandatory = $true)]
@@ -358,6 +393,7 @@ $terminalFragmentSource = Join-Path -Path $PSScriptRoot -ChildPath "windows_term
 
 Link-PowerShellProfile -SourcePath $profileSource
 Link-GitConfig -DotfilesRoot $dotfilesRoot
+Link-NeovimConfig -DotfilesRoot $dotfilesRoot
 Install-WindowsTerminalFragment -SourcePath $terminalFragmentSource
 
 if ($failures.Count -gt 0) {
