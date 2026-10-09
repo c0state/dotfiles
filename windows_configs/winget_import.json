@@ -33,7 +33,10 @@
             "InstallArguments": ["--no-upgrade"]
         },
         { "PackageIdentifier": "Docker.DockerDesktop" },
-        { "PackageIdentifier": "EpicGames.EpicGamesLauncher" },
+        {
+            "PackageIdentifier": "EpicGames.EpicGamesLauncher",
+            "InstallArguments": ["--no-upgrade"]
+        },
         { "PackageIdentifier": "Eugeny.Tabby" },
         { "PackageIdentifier": "FastStone.Viewer" },
         { "PackageIdentifier": "flux.flux" },
