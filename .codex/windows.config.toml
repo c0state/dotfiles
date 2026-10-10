@@ -1,0 +1,7 @@
+#:schema https://developers.openai.com/codex/config-schema.json
+
+[desktop.appearanceDarkChromeTheme.fonts]
+code = '"Hack Nerd Font"'
+
+[desktop.appearanceLightChromeTheme.fonts]
+code = '"Hack Nerd Font"'
