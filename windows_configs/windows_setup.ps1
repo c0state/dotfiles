@@ -143,7 +143,8 @@ function Link-CodexProfile {
             return
         }
 
-        if (Test-Path -LiteralPath $backupPath) {
+        $existingBackup = Get-Item -LiteralPath $backupPath -Force -ErrorAction SilentlyContinue
+        if ($existingBackup) {
             throw "Cannot replace $profilePath: backup already exists at $backupPath"
         }
 
