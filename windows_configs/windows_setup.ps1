@@ -117,6 +117,47 @@ function Link-PowerShellProfile {
     Write-Host "Linked PowerShell profile: $profilePath"
 }
 
+function Link-CodexProfile {
+    param(
+        [Parameter(Mandatory = $true)]
+        [string]$DotfilesRoot
+    )
+
+    $profileSource = Join-Path -Path $DotfilesRoot -ChildPath ".codex\windows.config.toml"
+    if (-not (Test-Path -LiteralPath $profileSource -PathType Leaf)) {
+        throw "Codex profile source was not found: $profileSource"
+    }
+
+    $profileDirectory = Join-Path -Path $HOME -ChildPath ".codex"
+    New-Item -ItemType Directory -Path $profileDirectory -Force | Out-Null
+
+    $profilePath = Join-Path -Path $profileDirectory -ChildPath "windows.config.toml"
+    $backupPath = "$profilePath.local"
+    $existingProfile = Get-Item -LiteralPath $profilePath -Force -ErrorAction SilentlyContinue
+    if ($existingProfile) {
+        if (
+            $existingProfile.LinkType -eq "SymbolicLink" -and
+            $existingProfile.Target -eq $profileSource
+        ) {
+            Write-Host "Codex profile already linked: $profilePath"
+            return
+        }
+
+        if (Test-Path -LiteralPath $backupPath) {
+            throw "Cannot replace $profilePath: backup already exists at $backupPath"
+        }
+
+        Move-Item -LiteralPath $profilePath -Destination $backupPath
+    }
+
+    New-Item `
+        -ItemType SymbolicLink `
+        -Path $profilePath `
+        -Target $profileSource `
+        -Force | Out-Null
+    Write-Host "Linked Codex profile: $profilePath"
+}
+
 function Link-GitConfig {
     param(
         [Parameter(Mandatory = $true)]
@@ -392,6 +433,7 @@ Set-ScancodeMap -Value $capsLockToControl -Description "Caps Lock -> Left Ctrl"
 $terminalFragmentSource = Join-Path -Path $PSScriptRoot -ChildPath "windows_terminal_config.json"
 
 Link-PowerShellProfile -SourcePath $profileSource
+Link-CodexProfile -DotfilesRoot $dotfilesRoot
 Link-GitConfig -DotfilesRoot $dotfilesRoot
 Link-NeovimConfig -DotfilesRoot $dotfilesRoot
 Install-WindowsTerminalFragment -SourcePath $terminalFragmentSource
