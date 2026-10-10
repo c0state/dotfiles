@@ -1,3 +1,5 @@
+export PATH="$PATH:/Users/stephen/.docker/bin"
+
 #---------- constants
 
 # platform
