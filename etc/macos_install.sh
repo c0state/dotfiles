@@ -95,7 +95,7 @@ brew_packages=(
   minicom
   minikube
   mkcert
-  mobile-shell
+  mosh
   mysql
   ncdu
   neovim
