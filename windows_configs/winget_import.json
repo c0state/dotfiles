@@ -130,6 +130,10 @@
         {
           "PackageIdentifier": "XPDCK2L0R6V76J",
           "Comment": "GitHub Copilot desktop app (Microsoft Store package)"
+        },
+        {
+          "PackageIdentifier": "9PD7NDB32181",
+          "Comment": "Samsung Display Manager (Microsoft Store package)"
         }
       ],
       "SourceDetails": {
