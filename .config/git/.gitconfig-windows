@@ -12,3 +12,9 @@
   tool = bc
 [mergetool "bc"]
   path = "c:/program files (x86)/beyond compare 5/bcomp.exe"
+[difftool "sourcetree"]
+  cmd = "'' "
+[mergetool "sourcetree"]
+  cmd = "'' "
+  trustExitCode = false
+  keepBackup = false
