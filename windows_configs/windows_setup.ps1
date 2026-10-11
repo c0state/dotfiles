@@ -392,6 +392,12 @@ Set-ScancodeMap -Value $capsLockToControl -Description "Caps Lock -> Left Ctrl"
 $terminalFragmentSource = Join-Path -Path $PSScriptRoot -ChildPath "windows_terminal_config.json"
 
 Link-PowerShellProfile -SourcePath $profileSource
+$codexConfigPath = Join-Path -Path $env:USERPROFILE -ChildPath ".codex\config.toml"
+$codexConfigSource = Join-Path -Path $dotfilesRoot -ChildPath ".codex\windows.config.toml"
+New-Item -ItemType Directory -Path (Split-Path -Path $codexConfigPath -Parent) -Force | Out-Null
+Remove-Item -LiteralPath $codexConfigPath -Force -ErrorAction SilentlyContinue
+New-Item -ItemType SymbolicLink -Path $codexConfigPath -Target $codexConfigSource -Force | Out-Null
+Write-Host "Linked Codex config: $codexConfigPath"
 Link-GitConfig -DotfilesRoot $dotfilesRoot
 Link-NeovimConfig -DotfilesRoot $dotfilesRoot
 Install-WindowsTerminalFragment -SourcePath $terminalFragmentSource
