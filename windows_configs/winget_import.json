@@ -132,6 +132,10 @@
           "Comment": "GitHub Copilot desktop app (Microsoft Store package)"
         },
         {
+          "PackageIdentifier": "9PD7NDB32181",
+          "Comment": "Samsung Display Manager (Microsoft Store package)"
+        },
+        {
           "PackageIdentifier": "9N7F2SM5D1LR",
           "Comment": "Windows HDR Calibration (Microsoft Store package)"
         }
