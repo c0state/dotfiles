@@ -22,9 +22,3 @@ memories = true
 [memories]
 generate_memories = true
 use_memories = true
-
-[tui]
-alternate_screen = "never"
-animations = true
-notification_method = "bel"
-notifications = true
