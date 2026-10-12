@@ -1,5 +1,3 @@
-export PATH="$PATH:/Users/stephen/.docker/bin"
-
 #---------- constants
 
 # platform
@@ -117,6 +115,10 @@ set -gx PATH "$HOME/.local/go/bin" "$GOPATH/bin" $PATH
 if test "$PLATFORM" = Darwin
     fish_add_path /opt/homebrew/opt/postgresql*/bin
 end
+
+#----- docker
+
+set -gx PATH $PATH $HOME/.docker/bin
 
 #----- kubernetes
 
