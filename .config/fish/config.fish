@@ -116,6 +116,10 @@ if test "$PLATFORM" = Darwin
     fish_add_path /opt/homebrew/opt/postgresql*/bin
 end
 
+#----- docker
+
+set -gx PATH $PATH $HOME/.docker/bin
+
 #----- kubernetes
 
 # kubectl krew
