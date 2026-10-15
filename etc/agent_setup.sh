@@ -55,15 +55,19 @@ fi
 
 # ---------- chatgpt desktop official preview (debian/ubuntu only)
 
-# no apt repo to pull from yet, so bootstrap via the vendor .deb; its
-# postinst registers the chatgpt-archive-keyring + sources.list.d entry,
-# after which a regular apt upgrade keeps it current
-if command -v apt >/dev/null 2>&1 && ! dpkg --status chatgpt >/dev/null 2>&1; then
-  CHATGPT_DEB="$(mktemp --suffix=.deb)"
-  curl --fail --silent --show-error --location --output "$CHATGPT_DEB" \
-    "https://persistent.oaistatic.com/codex-app-prod/linux/deb/latest/chatgpt_$(dpkg --print-architecture).deb"
-  sudo apt --yes install "$CHATGPT_DEB"
-  rm -f "$CHATGPT_DEB"
+# The official .deb bootstraps OpenAI's signed APT repository; use it for
+# subsequent ChatGPT Desktop updates.
+if command -v apt >/dev/null 2>&1; then
+  if dpkg --status chatgpt >/dev/null 2>&1; then
+    sudo apt update
+    sudo apt --yes install --only-upgrade chatgpt
+  else
+    CHATGPT_DEB="$(mktemp --suffix=.deb)"
+    curl --fail --silent --show-error --location --output "$CHATGPT_DEB" \
+      "https://persistent.oaistatic.com/codex-app-prod/linux/deb/latest/chatgpt_$(dpkg --print-architecture).deb"
+    sudo apt --yes install "$CHATGPT_DEB"
+    rm -f "$CHATGPT_DEB"
+  fi
 fi
 
 # ---------- antigravity desktop (linux)
