@@ -1,6 +1,7 @@
 #!/usr/bin/env -S bash -i
 
 set -eu
+set -o pipefail
 
 WSL_DISTRO_NAME=${WSL_DISTRO_NAME:-""}
 DPKG_ARCH=$(dpkg --print-architecture 2>/dev/null || echo "")
@@ -10,6 +11,8 @@ if [ "$SHORT_ARCH" = "amd64" ]; then
   SHORT_ARCH="x64"
 fi
 VERSION_CODENAME=$(source /etc/os-release && echo "$VERSION_CODENAME")
+readonly HASHICORP_CODENAME="resolute"
+readonly TAILSCALE_CODENAME="resolute"
 
 case "$RAW_ARCH" in
   aarch64)
@@ -43,8 +46,8 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo 
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list >/dev/null
 
 # init tailscale
-curl -fsSL "https://pkgs.tailscale.com/stable/ubuntu/$VERSION_CODENAME.noarmor.gpg" | sudo tee /usr/share/keyrings/tailscale-archive-keyring.gpg >/dev/null
-curl -fsSL "https://pkgs.tailscale.com/stable/ubuntu/$VERSION_CODENAME.tailscale-keyring.list" | sudo tee /etc/apt/sources.list.d/tailscale.list
+curl -fsSL "https://pkgs.tailscale.com/stable/ubuntu/$TAILSCALE_CODENAME.noarmor.gpg" | sudo tee /usr/share/keyrings/tailscale-archive-keyring.gpg >/dev/null
+curl -fsSL "https://pkgs.tailscale.com/stable/ubuntu/$TAILSCALE_CODENAME.tailscale-keyring.list" | sudo tee /etc/apt/sources.list.d/tailscale.list
 
 # docker
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor --yes -o /etc/apt/keyrings/docker.gpg
@@ -89,7 +92,7 @@ fi
 
 # terraform
 wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor | sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg >/dev/null
-echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $VERSION_CODENAME main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $HASHICORP_CODENAME main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
 
 # wezterm - https://wezfurlong.org/wezterm
 curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /usr/share/keyrings/wezterm-fury.gpg
@@ -109,10 +112,6 @@ Components: main
 Architectures: amd64,arm64,armhf
 Signed-By: /usr/share/keyrings/microsoft.gpg
 EOF
-
-#------------------------------ ppas
-
-sudo rm -f /etc/apt/sources.list.d/fish-shell*4* && sudo add-apt-repository -y ppa:fish-shell/release-4
 
 #------------------------------ install core packages
 
