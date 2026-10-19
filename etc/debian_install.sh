@@ -136,6 +136,7 @@ sudo apt -y install \
   glances \
   gparted \
   gnome-browser-connector gnome-tweaks \
+  ghostty \
   gnupg gpg ca-certificates \
   jq \
   keychain \
