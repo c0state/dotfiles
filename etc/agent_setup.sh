@@ -48,7 +48,7 @@ claude plugin install aws-core@agent-toolkit-for-aws || true
 
 if command -v apt >/dev/null 2>&1; then
   sudo curl -fsSLo /usr/share/keyrings/claude-desktop-archive-keyring.asc https://downloads.claude.ai/claude-desktop/key.asc
-  echo "deb [signed-by=/usr/share/keyrings/claude-desktop-archive-keyring.asc] https://downloads.claude.ai/claude-desktop/apt/stable stable main" | sudo tee /etc/apt/sources.list.d/claude-desktop-official.list
+  echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/claude-desktop-archive-keyring.asc] https://downloads.claude.ai/claude-desktop/apt/stable stable main" | sudo tee /etc/apt/sources.list.d/claude-desktop.list
   sudo apt update
   sudo apt -y install claude-desktop
 fi
