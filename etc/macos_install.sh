@@ -212,6 +212,7 @@ brew_cask_packages=(
   sublime-text
   superduper
   tabby
+  tailscale-app
   teamviewer
   tor-browser
   tower
