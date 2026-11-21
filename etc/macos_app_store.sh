@@ -1,5 +1,4 @@
 mas install 1356178125 # jigsaw outline client
-mas install 6780396132 # openclaw
 mas install 310633997  # whatsapp
 mas install 1451685025 # wireguard
 mas install 497799835 # xcode
