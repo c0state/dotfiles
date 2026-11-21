@@ -102,7 +102,6 @@ brew_packages=(
   nmap
   nnn
   nushell
-  ollama
   openjdk
   openssl
   optipng
@@ -196,6 +195,7 @@ brew_cask_packages=(
   ngrok
   obs
   obsidian
+  ollama-app
   orbstack
   outline-manager
   podman-desktop
