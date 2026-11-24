@@ -191,6 +191,7 @@ sudo flatpak remote-add --if-not-exists --system flathub https://dl.flathub.org/
 sudo flatpak install --system -y flathub io.github.shiftey.Desktop
 sudo flatpak install --system -y flathub io.kinvolk.Headlamp
 sudo flatpak install --system -y flathub io.podman_desktop.PodmanDesktop
+sudo flatpak install --system --assumeyes --noninteractive https://flatpak.ladybird.org/ladybird.flatpakref
 if [ "$DPKG_ARCH" = "amd64" ]; then
   sudo flatpak install --system -y flathub com.obsproject.Studio
   sudo flatpak install --system -y flathub com.usebottles.bottles

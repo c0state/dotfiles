@@ -290,6 +290,30 @@ for brew_cask_package in "${brew_cask_packages[@]}"; do
   brew list --cask "$brew_cask_package" >/dev/null 2>&1 || brew install --cask "$brew_cask_package"
 done
 
+echo "---------- Installing Ladybird"
+
+if [[ "$(uname -m)" == "arm64" ]]; then
+  ladybird_releases=$(curl --fail --silent --show-error --location https://download.ladybird.org/releases.json)
+  ladybird_version=$(jq --exit-status --raw-output '.releases[0].version' <<<"$ladybird_releases")
+  installed_ladybird_version=$(/usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' "$HOME/Applications/Ladybird.app/Contents/Info.plist" 2>/dev/null || true)
+
+  if [[ "$installed_ladybird_version" != "$ladybird_version" ]]; then
+    ladybird_download=$(jq --exit-status --raw-output '.releases[0].downloads[] | select(.platform == "macOS" and .architecture == "arm64") | .url' <<<"$ladybird_releases")
+    ladybird_sha256=$(jq --exit-status --raw-output '.releases[0].downloads[] | select(.platform == "macOS" and .architecture == "arm64") | .sha256' <<<"$ladybird_releases")
+    ladybird_tmpdir=$(mktemp -d)
+    ladybird_mount="$ladybird_tmpdir/mount"
+    mkdir -p "$ladybird_mount" "$HOME/Applications"
+    curl --fail --silent --show-error --location "$ladybird_download" --output "$ladybird_tmpdir/Ladybird.dmg"
+    echo "$ladybird_sha256  $ladybird_tmpdir/Ladybird.dmg" | shasum --check --status
+    hdiutil attach -quiet -nobrowse -readonly -mountpoint "$ladybird_mount" "$ladybird_tmpdir/Ladybird.dmg"
+    ditto "$ladybird_mount/Ladybird.app" "$HOME/Applications/Ladybird.app"
+    hdiutil detach -quiet "$ladybird_mount"
+    rm -rf "$ladybird_tmpdir"
+  fi
+else
+  echo "Skipping Ladybird: official macOS alpha builds are currently arm64 only."
+fi
+
 brew completions link
 
 #---------- Cleanup ----------
