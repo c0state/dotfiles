@@ -11,8 +11,6 @@ if test "$PLATFORM" = Darwin
         set --function MACOS_BREW_PREFIX /usr/local/Homebrew
     end
 end
-set --local TAILSCALE_APP_STORE_PATH "/Applications/Tailscale.app/Contents/MacOS/Tailscale"
-
 # misc
 set --local REPORTTIME 3
 
@@ -36,10 +34,6 @@ source ~/.shell_functions.fish
 if test -z "$PAGER"
     # use bat in place of cat
     alias cat=bat
-end
-
-if test -e "$TAILSCALE_APP_STORE_PATH"
-    alias tailscale="$TAILSCALE_APP_STORE_PATH"
 end
 
 #---------- clipboard (pbcopy/pbpaste on Linux)
@@ -115,6 +109,10 @@ set -gx PATH "$HOME/.local/go/bin" "$GOPATH/bin" $PATH
 if test "$PLATFORM" = Darwin
     fish_add_path /opt/homebrew/opt/postgresql*/bin
 end
+
+#----- docker
+
+set -gx PATH $PATH $HOME/.docker/bin
 
 #----- kubernetes
 

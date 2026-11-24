@@ -1,7 +1,7 @@
 #:schema https://developers.openai.com/codex/config-schema.json
 
-model = "gpt-5.6-luna"
-model_reasoning_effort = "xhigh"
+model = "gpt-6-luna"
+model_reasoning_effort = "high"
 web_search = "live"
 personality = "pragmatic"
 approval_policy = "on-request"

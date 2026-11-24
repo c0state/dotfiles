@@ -42,10 +42,6 @@ unzip -q "$TEMP_AWS_INSTALL_DIR"/awscli.zip -d "$TEMP_AWS_INSTALL_DIR"
 "$TEMP_AWS_INSTALL_DIR"/aws/install --install-dir "$HOME"/.local/awscli --bin-dir "$HOME"/.local/bin --update
 rm -rf "$TEMP_AWS_INSTALL_DIR"
 
-# ---------- ghostty
-
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/mkasberg/ghostty-ubuntu/HEAD/install.sh)"
-
 if ! command -v zed &>/dev/null; then
   curl -f https://zed.dev/install.sh | sh
 fi
@@ -116,14 +112,3 @@ wget -q -O- https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Jet
   bsdtar -x -f - -C "$HOME"/.local/share/fonts/NerdFonts -
 
 fc-cache --force --verbose >/dev/null
-
-# ---------- local applications data
-
-mkdir -p ~/.local/share/applications
-
-# google chrome desktop launcher override with touchpad overscroll (for 2 finger swipe navigation)
-GOOGLE_CHROME_DESKTOP_LAUNCHER_FILE="$HOME/.local/share/applications/google-chrome.desktop"
-cp /usr/share/applications/google-chrome.desktop "$GOOGLE_CHROME_DESKTOP_LAUNCHER_FILE"
-
-sed -i -E 's#^(Exec=.*(google-chrome(-stable)?))#\1 --enable-features=TouchpadOverscrollHistoryNavigation#' \
-  "$GOOGLE_CHROME_DESKTOP_LAUNCHER_FILE"

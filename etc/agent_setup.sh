@@ -11,77 +11,16 @@ ln -s -f -n "$HOME/.dotfiles/AGENTS.md" "$HOME/.codex/AGENTS.md"
 ln -s -f -n "$HOME/.dotfiles/AGENTS.md" "$HOME/.gemini/GEMINI.md"
 ln -s -f -n "$HOME/.dotfiles/AGENTS.md" "$HOME/.copilot/copilot-instructions.md"
 
-# ---------- codex profiles
-
-ensure_codex_local_config() {
-  local target="$HOME/.codex/config.toml"
-  local legacy_source="$HOME/.dotfiles/.codex/config-base.toml"
-  local backup="$target.repo-symlink"
-  local temp="$target.migration.tmp"
-
-  if [ ! -L "$target" ]; then
-    return
-  fi
-
-  if [ "$(readlink "$target")" != "$legacy_source" ]; then
-    echo "Cannot replace unrelated Codex config symlink: $target" >&2
-    return 1
-  fi
-
-  if [ -e "$backup" ] || [ -L "$backup" ]; then
-    echo "Cannot migrate $target: backup already exists at $backup" >&2
-    return 1
-  fi
-
-  if [ -e "$target" ]; then
-    cp -pL "$target" "$temp"
-  elif [ -f "${target}.local" ]; then
-    cp -p "${target}.local" "$temp"
-  elif [ ! -e "$target" ]; then
-    mv "$target" "$backup"
-    return
-  else
-    echo "Cannot migrate $target: no readable config or backup exists" >&2
-    return 1
-  fi
-
-  mv "$target" "$backup"
-  mv "$temp" "$target"
-  chmod 600 "$target"
-}
-
-ensure_codex_local_config
-
-link_codex_profile() {
-  local source="$1"
-  local target="$2"
-  local backup="${target}.local"
-
-  if [ -L "$target" ] && [ "$(readlink "$target")" = "$source" ]; then
-    return
-  fi
-
-  if [ -e "$target" ] || [ -L "$target" ]; then
-    if [ -e "$backup" ] || [ -L "$backup" ]; then
-      echo "Cannot replace $target: backup already exists at $backup" >&2
-      return 1
-    fi
-    mv "$target" "$backup"
-  fi
-
-  ln -s "$source" "$target"
-}
-
 case "$(uname -s)" in
 Linux)
-  link_codex_profile \
+  ln -s -f -n \
     "$HOME/.dotfiles/.codex/linux.config.toml" \
-    "$HOME/.codex/linux.config.toml"
+    "$HOME/.codex/config.toml"
   ;;
 Darwin)
-  link_codex_profile \
+  ln -s -f -n \
     "$HOME/.dotfiles/.codex/macos.config.toml" \
-    "$HOME/.codex/macos.config.toml"
+    "$HOME/.codex/config.toml"
   ;;
 esac
 
@@ -109,7 +48,7 @@ claude plugin install aws-core@agent-toolkit-for-aws || true
 
 if command -v apt >/dev/null 2>&1; then
   sudo curl -fsSLo /usr/share/keyrings/claude-desktop-archive-keyring.asc https://downloads.claude.ai/claude-desktop/key.asc
-  echo "deb [signed-by=/usr/share/keyrings/claude-desktop-archive-keyring.asc] https://downloads.claude.ai/claude-desktop/apt/stable stable main" | sudo tee /etc/apt/sources.list.d/claude-desktop-official.list
+  echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/claude-desktop-archive-keyring.asc] https://downloads.claude.ai/claude-desktop/apt/stable stable main" | sudo tee /etc/apt/sources.list.d/claude-desktop.list
   sudo apt update
   sudo apt -y install claude-desktop
 fi

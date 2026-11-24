@@ -135,6 +135,9 @@ export PATH=$BUN_INSTALL/bin:$PATH
 # completions
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
+#----- docker
+export PATH=$PATH:$HOME/.docker/bin
+
 #----- kubectl krew
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 

@@ -6,6 +6,14 @@ set -eux
 
 PLATFORM=$(uname)
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+if [[ "${SETUP_ENV_PYTHON_ONLY:-}" == "1" ]]; then
+  bash "$SCRIPT_DIR/python.sh"
+  exit 0
+fi
+WSL_DISTRO_NAME=${WSL_DISTRO_NAME:-""}
+
 # ---------- set up dotfiles links
 
 mkdir -p "$HOME"/.local/bin
@@ -158,7 +166,7 @@ fi
 "$HOME"/etc/golang.sh
 "$HOME"/etc/haskell.sh
 "$HOME"/etc/js_tools.sh
-"$HOME"/etc/python.sh
+bash "$SCRIPT_DIR/python.sh"
 "$HOME"/etc/ruby.sh
 "$HOME"/etc/rust.sh
 

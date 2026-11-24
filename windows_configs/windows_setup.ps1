@@ -8,7 +8,6 @@ $ErrorActionPreference = "Stop"
 
 $wingetUpdateScript = Join-Path -Path $PSScriptRoot -ChildPath "winget_update.ps1"
 $wslSetupScript = Join-Path -Path $PSScriptRoot -ChildPath "wsl_setup.ps1"
-$wslAutostartScript = Join-Path -Path $PSScriptRoot -ChildPath "wsl_autostart.ps1"
 $profileSource = Join-Path -Path $PSScriptRoot -ChildPath "Microsoft.PowerShell_profile.ps1"
 $powerToysSetupScript = Join-Path -Path $PSScriptRoot -ChildPath "powertoys_setup.ps1"
 $dotfilesRoot = Split-Path -Path $PSScriptRoot -Parent
@@ -115,48 +114,6 @@ function Link-PowerShellProfile {
     New-Item -ItemType Directory -Path $profileDirectory -Force | Out-Null
     New-Item -ItemType SymbolicLink -Path $profilePath -Target $SourcePath -Force | Out-Null
     Write-Host "Linked PowerShell profile: $profilePath"
-}
-
-function Link-CodexProfile {
-    param(
-        [Parameter(Mandatory = $true)]
-        [string]$DotfilesRoot
-    )
-
-    $profileSource = Join-Path -Path $DotfilesRoot -ChildPath ".codex\windows.config.toml"
-    if (-not (Test-Path -LiteralPath $profileSource -PathType Leaf)) {
-        throw "Codex profile source was not found: $profileSource"
-    }
-
-    $profileDirectory = Join-Path -Path $HOME -ChildPath ".codex"
-    New-Item -ItemType Directory -Path $profileDirectory -Force | Out-Null
-
-    $profilePath = Join-Path -Path $profileDirectory -ChildPath "windows.config.toml"
-    $backupPath = "$profilePath.local"
-    $existingProfile = Get-Item -LiteralPath $profilePath -Force -ErrorAction SilentlyContinue
-    if ($existingProfile) {
-        if (
-            $existingProfile.LinkType -eq "SymbolicLink" -and
-            $existingProfile.Target -eq $profileSource
-        ) {
-            Write-Host "Codex profile already linked: $profilePath"
-            return
-        }
-
-        $existingBackup = Get-Item -LiteralPath $backupPath -Force -ErrorAction SilentlyContinue
-        if ($existingBackup) {
-            throw "Cannot replace $profilePath: backup already exists at $backupPath"
-        }
-
-        Move-Item -LiteralPath $profilePath -Destination $backupPath
-    }
-
-    New-Item `
-        -ItemType SymbolicLink `
-        -Path $profilePath `
-        -Target $profileSource `
-        -Force | Out-Null
-    Write-Host "Linked Codex profile: $profilePath"
 }
 
 function Link-GitConfig {
@@ -303,7 +260,7 @@ function Set-ScancodeMap {
     }
 }
 
-$requiredSources = @($wslSetupScript, $wslAutostartScript, $profileSource)
+$requiredSources = @($wslSetupScript, $profileSource)
 if (-not $SkipWinget) {
     $requiredSources += @($wingetUpdateScript, $powerToysSetupScript)
 }
@@ -341,19 +298,6 @@ Invoke-NativeCommand `
     -FilePath $powershellPath `
     -ArgumentList $wslArguments `
     -Description "Setting up WSL distributions"
-
-$wslAutostartArguments = @(
-    "-NoProfile"
-    "-ExecutionPolicy"
-    "Bypass"
-    "-File"
-    $wslAutostartScript
-)
-
-Invoke-NativeCommand `
-    -FilePath $powershellPath `
-    -ArgumentList $wslAutostartArguments `
-    -Description "Registering WSL autostart scheduled task"
 
 if ($SkipWinget) {
     Write-Host "`nSkipping WinGet package installation and PowerToys configuration"
@@ -434,7 +378,12 @@ Set-ScancodeMap -Value $capsLockToControl -Description "Caps Lock -> Left Ctrl"
 $terminalFragmentSource = Join-Path -Path $PSScriptRoot -ChildPath "windows_terminal_config.json"
 
 Link-PowerShellProfile -SourcePath $profileSource
-Link-CodexProfile -DotfilesRoot $dotfilesRoot
+$codexConfigPath = Join-Path -Path $env:USERPROFILE -ChildPath ".codex\config.toml"
+$codexConfigSource = Join-Path -Path $dotfilesRoot -ChildPath ".codex\windows.config.toml"
+New-Item -ItemType Directory -Path (Split-Path -Path $codexConfigPath -Parent) -Force | Out-Null
+Remove-Item -LiteralPath $codexConfigPath -Force -ErrorAction SilentlyContinue
+New-Item -ItemType SymbolicLink -Path $codexConfigPath -Target $codexConfigSource -Force | Out-Null
+Write-Host "Linked Codex config: $codexConfigPath"
 Link-GitConfig -DotfilesRoot $dotfilesRoot
 Link-NeovimConfig -DotfilesRoot $dotfilesRoot
 Install-WindowsTerminalFragment -SourcePath $terminalFragmentSource
