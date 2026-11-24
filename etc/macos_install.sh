@@ -19,7 +19,6 @@ fi
 
 # add taps
 brew_taps=(
-  getsentry/tools
   hashicorp/tap
   domt4/autoupdate
 )
@@ -120,7 +119,6 @@ brew_packages=(
   redis
   rlwrap
   rsync
-  getsentry/tools/sentry-cli
   selenium-server
   shellcheck
   smartmontools
