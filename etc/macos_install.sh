@@ -95,14 +95,13 @@ brew_packages=(
   minicom
   minikube
   mkcert
-  mobile-shell
+  mosh
   mysql
   ncdu
   neovim
   nmap
   nnn
   nushell
-  ollama
   openjdk
   openssl
   optipng
@@ -188,6 +187,7 @@ brew_cask_packages=(
   itsycal
   jetbrains-toolbox
   kitty
+  ladybird
   lens openlens
   libreoffice
   microsoft-edge
@@ -196,6 +196,7 @@ brew_cask_packages=(
   ngrok
   obs
   obsidian
+  ollama-app
   orbstack
   outline-manager
   podman-desktop
@@ -212,6 +213,7 @@ brew_cask_packages=(
   sublime-text
   superduper
   tabby
+  tailscale-app
   teamviewer
   tor-browser
   tower

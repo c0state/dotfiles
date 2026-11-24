@@ -8,7 +8,6 @@ $ErrorActionPreference = "Stop"
 
 $wingetUpdateScript = Join-Path -Path $PSScriptRoot -ChildPath "winget_update.ps1"
 $wslSetupScript = Join-Path -Path $PSScriptRoot -ChildPath "wsl_setup.ps1"
-$wslAutostartScript = Join-Path -Path $PSScriptRoot -ChildPath "wsl_autostart.ps1"
 $profileSource = Join-Path -Path $PSScriptRoot -ChildPath "Microsoft.PowerShell_profile.ps1"
 $powerToysSetupScript = Join-Path -Path $PSScriptRoot -ChildPath "powertoys_setup.ps1"
 $dotfilesRoot = Split-Path -Path $PSScriptRoot -Parent
@@ -261,7 +260,7 @@ function Set-ScancodeMap {
     }
 }
 
-$requiredSources = @($wslSetupScript, $wslAutostartScript, $profileSource)
+$requiredSources = @($wslSetupScript, $profileSource)
 if (-not $SkipWinget) {
     $requiredSources += @($wingetUpdateScript, $powerToysSetupScript)
 }
@@ -299,19 +298,6 @@ Invoke-NativeCommand `
     -FilePath $powershellPath `
     -ArgumentList $wslArguments `
     -Description "Setting up WSL distributions"
-
-$wslAutostartArguments = @(
-    "-NoProfile"
-    "-ExecutionPolicy"
-    "Bypass"
-    "-File"
-    $wslAutostartScript
-)
-
-Invoke-NativeCommand `
-    -FilePath $powershellPath `
-    -ArgumentList $wslAutostartArguments `
-    -Description "Registering WSL autostart scheduled task"
 
 if ($SkipWinget) {
     Write-Host "`nSkipping WinGet package installation and PowerToys configuration"
