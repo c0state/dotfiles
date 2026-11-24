@@ -187,6 +187,7 @@ brew_cask_packages=(
   itsycal
   jetbrains-toolbox
   kitty
+  ladybird
   lens openlens
   libreoffice
   microsoft-edge
